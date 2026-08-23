@@ -111,7 +111,39 @@ Format per entry: decision · alternatives · reason · confidence · what would
   claimed-vs-actual mismatch exists in the data for future questions.
 - **Confidence:** medium-high.
 
-## 12. No git history was created
-- **Reason:** the working rule for this session is to commit only when asked.
-  Everything is plain files; run `git init && git add -A && git commit` to
-  snapshot when you return.
+## 12. Git history (updated)
+- Session 1 created no git history (commit only when asked). Session 2 was
+  explicitly instructed to snapshot: the repo now has a full history; the
+  pre-refactor baseline is tagged `kalends-memorybench-v0` and remains exactly
+  reproducible (`git checkout kalends-memorybench-v0`).
+
+## 13. Context-keyed randomness replaced the sequential RNG stream
+- **Alternatives:** keep `random.Random(seed)`; per-subsystem streams.
+- **Reason:** with a sequential stream, deleting one event shifts every later
+  draw, making counterfactual runs diverge for spurious reasons. Hash draws
+  keyed on (seed, context) make "same world minus event E" differ only through
+  causal channels — verified by the movement-identity property test.
+- **Confidence:** high. Cost: v0 ledger hashes changed (v0 is tagged).
+
+## 14. The guarded hybrid router (data-driven design change)
+- **Alternatives:** keep the naive fallback; tune vector thresholds instead.
+- **Reason:** 30-seed suites showed the naive fallback is net negative
+  (ablation `no_vector_fallback` > `full`) and scale-toxic. The failure
+  matrix located the mechanism (boundary hallucination on unknowable keyed
+  questions). Rule adopted: an empty belief table on a keyed query IS the
+  answer; fall back only on text-only queries. Verified: wins on 9/9 families
+  and at scale.
+- **Confidence:** high within this benchmark; unknown for LLM-based systems.
+- **Would change it:** an LLM-answerer track where "unknown" has softer
+  semantics.
+
+## 15. Fairness fixes chosen over a full dual-track matrix
+- **Alternatives:** run every system on both an oracle-format track and a
+  strict text-only track.
+- **Reason:** session scope. We (a) put all information into text renderings
+  equally, (b) added text_structured to measure the by-construction gap
+  directly, (c) added paraphrase families and held-out configs. A complete
+  text-only track (retrieval systems parsing values too) remains the cleanest
+  design and is queued as next action #2.
+- **Confidence:** medium-high that current comparisons are honest given the
+  labeling in METHODOLOGY_AUDIT.md §7.
