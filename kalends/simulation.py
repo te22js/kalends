@@ -193,10 +193,15 @@ class Simulation:
                         claimed_origin_kind=root_kind,
                         claimed_origin_event=root_event,
                         claimed_origin_observer=root_observer,
-                        text=f"At hour {tick} {speaker} told me that "
-                             f"{as_of_phrase}"
-                             f"{self._statement(prop, value, ev.event_id, listener)}"
-                             f" ({origin_phrase}).",
+                        text=(f"At hour {tick} {speaker} told me that "
+                              f"{as_of_phrase}"
+                              f"{self._statement(prop, value, ev.event_id, listener)}"
+                              f" ({origin_phrase})."
+                              # The listener's own trust judgment, expressed at
+                              # encoding time — available in text just as the
+                              # `accepted` field is available structurally.
+                              + ("" if exposure.accepted
+                                 else " I did not believe it.")),
                     ))
 
     # -- run ---------------------------------------------------------------

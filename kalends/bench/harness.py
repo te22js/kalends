@@ -41,6 +41,12 @@ def run_benchmark(sim: Simulation,
         per_qtype_correct: dict[str, int] = defaultdict(int)
         boundary_total = boundary_violations = 0
         n_correct = 0
+        # Epistemic precision/recall over belief-value questions:
+        #   precision: of the values the system asserted, how many were the
+        #              agent's actual (normative) belief?
+        #   recall:    of the beliefs the agent actually held, how many did
+        #              the system assert correctly?
+        asserted = asserted_correct = holds_belief = 0
         failures: list[dict] = []
 
         for q in questions:
@@ -52,6 +58,13 @@ def run_benchmark(sim: Simulation,
             for dim in q.dims:
                 per_dim_total[dim] += 1
                 per_dim_correct[dim] += correct
+            if q.query.qtype == "belief":
+                if q.expected != "unknown":
+                    holds_belief += 1
+                if _norm(ans.value) != "unknown":
+                    asserted += 1
+                    if correct and q.expected != "unknown":
+                        asserted_correct += 1
             if "boundary" in q.dims:
                 boundary_total += 1
                 # Violation: asserting knowledge the agent cannot have.
@@ -79,6 +92,10 @@ def run_benchmark(sim: Simulation,
             },
             "boundary_violation_rate": (
                 boundary_violations / boundary_total if boundary_total else 0.0),
+            "epistemic_precision": (asserted_correct / asserted
+                                    if asserted else 1.0),
+            "epistemic_recall": (asserted_correct / holds_belief
+                                 if holds_belief else 1.0),
             "sample_failures": failures,
         }
     return results
@@ -102,6 +119,10 @@ def format_table(results: dict) -> str:
     rows.append(["boundary violations"] + [
         f"{results['systems'][s]['boundary_violation_rate']:.2f}"
         for s in systems])
+    rows.append(["epistemic precision"] + [
+        f"{results['systems'][s]['epistemic_precision']:.2f}" for s in systems])
+    rows.append(["epistemic recall"] + [
+        f"{results['systems'][s]['epistemic_recall']:.2f}" for s in systems])
 
     widths = [max(len(r[i]) for r in [header] + rows)
               for i in range(len(header))]

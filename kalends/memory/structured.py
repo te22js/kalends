@@ -66,6 +66,11 @@ class StructuredMemory(MemorySystem):
             return Answer(value=str(cur.tick))
         if q.qtype == "direct":
             return Answer(value="yes" if cur.kind == "observed" else "no")
+        if q.qtype == "independent":
+            origins = {(e.claimed_origin_kind, e.claimed_origin_event,
+                        e.claimed_origin_observer)
+                       for e in entries if e.accepted and e.value == cur.value}
+            return Answer(value="yes" if len(origins) > 1 else "no")
         if q.qtype == "superseded":
             accepted = sorted((e for e in entries if e.accepted),
                               key=lambda e: (e.as_of, e.tick, e.event_id))
