@@ -24,20 +24,23 @@ SIM_THRESHOLD = 0.15
 TOP_K = 4
 
 
-def embed(text: str) -> list[float]:
-    """Hashed bag-of-words embedding. Swap point for a real embedding model:
-    any function text -> unit vector works (see DECISIONS.md #6); keep this
-    deterministic fallback so results remain reproducible offline."""
-    vec = [0.0] * DIM
+def embed(text: str) -> dict[int, float]:
+    """Hashed bag-of-words embedding, stored sparse (dim -> weight, unit norm).
+    Swap point for a real embedding model: any function text -> unit vector
+    works (see DECISIONS.md #6); keep this deterministic fallback so results
+    remain reproducible offline."""
+    vec: dict[int, float] = {}
     for tok in tokens(text):
         h = int(hashlib.md5(tok.encode()).hexdigest(), 16) % DIM
-        vec[h] += 1.0
-    norm = math.sqrt(sum(x * x for x in vec)) or 1.0
-    return [x / norm for x in vec]
+        vec[h] = vec.get(h, 0.0) + 1.0
+    norm = math.sqrt(sum(x * x for x in vec.values())) or 1.0
+    return {k: v / norm for k, v in vec.items()}
 
 
-def cosine(a: list[float], b: list[float]) -> float:
-    return sum(x * y for x, y in zip(a, b))
+def cosine(a: dict[int, float], b: dict[int, float]) -> float:
+    if len(b) < len(a):
+        a, b = b, a
+    return sum(w * b[k] for k, w in a.items() if k in b)
 
 
 class VectorMemory(MemorySystem):
@@ -46,12 +49,12 @@ class VectorMemory(MemorySystem):
     use_metadata = False   # if True, filter candidates by query subject/predicate
 
     def __init__(self):
-        self._records: list[tuple[list[float], Experience]] = []
+        self._records: list[tuple[dict[int, float], Experience]] = []
 
     def ingest(self, exp: Experience) -> None:
         self._records.append((embed(exp.text), exp))
 
-    def _candidates(self, q: Query) -> list[tuple[list[float], Experience]]:
+    def _candidates(self, q: Query) -> list[tuple[dict[int, float], Experience]]:
         if self.use_metadata and q.subject is not None:
             filtered = [(v, e) for v, e in self._records
                         if e.subject == q.subject and e.predicate == q.predicate]

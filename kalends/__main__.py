@@ -62,6 +62,18 @@ def cmd_benchmark(args) -> None:
         print(f"\nfull results written to {args.out}")
 
 
+def cmd_experiment(args) -> None:
+    from .bench.experiment import SUITES, format_suite_summary, run_suite
+    if args.suite not in SUITES:
+        sys.exit(f"unknown suite: {args.suite} (have: {list(SUITES)})")
+    out = args.out or f"results/{args.suite}"
+    systems = args.systems.split(",") if args.systems else None
+    print(f"suite={args.suite} seeds={args.seeds} out={out}")
+    summary = run_suite(args.suite, args.seeds, out, systems)
+    print(format_suite_summary(summary))
+    print(f"\nwritten: {out}/{{configs,raw,summary}}.json, summary.csv")
+
+
 def cmd_explain(args) -> None:
     sim = _sim(args.scenario, args.seed)
     subject, predicate = args.prop.split(".", 1)
@@ -96,6 +108,31 @@ def cmd_explain(args) -> None:
             print(f"  hour {e.tick:>2}: {e.value!r} — {via} — {mark}")
 
 
+def cmd_counterfactual(args) -> None:
+    from .counterfactual import compare
+    scenario = SCENARIOS[args.scenario]()
+    if args.drop is None:
+        print("incidents (pass --drop <index>):")
+        for i, inc in enumerate(scenario.incidents):
+            print(f"  [{i}] t={inc.tick:>2} {inc.prop.key} -> {inc.value} "
+                  f"({inc.scope}, at {inc.location})")
+        return
+    result = compare(scenario, args.seed, args.drop)
+    d = result["dropped_incident"]
+    print(f"dropped: t={d['tick']} {d['prop']} -> {d['value']} ({d['scope']})")
+    print(f"events: {result['n_events']['factual']} -> "
+          f"{result['n_events']['counterfactual']}  "
+          f"tells: {result['n_tells']['factual']} -> "
+          f"{result['n_tells']['counterfactual']}")
+    if not result["belief_changes"]:
+        print("no belief differs — the event was epistemically inert")
+        return
+    print(f"causal descendants: {', '.join(result['causal_descendants'])}")
+    for c in result["belief_changes"]:
+        print(f"  {c['agent']:<12} {c['prop']:<24} "
+              f"{c['factual_belief']} -> {c['counterfactual_belief']}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="kalends")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -113,12 +150,27 @@ def main() -> None:
     p.add_argument("--out", help="write full JSON results here")
     p.set_defaults(func=cmd_benchmark)
 
+    p = sub.add_parser("experiment", help="multi-seed suite with statistics")
+    p.add_argument("--suite", default="core")
+    p.add_argument("--seeds", type=int, default=30)
+    p.add_argument("--out", default=None, help="default: results/<suite>/")
+    p.add_argument("--systems", help="comma-separated subset")
+    p.set_defaults(func=cmd_experiment)
+
     p = sub.add_parser("explain", help="why does an agent believe P?")
     p.add_argument("--scenario", default="rumor")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--agent", required=True)
     p.add_argument("--prop", required=True, help="e.g. bakery.condition")
     p.set_defaults(func=cmd_explain)
+
+    p = sub.add_parser("counterfactual",
+                       help="rerun the world minus one incident; diff beliefs")
+    p.add_argument("--scenario", default="rumor")
+    p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--drop", type=int, default=None,
+                   help="incident index (omit to list incidents)")
+    p.set_defaults(func=cmd_counterfactual)
 
     args = parser.parse_args()
     args.func(args)

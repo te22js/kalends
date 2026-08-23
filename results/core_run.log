@@ -1,0 +1,5 @@
+suite=core seeds=30 out=results/core
+  [core] propagation: 30 seeds done (65s elapsed)
+  [core] supersession: 30 seeds done (166s elapsed)
+  [core] private: 30 seeds done (224s elapsed)
+  [core] overload: 30 seeds done (297s elapsed)

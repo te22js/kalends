@@ -16,9 +16,11 @@ from .vector import VectorMemory
 class HybridMemory(MemorySystem):
     name = "hybrid"
 
-    def __init__(self):
-        self._structured = StructuredMemory()
+    def __init__(self, structured_kwargs: dict | None = None,
+                 use_vector_fallback: bool = True):
+        self._structured = StructuredMemory(**(structured_kwargs or {}))
         self._vector = VectorMemory()
+        self._use_vector_fallback = use_vector_fallback
 
     def ingest(self, exp: Experience) -> None:
         self._structured.ingest(exp)
@@ -26,6 +28,8 @@ class HybridMemory(MemorySystem):
 
     def answer(self, q: Query) -> Answer:
         ans = self._structured.answer(q)
+        if not self._use_vector_fallback:
+            return ans
         # Route to vector retrieval only when the structured path found nothing
         # at all (an unresolved key). A confident structured "no"/"unknown"
         # backed by entries is a real answer, not a miss.

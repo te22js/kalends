@@ -21,8 +21,16 @@ TOKEN_RE = re.compile(r"[a-z_]+")
 class StructuredMemory(MemorySystem):
     name = "structured"
 
-    def __init__(self):
+    def __init__(self, use_supersession: bool = True, use_trust: bool = True,
+                 use_provenance: bool = True):
+        # Ablation switches (scripts/ablation_experiment.py):
+        #   use_supersession=False -> answer from the FIRST stored entry
+        #   use_trust=False        -> ignore the accepted flag entirely
+        #   use_provenance=False   -> source/direct/independent all "unknown"
         self._table: dict[tuple[str, str], list[Experience]] = {}
+        self._use_supersession = use_supersession
+        self._use_trust = use_trust
+        self._use_provenance = use_provenance
 
     def ingest(self, exp: Experience) -> None:
         if exp.subject is None or exp.predicate is None:
@@ -39,12 +47,14 @@ class StructuredMemory(MemorySystem):
                 return entries
         return None
 
-    @staticmethod
-    def _current(entries: list[Experience]) -> Experience | None:
-        accepted = [e for e in entries if e.accepted]
-        if not accepted:
+    def _current(self, entries: list[Experience]) -> Experience | None:
+        pool = ([e for e in entries if e.accepted] if self._use_trust
+                else list(entries))
+        if not pool:
             return None
-        return max(accepted, key=lambda e: (e.as_of, e.tick, e.event_id))
+        if not self._use_supersession:
+            return min(pool, key=lambda e: (e.tick, e.event_id))
+        return max(pool, key=lambda e: (e.as_of, e.tick, e.event_id))
 
     def answer(self, q: Query) -> Answer:
         entries = self._resolve(q)
@@ -59,6 +69,9 @@ class StructuredMemory(MemorySystem):
 
         if q.qtype == "belief":
             return Answer(value=cur.value, source_agent=cur.source_agent)
+        if (q.qtype in ("source", "direct", "independent")
+                and not self._use_provenance):
+            return Answer(value="unknown", confidence=0.0)
         if q.qtype == "source":
             src = "observed" if cur.kind == "observed" else (cur.source_agent or "unknown")
             return Answer(value=src, source_agent=cur.source_agent)
