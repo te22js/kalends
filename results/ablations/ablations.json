@@ -1,0 +1,1516 @@
+{
+  "families": {
+    "propagation": {
+      "name": "propagation",
+      "n_agents": 14,
+      "n_locations": 6,
+      "n_ticks": 48,
+      "n_props": 4,
+      "n_decoys": 1,
+      "changes_min": 1,
+      "changes_max": 3,
+      "private_event_p": 0.15,
+      "chattiness_min": 0.2,
+      "chattiness_max": 0.8,
+      "distorter_frac": 0.15,
+      "distort_p": 0.5,
+      "distrust_pair_frac": 0.08,
+      "jitter_p": 0.15,
+      "alias_frac": 0.5,
+      "alias_p": 0.3,
+      "gossip_recency": 12,
+      "schedule_blocks": 4,
+      "irrelevant_memory_rate": 0.0,
+      "late_private_event": true
+    },
+    "supersession": {
+      "name": "supersession",
+      "n_agents": 14,
+      "n_locations": 6,
+      "n_ticks": 72,
+      "n_props": 5,
+      "n_decoys": 1,
+      "changes_min": 4,
+      "changes_max": 6,
+      "private_event_p": 0.15,
+      "chattiness_min": 0.2,
+      "chattiness_max": 0.8,
+      "distorter_frac": 0.15,
+      "distort_p": 0.5,
+      "distrust_pair_frac": 0.08,
+      "jitter_p": 0.15,
+      "alias_frac": 0.5,
+      "alias_p": 0.3,
+      "gossip_recency": 12,
+      "schedule_blocks": 4,
+      "irrelevant_memory_rate": 0.0,
+      "late_private_event": true
+    },
+    "conflict": {
+      "name": "conflict",
+      "n_agents": 14,
+      "n_locations": 6,
+      "n_ticks": 48,
+      "n_props": 4,
+      "n_decoys": 1,
+      "changes_min": 1,
+      "changes_max": 3,
+      "private_event_p": 0.15,
+      "chattiness_min": 0.2,
+      "chattiness_max": 0.8,
+      "distorter_frac": 0.5,
+      "distort_p": 0.5,
+      "distrust_pair_frac": 0.3,
+      "jitter_p": 0.15,
+      "alias_frac": 0.5,
+      "alias_p": 0.3,
+      "gossip_recency": 12,
+      "schedule_blocks": 4,
+      "irrelevant_memory_rate": 0.0,
+      "late_private_event": true
+    }
+  },
+  "seeds": 10,
+  "rows": [
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "alias",
+      "mean": 0.6146,
+      "sd": 0.1598,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "belief",
+      "mean": 0.9299,
+      "sd": 0.0506,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "boundary",
+      "mean": 0.7771,
+      "sd": 0.1706,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "overall",
+      "mean": 0.928,
+      "sd": 0.0339,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "supersession",
+      "mean": 0.9881,
+      "sd": 0.0123,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "full",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "alias",
+      "mean": 0.6146,
+      "sd": 0.1598,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "belief",
+      "mean": 0.9299,
+      "sd": 0.0506,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "boundary",
+      "mean": 0.7771,
+      "sd": 0.1706,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "corroboration",
+      "mean": 0.7183,
+      "sd": 0.0982,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "overall",
+      "mean": 0.826,
+      "sd": 0.038,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "provenance",
+      "mean": 0.8112,
+      "sd": 0.0792,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "source",
+      "mean": 0.5423,
+      "sd": 0.0828,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "supersession",
+      "mean": 0.9881,
+      "sd": 0.0123,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_provenance",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "alias",
+      "mean": 0.6146,
+      "sd": 0.1598,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "belief",
+      "mean": 0.7275,
+      "sd": 0.0648,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "boundary",
+      "mean": 0.7771,
+      "sd": 0.1706,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "contradiction",
+      "mean": 0.3336,
+      "sd": 0.1133,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "overall",
+      "mean": 0.7421,
+      "sd": 0.0533,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "provenance",
+      "mean": 0.8145,
+      "sd": 0.0573,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "source",
+      "mean": 0.5732,
+      "sd": 0.1008,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "supersession",
+      "mean": 0.6483,
+      "sd": 0.0475,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_supersession",
+      "metric": "temporal",
+      "mean": 0.4608,
+      "sd": 0.111,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "alias",
+      "mean": 0.6146,
+      "sd": 0.1598,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "belief",
+      "mean": 0.7892,
+      "sd": 0.046,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "boundary",
+      "mean": 0.7729,
+      "sd": 0.1702,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "contradiction",
+      "mean": 0.5414,
+      "sd": 0.0854,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "overall",
+      "mean": 0.6815,
+      "sd": 0.0257,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "provenance",
+      "mean": 0.7282,
+      "sd": 0.0484,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "source",
+      "mean": 0.2297,
+      "sd": 0.0891,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "supersession",
+      "mean": 0.8707,
+      "sd": 0.0235,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_trust",
+      "metric": "temporal",
+      "mean": 0.1676,
+      "sd": 0.078,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "alias",
+      "mean": 0.3836,
+      "sd": 0.2285,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "belief",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "boundary",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "overall",
+      "mean": 0.9428,
+      "sd": 0.0302,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "supersession",
+      "mean": 0.9748,
+      "sd": 0.0112,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "no_vector_fallback",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "alias",
+      "mean": 0.6146,
+      "sd": 0.1598,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "belief",
+      "mean": 0.7831,
+      "sd": 0.0553,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "boundary",
+      "mean": 0.7771,
+      "sd": 0.1706,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "contradiction",
+      "mean": 0.5982,
+      "sd": 0.0637,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "corroboration",
+      "mean": 0.7183,
+      "sd": 0.0982,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "overall",
+      "mean": 0.6996,
+      "sd": 0.0434,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "provenance",
+      "mean": 0.8112,
+      "sd": 0.0792,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "source",
+      "mean": 0.5423,
+      "sd": 0.0828,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "supersession",
+      "mean": 0.6401,
+      "sd": 0.0662,
+      "n": 10
+    },
+    {
+      "family": "conflict",
+      "variant": "vector_only",
+      "metric": "temporal",
+      "mean": 0.5235,
+      "sd": 0.0836,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "alias",
+      "mean": 0.5507,
+      "sd": 0.2061,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "belief",
+      "mean": 0.9384,
+      "sd": 0.05,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "boundary",
+      "mean": 0.7645,
+      "sd": 0.2078,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "overall",
+      "mean": 0.931,
+      "sd": 0.0311,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "supersession",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "full",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "alias",
+      "mean": 0.5507,
+      "sd": 0.2061,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "belief",
+      "mean": 0.9384,
+      "sd": 0.05,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "boundary",
+      "mean": 0.7645,
+      "sd": 0.2078,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "corroboration",
+      "mean": 0.6928,
+      "sd": 0.1025,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "overall",
+      "mean": 0.8275,
+      "sd": 0.035,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "provenance",
+      "mean": 0.8247,
+      "sd": 0.0741,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "source",
+      "mean": 0.5678,
+      "sd": 0.0897,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "supersession",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_provenance",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "alias",
+      "mean": 0.5507,
+      "sd": 0.2061,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "belief",
+      "mean": 0.7136,
+      "sd": 0.0494,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "boundary",
+      "mean": 0.7645,
+      "sd": 0.2078,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "contradiction",
+      "mean": 0.159,
+      "sd": 0.0979,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "overall",
+      "mean": 0.7276,
+      "sd": 0.0456,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "provenance",
+      "mean": 0.8084,
+      "sd": 0.0736,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "source",
+      "mean": 0.535,
+      "sd": 0.1026,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "supersession",
+      "mean": 0.6415,
+      "sd": 0.0455,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_supersession",
+      "metric": "temporal",
+      "mean": 0.4341,
+      "sd": 0.1119,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "alias",
+      "mean": 0.5507,
+      "sd": 0.2061,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "belief",
+      "mean": 0.8982,
+      "sd": 0.0574,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "boundary",
+      "mean": 0.7645,
+      "sd": 0.2078,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "contradiction",
+      "mean": 0.8462,
+      "sd": 0.0707,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "overall",
+      "mean": 0.716,
+      "sd": 0.0264,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "provenance",
+      "mean": 0.7475,
+      "sd": 0.0509,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "source",
+      "mean": 0.2694,
+      "sd": 0.0644,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "supersession",
+      "mean": 0.9532,
+      "sd": 0.032,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_trust",
+      "metric": "temporal",
+      "mean": 0.2008,
+      "sd": 0.0668,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "alias",
+      "mean": 0.3143,
+      "sd": 0.2318,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "belief",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "boundary",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "overall",
+      "mean": 0.9439,
+      "sd": 0.0311,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "supersession",
+      "mean": 0.9973,
+      "sd": 0.0057,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "no_vector_fallback",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "alias",
+      "mean": 0.5507,
+      "sd": 0.2061,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "belief",
+      "mean": 0.8031,
+      "sd": 0.0611,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "boundary",
+      "mean": 0.7645,
+      "sd": 0.2078,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "contradiction",
+      "mean": 0.6301,
+      "sd": 0.072,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "corroboration",
+      "mean": 0.6928,
+      "sd": 0.1025,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "overall",
+      "mean": 0.7148,
+      "sd": 0.0485,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "provenance",
+      "mean": 0.8247,
+      "sd": 0.0741,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "source",
+      "mean": 0.5678,
+      "sd": 0.0897,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "supersession",
+      "mean": 0.7188,
+      "sd": 0.0527,
+      "n": 10
+    },
+    {
+      "family": "propagation",
+      "variant": "vector_only",
+      "metric": "temporal",
+      "mean": 0.5521,
+      "sd": 0.1073,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "alias",
+      "mean": 0.4982,
+      "sd": 0.1522,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "belief",
+      "mean": 0.9134,
+      "sd": 0.0409,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "boundary",
+      "mean": 0.4922,
+      "sd": 0.2324,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "overall",
+      "mean": 0.9113,
+      "sd": 0.0336,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "supersession",
+      "mean": 0.9986,
+      "sd": 0.003,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "full",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "alias",
+      "mean": 0.4982,
+      "sd": 0.1522,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "belief",
+      "mean": 0.9134,
+      "sd": 0.0409,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "boundary",
+      "mean": 0.4922,
+      "sd": 0.2324,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "corroboration",
+      "mean": 0.8275,
+      "sd": 0.0582,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "overall",
+      "mean": 0.7837,
+      "sd": 0.0294,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "provenance",
+      "mean": 0.6536,
+      "sd": 0.0418,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "source",
+      "mean": 0.4574,
+      "sd": 0.0447,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "supersession",
+      "mean": 0.9986,
+      "sd": 0.003,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_provenance",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "alias",
+      "mean": 0.4982,
+      "sd": 0.1522,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "belief",
+      "mean": 0.547,
+      "sd": 0.0593,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "boundary",
+      "mean": 0.4922,
+      "sd": 0.2324,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "contradiction",
+      "mean": 0.0267,
+      "sd": 0.0284,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "overall",
+      "mean": 0.5803,
+      "sd": 0.0468,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "provenance",
+      "mean": 0.6653,
+      "sd": 0.0567,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "source",
+      "mean": 0.2989,
+      "sd": 0.0731,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "supersession",
+      "mean": 0.5372,
+      "sd": 0.0148,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_supersession",
+      "metric": "temporal",
+      "mean": 0.1398,
+      "sd": 0.052,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "alias",
+      "mean": 0.4982,
+      "sd": 0.1522,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "belief",
+      "mean": 0.8801,
+      "sd": 0.0547,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "boundary",
+      "mean": 0.4922,
+      "sd": 0.2324,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "contradiction",
+      "mean": 0.9129,
+      "sd": 0.0796,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "overall",
+      "mean": 0.6957,
+      "sd": 0.044,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "provenance",
+      "mean": 0.7483,
+      "sd": 0.0538,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "source",
+      "mean": 0.2853,
+      "sd": 0.0569,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "supersession",
+      "mean": 0.9647,
+      "sd": 0.029,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_trust",
+      "metric": "temporal",
+      "mean": 0.2467,
+      "sd": 0.0849,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "alias",
+      "mean": 0.2245,
+      "sd": 0.1607,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "belief",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "boundary",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "contradiction",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "corroboration",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "overall",
+      "mean": 0.9409,
+      "sd": 0.0261,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "provenance",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "source",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "supersession",
+      "mean": 0.9986,
+      "sd": 0.003,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "no_vector_fallback",
+      "metric": "temporal",
+      "mean": 1.0,
+      "sd": 0.0,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "alias",
+      "mean": 0.4982,
+      "sd": 0.1522,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "belief",
+      "mean": 0.679,
+      "sd": 0.0347,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "boundary",
+      "mean": 0.4922,
+      "sd": 0.2324,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "contradiction",
+      "mean": 0.4492,
+      "sd": 0.0419,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "corroboration",
+      "mean": 0.8275,
+      "sd": 0.0582,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "overall",
+      "mean": 0.6267,
+      "sd": 0.0323,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "provenance",
+      "mean": 0.6536,
+      "sd": 0.0418,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "source",
+      "mean": 0.4574,
+      "sd": 0.0447,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "supersession",
+      "mean": 0.6441,
+      "sd": 0.0372,
+      "n": 10
+    },
+    {
+      "family": "supersession",
+      "variant": "vector_only",
+      "metric": "temporal",
+      "mean": 0.4196,
+      "sd": 0.0387,
+      "n": 10
+    }
+  ]
+}

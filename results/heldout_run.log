@@ -1,0 +1,51 @@
+suite=heldout seeds=30 out=results/heldout
+  [heldout] dense_small: 30 seeds done (5s elapsed)
+  [heldout] sprawl: 30 seeds done (33s elapsed)
+  [heldout] hostile: 30 seeds done (40s elapsed)
+
+== dense_small (n=30 seeds) ==
+  recency           overall 0.632 ±0.062  CI[0.609,0.656]  bviol 0.419
+  bm25              overall 0.749 ±0.036  CI[0.736,0.762]  bviol 0.384
+  vector            overall 0.695 ±0.032  CI[0.683,0.707]  bviol 0.586
+  vector_recency    overall 0.750 ±0.033  CI[0.738,0.762]  bviol 0.586
+  vector_meta       overall 0.814 ±0.034  CI[0.801,0.827]  bviol 0.038
+  text_structured   overall 0.830 ±0.062  CI[0.807,0.854]  bviol 0.412
+  structured        overall 0.937 ±0.023  CI[0.928,0.945]  bviol 0.000
+  hybrid            overall 0.922 ±0.025  CI[0.913,0.932]  bviol 0.586
+    Δ hybrid_vs_vector_meta: +0.108 CI[+0.093,+0.124] d_z=2.59
+    Δ hybrid_vs_recency: +0.290 CI[+0.267,+0.313] d_z=4.641
+    Δ structured_vs_text_structured: +0.106 CI[+0.090,+0.123] d_z=2.373
+    Δ vector_recency_vs_vector: +0.055 CI[+0.046,+0.064] d_z=2.252
+    Δ vector_meta_vs_vector: +0.119 CI[+0.104,+0.134] d_z=3.025
+
+== sprawl (n=30 seeds) ==
+  recency           overall 0.570 ±0.039  CI[0.556,0.585]  bviol 0.286
+  bm25              overall 0.803 ±0.036  CI[0.790,0.817]  bviol 0.203
+  vector            overall 0.734 ±0.031  CI[0.723,0.746]  bviol 0.353
+  vector_recency    overall 0.772 ±0.034  CI[0.759,0.784]  bviol 0.353
+  vector_meta       overall 0.840 ±0.026  CI[0.831,0.850]  bviol 0.018
+  text_structured   overall 0.829 ±0.052  CI[0.809,0.848]  bviol 0.331
+  structured        overall 0.941 ±0.023  CI[0.932,0.950]  bviol 0.000
+  hybrid            overall 0.929 ±0.023  CI[0.920,0.937]  bviol 0.353
+    Δ hybrid_vs_vector_meta: +0.089 CI[+0.078,+0.099] d_z=3.038
+    Δ hybrid_vs_recency: +0.359 CI[+0.343,+0.374] d_z=8.697
+    Δ structured_vs_text_structured: +0.113 CI[+0.100,+0.125] d_z=3.476
+    Δ vector_recency_vs_vector: +0.037 CI[+0.032,+0.043] d_z=2.591
+    Δ vector_meta_vs_vector: +0.106 CI[+0.098,+0.114] d_z=4.932
+
+== hostile (n=30 seeds) ==
+  recency           overall 0.674 ±0.050  CI[0.655,0.692]  bviol 0.185
+  bm25              overall 0.714 ±0.050  CI[0.696,0.733]  bviol 0.176
+  vector            overall 0.669 ±0.053  CI[0.649,0.689]  bviol 0.387
+  vector_recency    overall 0.759 ±0.061  CI[0.736,0.782]  bviol 0.387
+  vector_meta       overall 0.817 ±0.041  CI[0.802,0.833]  bviol 0.084
+  text_structured   overall 0.840 ±0.070  CI[0.814,0.866]  bviol 0.099
+  structured        overall 0.931 ±0.026  CI[0.921,0.941]  bviol 0.000
+  hybrid            overall 0.904 ±0.031  CI[0.893,0.916]  bviol 0.387
+    Δ hybrid_vs_vector_meta: +0.087 CI[+0.073,+0.100] d_z=2.403
+    Δ hybrid_vs_recency: +0.231 CI[+0.211,+0.250] d_z=4.37
+    Δ structured_vs_text_structured: +0.091 CI[+0.073,+0.109] d_z=1.871
+    Δ vector_recency_vs_vector: +0.090 CI[+0.079,+0.100] d_z=3.113
+    Δ vector_meta_vs_vector: +0.148 CI[+0.133,+0.163] d_z=3.718
+
+written: results/heldout/{configs,raw,summary}.json, summary.csv

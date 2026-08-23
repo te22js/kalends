@@ -21,7 +21,7 @@ from kalends.scenarios.generator import WorldConfig, generate
 from kalends.simulation import run_scenario
 
 SYSTEMS = ["recency", "vector", "vector_meta", "text_structured",
-           "structured", "hybrid"]
+           "structured", "hybrid", "hybrid_guarded"]
 
 SCALE_POINTS = [8, 16, 32, 64, 128]
 

@@ -1,0 +1,45 @@
+seed 0 done
+seed 1 done
+seed 2 done
+seed 3 done
+seed 4 done
+seed 5 done
+seed 6 done
+seed 7 done
+{'system': 'hybrid', 'cap': 100, 'policy': 'fifo', 'overall_mean': 0.7236, 'overall_sd': 0.0514, 'bviol_mean': 0.4799, 'n': 8}
+{'system': 'hybrid', 'cap': 100, 'policy': 'importance', 'overall_mean': 0.8689, 'overall_sd': 0.0276, 'bviol_mean': 0.6823, 'n': 8}
+{'system': 'hybrid', 'cap': 200, 'policy': 'fifo', 'overall_mean': 0.8862, 'overall_sd': 0.035, 'bviol_mean': 0.4529, 'n': 8}
+{'system': 'hybrid', 'cap': 200, 'policy': 'importance', 'overall_mean': 0.8955, 'overall_sd': 0.0344, 'bviol_mean': 0.4617, 'n': 8}
+{'system': 'hybrid', 'cap': 25, 'policy': 'fifo', 'overall_mean': 0.3834, 'overall_sd': 0.0528, 'bviol_mean': 0.3326, 'n': 8}
+{'system': 'hybrid', 'cap': 25, 'policy': 'importance', 'overall_mean': 0.8614, 'overall_sd': 0.026, 'bviol_mean': 0.6983, 'n': 8}
+{'system': 'hybrid', 'cap': 50, 'policy': 'fifo', 'overall_mean': 0.5368, 'overall_sd': 0.0565, 'bviol_mean': 0.4391, 'n': 8}
+{'system': 'hybrid', 'cap': 50, 'policy': 'importance', 'overall_mean': 0.8654, 'overall_sd': 0.0254, 'bviol_mean': 0.7018, 'n': 8}
+{'system': 'hybrid', 'cap': 'unlimited', 'policy': '-', 'overall_mean': 0.8981, 'overall_sd': 0.0345, 'bviol_mean': 0.4369, 'n': 8}
+{'system': 'structured', 'cap': 100, 'policy': 'fifo', 'overall_mean': 0.7492, 'overall_sd': 0.0992, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 100, 'policy': 'importance', 'overall_mean': 0.9452, 'overall_sd': 0.0296, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 200, 'policy': 'fifo', 'overall_mean': 0.9341, 'overall_sd': 0.0417, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 200, 'policy': 'importance', 'overall_mean': 0.9452, 'overall_sd': 0.0296, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 25, 'policy': 'fifo', 'overall_mean': 0.3415, 'overall_sd': 0.0559, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 25, 'policy': 'importance', 'overall_mean': 0.945, 'overall_sd': 0.0298, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 50, 'policy': 'fifo', 'overall_mean': 0.5206, 'overall_sd': 0.1046, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 50, 'policy': 'importance', 'overall_mean': 0.9452, 'overall_sd': 0.0296, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'structured', 'cap': 'unlimited', 'policy': '-', 'overall_mean': 0.9452, 'overall_sd': 0.0296, 'bviol_mean': 0.0, 'n': 8}
+{'system': 'vector', 'cap': 100, 'policy': 'fifo', 'overall_mean': 0.583, 'overall_sd': 0.0312, 'bviol_mean': 0.4799, 'n': 8}
+{'system': 'vector', 'cap': 100, 'policy': 'importance', 'overall_mean': 0.6329, 'overall_sd': 0.0316, 'bviol_mean': 0.6823, 'n': 8}
+{'system': 'vector', 'cap': 200, 'policy': 'fifo', 'overall_mean': 0.6353, 'overall_sd': 0.0654, 'bviol_mean': 0.4529, 'n': 8}
+{'system': 'vector', 'cap': 200, 'policy': 'importance', 'overall_mean': 0.6381, 'overall_sd': 0.0636, 'bviol_mean': 0.4617, 'n': 8}
+{'system': 'vector', 'cap': 25, 'policy': 'fifo', 'overall_mean': 0.3495, 'overall_sd': 0.0462, 'bviol_mean': 0.3326, 'n': 8}
+{'system': 'vector', 'cap': 25, 'policy': 'importance', 'overall_mean': 0.6419, 'overall_sd': 0.0288, 'bviol_mean': 0.6983, 'n': 8}
+{'system': 'vector', 'cap': 50, 'policy': 'fifo', 'overall_mean': 0.4616, 'overall_sd': 0.0548, 'bviol_mean': 0.4391, 'n': 8}
+{'system': 'vector', 'cap': 50, 'policy': 'importance', 'overall_mean': 0.6337, 'overall_sd': 0.0308, 'bviol_mean': 0.7018, 'n': 8}
+{'system': 'vector', 'cap': 'unlimited', 'policy': '-', 'overall_mean': 0.6355, 'overall_sd': 0.0695, 'bviol_mean': 0.4369, 'n': 8}
+{'system': 'vector_meta', 'cap': 100, 'policy': 'fifo', 'overall_mean': 0.6782, 'overall_sd': 0.0912, 'bviol_mean': 0.0108, 'n': 8}
+{'system': 'vector_meta', 'cap': 100, 'policy': 'importance', 'overall_mean': 0.8066, 'overall_sd': 0.0391, 'bviol_mean': 0.0194, 'n': 8}
+{'system': 'vector_meta', 'cap': 200, 'policy': 'fifo', 'overall_mean': 0.7978, 'overall_sd': 0.0504, 'bviol_mean': 0.0059, 'n': 8}
+{'system': 'vector_meta', 'cap': 200, 'policy': 'importance', 'overall_mean': 0.8031, 'overall_sd': 0.0381, 'bviol_mean': 0.0083, 'n': 8}
+{'system': 'vector_meta', 'cap': 25, 'policy': 'fifo', 'overall_mean': 0.3751, 'overall_sd': 0.0568, 'bviol_mean': 0.0012, 'n': 8}
+{'system': 'vector_meta', 'cap': 25, 'policy': 'importance', 'overall_mean': 0.8609, 'overall_sd': 0.0371, 'bviol_mean': 0.0183, 'n': 8}
+{'system': 'vector_meta', 'cap': 50, 'policy': 'fifo', 'overall_mean': 0.5181, 'overall_sd': 0.1019, 'bviol_mean': 0.0083, 'n': 8}
+{'system': 'vector_meta', 'cap': 50, 'policy': 'importance', 'overall_mean': 0.8244, 'overall_sd': 0.04, 'bviol_mean': 0.0194, 'n': 8}
+{'system': 'vector_meta', 'cap': 'unlimited', 'policy': '-', 'overall_mean': 0.8027, 'overall_sd': 0.0392, 'bviol_mean': 0.0059, 'n': 8}
+written results/capacity/capacity.csv, capacity.json

@@ -1,0 +1,16 @@
+propagation: done
+supersession: done
+private: done
+
+failure counts per 1000 questions (10 seeds x 3 families):
+system                  alias_miss  boundary_hallu  classification  distrust_confu  missed_knowled   phantom_value  source_confusi  stale_retrieva  temporal_error
+recency                        8.2            36.2           106.5            10.2             3.6            20.0            60.4             0.9            66.5
+bm25                           8.2            28.2            75.3            23.7             4.4            18.1            35.8             4.7            37.4
+vector                        14.5            57.1            78.6            31.0             4.4            19.0            52.5             5.1            55.3
+vector_recency                14.5            57.1            66.8            21.1             4.4            18.8            36.1             2.9            39.1
+vector_meta                   14.5             1.5            57.0            21.2             2.3            17.2            33.5             3.2            35.9
+text_structured               27.3            35.5            38.4             6.9             7.6            11.7            14.8             1.4            16.0
+structured                    55.0             0.0             0.4             0.0             0.0             0.0             0.0             0.0             0.0
+hybrid                        14.5            57.1             0.2             0.0             0.0            18.3             0.0             0.0             0.0
+
+written results/failures/failures.json

@@ -1,6 +1,6 @@
 from .base import Answer, Experience, MemorySystem, Query
 from .baselines import BM25Memory, RecencyMemory, VectorMetaMemory, VectorRecencyMemory
-from .hybrid import HybridMemory
+from .hybrid import HybridGuardedMemory, HybridMemory
 from .structured import StructuredMemory
 from .text_structured import TextStructuredMemory
 from .vector import VectorMemory
@@ -16,6 +16,7 @@ MEMORY_SYSTEMS = {
     "text_structured": TextStructuredMemory,
     "structured": StructuredMemory,
     "hybrid": HybridMemory,
+    "hybrid_guarded": HybridGuardedMemory,
 }
 
 __all__ = ["Answer", "Experience", "MemorySystem", "Query", "MEMORY_SYSTEMS",

@@ -42,3 +42,30 @@ class HybridMemory(MemorySystem):
             if vec_ans.value == "yes":
                 return vec_ans
         return ans
+
+
+class HybridGuardedMemory(HybridMemory):
+    """Hybrid with an epistemically honest router — the design iteration the
+    v1 ablations earned (results/ablations: the unguarded fallback is net
+    NEGATIVE, and its boundary hallucinations dominate at scale).
+
+    Rule: when the query carries a structured key, an empty belief table IS
+    the answer ("I have no information about that") — falling back to
+    similarity retrieval there manufactures knowledge out of adjacent
+    memories. The vector path is consulted ONLY for text-only queries (alias
+    phrasings), where the structured path genuinely has no opinion."""
+    name = "hybrid_guarded"
+
+    def answer(self, q: Query) -> Answer:
+        ans = self._structured.answer(q)
+        if q.subject is not None:
+            return ans          # keyed query: the table's answer is the answer
+        if ans.value == "unknown" and ans.confidence == 0.0:
+            vec_ans = self._vector.answer(q)
+            if vec_ans.value != "unknown":
+                return vec_ans
+        if q.qtype == "heard_of" and ans.value == "no":
+            vec_ans = self._vector.answer(q)
+            if vec_ans.value == "yes":
+                return vec_ans
+        return ans

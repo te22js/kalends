@@ -73,6 +73,8 @@ PAIRINGS = [
     ("structured", "text_structured"),  # size of the by-construction advantage
     ("vector_recency", "vector"),   # value of a time model alone
     ("vector_meta", "vector"),      # value of metadata filtering alone
+    ("hybrid_guarded", "hybrid"),   # value of the epistemically honest router
+    ("hybrid_guarded", "structured"),  # does guarded fallback beat no fallback?
 ]
 
 
