@@ -28,6 +28,12 @@ class Experience:
     accepted: bool                  # the agent's trust judgment at the time
     event_id: int
     text: str                       # natural-language rendering
+    # The speaker's honest claim about the chain root ("observed" if the info
+    # traces back to an eyewitness) and which event that root was. Part of
+    # communication content — enables independent-source accounting.
+    claimed_origin_kind: Optional[str] = None
+    claimed_origin_event: Optional[int] = None
+    claimed_origin_observer: Optional[str] = None
 
 
 # Query types (qtype):

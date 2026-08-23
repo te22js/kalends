@@ -65,6 +65,23 @@ class Provenance:
             node = node.upstream
         return node.kind
 
+    def root_signature(self, owner: str) -> tuple[str, int, Optional[str]]:
+        """(kind, event_id, observer) of the chain root. Two exposures are
+        independent evidence iff their root signatures differ: two witnesses
+        of the same event are independent observers (different observer), but
+        two reports relayed from the same witness are not (same signature)."""
+        nodes: list[Provenance] = []
+        node: Optional[Provenance] = self
+        while node is not None:
+            nodes.append(node)
+            node = node.upstream
+        root = nodes[-1]
+        if root.kind != "observed":
+            # Unterminated hearsay: no eyewitness at the bottom.
+            return ("told", root.event_id, root.source_agent)
+        observer = owner if len(nodes) == 1 else nodes[-2].source_agent
+        return ("observed", root.event_id, observer)
+
     def to_dict(self) -> dict:
         return {
             "kind": self.kind,

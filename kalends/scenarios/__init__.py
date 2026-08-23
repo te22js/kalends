@@ -40,6 +40,10 @@ class Scenario:
     jitter_p: float = 0.15        # chance an agent deviates from its schedule
     alias_p: float = 0.3          # chance a rendering uses the alias phrasing
     gossip_recency: int = 12      # beliefs older than this many ticks are no longer "news"
+    # Overload experiments: per-agent per-tick probability of an irrelevant
+    # episodic memory, drawn from filler_phrases.
+    irrelevant_memory_rate: float = 0.0
+    filler_phrases: tuple[str, ...] = ()
 
     def agent_ids(self) -> list[str]:
         return [a.agent_id for a in self.agents]

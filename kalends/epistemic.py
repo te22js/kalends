@@ -93,6 +93,22 @@ class EpistemicState:
     def belief_history(self, prop: Proposition) -> list[Exposure]:
         return list(self.exposures.get(prop.key, []))
 
+    def independent_origins(self, prop: Proposition) -> int:
+        """Number of independent evidence lines behind the current belief:
+        distinct provenance root signatures among accepted exposures carrying
+        the currently believed value. Reports relayed from the same witness
+        share a signature and count once."""
+        cur = self._current(prop.key)
+        if cur is None:
+            return 0
+        sigs = set()
+        for e in self.exposures.get(prop.key, []):
+            if not e.accepted or e.value != cur.value:
+                continue
+            owner = self.agent_id if e.kind == "observed" else (e.source_agent or "?")
+            sigs.add(e.provenance.root_signature(owner))
+        return len(sigs)
+
     def was_superseded(self, prop: Proposition) -> bool:
         """Did an accepted later exposure replace an earlier accepted one?"""
         accepted = [e for e in self.exposures.get(prop.key, []) if e.accepted]
