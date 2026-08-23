@@ -1,6 +1,6 @@
-n_agents=8: sim 0.02s, 75 exp/agent, 306 questions
-n_agents=16: sim 0.04s, 82 exp/agent, 697 questions
-n_agents=32: sim 0.09s, 87 exp/agent, 2417 questions
-n_agents=64: sim 0.23s, 86 exp/agent, 8527 questions
-n_agents=128: sim 0.41s, 86 exp/agent, 27048 questions
+n_agents=8: sim 0.01s, 75 exp/agent, 306 questions
+n_agents=16: sim 0.03s, 82 exp/agent, 697 questions
+n_agents=32: sim 0.08s, 87 exp/agent, 2417 questions
+n_agents=64: sim 0.17s, 86 exp/agent, 8527 questions
+n_agents=128: sim 0.47s, 86 exp/agent, 27048 questions
 written results/scaling/scaling.csv, scaling.json

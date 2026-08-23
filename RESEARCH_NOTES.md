@@ -67,6 +67,10 @@ occupies: ground truth is *generated*, arbitrarily scalable, and provably
 consistent, and it distinguishes "wrong vs. world" from "wrong vs. what the
 agent could know" — a distinction transcript benchmarks cannot make.
 
+**⚠ Superseded by the second pass:** §4 below found MemArena, which partially
+occupies this gap. The claim above stands only in its weakened form — see the
+honest repositioning in §4.
+
 ## 2. Sorting the ideas honestly
 
 **Already established (use, don't claim):**
@@ -119,3 +123,97 @@ Sources:
 - [Belief Engine](https://arxiv.org/pdf/2605.15343) · [Validation critical review](https://link.springer.com/article/10.1007/s10462-025-11412-6)
 - [ToM-agent](https://arxiv.org/html/2501.15355v1) · [Emergence World](https://arxiv.org/pdf/2606.08367)
 - [VirtLab](https://arxiv.org/pdf/2508.04634) · [APS prototype simulation](https://arxiv.org/html/2605.27419v1) · [GEPOC hybrid time-update](https://arxiv.org/pdf/2510.20840)
+
+---
+
+## 4. Second literature pass (post-build, sharper questions)
+
+Done after the system and first 30-seed results existed, per the brief:
+for each close work — what do they evaluate, what does Kalends do differently,
+is the difference meaningful, could they subsume us, what experiment would
+distinguish.
+
+### MemArena (arXiv 2608.02613) — THE closest work; changes our positioning
+- **What they evaluate:** 50 persona-driven LLM agents over 15 simulated days;
+  a world-event broadcaster routes events through a **visibility matrix**
+  (controlled information asymmetry, provenance preserved); six dimensions
+  incl. permission-aware access (≈ our knowledge boundary) and calibrated
+  abstention. Ground truth is simulation-derived for 5/6 dimensions,
+  **LLM-generated for factual QA**.
+- **What Kalends does differently:** (1) fully deterministic LLM-free
+  generative process — every label exact, replayable, free; (2) provenance
+  chains as first-class *objects* with root signatures →
+  **independent-source vs shared-ancestry accounting** (absent in MemArena);
+  (3) normative-belief scoring against the agent's trust-gated information
+  horizon (stale-but-correct ≠ error) rather than "did she change her mind"
+  probes; (4) **counterfactual event-deletion** with context-keyed RNG (their
+  single fixed world can't do this); (5) parameterized world *families* and
+  scaling as experimental variables — their stated limitation is exactly the
+  single-world design; (6) mechanism-level ablations (supersession/trust/
+  provenance/router) rather than backend comparison only.
+- **Meaningful?** Yes, but the story must change: Kalends is no longer "the
+  first computed-ground-truth world"; it is **the deterministic epistemic
+  *instrument*** — exact oracle, causal surgery, ancestry accounting —
+  complementary to MemArena's realism-first design.
+- **Could they subsume us?** Not currently (no counterfactuals, no ancestry
+  accounting, LLM labels in one dimension, one world). But they are close
+  enough that a paper must cite them prominently and compare directly.
+- **Distinguishing experiment:** run their backends (Memobase/MemSearch-style)
+  on Kalends families and show failure modes their LLM-labeled QA cannot
+  isolate (e.g. shared-ancestry inflation, stale-vs-horizon separation).
+
+### Ground Truth First (arXiv 2607.21962)
+Longitudinal agent-memory evaluation; found a "tenure crossover" in
+architecture rankings and argues for provenance-typed stores ("claims as
+claims, not facts") — independent convergence on our claimed-origin design.
+Transcript-longitudinal, not world-simulated; no oracle of the Kalends kind.
+Cite as motivation for provenance typing.
+
+### FANToM (arXiv 2310.15421) / Hi-ToM / Sotopia-ToM
+Theory-of-mind QA under information asymmetry in conversations. Hi-ToM's
+finding — models infer *current* beliefs but fail to retain *prior* belief
+states — is our supersession dimension in ToM clothing. Difference: they
+evaluate the *reasoner* (an LLM reading a transcript); Kalends evaluates the
+*memory architecture* of an agent embedded in the world, with mechanical
+ground truth and no reading comprehension confound. Complementary, not
+subsuming; a Kalends language-interface track would meet them halfway.
+
+### STALE / Supersede / Memora (2605.06527, 2606.27472, FAMA metric)
+Staleness and the memory-update gap in conversational memory. They diagnose
+and even train against supersession failures; none has world-grounded
+provenance or horizon-relative correctness. Kalends' supersession family is
+the world-grounded version of their probes — cite and align terminology.
+
+### Knowledge editing (ROME/MEMIT line)
+Edits model *weights*; unrelated mechanism, same epistemic goal (make new
+facts stick, old ones die). Keep out of scope; one sentence in related work.
+
+### Epistemic logic (Fagin/Halpern/Moses/Vardi), W3C PROV
+Our oracle is a small computable interpreted system; our provenance is a
+domain-specific PROV-like DAG. No novelty claims there — cite as foundations,
+gain rigor by using their vocabulary (information set, run, view).
+
+### Event-sourced simulation / DES
+Foundation, not contribution (unchanged from first pass).
+
+### Positioning after this pass (what we can defend)
+1. **Exactness**: every label mechanical, replayable; no LLM judge anywhere.
+2. **Epistemic-horizon scoring** (stale-but-epistemically-correct as a
+   *positive* target) — still not found elsewhere in this form.
+3. **Ancestry/independence accounting** as a benchmark dimension — not found
+   elsewhere.
+4. **Counterfactual event-surgery ground truth** — not found elsewhere in a
+   memory benchmark.
+5. World *families* + scaling + capacity as controlled variables.
+
+What we must NOT claim: first simulated-world memory benchmark; first
+visibility-controlled asymmetry; first provenance-aware memory store;
+anything about human memory.
+
+Sources (second pass): [MemArena](https://arxiv.org/html/2608.02613) ·
+[Ground Truth First](https://arxiv.org/html/2607.21962v1) ·
+[FANToM](https://arxiv.org/abs/2310.15421) ·
+[Sotopia-ToM](https://arxiv.org/html/2605.02307) ·
+[Hi-ToM](https://www.researchgate.net/publication/376402827_Hi-ToM_A_Benchmark_for_Evaluating_Higher-Order_Theory_of_Mind_Reasoning_in_Large_Language_Models) ·
+[memory survey 2602.06052](https://arxiv.org/pdf/2602.06052) ·
+[Momento](https://arxiv.org/pdf/2606.00832) · [AMemGym](https://arxiv.org/pdf/2603.01966)

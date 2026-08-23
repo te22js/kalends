@@ -1,10 +1,10 @@
 suite=core seeds=30 out=results/core
-  [core] propagation: 30 seeds done (65s elapsed)
-  [core] supersession: 30 seeds done (166s elapsed)
-  [core] private: 30 seeds done (224s elapsed)
-  [core] overload: 30 seeds done (297s elapsed)
-  [core] multihop: 30 seeds done (338s elapsed)
-  [core] conflict: 30 seeds done (389s elapsed)
+  [core] propagation: 30 seeds done (5s elapsed)
+  [core] supersession: 30 seeds done (13s elapsed)
+  [core] private: 30 seeds done (20s elapsed)
+  [core] overload: 30 seeds done (28s elapsed)
+  [core] multihop: 30 seeds done (32s elapsed)
+  [core] conflict: 30 seeds done (37s elapsed)
 
 == propagation (n=30 seeds) ==
   recency           overall 0.682 ±0.057  CI[0.661,0.703]  bviol 0.144
@@ -15,11 +15,14 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.834 ±0.077  CI[0.806,0.863]  bviol 0.129
   structured        overall 0.938 ±0.026  CI[0.928,0.948]  bviol 0.000
   hybrid            overall 0.934 ±0.030  CI[0.922,0.945]  bviol 0.283
+  hybrid_guarded    overall 0.969 ±0.013  CI[0.964,0.974]  bviol 0.005
     Δ hybrid_vs_vector_meta: +0.122 CI[+0.105,+0.138] d_z=2.764
     Δ hybrid_vs_recency: +0.252 CI[+0.230,+0.274] d_z=4.271
     Δ structured_vs_text_structured: +0.104 CI[+0.083,+0.124] d_z=1.869
     Δ vector_recency_vs_vector: +0.047 CI[+0.041,+0.054] d_z=2.606
     Δ vector_meta_vs_vector: +0.092 CI[+0.077,+0.108] d_z=2.28
+    Δ hybrid_guarded_vs_hybrid: +0.035 CI[+0.025,+0.046] d_z=1.274
+    Δ hybrid_guarded_vs_structured: +0.032 CI[+0.025,+0.038] d_z=1.831
 
 == supersession (n=30 seeds) ==
   recency           overall 0.678 ±0.058  CI[0.657,0.700]  bviol 0.312
@@ -30,11 +33,14 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.848 ±0.052  CI[0.829,0.868]  bviol 0.313
   structured        overall 0.939 ±0.026  CI[0.929,0.948]  bviol 0.000
   hybrid            overall 0.914 ±0.024  CI[0.905,0.923]  bviol 0.505
+  hybrid_guarded    overall 0.960 ±0.017  CI[0.954,0.967]  bviol 0.015
     Δ hybrid_vs_vector_meta: +0.109 CI[+0.095,+0.122] d_z=2.963
     Δ hybrid_vs_recency: +0.236 CI[+0.214,+0.258] d_z=3.945
     Δ structured_vs_text_structured: +0.090 CI[+0.078,+0.102] d_z=2.809
     Δ vector_recency_vs_vector: +0.083 CI[+0.073,+0.093] d_z=3.08
     Δ vector_meta_vs_vector: +0.152 CI[+0.135,+0.168] d_z=3.461
+    Δ hybrid_guarded_vs_hybrid: +0.046 CI[+0.038,+0.054] d_z=2.173
+    Δ hybrid_guarded_vs_structured: +0.021 CI[+0.017,+0.026] d_z=1.624
 
 == private (n=30 seeds) ==
   recency           overall 0.688 ±0.054  CI[0.668,0.708]  bviol 0.269
@@ -45,11 +51,14 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.812 ±0.065  CI[0.788,0.837]  bviol 0.258
   structured        overall 0.946 ±0.024  CI[0.937,0.955]  bviol 0.000
   hybrid            overall 0.895 ±0.035  CI[0.882,0.908]  bviol 0.333
+  hybrid_guarded    overall 0.974 ±0.010  CI[0.970,0.978]  bviol 0.002
     Δ hybrid_vs_vector_meta: +0.050 CI[+0.031,+0.069] d_z=0.967
     Δ hybrid_vs_recency: +0.207 CI[+0.187,+0.228] d_z=3.775
     Δ structured_vs_text_structured: +0.133 CI[+0.115,+0.151] d_z=2.71
     Δ vector_recency_vs_vector: +0.040 CI[+0.034,+0.045] d_z=2.648
     Δ vector_meta_vs_vector: +0.126 CI[+0.111,+0.140] d_z=3.261
+    Δ hybrid_guarded_vs_hybrid: +0.079 CI[+0.066,+0.092] d_z=2.267
+    Δ hybrid_guarded_vs_structured: +0.028 CI[+0.022,+0.035] d_z=1.663
 
 == overload (n=30 seeds) ==
   recency           overall 0.629 ±0.046  CI[0.612,0.646]  bviol 0.212
@@ -60,11 +69,14 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.819 ±0.071  CI[0.792,0.845]  bviol 0.217
   structured        overall 0.942 ±0.025  CI[0.933,0.951]  bviol 0.000
   hybrid            overall 0.913 ±0.034  CI[0.900,0.926]  bviol 0.297
+  hybrid_guarded    overall 0.968 ±0.014  CI[0.963,0.973]  bviol 0.002
     Δ hybrid_vs_vector_meta: +0.092 CI[+0.075,+0.110] d_z=1.981
     Δ hybrid_vs_recency: +0.284 CI[+0.263,+0.305] d_z=5.071
     Δ structured_vs_text_structured: +0.123 CI[+0.103,+0.143] d_z=2.325
     Δ vector_recency_vs_vector: +0.042 CI[+0.036,+0.049] d_z=2.534
     Δ vector_meta_vs_vector: +0.112 CI[+0.095,+0.128] d_z=2.522
+    Δ hybrid_guarded_vs_hybrid: +0.055 CI[+0.043,+0.066] d_z=1.747
+    Δ hybrid_guarded_vs_structured: +0.026 CI[+0.021,+0.032] d_z=1.715
 
 == multihop (n=30 seeds) ==
   recency           overall 0.683 ±0.067  CI[0.658,0.708]  bviol 0.114
@@ -75,11 +87,14 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.845 ±0.072  CI[0.818,0.872]  bviol 0.107
   structured        overall 0.941 ±0.026  CI[0.931,0.950]  bviol 0.000
   hybrid            overall 0.930 ±0.030  CI[0.918,0.941]  bviol 0.204
+  hybrid_guarded    overall 0.961 ±0.018  CI[0.954,0.968]  bviol 0.005
     Δ hybrid_vs_vector_meta: +0.100 CI[+0.084,+0.117] d_z=2.262
     Δ hybrid_vs_recency: +0.247 CI[+0.222,+0.272] d_z=3.651
     Δ structured_vs_text_structured: +0.096 CI[+0.077,+0.114] d_z=1.897
     Δ vector_recency_vs_vector: +0.046 CI[+0.037,+0.055] d_z=1.939
     Δ vector_meta_vs_vector: +0.106 CI[+0.087,+0.124] d_z=2.097
+    Δ hybrid_guarded_vs_hybrid: +0.031 CI[+0.021,+0.041] d_z=1.176
+    Δ hybrid_guarded_vs_structured: +0.020 CI[+0.016,+0.025] d_z=1.591
 
 == conflict (n=30 seeds) ==
   recency           overall 0.674 ±0.062  CI[0.651,0.697]  bviol 0.158
@@ -90,10 +105,13 @@ suite=core seeds=30 out=results/core
   text_structured   overall 0.837 ±0.075  CI[0.809,0.865]  bviol 0.110
   structured        overall 0.936 ±0.026  CI[0.926,0.946]  bviol 0.000
   hybrid            overall 0.924 ±0.035  CI[0.911,0.937]  bviol 0.282
+  hybrid_guarded    overall 0.962 ±0.015  CI[0.956,0.968]  bviol 0.009
     Δ hybrid_vs_vector_meta: +0.110 CI[+0.093,+0.127] d_z=2.398
     Δ hybrid_vs_recency: +0.250 CI[+0.227,+0.272] d_z=4.091
     Δ structured_vs_text_structured: +0.099 CI[+0.080,+0.119] d_z=1.887
     Δ vector_recency_vs_vector: +0.063 CI[+0.053,+0.073] d_z=2.317
     Δ vector_meta_vs_vector: +0.110 CI[+0.092,+0.128] d_z=2.296
+    Δ hybrid_guarded_vs_hybrid: +0.038 CI[+0.027,+0.049] d_z=1.303
+    Δ hybrid_guarded_vs_structured: +0.026 CI[+0.021,+0.031] d_z=1.828
 
 written: results/core/{configs,raw,summary}.json, summary.csv

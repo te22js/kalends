@@ -40,7 +40,8 @@
     "vector_meta",
     "text_structured",
     "structured",
-    "hybrid"
+    "hybrid",
+    "hybrid_guarded"
   ],
   "families": {
     "propagation": {
@@ -1283,6 +1284,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.9693,
+            "sd": 0.0131,
+            "median": 0.9691,
+            "ci95": [
+              0.9644,
+              0.9742
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.0046,
+            "sd": 0.0115,
+            "median": 0.0,
+            "ci95": [
+              0.0003,
+              0.0089
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.9066,
+            "sd": 0.0575,
+            "median": 0.9157,
+            "ci95": [
+              0.8852,
+              0.928
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.8404,
+            "sd": 0.0609,
+            "median": 0.8389,
+            "ci95": [
+              0.8177,
+              0.8631
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.6299,
+            "sd": 0.1711,
+            "median": 0.6589,
+            "ci95": [
+              0.5662,
+              0.6936
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.9954,
+            "sd": 0.0115,
+            "median": 1.0,
+            "ci95": [
+              0.9911,
+              0.9997
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 24
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 29
+          },
+          "dim_supersession": {
+            "mean": 0.9937,
+            "sd": 0.0073,
+            "median": 1.0,
+            "ci95": [
+              0.9909,
+              0.9964
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -1329,6 +1482,24 @@
             0.1076
           ],
           "cohen_dz": 2.28,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.0354,
+          "ci95": [
+            0.0251,
+            0.0458
+          ],
+          "cohen_dz": 1.274,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0315,
+          "ci95": [
+            0.0251,
+            0.0379
+          ],
+          "cohen_dz": 1.831,
           "n": 30
         }
       }
@@ -2573,6 +2744,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.9601,
+            "sd": 0.0174,
+            "median": 0.9576,
+            "ci95": [
+              0.9537,
+              0.9666
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.0147,
+            "sd": 0.0444,
+            "median": 0.0,
+            "ci95": [
+              -0.0018,
+              0.0313
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.8512,
+            "sd": 0.0734,
+            "median": 0.8387,
+            "ci95": [
+              0.8239,
+              0.8785
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.7979,
+            "sd": 0.0768,
+            "median": 0.7885,
+            "ci95": [
+              0.7693,
+              0.8265
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.4872,
+            "sd": 0.1811,
+            "median": 0.4554,
+            "ci95": [
+              0.4197,
+              0.5546
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.9853,
+            "sd": 0.0444,
+            "median": 1.0,
+            "ci95": [
+              0.9687,
+              1.0018
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 28
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_supersession": {
+            "mean": 0.9988,
+            "sd": 0.0027,
+            "median": 1.0,
+            "ci95": [
+              0.9978,
+              0.9998
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -2619,6 +2942,24 @@
             0.1681
           ],
           "cohen_dz": 3.461,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.0459,
+          "ci95": [
+            0.038,
+            0.0538
+          ],
+          "cohen_dz": 2.173,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0214,
+          "ci95": [
+            0.0165,
+            0.0264
+          ],
+          "cohen_dz": 1.624,
           "n": 30
         }
       }
@@ -3863,6 +4204,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.9741,
+            "sd": 0.0101,
+            "median": 0.973,
+            "ci95": [
+              0.9704,
+              0.9778
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.0023,
+            "sd": 0.0072,
+            "median": 0.0,
+            "ci95": [
+              -0.0004,
+              0.005
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.9111,
+            "sd": 0.049,
+            "median": 0.9081,
+            "ci95": [
+              0.8929,
+              0.9294
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.8462,
+            "sd": 0.0542,
+            "median": 0.8439,
+            "ci95": [
+              0.826,
+              0.8664
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.7287,
+            "sd": 0.1366,
+            "median": 0.7464,
+            "ci95": [
+              0.6778,
+              0.7796
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.9977,
+            "sd": 0.0072,
+            "median": 1.0,
+            "ci95": [
+              0.995,
+              1.0004
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 25
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_supersession": {
+            "mean": 0.9927,
+            "sd": 0.0092,
+            "median": 0.9951,
+            "ci95": [
+              0.9893,
+              0.9961
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -3909,6 +4402,24 @@
             0.1401
           ],
           "cohen_dz": 3.261,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.0787,
+          "ci95": [
+            0.0658,
+            0.0917
+          ],
+          "cohen_dz": 2.267,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0284,
+          "ci95": [
+            0.022,
+            0.0348
+          ],
+          "cohen_dz": 1.663,
           "n": 30
         }
       }
@@ -5153,6 +5664,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.968,
+            "sd": 0.0142,
+            "median": 0.9681,
+            "ci95": [
+              0.9627,
+              0.9733
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.002,
+            "sd": 0.0057,
+            "median": 0.0,
+            "ci95": [
+              -0.0001,
+              0.0041
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.9159,
+            "sd": 0.0564,
+            "median": 0.9157,
+            "ci95": [
+              0.8949,
+              0.9369
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.8195,
+            "sd": 0.071,
+            "median": 0.8146,
+            "ci95": [
+              0.793,
+              0.8459
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.6463,
+            "sd": 0.1709,
+            "median": 0.6357,
+            "ci95": [
+              0.5826,
+              0.7099
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.998,
+            "sd": 0.0057,
+            "median": 1.0,
+            "ci95": [
+              0.9959,
+              1.0001
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 24
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 29
+          },
+          "dim_supersession": {
+            "mean": 0.9937,
+            "sd": 0.0073,
+            "median": 1.0,
+            "ci95": [
+              0.9909,
+              0.9964
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -5199,6 +5862,24 @@
             0.1281
           ],
           "cohen_dz": 2.522,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.0547,
+          "ci95": [
+            0.043,
+            0.0664
+          ],
+          "cohen_dz": 1.747,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0262,
+          "ci95": [
+            0.0205,
+            0.0319
+          ],
+          "cohen_dz": 1.715,
           "n": 30
         }
       }
@@ -6443,6 +7124,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.9608,
+            "sd": 0.0182,
+            "median": 0.9595,
+            "ci95": [
+              0.954,
+              0.9676
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.0051,
+            "sd": 0.0126,
+            "median": 0.0,
+            "ci95": [
+              0.0004,
+              0.0097
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.9279,
+            "sd": 0.0641,
+            "median": 0.9411,
+            "ci95": [
+              0.904,
+              0.9518
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.7904,
+            "sd": 0.0851,
+            "median": 0.7746,
+            "ci95": [
+              0.7587,
+              0.8221
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.5687,
+            "sd": 0.1531,
+            "median": 0.5595,
+            "ci95": [
+              0.5116,
+              0.6257
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.9949,
+            "sd": 0.0126,
+            "median": 1.0,
+            "ci95": [
+              0.9903,
+              0.9996
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 24
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 29
+          },
+          "dim_supersession": {
+            "mean": 0.9918,
+            "sd": 0.0096,
+            "median": 1.0,
+            "ci95": [
+              0.9882,
+              0.9953
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -6489,6 +7322,24 @@
             0.1245
           ],
           "cohen_dz": 2.097,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.031,
+          "ci95": [
+            0.0212,
+            0.0408
+          ],
+          "cohen_dz": 1.176,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0203,
+          "ci95": [
+            0.0156,
+            0.0251
+          ],
+          "cohen_dz": 1.591,
           "n": 30
         }
       }
@@ -7733,6 +8584,158 @@
             ],
             "n": 30
           }
+        },
+        "hybrid_guarded": {
+          "overall": {
+            "mean": 0.9619,
+            "sd": 0.0152,
+            "median": 0.9609,
+            "ci95": [
+              0.9563,
+              0.9676
+            ],
+            "n": 30
+          },
+          "boundary_violation_rate": {
+            "mean": 0.0087,
+            "sd": 0.0136,
+            "median": 0.0,
+            "ci95": [
+              0.0036,
+              0.0138
+            ],
+            "n": 30
+          },
+          "epistemic_precision": {
+            "mean": 0.8815,
+            "sd": 0.0676,
+            "median": 0.8682,
+            "ci95": [
+              0.8563,
+              0.9067
+            ],
+            "n": 30
+          },
+          "epistemic_recall": {
+            "mean": 0.8201,
+            "sd": 0.0716,
+            "median": 0.7998,
+            "ci95": [
+              0.7934,
+              0.8468
+            ],
+            "n": 30
+          },
+          "dim_alias": {
+            "mean": 0.6056,
+            "sd": 0.1786,
+            "median": 0.6339,
+            "ci95": [
+              0.5391,
+              0.6722
+            ],
+            "n": 30
+          },
+          "dim_belief": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_boundary": {
+            "mean": 0.9913,
+            "sd": 0.0136,
+            "median": 1.0,
+            "ci95": [
+              0.9862,
+              0.9964
+            ],
+            "n": 30
+          },
+          "dim_contradiction": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_corroboration": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_false_rumor": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_provenance": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_source": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_stale": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          },
+          "dim_supersession": {
+            "mean": 0.9712,
+            "sd": 0.0163,
+            "median": 0.9703,
+            "ci95": [
+              0.9652,
+              0.9773
+            ],
+            "n": 30
+          },
+          "dim_temporal": {
+            "mean": 1.0,
+            "sd": 0.0,
+            "median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "n": 30
+          }
         }
       },
       "paired": {
@@ -7779,6 +8782,24 @@
             0.1282
           ],
           "cohen_dz": 2.296,
+          "n": 30
+        },
+        "hybrid_guarded_vs_hybrid": {
+          "mean_diff": 0.038,
+          "ci95": [
+            0.0272,
+            0.0489
+          ],
+          "cohen_dz": 1.303,
+          "n": 30
+        },
+        "hybrid_guarded_vs_structured": {
+          "mean_diff": 0.0259,
+          "ci95": [
+            0.0206,
+            0.0312
+          ],
+          "cohen_dz": 1.828,
           "n": 30
         }
       }
