@@ -1,0 +1,5 @@
+Python 3.9.6
+ProductName:		macOS
+ProductVersion:		15.5
+BuildVersion:		24F74
+no third-party runtime deps; pytest for tests: pytest 8.3.5

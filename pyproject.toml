@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kalends"
+version = "0.1.0"
+description = "Research substrate for persistent AI worlds with epistemically correct agent memory (Pompeii, 79 CE micro-world + Kalends-MemoryBench)"
+requires-python = ">=3.10"
+# Deliberately zero runtime dependencies: everything is stdlib, deterministic, offline.
+dependencies = []
+
+[project.scripts]
+kalends = "kalends.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["kalends*"]
