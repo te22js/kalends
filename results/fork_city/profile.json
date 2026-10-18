@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python_version": "3.12.14",
+    "python_implementation": "CPython",
+    "os": "Darwin",
+    "os_release": "24.5.0",
+    "machine": "arm64",
+    "cpu_model": "arm"
+  },
+  "population_order": [
+    8,
+    32,
+    128
+  ],
+  "profiles": [
+    {
+      "population": 8,
+      "config": {
+        "seed": 42,
+        "n_agents": 8,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "repeats": 5,
+      "runtime_seconds": [
+        0.013517125000362284,
+        0.011747582997486461,
+        0.011942417000682326,
+        0.011676665999402758,
+        0.011521792002895381
+      ],
+      "median_seconds": 0.011747582997486461,
+      "mean_seconds": 0.012081116600165842,
+      "min_seconds": 0.011521792002895381,
+      "max_seconds": 0.013517125000362284,
+      "sample_sd_seconds": 0.0008168578000511019,
+      "worlds_per_second": 85.12389316287123,
+      "events_per_second": 37880.132457477695,
+      "events": 445,
+      "decisions": 51,
+      "deterministic": true,
+      "ledger_hash": "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+      "semantic_hash": "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+      "repeat_ledger_hashes": [
+        "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+        "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+        "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+        "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+        "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08"
+      ],
+      "repeat_semantic_hashes": [
+        "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+        "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+        "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+        "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+        "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97"
+      ],
+      "peak_traced_bytes": 656991,
+      "traced_run_seconds": 0.06889062499976717,
+      "traced_semantic_hash": "2eb37439ad5461547ff2c4eb0370bfc5d83bd02240886c8951c829caa6f17c97",
+      "max_rss_bytes": 28983296,
+      "max_rss_kib": 28304.0,
+      "rss_availability": "process high-water mark before allocation tracing"
+    },
+    {
+      "population": 32,
+      "config": {
+        "seed": 42,
+        "n_agents": 32,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "repeats": 5,
+      "runtime_seconds": [
+        0.08668270799898892,
+        0.08510758400007035,
+        0.08652729100140277,
+        0.08581662500000675,
+        0.08635166699968977
+      ],
+      "median_seconds": 0.08635166699968977,
+      "mean_seconds": 0.08609717500003171,
+      "min_seconds": 0.08510758400007035,
+      "max_seconds": 0.08668270799898892,
+      "sample_sd_seconds": 0.0006423810191606975,
+      "worlds_per_second": 11.580552347687656,
+      "events_per_second": 28962.961421566826,
+      "events": 2501,
+      "decisions": 233,
+      "deterministic": true,
+      "ledger_hash": "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+      "semantic_hash": "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+      "repeat_ledger_hashes": [
+        "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+        "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+        "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+        "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+        "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6"
+      ],
+      "repeat_semantic_hashes": [
+        "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+        "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+        "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+        "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+        "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702"
+      ],
+      "peak_traced_bytes": 3656041,
+      "traced_run_seconds": 0.4781362909998279,
+      "traced_semantic_hash": "5a1049b39594d05631c515649442675482265fc34f0fca45d107fbcfc3341702",
+      "max_rss_bytes": 42024960,
+      "max_rss_kib": 41040.0,
+      "rss_availability": "process high-water mark before allocation tracing"
+    },
+    {
+      "population": 128,
+      "config": {
+        "seed": 42,
+        "n_agents": 128,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "repeats": 5,
+      "runtime_seconds": [
+        0.5474490410015278,
+        0.5267291250020207,
+        0.521965416999592,
+        0.5019394580012886,
+        0.5099269159982214
+      ],
+      "median_seconds": 0.521965416999592,
+      "mean_seconds": 0.5216019914005301,
+      "min_seconds": 0.5019394580012886,
+      "max_seconds": 0.5474490410015278,
+      "sample_sd_seconds": 0.017445716920894264,
+      "worlds_per_second": 1.9158357382147824,
+      "events_per_second": 20995.6438550958,
+      "events": 10959,
+      "decisions": 927,
+      "deterministic": true,
+      "ledger_hash": "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+      "semantic_hash": "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+      "repeat_ledger_hashes": [
+        "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+        "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+        "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+        "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+        "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6"
+      ],
+      "repeat_semantic_hashes": [
+        "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+        "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+        "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+        "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+        "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153"
+      ],
+      "peak_traced_bytes": 16194533,
+      "traced_run_seconds": 2.7695033749987488,
+      "traced_semantic_hash": "25b7d622b7dc8314177aeae89b0c54423be64a40ab0ed034e3a4f6ca0fe96153",
+      "max_rss_bytes": 87490560,
+      "max_rss_kib": 85440.0,
+      "rss_availability": "process high-water mark before allocation tracing"
+    }
+  ],
+  "methodology": {
+    "isolation": "one fresh child process per population, executed sequentially",
+    "runtime": "five CitySimulation construction+run measurements without tracemalloc; gc.collect before each; hashing outside timing",
+    "warmth": "Python and city modules imported before repeats; first world run is included among the five",
+    "traced_memory": "one separate construction+run after timed repeats; peak Python traced allocations in bytes, not RSS; imports excluded",
+    "traced_runtime": "reported separately; instrumentation overhead is excluded from median runtime",
+    "rss": "fresh worker process maximum RSS after five untraced runs, sampled before tracing; includes imports, determinism hashing, and allocator retention; bytes and KiB normalized",
+    "rss_units": "macOS ru_maxrss bytes; other supported Unix ru_maxrss KiB; this is a process high-water mark, not incremental per-world RAM",
+    "determinism": "full ledger and decision semantic hashes agree across all five untraced runs and the separate traced run",
+    "study_separation": "diagnostic fixed configuration; no policy or threshold selection"
+  }
+}

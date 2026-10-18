@@ -20,13 +20,21 @@ all sprint experiments go under `results/fork_city/`.
 
 ## Implementation / verification checklist
 
-- [ ] Add reusable local-information decision/economy loop and grain scenario.
-- [ ] Deep-copy tick boundary forks, keyed paired randomness, traceable parents.
-- [ ] Build local HTTP API and functional map/timeline/inspector/comparison UI.
-- [ ] Compare existing memories with fixed decision policy and separate gates.
-- [ ] Freeze development/held-out seed split before running held-out worlds.
-- [ ] Save raw per-world results, clustered paired statistics and actual plots.
-- [ ] Verify determinism, containment, duplication, correction, branch isolation.
-- [ ] Verify API and browser controls; capture genuine screenshot if supported.
-- [ ] Literature audit, research note, strategic note, reproducible handoff.
-- [ ] Commit tested milestones; report limitations and actual evidence honestly.
+- [x] Add reusable local-information decision/economy loop and grain scenario.
+- [x] Deep-copy tick boundary forks, keyed paired randomness, traceable parents.
+- [x] Build local HTTP API and functional map/timeline/inspector/comparison UI.
+- [x] Compare existing memories with fixed decision policy and separate gates.
+- [x] Freeze development/held-out seed split before running held-out worlds.
+- [x] Save raw per-world results, clustered paired statistics and actual plots.
+- [x] Verify determinism, containment, duplication, correction, branch isolation.
+- [x] Verify API and browser controls; capture genuine screenshots.
+- [x] Literature audit, research note, strategic note, reproducible handoff.
+- [x] Commit tested milestones; report limitations and actual evidence honestly.
+
+Final full validation:227 tests pass under CPython 3.12.14. Historical seed 42
+ledger hash remains identical. Study source:ce2f2b8; tested implementation
+including actual deletion checks:70d069a. See validation.json for evidence.
+
+The study is mixed/negative, with a material task-score/physical-fill mismatch.
+It establishes an instrument and working prototype, not superior autonomous
+economic performance. Pilots were preserved and excluded, not overwritten.

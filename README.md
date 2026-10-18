@@ -1,5 +1,35 @@
 # Kalends
 
+## Fork the City — runnable local world
+
+The new city demonstration connects the existing ledger, private experiences,
+and memory backends to consequential grain decisions and isolated history forks.
+It runs offline with no runtime dependencies or model API keys.
+
+```bash
+python3 -m kalends.city_server                 # http://127.0.0.1:8765
+python3 -m pytest tests/                      # original + city/ActionBench invariants
+python3 -m kalends.city.causal                 # actual message-deletion replay
+```
+
+For the first branch: reset to seed 42, **Step twice** to complete tick 1,
+deliver a verified inspection to Livia, then **Step**. Her original and altered
+choices, cash and inventory differ. Select her decision to inspect the evidence
+and run **Test a message dependency**. All displayed values come from the engine.
+
+See [local demo instructions](docs/fork_city/RUNNING.md),
+[architecture](docs/fork_city/ARCHITECTURE.md),
+[new research note](docs/fork_city/RESEARCH_NOTE.md), and
+[sprint handoff](KALENDS_SPRINT_HANDOFF.md). New measurements live only in
+`results/fork_city/`; the historical MemoryBench artifacts below are unchanged.
+
+```bash
+python3 -m kalends.actionbench.runner --split heldout --seeds 30 --populations 8,32 --out results/my_actionbench
+python3 -m kalends.actionbench.plots results/my_actionbench  # optional matplotlib
+```
+
+## Original MemoryBench substrate
+
 A research substrate for **persistent AI worlds** in which agents maintain
 temporally correct, causally grounded, individually bounded memories and
 beliefs over a changing shared reality — and **Kalends-MemoryBench**, a
@@ -40,7 +70,7 @@ python3 -m kalends experiment --suite core --seeds 30 --out results/core
 python3 -m pytest tests/                             # 40 invariant/audit/fuzz tests
 ```
 
-## Headline results (30 seeds × 9 scenario families; full stats in results/)
+## Historical MemoryBench results (30 seeds × 9 scenario families)
 
 Mean overall accuracy (±sd across seeds; boundary-violation rate in brackets):
 

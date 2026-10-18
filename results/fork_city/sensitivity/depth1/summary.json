@@ -1,0 +1,1003 @@
+{
+  "systems": {
+    "8/bm25": {
+      "population": 8,
+      "condition": "bm25",
+      "n_worlds": 120,
+      "n_seeds": 30,
+      "n_decisions": 5681,
+      "metrics": {
+        "action_error_rate": {
+          "mean": 0.3825,
+          "sd": 0.0734,
+          "median": 0.3707,
+          "ci95": [
+            0.3551,
+            0.4098
+          ],
+          "n": 30
+        },
+        "autonomy": {
+          "mean": 0.3695,
+          "sd": 0.1127,
+          "median": 0.3571,
+          "ci95": [
+            0.3275,
+            0.4114
+          ],
+          "n": 30
+        },
+        "decision_regret": {
+          "mean": 1.7346,
+          "sd": 0.4367,
+          "median": 1.716,
+          "ci95": [
+            1.572,
+            1.8972
+          ],
+          "n": 30
+        },
+        "false_abstention_rate": {
+          "mean": 0.5563,
+          "sd": 0.1316,
+          "median": 0.5725,
+          "ci95": [
+            0.5073,
+            0.6054
+          ],
+          "n": 30
+        },
+        "belief_error_rate": {
+          "mean": 0.4582,
+          "sd": 0.0693,
+          "median": 0.4603,
+          "ci95": [
+            0.4324,
+            0.484
+          ],
+          "n": 30
+        },
+        "qa_accuracy": {
+          "mean": 0.9654,
+          "sd": 0.0242,
+          "median": 0.9614,
+          "ci95": [
+            0.9564,
+            0.9744
+          ],
+          "n": 30
+        },
+        "boundary_violation_rate": {
+          "mean": 0.0286,
+          "sd": 0.0175,
+          "median": 0.0345,
+          "ci95": [
+            0.0221,
+            0.0351
+          ],
+          "n": 30
+        },
+        "source_independence_failure_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "verification_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "selective_risk": {
+          "mean": 0.4447,
+          "sd": 0.2337,
+          "median": 0.5334,
+          "ci95": [
+            0.3576,
+            0.5317
+          ],
+          "n": 30
+        },
+        "correction_latency": {
+          "mean": 2.3042,
+          "sd": 0.764,
+          "median": 2.25,
+          "ci95": [
+            2.0196,
+            2.5887
+          ],
+          "n": 30
+        },
+        "correction_unrecovered_rate": {
+          "mean": 0.0472,
+          "sd": 0.0914,
+          "median": 0.0,
+          "ci95": [
+            0.0132,
+            0.0813
+          ],
+          "n": 30
+        },
+        "seconds": {
+          "mean": 0.0072,
+          "sd": 0.0043,
+          "median": 0.0063,
+          "ci95": [
+            0.0056,
+            0.0088
+          ],
+          "n": 30
+        },
+        "events_per_second": {
+          "mean": 41952.535,
+          "sd": 8096.9543,
+          "median": 42773.7682,
+          "ci95": [
+            38936.8136,
+            44968.2565
+          ],
+          "n": 30
+        }
+      }
+    },
+    "8/guarded_lineage2": {
+      "population": 8,
+      "condition": "guarded_lineage2",
+      "n_worlds": 120,
+      "n_seeds": 30,
+      "n_decisions": 6170,
+      "metrics": {
+        "action_error_rate": {
+          "mean": 0.3187,
+          "sd": 0.0751,
+          "median": 0.3342,
+          "ci95": [
+            0.2907,
+            0.3467
+          ],
+          "n": 30
+        },
+        "autonomy": {
+          "mean": 0.2587,
+          "sd": 0.1316,
+          "median": 0.2449,
+          "ci95": [
+            0.2096,
+            0.3077
+          ],
+          "n": 30
+        },
+        "decision_regret": {
+          "mean": 1.7965,
+          "sd": 0.4775,
+          "median": 1.8961,
+          "ci95": [
+            1.6187,
+            1.9744
+          ],
+          "n": 30
+        },
+        "false_abstention_rate": {
+          "mean": 0.6934,
+          "sd": 0.1036,
+          "median": 0.6889,
+          "ci95": [
+            0.6548,
+            0.7319
+          ],
+          "n": 30
+        },
+        "belief_error_rate": {
+          "mean": 0.4435,
+          "sd": 0.0728,
+          "median": 0.4645,
+          "ci95": [
+            0.4164,
+            0.4706
+          ],
+          "n": 30
+        },
+        "qa_accuracy": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n": 30
+        },
+        "boundary_violation_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "source_independence_failure_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "verification_rate": {
+          "mean": 0.1929,
+          "sd": 0.0529,
+          "median": 0.1888,
+          "ci95": [
+            0.1732,
+            0.2126
+          ],
+          "n": 30
+        },
+        "selective_risk": {
+          "mean": 0.3317,
+          "sd": 0.1913,
+          "median": 0.3586,
+          "ci95": [
+            0.2605,
+            0.403
+          ],
+          "n": 30
+        },
+        "correction_latency": {
+          "mean": 2.1679,
+          "sd": 0.5218,
+          "median": 2.1458,
+          "ci95": [
+            1.9736,
+            2.3623
+          ],
+          "n": 30
+        },
+        "correction_unrecovered_rate": {
+          "mean": 0.0426,
+          "sd": 0.1076,
+          "median": 0.0,
+          "ci95": [
+            0.0025,
+            0.0826
+          ],
+          "n": 30
+        },
+        "seconds": {
+          "mean": 0.0144,
+          "sd": 0.0078,
+          "median": 0.0118,
+          "ci95": [
+            0.0115,
+            0.0173
+          ],
+          "n": 30
+        },
+        "events_per_second": {
+          "mean": 30723.5385,
+          "sd": 6946.713,
+          "median": 32945.6965,
+          "ci95": [
+            28136.2259,
+            33310.851
+          ],
+          "n": 30
+        }
+      }
+    },
+    "8/guarded_sources2": {
+      "population": 8,
+      "condition": "guarded_sources2",
+      "n_worlds": 120,
+      "n_seeds": 30,
+      "n_decisions": 6170,
+      "metrics": {
+        "action_error_rate": {
+          "mean": 0.3187,
+          "sd": 0.0751,
+          "median": 0.3342,
+          "ci95": [
+            0.2907,
+            0.3467
+          ],
+          "n": 30
+        },
+        "autonomy": {
+          "mean": 0.2587,
+          "sd": 0.1316,
+          "median": 0.2449,
+          "ci95": [
+            0.2096,
+            0.3077
+          ],
+          "n": 30
+        },
+        "decision_regret": {
+          "mean": 1.7965,
+          "sd": 0.4775,
+          "median": 1.8961,
+          "ci95": [
+            1.6187,
+            1.9744
+          ],
+          "n": 30
+        },
+        "false_abstention_rate": {
+          "mean": 0.6934,
+          "sd": 0.1036,
+          "median": 0.6889,
+          "ci95": [
+            0.6548,
+            0.7319
+          ],
+          "n": 30
+        },
+        "belief_error_rate": {
+          "mean": 0.4435,
+          "sd": 0.0728,
+          "median": 0.4645,
+          "ci95": [
+            0.4164,
+            0.4706
+          ],
+          "n": 30
+        },
+        "qa_accuracy": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n": 30
+        },
+        "boundary_violation_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "source_independence_failure_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "verification_rate": {
+          "mean": 0.1929,
+          "sd": 0.0529,
+          "median": 0.1888,
+          "ci95": [
+            0.1732,
+            0.2126
+          ],
+          "n": 30
+        },
+        "selective_risk": {
+          "mean": 0.3317,
+          "sd": 0.1913,
+          "median": 0.3586,
+          "ci95": [
+            0.2605,
+            0.403
+          ],
+          "n": 30
+        },
+        "correction_latency": {
+          "mean": 2.1679,
+          "sd": 0.5218,
+          "median": 2.1458,
+          "ci95": [
+            1.9736,
+            2.3623
+          ],
+          "n": 30
+        },
+        "correction_unrecovered_rate": {
+          "mean": 0.0426,
+          "sd": 0.1076,
+          "median": 0.0,
+          "ci95": [
+            0.0025,
+            0.0826
+          ],
+          "n": 30
+        },
+        "seconds": {
+          "mean": 0.0138,
+          "sd": 0.0063,
+          "median": 0.0107,
+          "ci95": [
+            0.0114,
+            0.0161
+          ],
+          "n": 30
+        },
+        "events_per_second": {
+          "mean": 30933.8808,
+          "sd": 7946.4515,
+          "median": 32163.2977,
+          "ci95": [
+            27974.2144,
+            33893.5473
+          ],
+          "n": 30
+        }
+      }
+    },
+    "8/hybrid": {
+      "population": 8,
+      "condition": "hybrid",
+      "n_worlds": 120,
+      "n_seeds": 30,
+      "n_decisions": 5695,
+      "metrics": {
+        "action_error_rate": {
+          "mean": 0.3797,
+          "sd": 0.075,
+          "median": 0.359,
+          "ci95": [
+            0.3518,
+            0.4076
+          ],
+          "n": 30
+        },
+        "autonomy": {
+          "mean": 0.3722,
+          "sd": 0.1164,
+          "median": 0.3571,
+          "ci95": [
+            0.3289,
+            0.4156
+          ],
+          "n": 30
+        },
+        "decision_regret": {
+          "mean": 1.718,
+          "sd": 0.4303,
+          "median": 1.6963,
+          "ci95": [
+            1.5577,
+            1.8782
+          ],
+          "n": 30
+        },
+        "false_abstention_rate": {
+          "mean": 0.5529,
+          "sd": 0.1361,
+          "median": 0.5736,
+          "ci95": [
+            0.5022,
+            0.6036
+          ],
+          "n": 30
+        },
+        "belief_error_rate": {
+          "mean": 0.4554,
+          "sd": 0.0719,
+          "median": 0.4556,
+          "ci95": [
+            0.4286,
+            0.4821
+          ],
+          "n": 30
+        },
+        "qa_accuracy": {
+          "mean": 0.9715,
+          "sd": 0.0174,
+          "median": 0.9655,
+          "ci95": [
+            0.965,
+            0.978
+          ],
+          "n": 30
+        },
+        "boundary_violation_rate": {
+          "mean": 0.0285,
+          "sd": 0.0174,
+          "median": 0.0345,
+          "ci95": [
+            0.022,
+            0.035
+          ],
+          "n": 30
+        },
+        "source_independence_failure_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "verification_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "selective_risk": {
+          "mean": 0.4439,
+          "sd": 0.2343,
+          "median": 0.5281,
+          "ci95": [
+            0.3567,
+            0.5312
+          ],
+          "n": 30
+        },
+        "correction_latency": {
+          "mean": 2.3125,
+          "sd": 0.7548,
+          "median": 2.25,
+          "ci95": [
+            2.0314,
+            2.5936
+          ],
+          "n": 30
+        },
+        "correction_unrecovered_rate": {
+          "mean": 0.0417,
+          "sd": 0.0774,
+          "median": 0.0,
+          "ci95": [
+            0.0128,
+            0.0705
+          ],
+          "n": 30
+        },
+        "seconds": {
+          "mean": 0.0071,
+          "sd": 0.0019,
+          "median": 0.0063,
+          "ci95": [
+            0.0064,
+            0.0078
+          ],
+          "n": 30
+        },
+        "events_per_second": {
+          "mean": 37242.5067,
+          "sd": 6510.2257,
+          "median": 38962.0193,
+          "ci95": [
+            34817.7644,
+            39667.2489
+          ],
+          "n": 30
+        }
+      }
+    },
+    "8/hybrid_guarded": {
+      "population": 8,
+      "condition": "hybrid_guarded",
+      "n_worlds": 120,
+      "n_seeds": 30,
+      "n_decisions": 5695,
+      "metrics": {
+        "action_error_rate": {
+          "mean": 0.3797,
+          "sd": 0.075,
+          "median": 0.359,
+          "ci95": [
+            0.3518,
+            0.4076
+          ],
+          "n": 30
+        },
+        "autonomy": {
+          "mean": 0.3722,
+          "sd": 0.1164,
+          "median": 0.3571,
+          "ci95": [
+            0.3289,
+            0.4156
+          ],
+          "n": 30
+        },
+        "decision_regret": {
+          "mean": 1.718,
+          "sd": 0.4303,
+          "median": 1.6963,
+          "ci95": [
+            1.5577,
+            1.8782
+          ],
+          "n": 30
+        },
+        "false_abstention_rate": {
+          "mean": 0.5529,
+          "sd": 0.1361,
+          "median": 0.5736,
+          "ci95": [
+            0.5022,
+            0.6036
+          ],
+          "n": 30
+        },
+        "belief_error_rate": {
+          "mean": 0.4702,
+          "sd": 0.0714,
+          "median": 0.4674,
+          "ci95": [
+            0.4437,
+            0.4968
+          ],
+          "n": 30
+        },
+        "qa_accuracy": {
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n": 30
+        },
+        "boundary_violation_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "source_independence_failure_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "verification_rate": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n": 30
+        },
+        "selective_risk": {
+          "mean": 0.4439,
+          "sd": 0.2343,
+          "median": 0.5281,
+          "ci95": [
+            0.3567,
+            0.5312
+          ],
+          "n": 30
+        },
+        "correction_latency": {
+          "mean": 2.3125,
+          "sd": 0.7548,
+          "median": 2.25,
+          "ci95": [
+            2.0314,
+            2.5936
+          ],
+          "n": 30
+        },
+        "correction_unrecovered_rate": {
+          "mean": 0.0417,
+          "sd": 0.0774,
+          "median": 0.0,
+          "ci95": [
+            0.0128,
+            0.0705
+          ],
+          "n": 30
+        },
+        "seconds": {
+          "mean": 0.0091,
+          "sd": 0.0069,
+          "median": 0.0067,
+          "ci95": [
+            0.0066,
+            0.0117
+          ],
+          "n": 30
+        },
+        "events_per_second": {
+          "mean": 35953.0551,
+          "sd": 8668.783,
+          "median": 38859.1396,
+          "ci95": [
+            32724.3553,
+            39181.755
+          ],
+          "n": 30
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "8/hybrid-minus-hybrid_guarded": {
+      "decision_regret": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "action_error_rate": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "autonomy": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "qa_accuracy": {
+        "mean_diff": -0.0285,
+        "ci95": [
+          -0.035,
+          -0.022
+        ],
+        "cohen_dz": -1.639,
+        "n": 30
+      }
+    },
+    "8/guarded_sources2-minus-guarded_lineage2": {
+      "decision_regret": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "action_error_rate": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "autonomy": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      },
+      "qa_accuracy": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      }
+    },
+    "8/hybrid_guarded-minus-guarded_lineage2": {
+      "decision_regret": {
+        "mean_diff": -0.0785,
+        "ci95": [
+          -0.2256,
+          0.0685
+        ],
+        "cohen_dz": -0.199,
+        "n": 30
+      },
+      "action_error_rate": {
+        "mean_diff": 0.061,
+        "ci95": [
+          0.0408,
+          0.0812
+        ],
+        "cohen_dz": 1.126,
+        "n": 30
+      },
+      "autonomy": {
+        "mean_diff": 0.1136,
+        "ci95": [
+          0.0689,
+          0.1583
+        ],
+        "cohen_dz": 0.946,
+        "n": 30
+      },
+      "qa_accuracy": {
+        "mean_diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "cohen_dz": 0.0,
+        "n": 30
+      }
+    }
+  },
+  "ci_method": "95% t interval across paired seed means; scenario families averaged within seed",
+  "independent_unit": "seed, not decision, agent, or family",
+  "risk_definition": "incorrect reserves / all reserves (zero if no reserves; inspect coverage)",
+  "regret_definition": "reserve while available=2, defer while disrupted=6, verify=1.5; otherwise 0",
+  "correction_definition": "local direct contradictory observation to next agreeing decision; non-recovery reported separately",
+  "config": {
+    "split": "heldout",
+    "seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1029
+    ],
+    "populations": [
+      8
+    ],
+    "families": [
+      "rumour",
+      "shortage",
+      "recovery",
+      "private"
+    ],
+    "conditions": {
+      "bm25": [
+        "bm25",
+        "none",
+        2
+      ],
+      "hybrid": [
+        "hybrid",
+        "none",
+        2
+      ],
+      "hybrid_guarded": [
+        "hybrid_guarded",
+        "none",
+        2
+      ],
+      "guarded_lineage2": [
+        "hybrid_guarded",
+        "lineage",
+        2
+      ],
+      "guarded_sources2": [
+        "hybrid_guarded",
+        "source_count",
+        2
+      ]
+    },
+    "capacity": 64,
+    "communication_depth": 1,
+    "n_ticks": 24,
+    "query": {
+      "subject": "grain",
+      "predicate": "supply",
+      "top_k": 4
+    },
+    "capacity_semantics": "FIFO experiences per agent, including episodic records; 0 means unlimited",
+    "fairness": "same local input schema and cap, original architecture lookup rules; structured exact-key versus retrieval top-4 is disclosed",
+    "source_hashes": {
+      "__init__.py": "32fbf9fc8085f4ef9b77b11a806f36b2e53906c0c0a92385c49ac1be3f007c64",
+      "__main__.py": "13d8aedb59685909759b32cf9e0454fedcb46ac88a337f28dffa5897f058680f",
+      "actionbench/__init__.py": "a8e61a73dd4a1d8c23d8c45a4227f1ad5c6b592491a3edab2f4c644f7614a5d4",
+      "actionbench/plots.py": "e047b330f59909fef60d086ce155bdab76a65a0e64e6443d26c91f92b568b9e1",
+      "actionbench/policy.py": "6ad02486f7012c9fe6e071e67d392a67c36ec644ae59e4d0a0becf0b77c3632a",
+      "actionbench/runner.py": "f3eb0b37006c92123e2f4c314844999008067a13b2639fc313063e83701546de",
+      "agents.py": "d2ae5065c178b12c79cf2d4d239c3f01dd50b8ca26c1d0f05ae55b52e506804b",
+      "bench/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bench/experiment.py": "c512097c87776952278ae9f91a0af47401b0a38c9d6957967daea077bd700734",
+      "bench/failures.py": "e20361857931c193d2673b4b8b1d2cd398b88965835ce31357516183896971f9",
+      "bench/harness.py": "a075eda8c5b2b5759f86e4da626419e6b82720b8450b066327a14ff030928ca4",
+      "bench/questions.py": "db9a18c3eaa72498db4a88423de1c206d64d60dfce2324cc9f03cd768901becd",
+      "bench/stats.py": "9636c0acf98aa1196a04614439c9e1e8b8d03e5fd6571769484341e2af2b2725",
+      "city/__init__.py": "ea9e2a9eafeacd9ca2a38852b472d53af39535951988070fd6c331a725dc04d3",
+      "city/causal.py": "67d28f8ac6cbf539b2f1e4af248b1b4eb75b90b771edab612c199656ecbdf8e2",
+      "city/policy.py": "30ab0fdaf8526d9df834a01fd1c77335d854936e8d1b03f6127b66b8b6eec3c7",
+      "city/scenario.py": "fac2ab8f291ab180734a7e474424e25e175a55f18edb11690be196972f89999d",
+      "city/simulation.py": "8979ad5fe361dc663f5ed3440ef65834a13a666e21f6fd9b9c8bed09a7ef1c9b",
+      "city_server.py": "85697fbd03a172809b4517f2f3d44818c2ae1e31417efd07d6eae1ba3443fd04",
+      "counterfactual.py": "25e17aed8cb2ea3890dc465ee69b7384ab5684590df055d25b400119b36af1d5",
+      "epistemic.py": "ce04a8cf927bb5eb999620a83b92447cdeb59b7e2839601f90b98031d81152ff",
+      "events.py": "06641e037fa6e6e078fa2f14e65f75410a4d7c3e87e306d78e4b3c47f39496c8",
+      "memory/__init__.py": "fdd29b0f2101a3347f3158219b4ef347eb7bedb0418d8b3f2088568dc3a6d9cc",
+      "memory/base.py": "f708285e4068fc0ea06ccf23558adaac3387f0d66059ed254460168a514c8c30",
+      "memory/baselines.py": "7228d21573482f781ae861e4290776575ea8b8b19ea0e83225ce5f9e1c8bba04",
+      "memory/capacity.py": "f90f910091143d8d53abd200fea2f0364febe0df3c0711a1f95a6bbdfb6911f4",
+      "memory/hybrid.py": "e36a7aa6eaa202a463a5d778f7d9b8f4569c22288ebbfea467039e4e234b7b10",
+      "memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f",
+      "memory/structured.py": "6e328d6275273c210408eb4535b895146b0c74f944362a793a0422ddf79acc24",
+      "memory/text_structured.py": "07f55e432000e0dd70f0b01bfdc62797a97f3e579ba4a801b223de830a212616",
+      "memory/vector.py": "7a3cadce6efb588633c1088fc13d0e86ca6372d21d22416341e2643e217bac16",
+      "observation.py": "f853ecd9d2a7ac039543bf4c928115f0b1245c9334bf1ccd44200765854fb738",
+      "propositions.py": "1adb36944b809d3ba6f526f9affbab12626a5b695357c081e5b4d65f753a49e5",
+      "rng.py": "62e2b3ef4e5644edff28b3cbaa8b2f13c9f79f51f05e2c1a88d40a1a83685887",
+      "scenarios/__init__.py": "3d5f4bc1b9fd568d95a2a6dd48b27c6157f7bd72d757d076f1b8e47f38e4c8f7",
+      "scenarios/generator.py": "c82e5b1fd117959e64a67229da9ee0304f60fd865da79fedd485fcae21eff841",
+      "scenarios/rumor.py": "6da3dfcc8ad788e51e05d282e3d55f3967d1b15eccc3c97238f6c7418939f03e",
+      "simulation.py": "f5c48e457af0983e1b17162a1015ba8dd4af793d7cf35f58b06df1a26275878d",
+      "trace.py": "3fc4397be48cf52d6258920dcf3fd3350dfd60cfb32ba358bcef4ca56469f3d7",
+      "world.py": "aeba62bcba28cf9ba7cdd6690c0ec3a1cc586fe0353796c7f64ec159a4f3927e"
+    },
+    "eligibility": "scheduled decisions only when own inventory is below next delivery need; policy can change future opportunity count",
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+      "platform": "macOS-15.5-arm64-arm-64bit",
+      "processor": "arm"
+    },
+    "freeze": "development0:9; heldout1000:1029; thresholds1,2,3 predeclared; no heldout selection"
+  },
+  "elapsed_seconds": 12.255510667000635,
+  "n_worlds": 600,
+  "n_decisions": 29411
+}

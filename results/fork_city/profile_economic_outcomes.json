@@ -1,0 +1,80 @@
+{
+  "scope": "Posthoc physical outcome audit of the one-seed resource-profile worlds, separate from categorical task loss",
+  "worlds": [
+    {
+      "population": 8,
+      "config": {
+        "seed": 42,
+        "n_agents": 8,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "ledger_hash": "9949e7ca1124f909ff6ab8beafdbf2ac827a03a49453ca21351b37f83aca4b08",
+      "reserve_attempts": 41,
+      "zero_fill_orders": 22,
+      "zero_fill_share": 0.5365853658536586,
+      "zero_fill_orders_with_zero_task_loss": 22,
+      "market_arrivals": 56,
+      "commitments_fulfilled": 20,
+      "commitments_total": 24,
+      "units_delivered": 61,
+      "units_required": 72,
+      "final_total_cash": 576.0
+    },
+    {
+      "population": 32,
+      "config": {
+        "seed": 42,
+        "n_agents": 32,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "ledger_hash": "249cdb84b5a191413125e7de4b9fa23f382e3e4b233e3609bb656925651e9dc6",
+      "reserve_attempts": 188,
+      "zero_fill_orders": 168,
+      "zero_fill_share": 0.8936170212765957,
+      "zero_fill_orders_with_zero_task_loss": 136,
+      "market_arrivals": 56,
+      "commitments_fulfilled": 22,
+      "commitments_total": 96,
+      "units_delivered": 92,
+      "units_required": 288,
+      "final_total_cash": 2155.0
+    },
+    {
+      "population": 128,
+      "config": {
+        "seed": 42,
+        "n_agents": 128,
+        "n_ticks": 24,
+        "family": "rumour",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 1,
+        "capacity": 64,
+        "communication_depth": 3
+      },
+      "ledger_hash": "f2f560da5dd7e9bd832031c6de16ed1ce1024b08625f8024c1a902494a9c32f6",
+      "reserve_attempts": 607,
+      "zero_fill_orders": 587,
+      "zero_fill_share": 0.9670510708401977,
+      "zero_fill_orders_with_zero_task_loss": 461,
+      "market_arrivals": 56,
+      "commitments_fulfilled": 47,
+      "commitments_total": 384,
+      "units_delivered": 236,
+      "units_required": 1152,
+      "final_total_cash": 8508.0
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "split": "development",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "populations": [
+    8
+  ],
+  "families": [
+    "rumour",
+    "shortage",
+    "recovery",
+    "private"
+  ],
+  "conditions": {
+    "structured": [
+      "structured",
+      "none",
+      2
+    ],
+    "bm25": [
+      "bm25",
+      "none",
+      2
+    ],
+    "hybrid": [
+      "hybrid",
+      "none",
+      2
+    ],
+    "hybrid_guarded": [
+      "hybrid_guarded",
+      "none",
+      2
+    ],
+    "guarded_lineage1": [
+      "hybrid_guarded",
+      "lineage",
+      1
+    ],
+    "guarded_lineage2": [
+      "hybrid_guarded",
+      "lineage",
+      2
+    ],
+    "guarded_lineage3": [
+      "hybrid_guarded",
+      "lineage",
+      3
+    ],
+    "guarded_sources2": [
+      "hybrid_guarded",
+      "source_count",
+      2
+    ],
+    "bm25_lineage2": [
+      "bm25",
+      "lineage",
+      2
+    ],
+    "always_defer": [
+      "structured",
+      "none",
+      2
+    ],
+    "always_verify": [
+      "structured",
+      "none",
+      2
+    ]
+  },
+  "capacity": 64,
+  "communication_depth": 3,
+  "n_ticks": 24,
+  "query": {
+    "subject": "grain",
+    "predicate": "supply",
+    "top_k": 4
+  },
+  "capacity_semantics": "FIFO experiences per agent, including episodic records; 0 means unlimited",
+  "fairness": "same local input schema and cap, original architecture lookup rules; structured exact-key versus retrieval top-4 is disclosed",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "processor": "arm"
+  },
+  "freeze": "development0:9; heldout1000:1029; thresholds1,2,3 predeclared; no heldout selection"
+}

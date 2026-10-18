@@ -1,0 +1,1517 @@
+[
+  {
+    "artifact": "results/fork_city/heldout",
+    "n_worlds": 2640,
+    "n_decisions": 368385,
+    "current_source_hash_mismatches": [
+      "actionbench/plots.py",
+      "city_server.py"
+    ],
+    "adapter_only_mismatches_allowed_for_replay": [
+      "city_server.py"
+    ],
+    "analysis_only_mismatches_allowed_for_replay": [
+      "actionbench/plots.py"
+    ],
+    "raw_rate_checks_passed": true,
+    "paired_differences_left_minus_right": {
+      "8/hybrid-minus-hybrid_guarded": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": -0.020669453599184363,
+          "ci95": [
+            -0.026171503334078392,
+            -0.015167403864290333
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "8/guarded_sources2-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.012095000676325596,
+          "ci95": [
+            -0.019074115399424815,
+            0.043264116752076004
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.023132199751574038,
+          "ci95": [
+            0.01079291417245311,
+            0.03547148533069497
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0332016300580103,
+          "ci95": [
+            0.02242184715374173,
+            0.04398141296227887
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.1190107602637637,
+          "ci95": [
+            0.06044945410287767,
+            0.17757206642464973
+          ]
+        }
+      },
+      "8/hybrid_guarded-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": -0.20479322412882023,
+          "ci95": [
+            -0.3583460868124593,
+            -0.05124036144518118
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.05909736749358186,
+          "ci95": [
+            0.031430724241371936,
+            0.08676401074579179
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.1649400331093038,
+          "ci95": [
+            0.11952059914437266,
+            0.21035946707423495
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.04960176468681453,
+          "ci95": [
+            -0.026592122977874166,
+            0.12579565235150322
+          ]
+        }
+      },
+      "32/hybrid-minus-hybrid_guarded": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": -0.004870694170997907,
+          "ci95": [
+            -0.006202682757091168,
+            -0.003538705584904646
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "32/guarded_sources2-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.00290604794217925,
+          "ci95": [
+            -0.008187037514405214,
+            0.013999133398763713
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.01114576704348427,
+          "ci95": [
+            0.00589985828541969,
+            0.01639167580154885
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.017815026625740478,
+          "ci95": [
+            0.013148163223368408,
+            0.022481890028112548
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.012309169021030991,
+          "ci95": [
+            0.001266865652189671,
+            0.023351472389872313
+          ]
+        }
+      },
+      "32/hybrid_guarded-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": -0.01895291103125816,
+          "ci95": [
+            -0.14306268568556607,
+            0.10515686362304977
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.09364331525647432,
+          "ci95": [
+            0.06889920709102564,
+            0.118387423421923
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.1531308118433992,
+          "ci95": [
+            0.12231000401936512,
+            0.18395161966743326
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": -0.0017836770768481988,
+          "ci95": [
+            -0.02163040782159248,
+            0.01806305366789608
+          ]
+        }
+      }
+    },
+    "descriptive_decision_counts": {
+      "local_qa_correct_world_wrong": 141614,
+      "local_qa_correct_positive_loss": 132454,
+      "local_qa_wrong_world_right_zero_loss": 4177
+    },
+    "examples": {
+      "local_qa_correct_but_costly": {
+        "seed": 1000,
+        "family": "rumour",
+        "population": 8,
+        "condition": "structured",
+        "ledger_hash": "bc2324f4b9b52e1ec701deaa77586d329cc8e1b9b8bf908061dbc2c3f432b217",
+        "decision": {
+          "action": "defer",
+          "predicted_value": "available",
+          "evidence_ids": [
+            9
+          ],
+          "root_count": 1,
+          "source_count": 1,
+          "boundary_violation": false,
+          "source_independence_failure": false,
+          "qa_expected": "available",
+          "qa_correct": true,
+          "retrieved_ids": [
+            9
+          ],
+          "gate": "none",
+          "threshold": 2,
+          "agent": "Livia",
+          "tick": 2,
+          "actual_value": "disrupted",
+          "loss": 6.0,
+          "regret": 6.0,
+          "autonomous": false,
+          "opportunity_valid": true,
+          "event_id": 10
+        },
+        "retrieved_experiences": [
+          {
+            "tick": 2,
+            "kind": "told",
+            "subject": "grain",
+            "predicate": "supply",
+            "value": "available",
+            "source_agent": "Dama",
+            "as_of": 0,
+            "accepted": true,
+            "event_id": 9,
+            "text": "At hour 2 Dama told me grain supply was available as of hour 0; origin harbour manifest at event 5.",
+            "claimed_origin_kind": "told",
+            "claimed_origin_event": 5,
+            "claimed_origin_observer": "harbour manifest"
+          }
+        ],
+        "replay_verified": true
+      },
+      "boundary_violation": {
+        "seed": 1000,
+        "family": "rumour",
+        "population": 8,
+        "condition": "bm25",
+        "ledger_hash": "2fc093bb3233e0bf994b289f950c8b5dc34c113496efd0b53eb04591ab5bc8c3",
+        "decision": {
+          "action": "defer",
+          "predicted_value": "available",
+          "evidence_ids": [
+            2
+          ],
+          "root_count": 1,
+          "source_count": 1,
+          "boundary_violation": true,
+          "source_independence_failure": false,
+          "qa_expected": "unknown",
+          "qa_correct": false,
+          "retrieved_ids": [
+            2
+          ],
+          "gate": "none",
+          "threshold": 2,
+          "agent": "Gaius",
+          "tick": 2,
+          "actual_value": "disrupted",
+          "loss": 6.0,
+          "regret": 6.0,
+          "autonomous": false,
+          "opportunity_valid": true,
+          "event_id": 16
+        },
+        "retrieved_experiences": [
+          {
+            "tick": 0,
+            "kind": "observed",
+            "subject": "grain",
+            "predicate": "reserve",
+            "value": "available",
+            "source_agent": null,
+            "as_of": 0,
+            "accepted": true,
+            "event_id": 2,
+            "text": "At hour 0 I personally inspected grain reserve: available.",
+            "claimed_origin_kind": "observed",
+            "claimed_origin_event": 2,
+            "claimed_origin_observer": "Gaius"
+          }
+        ],
+        "replay_verified": true
+      },
+      "local_qa_wrong_but_world_right": {
+        "seed": 1000,
+        "family": "recovery",
+        "population": 8,
+        "condition": "bm25",
+        "ledger_hash": "68eeccd6a492d9455c527e809745ed24969b80b5568fc6decfa494af124beef5",
+        "decision": {
+          "action": "defer",
+          "predicted_value": "available",
+          "evidence_ids": [
+            2
+          ],
+          "root_count": 1,
+          "source_count": 1,
+          "boundary_violation": true,
+          "source_independence_failure": false,
+          "qa_expected": "unknown",
+          "qa_correct": false,
+          "retrieved_ids": [
+            2
+          ],
+          "gate": "none",
+          "threshold": 2,
+          "agent": "Gaius",
+          "tick": 2,
+          "actual_value": "available",
+          "loss": 0.0,
+          "regret": 0.0,
+          "autonomous": false,
+          "opportunity_valid": true,
+          "event_id": 15
+        },
+        "retrieved_experiences": [
+          {
+            "tick": 0,
+            "kind": "observed",
+            "subject": "grain",
+            "predicate": "reserve",
+            "value": "available",
+            "source_agent": null,
+            "as_of": 0,
+            "accepted": true,
+            "event_id": 2,
+            "text": "At hour 0 I personally inspected grain reserve: available.",
+            "claimed_origin_kind": "observed",
+            "claimed_origin_event": 2,
+            "claimed_origin_observer": "Gaius"
+          }
+        ],
+        "replay_verified": true
+      },
+      "lineage_blocks_costly_action": {
+        "source_count": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_sources2",
+          "ledger_hash": "13a67d193041ac69b7464a043d4c578fe1daa9f395a20cd28ffa4a03795e6ee1",
+          "decision": {
+            "action": "reserve",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              268,
+              242
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": true,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              268,
+              242
+            ],
+            "gate": "source_count",
+            "threshold": 2,
+            "agent": "Julia",
+            "tick": 14,
+            "actual_value": "available",
+            "loss": 2.0,
+            "regret": 2.0,
+            "autonomous": true,
+            "opportunity_valid": true,
+            "event_id": 281
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 13,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Livia",
+              "as_of": 7,
+              "accepted": true,
+              "event_id": 242,
+              "text": "At hour 13 Livia told me grain supply was disrupted as of hour 7; origin Livia at event 129.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 129,
+              "claimed_origin_observer": "Livia"
+            },
+            {
+              "tick": 14,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Sabina",
+              "as_of": 7,
+              "accepted": false,
+              "event_id": 268,
+              "text": "At hour 14 Sabina told me grain supply was disrupted as of hour 7; origin Livia at event 129. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 129,
+              "claimed_origin_observer": "Livia"
+            }
+          ],
+          "replay_verified": true
+        },
+        "lineage": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_lineage2",
+          "ledger_hash": "df6e61c223c0e9db78ca656f8a67adc9565de527a0450ba01abdf4a93bdc1ada",
+          "decision": {
+            "action": "verify",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              268,
+              242
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": false,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              268,
+              242
+            ],
+            "gate": "lineage",
+            "threshold": 2,
+            "agent": "Julia",
+            "tick": 14,
+            "actual_value": "available",
+            "loss": 1.5,
+            "regret": 1.5,
+            "autonomous": false,
+            "opportunity_valid": true,
+            "event_id": 281
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 13,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Livia",
+              "as_of": 7,
+              "accepted": true,
+              "event_id": 242,
+              "text": "At hour 13 Livia told me grain supply was disrupted as of hour 7; origin Livia at event 129.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 129,
+              "claimed_origin_observer": "Livia"
+            },
+            {
+              "tick": 14,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Sabina",
+              "as_of": 7,
+              "accepted": false,
+              "event_id": 268,
+              "text": "At hour 14 Sabina told me grain supply was disrupted as of hour 7; origin Livia at event 129. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 129,
+              "claimed_origin_observer": "Livia"
+            }
+          ],
+          "replay_verified": true
+        }
+      },
+      "lineage_withholds_useful_action": {
+        "source_count": {
+          "seed": 1001,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_sources2",
+          "ledger_hash": "5d2142c535686c0086b95041acb3b619f4f9928b68334b8bc9deb49a62956375",
+          "decision": {
+            "action": "reserve",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              257,
+              231
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": true,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              257,
+              231
+            ],
+            "gate": "source_count",
+            "threshold": 2,
+            "agent": "Gaius",
+            "tick": 14,
+            "actual_value": "disrupted",
+            "loss": 0.0,
+            "regret": 0.0,
+            "autonomous": true,
+            "opportunity_valid": true,
+            "event_id": 291
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 12,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Dama",
+              "as_of": 7,
+              "accepted": true,
+              "event_id": 231,
+              "text": "At hour 12 Dama told me grain supply was disrupted as of hour 7; origin Julia at event 125.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 125,
+              "claimed_origin_observer": "Julia"
+            },
+            {
+              "tick": 13,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 7,
+              "accepted": false,
+              "event_id": 257,
+              "text": "At hour 13 Modestus told me grain supply was disrupted as of hour 7; origin Julia at event 125. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 125,
+              "claimed_origin_observer": "Julia"
+            }
+          ],
+          "replay_verified": true
+        },
+        "lineage": {
+          "seed": 1001,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_lineage2",
+          "ledger_hash": "cc8749c5a7b20e3cc14f7e0ce2535f6fe7e0e57c81a9565d9b6ddcc2b592aa79",
+          "decision": {
+            "action": "verify",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              257,
+              231
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": false,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              257,
+              231
+            ],
+            "gate": "lineage",
+            "threshold": 2,
+            "agent": "Gaius",
+            "tick": 14,
+            "actual_value": "disrupted",
+            "loss": 1.5,
+            "regret": 1.5,
+            "autonomous": false,
+            "opportunity_valid": true,
+            "event_id": 291
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 12,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Dama",
+              "as_of": 7,
+              "accepted": true,
+              "event_id": 231,
+              "text": "At hour 12 Dama told me grain supply was disrupted as of hour 7; origin Julia at event 125.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 125,
+              "claimed_origin_observer": "Julia"
+            },
+            {
+              "tick": 13,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 7,
+              "accepted": false,
+              "event_id": 257,
+              "text": "At hour 13 Modestus told me grain supply was disrupted as of hour 7; origin Julia at event 125. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 125,
+              "claimed_origin_observer": "Julia"
+            }
+          ],
+          "replay_verified": true
+        }
+      }
+    },
+    "performance_warning": "Concurrent suite timings are not isolated performance measurements."
+  },
+  {
+    "artifact": "results/fork_city/scaling128",
+    "n_worlds": 600,
+    "n_decisions": 554592,
+    "current_source_hash_mismatches": [
+      "actionbench/plots.py",
+      "city_server.py"
+    ],
+    "adapter_only_mismatches_allowed_for_replay": [
+      "city_server.py"
+    ],
+    "analysis_only_mismatches_allowed_for_replay": [
+      "actionbench/plots.py"
+    ],
+    "raw_rate_checks_passed": true,
+    "paired_differences_left_minus_right": {
+      "128/hybrid-minus-hybrid_guarded": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": -0.0013920405938966957,
+          "ci95": [
+            -0.001751226243983616,
+            -0.0010328549438097755
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "128/hybrid_guarded-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.20449508342620984,
+          "ci95": [
+            0.10226731986336327,
+            0.3067228469890564
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.13646115799679923,
+          "ci95": [
+            0.11684460913336951,
+            0.15607770686022893
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.12795408689230317,
+          "ci95": [
+            0.09779760254851913,
+            0.1581105712360872
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.02565978097159584,
+          "ci95": [
+            0.009565402598830364,
+            0.041754159344361316
+          ]
+        }
+      }
+    },
+    "descriptive_decision_counts": {
+      "local_qa_correct_world_wrong": 310808,
+      "local_qa_correct_positive_loss": 272078,
+      "local_qa_wrong_world_right_zero_loss": 763
+    },
+    "examples": {},
+    "performance_warning": "Concurrent suite timings are not isolated performance measurements."
+  },
+  {
+    "artifact": "results/fork_city/sensitivity/capacity8",
+    "n_worlds": 600,
+    "n_decisions": 29869,
+    "current_source_hash_mismatches": [
+      "actionbench/plots.py",
+      "city_server.py"
+    ],
+    "adapter_only_mismatches_allowed_for_replay": [
+      "city_server.py"
+    ],
+    "analysis_only_mismatches_allowed_for_replay": [
+      "actionbench/plots.py"
+    ],
+    "raw_rate_checks_passed": true,
+    "paired_differences_left_minus_right": {
+      "8/hybrid-minus-hybrid_guarded": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": -0.28628098244805694,
+          "ci95": [
+            -0.3940450521020328,
+            -0.1785169127940811
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": -0.022932116674865218,
+          "ci95": [
+            -0.04665589366618225,
+            0.0007916603164518192
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.09600505728067456,
+          "ci95": [
+            0.08511582220847493,
+            0.10689429235287419
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": 0.10108503715787864,
+          "ci95": [
+            0.0848437900423184,
+            0.11732628427343889
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.005921869079585111,
+          "ci95": [
+            -0.011345893488428354,
+            0.023189631647598574
+          ]
+        }
+      },
+      "8/guarded_sources2-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": -0.0024349263270243395,
+          "ci95": [
+            -0.014713586817691759,
+            0.009843734163643078
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.0018878469928275896,
+          "ci95": [
+            -0.001679324831800662,
+            0.005455018817455842
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.004890077257832722,
+          "ci95": [
+            -0.0006868441674408631,
+            0.010466998683106306
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": -0.001742097919359504,
+          "ci95": [
+            -0.004301693355327596,
+            0.0008174975166085879
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.005574647875344472,
+          "ci95": [
+            -0.004922382686167739,
+            0.016071678436856682
+          ]
+        }
+      },
+      "8/hybrid_guarded-minus-guarded_lineage2": {
+        "decision_regret": {
+          "n_seeds": 30,
+          "mean_difference": 0.6232329581180684,
+          "ci95": [
+            0.46405605156563556,
+            0.7824098646705013
+          ]
+        },
+        "action_error_rate": {
+          "n_seeds": 30,
+          "mean_difference": 0.2300771672101115,
+          "ci95": [
+            0.19916803599018507,
+            0.26098629843003796
+          ]
+        },
+        "autonomy": {
+          "n_seeds": 30,
+          "mean_difference": 0.06883943939083788,
+          "ci95": [
+            0.0503905833014438,
+            0.08728829548023195
+          ]
+        },
+        "qa_accuracy": {
+          "n_seeds": 30,
+          "mean_difference": -0.0004034434449625942,
+          "ci95": [
+            -0.02022989811141558,
+            0.019423011221490392
+          ]
+        },
+        "selective_risk": {
+          "n_seeds": 30,
+          "mean_difference": 0.09344623903142897,
+          "ci95": [
+            0.04795346866235025,
+            0.13893900940050768
+          ]
+        }
+      }
+    },
+    "descriptive_decision_counts": {
+      "local_qa_correct_world_wrong": 10269,
+      "local_qa_correct_positive_loss": 9243,
+      "local_qa_wrong_world_right_zero_loss": 353
+    },
+    "examples": {
+      "boundary_violation": {
+        "seed": 1000,
+        "family": "rumour",
+        "population": 8,
+        "condition": "bm25",
+        "ledger_hash": "d9077b427ffc84e7ed66bc039ff2b34c47f641440cdfd6269beccc9b02c91bc0",
+        "decision": {
+          "action": "defer",
+          "predicted_value": "available",
+          "evidence_ids": [
+            2
+          ],
+          "root_count": 1,
+          "source_count": 1,
+          "boundary_violation": true,
+          "source_independence_failure": false,
+          "qa_expected": "unknown",
+          "qa_correct": false,
+          "retrieved_ids": [
+            2
+          ],
+          "gate": "none",
+          "threshold": 2,
+          "agent": "Gaius",
+          "tick": 2,
+          "actual_value": "disrupted",
+          "loss": 6.0,
+          "regret": 6.0,
+          "autonomous": false,
+          "opportunity_valid": true,
+          "event_id": 16
+        },
+        "retrieved_experiences": [
+          {
+            "tick": 0,
+            "kind": "observed",
+            "subject": "grain",
+            "predicate": "reserve",
+            "value": "available",
+            "source_agent": null,
+            "as_of": 0,
+            "accepted": true,
+            "event_id": 2,
+            "text": "At hour 0 I personally inspected grain reserve: available.",
+            "claimed_origin_kind": "observed",
+            "claimed_origin_event": 2,
+            "claimed_origin_observer": "Gaius"
+          }
+        ],
+        "replay_verified": true
+      },
+      "local_qa_wrong_but_world_right": {
+        "seed": 1000,
+        "family": "rumour",
+        "population": 8,
+        "condition": "bm25",
+        "ledger_hash": "d9077b427ffc84e7ed66bc039ff2b34c47f641440cdfd6269beccc9b02c91bc0",
+        "decision": {
+          "action": "defer",
+          "predicted_value": "available",
+          "evidence_ids": [
+            158,
+            157,
+            97,
+            79
+          ],
+          "root_count": 1,
+          "source_count": 4,
+          "boundary_violation": false,
+          "source_independence_failure": false,
+          "qa_expected": "disrupted",
+          "qa_correct": false,
+          "retrieved_ids": [
+            158,
+            157,
+            97,
+            79
+          ],
+          "gate": "none",
+          "threshold": 2,
+          "agent": "Sabina",
+          "tick": 11,
+          "actual_value": "available",
+          "loss": 0.0,
+          "regret": 0.0,
+          "autonomous": false,
+          "opportunity_valid": true,
+          "event_id": 173
+        },
+        "retrieved_experiences": [
+          {
+            "tick": 6,
+            "kind": "told",
+            "subject": "grain",
+            "predicate": "supply",
+            "value": "available",
+            "source_agent": "Marcus",
+            "as_of": 0,
+            "accepted": false,
+            "event_id": 79,
+            "text": "At hour 6 Marcus told me grain supply was available as of hour 0; origin harbour manifest at event 5. I did not believe this older or untrusted claim.",
+            "claimed_origin_kind": "told",
+            "claimed_origin_event": 5,
+            "claimed_origin_observer": "harbour manifest"
+          },
+          {
+            "tick": 7,
+            "kind": "told",
+            "subject": "grain",
+            "predicate": "supply",
+            "value": "available",
+            "source_agent": "Livia",
+            "as_of": 0,
+            "accepted": false,
+            "event_id": 97,
+            "text": "At hour 7 Livia told me grain supply was available as of hour 0; origin harbour manifest at event 5. I did not believe this older or untrusted claim.",
+            "claimed_origin_kind": "told",
+            "claimed_origin_event": 5,
+            "claimed_origin_observer": "harbour manifest"
+          },
+          {
+            "tick": 11,
+            "kind": "told",
+            "subject": "grain",
+            "predicate": "supply",
+            "value": "available",
+            "source_agent": "Modestus",
+            "as_of": 0,
+            "accepted": false,
+            "event_id": 157,
+            "text": "At hour 11 Modestus told me grain supply was available as of hour 0; origin harbour manifest at event 5. I did not believe this older or untrusted claim.",
+            "claimed_origin_kind": "told",
+            "claimed_origin_event": 5,
+            "claimed_origin_observer": "harbour manifest"
+          },
+          {
+            "tick": 11,
+            "kind": "told",
+            "subject": "grain",
+            "predicate": "supply",
+            "value": "available",
+            "source_agent": "Gaius",
+            "as_of": 0,
+            "accepted": false,
+            "event_id": 158,
+            "text": "At hour 11 Gaius told me grain supply was available as of hour 0; origin harbour manifest at event 5. I did not believe this older or untrusted claim.",
+            "claimed_origin_kind": "told",
+            "claimed_origin_event": 5,
+            "claimed_origin_observer": "harbour manifest"
+          }
+        ],
+        "replay_verified": true
+      },
+      "guarded_forgetting_misses_action": {
+        "hybrid": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "hybrid",
+          "ledger_hash": "8ad0851ea18e1b085696013ee9abb03e921a14a1f144e79210286563e92ffb03",
+          "decision": {
+            "action": "reserve",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              113,
+              78,
+              54
+            ],
+            "root_count": 1,
+            "source_count": 3,
+            "boundary_violation": false,
+            "source_independence_failure": true,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              113,
+              78,
+              54
+            ],
+            "gate": "none",
+            "threshold": 2,
+            "agent": "Dama",
+            "tick": 11,
+            "actual_value": "disrupted",
+            "loss": 0.0,
+            "regret": 0.0,
+            "autonomous": true,
+            "opportunity_valid": true,
+            "event_id": 168
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 5,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Marcus",
+              "as_of": 0,
+              "accepted": false,
+              "event_id": 54,
+              "text": "At hour 5 Marcus told me grain supply was disrupted as of hour 0; origin harbour manifest at event 5. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "told",
+              "claimed_origin_event": 5,
+              "claimed_origin_observer": "harbour manifest"
+            },
+            {
+              "tick": 6,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Livia",
+              "as_of": 0,
+              "accepted": false,
+              "event_id": 78,
+              "text": "At hour 6 Livia told me grain supply was disrupted as of hour 0; origin harbour manifest at event 5. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "told",
+              "claimed_origin_event": 5,
+              "claimed_origin_observer": "harbour manifest"
+            },
+            {
+              "tick": 8,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Julia",
+              "as_of": 0,
+              "accepted": false,
+              "event_id": 113,
+              "text": "At hour 8 Julia told me grain supply was disrupted as of hour 0; origin harbour manifest at event 5. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "told",
+              "claimed_origin_event": 5,
+              "claimed_origin_observer": "harbour manifest"
+            }
+          ],
+          "replay_verified": true
+        },
+        "guarded": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "hybrid_guarded",
+          "ledger_hash": "300a0a978994415937c30023b799c73b43abae8f3a545c8bd952b009877c2755",
+          "decision": {
+            "action": "defer",
+            "predicted_value": "unknown",
+            "evidence_ids": [],
+            "root_count": 0,
+            "source_count": 0,
+            "boundary_violation": false,
+            "source_independence_failure": false,
+            "qa_expected": "disrupted",
+            "qa_correct": false,
+            "retrieved_ids": [],
+            "gate": "none",
+            "threshold": 2,
+            "agent": "Dama",
+            "tick": 11,
+            "actual_value": "disrupted",
+            "loss": 6.0,
+            "regret": 6.0,
+            "autonomous": false,
+            "opportunity_valid": true,
+            "event_id": 168
+          },
+          "retrieved_experiences": [],
+          "replay_verified": true
+        }
+      },
+      "lineage_blocks_costly_action": {
+        "source_count": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_sources2",
+          "ledger_hash": "986a5b9d3ec9840de29c19c55a582b3ebd58703f5b4f171ab4a5ec61fc7bcd38",
+          "decision": {
+            "action": "reserve",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              379,
+              377
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": true,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              379,
+              377
+            ],
+            "gate": "source_count",
+            "threshold": 2,
+            "agent": "Gaius",
+            "tick": 17,
+            "actual_value": "available",
+            "loss": 2.0,
+            "regret": 2.0,
+            "autonomous": true,
+            "opportunity_valid": true,
+            "event_id": 395
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Marcus",
+              "as_of": 12,
+              "accepted": true,
+              "event_id": 377,
+              "text": "At hour 17 Marcus told me grain supply was disrupted as of hour 12; origin Marcus at event 263.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 263,
+              "claimed_origin_observer": "Marcus"
+            },
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 12,
+              "accepted": false,
+              "event_id": 379,
+              "text": "At hour 17 Modestus told me grain supply was disrupted as of hour 12; origin Marcus at event 263. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 263,
+              "claimed_origin_observer": "Marcus"
+            }
+          ],
+          "replay_verified": true
+        },
+        "lineage": {
+          "seed": 1000,
+          "family": "recovery",
+          "population": 8,
+          "condition": "guarded_lineage2",
+          "ledger_hash": "cb948fd34bebbb627b3c707c5fb293c74e17ed1414d00ed52b3dbf85f7b1b416",
+          "decision": {
+            "action": "verify",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              379,
+              377
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": false,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              379,
+              377
+            ],
+            "gate": "lineage",
+            "threshold": 2,
+            "agent": "Gaius",
+            "tick": 17,
+            "actual_value": "available",
+            "loss": 1.5,
+            "regret": 1.5,
+            "autonomous": false,
+            "opportunity_valid": true,
+            "event_id": 395
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Marcus",
+              "as_of": 12,
+              "accepted": true,
+              "event_id": 377,
+              "text": "At hour 17 Marcus told me grain supply was disrupted as of hour 12; origin Marcus at event 263.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 263,
+              "claimed_origin_observer": "Marcus"
+            },
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 12,
+              "accepted": false,
+              "event_id": 379,
+              "text": "At hour 17 Modestus told me grain supply was disrupted as of hour 12; origin Marcus at event 263. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 263,
+              "claimed_origin_observer": "Marcus"
+            }
+          ],
+          "replay_verified": true
+        }
+      },
+      "lineage_withholds_useful_action": {
+        "source_count": {
+          "seed": 1003,
+          "family": "private",
+          "population": 8,
+          "condition": "guarded_sources2",
+          "ledger_hash": "f2142a4103fa428a6c0b3942a5def76cda6dfa5bb6e6cb56cc704f96f9c9c8e5",
+          "decision": {
+            "action": "reserve",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              398,
+              320
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": true,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              398,
+              320
+            ],
+            "gate": "source_count",
+            "threshold": 2,
+            "agent": "Dama",
+            "tick": 17,
+            "actual_value": "disrupted",
+            "loss": 0.0,
+            "regret": 0.0,
+            "autonomous": true,
+            "opportunity_valid": true,
+            "event_id": 407
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 14,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Livia",
+              "as_of": 12,
+              "accepted": true,
+              "event_id": 320,
+              "text": "At hour 14 Livia told me grain supply was disrupted as of hour 12; origin Livia at event 271.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 271,
+              "claimed_origin_observer": "Livia"
+            },
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 12,
+              "accepted": false,
+              "event_id": 398,
+              "text": "At hour 17 Modestus told me grain supply was disrupted as of hour 12; origin Livia at event 271. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 271,
+              "claimed_origin_observer": "Livia"
+            }
+          ],
+          "replay_verified": true
+        },
+        "lineage": {
+          "seed": 1003,
+          "family": "private",
+          "population": 8,
+          "condition": "guarded_lineage2",
+          "ledger_hash": "717d45813d945c536fc494417f9036f0713bc0c377c911e0e8114055bf61f194",
+          "decision": {
+            "action": "verify",
+            "predicted_value": "disrupted",
+            "evidence_ids": [
+              398,
+              320
+            ],
+            "root_count": 1,
+            "source_count": 2,
+            "boundary_violation": false,
+            "source_independence_failure": false,
+            "qa_expected": "disrupted",
+            "qa_correct": true,
+            "retrieved_ids": [
+              398,
+              320
+            ],
+            "gate": "lineage",
+            "threshold": 2,
+            "agent": "Dama",
+            "tick": 17,
+            "actual_value": "disrupted",
+            "loss": 1.5,
+            "regret": 1.5,
+            "autonomous": false,
+            "opportunity_valid": true,
+            "event_id": 407
+          },
+          "retrieved_experiences": [
+            {
+              "tick": 14,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Livia",
+              "as_of": 12,
+              "accepted": true,
+              "event_id": 320,
+              "text": "At hour 14 Livia told me grain supply was disrupted as of hour 12; origin Livia at event 271.",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 271,
+              "claimed_origin_observer": "Livia"
+            },
+            {
+              "tick": 17,
+              "kind": "told",
+              "subject": "grain",
+              "predicate": "supply",
+              "value": "disrupted",
+              "source_agent": "Modestus",
+              "as_of": 12,
+              "accepted": false,
+              "event_id": 398,
+              "text": "At hour 17 Modestus told me grain supply was disrupted as of hour 12; origin Livia at event 271. [trusted corroboration: same claim, no new origin]",
+              "claimed_origin_kind": "observed",
+              "claimed_origin_event": 271,
+              "claimed_origin_observer": "Livia"
+            }
+          ],
+          "replay_verified": true
+        }
+      }
+    },
+    "performance_warning": "Concurrent suite timings are not isolated performance measurements."
+  }
+]

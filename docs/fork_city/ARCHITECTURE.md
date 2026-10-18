@@ -130,6 +130,16 @@ past-tick editing, or general causal identification API. Replacing a report with
 the same text still creates an explicit new root; use `none` for an identity
 control.
 
+The optional `verify_message_dependency()` function in `kalends/city/causal.py`
+goes beyond structural tracing for a bounded case: an original-timeline decision
+with a queued-message ancestor and a reproducible default policy. It reconstructs
+the factual completed-tick prefix, confirms identical history, deletes one pending
+message, and advances both worlds to the decision. It returns changed, unchanged,
+or unsupported results without mutating the displayed histories. This verifies
+one deletion effect under the coded model; it neither finds a minimal cause set
+nor establishes necessity across all possible interventions. The browser exposes
+it as **Test a message dependency**, through `/api/necessity`.
+
 ## Clean Python example
 
 Run from the repository root with Python 3.10 or newer:
