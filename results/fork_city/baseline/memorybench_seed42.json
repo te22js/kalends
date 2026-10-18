@@ -1,0 +1,3932 @@
+{
+  "n_questions": 427,
+  "systems": {
+    "recency": {
+      "accuracy": 0.6978922716627635,
+      "n_correct": 298,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.8333333333333334,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.9243697478991597,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.6666666666666666,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.9375,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.7346938775510204,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.9183673469387755,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.3877551020408163,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.6133333333333333,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.3673469387755102,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.8571428571428571,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.9183673469387755,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.9,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.7346938775510204,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.3673469387755102,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.3877551020408163,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.42857142857142855,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.3333333333333333,
+      "epistemic_precision": 0.8367346938775511,
+      "epistemic_recall": 0.9010989010989011,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Holconius",
+          "got": "Rufus",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "28",
+          "got": "33",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "45",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "38",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "19",
+          "got": "25",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Sabina",
+          "got": "Celer",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "30",
+          "got": "40",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "Celer",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "16",
+          "got": "27",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the silver?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "flowing",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the fountain?",
+          "expected": "Julia",
+          "got": "Livia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "26",
+          "got": "42",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "observed",
+          "got": "Sabina",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "direct",
+          "text": "Did you see the silver with your own eyes?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the silver?",
+          "expected": "15",
+          "got": "26",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Decimus",
+          "got": "Livia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "16",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "observed",
+          "got": "Celer",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the silver?",
+          "expected": "15",
+          "got": "27",
+          "dims": [
+            "temporal"
+          ]
+        }
+      ]
+    },
+    "bm25": {
+      "accuracy": 0.7634660421545667,
+      "n_correct": 326,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.7857142857142857,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.8235294117647058,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.6666666666666666,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.75,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.6530612244897959,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.8775510204081632,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.7346938775510204,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.7066666666666667,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.7142857142857143,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.7589285714285714,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.8775510204081632,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.8571428571428571,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.6530612244897959,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.7142857142857143,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.7346938775510204,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.7142857142857143,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.3333333333333333,
+      "epistemic_precision": 0.7473684210526316,
+      "epistemic_recall": 0.7802197802197802,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Do you know anything at all about the bakery?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "observed",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "40",
+          "got": "unknown",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the bakery rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the bakery?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "8",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "38",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Rufus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "10",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the mood of the gaius?",
+          "expected": "furious",
+          "got": "unknown",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the gaius?",
+          "expected": "observed",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the gaius?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current mood of the gaius?",
+          "expected": "45",
+          "got": "unknown",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the gaius?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the gaius?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Decimus",
+          "got": "Livia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "16",
+          "dims": [
+            "temporal"
+          ]
+        }
+      ]
+    },
+    "vector": {
+      "accuracy": 0.6206088992974239,
+      "n_correct": 265,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.6190476190476191,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.7563025210084033,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.6666666666666666,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.4375,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.6122448979591837,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.8163265306122449,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.3877551020408163,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 0.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.4533333333333333,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.40816326530612246,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.6160714285714286,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.8163265306122449,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.8714285714285714,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.6122448979591837,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.40816326530612246,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.3877551020408163,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.5306122448979592,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.3333333333333333,
+      "epistemic_precision": 0.5729166666666666,
+      "epistemic_recall": 0.6043956043956044,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Do you know anything at all about the bakery?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "observed",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "40",
+          "got": "unknown",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the bakery rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Holconius",
+          "got": "Rufus",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "28",
+          "got": "33",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Julia",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the bakery?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "8",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "38",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "19",
+          "got": "25",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Rufus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "10",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "16",
+          "got": "27",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        }
+      ]
+    },
+    "vector_recency": {
+      "accuracy": 0.6533957845433255,
+      "n_correct": 279,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.7142857142857143,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.7899159663865546,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.6666666666666666,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.5,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.6122448979591837,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.8163265306122449,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.4489795918367347,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.48,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.46938775510204084,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.6875,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.8163265306122449,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.8714285714285714,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.6122448979591837,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.46938775510204084,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.4489795918367347,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.5306122448979592,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.3333333333333333,
+      "epistemic_precision": 0.65625,
+      "epistemic_recall": 0.6923076923076923,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Do you know anything at all about the bakery?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "observed",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "40",
+          "got": "unknown",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the bakery rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Holconius",
+          "got": "Rufus",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "28",
+          "got": "33",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Julia",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the bakery?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "8",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "38",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "19",
+          "got": "25",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Rufus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Did you see the bakery with your own eyes?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "10",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "16",
+          "got": "27",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        }
+      ]
+    },
+    "vector_meta": {
+      "accuracy": 0.7213114754098361,
+      "n_correct": 308,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.7142857142857143,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.8823529411764706,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 1.0,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.5625,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.46938775510204084,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.8979591836734694,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.5102040816326531,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.6133333333333333,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.5306122448979592,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.7678571428571429,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.8979591836734694,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 1.0,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.46938775510204084,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.5306122448979592,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.5102040816326531,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.6938775510204082,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.0,
+      "epistemic_precision": 0.7142857142857143,
+      "epistemic_recall": 0.7142857142857143,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Holconius",
+          "got": "Rufus",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "28",
+          "got": "33",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the fountain?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Julia",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "observed",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the bakery?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "8",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "Aemilia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "38",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "19",
+          "got": "25",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the silver?",
+          "expected": "Gaius",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the silver arrive?",
+          "expected": "16",
+          "got": "27",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "independent",
+          "text": "Do you have more than one independent line of evidence about the silver?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the status of the fountain?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "26",
+          "got": "8",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "11",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the fountain?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the fountain?",
+          "expected": "Julia",
+          "got": "Sabina",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the fountain arrive?",
+          "expected": "30",
+          "got": "10",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Modestus",
+          "got": "Julia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current condition of the bakery?",
+          "expected": "43",
+          "got": "15",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        }
+      ]
+    },
+    "text_structured": {
+      "accuracy": 0.6908665105386417,
+      "n_correct": 295,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.3333333333333333,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.7983193277310925,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.7380952380952381,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 0.625,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 0.7959183673469388,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 0.7959183673469388,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.6530612244897959,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 0.68,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 0.5918367346938775,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.5357142857142857,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 0.7959183673469388,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.9,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 0.7959183673469388,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 0.5918367346938775,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 0.6530612244897959,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 0.673469387755102,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.2619047619047619,
+      "epistemic_precision": 0.6615384615384615,
+      "epistemic_recall": 0.4725274725274725,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the status of the lararium silver?",
+          "expected": "stolen",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the bakery?",
+          "expected": "Marcus",
+          "got": "Sabina",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "44",
+          "got": "14",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What do you currently make of the fountain?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "source",
+          "text": "From whom, if anyone, did you get your news of the fountain?",
+          "expected": "Modestus",
+          "got": "unknown",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "direct",
+          "text": "Were you there yourself for what happened to the fountain?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "provenance"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current status of the fountain?",
+          "expected": "31",
+          "got": "unknown",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "independent",
+          "text": "Does your knowledge of the fountain rest on more than a single eyewitness line?",
+          "expected": "no",
+          "got": "unknown",
+          "dims": [
+            "corroboration"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "unknown",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the status of the lararium silver?",
+          "expected": "stolen",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the mood of the gaius?",
+          "expected": "furious",
+          "got": "stolen",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current mood of the gaius?",
+          "expected": "46",
+          "got": "19",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the status of the lararium silver?",
+          "expected": "stolen",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "damaged",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the status of the lararium silver?",
+          "expected": "stolen",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the mood of the gaius?",
+          "expected": "furious",
+          "got": "stolen",
+          "dims": [
+            "belief"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current mood of the gaius?",
+          "expected": "45",
+          "got": "15",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "As far as you know, what is the condition of the bakery?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Decimus",
+          "got": "Livia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "learned_tick",
+          "text": "When did your latest news of the bakery arrive?",
+          "expected": "45",
+          "got": "16",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the lararium silver?",
+          "expected": "stolen",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "heard_of",
+          "text": "Do you know anything at all about the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "If someone asked about the bakery, what condition would you report?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "belief",
+            "supersession",
+            "contradiction"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "source",
+          "text": "Who or what is the source of what you know about the bakery?",
+          "expected": "Modestus",
+          "got": "Livia",
+          "dims": [
+            "source"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "learned_tick",
+          "text": "At what hour did you learn the current condition of the bakery?",
+          "expected": "43",
+          "got": "9",
+          "dims": [
+            "temporal"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "superseded",
+          "text": "Has what you believe about the bakery changed since you first learned of it?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "superseded",
+          "text": "Did you ever have to revise what you thought about the fountain?",
+          "expected": "yes",
+          "got": "no",
+          "dims": [
+            "supersession"
+          ]
+        }
+      ]
+    },
+    "structured": {
+      "accuracy": 0.9344262295081968,
+      "n_correct": 399,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.3333333333333333,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 1.0,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 1.0,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 1.0,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 1.0,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.75,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 1.0,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.0,
+      "epistemic_precision": 1.0,
+      "epistemic_recall": 0.6923076923076923,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "damaged",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Gaius",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Sabina",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Sabina",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Decimus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Decimus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Vibia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Vibia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Holconius",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Holconius",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "unknown",
+          "dims": [
+            "alias"
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "accuracy": 0.9297423887587822,
+      "n_correct": 397,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.6190476190476191,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 0.9411764705882353,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 0.6666666666666666,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 1.0,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 1.0,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.7946428571428571,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 0.9,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.3333333333333333,
+      "epistemic_precision": 0.7653061224489796,
+      "epistemic_recall": 0.8241758241758241,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Modestus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "heard_of",
+          "text": "Do you know anything at all about the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What do you currently make of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Sabina",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "belief",
+          "text": "As far as you know, what is the mood of the gaius?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burned to the ground",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "heard_of",
+          "text": "Have you heard anything about the mood of the gaius?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Decimus",
+          "qtype": "belief",
+          "text": "If someone asked about the gaius, what mood would you report?",
+          "expected": "unknown",
+          "got": "stolen",
+          "dims": [
+            "belief",
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Decimus",
+          "qtype": "heard_of",
+          "text": "Has any word of the gaius reached you?",
+          "expected": "no",
+          "got": "yes",
+          "dims": [
+            "boundary"
+          ]
+        },
+        {
+          "agent": "Vibia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Holconius",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        }
+      ]
+    },
+    "hybrid_guarded": {
+      "accuracy": 0.9625292740046838,
+      "n_correct": 411,
+      "by_dimension": {
+        "alias": {
+          "accuracy": 0.6190476190476191,
+          "n": 42
+        },
+        "belief": {
+          "accuracy": 1.0,
+          "n": 119
+        },
+        "boundary": {
+          "accuracy": 1.0,
+          "n": 42
+        },
+        "contradiction": {
+          "accuracy": 1.0,
+          "n": 32
+        },
+        "corroboration": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "provenance": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "stale": {
+          "accuracy": 1.0,
+          "n": 1
+        },
+        "supersession": {
+          "accuracy": 1.0,
+          "n": 75
+        },
+        "temporal": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "by_qtype": {
+        "belief": {
+          "accuracy": 0.8571428571428571,
+          "n": 112
+        },
+        "direct": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "heard_of": {
+          "accuracy": 1.0,
+          "n": 70
+        },
+        "independent": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "learned_tick": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "source": {
+          "accuracy": 1.0,
+          "n": 49
+        },
+        "superseded": {
+          "accuracy": 1.0,
+          "n": 49
+        }
+      },
+      "boundary_violation_rate": 0.0,
+      "epistemic_precision": 0.8241758241758241,
+      "epistemic_recall": 0.8241758241758241,
+      "sample_failures": [
+        {
+          "agent": "Modestus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Livia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Quintus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "damaged",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Felix",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Marcus",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Julia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Sabina",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Celer",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Rufus",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burned to the ground",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Aemilia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Vibia",
+          "qtype": "belief",
+          "text": "What is the status of the nymphaeum?",
+          "expected": "flowing",
+          "got": "broken",
+          "dims": [
+            "alias"
+          ]
+        },
+        {
+          "agent": "Holconius",
+          "qtype": "belief",
+          "text": "What is the condition of the pistrinum?",
+          "expected": "repaired",
+          "got": "burning",
+          "dims": [
+            "alias"
+          ]
+        }
+      ]
+    }
+  }
+}

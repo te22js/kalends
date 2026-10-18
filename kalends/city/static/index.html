@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101719">
+  <meta name="description" content="An inspectable, deterministic Roman town. Change a message, fork history, and follow the consequences.">
+  <title>Kalends · Fork the City</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#city">Skip to the city</a>
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Kalends home"><span class="brand-mark" aria-hidden="true">K</span><span>KALENDS<small>PERSISTENT WORLDS / RESEARCH SYSTEM</small></span></a>
+      <nav class="masthead-links" aria-label="Project"><span class="local-status"><i></i> LOCAL SIMULATION</span><a href="/research" target="_blank" rel="noopener">Research notes <span aria-hidden="true">↗</span></a></nav>
+    </header>
+
+    <main>
+      <section class="scene-heading" aria-labelledby="scene-title">
+        <div><p class="eyebrow"><span class="roman-index">I</span> ROME, DAY I <span class="eyebrow-rule"></span> AN EXPERIMENT IN CONSEQUENCE</p><h1 id="scene-title">Fork the <em>city.</em></h1><p class="scene-description">A grain report travels. Beliefs become decisions. Change one piece of information and follow two histories.</p></div>
+        <div class="scene-stamp"><span>THE GRAIN RUMOUR</span><strong id="clock-tick">—</strong><span id="clock-detail">CONNECTING TO WORLD</span></div>
+      </section>
+
+      <section class="transport" aria-label="Simulation controls">
+        <div class="playback"><button id="run-button" class="button button-gold" disabled><span id="run-icon" aria-hidden="true">▶</span> <span id="run-label">Run city</span></button><button id="step-button" class="button" disabled><span aria-hidden="true">⇥</span> Step</button><button id="reset-button" class="button button-quiet" disabled><span aria-hidden="true">↺</span> Reset</button></div>
+        <div class="transport-status"><span class="status-dot" id="playback-dot"></span><span id="playback-status">Connecting</span><span class="transport-divider"></span><label for="speed">Speed</label><select id="speed"><option value="1600">½×</option><option value="800" selected>1×</option><option value="350">2×</option><option value="100">5×</option></select></div>
+        <details class="settings"><summary aria-label="Open experiment settings"><span aria-hidden="true">⚙</span> Experiment settings</summary><form id="settings-form"><p class="eyebrow">REPRODUCIBLE INITIAL CONDITIONS</p><label>Seed<input type="number" id="seed" value="42" min="0" step="1"></label><label>Population<select id="population"><option value="8">8 citizens</option><option value="32">32 citizens</option></select></label><label>Scenario<select id="family"><option value="rumour">Grain rumour</option><option value="shortage">Real shortage</option><option value="recovery">Supply recovery</option><option value="private">Private information</option><option value="mixed">Mixed conditions</option></select></label><label>Memory<select id="memory"><option value="structured">Structured</option><option value="bm25">BM25</option><option value="hybrid">Naive hybrid</option><option value="hybrid_guarded">Guarded hybrid</option></select></label><label>Decision gate<select id="gate"><option value="none">No gate</option><option value="lineage">Independent lineage</option><option value="source_count">Source count</option></select></label><label>Evidence threshold<input id="threshold" type="number" value="1" min="1" max="20"></label><button type="submit" class="button button-gold">Start this experiment</button><p class="muted small">Applies to a new world and clears both histories. Larger populations are available through the Python API and benchmark.</p></form></details>
+      </section>
+      <p id="error-banner" class="error-banner" role="alert" hidden></p>
+
+      <div class="workspace">
+        <section id="city" class="panel city-panel" aria-labelledby="city-heading">
+          <div class="panel-heading"><div><p class="eyebrow">01 / LIVING WORLD</p><h2 id="city-heading">A town in motion</h2></div><span class="schematic-tag">SCHEMATIC MAP</span></div>
+          <div class="world-map-grid" id="map-grid"><div class="map-loading"><span class="loader"></span> Opening the city ledger…</div></div>
+          <div class="map-legend"><span><i class="legend-agent"></i> Citizen · select to inspect</span><span><i class="legend-line"></i> Schematic connectors</span><span class="map-note">Positions are schematic; locations are simulator state.</span></div>
+        </section>
+
+        <section class="panel inspector-panel" aria-labelledby="inspector-heading">
+          <div class="panel-heading"><div><p class="eyebrow">02 / PRIVATE PERSPECTIVE</p><h2 id="inspector-heading">Inside a citizen’s world</h2></div><span class="outline-icon" aria-hidden="true">◎</span></div>
+          <div class="inspector-body" id="agent-inspector"><div class="empty-state"><span aria-hidden="true">◎</span><p>Select a citizen on the map to inspect what they know.</p></div></div>
+          <details class="truth-section"><summary><span class="truth-icon" aria-hidden="true">◇</span> Evaluator world truth <span class="truth-warning">SEPARATE FROM AGENT KNOWLEDGE</span></summary><div id="world-truth" class="truth-content"><p class="muted">Waiting for the world.</p></div></details>
+        </section>
+
+        <section class="panel ledger-panel" aria-labelledby="ledger-heading">
+          <div class="panel-heading"><div><p class="eyebrow">03 / PERSISTENT HISTORY</p><h2 id="ledger-heading">The event ledger <span class="count" id="event-count">—</span></h2></div><select id="timeline-select" aria-label="History to inspect"><option value="original">Original history</option></select></div>
+          <div class="ledger-tools"><div class="filter-group" aria-label="Filter events"><button class="filter active" data-filter="all" aria-pressed="true">All events</button><button class="filter" data-filter="information" aria-pressed="false">Information</button><button class="filter" data-filter="decisions" aria-pressed="false">Decisions</button><button class="filter" data-filter="world" aria-pressed="false">World</button></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="event-search" type="search" aria-label="Search events" placeholder="Search the ledger"></label></div>
+          <div class="ledger-content"><div class="event-list" id="event-list" aria-label="Simulation events"><p class="muted inset">The first event is yet to happen.</p></div><aside class="event-detail" id="event-detail" aria-label="Selected event"><div class="trace-empty"><span class="trace-glyph" aria-hidden="true">╱─╲</span><p>Every consequence has a history.</p><span>Select an event to inspect its evidence and structural ancestry.</span></div></aside></div>
+          <div class="ledger-footer"><span id="ledger-caption">APPEND-ONLY EVENT HISTORY</span><span>Structural ancestry describes recorded dependencies, not proof of causal necessity.</span></div>
+        </section>
+
+        <section class="panel fork-panel" aria-labelledby="fork-heading">
+          <div class="panel-heading"><div><p class="eyebrow">04 / CHANGE ONE THING</p><h2 id="fork-heading">A different tomorrow</h2></div><span class="fork-symbol" aria-hidden="true">⑂</span></div>
+          <div class="fork-body"><p class="fork-description">Pause the city. Change the information available to one citizen. Let both histories unfold.</p><label class="field-label" for="intervention-kind">INTERVENTION</label><select id="intervention-kind"><option value="correction">Deliver a verified inspection</option><option value="remove_message">Block a pending message</option><option value="replace_message">Replace a pending report</option><option value="none">Identity control · no change</option></select><div id="correction-fields"><label class="field-label" for="intervention-agent">RECIPIENT</label><select id="intervention-agent" aria-label="Citizen to receive inspection"></select><p class="field-help">The citizen receives a new observation of the actual shipment state at this tick.</p></div><div id="message-fields" hidden><label class="field-label" for="intervention-message">MESSAGE AWAITING DELIVERY</label><select id="intervention-message"></select><p id="pending-caption" class="field-help"></p></div><div id="replacement-fields" hidden><label class="field-label" for="replacement-value">REPLACEMENT CLAIM</label><select id="replacement-value"><option value="available">Shipment available</option><option value="disrupted">Shipment disrupted</option></select></div><button id="fork-button" class="button button-gold fork-action" disabled><span aria-hidden="true">⑂</span> Fork this moment <span aria-hidden="true">→</span></button><p class="fork-footnote" id="fork-note">The original history stays intact. Both worlds use the same rules and keyed randomness.</p><div id="branch-receipt" hidden></div></div>
+        </section>
+      </div>
+
+      <section id="comparison-panel" class="panel comparison-panel" hidden aria-labelledby="comparison-heading"><div class="panel-heading"><div><p class="eyebrow">TWO HISTORIES / ONE INTERVENTION</p><h2 id="comparison-heading">Watch the consequences diverge.</h2></div><span class="comparison-tick" id="comparison-tick"></span></div><div id="comparison-content"></div></section>
+      <footer class="page-footer"><span class="footer-brand">KALENDS <span>FORK THE CITY</span></span><p>Local deterministic simulation. Every displayed value comes from the running world.</p><span class="keyboard-hint"><kbd>space</kbd> run / pause <kbd>→</kbd> step</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

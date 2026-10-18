@@ -1,0 +1,15 @@
+{
+  "commit": "8040b22",
+  "branch": "codex/fork-the-city",
+  "tests": {
+    "passed": 40,
+    "seconds": 5.16
+  },
+  "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "scenario": "rumor",
+  "seed": 42,
+  "ticks": 48,
+  "events": 1034,
+  "ledger_hash": "d15f677449ca8596bf1e831e226d6b35228a06185e130bbdfab7e9db78ae8ef3"
+}
