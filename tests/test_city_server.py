@@ -177,6 +177,22 @@ def test_http_fork_and_branch_step_leave_original_timeline_unchanged(live_http):
     assert advanced["branch"]["tick"] == original["tick"] + 2
 
 
+def test_http_dependency_check_runs_a_real_intervention_without_mutating_history(live_http):
+    session, request = live_http
+    request("POST", "/api/step", {"count": 3})
+    before = session.state()
+    commands = copy.deepcopy(session.commands)
+    decision = next(d for d in session.original.decisions if d["agent"] == "Livia")
+    status, result, _ = request("GET", f"/api/necessity?event_id={decision['event_id']}")
+    assert status == 200 and result["status"] == "verified"
+    assert result["original"]["action"] == "reserve"
+    assert result["altered"]["action"] == "defer"
+    assert result["changed_action"]
+    assert result["intervention"]["kind"] == "remove_message"
+    assert session.state() == before
+    assert session.commands == commands
+
+
 @pytest.mark.parametrize("method, path, data, headers, raw, expected", (
     ("POST", "/api/step", {"count": 0}, None, None, 400),
     ("POST", "/api/step", None, None, "[]", 400),
@@ -185,6 +201,8 @@ def test_http_fork_and_branch_step_leave_original_timeline_unchanged(live_http):
     ("POST", "/api/unknown", {}, None, None, 404),
     ("GET", "/api/trace?timeline=branch&event_id=0", None, None, None, 400),
     ("GET", "/api/trace?event_id=not-a-number", None, None, None, 400),
+    ("GET", "/api/necessity?event_id=0", None, None, None, 400),
+    ("GET", "/api/necessity?event_id=0&timeline=branch", None, None, None, 400),
     ("GET", "/../pyproject.toml", None, None, None, 404),
 ))
 def test_http_rejections_do_not_mutate_live_history(live_http, method, path, data, headers, raw, expected):

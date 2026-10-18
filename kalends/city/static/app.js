@@ -228,7 +228,8 @@
     if (!event) { toast(`Event #${id} is not in this history.`); return; }
     const detail = $('#event-detail'); detail.dataset.event = `${state.timeline}:${id}`;
     const parents = array(event.parents ?? event.payload?.parents ?? event.payload?.evidence_ids);
-    detail.innerHTML = `<div class="event-kicker">EVENT #${esc(id)} · TICK ${esc(event.tick)} · ${esc(human(eventType(event)))}</div><h3>${esc(eventTitle(event))}</h3><div class="event-data">${event.actors?.length ? `<div><span>Citizens</span><span>${esc(event.actors.map((actor) => nameOf(actor)).join(', '))}</span></div>` : ''}${event.location ? `<div><span>Location</span><span>${esc(locationOf(event.location))}</span></div>` : ''}${event.scope ? `<div><span>Scope</span><span>${esc(human(event.scope))}</span></div>` : ''}${Object.entries(event.payload ?? {}).filter(([key, value]) => ['action', 'value', 'prop', 'as_of', 'speaker', 'listener', 'root_source', 'loss', 'regret', 'reason', 'root_count', 'source_count'].includes(key) && typeof value !== 'object').map(([key, value]) => `<div><span>${esc(human(key))}</span><span>${esc(fmt(value))}</span></div>`).join('')}</div><div class="trace-heading">Structural ancestry</div><div id="trace-content">${parents.length ? `<div class="evidence-links">${parents.map((parent) => ref(typeof parent === 'object' ? eventId(parent) : parent)).join('')}</div>` : '<p class="trace-note">No parent events recorded. This may be an initial condition or exogenous observation.</p>'}<p class="trace-note">Loading recorded dependency trace…</p></div>${raw(event, 'Full recorded event')}`;
+    const canTest = state.timeline === 'original' && (event.category ?? event.payload?.category) === 'decision';
+    detail.innerHTML = `<div class="event-kicker">EVENT #${esc(id)} · TICK ${esc(event.tick)} · ${esc(human(eventType(event)))}</div><h3>${esc(eventTitle(event))}</h3><div class="event-data">${event.actors?.length ? `<div><span>Citizens</span><span>${esc(event.actors.map((actor) => nameOf(actor)).join(', '))}</span></div>` : ''}${event.location ? `<div><span>Location</span><span>${esc(locationOf(event.location))}</span></div>` : ''}${event.scope ? `<div><span>Scope</span><span>${esc(human(event.scope))}</span></div>` : ''}${Object.entries(event.payload ?? {}).filter(([key, value]) => ['action', 'value', 'prop', 'as_of', 'speaker', 'listener', 'root_source', 'loss', 'regret', 'reason', 'root_count', 'source_count'].includes(key) && typeof value !== 'object').map(([key, value]) => `<div><span>${esc(human(key))}</span><span>${esc(fmt(value))}</span></div>`).join('')}</div><div class="trace-heading">Structural ancestry</div><div id="trace-content">${parents.length ? `<div class="evidence-links">${parents.map((parent) => ref(typeof parent === 'object' ? eventId(parent) : parent)).join('')}</div>` : '<p class="trace-note">No parent events recorded. This may be an initial condition or exogenous observation.</p>'}<p class="trace-note">Loading recorded dependency trace…</p></div>${canTest ? `<div class="dependency-test"><button class="button necessity-button" data-necessity="${esc(id)}">Test a message dependency</button><p class="trace-note">Run one paired replay with an ancestor message removed. The result may change or preserve this decision.</p><div id="necessity-result" aria-live="polite"></div></div>` : ''}${raw(event, 'Full recorded event')}`;
     if (updateList) $('#event-list').querySelectorAll('[data-event]').forEach((row) => { const selected = String(row.dataset.event) === String(id); row.classList.toggle('selected', selected); row.setAttribute('aria-pressed', String(selected)); });
     const serial = ++state.traceSerial;
     try {
@@ -247,7 +248,15 @@
     nodes = nodes.map((node) => typeof node === 'object' ? node.event ?? node : active()?.events?.find((item) => String(eventId(item)) === String(node))).filter(Boolean);
     nodes = nodes.filter((node) => eventId(node) != null).sort((a, b) => a.tick - b.tick || Number(eventId(a)) - Number(eventId(b)));
     const parents = array(event.parents ?? event.payload?.parents);
-    $('#trace-content').innerHTML = `${nodes.length ? `<ol class="trace-list">${nodes.map((node) => `<li class="trace-node">${ref(eventId(node))}<span>${esc(eventTitle(node))}</span><span class="decision-time">T${esc(node.tick)}</span></li>`).join('')}</ol>` : parents.length ? `<div class="evidence-links">${parents.map((parent) => ref(typeof parent === 'object' ? eventId(parent) : parent)).join('')}</div>` : '<p class="trace-note">No earlier dependencies recorded for this event.</p>'}<p class="trace-note">This is recorded evidence ancestry. A shared ancestor alone does not establish that an outcome required it.</p>${trace.necessity_available ? `<button class="button necessity-button" id="necessity-button" data-necessity="${esc(eventId(event))}">Test counterfactual necessity</button><div id="necessity-result"></div>` : ''}${raw(trace, 'Inspect trace data')}`;
+    $('#trace-content').innerHTML = `${nodes.length ? `<ol class="trace-list">${nodes.map((node) => `<li class="trace-node">${ref(eventId(node))}<span>${esc(eventTitle(node))}</span><span class="decision-time">T${esc(node.tick)}</span></li>`).join('')}</ol>` : parents.length ? `<div class="evidence-links">${parents.map((parent) => ref(typeof parent === 'object' ? eventId(parent) : parent)).join('')}</div>` : '<p class="trace-note">No earlier dependencies recorded for this event.</p>'}<p class="trace-note">This is recorded evidence ancestry. A shared ancestor alone does not establish that an outcome required it.</p>${raw(trace, 'Inspect trace data')}`;
+  }
+
+  function dependencyResult(result) {
+    if (result.status !== 'verified') return `<div class="necessity-result unsupported"><div class="necessity-kicker">TEST UNAVAILABLE FOR THIS DECISION</div><p>${esc(result.reason ?? result.interpretation ?? 'The server did not complete a dependency test.')}</p>${raw(result, 'Recorded test diagnostic')}</div>`;
+    const before = result.original ?? {}, after = result.altered ?? {};
+    const intervention = result.intervention ?? {};
+    const difference = result.changed_action === true;
+    return `<div class="necessity-result ${difference ? 'changed' : 'unchanged'}"><div class="necessity-kicker">SINGLE-DELETION REPLAY · COMPLETED</div><h4>${difference ? 'This deletion changed the selected decision.' : 'This deletion left the selected decision unchanged.'}</h4><p>${esc(human(intervention.kind ?? 'Message deletion'))}${intervention.event_id != null ? ` · queued message ${ref(intervention.event_id, 'original')}` : ''}${intervention.tick != null ? ` at tick ${esc(intervention.tick)}` : ''}.</p><table class="necessity-table"><thead><tr><th scope="col">Decision</th><th scope="col">Original</th><th scope="col">Replay</th></tr></thead><tbody><tr><th scope="row">Action</th><td>${esc(human(before.action ?? 'Unknown'))}</td><td>${esc(human(after.action ?? 'Unknown'))}</td></tr><tr><th scope="row">Prediction</th><td>${esc(human(before.predicted_value ?? 'Unknown'))}</td><td>${esc(human(after.predicted_value ?? 'Unknown'))}</td></tr><tr><th scope="row">Evaluator loss</th><td>${esc(fmt(before.loss))}</td><td>${esc(fmt(after.loss))}</td></tr></tbody></table><p class="necessity-interpretation">${esc(result.interpretation ?? 'This result concerns one message deletion under matched simulation rules.')}</p><p class="necessity-limit">A single tested deletion does not establish necessity across other interventions, other decisions, or all possible histories.</p>${raw(result, 'Complete paired replay result')}</div>`;
   }
 
   function pendingMessages() {
@@ -367,16 +376,19 @@
     if (agent) { selectHistory(agent.dataset.timeline); state.selectedAgent = agent.dataset.agent; render(); return; }
     const eventLink = event.target.closest('[data-event-ref]');
     if (eventLink) { selectHistory(eventLink.dataset.timeline ?? state.timeline); render(); await selectEvent(eventLink.dataset.eventRef); $('#ledger-heading').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); return; }
-    const row = event.target.closest('[data-event]');
+    const row = event.target.closest('.event-row[data-event]');
     if (row) { await selectEvent(row.dataset.event); return; }
     const filter = event.target.closest('[data-filter]');
     if (filter) { state.filter = filter.dataset.filter; document.querySelectorAll('[data-filter]').forEach((button) => { button.classList.toggle('active', button === filter); button.setAttribute('aria-pressed', String(button === filter)); }); renderEvents(); return; }
     const necessity = event.target.closest('[data-necessity]');
     if (necessity) {
-      necessity.disabled = true; $('#necessity-result').innerHTML = '<p class="trace-note">Replaying the selected intervention…</p>';
-      try { const result = await api(`/api/necessity?event_id=${encodeURIComponent(necessity.dataset.necessity)}&timeline=${encodeURIComponent(state.timeline)}`); $('#necessity-result').innerHTML = `<div class="necessity-result">${raw(result, 'Counterfactual test result')}</div>`; }
-      catch (error) { $('#necessity-result').innerHTML = `<p class="error-inline">${esc(error.message)}</p>`; }
-      finally { necessity.disabled = false; }
+      pause();
+      const container = $('#necessity-result');
+      necessity.disabled = true; necessity.textContent = 'Testing paired histories…';
+      container.innerHTML = '<p class="trace-note">Running one message-deletion replay. Neither displayed history is modified.</p>';
+      try { const result = await api(`/api/necessity?event_id=${encodeURIComponent(necessity.dataset.necessity)}&timeline=original`); if (container.isConnected) container.innerHTML = dependencyResult(result); }
+      catch (error) { if (container.isConnected) container.innerHTML = `<p class="error-inline">${esc(error.message)}</p>`; }
+      finally { if (necessity.isConnected) { necessity.disabled = false; necessity.textContent = 'Test a message dependency'; } }
     }
   });
   document.addEventListener('change', (event) => {
@@ -399,5 +411,8 @@
     if (event.key === 'Escape') $('.settings').open = false;
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
+  const exportLink = document.createElement('a');
+  exportLink.className = 'history-export'; exportLink.href = '/api/export'; exportLink.download = 'kalends-history.json'; exportLink.textContent = 'Export history ↓';
+  $('.page-footer').insertBefore(exportLink, $('.keyboard-hint'));
   api('/api/state').then(accept).catch((error) => { showError(error); $('#playback-status').textContent = 'Disconnected'; });
 })();

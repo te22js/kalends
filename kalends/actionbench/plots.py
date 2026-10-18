@@ -77,18 +77,20 @@ def make_plots(directory):
     fig.savefig(out / "decision_outcomes.png", bbox_inches="tight")
     plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(10, 5))
     for s in selected:
         if s["condition"].startswith("always_"):
             continue
         x, y = metric(s, "qa_accuracy"), metric(s, "decision_regret")
         name = s["condition"]
         ax.errorbar(x["mean"], y["mean"], xerr=error(x), yerr=error(y), fmt="o",
-                    color=colors.get(name, "#777777"), capsize=2)
-        ax.annotate(labels.get(name, name), (x["mean"], y["mean"]), xytext=(5, 5), textcoords="offset points", fontsize=8)
+                    color=colors.get(name, "#777777"), capsize=2,
+                    label=labels.get(name, name))
     ax.set(xlabel="Accuracy against local normative belief (not world truth)", ylabel="Task regret per action opportunity",
            title="Remembering a report and making a good decision are different tasks", xlim=(0, 1.04))
     ax.grid(alpha=.15)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1), fontsize=8,
+              title="Coincident points share coordinates")
     fig.tight_layout()
     fig.savefig(out / "memory_vs_action.png", bbox_inches="tight")
     plt.close(fig)

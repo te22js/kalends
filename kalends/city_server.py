@@ -113,6 +113,14 @@ def make_handler(session):
                     if parsed.path == "/api/export":
                         return self.send_json({"version": 1, "commands": session.commands,
                                                "state": session.state()})
+                    if parsed.path == "/api/necessity":
+                        from .city.causal import verify_message_dependency
+                        if query.get("timeline", ["original"])[0] != "original":
+                            raise ValueError("dependency checks currently support the original timeline")
+                        event_id = int(query.get("event_id", ["-1"])[0])
+                        message = query.get("message_event_id", [None])[0]
+                        return self.send_json(verify_message_dependency(
+                            session.original, event_id, int(message) if message is not None else None))
                     if parsed.path == "/api/trace":
                         timeline = query.get("timeline", ["original"])[0]
                         if timeline not in ("original", "branch"):
@@ -168,7 +176,7 @@ def make_handler(session):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Kalends: Fork the City — local deterministic world")
-    parser.add_argument("--host", default="127.0.0.1", choices=("127.0.0.1", "localhost", "::1"))
+    parser.add_argument("--host", default="127.0.0.1", choices=("127.0.0.1", "localhost"))
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--journal", default=".kalends/city_session.json",
                         help="command journal for restart recovery; empty string disables persistence")
