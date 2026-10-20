@@ -1,5 +1,31 @@
 # Kalends
 
+## Pompeii — the playable lived-world prototype
+
+Walk a historical-fiction district, earn wages, trade flour, broker dated reports,
+make promises, accept household obligations, and return after a week. Gameplay
+and the operator World Lab have separate screens. Runs offline without API keys.
+
+```sh
+./scripts/run_pompeii.sh                       # http://127.0.0.1:8780/
+./scripts/run_pompeii.sh --temporary --port 8781 # fresh unsaved life
+```
+
+Click streets/buildings to walk; WASD/arrows move, E speaks, X exits interiors.
+Start at Felix's bread counter. Natural-language actions show a confirmation card.
+Use the journal for places, belongings, evidence, and World Lab alternatives.
+Python 3.10+ is required; the launcher also finds the Codex bundled runtime.
+
+[Complete handoff](KALENDS_POMPEII_HANDOFF.md) ·
+[Gameplay guide](docs/pompeii/GAMEPLAY_LOOP.md) ·
+[Research paper and limits](docs/pompeii/RESEARCH_PAPER.md) ·
+[Actual browser captures](results/pompeii/DEMO_WALKTHROUGH.md)
+
+Frozen fresh studies: exact scheduled compression in 90/90 matched comparisons,
+1.12–1.21× local speedup, and a 240-world society study with reported negative
+and null results. No human playtest or historical behavioral validation is claimed.
+The earlier projects below and their results are preserved.
+
 ## Fork the City — runnable local world
 
 The new city demonstration connects the existing ledger, private experiences,
