@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#3b4939">
+  <meta name="description" content="Walk the streets of a simulated Pompeian neighbourhood. Work, talk, make promises, and return to discover what the city remembers.">
+  <title>Kalends · A Life in Pompeii</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <main id="game" aria-label="A life in Pompeii">
+    <canvas id="town" tabindex="0" aria-label="Playable town. Use arrow keys or W A S D to walk, E to interact, or click a street or building."></canvas>
+    <div class="screen-vignette" aria-hidden="true"></div>
+    <header class="game-header">
+      <div class="game-title"><span class="title-mark" aria-hidden="true">K</span><div><h1>POMPEII</h1><p>A LIFE IN THE CITY <span>by Kalends</span></p></div></div>
+      <div class="clock-panel"><span class="sun-symbol" aria-hidden="true">☀</span><div><strong id="clock">Opening the city…</strong><span id="clock-status">A LOCAL, PERSISTENT WORLD</span></div></div>
+      <nav class="header-actions" aria-label="Your belongings and world"><button id="purse" class="resource-button" aria-label="Open your purse and bag"><span class="coin-icon" aria-hidden="true">◉</span><strong id="coins">—</strong><span class="resource-unit">den.</span><span class="resource-separator"></span><svg class="bag-icon" viewBox="0 0 20 22" aria-hidden="true"><path d="M6 6V4a4 4 0 0 1 8 0v2M4 6h12l2 14H2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><strong id="bag-count">—</strong></button><button id="menu-button" class="round-button" aria-label="Open journal and history">☰</button></nav>
+    </header>
+
+    <aside class="objective-card" id="objective-card" aria-labelledby="objective-title"><div class="objective-kicker"><span aria-hidden="true">◇</span> YOUR NEXT CHAPTER <button id="fold-objective" class="icon-button" aria-label="Minimize objective">−</button></div><h2 id="objective-title">A city already living.</h2><div id="objective-content"><p>Finding your place in the neighbourhood…</p></div></aside>
+    <p id="place-label" class="place-label" aria-live="polite"></p>
+    <div id="walk-marker" class="walk-marker" hidden aria-hidden="true"></div>
+
+    <div class="navigation-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span>Click a street to go there</span><button id="recenter" aria-label="Follow your character">◎ Find me</button></div>
+    <div class="map-tools"><button id="zoom-out" aria-label="Zoom out">−</button><button id="map-button" aria-label="Show the whole neighbourhood">⌗</button><button id="zoom-in" aria-label="Zoom in">+</button></div>
+    <canvas id="minimap" width="190" height="125" aria-label="Neighbourhood overview. Click to move the camera."></canvas>
+
+    <section id="context" class="context-prompt" hidden aria-label="Nearby interaction"><button id="interact"><kbd>E</kbd><span id="context-text">Speak</span><span aria-hidden="true">→</span></button><div id="context-alternatives"></div></section>
+    <section class="time-bar" aria-label="World time controls"><span class="time-label">LET TIME PASS</span><button id="live" aria-pressed="false"><span class="live-dot"></span> Live</button><button id="compress" title="Advance thirty world minutes">Compress <span>30m</span></button><button id="montage" title="See what changes as world time advances">Montage</button><details class="skip-menu"><summary>Skip to <span aria-hidden="true">⌄</span></summary><div><button id="skip-next">The next event</button><button id="skip-week">Return after seven days<small>Advance up to 10,080 world minutes</small></button></div></details></section>
+    <p class="fiction-note">A historical-fiction neighbourhood · schematic layout</p>
+
+    <aside id="conversation" class="conversation-drawer" hidden aria-labelledby="person-name"><div class="conversation-heading"><div id="person-portrait" class="person-portrait" aria-hidden="true">?</div><div><p id="person-role" class="eyebrow"></p><h2 id="person-name"></h2><p id="person-context"></p></div><button class="close-button" id="close-conversation" aria-label="Close conversation">×</button></div><div id="conversation-log" class="conversation-log" role="log" aria-live="polite"></div><div id="action-preview" class="action-preview" hidden></div><div id="nearby-actions" class="nearby-actions"></div><div class="conversation-composer"><div class="quick-questions"><button data-say="What work is there?">Work & promises</button><button data-say="What have you heard?">Town news</button><button data-say="Why don't you trust me?">Our history</button></div><form id="speak-form"><label class="sr-only" for="speech">Speak to this person</label><textarea id="speech" rows="2" maxlength="2000" placeholder="What do you say?"></textarea><button id="send-speech" type="submit" aria-label="Say this">↑</button></form><p>Words and agreements enter the world only after you confirm.</p></div></aside>
+
+    <aside id="journal-drawer" class="journal-drawer" hidden aria-labelledby="journal-title"><header><div><p class="eyebrow">WHAT THE CITY REMEMBERS</p><h2 id="journal-title">Your journal</h2></div><button id="close-journal" class="close-button" aria-label="Close journal">×</button></header><nav class="journal-tabs" aria-label="Journal sections"><button data-tab="journal" class="active">Your story</button><button data-tab="places">Places & history</button><button data-tab="bag">Your belongings</button></nav><div id="journal-content"></div><footer><button id="open-lab">World lab <span aria-hidden="true">↗</span></button><a href="/api/export" download="kalends-pompeii-history.json">Export history</a></footer></aside>
+
+    <dialog id="evidence-dialog" class="paper-dialog" aria-labelledby="evidence-title"><header><div><p class="eyebrow">FOLLOW THE EVIDENCE</p><h2 id="evidence-title">Why did that happen?</h2></div><button class="close-button" data-close="evidence-dialog" aria-label="Close evidence">×</button></header><div id="evidence-content"></div></dialog>
+    <dialog id="montage-dialog" class="paper-dialog montage-dialog" aria-labelledby="montage-title"><header><div><p class="eyebrow">WORLD TIME HAS PASSED</p><h2 id="montage-title">The city went on.</h2></div><button class="close-button" data-close="montage-dialog" aria-label="Close return summary">×</button></header><div id="montage-content"></div><button id="return-to-town" class="primary-button">Step back into the street <span aria-hidden="true">→</span></button></dialog>
+    <dialog id="lab-dialog" class="lab-dialog" aria-labelledby="lab-title"><header><div><p class="eyebrow">SEPARATE FROM PLAY</p><h2 id="lab-title">World lab</h2></div><button id="close-lab" class="close-button" aria-label="Return to the game">×</button></header><div class="lab-notice">This operator view exposes simulation records. It does not give your character those memories.</div><div class="lab-controls"><label>Displayed history<select id="lab-history"><option value="world">Original</option></select></label><label>Remove a recorded action<select id="lab-event"></select></label><button id="fork-history" class="primary-button">Run an alternative</button></div><div id="lab-content"></div><footer><a href="/research" target="_blank" rel="noopener">Research notes ↗</a><a href="/history" target="_blank" rel="noopener">Historical framework ↗</a><a href="/api/export" download="kalends-pompeii-history.json">Export the actual history ↗</a></footer></dialog>
+    <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+    <div id="loading" class="loading-screen"><span class="loading-mark">K</span><p>POMPEII</p><h2>A street. A promise.<br>A place in the world.</h2><span id="loading-status">Opening your neighbourhood…</span></div>
+    <div class="touch-pad" aria-label="Walking controls"><button data-direction="up" aria-label="Walk up">↑</button><button data-direction="left" aria-label="Walk left">←</button><button data-direction="down" aria-label="Walk down">↓</button><button data-direction="right" aria-label="Walk right">→</button></div>
+  </main>
+</body>
+</html>
