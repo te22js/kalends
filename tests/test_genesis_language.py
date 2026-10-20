@@ -104,3 +104,12 @@ def test_optional_adapter_cannot_smuggle_narration_as_clarification_and_malforme
 
     with pytest.raises(ValueError, match="action object"):
         compile_utterance("hello", "Livia", *views, adapter=MalformedAdapter())
+
+
+def test_trust_explanation_never_uses_unrelated_citizen_memories(views):
+    citizen, player = views
+    citizen["experiences"] = [{"event_id": 99, "source_agent": "Dama", "text": "I distrusted Dama's claim; my trust changed."}]
+    result = compile_utterance("Why don't you trust me?", "Livia", citizen, player)
+    assert result["reply"]["epistemic_status"] == "uncertain"
+    assert result["reply"]["evidence_ids"] == []
+    assert "Dama" not in result["reply"]["text"]

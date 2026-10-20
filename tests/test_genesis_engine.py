@@ -290,6 +290,41 @@ def test_player_snapshot_has_no_citizen_private_memory_or_truth():
     assert 'experiences' in operator['agents'][0]
 
 
+def test_settlement_trace_links_executed_procurement_and_previous_account_checkpoint():
+    sim = make(n_ticks=16).run()
+    settlements = [e for e in sim.ledger.events if e.payload.get('category') == 'commitment_settled'
+                   and e.payload.get('owner') == 'Livia']
+    first, second = settlements
+    assert first.payload['accounting_checkpoint'] == 0
+    assert {0, first.event_id} <= set(second.payload['parents'])
+    assert second.payload['accounting_checkpoint'] == first.event_id
+    purchases = [e for e in sim.ledger.events if e.payload.get('category') == 'purchase'
+                 and e.payload.get('owner') == 'Livia' and e.event_id < first.event_id]
+    assert purchases and all(e.event_id in first.payload['inventory_dependency_events'] for e in purchases)
+    ancestors = sim.trace(first.event_id)['ancestors']
+    assert {'purchase', 'price', 'decision'} <= {e['category'] for e in ancestors}
+    assert first.payload['inventory_before_settlement'] >= first.payload['quantity']
+    assert 'fungible' in first.payload['inventory_allocation']
+    assert 'not necessary or minimal causes' in first.payload['dependency_scope']
+    for event in sim.ledger.events:
+        assert event.event_id == sim.ledger.events.index(event)
+        assert all(type(parent) is int and 0 <= parent < event.event_id for parent in event.payload['parents'])
+
+
+def test_player_contract_settlement_trace_contains_agreement_and_inventory_acquisition():
+    sim = make(n_ticks=12).step(1)
+    purchase = sim.player_trade('market', 2)
+    agreement = sim.player_contract('Livia', 1, 3)
+    sim.step(3)
+    settlement = next(e for e in sim.ledger.events if e.payload.get('category') == 'commitment_settled'
+                      and e.payload.get('owner') == 'Player')
+    assert {0, purchase['event_id'], agreement['event_id']} <= set(settlement.payload['parents'])
+    assert settlement.payload['quantity'] == 1
+    assert sum(settlement.payload['cash_delta'].values()) == 0
+    assert sum(settlement.payload['inventory_delta'].values()) == 0
+    assert 'no per-unit FIFO attribution' in settlement.payload['inventory_allocation']
+
+
 @pytest.mark.parametrize('action', [
     {'kind': 'claim', 'recipient': 'Nobody', 'value': 'disrupted'},
     {'kind': 'claim', 'recipient': 'Livia', 'value': 'disrupted', 'as_of': 999},

@@ -111,3 +111,17 @@ def test_return_reports_actual_elapsed_ticks_not_an_unexecuted_story():
     assert report["to_tick"] == 74
     assert report["elapsed_ticks"] == 72
     assert "background" not in report["summary"]
+
+
+def test_curated_return_explanation_cites_the_actual_false_claim_dated_check_and_cost():
+    session = GenesisSession()
+    session.apply("reset", {"capacity": 256})
+    claim = say(session)["receipt"]
+    session.apply("step", {"count": 72})
+    reply = session.propose({"recipient": "Livia", "text": "Why don't you trust me?"})["reply"]
+    assert "32%" in reply["text"]
+    assert claim["event_id"] in reply["evidence_ids"]
+    categories = {session.original.ledger.events[i].payload["category"] for i in reply["evidence_ids"]}
+    assert {"player_message", "relationship", "inspection_record", "inspection_booked"}.issubset(categories)
+    retained = {e.event_id for e in session.original.remembered("Livia")}
+    assert set(reply["evidence_ids"]).issubset(retained)

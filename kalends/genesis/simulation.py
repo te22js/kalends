@@ -60,7 +60,35 @@ class GenesisSimulation(CitySimulation):
         self._initial_accounts = {a: {"cash": self.economy.cash[a], "inventory": self.economy.inventory[a]}
                                   for a in self.agent_ids + ["Player"]}
 
+    def _settlement_dependencies(self, owner):
+        """Auditor-only resource checkpoints, never an operational memory query.
+
+        Grain is pooled/fungible. These links record account dependencies and
+        contemporaneous procurement choices, not necessary or minimal causes.
+        """
+        events = self.ledger.events
+        checkpoints = [e for e in events if e.payload.get("category") == "commitment_settled"
+                       and e.payload.get("owner") == owner]
+        checkpoint = checkpoints[-1].event_id if checkpoints else 0
+        period = [e for e in events if e.event_id > checkpoint]
+        inventory = [e.event_id for e in period if owner in e.payload.get("inventory_delta", {})]
+        cash = [e.event_id for e in period if owner in e.payload.get("cash_delta", {})]
+        decisions = [e.event_id for e in period if e.payload.get("category") == "decision"
+                     and e.actors == (owner,)]
+        return checkpoint, inventory, cash, decisions
+
     def _emit(self, tick, etype, location, actors, category, title, parents=(), scope="public", **payload):
+        if category == "commitment_settled":
+            owner = payload.get("owner", actors[0])
+            checkpoint, inventory, cash, decisions = self._settlement_dependencies(owner)
+            parents = list(parents) + [0, checkpoint] + inventory + cash + decisions
+            payload.update(accounting_checkpoint=checkpoint,
+                           inventory_dependency_events=inventory,
+                           cash_dependency_events=cash,
+                           procurement_decision_events=decisions,
+                           inventory_before_settlement=self.economy.inventory[owner],
+                           inventory_allocation="pooled fungible inventory; no per-unit FIFO attribution",
+                           dependency_scope="auditor-only period accounts and recorded procurement; not necessary or minimal causes")
         if category == "city_initialized":
             quantities = {"baker": 4, "mill worker": 3, "merchant": 3, "trader": 2,
                           "courier": 1, "porter": 1, "grain official": 1}

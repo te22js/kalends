@@ -1,0 +1,14 @@
+{
+  "seed": 2026,
+  "n_agents": 8,
+  "n_ticks": 96,
+  "family": "reversal",
+  "memory": "hybrid_guarded",
+  "gate": "none",
+  "threshold": 2,
+  "capacity": 256,
+  "communication_depth": 3,
+  "supply_mode": "per_capita",
+  "allocation": "seeded",
+  "role_policy": true
+}

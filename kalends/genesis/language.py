@@ -44,14 +44,31 @@ def grounded_reply(text, view):
         if isinstance(trust, dict):
             trust = trust.get("Player", .6)
         relevant = [r for r in records if r.get("source_agent") == "Player" or
-                    any(w in r.get("text", "").lower() for w in ("player", "trust"))]
+                    r.get("subject") == "relationship" and r.get("predicate") == "Player"]
         if not relevant:
             return _reply("My trust in you is %.0f%%. I cannot recall a retained event that explains it. "
                           "I won't invent a reason." % (100 * trust), status="uncertain")
-        chosen = relevant[-3:]
+        assessments = [r for r in relevant if r.get("subject") == "relationship" and
+                       r.get("predicate") == "Player"]
+        chosen = assessments[-2:] if assessments else relevant[-2:]
         details = " ".join(r.get("text", "") for r in chosen)
+        accessible = _ids(view)
+        evidence = {r["event_id"] for r in chosen}
+        for receipt in view.get("receipts", []):
+            if receipt.get("event_id") in evidence:
+                evidence.update(i for i in receipt.get("evidence_ids", []) if i in accessible)
+                date = receipt.get("claim_as_of")
+                evidence.update(r["event_id"] for r in records if r.get("kind") == "observed" and
+                                r.get("as_of") == date and
+                                (r.get("subject") == "grain" and r.get("predicate") == "supply" or
+                                 r.get("subject") == "dispatch_log" and r.get("predicate") == "grain_supply_at_%s" % date))
+                evidence.update(r["event_id"] for r in view.get("receipts", []) if
+                                receipt.get("claim_event") in r.get("evidence_ids", []) and
+                                r.get("cash_delta", 0) < 0 and r["event_id"] in accessible)
+        if not assessments:
+            details += " I don't retain a Player-specific assessment that explains my current trust."
         return _reply("My trust in you is %.0f%%. What I can still recall: %s" %
-                      (100 * trust, details), [r["event_id"] for r in chosen])
+                      (100 * trust, details), evidence)
     if any(word in normalized for word in ("goal", "need", "contract", "delivery", "deliveries")):
         commitments = view.get("commitments", [])
         due = [c for c in commitments if c.get("status", "open") == "open"]
