@@ -1,0 +1,458 @@
+{
+  "cells": [
+    {
+      "days": 1,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.00045422079783747905,
+        "median": 0.00045131249862606637,
+        "ci95_mean": [
+          0.00044287069904385133,
+          0.0004659667974920012
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 45262.2,
+        "median": 45231.0,
+        "ci95_mean": [
+          45231.0,
+          45324.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 26.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 16.0,
+      "mean_ticks_visited": 1437.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 1,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.00041209590053767895,
+        "median": 0.0003993540012743324,
+        "ci95_mean": [
+          0.0003961167007219046,
+          0.0004311584991228301
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1057662085421271,
+        "median": 1.117561536041497,
+        "ci95_mean": [
+          1.064301957808048,
+          1.1489978436767614
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 45134.2,
+        "median": 45095.0,
+        "ci95_mean": [
+          45095.0,
+          45212.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 26.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 16.0,
+      "mean_ticks_visited": 13.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 1,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.0004106874992430676,
+        "median": 0.00039808300061849877,
+        "ci95_mean": [
+          0.00039761649968568237,
+          0.00042634159908629956
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.107894432812599,
+        "median": 1.0943001668146883,
+        "ci95_mean": [
+          1.0785429305917869,
+          1.141682309758995
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 46398.2,
+        "median": 46363.0,
+        "ci95_mean": [
+          46363.0,
+          46468.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 27.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 16.0,
+      "mean_ticks_visited": 6.0,
+      "mean_lateness_minutes": 385.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 10,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 10,
+        "events": 10,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 10
+      }
+    },
+    {
+      "days": 7,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.002424720999260899,
+        "median": 0.0023883539979578927,
+        "ci95_mean": [
+          0.002378721098648384,
+          0.0024757334009336772
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 182519.2,
+        "median": 182519.0,
+        "ci95_mean": [
+          182518.6,
+          182519.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 162.0,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 152.0,
+      "mean_ticks_visited": 10077.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 7,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.0020247332999133506,
+        "median": 0.0019792914972640574,
+        "ci95_mean": [
+          0.0019838872984109914,
+          0.0020716040999104735
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1987794253829378,
+        "median": 1.189924960871231,
+        "ci95_mean": [
+          1.1680959855163213,
+          1.232276651123924
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 182351.2,
+        "median": 182351.0,
+        "ci95_mean": [
+          182350.6,
+          182351.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 162.0,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 152.0,
+      "mean_ticks_visited": 119.7,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 7,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.002024408499710262,
+        "median": 0.0019948124972870573,
+        "ci95_mean": [
+          0.0019784001997322775,
+          0.0020772001000295857
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1990154244824889,
+        "median": 1.2073810591027532,
+        "ci95_mean": [
+          1.1670221360176813,
+          1.2231794170305212
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 176934.1,
+        "median": 177062.0,
+        "ci95_mean": [
+          176204.9,
+          177664.1
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 158.4,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 152.0,
+      "mean_ticks_visited": 47.7,
+      "mean_lateness_minutes": 3688.7,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 10,
+        "commitments": 0,
+        "decision_choices": 5,
+        "decisions": 10,
+        "events": 10,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 10
+      }
+    },
+    {
+      "days": 30,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.010334170801070287,
+        "median": 0.010292291502992157,
+        "ci95_mean": [
+          0.010159474902320654,
+          0.01052173750140355
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 621985.5,
+        "median": 620004.0,
+        "ci95_mean": [
+          617833.3,
+          627120.9
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 637.9,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 643.6,
+      "mean_ticks_visited": 43197.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 30,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.008701975000440143,
+        "median": 0.008591791996877873,
+        "ci95_mean": [
+          0.008547874899522866,
+          0.008896983500017086
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1878400088177794,
+        "median": 1.1814163136761362,
+        "ci95_mean": [
+          1.1766691663535895,
+          1.198773078197743
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 621842.3,
+        "median": 619858.0,
+        "ci95_mean": [
+          617696.1,
+          626978.5
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 637.9,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 643.6,
+      "mean_ticks_visited": 528.3,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 0,
+        "commitments": 0,
+        "decision_choices": 0,
+        "decisions": 0,
+        "events": 0,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 30,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.00851327519994811,
+        "median": 0.008387333997234236,
+        "ci95_mean": [
+          0.00830434209856321,
+          0.008775874798448057
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.2149227648741,
+        "median": 1.223522826041112,
+        "ci95_mean": [
+          1.1959363133047325,
+          1.2309402412567683
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 596594.9,
+        "median": 596010.5,
+        "ci95_mean": [
+          591331.1,
+          602349.2
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 619.2,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 643.6,
+      "mean_ticks_visited": 206.6,
+      "mean_lateness_minutes": 14887.6,
+      "divergent_cells_by_projection": {
+        "belief_values": 0,
+        "beliefs": 10,
+        "commitments": 0,
+        "decision_choices": 5,
+        "decisions": 10,
+        "events": 10,
+        "outcomes": 0,
+        "relationships": 0,
+        "state": 10
+      }
+    }
+  ],
+  "world_runtime_runs": 450,
+  "world_traced_runs": 90,
+  "all_runtime_repeats_deterministic": true,
+  "all_traced_repeats_deterministic": true,
+  "live_compress_exact": true,
+  "scope": "Paired fresh seeds; Python traced allocations, not RSS. Exactness is limited to scheduled model transitions. Montage/browser costs are excluded.",
+  "wall_seconds": 9.54348116699839,
+  "source_unchanged": true,
+  "raw_sha256": "8b00430d3e6793c55a89db99028c1447783deb03a2e6136cbb062d7f85e2c20b",
+  "plots": {
+    "status": "unavailable",
+    "reason": "matplotlib is not installed in this Python"
+  }
+}

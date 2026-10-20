@@ -1,0 +1,16 @@
+{
+  "scope": "Saved Track B measurements only; no simulation, bootstrap or timing rerun",
+  "python": "3.9.6",
+  "matplotlib": "3.9.4",
+  "numpy": "2.0.2",
+  "summary_sha256": "fe6c795a44253c2c2f01f6cd749ba50f53742e955e141f7bc952d9d6e61daceb",
+  "raw_sha256": "edb482405489812ba0867da5c8a3c6afa23ec05e9a30b231eaa4077c2955395e",
+  "recipe_sha256": "fba2707b00a322136f284ed3a7ed63a71f193ac49256037dafe03925440981cb",
+  "sampling": "Paired intervals copied unchanged from saved summary; reach/retention condition means copied from saved summary",
+  "files": {
+    "society_paired_outcomes.png": "31fec4bf6f94847e3296c540ef13a32b88a4d12d9ccd7335040e9d6709718223",
+    "society_paired_outcomes.svg": "f5df91cfa9821f08dc97b66ee77b641a651369ff3aab0017bde1a468c96ff295",
+    "society_reach_retention.png": "2420542bda9a5c60ca6c0412ac6af8526e1cfec1041877c0172812f37557d248",
+    "society_reach_retention.svg": "f7c34111a9f566b82bab51fa26ab97c2a3c9c7e3bce405ae436dd0fa27f6027a"
+  }
+}

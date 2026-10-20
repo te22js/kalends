@@ -1,0 +1,289 @@
+{
+  "kind": "automated developer fixtures, not human evaluation",
+  "language_cases": 20,
+  "intent_matches": 20,
+  "evidence_scope_passes": 20,
+  "median_proposal_seconds": 7.289549830602482e-05,
+  "max_proposal_seconds": 0.0002725409940467216,
+  "provider_calls": 0,
+  "inference_cost_usd": 0,
+  "language_limit": "Rule parser and literal grounded replies; evidence membership does not establish rich dialogue quality or general factual accuracy.",
+  "routes": {
+    "wage": {
+      "settlement": {
+        "minute": 79,
+        "events": 18,
+        "decisions": 1,
+        "delivered": 0,
+        "required": 0,
+        "delivery_fill_rate": null,
+        "citizen_cash_change": -13.0,
+        "player_cash_change": 1.0,
+        "player_grain": 0,
+        "stock": 8,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.6
+        },
+        "information_sales": 0,
+        "inspection_cost": 0,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          }
+        ]
+      },
+      "after_absence": {
+        "minute": 10160,
+        "events": 170,
+        "decisions": 28,
+        "delivered": 63,
+        "required": 63,
+        "delivery_fill_rate": 1.0,
+        "citizen_cash_change": 2.0,
+        "player_cash_change": 1.0,
+        "player_grain": 0,
+        "stock": 56,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.6
+        },
+        "information_sales": 0,
+        "inspection_cost": 11,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          }
+        ]
+      },
+      "return_reply": {
+        "text": "Aelia kept the flour promise; delivered 4/4. I paid 6 coins. My trust is 0.75. You promise Felix four flour units before dusk",
+        "evidence_ids": [
+          17,
+          5
+        ],
+        "epistemic_status": "Literal retained experiences; bounded memory"
+      },
+      "alternate_changed_fields": [
+        "cash",
+        "beliefs",
+        "decisions",
+        "memories",
+        "ledger_hash"
+      ]
+    },
+    "household": {
+      "settlement": {
+        "minute": 22,
+        "events": 14,
+        "decisions": 0,
+        "delivered": 0,
+        "required": 0,
+        "delivery_fill_rate": null,
+        "citizen_cash_change": -14.0,
+        "player_cash_change": 6.0,
+        "player_grain": 0,
+        "stock": 10,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.6
+        },
+        "information_sales": 0,
+        "inspection_cost": 0,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          },
+          {
+            "id": "household-service",
+            "quantity": 120,
+            "deadline": 4333,
+            "status": "open",
+            "fulfilled": 0,
+            "beneficiary": "Lucius",
+            "event_id": 9
+          }
+        ]
+      },
+      "after_absence": {
+        "minute": 10103,
+        "events": 170,
+        "decisions": 28,
+        "delivered": 63,
+        "required": 63,
+        "delivery_fill_rate": 1.0,
+        "citizen_cash_change": -3.0,
+        "player_cash_change": 6.0,
+        "player_grain": 0,
+        "stock": 56,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.39999999999999997
+        },
+        "information_sales": 0,
+        "inspection_cost": 11,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          },
+          {
+            "id": "household-service",
+            "quantity": 120,
+            "deadline": 4333,
+            "status": "missed",
+            "fulfilled": 0,
+            "beneficiary": "Lucius",
+            "event_id": 9,
+            "agent": "Player"
+          }
+        ]
+      },
+      "return_reply": {
+        "text": "Aelia kept the flour promise; delivered 4/4. I paid 6 coins. My trust is 0.75. You promise Felix four flour units before dusk",
+        "evidence_ids": [
+          13,
+          5
+        ],
+        "epistemic_status": "Literal retained experiences; bounded memory"
+      },
+      "alternate_changed_fields": [
+        "cash",
+        "beliefs",
+        "decisions",
+        "memories",
+        "ledger_hash"
+      ]
+    },
+    "information": {
+      "settlement": {
+        "minute": 11,
+        "events": 17,
+        "decisions": 0,
+        "delivered": 0,
+        "required": 0,
+        "delivery_fill_rate": null,
+        "citizen_cash_change": -8.0,
+        "player_cash_change": 0.0,
+        "player_grain": 0,
+        "stock": 10,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.6
+        },
+        "information_sales": 1,
+        "inspection_cost": 0,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          }
+        ]
+      },
+      "after_absence": {
+        "minute": 10092,
+        "events": 174,
+        "decisions": 28,
+        "delivered": 63,
+        "required": 63,
+        "delivery_fill_rate": 1.0,
+        "citizen_cash_change": 3.0,
+        "player_cash_change": 0.0,
+        "player_grain": 0,
+        "stock": 56,
+        "trust_player": {
+          "Felix": 0.75,
+          "Sabina": 0.6,
+          "Marcus": 0.6,
+          "Chreste": 0.6,
+          "Dama": 0.6,
+          "Lucius": 0.6
+        },
+        "information_sales": 1,
+        "inspection_cost": 11,
+        "player_commitments": [
+          {
+            "id": "felix-first",
+            "quantity": 4,
+            "deadline": 600,
+            "status": "fulfilled",
+            "fulfilled": 4,
+            "beneficiary": "Felix",
+            "event_id": 5,
+            "agent": "Player"
+          }
+        ]
+      },
+      "return_reply": {
+        "text": "Aelia kept the flour promise; delivered 4/4. I paid 6 coins. My trust is 0.75. Felix checks your report: historically unverified. Trust is 0.75. You promise Felix four flour units before dusk",
+        "evidence_ids": [
+          16,
+          46,
+          5
+        ],
+        "epistemic_status": "Literal retained experiences; bounded memory"
+      },
+      "alternate_changed_fields": [
+        "cash",
+        "relationships",
+        "beliefs",
+        "decisions",
+        "memories",
+        "ledger_hash"
+      ]
+    }
+  }
+}

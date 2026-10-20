@@ -1,0 +1,431 @@
+{
+  "cells": [
+    {
+      "days": 1,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.00047816670121392235,
+        "median": 0.0004637085003196262,
+        "ci95_mean": [
+          0.0004542209018836729,
+          0.0005033168017689604
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 45991.2,
+        "median": 45960.0,
+        "ci95_mean": [
+          45960.0,
+          46053.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 28.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 18.0,
+      "mean_ticks_visited": 1431.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 1,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.0004350957002316136,
+        "median": 0.000425979003921384,
+        "ci95_mean": [
+          0.0004146373990806751,
+          0.0004576079001708422
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1029385171155834,
+        "median": 1.0987801185474573,
+        "ci95_mean": [
+          1.0440611318193218,
+          1.1627765650244872
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 45863.2,
+        "median": 45824.0,
+        "ci95_mean": [
+          45824.0,
+          45941.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 28.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 18.0,
+      "mean_ticks_visited": 13.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 1,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.0004219959999318235,
+        "median": 0.0004149585001869127,
+        "ci95_mean": [
+          0.00040634999895701186,
+          0.0004421292993356474
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1337819753317444,
+        "median": 1.1187586924916575,
+        "ci95_mean": [
+          1.096135121227588,
+          1.1837125240721746
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 47071.2,
+        "median": 47036.0,
+        "ci95_mean": [
+          47036.0,
+          47141.6
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 29.0,
+      "mean_decisions": 4.0,
+      "mean_dispatched": 18.0,
+      "mean_ticks_visited": 6.0,
+      "mean_lateness_minutes": 470.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 10,
+        "commitments": 0,
+        "decisions": 10,
+        "events": 10,
+        "relationships": 0,
+        "state": 10
+      }
+    },
+    {
+      "days": 7,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.00251266260020202,
+        "median": 0.0024418959983449895,
+        "ci95_mean": [
+          0.0023836375992686955,
+          0.0026875581985223106
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 184089.2,
+        "median": 184089.0,
+        "ci95_mean": [
+          184088.6,
+          184089.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 167.0,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 156.0,
+      "mean_ticks_visited": 10071.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 7,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.002077624900994124,
+        "median": 0.0020397079970280174,
+        "ci95_mean": [
+          0.0020133663994784,
+          0.0021438997035147624
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.2088815127307189,
+        "median": 1.184833488339813,
+        "ci95_mean": [
+          1.1646651605698028,
+          1.276119380408903
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 183921.2,
+        "median": 183921.0,
+        "ci95_mean": [
+          183920.6,
+          183921.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 167.0,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 156.0,
+      "mean_ticks_visited": 119.7,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 7,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.002193195901054423,
+        "median": 0.002111104000505293,
+        "ci95_mean": [
+          0.002048400102648884,
+          0.0024269169000035616
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.153052295534716,
+        "median": 1.1433516540748727,
+        "ci95_mean": [
+          1.109607193482376,
+          1.192637624588141
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 183922.0,
+        "median": 183925.0,
+        "ci95_mean": [
+          183902.9,
+          183941.2
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 168.0,
+      "mean_decisions": 28.0,
+      "mean_dispatched": 156.0,
+      "mean_ticks_visited": 47.7,
+      "mean_lateness_minutes": 3858.7,
+      "divergent_cells_by_projection": {
+        "beliefs": 10,
+        "commitments": 0,
+        "decisions": 10,
+        "events": 10,
+        "relationships": 0,
+        "state": 10
+      }
+    },
+    {
+      "days": 30,
+      "mode": "live",
+      "wall_seconds": {
+        "mean": 0.01041478340048343,
+        "median": 0.010194312497333158,
+        "ci95_mean": [
+          0.010037679200468119,
+          0.010864254202897428
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.0,
+        "median": 1.0,
+        "ci95_mean": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 620226.9,
+        "median": 618241.0,
+        "ci95_mean": [
+          616092.8,
+          625359.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 642.9,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 647.6,
+      "mean_ticks_visited": 43191.0,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 30,
+      "mode": "compress",
+      "wall_seconds": {
+        "mean": 0.008791258198471041,
+        "median": 0.008850145499309292,
+        "ci95_mean": [
+          0.008475332998204976,
+          0.0091387581989693
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1853900646566409,
+        "median": 1.1887435185378998,
+        "ci95_mean": [
+          1.1565894588304464,
+          1.2144426966729212
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 620083.7,
+        "median": 618093.0,
+        "ci95_mean": [
+          615940.0,
+          625221.2
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 10,
+      "cells": 10,
+      "mean_events": 642.9,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 647.6,
+      "mean_ticks_visited": 528.3,
+      "mean_lateness_minutes": 0.0,
+      "divergent_cells_by_projection": {
+        "beliefs": 0,
+        "commitments": 0,
+        "decisions": 0,
+        "events": 0,
+        "relationships": 0,
+        "state": 0
+      }
+    },
+    {
+      "days": 30,
+      "mode": "naive",
+      "wall_seconds": {
+        "mean": 0.009064087602018845,
+        "median": 0.008914750003896188,
+        "ci95_mean": [
+          0.008556837801734218,
+          0.009657587602850981
+        ],
+        "n_independent_seeds": 10
+      },
+      "speedup_over_live": {
+        "mean": 1.1545585548944266,
+        "median": 1.1598412788644454,
+        "ci95_mean": [
+          1.1052851237048298,
+          1.1984758981928039
+        ],
+        "n_independent_seeds": 10
+      },
+      "peak_traced_bytes": {
+        "mean": 615002.9,
+        "median": 613087.0,
+        "ci95_mean": [
+          610812.7,
+          620144.8
+        ],
+        "n_independent_seeds": 10
+      },
+      "exact_cells": 0,
+      "cells": 10,
+      "mean_events": 643.9,
+      "mean_decisions": 120.0,
+      "mean_dispatched": 647.6,
+      "mean_ticks_visited": 206.6,
+      "mean_lateness_minutes": 15057.6,
+      "divergent_cells_by_projection": {
+        "beliefs": 10,
+        "commitments": 0,
+        "decisions": 10,
+        "events": 10,
+        "relationships": 0,
+        "state": 10
+      }
+    }
+  ],
+  "world_runtime_runs": 450,
+  "world_traced_runs": 90,
+  "all_runtime_repeats_deterministic": true,
+  "all_traced_repeats_deterministic": true,
+  "live_compress_exact": true,
+  "scope": "Paired fresh seeds; Python traced allocations, not RSS. Exactness is limited to scheduled model transitions. Montage/browser costs are excluded.",
+  "wall_seconds": 9.681215624994365,
+  "source_unchanged": true,
+  "raw_sha256": "e23b7d843f60a11b45081fba48067bf0de9aa691e3f07915a735d15bf9b05141",
+  "plots": {
+    "status": "unavailable",
+    "reason": "matplotlib is not installed in this Python"
+  }
+}

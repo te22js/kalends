@@ -1,0 +1,14 @@
+{
+  "files_sha256": {
+    "summary.json": "3f22091d9573f83dac7101eaa5912c7b3d333adfadbda26344aa9bd838c8c413",
+    "wage_history.json": "b9ef5d12ad87b5dbca5a0762517c3244279a8b13eb7d120b36a9bad3167c37b0",
+    "household_history.json": "5d8c82044c814a4322d5b87730c35acec684600d048f78af6327226cc6f8a8e2",
+    "offline_language.json": "de7b979aac182780356633b5785ae4a0ca0c27d6c710754b43f1ca350708663e",
+    "information_history.json": "7bc745b9c4d896c8da63587bfed16fb1535eb6aab8330f7537431576b7cba603"
+  },
+  "config": {
+    "seed": 79,
+    "population": 6
+  },
+  "method": "fresh independent route worlds; scripted interactions; all fictional"
+}

@@ -1,0 +1,4364 @@
+{
+  "at_settlement": {
+    "minute": 22,
+    "events": 14,
+    "decisions": 0,
+    "delivered": 0,
+    "required": 0,
+    "delivery_fill_rate": null,
+    "citizen_cash_change": -14.0,
+    "player_cash_change": 6.0,
+    "player_grain": 0,
+    "stock": 10,
+    "trust_player": {
+      "Felix": 0.75,
+      "Sabina": 0.6,
+      "Marcus": 0.6,
+      "Chreste": 0.6,
+      "Dama": 0.6,
+      "Lucius": 0.6
+    },
+    "information_sales": 0,
+    "inspection_cost": 0,
+    "player_commitments": [
+      {
+        "id": "felix-first",
+        "quantity": 4,
+        "deadline": 600,
+        "status": "fulfilled",
+        "fulfilled": 4,
+        "beneficiary": "Felix",
+        "event_id": 5,
+        "agent": "Player"
+      },
+      {
+        "id": "household-service",
+        "quantity": 120,
+        "deadline": 4333,
+        "status": "open",
+        "fulfilled": 0,
+        "beneficiary": "Lucius",
+        "event_id": 9
+      }
+    ]
+  },
+  "after_absence": {
+    "minute": 10103,
+    "events": 170,
+    "decisions": 28,
+    "delivered": 63,
+    "required": 63,
+    "delivery_fill_rate": 1.0,
+    "citizen_cash_change": -3.0,
+    "player_cash_change": 6.0,
+    "player_grain": 0,
+    "stock": 56,
+    "trust_player": {
+      "Felix": 0.75,
+      "Sabina": 0.6,
+      "Marcus": 0.6,
+      "Chreste": 0.6,
+      "Dama": 0.6,
+      "Lucius": 0.39999999999999997
+    },
+    "information_sales": 0,
+    "inspection_cost": 11,
+    "player_commitments": [
+      {
+        "id": "felix-first",
+        "quantity": 4,
+        "deadline": 600,
+        "status": "fulfilled",
+        "fulfilled": 4,
+        "beneficiary": "Felix",
+        "event_id": 5,
+        "agent": "Player"
+      },
+      {
+        "id": "household-service",
+        "quantity": 120,
+        "deadline": 4333,
+        "status": "missed",
+        "fulfilled": 0,
+        "beneficiary": "Lucius",
+        "event_id": 9,
+        "agent": "Player"
+      }
+    ]
+  },
+  "return_reply": {
+    "text": "You promise Felix four flour units before dusk Aelia kept the flour promise; delivered 4/4. I paid 6 coins. My trust is 0.75.",
+    "evidence_ids": [
+      5,
+      13
+    ],
+    "epistemic_status": "Literal retained experiences; bounded memory"
+  },
+  "counterfactual": {
+    "original_minute": 10103,
+    "branch_minute": 10103,
+    "identical": false,
+    "changed_fields": [
+      "cash",
+      "beliefs",
+      "decisions",
+      "memories",
+      "ledger_hash"
+    ],
+    "original_metrics": {
+      "minute": 10103,
+      "events": 170,
+      "decisions": 28,
+      "delivered": 63,
+      "required": 63,
+      "delivery_fill_rate": 1.0,
+      "citizen_cash_change": -3.0,
+      "player_cash_change": 6.0,
+      "player_grain": 0,
+      "stock": 56,
+      "trust_player": {
+        "Felix": 0.75,
+        "Sabina": 0.6,
+        "Marcus": 0.6,
+        "Chreste": 0.6,
+        "Dama": 0.6,
+        "Lucius": 0.39999999999999997
+      },
+      "information_sales": 0,
+      "inspection_cost": 11,
+      "player_commitments": [
+        {
+          "id": "felix-first",
+          "quantity": 4,
+          "deadline": 600,
+          "status": "fulfilled",
+          "fulfilled": 4,
+          "beneficiary": "Felix",
+          "event_id": 5,
+          "agent": "Player"
+        },
+        {
+          "id": "household-service",
+          "quantity": 120,
+          "deadline": 4333,
+          "status": "missed",
+          "fulfilled": 0,
+          "beneficiary": "Lucius",
+          "event_id": 9,
+          "agent": "Player"
+        }
+      ]
+    },
+    "altered_metrics": {
+      "minute": 10103,
+      "events": 172,
+      "decisions": 28,
+      "delivered": 63,
+      "required": 63,
+      "delivery_fill_rate": 1.0,
+      "citizen_cash_change": -4.0,
+      "player_cash_change": 6.0,
+      "player_grain": 0,
+      "stock": 56,
+      "trust_player": {
+        "Felix": 0.75,
+        "Sabina": 0.6,
+        "Marcus": 0.6,
+        "Chreste": 0.6,
+        "Dama": 0.6,
+        "Lucius": 0.39999999999999997
+      },
+      "information_sales": 0,
+      "inspection_cost": 12,
+      "player_commitments": [
+        {
+          "id": "felix-first",
+          "quantity": 4,
+          "deadline": 600,
+          "status": "fulfilled",
+          "fulfilled": 4,
+          "beneficiary": "Felix",
+          "event_id": 5,
+          "agent": "Player"
+        },
+        {
+          "id": "household-service",
+          "quantity": 120,
+          "deadline": 4333,
+          "status": "missed",
+          "fulfilled": 0,
+          "beneficiary": "Lucius",
+          "event_id": 9,
+          "agent": "Player"
+        }
+      ]
+    },
+    "interpretation": "Executed removal of one accepted action. Later commands stay at their original times where feasible; infeasible commands are explicitly skipped. Ledger IDs alone are not an outcome difference."
+  },
+  "intervention": {
+    "kind": "remove_action",
+    "event_id": 13,
+    "removed_command": 6,
+    "skipped": [],
+    "scheduling": "Replay later accepted commands at their original start minutes, or as soon as feasible if an earlier action runs longer."
+  },
+  "commands": [
+    {
+      "operation": "move",
+      "data": {
+        "location": "bakery"
+      },
+      "at": 0,
+      "receipt_id": 4,
+      "after": 4
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "accept_delivery",
+        "recipient": "Felix"
+      },
+      "at": 4,
+      "receipt_id": 5,
+      "after": 4
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "household"
+      },
+      "at": 4,
+      "receipt_id": 8,
+      "after": 13
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "patronage",
+        "recipient": "Lucius"
+      },
+      "at": 13,
+      "receipt_id": 9,
+      "after": 13
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "bakery"
+      },
+      "at": 13,
+      "receipt_id": 11,
+      "after": 22
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "buy",
+        "recipient": "Felix",
+        "quantity": 4
+      },
+      "at": 22,
+      "receipt_id": 12,
+      "after": 22
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "deliver",
+        "recipient": "Felix"
+      },
+      "at": 22,
+      "receipt_id": 13,
+      "after": 22
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "minutes": 10080,
+        "mode": "skip"
+      },
+      "at": 22,
+      "receipt_id": null,
+      "after": 10102
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "bakery"
+      },
+      "at": 10102,
+      "receipt_id": 169,
+      "after": 10103
+    }
+  ],
+  "events": [
+    {
+      "event_id": 0,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "city_initialized",
+        "title": "Morning opens on the Via dell'Abbondanza",
+        "parents": [],
+        "cash": {
+          "Felix": 28.0,
+          "Sabina": 26.0,
+          "Marcus": 46.0,
+          "Chreste": 0.0,
+          "Dama": 0.0,
+          "Lucius": 60.0,
+          "Player": 6.0
+        },
+        "inventory": {
+          "Felix": 3,
+          "Sabina": 2,
+          "Marcus": 6,
+          "Chreste": 0,
+          "Dama": 0,
+          "Lucius": 5,
+          "Player": 0
+        },
+        "commitments": {
+          "Felix": [],
+          "Sabina": [],
+          "Marcus": [],
+          "Chreste": [],
+          "Dama": [],
+          "Lucius": [],
+          "Player": []
+        },
+        "market_stock_delta": 14,
+        "price": 2.0,
+        "flags": {
+          "reputation": 0,
+          "quest": "unaccepted",
+          "affiliation": "independent",
+          "bread": 0
+        }
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 1,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "arrival",
+        "title": "You arrive as Aelia, a freedwoman earning her place between households and shops.",
+        "parents": [],
+        "fiction": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 2,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "The first flour cart is inspected at the street counter",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 3,
+      "tick": 4,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "time_advanced",
+        "title": "World time advances by 4 minutes",
+        "parents": [],
+        "elapsed": 4,
+        "time_mode": "live"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 4,
+      "tick": 4,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter Felix's bread counter",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          810.0,
+          275.5
+        ],
+        "path": [
+          [
+            650,
+            415
+          ],
+          [
+            650,
+            415
+          ],
+          [
+            810,
+            415
+          ],
+          [
+            810,
+            350
+          ],
+          [
+            810.0,
+            275.5
+          ]
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 5,
+      "tick": 4,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player",
+        "Felix"
+      ],
+      "payload": {
+        "category": "promise",
+        "title": "You promise Felix four flour units before dusk",
+        "parents": [],
+        "quantity": 4,
+        "deadline": 600,
+        "flags": {
+          "quest": "active",
+          "active_contract": "felix-first"
+        },
+        "owner": "Player",
+        "new_commitment": {
+          "id": "felix-first",
+          "quantity": 4,
+          "deadline": 600,
+          "status": "open",
+          "fulfilled": 0,
+          "beneficiary": "Felix",
+          "event_id": 5
+        }
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 6,
+      "tick": 12,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 7,
+      "tick": 13,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "time_advanced",
+        "title": "World time advances by 9 minutes",
+        "parents": [],
+        "elapsed": 9,
+        "time_mode": "live"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 8,
+      "tick": 13,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter House of the Menander",
+        "parents": [],
+        "to": "household",
+        "position": [
+          770.0,
+          1014.0
+        ],
+        "path": [
+          [
+            810.0,
+            275.5
+          ],
+          [
+            810,
+            350
+          ],
+          [
+            810,
+            415
+          ],
+          [
+            810,
+            415
+          ],
+          [
+            770,
+            415
+          ],
+          [
+            770,
+            790
+          ],
+          [
+            770.0,
+            1014.0
+          ]
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 9,
+      "tick": 13,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "patronage",
+        "title": "You accept eight coins and promise two hours of household service within three days",
+        "parents": [],
+        "cash_delta": {
+          "Player": 8,
+          "Lucius": -8
+        },
+        "flags": {
+          "affiliation": "household client",
+          "service_due": 4333
+        },
+        "owner": "Player",
+        "new_commitment": {
+          "id": "household-service",
+          "quantity": 120,
+          "deadline": 4333,
+          "status": "open",
+          "fulfilled": 0,
+          "beneficiary": "Lucius",
+          "event_id": 9
+        }
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 10,
+      "tick": 22,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "time_advanced",
+        "title": "World time advances by 9 minutes",
+        "parents": [],
+        "elapsed": 9,
+        "time_mode": "live"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 11,
+      "tick": 22,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter Felix's bread counter",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          810.0,
+          275.5
+        ],
+        "path": [
+          [
+            770.0,
+            1014.0
+          ],
+          [
+            770,
+            790
+          ],
+          [
+            770,
+            415
+          ],
+          [
+            770,
+            415
+          ],
+          [
+            810,
+            415
+          ],
+          [
+            810,
+            350
+          ],
+          [
+            810.0,
+            275.5
+          ]
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 12,
+      "tick": 22,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Player obtains 4/4 flour units",
+        "parents": [
+          9
+        ],
+        "owner": "Player",
+        "attempted": 4,
+        "quantity": 4,
+        "cash_delta": {
+          "Player": -8.0
+        },
+        "inventory_delta": {
+          "Player": 4
+        },
+        "market_stock_delta": -4
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 13,
+      "tick": 22,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player",
+        "Felix"
+      ],
+      "payload": {
+        "category": "promise_settled",
+        "title": "You deliver 4/4 flour units to Felix. He will introduce you to the household.",
+        "parents": [
+          5,
+          12
+        ],
+        "cash_delta": {
+          "Player": 6.0,
+          "Felix": -6.0
+        },
+        "inventory_delta": {
+          "Player": -4,
+          "Felix": 4
+        },
+        "commitment_updates": [
+          {
+            "agent": "Player",
+            "id": "felix-first",
+            "status": "fulfilled",
+            "fulfilled": 4
+          }
+        ],
+        "relationship_updates": [
+          {
+            "listener": "Felix",
+            "speaker": "Player",
+            "value": 0.75
+          }
+        ],
+        "flags": {
+          "quest": "fulfilled",
+          "reputation": 2,
+          "introduction": true
+        },
+        "delivered": 4,
+        "missing": 0,
+        "payment": 6.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 14,
+      "tick": 25,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 0)",
+        "parents": [
+          2
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 0,
+        "root_event": 2,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 15,
+      "tick": 65,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to buy using their own records",
+        "parents": [
+          2
+        ],
+        "choice": "buy",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 16,
+      "tick": 65,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Marcus obtains 2/2 flour units",
+        "parents": [
+          15
+        ],
+        "owner": "Marcus",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Marcus": -4.0
+        },
+        "inventory_delta": {
+          "Marcus": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 17,
+      "tick": 90,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 18,
+      "tick": 94,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 0)",
+        "parents": [
+          14
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 0,
+        "root_event": 2,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 19,
+      "tick": 100,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 0)",
+        "parents": [
+          14
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 0,
+        "root_event": 2,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 20,
+      "tick": 180,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to wait using their own records",
+        "parents": [
+          18,
+          19
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 21,
+      "tick": 180,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to wait using their own records",
+        "parents": [],
+        "choice": "wait",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 22,
+      "tick": 180,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to wait using their own records",
+        "parents": [],
+        "choice": "wait",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 23,
+      "tick": 240,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 24,
+      "tick": 600,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          13
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 25,
+      "tick": 600,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 26,
+      "tick": 600,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          9
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 27,
+      "tick": 600,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "promise_already_closed",
+        "title": "The delivery has already been settled",
+        "parents": []
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 28,
+      "tick": 1440,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A new day's flour order can be negotiated with Felix",
+        "parents": [],
+        "flags": {
+          "quest": "unaccepted"
+        }
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 29,
+      "tick": 1440,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 30,
+      "tick": 1513,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 31,
+      "tick": 1517,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 0)",
+        "parents": [
+          14
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 0,
+        "root_event": 2,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 32,
+      "tick": 1560,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 33,
+      "tick": 1564,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 0)",
+        "parents": [
+          14
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 0,
+        "root_event": 2,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 34,
+      "tick": 1590,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 1440)",
+        "parents": [
+          29
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 1440,
+        "root_event": 29,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 35,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          18,
+          19
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 36,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          35
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 37,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 38,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          25,
+          37
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 39,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          29
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 40,
+      "tick": 1620,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to wait using their own records",
+        "parents": [
+          31
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 41,
+      "tick": 1635,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          36
+        ],
+        "value": "available",
+        "as_of": 1635
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 42,
+      "tick": 1640,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 3/3 flour units",
+        "parents": [
+          35,
+          36
+        ],
+        "owner": "Felix",
+        "attempted": 3,
+        "quantity": 3,
+        "cash_delta": {
+          "Felix": -6.0
+        },
+        "inventory_delta": {
+          "Felix": 3
+        },
+        "market_stock_delta": -3
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 43,
+      "tick": 1650,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 44,
+      "tick": 1654,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 1440)",
+        "parents": [
+          34
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 1440,
+        "root_event": 29,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 45,
+      "tick": 1680,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 46,
+      "tick": 2040,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          42
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 47,
+      "tick": 2040,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          38
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 48,
+      "tick": 2040,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          26
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 49,
+      "tick": 2880,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 50,
+      "tick": 2969,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 51,
+      "tick": 2973,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 1440)",
+        "parents": [
+          34
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 1440,
+        "root_event": 29,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 52,
+      "tick": 3000,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 53,
+      "tick": 3004,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 1440)",
+        "parents": [
+          34
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 1440,
+        "root_event": 29,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 54,
+      "tick": 3030,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 2880)",
+        "parents": [
+          49
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 2880,
+        "root_event": 49,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 55,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          41
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 56,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          55
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 57,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 58,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          47,
+          57
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 59,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          49
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 60,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to inspect using their own records",
+        "parents": [
+          51
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 61,
+      "tick": 3060,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Lucius pays one coin to inspect a dispatch",
+        "parents": [
+          60
+        ],
+        "cash_delta": {
+          "Lucius": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 62,
+      "tick": 3075,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          56
+        ],
+        "value": "available",
+        "as_of": 3075
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 63,
+      "tick": 3075,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Lucius inspects the current flour dispatch: available",
+        "parents": [
+          61
+        ],
+        "value": "available",
+        "as_of": 3075
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 64,
+      "tick": 3080,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 5/5 flour units",
+        "parents": [
+          55,
+          56
+        ],
+        "owner": "Felix",
+        "attempted": 5,
+        "quantity": 5,
+        "cash_delta": {
+          "Felix": -10.0
+        },
+        "inventory_delta": {
+          "Felix": 5
+        },
+        "market_stock_delta": -5
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 65,
+      "tick": 3080,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Lucius obtains 2/2 flour units",
+        "parents": [
+          60,
+          61
+        ],
+        "owner": "Lucius",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Lucius": -4.0
+        },
+        "inventory_delta": {
+          "Lucius": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 66,
+      "tick": 3090,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 67,
+      "tick": 3094,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 2880)",
+        "parents": [
+          54
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 2880,
+        "root_event": 49,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 68,
+      "tick": 3120,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 69,
+      "tick": 3480,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          64
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 70,
+      "tick": 3480,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          58
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 71,
+      "tick": 3480,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          65
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 72,
+      "tick": 4320,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 73,
+      "tick": 4333,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "relationship",
+        "title": "The household waited for your service; Lucius withdraws his recommendation",
+        "parents": [],
+        "flags": {
+          "service_missed": true,
+          "reputation": 0
+        },
+        "commitment_updates": [
+          {
+            "agent": "Player",
+            "id": "household-service",
+            "status": "missed",
+            "fulfilled": 0
+          }
+        ],
+        "relationship_updates": [
+          {
+            "listener": "Lucius",
+            "speaker": "Player",
+            "value": 0.39999999999999997
+          }
+        ]
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 74,
+      "tick": 4402,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 75,
+      "tick": 4406,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 2880)",
+        "parents": [
+          54
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 2880,
+        "root_event": 49,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 76,
+      "tick": 4440,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 77,
+      "tick": 4444,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 2880)",
+        "parents": [
+          54
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 2880,
+        "root_event": 49,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 78,
+      "tick": 4470,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 4320)",
+        "parents": [
+          72
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 4320,
+        "root_event": 72,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 79,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          62
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 80,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          79
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 81,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 82,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          70,
+          81
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 83,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          72
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 84,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to inspect using their own records",
+        "parents": [
+          63
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 85,
+      "tick": 4500,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Lucius pays one coin to inspect a dispatch",
+        "parents": [
+          84
+        ],
+        "cash_delta": {
+          "Lucius": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 86,
+      "tick": 4515,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          80
+        ],
+        "value": "available",
+        "as_of": 4515
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 87,
+      "tick": 4515,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Lucius inspects the current flour dispatch: available",
+        "parents": [
+          85
+        ],
+        "value": "available",
+        "as_of": 4515
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 88,
+      "tick": 4520,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 5/5 flour units",
+        "parents": [
+          79,
+          80
+        ],
+        "owner": "Felix",
+        "attempted": 5,
+        "quantity": 5,
+        "cash_delta": {
+          "Felix": -10.0
+        },
+        "inventory_delta": {
+          "Felix": 5
+        },
+        "market_stock_delta": -5
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 89,
+      "tick": 4520,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Lucius obtains 2/2 flour units",
+        "parents": [
+          84,
+          85
+        ],
+        "owner": "Lucius",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Lucius": -4.0
+        },
+        "inventory_delta": {
+          "Lucius": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 90,
+      "tick": 4530,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 91,
+      "tick": 4534,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 4320)",
+        "parents": [
+          78
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 4320,
+        "root_event": 72,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 92,
+      "tick": 4560,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 93,
+      "tick": 4920,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          88
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 94,
+      "tick": 4920,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          82
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 95,
+      "tick": 4920,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          89
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 96,
+      "tick": 5760,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 97,
+      "tick": 5830,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 98,
+      "tick": 5834,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 4320)",
+        "parents": [
+          78
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 4320,
+        "root_event": 72,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 99,
+      "tick": 5880,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 100,
+      "tick": 5884,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 4320)",
+        "parents": [
+          78
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 4320,
+        "root_event": 72,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 101,
+      "tick": 5910,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 5760)",
+        "parents": [
+          96
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 5760,
+        "root_event": 96,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 102,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          86
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 103,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          102
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 104,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 105,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          94,
+          104
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 106,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          96
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 107,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to inspect using their own records",
+        "parents": [
+          87
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 108,
+      "tick": 5940,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Lucius pays one coin to inspect a dispatch",
+        "parents": [
+          107
+        ],
+        "cash_delta": {
+          "Lucius": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 109,
+      "tick": 5955,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          103
+        ],
+        "value": "available",
+        "as_of": 5955
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 110,
+      "tick": 5955,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Lucius inspects the current flour dispatch: available",
+        "parents": [
+          108
+        ],
+        "value": "available",
+        "as_of": 5955
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 111,
+      "tick": 5960,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 5/5 flour units",
+        "parents": [
+          102,
+          103
+        ],
+        "owner": "Felix",
+        "attempted": 5,
+        "quantity": 5,
+        "cash_delta": {
+          "Felix": -10.0
+        },
+        "inventory_delta": {
+          "Felix": 5
+        },
+        "market_stock_delta": -5
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 112,
+      "tick": 5960,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Lucius obtains 2/2 flour units",
+        "parents": [
+          107,
+          108
+        ],
+        "owner": "Lucius",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Lucius": -4.0
+        },
+        "inventory_delta": {
+          "Lucius": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 113,
+      "tick": 5970,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 114,
+      "tick": 5974,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 5760)",
+        "parents": [
+          101
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 5760,
+        "root_event": 96,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 115,
+      "tick": 6000,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 116,
+      "tick": 6360,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          111
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 117,
+      "tick": 6360,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          105
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 118,
+      "tick": 6360,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          112
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 119,
+      "tick": 7200,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 120,
+      "tick": 7249,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 121,
+      "tick": 7253,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 5760)",
+        "parents": [
+          101
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 5760,
+        "root_event": 96,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 122,
+      "tick": 7320,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 123,
+      "tick": 7324,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 5760)",
+        "parents": [
+          101
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 5760,
+        "root_event": 96,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 124,
+      "tick": 7350,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 7200)",
+        "parents": [
+          119
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 7200,
+        "root_event": 119,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 125,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          109
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 126,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          125
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 127,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 128,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          117,
+          127
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 129,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          119
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 130,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to inspect using their own records",
+        "parents": [
+          110
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 131,
+      "tick": 7380,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Lucius pays one coin to inspect a dispatch",
+        "parents": [
+          130
+        ],
+        "cash_delta": {
+          "Lucius": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 132,
+      "tick": 7395,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          126
+        ],
+        "value": "available",
+        "as_of": 7395
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 133,
+      "tick": 7395,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Lucius inspects the current flour dispatch: available",
+        "parents": [
+          131
+        ],
+        "value": "available",
+        "as_of": 7395
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 134,
+      "tick": 7400,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 5/5 flour units",
+        "parents": [
+          125,
+          126
+        ],
+        "owner": "Felix",
+        "attempted": 5,
+        "quantity": 5,
+        "cash_delta": {
+          "Felix": -10.0
+        },
+        "inventory_delta": {
+          "Felix": 5
+        },
+        "market_stock_delta": -5
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 135,
+      "tick": 7400,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Lucius obtains 2/2 flour units",
+        "parents": [
+          130,
+          131
+        ],
+        "owner": "Lucius",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Lucius": -4.0
+        },
+        "inventory_delta": {
+          "Lucius": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 136,
+      "tick": 7410,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 137,
+      "tick": 7414,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 7200)",
+        "parents": [
+          124
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 7200,
+        "root_event": 119,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 138,
+      "tick": 7440,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 139,
+      "tick": 7800,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          134
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 140,
+      "tick": 7800,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          128
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 141,
+      "tick": 7800,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          135
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 142,
+      "tick": 8640,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 143,
+      "tick": 8727,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to household for their duties",
+        "parents": [],
+        "to": "household",
+        "position": [
+          710.0,
+          936.0
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 144,
+      "tick": 8731,
+      "etype": "tell",
+      "location": "household",
+      "actors": [
+        "Dama",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Lucius that flour supply is available (observed at minute 7200)",
+        "parents": [
+          124
+        ],
+        "speaker": "Dama",
+        "listener": "Lucius",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 7200,
+        "root_event": 119,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 145,
+      "tick": 8760,
+      "etype": "move",
+      "location": "household",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to street for their duties",
+        "parents": [],
+        "to": "street",
+        "position": [
+          870,
+          385
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 146,
+      "tick": 8764,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Dama",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Marcus that flour supply is available (observed at minute 7200)",
+        "parents": [
+          124
+        ],
+        "speaker": "Dama",
+        "listener": "Marcus",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 7200,
+        "root_event": 119,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 147,
+      "tick": 8790,
+      "etype": "tell",
+      "location": "street",
+      "actors": [
+        "Marcus",
+        "Dama"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Marcus tells Dama that flour supply is available (observed at minute 8640)",
+        "parents": [
+          142
+        ],
+        "speaker": "Marcus",
+        "listener": "Dama",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 8640,
+        "root_event": 142,
+        "root_observer": "Marcus",
+        "accepted": true
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 148,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Felix chooses to inspect using their own records",
+        "parents": [
+          132
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 149,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Felix pays one coin to inspect a dispatch",
+        "parents": [
+          148
+        ],
+        "cash_delta": {
+          "Felix": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 150,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Sabina chooses to buy using their own records",
+        "parents": [],
+        "choice": "buy",
+        "predicted_value": "unknown"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 151,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Sabina obtains 2/2 flour units",
+        "parents": [
+          140,
+          150
+        ],
+        "owner": "Sabina",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Sabina": -4.0
+        },
+        "inventory_delta": {
+          "Sabina": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 152,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Marcus chooses to wait using their own records",
+        "parents": [
+          142
+        ],
+        "choice": "wait",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 153,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "decision",
+        "title": "Lucius chooses to inspect using their own records",
+        "parents": [
+          133
+        ],
+        "choice": "inspect",
+        "predicted_value": "available"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 154,
+      "tick": 8820,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection_booked",
+        "title": "Lucius pays one coin to inspect a dispatch",
+        "parents": [
+          153
+        ],
+        "cash_delta": {
+          "Lucius": -1
+        },
+        "fee": 1
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 155,
+      "tick": 8835,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Felix inspects the current flour dispatch: available",
+        "parents": [
+          149
+        ],
+        "value": "available",
+        "as_of": 8835
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 156,
+      "tick": 8835,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "inspection",
+        "title": "Lucius inspects the current flour dispatch: available",
+        "parents": [
+          154
+        ],
+        "value": "available",
+        "as_of": 8835
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 157,
+      "tick": 8840,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Felix obtains 5/5 flour units",
+        "parents": [
+          148,
+          149
+        ],
+        "owner": "Felix",
+        "attempted": 5,
+        "quantity": 5,
+        "cash_delta": {
+          "Felix": -10.0
+        },
+        "inventory_delta": {
+          "Felix": 5
+        },
+        "market_stock_delta": -5
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 158,
+      "tick": 8840,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "purchase",
+        "title": "Lucius obtains 2/2 flour units",
+        "parents": [
+          153,
+          154
+        ],
+        "owner": "Lucius",
+        "attempted": 2,
+        "quantity": 2,
+        "cash_delta": {
+          "Lucius": -4.0
+        },
+        "inventory_delta": {
+          "Lucius": 2
+        },
+        "market_stock_delta": -2
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 159,
+      "tick": 8850,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Dama"
+      ],
+      "payload": {
+        "category": "routine",
+        "title": "Dama goes to bakery for their duties",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          750.0,
+          199.5
+        ]
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 160,
+      "tick": 8854,
+      "etype": "tell",
+      "location": "bakery",
+      "actors": [
+        "Dama",
+        "Felix"
+      ],
+      "payload": {
+        "category": "report",
+        "title": "Dama tells Felix that flour supply is available (observed at minute 8640)",
+        "parents": [
+          147
+        ],
+        "speaker": "Dama",
+        "listener": "Felix",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "as_of": 8640,
+        "root_event": 142,
+        "root_observer": "Marcus",
+        "accepted": false
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 161,
+      "tick": 8880,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A new dispatch reaches the flour trader",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 0,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 162,
+      "tick": 9240,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Felix"
+      ],
+      "payload": {
+        "category": "bread_ready",
+        "title": "Felix uses 5/5 flour units for the day's work",
+        "parents": [
+          157
+        ],
+        "inventory_delta": {
+          "Felix": -5
+        },
+        "cash_delta": {
+          "Felix": 10
+        },
+        "delivered": 5,
+        "required": 5,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 163,
+      "tick": 9240,
+      "etype": "state_change",
+      "location": "thermopolium",
+      "actors": [
+        "Sabina"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Sabina uses 2/2 flour units for the day's work",
+        "parents": [
+          151
+        ],
+        "inventory_delta": {
+          "Sabina": -2
+        },
+        "cash_delta": {
+          "Sabina": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 164,
+      "tick": 9240,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Lucius"
+      ],
+      "payload": {
+        "category": "daily_work",
+        "title": "Lucius uses 2/2 flour units for the day's work",
+        "parents": [
+          158
+        ],
+        "inventory_delta": {
+          "Lucius": -2
+        },
+        "cash_delta": {
+          "Lucius": 4
+        },
+        "delivered": 2,
+        "required": 2,
+        "missed": 0
+      },
+      "scope": "public"
+    },
+    {
+      "event_id": 165,
+      "tick": 10080,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Marcus"
+      ],
+      "payload": {
+        "category": "supply",
+        "title": "A flour cart brings 14 fresh units",
+        "parents": [],
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "available",
+        "market_stock_delta": 14,
+        "price": 2.0
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 166,
+      "tick": 10080,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 7
+        }
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 167,
+      "tick": 10102,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "time_advanced",
+        "title": "World time advances by 10080 minutes",
+        "parents": [],
+        "elapsed": 10080,
+        "time_mode": "skip"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 168,
+      "tick": 10103,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "time_advanced",
+        "title": "World time advances by 1 minutes",
+        "parents": [],
+        "elapsed": 1,
+        "time_mode": "live"
+      },
+      "scope": "private"
+    },
+    {
+      "event_id": 169,
+      "tick": 10103,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter Felix's bread counter",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          810.0,
+          275.5
+        ],
+        "path": [
+          [
+            810.0,
+            275.5
+          ],
+          [
+            810.0,
+            275.5
+          ]
+        ]
+      },
+      "scope": "public"
+    }
+  ]
+}

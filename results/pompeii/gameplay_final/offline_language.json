@@ -1,0 +1,202 @@
+[
+  {
+    "text": "Buy four flour units",
+    "expected_intent": "buy",
+    "proposed_intent": "buy",
+    "matched": true,
+    "latency_seconds": 0.00028325000312179327,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I promise four flour units",
+    "expected_intent": "accept_delivery",
+    "proposed_intent": "accept_delivery",
+    "matched": true,
+    "latency_seconds": 8.695800352143124e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I brought the flour",
+    "expected_intent": "deliver",
+    "proposed_intent": "deliver",
+    "matched": true,
+    "latency_seconds": 0.0001286249971599318,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I need a paid shift",
+    "expected_intent": "work",
+    "proposed_intent": "work",
+    "matched": true,
+    "latency_seconds": 7.520800136262551e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I would like an advance",
+    "expected_intent": "patronage",
+    "proposed_intent": "patronage",
+    "matched": true,
+    "latency_seconds": 7.066700345603749e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Inspect the flour dispatch",
+    "expected_intent": "inspect",
+    "proposed_intent": "inspect",
+    "matched": true,
+    "latency_seconds": 6.925000343471766e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Sell my report",
+    "expected_intent": "sell_information",
+    "proposed_intent": "sell_information",
+    "matched": true,
+    "latency_seconds": 6.708299770252779e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Complete service",
+    "expected_intent": "service",
+    "proposed_intent": "service",
+    "matched": true,
+    "latency_seconds": 6.579200271517038e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Flour supply is disrupted",
+    "expected_intent": "claim",
+    "proposed_intent": "claim",
+    "matched": true,
+    "latency_seconds": 0.00013333300012163818,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Flour supply is available",
+    "expected_intent": "claim",
+    "proposed_intent": "claim",
+    "matched": true,
+    "latency_seconds": 0.00012429199705366045,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "What have you heard about flour supply?",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 7.633399945916608e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "What do you remember about me?",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 7.216599624371156e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Who are you?",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.887500057928264e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "What is your work?",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.829199992353097e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I will not buy four flour",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.41250007902272e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "I do not promise four flour",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 8.162499580066651e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Can I deliver later?",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.84160040691495e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Never accept an advance",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.837500404799357e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Cancel the purchase",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 6.550000398419797e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  },
+  {
+    "text": "Tell me about a dragon",
+    "expected_intent": "talk",
+    "proposed_intent": "talk",
+    "matched": true,
+    "latency_seconds": 7.14170018909499e-05,
+    "evidence_ids": [],
+    "evidence_in_character_memory": true,
+    "language_source": "offline bounded parser"
+  }
+]

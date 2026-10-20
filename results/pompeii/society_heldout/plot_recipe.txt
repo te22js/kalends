@@ -1,0 +1,87 @@
+# Saved-data-only plotting recipe. Run from repository root:
+# MPLCONFIGDIR=/tmp/kalends-mpl python3 - < results/pompeii/society_heldout/plot_recipe.txt
+# Existing figures/manifests are preserved; choose a fresh directory to rerender.
+import hashlib
+import json
+from pathlib import Path
+import platform
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import numpy as np
+
+out = Path('results/pompeii/society_heldout')
+summary_path = out / 'summary.json'
+summary = json.loads(summary_path.read_text())
+assert summary['worlds'] == 240 and summary['source_unchanged']
+filenames = ['society_paired_outcomes.png', 'society_paired_outcomes.svg',
+             'society_reach_retention.png', 'society_reach_retention.svg', 'plot_manifest.json']
+assert not any((out / name).exists() for name in filenames), 'Refusing to overwrite saved plots'
+colors = {7: '#286d78', 30: '#ad513a'}
+labels = {'credulous': 'Credulous policy', 'no_communication': 'Communication off', 'capacity8': 'Memory capacity 8'}
+conditions = list(labels)
+plt.rcParams.update({'font.family':'DejaVu Sans', 'font.size':11, 'axes.titlesize':13,
+                     'axes.labelsize':11, 'figure.facecolor':'#faf9f5', 'axes.facecolor':'#faf9f5',
+                     'text.color':'#212c32','axes.labelcolor':'#212c32','xtick.color':'#37494f',
+                     'ytick.color':'#37494f','svg.fonttype':'none'})
+
+def finish(fig, stem, caption):
+    fig.subplots_adjust(left=.19, right=.98, top=.80, bottom=.23, wspace=.32)
+    fig.text(.035,.055,caption,fontsize=9.3,ha='left',va='bottom',linespacing=1.5)
+    for suffix in ('png','svg'):
+        fig.savefig(out / (stem+'.'+suffix),dpi=180)
+    plt.close(fig)
+
+fig, axes = plt.subplots(1,2,figsize=(12,5.5))
+fig.suptitle('Actual-world paired changes: output and inspection cost',x=.035,ha='left',y=.96,fontsize=17,weight='bold')
+fig.text(.035,.88,'Each comparison changes one factor relative to cautious procurement, communication on, capacity 32.',fontsize=10.5)
+for axis, metric, scale, title, xlabel in (
+        (axes[0],'delivery_fill_rate',100,'Physical work filled','Condition minus baseline (percentage points)'),
+        (axes[1],'inspection_fees',1,'Inspection fees paid','Condition minus baseline (coins)')):
+    for days, offset in ((7,.12),(30,-.12)):
+        values = [next(r for r in summary['contrasts'] if r['days']==days and r['condition_minus_baseline']==c)['paired_differences'][metric] for c in conditions]
+        means = np.array([v['mean']*scale for v in values])
+        lows = np.array([v['ci95_mean'][0]*scale for v in values])
+        highs = np.array([v['ci95_mean'][1]*scale for v in values])
+        y = np.arange(3)+offset
+        axis.errorbar(means,y,xerr=np.stack((means-lows,highs-means)),fmt='o',markersize=7,capsize=4,
+                      color=colors[days],label=str(days)+' days',elinewidth=1.8)
+    axis.axvline(0,color='#829093',linewidth=1,linestyle='--',zorder=0)
+    axis.set(yticks=np.arange(3),yticklabels=[labels[c] for c in conditions],xlabel=xlabel,title=title,ylim=(2.5,-.5))
+    axis.grid(axis='x',alpha=.18)
+    axis.spines[['top','right','left']].set_visible(False)
+    axis.tick_params(axis='y',length=0)
+    axis.legend(frameon=False,loc='lower right')
+finish(fig,'society_paired_outcomes',
+       'Track B · 30 paired heldout seeds per horizon · 240 fresh actual-world runs. Points are mean paired differences; bars are descriptive 95% seed-bootstrap intervals.\n'
+       'Fill uses actual delivered / required flour for three producing citizens. Credulous procurement detects fewer false reports; higher output is not universal information superiority.')
+
+fig, axes = plt.subplots(1,2,figsize=(12,5.5))
+fig.suptitle('Reports spread and disappear from bounded local memory',x=.035,ha='left',y=.96,fontsize=17,weight='bold')
+fig.text(.035,.88,'Two fixed false claims originate from one Player; repeated transmissions are not independent observations.',fontsize=10.5)
+allconditions=['baseline',*conditions]
+shortlabels=['Baseline','Credulous','Gossip off','Capacity 8']
+for axis, metric, title in ((axes[0],'player_origin_recipients','Unique recipients ever reached'),
+                            (axes[1],'retained_player_origin_recipients','Recipients retaining reports at endpoint')):
+    for days, offset in ((7,-.18),(30,.18)):
+        values=[next(r for r in summary['cells'] if r['days']==days and r['condition']==c)['metrics'][metric]['mean'] for c in allconditions]
+        bars=axis.bar(np.arange(4)+offset,values,width=.32,color=colors[days],label=str(days)+' days')
+        axis.bar_label(bars,labels=[str(int(v)) for v in values],padding=3,fontsize=10)
+    axis.set(xticks=np.arange(4),xticklabels=shortlabels,ylabel='Citizens (of six)',title=title,ylim=(0,6.1),yticks=np.arange(7))
+    axis.grid(axis='y',alpha=.18)
+    axis.set_axisbelow(True)
+    axis.spines[['top','right']].set_visible(False)
+    axis.legend(frameon=False,loc='upper right')
+finish(fig,'society_reach_retention',
+       'All displayed reach/retention counts are identical across the 30 heldout seeds at each horizon; no error bars are omitted where variation exists.\n'
+       'Reach includes the two direct listeners. Retention queries actual ordinary + bounded consolidated stores, not ledger presence. Gossip and capacity changes had zero paired fill effects.')
+
+sha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+manifest={'scope':'Saved Track B measurements only; no simulation, bootstrap or timing rerun',
+          'python':platform.python_version(),'matplotlib':matplotlib.__version__,'numpy':np.__version__,
+          'summary_sha256':sha(summary_path),'raw_sha256':sha(out/'worlds.jsonl'),
+          'recipe_sha256':sha(out/'plot_recipe.txt'),
+          'sampling':'Paired intervals copied unchanged from saved summary; reach/retention condition means copied from saved summary',
+          'files':{name:sha(out/name) for name in filenames if name != 'plot_manifest.json'}}
+(out/'plot_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+print(json.dumps(manifest,indent=2))
