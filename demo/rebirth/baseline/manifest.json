@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "ad979b4",
+  "test_result": "345 passed in 19.69s",
+  "screenshots": {
+    "01_arrival.jpg": "2bc8bcb75ddac98a3babe0f1cc3dcc9117ff5ee05562192f3dbdb01ef2f25027",
+    "02_promise.jpg": "6255598b5b3ddc7a1345da8e93a83dbc49afefd4c02b676684f4dd3434048489",
+    "03_paid_work.jpg": "c90f15071ebe7281f879309528504548d3c1da27a9dc9b58b4321eef7ccedf04",
+    "04_promise_kept.jpg": "a92c931bbf0a49e76650e04f4ea3b3b5b05223ec2fbbfc9f0bcb4aed07b58eda",
+    "05_causal_records.jpg": "9106935766660cfe8f52b4c0b37ebdbbdca179e6dc6614b57def9328617794e4",
+    "06_week_away.jpg": "f9c33547caa673f9f33dec12ebbe8a39bf30b8999b325992e6f0712816b19236",
+    "07_remembered_return.jpg": "c2abaef26084b7456c0785dbf061a1f76dc512c28668b5a9f5e29ba0d6e928c1",
+    "08_executed_alternative.jpg": "fde6bc7885c69d8487c0be96965934d1e7a66c83518e26c1a83be7d7ba62488b",
+    "09_fresh_audit_street.jpg": "2bc8bcb75ddac98a3babe0f1cc3dcc9117ff5ee05562192f3dbdb01ef2f25027"
+  },
+  "provenance": "01-08 copied unchanged from committed actualPompeii captures;09 actualfresh8783 baseline capture before renderer changes"
+}
