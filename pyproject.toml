@@ -16,6 +16,7 @@ kalends-city = "kalends.city_server:main"
 kalends-actionbench = "kalends.actionbench.runner:main"
 kalends-genesis = "kalends.genesis.server:main"
 kalends-pompeii = "kalends.pompeii.server:main"
+kalends-rebirth = "kalends_rebirth.server:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
@@ -27,3 +28,5 @@ include = ["kalends*"]
 "kalends.city" = ["static/*.html", "static/*.css", "static/*.js"]
 "kalends.genesis" = ["static/*.html", "static/*.css", "static/*.js"]
 "kalends.pompeii" = ["static/*.html", "static/*.css", "static/*.js"]
+
+"kalends_rebirth" = ["static/*.html", "static/*.css", "static/*.js", "static/assets/*.png", "static/assets/*.json"]

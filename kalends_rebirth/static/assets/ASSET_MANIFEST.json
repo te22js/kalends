@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "project": "Kalends: Rebirth",
+  "assets": [
+    {
+      "file": "street.png",
+      "purpose": "Painted Pompeii district exterior",
+      "origin": "Original image generated for this project with the image_gen tool",
+      "created": "2026-10-21",
+      "generation_brief_summary": "Original Mediterranean storybook illustration; warm plaster and terracotta, basalt streets, bread counter, fountain, food counter, fullery and household; no people, no labels.",
+      "sha256": "2364f2439903f9ee4c9b2444ce3b965891172c0d14342174dc96706debce9fe8",
+      "bytes": 3974576,
+      "width": 1513,
+      "height": 1040,
+      "atlas": null,
+      "third_party_game_assets_extracted": false,
+      "historical_status": "Artistic reconstruction, not archaeological evidence",
+      "rights_note": "Generated project asset. No third-party source image or specific game artwork supplied. No claim of exclusive copyright or legal clearance is made."
+    },
+    {
+      "file": "portraits.png",
+      "purpose": "Six expressive character portraits",
+      "origin": "Original image generated for this project with the image_gen tool",
+      "created": "2026-10-21",
+      "generation_brief_summary": "Original painterly Roman-era fictional people on warm plaster, six equal cells, differentiated faces and clothing, no lettering.",
+      "sha256": "c9b0327a75f0ea5dc8116b18099d08ba101ed535d1e7e0d83f66c5e8fe52de91",
+      "bytes": 3211616,
+      "width": 1536,
+      "height": 1024,
+      "atlas": {
+        "columns": 3,
+        "rows": 2,
+        "order": [
+          "Sabina",
+          "Marcus",
+          "Lucius",
+          "Felix",
+          "Chreste",
+          "Dama"
+        ]
+      },
+      "third_party_game_assets_extracted": false,
+      "historical_status": "Artistic reconstruction, not archaeological evidence",
+      "rights_note": "Generated project asset. No third-party source image or specific game artwork supplied. No claim of exclusive copyright or legal clearance is made."
+    },
+    {
+      "file": "interiors.png",
+      "purpose": "Four illustrated room cutaways",
+      "origin": "Original image generated for this project with the image_gen tool",
+      "created": "2026-10-21",
+      "generation_brief_summary": "Original painted bakery, thermopolium, fullery and household, readable open floor, Roman materials, no people or text.",
+      "sha256": "ddc420cbf38851d4cecc745dc40298d8eeeb611d9be30ca77d0b27c70afdd684",
+      "bytes": 3289586,
+      "width": 1536,
+      "height": 1024,
+      "atlas": {
+        "columns": 2,
+        "rows": 2,
+        "order": [
+          "bakery",
+          "thermopolium",
+          "fullery",
+          "household"
+        ]
+      },
+      "third_party_game_assets_extracted": false,
+      "historical_status": "Artistic reconstruction, not archaeological evidence",
+      "rights_note": "Generated project asset. No third-party source image or specific game artwork supplied. No claim of exclusive copyright or legal clearance is made."
+    },
+    {
+      "file": "sprites-original.png",
+      "purpose": "Eight transparent character poses",
+      "origin": "Original image generated for this project with the image_gen tool",
+      "created": "2026-10-21",
+      "generation_brief_summary": "Original full-body painted game characters matching the portraits, consistent scale and foot baseline; seven identities and Aelia walking side pose; transparent background.",
+      "sha256": "d89e58ce3603554cef8a8cdc1884134278c6b36cc4201f3036fbaaceb51ceb27",
+      "bytes": 2211710,
+      "width": 1536,
+      "height": 1024,
+      "atlas": {
+        "columns": 4,
+        "rows": 2,
+        "order": [
+          "Aelia",
+          "Felix",
+          "Sabina",
+          "Marcus",
+          "Chreste",
+          "Dama",
+          "Lucius",
+          "Aelia walking"
+        ]
+      },
+      "third_party_game_assets_extracted": false,
+      "historical_status": "Artistic reconstruction, not archaeological evidence",
+      "rights_note": "Generated project asset. No third-party source image or specific game artwork supplied. No claim of exclusive copyright or legal clearance is made."
+    }
+  ],
+  "runtime_presentation": {
+    "renderer": "Canvas 2D",
+    "sprite_animation": "Actual authoritative paths interpolated with a two-pose Aelia walk and subtle motion; not a full directional animation set",
+    "room_transitions": "Four cutaway scenes mapped to schematic authoritative coordinates",
+    "code_native_props": [
+      "six-sack cart during unresolved delivery",
+      "actor foot shadows",
+      "door markers",
+      "fountain ripples"
+    ],
+    "sound": "Optional original synthesized interaction tone; off by default",
+    "fonts": "Local system fonts: Georgia, Avenir and Helvetica; no external font requests"
+  }
+}
