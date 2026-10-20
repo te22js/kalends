@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "registered_date": "2026-10-20",
+  "status": "prospective; source commit recorded before held-out execution",
+  "development_seeds": [20000,20001,20002,20003,20004,20005,20006,20007,20008,20009],
+  "heldout_seeds": [50000,50001,50002,50003,50004,50005,50006,50007,50008,50009,50010,50011,50012,50013,50014,50015,50016,50017,50018,50019,50020,50021,50022,50023,50024,50025,50026,50027,50028,50029],
+  "horizon": 96,
+  "primary_outcome": "settled citizen contract units delivered / settled citizen contract units committed",
+  "secondary_outcomes": ["net asset change at inventory values 1,3,6", "cash change", "purchase fill rate", "inspection cost", "zero fill orders", "trust and commercial access separately"],
+  "primary_design": {
+    "families": ["stable","reversal","scarcity"],
+    "populations": [8,32],
+    "capacity": 32,
+    "policies": [
+      {"label":"structured_none","memory":"structured","gate":"none"},
+      {"label":"guarded_none","memory":"hybrid_guarded","gate":"none"},
+      {"label":"guarded_sources","memory":"hybrid_guarded","gate":"source_count"},
+      {"label":"guarded_lineage","memory":"hybrid_guarded","gate":"lineage"}
+    ],
+    "threshold": 2,
+    "supply_mode": "per_capita",
+    "allocation": "seeded",
+    "role_policy": true
+  },
+  "controls": {
+    "design": "One-factor capacity8/capacity128 and role_policyfalse versus the reversal32 guarded_none primary cell; full2x2 stock/allocation control shares the per_capita/seeded primary baseline. Six additional worlds per seed, 180 total control worlds.",
+    "family": "reversal",
+    "population": 32,
+    "memory": "hybrid_guarded",
+    "gate": "none",
+    "capacity": [8,128],
+    "resource_allocation": [
+      {"supply_mode":"fixed","allocation":"fixed"},
+      {"supply_mode":"fixed","allocation":"seeded"},
+      {"supply_mode":"per_capita","allocation":"fixed"},
+      {"supply_mode":"per_capita","allocation":"seeded"}
+    ],
+    "role_policy": [true,false]
+  },
+  "causal_checks": ["identity rerun", "remove actual player claim before delivery", "operator immediate correction versus paid next-tick participant inspection reported separately"],
+  "inference": "Average paired differences within each independent seed across the six primary cells; percentile paired bootstrap over 30 seeds, 10000 draws, fixed bootstrap seed 72831. Cells and sensitivity results are descriptive. No tick/agent independence assumption.",
+  "confirmatory_contrast": "guarded_lineage minus guarded_none on delivery fill rate; two-sided 95% paired seed-bootstrap confidence interval",
+  "falsification": "If the confirmatory interval includes zero, do not claim demonstrated delivery improvement. A positive information classification score is not evidence of economic benefit.",
+  "analysis_policy": "Freeze source and this file before heldout. Do not tune policies against heldout outcomes. If a correctness defect is found, invalidate the affected run, record the defect and source change, and rerun all paired conditions; label this procedural deviation. Any new hypothesis after looking is exploratory.",
+  "limits": "Synthetic deterministic offline economy; no real users, no LLM inference evidence, no optimal-policy regret, no social welfare estimate. Capacity is a count of experiences, not a byte budget. Old results are historical and are not merged."
+}
