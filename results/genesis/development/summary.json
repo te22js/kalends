@@ -1,0 +1,1430 @@
+{
+  "worlds": 60,
+  "primary_worlds": 48,
+  "conditions": {
+    "capacity128": {
+      "delivery_fill_rate": {
+        "mean": 0.7736318407960199,
+        "ci95": [
+          0.6766169154228856,
+          0.8706467661691543
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3272.5,
+        "ci95": [
+          -3726.0,
+          -2819.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 159.0,
+        "ci95": [
+          134.0,
+          184.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.7063512476553175,
+        "ci95": [
+          0.674688796680498,
+          0.738013698630137
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.7291095133413272,
+        "ci95": [
+          0.6960616438356164,
+          0.762157382847038
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.968808261808674,
+        "ci95": [
+          0.9683219178082192,
+          0.9692946058091286
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5363994632421638,
+        "ci95": [
+          0.382396449704142,
+          0.6904024767801857
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 206.5,
+        "ci95": [
+          92.0,
+          321.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3214.5,
+        "ci95": [
+          -3672.0,
+          -2757.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3359.5,
+        "ci95": [
+          -3807.0,
+          -2912.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "capacity8": {
+      "delivery_fill_rate": {
+        "mean": 0.7717661691542288,
+        "ci95": [
+          0.6703980099502488,
+          0.8731343283582089
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3369.25,
+        "ci95": [
+          -3886.5,
+          -2852.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 271.0,
+        "ci95": [
+          182.0,
+          360.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.568017095097119,
+        "ci95": [
+          0.5284090909090909,
+          0.607625099285147
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.7541792976600021,
+        "ci95": [
+          0.6962566844919786,
+          0.8121019108280255
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.7535707193918075,
+        "ci95": [
+          0.7482128673550437,
+          0.7589285714285714
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5590358078151944,
+        "ci95": [
+          0.42845188284518826,
+          0.6896197327852004
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 167.5,
+        "ci95": [
+          94.0,
+          241.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3311.25,
+        "ci95": [
+          -3832.5,
+          -2790.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3456.25,
+        "ci95": [
+          -3967.5,
+          -2945.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "fixed_stock_fixed_order": {
+      "delivery_fill_rate": {
+        "mean": 0.2649253731343284,
+        "ci95": [
+          0.22263681592039802,
+          0.3072139303482587
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3612.5,
+        "ci95": [
+          -3829.0,
+          -3396.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 160.0,
+        "ci95": [
+          130.0,
+          190.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.6849944619906128,
+        "ci95": [
+          0.6413124533929903,
+          0.7286764705882353
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.7048492265108697,
+        "ci95": [
+          0.6595092024539877,
+          0.7501892505677517
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.971866089836382,
+        "ci95": [
+          0.9713235294117647,
+          0.9724086502609992
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.12355895292046598,
+        "ci95": [
+          0.08544125913434514,
+          0.16167664670658682
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 570.0,
+        "ci95": [
+          458.0,
+          682.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3554.5,
+        "ci95": [
+          -3775.0,
+          -3334.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3699.5,
+        "ci95": [
+          -3910.0,
+          -3489.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "fixed_stock_seeded_order": {
+      "delivery_fill_rate": {
+        "mean": 0.2649253731343284,
+        "ci95": [
+          0.22263681592039802,
+          0.3072139303482587
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3619.5,
+        "ci95": [
+          -3843.0,
+          -3396.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 166.0,
+        "ci95": [
+          130.0,
+          202.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.6817168925735843,
+        "ci95": [
+          0.6457867263236391,
+          0.7176470588235294
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.7020324702205147,
+        "ci95": [
+          0.6641104294478528,
+          0.7399545109931767
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.971130795718735,
+        "ci95": [
+          0.9698529411764706,
+          0.9724086502609992
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.12341411800272081,
+        "ci95": [
+          0.0853932584269663,
+          0.16143497757847533
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 573.0,
+        "ci95": [
+          465.0,
+          681.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3561.5,
+        "ci95": [
+          -3789.0,
+          -3334.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3706.5,
+        "ci95": [
+          -3924.0,
+          -3489.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "guarded_lineage": {
+      "delivery_fill_rate": {
+        "mean": 0.7201248658667446,
+        "ci95": [
+          0.6867012974343966,
+          0.7535484342990927
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -1874.7916666666665,
+        "ci95": [
+          -1966.3333333333333,
+          -1783.25
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 103.5,
+        "ci95": [
+          98.0,
+          109.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.79391632692316,
+        "ci95": [
+          0.7597182963475294,
+          0.8281143574987907
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.8103766156466852,
+        "ci95": [
+          0.7738417793803739,
+          0.8469114519129963
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9796804563104501,
+        "ci95": [
+          0.9776497829249923,
+          0.9817111296959079
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.578213809982409,
+        "ci95": [
+          0.5284367849257151,
+          0.6279908350391029
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 144.75,
+        "ci95": [
+          120.66666666666667,
+          168.83333333333334
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -1838.125,
+        "ci95": [
+          -1934.3333333333333,
+          -1741.9166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -1929.7916666666665,
+        "ci95": [
+          -2014.3333333333333,
+          -1845.25
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "guarded_none": {
+      "delivery_fill_rate": {
+        "mean": 0.7211491561798848,
+        "ci95": [
+          0.6877255877475368,
+          0.7545727246122329
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -1870.5416666666667,
+        "ci95": [
+          -1961.6666666666667,
+          -1779.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 97.83333333333334,
+        "ci95": [
+          95.0,
+          100.66666666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.7870819627050588,
+        "ci95": [
+          0.7574816289322134,
+          0.8166822964779042
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.8142640855619749,
+        "ci95": [
+          0.7805927176006762,
+          0.8479354535232737
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9666182216695918,
+        "ci95": [
+          0.9630825484540878,
+          0.9701538948850957
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5797610936172927,
+        "ci95": [
+          0.5314040739732994,
+          0.628118113261286
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 144.5,
+        "ci95": [
+          122.33333333333333,
+          166.66666666666666
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -1835.5416666666667,
+        "ci95": [
+          -1931.6666666666667,
+          -1739.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -1923.0416666666667,
+        "ci95": [
+          -2006.6666666666667,
+          -1839.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "guarded_sources": {
+      "delivery_fill_rate": {
+        "mean": 0.7200212174422007,
+        "ci95": [
+          0.6864940005853087,
+          0.7535484342990927
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -1875.9166666666667,
+        "ci95": [
+          -1970.1666666666667,
+          -1781.6666666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 103.5,
+        "ci95": [
+          96.0,
+          111.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.7948179543363665,
+        "ci95": [
+          0.7614040971655808,
+          0.8282318115071522
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.8115174735321986,
+        "ci95": [
+          0.7760238914285301,
+          0.8470110556358671
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9794057609176834,
+        "ci95": [
+          0.9777587322141407,
+          0.9810527896212262
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5787146826434333,
+        "ci95": [
+          0.5289852424961697,
+          0.6284441227906968
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 144.25,
+        "ci95": [
+          119.33333333333333,
+          169.16666666666666
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -1840.5833333333335,
+        "ci95": [
+          -1939.5,
+          -1741.6666666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -1928.9166666666667,
+        "ci95": [
+          -2016.1666666666667,
+          -1841.6666666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "per_capita_fixed_order": {
+      "delivery_fill_rate": {
+        "mean": 0.7748756218905473,
+        "ci95": [
+          0.6791044776119403,
+          0.8706467661691543
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3265.5,
+        "ci95": [
+          -3712.0,
+          -2819.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 155.0,
+        "ci95": [
+          134.0,
+          176.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.7026138594180933,
+        "ci95": [
+          0.674688796680498,
+          0.7305389221556886
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.7272110364208274,
+        "ci95": [
+          0.6966580976863753,
+          0.7577639751552795
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9662682932889408,
+        "ci95": [
+          0.9640718562874252,
+          0.9684647302904564
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5448166230054775,
+        "ci95": [
+          0.3992307692307692,
+          0.6904024767801857
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 195.0,
+        "ci95": [
+          92.0,
+          298.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3207.5,
+        "ci95": [
+          -3658.0,
+          -2757.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3352.5,
+        "ci95": [
+          -3793.0,
+          -2912.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "shared_policy": {
+      "delivery_fill_rate": {
+        "mean": 0.40174129353233834,
+        "ci95": [
+          0.36318407960199006,
+          0.44029850746268656
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -3655.5,
+        "ci95": [
+          -3933.0,
+          -3378.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.6398048053136332,
+        "ci95": [
+          0.627435697583788,
+          0.6521739130434783
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.6785631008753049,
+        "ci95": [
+          0.6641914191419142,
+          0.6929347826086957
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9429187107422861,
+        "ci95": [
+          0.9411764705882353,
+          0.9446609508963367
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.47389517920715224,
+        "ci95": [
+          0.27318718381112983,
+          0.6746031746031746
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 183.5,
+        "ci95": [
+          36.0,
+          331.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -3588.5,
+        "ci95": [
+          -3873.0,
+          -3304.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -3756.0,
+        "ci95": [
+          -4023.0,
+          -3489.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    },
+    "structured_none": {
+      "delivery_fill_rate": {
+        "mean": 0.7211491561798848,
+        "ci95": [
+          0.6877255877475368,
+          0.7545727246122329
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "net_asset_change": {
+        "mean": -1870.5416666666667,
+        "ci95": [
+          -1961.6666666666667,
+          -1779.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "inspection_cost": {
+        "mean": 97.83333333333334,
+        "ci95": [
+          95.0,
+          100.66666666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "local_recall_accuracy": {
+        "mean": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_current_accuracy": {
+        "mean": 0.7870819627050588,
+        "ci95": [
+          0.7574816289322134,
+          0.8166822964779042
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "belief_accuracy_when_answered": {
+        "mean": 0.8142640855619749,
+        "ci95": [
+          0.7805927176006762,
+          0.8479354535232737
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "answer_coverage": {
+        "mean": 0.9666182216695918,
+        "ci95": [
+          0.9630825484540878,
+          0.9701538948850957
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "purchase_fill_rate": {
+        "mean": 0.5797610936172927,
+        "ci95": [
+          0.5314040739732994,
+          0.628118113261286
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "zero_fill_orders": {
+        "mean": 144.5,
+        "ci95": [
+          122.33333333333333,
+          166.66666666666666
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_1": {
+        "mean": -1835.5416666666667,
+        "ci95": [
+          -1931.6666666666667,
+          -1739.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      },
+      "asset_value_6": {
+        "mean": -1923.0416666666667,
+        "ci95": [
+          -2006.6666666666667,
+          -1839.4166666666667
+        ],
+        "n_independent_seeds": 2,
+        "resampling": "paired seed-cluster percentile bootstrap"
+      }
+    }
+  },
+  "confirmatory_contrast": {
+    "name": "guarded_lineage minus guarded_none delivery fill",
+    "mean": -0.0010242903131401776,
+    "ci95": [
+      -0.0010242903131401822,
+      -0.001024290313140173
+    ],
+    "n_independent_seeds": 2,
+    "resampling": "paired seed-cluster percentile bootstrap",
+    "seed_differences": [
+      {
+        "seed": 20000,
+        "difference": -0.001024290313140173
+      },
+      {
+        "seed": 20001,
+        "difference": -0.0010242903131401822
+      }
+    ]
+  },
+  "cells_descriptive": [
+    {
+      "family": "stable",
+      "population": 8,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.9558823529411765,
+      "net_asset_change": -347.25,
+      "inspection_cost": 27.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9807026377625837,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9807026377625837,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -333.25,
+      "asset_value_6": -368.25
+    },
+    {
+      "family": "stable",
+      "population": 8,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.9558823529411765,
+      "net_asset_change": -344.75,
+      "inspection_cost": 24.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9672547059266188,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9672547059266188,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -332.75,
+      "asset_value_6": -362.75
+    },
+    {
+      "family": "stable",
+      "population": 8,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.9558823529411765,
+      "net_asset_change": -351.25,
+      "inspection_cost": 27.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9798225308641975,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9798225308641975,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -339.25,
+      "asset_value_6": -369.25
+    },
+    {
+      "family": "stable",
+      "population": 8,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.9558823529411765,
+      "net_asset_change": -344.75,
+      "inspection_cost": 24.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9672547059266188,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9672547059266188,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -332.75,
+      "asset_value_6": -362.75
+    },
+    {
+      "family": "stable",
+      "population": 32,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.9682835820895522,
+      "net_asset_change": -1296.75,
+      "inspection_cost": 83.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9802960731863147,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9802960731863147,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -1236.75,
+      "asset_value_6": -1386.75
+    },
+    {
+      "family": "stable",
+      "population": 32,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.9682835820895522,
+      "net_asset_change": -1285.75,
+      "inspection_cost": 70.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9684747270273586,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9684747270273586,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -1227.75,
+      "asset_value_6": -1372.75
+    },
+    {
+      "family": "stable",
+      "population": 32,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.9682835820895522,
+      "net_asset_change": -1297.75,
+      "inspection_cost": 83.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9800376641053155,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9800376641053155,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -1239.75,
+      "asset_value_6": -1384.75
+    },
+    {
+      "family": "stable",
+      "population": 32,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.9682835820895522,
+      "net_asset_change": -1285.75,
+      "inspection_cost": 70.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.9684747270273586,
+      "belief_accuracy_when_answered": 1.0,
+      "answer_coverage": 0.9684747270273586,
+      "purchase_fill_rate": 1.0,
+      "zero_fill_orders": 0.0,
+      "asset_value_1": -1227.75,
+      "asset_value_6": -1372.75
+    },
+    {
+      "family": "reversal",
+      "population": 8,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.7426470588235294,
+      "net_asset_change": -883.5,
+      "inspection_cost": 55.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7514744429882044,
+      "belief_accuracy_when_answered": 0.7665719696969697,
+      "answer_coverage": 0.9803680646570554,
+      "purchase_fill_rate": 0.5228154567375365,
+      "zero_fill_orders": 50.0,
+      "asset_value_1": -869.5,
+      "asset_value_6": -904.5
+    },
+    {
+      "family": "reversal",
+      "population": 8,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.7426470588235294,
+      "net_asset_change": -885.0,
+      "inspection_cost": 50.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7384982063000638,
+      "belief_accuracy_when_answered": 0.763816190536251,
+      "answer_coverage": 0.9670204924074893,
+      "purchase_fill_rate": 0.526903234544492,
+      "zero_fill_orders": 49.0,
+      "asset_value_1": -873.0,
+      "asset_value_6": -903.0
+    },
+    {
+      "family": "reversal",
+      "population": 8,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.7426470588235294,
+      "net_asset_change": -895.0,
+      "inspection_cost": 55.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7504168612018942,
+      "belief_accuracy_when_answered": 0.7658569500674763,
+      "answer_coverage": 0.9799096721327096,
+      "purchase_fill_rate": 0.5246407320426862,
+      "zero_fill_orders": 50.0,
+      "asset_value_1": -883.0,
+      "asset_value_6": -913.0
+    },
+    {
+      "family": "reversal",
+      "population": 8,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.7426470588235294,
+      "net_asset_change": -885.0,
+      "inspection_cost": 50.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7384982063000638,
+      "belief_accuracy_when_answered": 0.763816190536251,
+      "answer_coverage": 0.9670204924074893,
+      "purchase_fill_rate": 0.526903234544492,
+      "zero_fill_orders": 49.0,
+      "asset_value_1": -873.0,
+      "asset_value_6": -903.0
+    },
+    {
+      "family": "reversal",
+      "population": 32,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.775497512437811,
+      "net_asset_change": -3289.0,
+      "inspection_cost": 169.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7084647459095457,
+      "belief_accuracy_when_answered": 0.7243307767501317,
+      "answer_coverage": 0.9782873441212736,
+      "purchase_fill_rate": 0.5416783817557014,
+      "zero_fill_orders": 196.0,
+      "asset_value_1": -3231.0,
+      "asset_value_6": -3376.0
+    },
+    {
+      "family": "reversal",
+      "population": 32,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.7748756218905473,
+      "net_asset_change": -3263.0,
+      "inspection_cost": 154.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6952891306373129,
+      "belief_accuracy_when_answered": 0.7190803905247619,
+      "answer_coverage": 0.9669612079776979,
+      "purchase_fill_rate": 0.5420904644902447,
+      "zero_fill_orders": 197.5,
+      "asset_value_1": -3205.0,
+      "asset_value_6": -3350.0
+    },
+    {
+      "family": "reversal",
+      "population": 32,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.7748756218905473,
+      "net_asset_change": -3291.5,
+      "inspection_cost": 175.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.7106103573022006,
+      "belief_accuracy_when_answered": 0.7254976191435827,
+      "answer_coverage": 0.9795967417774358,
+      "purchase_fill_rate": 0.5411504873689879,
+      "zero_fill_orders": 198.0,
+      "asset_value_1": -3233.5,
+      "asset_value_6": -3378.5
+    },
+    {
+      "family": "reversal",
+      "population": 32,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.7748756218905473,
+      "net_asset_change": -3263.0,
+      "inspection_cost": 154.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6952891306373129,
+      "belief_accuracy_when_answered": 0.7190803905247619,
+      "answer_coverage": 0.9669612079776979,
+      "purchase_fill_rate": 0.5420904644902447,
+      "zero_fill_orders": 197.5,
+      "asset_value_1": -3205.0,
+      "asset_value_6": -3350.0
+    },
+    {
+      "family": "scarcity",
+      "population": 8,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.4362745098039216,
+      "net_asset_change": -1113.25,
+      "inspection_cost": 59.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6813568225736852,
+      "belief_accuracy_when_answered": 0.6953125,
+      "answer_coverage": 0.9800941820978968,
+      "purchase_fill_rate": 0.21117612828139143,
+      "zero_fill_orders": 110.0,
+      "asset_value_1": -1101.25,
+      "asset_value_6": -1131.25
+    },
+    {
+      "family": "scarcity",
+      "population": 8,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.4411764705882353,
+      "net_asset_change": -1109.25,
+      "inspection_cost": 61.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6851485741672657,
+      "belief_accuracy_when_answered": 0.7114981341879147,
+      "answer_coverage": 0.9635903426791277,
+      "purchase_fill_rate": 0.2124875278225497,
+      "zero_fill_orders": 114.0,
+      "asset_value_1": -1097.25,
+      "asset_value_6": -1127.25
+    },
+    {
+      "family": "scarcity",
+      "population": 8,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.4362745098039216,
+      "net_asset_change": -1110.5,
+      "inspection_cost": 58.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6869066102093625,
+      "belief_accuracy_when_answered": 0.7009845219435736,
+      "answer_coverage": 0.9800658668548576,
+      "purchase_fill_rate": 0.21117612828139143,
+      "zero_fill_orders": 110.0,
+      "asset_value_1": -1098.5,
+      "asset_value_6": -1128.5
+    },
+    {
+      "family": "scarcity",
+      "population": 8,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.4411764705882353,
+      "net_asset_change": -1109.25,
+      "inspection_cost": 61.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6851485741672657,
+      "belief_accuracy_when_answered": 0.7114981341879147,
+      "answer_coverage": 0.9635903426791277,
+      "purchase_fill_rate": 0.2124875278225497,
+      "zero_fill_orders": 114.0,
+      "asset_value_1": -1097.25,
+      "asset_value_6": -1127.25
+    },
+    {
+      "family": "scarcity",
+      "population": 32,
+      "condition": "guarded_lineage",
+      "delivery_fill_rate": 0.4421641791044776,
+      "net_asset_change": -4319.0,
+      "inspection_cost": 228.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6612032391186261,
+      "belief_accuracy_when_answered": 0.6760444474330094,
+      "answer_coverage": 0.9783344360375761,
+      "purchase_fill_rate": 0.19361289311982455,
+      "zero_fill_orders": 512.5,
+      "asset_value_1": -4257.0,
+      "asset_value_6": -4412.0
+    },
+    {
+      "family": "scarcity",
+      "population": 32,
+      "condition": "guarded_none",
+      "delivery_fill_rate": 0.44402985074626866,
+      "net_asset_change": -4335.5,
+      "inspection_cost": 228.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6678264321717335,
+      "belief_accuracy_when_answered": 0.6911897981229219,
+      "answer_coverage": 0.9664078539992584,
+      "purchase_fill_rate": 0.19708533484647003,
+      "zero_fill_orders": 506.5,
+      "asset_value_1": -4277.5,
+      "asset_value_6": -4422.5
+    },
+    {
+      "family": "scarcity",
+      "population": 32,
+      "condition": "guarded_sources",
+      "delivery_fill_rate": 0.4421641791044776,
+      "net_asset_change": -4309.5,
+      "inspection_cost": 223.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6611137023352285,
+      "belief_accuracy_when_answered": 0.6767657500385587,
+      "answer_coverage": 0.9770020897715843,
+      "purchase_fill_rate": 0.19532074816753398,
+      "zero_fill_orders": 507.5,
+      "asset_value_1": -4249.5,
+      "asset_value_6": -4399.5
+    },
+    {
+      "family": "scarcity",
+      "population": 32,
+      "condition": "structured_none",
+      "delivery_fill_rate": 0.44402985074626866,
+      "net_asset_change": -4335.5,
+      "inspection_cost": 228.0,
+      "local_recall_accuracy": 1.0,
+      "belief_current_accuracy": 0.6678264321717335,
+      "belief_accuracy_when_answered": 0.6911897981229219,
+      "answer_coverage": 0.9664078539992584,
+      "purchase_fill_rate": 0.19708533484647003,
+      "zero_fill_orders": 506.5,
+      "asset_value_1": -4277.5,
+      "asset_value_6": -4422.5
+    }
+  ],
+  "total_events": 356122,
+  "total_decisions": 51554,
+  "inference_cost_usd": 0,
+  "sum_worker_seconds": 119.038821,
+  "interpretation": "Primary inference clusters by seed across six paired cells. Per-cell and control estimates are descriptive; no multiplicity-adjusted claim. Net assets are not collective welfare or optimal regret.",
+  "wall_seconds": 32.366869874997064,
+  "worlds_sha256": "ad1c53a9591c80af674aa10c091c6a1ac18d117fad936776c74a59a004f21e14",
+  "source_unchanged_during_run": true
+}

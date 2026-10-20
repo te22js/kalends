@@ -1,0 +1,151 @@
+{
+  "version": 2,
+  "commands": [
+    {
+      "operation": "reset",
+      "data": {
+        "seed": 2026,
+        "n_agents": 8,
+        "n_ticks": 96,
+        "family": "reversal",
+        "memory": "hybrid_guarded",
+        "gate": "none",
+        "threshold": 2,
+        "capacity": 256,
+        "communication_depth": 3,
+        "supply_mode": "per_capita",
+        "allocation": "seeded",
+        "role_policy": true
+      }
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": {
+          "kind": "claim",
+          "recipient": "Livia",
+          "value": "disrupted",
+          "as_of": 2,
+          "root_event": null
+        },
+        "proposal_id": "b310bb04500a95a232f5",
+        "adapter": {
+          "model_id": "offline/scoped-grammar",
+          "version": "genesis-rules-1",
+          "authorized_view_sha256": "1a9ab12d7452c2f0aa0f702e4989b6d608d79df367551fbc8456e23282ac61b8",
+          "compile_wall_ms": 0.8453,
+          "inference_latency_ms": 0,
+          "inference_cost_usd": 0
+        },
+        "event_id": 37,
+        "tick": 2
+      }
+    },
+    {
+      "operation": "step",
+      "data": {
+        "count": 72,
+        "timeline": "both"
+      }
+    },
+    {
+      "operation": "fork",
+      "data": {
+        "kind": "remove_message",
+        "event_id": 37
+      }
+    }
+  ],
+  "proposals": {
+    "b310bb04500a95a232f5": {
+      "proposal_id": "b310bb04500a95a232f5",
+      "tick": 2,
+      "recipient": "Livia",
+      "text": "I heard grain supply is disrupted.",
+      "result": {
+        "interpretations": [
+          {
+            "id": "0",
+            "label": "Tell Livia: supply disrupted",
+            "action": {
+              "kind": "claim",
+              "recipient": "Livia",
+              "value": "disrupted",
+              "as_of": 2,
+              "root_event": null
+            },
+            "transmission": "Tell only Livia: \u2018Grain supply is disrupted as of tick 2.\u2019 Source: Player's unverified claim. Citizens may pass it on; the claim does not change the shipment.",
+            "requires_confirmation": true
+          }
+        ],
+        "reply": null,
+        "clarification": null,
+        "adapter": {
+          "model_id": "offline/scoped-grammar",
+          "version": "genesis-rules-1",
+          "authorized_view_sha256": "1a9ab12d7452c2f0aa0f702e4989b6d608d79df367551fbc8456e23282ac61b8",
+          "compile_wall_ms": 0.8453,
+          "inference_latency_ms": 0,
+          "inference_cost_usd": 0
+        }
+      },
+      "accepted": true
+    },
+    "df4daf5cede60c119aae": {
+      "proposal_id": "df4daf5cede60c119aae",
+      "tick": 74,
+      "recipient": "Livia",
+      "text": "Why don't you trust me?",
+      "result": {
+        "interpretations": [],
+        "reply": {
+          "text": "My trust in you is 32%. What I can still recall: I checked Player's report E37 dated 2; my inspection E78 recorded assessment contradicted. An older report conflicting with now is not proof it was false. My trust is now 0.32. Recorded cost receipts: [73].",
+          "evidence_ids": [
+            37,
+            73,
+            78,
+            79,
+            80
+          ],
+          "epistemic_status": "remembered"
+        },
+        "clarification": null,
+        "adapter": {
+          "model_id": "offline/scoped-grammar",
+          "version": "genesis-rules-1",
+          "authorized_view_sha256": "cece750ce1cea238ee00f87137a727817fee0f5014097847204303ca07d05517",
+          "compile_wall_ms": 2.9498,
+          "inference_latency_ms": 0,
+          "inference_cost_usd": 0
+        }
+      },
+      "accepted": false
+    }
+  },
+  "dialogues": [
+    {
+      "recipient": "Livia",
+      "tick": 74,
+      "utterance": "Why don't you trust me?",
+      "reply": {
+        "text": "My trust in you is 32%. What I can still recall: I checked Player's report E37 dated 2; my inspection E78 recorded assessment contradicted. An older report conflicting with now is not proof it was false. My trust is now 0.32. Recorded cost receipts: [73].",
+        "evidence_ids": [
+          37,
+          73,
+          78,
+          79,
+          80
+        ],
+        "epistemic_status": "remembered"
+      }
+    }
+  ],
+  "disclosed": [
+    37,
+    73,
+    78,
+    79,
+    80
+  ],
+  "mode": "operator"
+}

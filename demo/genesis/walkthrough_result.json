@@ -1,0 +1,574 @@
+{
+  "kind": "actual deterministic simulation export; curated demonstration, not research sample",
+  "config": {
+    "seed": 2026,
+    "n_agents": 8,
+    "n_ticks": 96,
+    "family": "reversal",
+    "memory": "hybrid_guarded",
+    "gate": "none",
+    "threshold": 2,
+    "capacity": 256,
+    "communication_depth": 3,
+    "supply_mode": "per_capita",
+    "allocation": "seeded",
+    "role_policy": true
+  },
+  "tick": 74,
+  "branch_tick": 74,
+  "intervention": {
+    "kind": "remove_message",
+    "at_tick": 2,
+    "event_id": 37,
+    "rerun_through_tick": 74,
+    "replayed_ticks": 72,
+    "skipped_dependent_actions": [],
+    "operator_intervention": true,
+    "note": "Accepted actions replayed from the same initial seed. Removing a claim omits its original action, including all downstream propagation."
+  },
+  "original_metrics": {
+    "primary_metric": "delivery_fill_rate",
+    "delivery_fill_rate": 0.8823529411764706,
+    "committed_units": 153,
+    "delivered_units": 135,
+    "purchase_attempted": 187,
+    "purchase_filled": 131,
+    "purchase_fill_rate": 0.7005347593582888,
+    "net_asset_change": -668.5,
+    "cash_delta": -656.5,
+    "inspection_cost": 38.0,
+    "unused_stock": 4,
+    "eligible_decisions": 221,
+    "n_decisions": 239,
+    "agents": [
+      {
+        "agent": "Livia",
+        "cash": 0.5,
+        "inventory": 0,
+        "cash_delta": -118.5,
+        "inventory_delta": 0,
+        "net_asset_change": -118.5,
+        "committed_units": 27,
+        "delivered_units": 22,
+        "delivery_fill_rate": 0.8148148148148148,
+        "missed_units": 5,
+        "purchase_attempted": 27,
+        "purchase_filled": 22,
+        "zero_fill_orders": 1,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 7,
+        "missed_contracts": 2
+      },
+      {
+        "agent": "Dama",
+        "cash": 37.0,
+        "inventory": 1,
+        "cash_delta": -48.0,
+        "inventory_delta": 0,
+        "net_asset_change": -48.0,
+        "committed_units": 9,
+        "delivered_units": 9,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 9,
+        "purchase_filled": 9,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Marcus",
+        "cash": 74.0,
+        "inventory": 0,
+        "cash_delta": -59.0,
+        "inventory_delta": 0,
+        "net_asset_change": -59.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 20,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Flavia",
+        "cash": 42.0,
+        "inventory": 1,
+        "cash_delta": -52.0,
+        "inventory_delta": -1,
+        "net_asset_change": -55.0,
+        "committed_units": 9,
+        "delivered_units": 6,
+        "delivery_fill_rate": 0.6666666666666666,
+        "missed_units": 3,
+        "purchase_attempted": 5,
+        "purchase_filled": 5,
+        "zero_fill_orders": 0,
+        "inspection_cost": 10.0,
+        "fulfilled_contracts": 6,
+        "missed_contracts": 3
+      },
+      {
+        "agent": "Modestus",
+        "cash": -38.0,
+        "inventory": 0,
+        "cash_delta": -132.0,
+        "inventory_delta": -2,
+        "net_asset_change": -138.0,
+        "committed_units": 36,
+        "delivered_units": 26,
+        "delivery_fill_rate": 0.7222222222222222,
+        "missed_units": 10,
+        "purchase_attempted": 72,
+        "purchase_filled": 24,
+        "zero_fill_orders": 13,
+        "inspection_cost": 0,
+        "fulfilled_contracts": 6,
+        "missed_contracts": 3
+      },
+      {
+        "agent": "Julia",
+        "cash": 15.0,
+        "inventory": 0,
+        "cash_delta": -80.0,
+        "inventory_delta": -1,
+        "net_asset_change": -83.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 17,
+        "purchase_filled": 17,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Gaius",
+        "cash": 7.0,
+        "inventory": 1,
+        "cash_delta": -88.0,
+        "inventory_delta": 0,
+        "net_asset_change": -88.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 19,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 4.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Sabina",
+        "cash": 27.0,
+        "inventory": 2,
+        "cash_delta": -79.0,
+        "inventory_delta": 0,
+        "net_asset_change": -79.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 18,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      }
+    ],
+    "player": {
+      "agent": "Player",
+      "cash": 75.0,
+      "inventory": 0,
+      "cash_delta": 0.0,
+      "inventory_delta": 0,
+      "net_asset_change": 0.0,
+      "committed_units": 0,
+      "delivered_units": 0,
+      "delivery_fill_rate": null,
+      "missed_units": 0,
+      "purchase_attempted": 0,
+      "purchase_filled": 0,
+      "zero_fill_orders": 0,
+      "inspection_cost": 0,
+      "fulfilled_contracts": 0,
+      "missed_contracts": 0
+    },
+    "terminal_inventory_value": 3.0,
+    "utility_definition": "cash change plus terminal value times inventory change; fees/revenues/penalties counted in cash exactly once",
+    "regret": null,
+    "regret_note": "No optimal-policy counterfactual is computed; asset change is not regret."
+  },
+  "branch_metrics": {
+    "primary_metric": "delivery_fill_rate",
+    "delivery_fill_rate": 0.8954248366013072,
+    "committed_units": 153,
+    "delivered_units": 137,
+    "purchase_attempted": 190,
+    "purchase_filled": 133,
+    "purchase_fill_rate": 0.7,
+    "net_asset_change": -660.0,
+    "cash_delta": -648.0,
+    "inspection_cost": 40.0,
+    "unused_stock": 2,
+    "eligible_decisions": 223,
+    "n_decisions": 241,
+    "agents": [
+      {
+        "agent": "Livia",
+        "cash": 9.0,
+        "inventory": 0,
+        "cash_delta": -110.0,
+        "inventory_delta": 0,
+        "net_asset_change": -110.0,
+        "committed_units": 27,
+        "delivered_units": 24,
+        "delivery_fill_rate": 0.8888888888888888,
+        "missed_units": 3,
+        "purchase_attempted": 30,
+        "purchase_filled": 24,
+        "zero_fill_orders": 2,
+        "inspection_cost": 8.0,
+        "fulfilled_contracts": 8,
+        "missed_contracts": 1
+      },
+      {
+        "agent": "Dama",
+        "cash": 37.0,
+        "inventory": 1,
+        "cash_delta": -48.0,
+        "inventory_delta": 0,
+        "net_asset_change": -48.0,
+        "committed_units": 9,
+        "delivered_units": 9,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 9,
+        "purchase_filled": 9,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Marcus",
+        "cash": 74.0,
+        "inventory": 0,
+        "cash_delta": -59.0,
+        "inventory_delta": 0,
+        "net_asset_change": -59.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 20,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Flavia",
+        "cash": 42.0,
+        "inventory": 1,
+        "cash_delta": -52.0,
+        "inventory_delta": -1,
+        "net_asset_change": -55.0,
+        "committed_units": 9,
+        "delivered_units": 6,
+        "delivery_fill_rate": 0.6666666666666666,
+        "missed_units": 3,
+        "purchase_attempted": 5,
+        "purchase_filled": 5,
+        "zero_fill_orders": 0,
+        "inspection_cost": 10.0,
+        "fulfilled_contracts": 6,
+        "missed_contracts": 3
+      },
+      {
+        "agent": "Modestus",
+        "cash": -38.0,
+        "inventory": 0,
+        "cash_delta": -132.0,
+        "inventory_delta": -2,
+        "net_asset_change": -138.0,
+        "committed_units": 36,
+        "delivered_units": 26,
+        "delivery_fill_rate": 0.7222222222222222,
+        "missed_units": 10,
+        "purchase_attempted": 72,
+        "purchase_filled": 24,
+        "zero_fill_orders": 13,
+        "inspection_cost": 0,
+        "fulfilled_contracts": 6,
+        "missed_contracts": 3
+      },
+      {
+        "agent": "Julia",
+        "cash": 15.0,
+        "inventory": 0,
+        "cash_delta": -80.0,
+        "inventory_delta": -1,
+        "net_asset_change": -83.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 17,
+        "purchase_filled": 17,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Gaius",
+        "cash": 7.0,
+        "inventory": 1,
+        "cash_delta": -88.0,
+        "inventory_delta": 0,
+        "net_asset_change": -88.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 19,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 4.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      },
+      {
+        "agent": "Sabina",
+        "cash": 27.0,
+        "inventory": 2,
+        "cash_delta": -79.0,
+        "inventory_delta": 0,
+        "net_asset_change": -79.0,
+        "committed_units": 18,
+        "delivered_units": 18,
+        "delivery_fill_rate": 1.0,
+        "missed_units": 0,
+        "purchase_attempted": 18,
+        "purchase_filled": 18,
+        "zero_fill_orders": 0,
+        "inspection_cost": 6.0,
+        "fulfilled_contracts": 9,
+        "missed_contracts": 0
+      }
+    ],
+    "player": {
+      "agent": "Player",
+      "cash": 75.0,
+      "inventory": 0,
+      "cash_delta": 0.0,
+      "inventory_delta": 0,
+      "net_asset_change": 0.0,
+      "committed_units": 0,
+      "delivered_units": 0,
+      "delivery_fill_rate": null,
+      "missed_units": 0,
+      "purchase_attempted": 0,
+      "purchase_filled": 0,
+      "zero_fill_orders": 0,
+      "inspection_cost": 0,
+      "fulfilled_contracts": 0,
+      "missed_contracts": 0
+    },
+    "terminal_inventory_value": 3.0,
+    "utility_definition": "cash change plus terminal value times inventory change; fees/revenues/penalties counted in cash exactly once",
+    "regret": null,
+    "regret_note": "No optimal-policy counterfactual is computed; asset change is not regret."
+  },
+  "original_ledger_sha256": "d725ae18bc8aff47f40cb31f12f47753a5f062725716bd7e7c1ac54512f65950",
+  "branch_ledger_sha256": "ad48328eb8c0f9a09284917c9ddf8fe112d5e91881e8788c2e1ef596f6c4efa4",
+  "trust_player": {
+    "original": 0.32,
+    "branch": 0.6
+  },
+  "evidence_events": [
+    {
+      "event_id": 37,
+      "tick": 2,
+      "etype": "tell",
+      "location": "forum",
+      "actors": [
+        "Player",
+        "Livia"
+      ],
+      "payload": {
+        "speaker": "Player",
+        "listener": "Livia",
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "disrupted",
+        "as_of": 2,
+        "root_kind": "told",
+        "root_event": 37,
+        "root_source": "Player",
+        "category": "player_message",
+        "title": "Player tells Livia: grain disrupted",
+        "semantic_key": "player_message:2:Player:Livia",
+        "parents": []
+      },
+      "scope": "private",
+      "category": "player_message",
+      "title": "Player tells Livia: grain disrupted",
+      "parents": []
+    },
+    {
+      "event_id": 73,
+      "tick": 4,
+      "etype": "state_change",
+      "location": "forum",
+      "actors": [
+        "Livia"
+      ],
+      "payload": {
+        "owner": "Livia",
+        "fee": 2.0,
+        "cash_delta": {
+          "Livia": -2.0
+        },
+        "category": "inspection_booked",
+        "title": "Livia pays 2 for a next-hour inspection",
+        "semantic_key": "inspection_booked:4:Livia",
+        "parents": [
+          72
+        ]
+      },
+      "scope": "private",
+      "category": "inspection_booked",
+      "title": "Livia pays 2 for a next-hour inspection",
+      "parents": [
+        72
+      ]
+    },
+    {
+      "event_id": 78,
+      "tick": 5,
+      "etype": "state_change",
+      "location": "granary",
+      "actors": [
+        "Livia"
+      ],
+      "payload": {
+        "prop": [
+          "grain",
+          "supply"
+        ],
+        "value": "disrupted",
+        "verification": true,
+        "operator_intervention": false,
+        "category": "inspection",
+        "title": "Livia privately verifies the current shipment",
+        "semantic_key": "inspection:5:Livia",
+        "parents": [
+          54,
+          73
+        ]
+      },
+      "scope": "private",
+      "category": "inspection",
+      "title": "Livia privately verifies the current shipment",
+      "parents": [
+        54,
+        73
+      ]
+    },
+    {
+      "event_id": 79,
+      "tick": 5,
+      "etype": "state_change",
+      "location": "granary",
+      "actors": [
+        "Livia"
+      ],
+      "payload": {
+        "record_as_of": 2,
+        "recorded_value": "available",
+        "mechanism": "paid dispatch-log inspection; at most two records, lookback eight ticks",
+        "category": "inspection_record",
+        "title": "Livia reads the dated dispatch record for hour 2",
+        "semantic_key": "inspection_record:5:Livia",
+        "parents": [
+          3,
+          78
+        ]
+      },
+      "scope": "private",
+      "category": "inspection_record",
+      "title": "Livia reads the dated dispatch record for hour 2",
+      "parents": [
+        3,
+        78
+      ]
+    },
+    {
+      "event_id": 80,
+      "tick": 5,
+      "etype": "state_change",
+      "location": "granary",
+      "actors": [
+        "Livia"
+      ],
+      "payload": {
+        "relationship_updates": [
+          {
+            "listener": "Livia",
+            "speaker": "Player",
+            "value": 0.32
+          }
+        ],
+        "matched": false,
+        "assessment": "contradicted",
+        "claim_as_of": 2,
+        "claim_event": 37,
+        "root_event": 37,
+        "known_cost_events": [
+          73
+        ],
+        "access_allowed": false,
+        "category": "relationship",
+        "title": "Livia assesses Player's remembered report: contradicted",
+        "semantic_key": "relationship:5:Livia",
+        "parents": [
+          37,
+          73,
+          78,
+          79
+        ]
+      },
+      "scope": "private",
+      "category": "relationship",
+      "title": "Livia assesses Player's remembered report: contradicted",
+      "parents": [
+        37,
+        73,
+        78,
+        79
+      ]
+    }
+  ],
+  "comparison_counts": {
+    "changed_agents": 1,
+    "changed_actions": 7,
+    "changed_beliefs": 1,
+    "changed_relationships": 5,
+    "identical": false
+  }
+}

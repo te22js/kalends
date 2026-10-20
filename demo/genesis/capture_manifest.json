@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-20",
+  "origin": "http://127.0.0.1:8770/",
+  "capture_method": "actual Codex in-app browser screenshots, JPEG bytes; no image generation",
+  "curation": {
+    "seed": 2026,
+    "capacity": 256,
+    "population": 8,
+    "horizon": 96
+  },
+  "stages": {
+    "opening_tick": 2,
+    "claim_event": 37,
+    "return_tick": 74,
+    "cited_events": [
+      37,
+      73,
+      78,
+      79,
+      80
+    ],
+    "fork": "omit accepted player message37, rerun to74"
+  },
+  "ui_commit": "76b6fa5cd204862d3e4baea124bcf0da57801d72",
+  "video_recorded": false,
+  "video_limitation": "No supported recording API; launch.py, timed scripts, journal and actual captures are the independently launchable substitute.",
+  "screenshots": [
+    {
+      "path": "demo/genesis/screenshots/01-opening-before-polish.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "889927aef53456421dda6bf4abb03d07a46fd975a1a3e460ff4fbd97f4ea9c13",
+      "phase": "before visual polish"
+    },
+    {
+      "path": "demo/genesis/screenshots/02-confirmation-before-polish.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "5f5a5c579184c0f6f291125668bae7f4ac02c72db50f7cc0570fa75961f5c67b",
+      "phase": "before visual polish"
+    },
+    {
+      "path": "demo/genesis/screenshots/03-return-before-polish.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "ae604377e35ec12eda263db1584ff402095bfc6d46e6adf4c19a94da1e1a1ed4",
+      "phase": "before visual polish"
+    },
+    {
+      "path": "demo/genesis/screenshots/04-evidence-before-polish.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "224e00494fb302c5f7d0701870f20b49d0928a1bd0515a0bd23276a012150571",
+      "phase": "before visual polish"
+    },
+    {
+      "path": "demo/genesis/screenshots/05-polished-comparison.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "e42eb6f65c10f9e038f575c2b5ecd7a7e31d352f6acf3dadf6b39ec09697f1b6",
+      "phase": "final polished UI"
+    },
+    {
+      "path": "demo/genesis/screenshots/06-polished-player.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "bd67e9617f09387f04504c62c8565b230fb2c3be0949b6acd95b0a7ec015640f",
+      "phase": "final polished UI"
+    }
+  ]
+}
