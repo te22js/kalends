@@ -279,3 +279,17 @@ def test_bonded_default_discloses_actual_forfeiture_without_inventing_advance_de
     assert "No advance coins remain owed" in topic
     assert s.original._v2_contract("Felix","defaulted")["debt"]==0
     assert material(s)==before
+
+
+def test_counter_goal_completes_only_after_actual_batch_and_reopens_for_next_need(tmp_path):
+    s=session(tmp_path/"goals.json");opening(s);choose(s,"Felix","v2_bonded_order")
+    assert s.original.v2_minds["Felix"].goals[0].status=="active"
+    buy_two(s);near(s,"Felix");choose(s,"Felix","v2_deliver_one")
+    assert s.original.v2_minds["Felix"].goals[0].status=="active"
+    choose(s,"Felix","v2_deliver_order")
+    assert s.original.v2_market["completed_batches"]["Felix"]==1
+    assert s.original.v2_minds["Felix"].goals[0].status=="completed"
+    restored=session(s.journal_path)
+    assert material(restored)==material(s)
+    s.apply("advance",{"minutes":1461-s.original.minute,"mode":"compress"})
+    assert s.original.v2_minds["Felix"].goals[0].status=="active"

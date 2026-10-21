@@ -14,7 +14,7 @@ the shortfall without paying the same reward twice.
 from __future__ import annotations
 
 import copy
-from dataclasses import asdict
+from dataclasses import asdict, replace
 
 from kalends.memory.base import Experience
 from .minds import ActionOption, AgentMind, BeliefCondition, Episode, Goal, MindConfig, SocialCondition, SocialSignal
@@ -75,6 +75,11 @@ class CognitiveMarketMixin:
         self.v2_market["consumed_flour"]+=patch.get("consumed_flour",0)
         for buyer,amount in patch.get("completed_batches",{}).items():
             self.v2_market["completed_batches"][buyer]+=amount
+            # This is feedback from an actually consumed, funded batch. A
+            # proposed trade or partial delivery cannot complete the goal.
+            if amount and buyer in self.v2_minds:
+                mind=self.v2_minds[buyer]
+                mind.set_goals([replace(g,status="completed") if g.goal_id=="counter-batch" else g for g in mind.goals])
 
     def v2_activate_minds(self, config=None):
         if self.v2_active():

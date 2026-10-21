@@ -1,0 +1,112 @@
+{
+  "commands": [
+    {
+      "after": 200,
+      "at": 0,
+      "data": {
+        "minutes": 200,
+        "mode": "compress"
+      },
+      "operation": "advance",
+      "receipt_id": null
+    },
+    {
+      "after": 220,
+      "at": 200,
+      "data": {
+        "minutes": 20,
+        "mode": "compress"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "advance",
+      "receipt_id": null
+    },
+    {
+      "after": 245,
+      "at": 220,
+      "data": {
+        "minutes": 25,
+        "mode": "compress"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "advance",
+      "receipt_id": null
+    },
+    {
+      "after": 248,
+      "at": 245,
+      "data": {
+        "location": "bakery"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "move",
+      "receipt_id": 55
+    },
+    {
+      "after": 248,
+      "at": 248,
+      "data": {
+        "action": "inspect",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true,
+        "recipient": "Felix"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "action",
+      "receipt_id": 56
+    },
+    {
+      "after": 263,
+      "at": 248,
+      "data": {
+        "minutes": 15,
+        "mode": "compress"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "advance",
+      "receipt_id": null
+    },
+    {
+      "after": 263,
+      "at": 263,
+      "data": {
+        "action": "v2_share_report",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true,
+        "quantity": 1,
+        "recipient": "Felix"
+      },
+      "memory_presentation_revision": 2,
+      "minds_revision": 2,
+      "movement_revision": 2,
+      "operation": "action",
+      "receipt_id": 62
+    }
+  ],
+  "config": {
+    "communication": true,
+    "horizon_days": 60,
+    "information_policy": "cautious",
+    "memory_capacity": 32,
+    "seed": 80
+  },
+  "intervention": null,
+  "ledger_hash": "4cd4554de9da0b33895c727a4c1678410cb38d0755477d7bc8921ee6509de5f3",
+  "mode": "game",
+  "origin": null,
+  "product_events": [],
+  "telemetry_enabled": false,
+  "version": 4
+}
