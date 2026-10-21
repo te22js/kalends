@@ -55,7 +55,7 @@ class RebirthSession:
             self.original=self._fresh()
             for command in payload['commands']:
                 self._perform(self.original,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1),
-                    movement_revision=command.get('movement_revision',1))
+                    movement_revision=command.get('movement_revision',1),minds_revision=command.get('minds_revision',0))
             if self.original.ledger.content_hash()!=payload['ledger_hash']:raise ValueError('Rebirth replay differs from this runtime; save preserved without modification')
             self.commands=payload['commands'];self.mode=payload.get('mode','game')
             self.telemetry_enabled=payload.get('telemetry_enabled',False)
@@ -88,10 +88,18 @@ class RebirthSession:
             raise ValueError('Unsupported movement revision; save preserved without modification')
 
     @staticmethod
-    def _perform(world,operation,data,*,memory_presentation_revision=2,movement_revision=2):
+    def _validate_minds_revision(revision):
+        if type(revision) is not int or revision not in (0,2):
+            raise ValueError('Unsupported minds revision; save preserved without modification')
+
+    @staticmethod
+    def _perform(world,operation,data,*,memory_presentation_revision=2,movement_revision=2,minds_revision=0):
         RebirthSession._validate_movement_revision(movement_revision)
+        RebirthSession._validate_minds_revision(minds_revision)
         if type(memory_presentation_revision) is not int or memory_presentation_revision not in (1,2):
             raise ValueError('Unsupported memory presentation revision; save preserved without modification')
+        if operation not in ('move','advance','action'):raise ValueError('Unknown accepted operation')
+        if minds_revision==2:world.v2_activate_minds()
         if operation=='move':
             previous=getattr(world,'_movement_revision',None)
             world._movement_revision=movement_revision
@@ -123,7 +131,7 @@ class RebirthSession:
                 'interpretation':'One accepted action removed. Later commands replay at original start times where feasible; infeasible commands are disclosed. Changed IDs alone are not an outcome.'}
         result={'world':self.original.snapshot(operator=lab),'branch':self.branch.snapshot(operator=True) if lab and self.branch else None,
             'comparison':comparison,'mode':self.mode,'telemetry_enabled':self.telemetry_enabled,'save_version':self.version,
-            'capabilities':{'navigation_revision':2,'route_preview':True},
+            'capabilities':{'navigation_revision':2,'route_preview':True,'minds_revision':2},
             'language':{'mode':self.language.cognition.adapter.name,'external_calls':self.language.cognition.metrics['external_calls']},'intervention':copy.deepcopy(self.intervention) if lab else None}
         if lab:
             result['language']=self.language.cognition.debug()
@@ -135,7 +143,7 @@ class RebirthSession:
         self.original.require_near(recipient);view=self.original.context(recipient)
         # Rich private context stays server-side. Only deliberately authored
         # disclosures, action offers and the present relationship enter the UI.
-        return {key:copy.deepcopy(view[key]) for key in ('speaker','greeting','topics','choices','relationship','dialogue_version') if key in view}
+        return {key:copy.deepcopy(view[key]) for key in ('speaker','greeting','topics','choices','relationship','dialogue_version','counter_order') if key in view}
 
     def route(self,data):
         """Read-only route preview. Walking still commits validated short steps."""
@@ -202,10 +210,10 @@ class RebirthSession:
 
     def commit(self,operation,data):
         trial=copy.deepcopy(self.original);at=trial.minute
-        receipt=self._perform(trial,operation,copy.deepcopy(data))
+        receipt=self._perform(trial,operation,copy.deepcopy(data),minds_revision=2)
         command={'operation':operation,'data':copy.deepcopy(data),'at':at,'after':trial.minute,
             'receipt_id':receipt.get('event_id') if operation!='advance' and isinstance(receipt,dict) else None,
-            'memory_presentation_revision':2,'movement_revision':2}
+            'memory_presentation_revision':2,'movement_revision':2,'minds_revision':2}
         previous=self.original;previous_branch=self.branch;previous_intervention=self.intervention;previous_events=copy.deepcopy(self.product_events)
         self.original=trial;self.commands.append(command);self.branch=None;self.intervention=None
         try:
@@ -248,12 +256,13 @@ class RebirthSession:
         candidate=self._fresh();skipped=[]
         for i,command in enumerate(self.commands):
             self._validate_movement_revision(command.get('movement_revision',1))
+            self._validate_minds_revision(command.get('minds_revision',0))
             if i==omitted:continue
             trial=copy.deepcopy(candidate)
             try:
                 if trial.minute<command['at']:trial.advance(command['at']-trial.minute,'compress')
                 self._perform(trial,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1),
-                    movement_revision=command.get('movement_revision',1));candidate=trial
+                    movement_revision=command.get('movement_revision',1),minds_revision=command.get('minds_revision',0));candidate=trial
             except ValueError as error:skipped.append({'command':i,'reason':str(error)})
         if candidate.minute<self.original.minute:candidate.advance(self.original.minute-candidate.minute,'compress')
         self.branch=candidate;self.intervention={'kind':'remove_action','event_id':event_id,'removed_command':omitted,'skipped':skipped,

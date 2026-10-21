@@ -4,6 +4,7 @@ from __future__ import annotations
 import copy
 import re
 from .ai import Cognition, ProposalError, allowed_evidence, check_evidence, evidence_records
+from .cognitive_market import V2_ACTIONS, BUYERS
 
 OLD_ACTIONS={"accept_delivery","work","buy","deliver","inspect","patronage","service","sell_information","claim","talk"}
 NEW_TARGETS={
@@ -14,7 +15,9 @@ NEW_TARGETS={
     "decline_dispute":{"Sabina"},"reflect":{"Felix","Sabina","Marcus","Chreste","Dama","Lucius"},
 }
 ACTIONS=OLD_ACTIONS|set(NEW_TARGETS)
-TOPICS={"memory","history","supply","news","role","dispute","goals","work","promise","documents","plans","relationship","market_receipt","household_tablet","loading_record"}
+ACTIONS|=V2_ACTIONS
+NEW_TARGETS.update({action:set(BUYERS) for action in V2_ACTIONS})
+TOPICS={"memory","history","supply","news","role","dispute","goals","work","promise","documents","plans","relationship","market_receipt","household_tablet","loading_record","v2_counter_order"}
 NUMBERS={"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10,"eleven":11,"twelve":12}
 PERSON_IDS={"Felix","Sabina","Marcus","Chreste","Dama","Lucius"}
 

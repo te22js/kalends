@@ -237,7 +237,7 @@ def legacy_memory_journal(tmp_path):
     # current Session moves use revision2 and must not redefine this pinned hash.
     original_perform=RebirthSession._perform
     def legacy_perform(world,operation,data,**kwargs):
-        return original_perform(world,operation,data,**{**kwargs,'movement_revision':1})
+        return original_perform(world,operation,data,**{**kwargs,'movement_revision':1,'minds_revision':0})
     with patch.object(RebirthSession,'_perform',staticmethod(legacy_perform)):
         s=commission_session('Marcus');choose(s,'accept_commission','Marcus')
         choose(s,'inspect','Marcus');s.apply('advance',{'minutes':15});choose(s,'fulfill_commission','Marcus')
@@ -247,6 +247,7 @@ def legacy_memory_journal(tmp_path):
     for command in commands:
         command.pop('memory_presentation_revision',None)
         command.pop('movement_revision',None)
+        command.pop('minds_revision',None)
     for data in ({'action':'talk','recipient':'Marcus','topic':'memory'},{'action':'reflect','recipient':'Marcus'}):
         at=s.original.minute
         receipt=RebirthSession._perform(s.original,'action',data,memory_presentation_revision=1)

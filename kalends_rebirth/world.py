@@ -14,9 +14,10 @@ from kalends.memory.base import Experience
 from kalends.pompeii.world import PompeiiWorld
 from kalends.pompeii.district import LOCATIONS, PEOPLE
 from .scenario import COMMISSION_SPECS, HISTORICAL_DISCLAIMER, NEW_ACTIONS, PERSONALITY, SCENARIO_VERSION
+from .cognitive_market import CognitiveMarketMixin, V2_ACTIONS
 
 
-class RebirthWorld(PompeiiWorld):
+class RebirthWorld(CognitiveMarketMixin, PompeiiWorld):
     def __init__(self, config=None, seed=None, optimized=True):
         self._addon_defaults()
         super().__init__(config=config, seed=seed)
@@ -25,6 +26,7 @@ class RebirthWorld(PompeiiWorld):
         self._open_chapter()
 
     def _addon_defaults(self):
+        self.v2_defaults()
         self.arc = {}
         self.documents = {}
         self.axes = {agent:{"reliability":.6,"credibility":.6,"affinity":.5,"competence":.3,"favors":0} for agent in PEOPLE}
@@ -133,7 +135,12 @@ class RebirthWorld(PompeiiWorld):
                 if agent != "Player" and agent in self.memories:
                     self._remember(agent,Experience(self.minute,"episodic","rebirth",category,title,"Player",self.minute,True,
                         event.event_id,title),significant=category in ("rb_resolution","rb_reconcile","rb_service_kept","rb_commission_settled"))
+        self.v2_fold_event(event,payload)
         return event
+
+    def _remember(self,agent,experience,significant=False):
+        super()._remember(agent,experience,significant)
+        self.v2_admit_experience(agent,experience)
 
     def move(self,x=None,y=None,location=None):
         """Keep old command bytes; V2 sessions explicitly opt into new movement."""
@@ -290,6 +297,8 @@ class RebirthWorld(PompeiiWorld):
         if type(quantity) is not int or not 1<=quantity<=12:
             raise ValueError("quantity must be 1..12")
         self.require_near(recipient)
+        if action in V2_ACTIONS:
+            return self.v2_interact(action,recipient,quantity)
         if action not in NEW_ACTIONS:
             if action=="work" and recipient=="Sabina" and self.axes["Sabina"]["affinity"]<.35:
                 raise ValueError("Sabina will not offer another shift until your dispute is repaired.")
@@ -441,6 +450,7 @@ class RebirthWorld(PompeiiWorld):
 
     def on_task(self,task):
         kind,data=task["kind"],task["data"]
+        if self.v2_on_task(kind,data):return
         if kind=="procure":
             self._procure_with_plan(data)
             return
@@ -786,7 +796,7 @@ class RebirthWorld(PompeiiWorld):
         items.append(choice("inspect","Arrange a current supply inspection","Pay one coin; the result arrives after fifteen world minutes.","1 coin · 15 minutes","Obtain a direct dated observation.",self.economy.cash["Player"]>=1,"You need one coin to arrange an inspection."))
         if not self.flags.get(f"reflection:{recipient}:{self.minute//1440}"):
             items.append(choice("reflect","What do you remember of our dealings?","Recall selected retained shared experiences."))
-        return items
+        return self.v2_choices(recipient)+items
 
     def context(self,recipient):
         self.require_near(recipient)
@@ -809,7 +819,10 @@ class RebirthWorld(PompeiiWorld):
         elif self.arc.get("route")=="market" and recipient=="Lucius": greeting="You found a way to move the cart. You also chose whose account would wait. What do you propose for this house?"
         elif self.arc.get("route")=="broker" and recipient=="Marcus": greeting="You have an eye for quantities. Next time, remember the trader whose account you opened still has to earn."
         else: greeting=PERSONALITY[recipient]["opening"]
+        market=self.v2_context(recipient)
+        topics=market.get("topics",[])+topics
         return {**view,"speaker":recipient,"greeting":{"text":greeting,"evidence_ids":[]},"topics":topics,"choices":self.choices(recipient),
+            "counter_order":{k:v for k,v in market.items() if k!="topics"},
             "relationship":copy.deepcopy(self.axes[recipient]),"dialogue_version":1,
             "disclosure_evidence_ids":sorted({identifier for topic in topics for identifier in topic["evidence_ids"]}),
             "plan_options":[{"id":"current_plan","label":view["plan"]["short_term"],"action":"continue_current_plan","reason":view["plan"]["reason"],"evidence_ids":view["plan"]["evidence_ids"]},
@@ -837,6 +850,8 @@ class RebirthWorld(PompeiiWorld):
 
     def snapshot(self,operator=False):
         snap=super().snapshot(operator=operator)
+        market=self.v2_snapshot(operator=operator)
+        snap["counter_market"]={k:v for k,v in market.items() if k!="operator"}
         snap["historical_note"]=HISTORICAL_DISCLAIMER
         snap["player"]["progression"]=copy.deepcopy(self.progression)
         snap["player"]["commissions"]=copy.deepcopy(self.commissions)
@@ -848,6 +863,8 @@ class RebirthWorld(PompeiiWorld):
             agent["activity"]={"Sabina":"waiting by her disputed order" if agent["location"]=="street" and self.arc.get("stage") in ("unresolved","awaiting_stock") else "working at the food counter",
                 "Marcus":"minding the flour cart" if self.arc.get("stage") in ("unresolved","awaiting_stock","committed") else "keeping the trader's accounts",
                 "Dama":"carrying household instructions","Felix":"keeping the bread counter","Lucius":"attending to household stores","Chreste":"working the fullery's cloth"}[agent["id"]]
+            if agent["nearby"] or operator:
+                agent["activity"]=market.get("business_activity",{}).get(agent["id"],agent["activity"])
             movement=self.npc_paths.get(agent["id"])
             if movement: agent.update(path=copy.deepcopy(movement["path"]),movement_event=movement["event_id"],movement_minute=movement["minute"])
         leads=[]
@@ -876,6 +893,7 @@ class RebirthWorld(PompeiiWorld):
             snap["operator"].update(story=copy.deepcopy(self.arc),relationships=copy.deepcopy(self.axes),plans=copy.deepcopy(self.plans),
                 progression=copy.deepcopy(self.progression),commissions=copy.deepcopy(self.commissions),optimized=self.optimized,
                 movement=copy.deepcopy(self._movement_state))
+            if market.get("operator"):snap["operator"]["cognition_v2"]=market["operator"]
         return snap
 
     def metrics(self):
@@ -890,4 +908,5 @@ class RebirthWorld(PompeiiWorld):
             "commissions":copy.deepcopy(self.commissions),"plans":copy.deepcopy(self.plans),"documents":copy.deepcopy(self.documents),"npc_paths":copy.deepcopy(self.npc_paths)},
             witnessed=sorted(self.witnessed),disclosed=sorted(self.disclosed),queue=self.clock.snapshot())
         state["movement_v2"]=copy.deepcopy(self._movement_state)
+        if self.v2_active():state["minds_v2"]=self.v2_fidelity()
         return state
