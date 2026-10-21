@@ -54,7 +54,7 @@ def fingerprint():
 
 
 def design():
-    return {"version": 2, "question": "Do bounded provenance-aware revised beliefs improve executed utility under a fixed selector?",
+    return {"version": 3, "question": "Do bounded provenance-aware revised beliefs improve executed utility under a fixed selector?",
         "development_seeds": list(DEVELOPMENT_SEEDS), "heldout_seeds": list(HELDOUT_SEEDS),
         "families": list(FAMILIES), "primary_arms": list(PRIMARY_ARMS), "secondary_retention_arms": list(RETENTION_ARMS),
         "separate_references": list(REFERENCE_ARMS), "capacity_records": CAPACITY, "decision_context_records": CONTEXT,
@@ -67,7 +67,7 @@ def design():
         "baselines": "FIFO and BM25 retain at most12 episodes. Bounded structured/guarded adapters rebuild original algorithms only from the shared capped context. Guarded equals structured on this keyed track; its text-only hashed fallback is not a dense baseline.",
         "controls": "Four balanced seed variants per family: true/false or unchanged/changed reports, shared/independent roots, fulfilled/broken history, interference/no-interference, resource changes and no feasible profitable action. Verification can waste funds; stale high-salience records can mislead.",
         "heldout_shift": "Separate unseen wording, longer48–80routine-event interference,5–8relays, more late stale testimony and a corrected high-salience absence record. Families/rules remain authored and structured; fresh parameters are not unseen-task generalization.",
-        "development_history": "Pilot_v1 inspected48development worlds before registration. V2 corrects the privileged upper-bound verification diagnostic and adds prospective heldout parameter/text shifts. Pilot artifacts remain separate; no heldout effects inspected during design.",
+        "development_history": "Pilot_v1/v2 inspected48development worlds each before registration. V2 corrected the privileged upper bound and added prospective heldout shifts. V3 fixes a shared-context accounting bug and adds admitted-stream recovery diagnostics. Pilots remain separate; no heldout effects inspected during design.",
         "source_lineage": "Only communicated origin claims count; no omniscient authentication. False reports can be epistemically supported and unlucky. Roots are not independent merely because relay speakers differ.",
         "inference": "2000 percentile paired bootstrap resamples over32 seed means; families reported separately. Other contrasts descriptive, no significance-star selection.",
         "failure_policy": "Abort on invalid accounting, storage/context/access violations or changed registered source. Preserve raw rows. No heldout tuning; new changes need a new version and unused seeds.",
@@ -323,8 +323,9 @@ class Economy:
 def options_from_view(mind, public, *, own_coins, now, verified):
     """Shared authored selector input; this function cannot inspect world truth."""
     subject,predicate=public["subject"],public["predicate"]
-    belief=mind.believe(subject,predicate,now=now)
-    proof=mind.believe(subject,"verified",now=now)
+    records=mind._retrieve(now,keys=((subject,predicate),(subject,"verified")))
+    belief=mind._belief(subject,predicate,records)
+    proof=mind._belief(subject,"verified",records)
     options=[ActionOption("safe","Use collateral or the reliable alternative",3,"settle",{"coins":public["safe_cost"]},duration=1),
              ActionOption("abstain","Take no contract",0)]
     if proof.value != "no":
@@ -335,23 +336,45 @@ def options_from_view(mind, public, *, own_coins, now, verified):
     uncertain = proof.status != "known" and (belief.status != "known" or (belief.value == "yes" and len(belief.source_groups)<public["source_requirement"]))
     if uncertain and not verified:
         options.append(ActionOption("verify","Pay for a current direct check",4,"settle",{"coins":public["verification_cost"]},duration=1))
-    return mind.choose(options,own_resources={"coins":own_coins},now=now)
+    decision=mind.choose(options,own_resources={"coins":own_coins},now=now)
+    # Choosing may need fewer keys after a negative proof. It may not read an
+    # additional per-key context. Account for the complete registry/read path.
+    ids=tuple(sorted(r["event_id"] for r in records))
+    if not set(decision.context_event_ids)<=set(ids):raise AssertionError("Selector read an additional context")
+    decision=replace(decision,context_event_ids=ids)
+    mind.last_decision=decision
+    return decision
 
 
 def run_arm(case, arm):
     world=Economy(case);mind=make_mind(arm)
     mind.set_goals([Goal("settle","Complete a funded arrangement",deadline=case.deadline,
         relevant_keys=((case.subject,case.predicate),(case.subject,"verified")),tags=("settle",))])
-    observed=set();admitted=list(case.observations)
-    for episode in case.observations:
-        mind.observe(episode);observed.add(episode.event_id)
+    observed=set();admitted=[];belief_trace=[];corrections=[];latest_vintage=-1;latest_value=None
+    def admit(episode):
+        nonlocal latest_vintage,latest_value
+        position=len(admitted)
+        if episode.key==(case.subject,case.predicate) and episode.accepted and episode.as_of>latest_vintage:
+            if latest_value is not None and latest_value!=episode.value:
+                corrections.append({"event_id":episode.event_id,"as_of":episode.as_of,"observed_at":episode.observed_at,
+                    "target":episode.value,"position":position,"recovery_observations":None,"recovery_minutes":None})
+            latest_value=episode.value;latest_vintage=episode.as_of
+        mind.observe(episode);observed.add(episode.event_id);admitted.append(episode)
+        belief=mind.believe(case.subject,case.predicate,now=episode.observed_at)
+        for correction in corrections:
+            if correction["recovery_observations"] is None and belief.status=="known" and belief.value==correction["target"] and belief.as_of>=correction["as_of"]:
+                correction["recovery_observations"]=position-correction["position"]
+                correction["recovery_minutes"]=episode.observed_at-correction["observed_at"]
+        belief_trace.append({"event_id":episode.event_id,"received_at":episode.observed_at,"value":belief.value,"status":belief.status,
+            "vintage":belief.as_of,"latest_admitted_value":latest_value,"obsolete_supported_value":belief.value is not None and belief.value!=latest_value})
+    for episode in case.observations:admit(episode)
     if arm == "omniscient_upper_bound":
         # Deliberately privileged and clearly separated from deployable policies.
         extra=Episode(2000,"Merchant",case.now,"observed","Privileged evaluator truth; unavailable to deployable policies.",
             case.subject,"verified","yes" if case.actual_ready else "no",case.now,salience=1)
-        mind.observe(extra);observed.add(extra.event_id);admitted.append(extra)
+        admit(extra)
         extra=replace(extra,event_id=2001,predicate=case.predicate)
-        mind.observe(extra);observed.add(extra.event_id);admitted.append(extra)
+        admit(extra)
     decisions=[];latencies=[];unsupported=[];max_records=mind.footprint()["memory_records"]
     for _ in range(3):
         started=time.perf_counter_ns()
@@ -361,7 +384,7 @@ def run_arm(case, arm):
         unsupported.extend(sorted(set(decision.evidence_ids+decision.context_event_ids)-observed))
         if len(decision.context_event_ids)>mind.config.context_records:raise AssertionError("Context overflow")
         action=decision.action_id or "abstain"
-        for observation in world.execute(action):mind.observe(observation);observed.add(observation.event_id);admitted.append(observation)
+        for observation in world.execute(action):admit(observation)
         world.check();max_records=max(max_records,mind.footprint()["memory_records"])
         if action != "verify":break
     belief=mind.believe(case.subject,case.predicate,now=world.now)
@@ -388,6 +411,7 @@ def run_arm(case, arm):
         "footprint":footprint,"max_memory_records":max_records,"selection_ms":latencies,
         "attribution_evaluable":attribution_evaluable,"communicated_source_group_error":abs(len(expected_groups)-len(belief.source_groups)) if attribution_evaluable else None,
         "expected_communicated_groups":sorted(expected_groups),"failure_stage_diagnostic":failure,
+        "belief_trace":belief_trace,"correction_recovery":corrections,"obsolete_steps":sum(t["obsolete_supported_value"] for t in belief_trace),
         "diagnostic_limits":"Stage tags are deterministic traces, not independently adjudicated causal diagnoses. Missing observation is separate from memory error."}
 
 
@@ -413,6 +437,10 @@ def summarize(rows):
                 "median_selection_ms":statistics.median(t for c in cells for t in c["selection_ms"]),
                 "source_attribution_denominator":sum(c["attribution_evaluable"] for c in cells),
                 "source_group_error_sum":sum(c["communicated_source_group_error"] or 0 for c in cells),
+                "corrections_evaluated":sum(len(c["correction_recovery"]) for c in cells),
+                "unrecovered_corrections":sum(r["recovery_observations"] is None for c in cells for r in c["correction_recovery"]),
+                "obsolete_steps":sum(c["obsolete_steps"] for c in cells),
+                "mean_utility_difference_from_observed_history":statistics.mean(c["utility_difference_from_observed_history"] for c in cells),
                 "failure_stages":{stage:sum(c["failure_stage_diagnostic"]==stage for c in cells) for stage in ("none","retrieval","retention","belief_revision","missing_observation","planning_or_execution")}}
     seeds=sorted({r["seed"] for r in rows})
     differences=[statistics.mean(r["arms"]["mind"]["utility"]-r["arms"]["structured"]["utility"] for r in rows if r["seed"]==seed) for seed in seeds]
@@ -436,9 +464,11 @@ def run(output, *, phase, registration=None):
             for seed in seeds:
                 for family in FAMILIES:
                     case=generate_case(seed,family,split="development" if phase=="pilot" else "heldout")
-                    row={"seed":seed,"family":family,"variant":case.variant,"observation_digest":digest([asdict(e) for e in case.observations]),
+                    row={"seed":seed,"family":family,"split":"development" if phase=="pilot" else "heldout","variant":case.variant,"observation_digest":digest([asdict(e) for e in case.observations]),
                         "case":asdict(case),"arms":{}}
                     for arm in ARMS:row["arms"][arm]=run_arm(case,arm)
+                    observed_utility=row["arms"]["observed_history_reference"]["utility"]
+                    for result in row["arms"].values():result["utility_difference_from_observed_history"]=result["utility"]-observed_utility
                     stream.write(canonical(row)+"\n");stream.flush();rows.append(row)
                 print(f"{phase}: seed {seed} complete",flush=True)
         if fingerprint()!=before:raise ValueError("Source changed during run")

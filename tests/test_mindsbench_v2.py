@@ -78,6 +78,32 @@ def test_privileged_reference_is_an_actual_attainable_upper_bound_on_development
             assert all(bench.run_arm(case,arm)["utility"]<=upper["utility"] for arm in bench.PRIMARY_ARMS)
 
 
+def test_option_construction_and_selection_share_one_complete_context_budget(monkeypatch):
+    mind=bench.make_mind("fifo")
+    case=bench.generate_case(97000,"temporal_correction")
+    for n in range(12):
+        mind.observe(Episode(n,"Merchant",n,"observed",f"supplier {'available' if n<6 else 'verified'} yes",
+            "supplier","available" if n<6 else "verified","yes",n))
+    mind.set_goals([Goal("settle","Finish",deadline=case.deadline,relevant_keys=(("supplier","available"),("supplier","verified")))])
+    actual=mind._retrieve;reads=[]
+    def log(*args,**kwargs):
+        records=actual(*args,**kwargs);reads.extend(r["event_id"] for r in records);return records
+    monkeypatch.setattr(mind,"_retrieve",log)
+    decision=bench.options_from_view(mind,case.public(),own_coins=30,now=case.now,verified=False)
+    assert len(set(reads))<=bench.CONTEXT
+    assert set(decision.context_event_ids)==set(reads)
+    assert set(decision.evidence_ids)<=set(reads)
+
+
+def test_correction_trace_records_immediate_recovery_and_unrecovered_revision_ablation():
+    case=bench.generate_case(97001,"temporal_correction")
+    revised=bench.run_arm(case,"mind");frozen=bench.run_arm(case,"no_revision")
+    assert revised["correction_recovery"][0]["target"]=="no"
+    assert revised["correction_recovery"][0]["recovery_observations"]==0
+    assert frozen["correction_recovery"][0]["recovery_observations"] is None
+    assert frozen["obsolete_steps"]>revised["obsolete_steps"]
+
+
 def test_credit_and_information_outcomes_are_funded_transfers_not_action_label_rewards():
     good_credit=bench.generate_case(97002,"personal_history")
     result=bench.run_arm(good_credit,"omniscient_upper_bound")

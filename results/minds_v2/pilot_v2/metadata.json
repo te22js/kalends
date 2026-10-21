@@ -1,0 +1,128 @@
+{
+  "phase": "pilot",
+  "started_utc": "2026-10-21T12:49:54.925587+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "design": {
+    "version": 2,
+    "question": "Do bounded provenance-aware revised beliefs improve executed utility under a fixed selector?",
+    "development_seeds": [
+      97000,
+      97001,
+      97002,
+      97003,
+      97004,
+      97005,
+      97006,
+      97007
+    ],
+    "heldout_seeds": [
+      97100,
+      97101,
+      97102,
+      97103,
+      97104,
+      97105,
+      97106,
+      97107,
+      97108,
+      97109,
+      97110,
+      97111,
+      97112,
+      97113,
+      97114,
+      97115,
+      97116,
+      97117,
+      97118,
+      97119,
+      97120,
+      97121,
+      97122,
+      97123,
+      97124,
+      97125,
+      97126,
+      97127,
+      97128,
+      97129,
+      97130,
+      97131
+    ],
+    "families": [
+      "temporal_correction",
+      "correlated_testimony",
+      "personal_history",
+      "strategic_communication",
+      "long_absence",
+      "goal_revision"
+    ],
+    "primary_arms": [
+      "fifo",
+      "bm25",
+      "structured",
+      "guarded",
+      "mind",
+      "no_consolidation",
+      "no_lineage",
+      "no_revision"
+    ],
+    "secondary_retention_arms": [
+      "retention_recency",
+      "retention_salience",
+      "retention_prediction_error",
+      "retention_goal"
+    ],
+    "separate_references": [
+      "observed_history_reference",
+      "omniscient_upper_bound"
+    ],
+    "capacity_records": 12,
+    "decision_context_records": 6,
+    "primary_contrast": "mind minus structured, paired terminal coin-equivalent utility; each seed averaged across six families",
+    "primary_endpoint": "Actor cash change plus declared value of actually delivered goods; credit/report payments are actual funded transfers. All verification/booking costs included.",
+    "secondary": [
+      "deadline goal completion",
+      "per-family utility and ablations",
+      "stale/unknown belief relative to admitted evidence",
+      "communicated independent-source groups",
+      "unsupported evidence citations",
+      "memory bytes",
+      "local selection latency"
+    ],
+    "information": "Identical scoped structured+text observation tapes and public goal/action terms for all deployable arms. No world-state or future-outcome input. Purchased verification is a real costly endogenous observation, separately recorded.",
+    "planner": "Same AgentMind.choose and common options_from_view for every arm; only memory retention/retrieval/belief maintenance varies. Utilities and resource/deadline checks fixed.",
+    "budgets": "One complete memory record cap across episodic/semantic/social/revision/reflection. Own-goal/last-decision state separately bounded; serialized bytes measured. Semantic records can be smaller; equal slots are not equal bytes. No archive retrieval.",
+    "baselines": "FIFO and BM25 retain at most12 episodes. Bounded structured/guarded adapters rebuild original algorithms only from the shared capped context. Guarded equals structured on this keyed track; its text-only hashed fallback is not a dense baseline.",
+    "controls": "Four balanced seed variants per family: true/false or unchanged/changed reports, shared/independent roots, fulfilled/broken history, interference/no-interference, resource changes and no feasible profitable action. Verification can waste funds; stale high-salience records can mislead.",
+    "heldout_shift": "Separate unseen wording, longer48\u201380routine-event interference,5\u20138relays, more late stale testimony and a corrected high-salience absence record. Families/rules remain authored and structured; fresh parameters are not unseen-task generalization.",
+    "development_history": "Pilot_v1 inspected48development worlds before registration. V2 corrects the privileged upper-bound verification diagnostic and adds prospective heldout parameter/text shifts. Pilot artifacts remain separate; no heldout effects inspected during design.",
+    "source_lineage": "Only communicated origin claims count; no omniscient authentication. False reports can be epistemically supported and unlucky. Roots are not independent merely because relay speakers differ.",
+    "inference": "2000 percentile paired bootstrap resamples over32 seed means; families reported separately. Other contrasts descriptive, no significance-star selection.",
+    "failure_policy": "Abort on invalid accounting, storage/context/access violations or changed registered source. Preserve raw rows. No heldout tuning; new changes need a new version and unused seeds.",
+    "limits": [
+      "Small authored synthetic economy, not full-game outcome evidence",
+      "Structured propositions/terms are shared oracle-format assistance, not language parsing",
+      "No verified embedding model",
+      "No live model or human study",
+      "Policy utilities and evidence thresholds are authored heuristics, not calibrated expected values",
+      "Functional local timings are uncontrolled"
+    ],
+    "source": {
+      "sha256": "ec0578f96ded01a4e1deb03d1a47f8999d3203f76c93d26986dcf3832ff0d204",
+      "files": {
+        "kalends_rebirth/minds.py": "d02d9b5934b1212688b6bf65379b0edf1d7974c23b3aac7ff9d9510bfa5965d9",
+        "kalends_rebirth/mindsbench_v2.py": "23c00d739387e3cd8c9c46a20589c28b17872301b2d60960ca178f65a1f3e9b6",
+        "kalends/memory/base.py": "f708285e4068fc0ea06ccf23558adaac3387f0d66059ed254460168a514c8c30",
+        "kalends/memory/structured.py": "6e328d6275273c210408eb4535b895146b0c74f944362a793a0422ddf79acc24",
+        "kalends/memory/hybrid.py": "e36a7aa6eaa202a463a5d778f7d9b8f4569c22288ebbfea467039e4e234b7b10",
+        "kalends/memory/vector.py": "7a3cadce6efb588633c1088fc13d0e86ca6372d21d22416341e2643e217bac16",
+        "kalends/memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f"
+      }
+    }
+  },
+  "finished_utc": "2026-10-21T12:49:55.502063+00:00",
+  "rows": 48,
+  "source_unchanged": true
+}
