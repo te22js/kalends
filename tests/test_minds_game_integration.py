@@ -240,3 +240,30 @@ def test_partial_provider_action_is_labeled_with_its_actual_offered_quantity():
     typed=Language(Cognition()).propose("Deliver one flour unit now","Felix",view)
     assert typed["interpretations"][0]["action"]["quantity"]==1
     assert typed["interpretations"][0]["label"]==label
+
+
+def test_settled_order_acknowledges_the_payment_without_offering_a_pointless_report():
+    s=session();complete_order(s);before=material(s)
+    context=s.context("Felix")
+    topic=next(t for t in context["topics"] if t["id"]=="v2_counter_order")
+    assert "six-coin price is settled" in topic["text"] and "bond has also been returned" in topic["text"]
+    assert not any(c["id"]=="v2_share_report" for c in context["choices"])
+    assert material(s)==before
+    with pytest.raises(ValueError,match="No open counter window"):
+        s.original.v2_interact("v2_share_report","Felix")
+    assert material(s)==before
+
+
+def test_authored_game_cases_demonstrate_actual_funded_terms_and_private_correction_at_declared_limits():
+    from scripts.minds_v2_game_case import run
+    report,journal=run();a,b=(report["retention"]["arms"][p] for p in ("hybrid","recency"))
+    assert a["accounts_before_terms"]==b["accounts_before_terms"]
+    assert a["interference_sha256"]==b["interference_sha256"]
+    assert a["final_minute"]==b["final_minute"] and a["final_coins"]==6 and b["final_coins"]==3
+    assert a["contract"]["status"]=="fulfilled" and b["contract"]["status"]=="defaulted"
+    correction=report["correction"]
+    assert correction["exact_resume_verified"] and correction["paid_player_report"]["kind"]=="observed"
+    assert correction["offers"]["Felix"]["status"]=="withdrawn" and correction["offers"]["Sabina"]["status"]=="offered"
+    assert correction["new_beliefs"]["Sabina"]["as_of"]<correction["paid_player_report"]["as_of"]
+    assert correction["external_calls"]==a["external_calls"]==b["external_calls"]==0
+    assert journal["commands"][0]["after"]==200 and "minds_revision" not in journal["commands"][0]

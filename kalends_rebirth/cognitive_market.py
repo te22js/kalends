@@ -393,6 +393,9 @@ class CognitiveMarketMixin:
         if action=="v2_repay_order":return self._v2_recover(recipient,quantity,repay=True)
         if action=="v2_replace_order":return self._v2_recover(recipient,quantity)
         if action=="v2_share_report":
+            offer=self.v2_market["offers"].get(recipient)
+            if not offer or self.minute>=offer["deadline"] or offer["status"] not in ("considering","offered","withdrawn"):
+                raise ValueError("No open counter window needs this inspection")
             retained=[e for e in self.remembered("Player") if e.kind=="observed" and e.subject=="grain" and e.predicate=="supply" and e.accepted and self.minute-e.as_of<=120]
             if not retained:raise ValueError("Obtain an actual direct supply inspection no more than two hours old")
             report=max(retained,key=lambda e:(e.as_of,e.tick,e.event_id))
@@ -436,8 +439,9 @@ class CognitiveMarketMixin:
                 "enabled":bool(enabled),"reason":reason,"action":{"action":action,"recipient":recipient,"quantity":quantity},"terms":terms or {}})
         if contract:
             remaining=contract["quantity"]-contract["delivered"]
-            add("v2_deliver_order",f"Bring the remaining {remaining} flour units",f"Keep this order by {self._due_label(contract['deadline'])}. Completion settles the reserved balance and bond.",
-                f"{remaining} actual flour units",quantity=remaining,enabled=self.economy.inventory["Player"]>=remaining and self.minute<contract["deadline"],
+            unit="unit" if remaining==1 else "units"
+            add("v2_deliver_order",f"Bring the remaining {remaining} flour {unit}",f"Keep this order by {self._due_label(contract['deadline'])}. Completion settles the reserved balance and bond.",
+                f"{remaining} actual flour {unit}",quantity=remaining,enabled=self.economy.inventory["Player"]>=remaining and self.minute<contract["deadline"],
                 reason="Bring the actual missing flour before the deadline.",terms=copy.deepcopy(contract),consequence="No interim payment; partial delivery is credited at three coins per unit if the deadline is missed.")
             if remaining>1:
                 add("v2_deliver_order","Deliver one flour unit now","Make a real partial delivery. The completion balance stays reserved until the entire order arrives on time.",
@@ -446,8 +450,9 @@ class CognitiveMarketMixin:
         elif failed:
             remaining=failed["quantity"]-failed["delivered"]
             if remaining:
-                add("v2_replace_order",f"Replace the {remaining} missing flour units","Repair the missed batch without another reward. Late units cancel advance debt at three coins each; the original deadline stays missed.",
-                    f"{remaining} actual flour units",quantity=remaining,enabled=self.economy.inventory["Player"]>=remaining,reason="Bring the actual replacement flour.")
+                unit="unit" if remaining==1 else "units"
+                add("v2_replace_order",f"Replace the {remaining} missing flour {unit}","Repair the missed batch without another reward. Late units cancel advance debt at three coins each; the original deadline stays missed.",
+                    f"{remaining} actual flour {unit}",quantity=remaining,enabled=self.economy.inventory["Player"]>=remaining,reason="Bring the actual replacement flour.")
                 if remaining>1:
                     add("v2_replace_order","Replace one missing unit now","Begin repairing the shortfall with actual goods. There is no new reward, and advance debt falls by up to three coins.",
                         "1 actual flour unit",quantity=1,enabled=self.economy.inventory["Player"]>=1,reason="Bring at least one actual replacement unit.",choice_id="v2_replace_one")
@@ -465,7 +470,7 @@ class CognitiveMarketMixin:
             funded=self.economy.cash[recipient]+(offer.get("reserved",0) if offer["status"]=="offered" else 0)>=ORDER_PRICE
             add("v2_cash_order","Sell two flour units now","Offer actual goods for the six-coin cash price, without a future promise or bond.","2 actual flour units → 6 coins",
                 enabled=self.economy.inventory["Player"]>=2 and funded,reason="Bring two actual flour units." if funded else "The buyer cannot fund this six-coin price now.",quantity=2)
-        if offer and self.minute<offer["deadline"] and not contract and not failed:
+        if offer and offer["status"] in ("considering","offered","withdrawn") and self.minute<offer["deadline"] and not contract and not failed:
             direct=[e for e in self.remembered("Player") if e.kind=="observed" and e.subject=="grain" and e.predicate=="supply" and e.accepted and self.minute-e.as_of<=120]
             fresh=max(direct,key=lambda e:(e.as_of,e.event_id)) if direct else None
             add("v2_share_report","Show my actual dispatch inspection","Share a retained direct inspection so the buyer can reconsider. Repetition is not a new independent source.","No fee; actual retained inspection required",
@@ -476,11 +481,24 @@ class CognitiveMarketMixin:
         if not self.v2_active() or recipient not in BUYERS:return {}
         offer=self.v2_market["offers"].get(recipient)
         contract=self._v2_contract(recipient,"open") or self._v2_contract(recipient,"defaulted")
+        latest=self._v2_contract(recipient)
         if contract:
             text=f"Your order: {contract['delivered']}/2 flour units, due by {self._due_label(contract['deadline'])}. "
-            text+=f"The missed advance still leaves {contract['debt']:g} coins owed." if contract["status"]=="defaulted" else "Bring the actual goods; your reserved terms stay in force."
+            if contract["status"]=="defaulted":
+                text+=f"The missed advance still leaves {contract['debt']:g} coins owed." if contract["debt"] else "The deadline stays missed. No advance coins remain owed; replace the missing flour to repair the batch."
+            else:text+="Bring the actual goods; your reserved terms stay in force."
+        elif offer and offer["status"]=="fulfilled":
+            text="The two flour units arrived and the six-coin price is settled. "
+            if latest and latest["cycle"]==offer["cycle"] and latest["status"]=="fulfilled":
+                text+="Your two-coin bond has also been returned. " if latest["bond"] else "The remaining two coins have been paid. "
+                text+="A kept order supports our dealings; future credit also depends on what I retain and a fresh dispatch."
+            else:text+="That cash sale is complete; there is no future delivery or bond to settle."
         elif offer and offer["status"]=="offered":
             text="I can advance four of the six coins because my retained reports and our dealings support the risk." if offer["mode"]=="advance" else "I have reserved six coins for two flour units. Until I have dependable experience with you, I need a two-coin bond—or bring the goods now."
+        elif latest and latest["status"]=="repaired" and (not offer or latest["cycle"]==offer["cycle"]):
+            text="The replacement flour has arrived. No second reward is due, and the original deadline stays missed. Future credit depends on the dealings I retain and a fresh dispatch."
+        elif latest and latest["status"]=="repaid" and (not offer or latest["cycle"]==offer["cycle"]):
+            text="The advance has been repaid. The financial account is settled; the missed batch remains part of our dealings. Future credit still needs dependable retained history and a fresh dispatch."
         else:text="My extra batch depends on affordable flour and dependable terms. I will not turn an old dispatch into a fresh guarantee."
         return {"topics":[{"id":"v2_counter_order","label":"The next working batch","text":text,"evidence_ids":[]}],
             "offer":{k:copy.deepcopy(offer[k]) for k in ("buyer","deadline","status","mode") if offer and k in offer},
