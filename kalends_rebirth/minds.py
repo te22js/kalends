@@ -138,6 +138,8 @@ class Episode:
             raise ValueError("social consequences require a direct personal episode; testimony belongs in a belief")
         if self.social_signals and not set(s.other for s in self.social_signals) <= set(self.participants):
             raise ValueError("a social consequence must name an episode participant")
+        if len({(s.other,s.axis) for s in self.social_signals}) != len(self.social_signals):
+            raise ValueError("a social consequence cannot contain duplicate assessments")
 
     @classmethod
     def from_experience(cls, agent_id, experience, *, participants=(), salience=.2, goal_tags=(), social_signals=()):
@@ -196,6 +198,7 @@ class SocialCondition:
     axis: str
     minimum: float | None = None
     maximum: float | None = None
+    require_evidence: bool = True
 
     def __post_init__(self):
         _text(self.other, "social participant", 64)
@@ -206,6 +209,8 @@ class SocialCondition:
                 _number(getattr(self, name), name)
         if self.minimum is not None and self.maximum is not None and self.minimum > self.maximum:
             raise ValueError("social condition bounds are reversed")
+        if type(self.require_evidence) is not bool:
+            raise ValueError("social evidence requirement must be a boolean")
 
 
 @dataclass(frozen=True)
@@ -396,6 +401,8 @@ class AgentMind:
         keys, social = set(keys), set(social)
         relevant=[]
         for record in self._episodes+self._semantic:
+            if not record.get("accepted",True):
+                continue
             key=(record.get("subject"),record.get("predicate"))
             social_hit=any((s["other"],s["axis"]) in social for s in record.get("social_signals",()))
             if key in keys or social_hit:
@@ -504,7 +511,9 @@ class AgentMind:
                     reasons.append(f"retained {condition.subject}.{condition.predicate}={belief.value}, dated{belief.as_of}")
             for condition in option.social_conditions:
                 assessment=self._social(condition.other,condition.axis,records)
-                if condition.minimum is not None and assessment["value"]<condition.minimum or condition.maximum is not None and assessment["value"]>condition.maximum:
+                if condition.require_evidence and not assessment["evidence_ids"]:
+                    failures.append(f"no retained social evidence about {condition.other} {condition.axis}")
+                elif condition.minimum is not None and assessment["value"]<condition.minimum or condition.maximum is not None and assessment["value"]>condition.maximum:
                     failures.append(f"retained {condition.other} {condition.axis} does not meet these terms")
                 else:
                     evidence.update(assessment["evidence_ids"])

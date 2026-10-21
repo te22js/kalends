@@ -127,12 +127,15 @@ def test_newly_received_old_report_does_not_satisfy_a_freshness_requirement():
 def test_retained_personal_consequence_changes_credit_and_retains_its_reason():
     m=mind();terms=[ActionOption("advance","Extend a working advance",5,costs={"coins":3},
         social_conditions=(SocialCondition("Player","reliability",minimum=.45),)),ActionOption("cash","Trade for cash",1)]
+    assert m.choose(terms,own_resources={"coins":5},now=0).action_id=="cash"
+    m.observe(Episode(0,"Felix",0,"episodic","Aelia kept an earlier delivery.",participants=("Felix","Player"),
+        salience=.9,social_signals=(SocialSignal("Player","reliability",.2),)))
     assert m.choose(terms,own_resources={"coins":5},now=0).action_id=="advance"
     m.observe(Episode(1,"Felix",1,"episodic","Aelia missed a witnessed delivery.",participants=("Felix","Player"),
-        salience=.9,social_signals=(SocialSignal("Player","reliability",-.3),SocialSignal("Player","obligation",2))))
+        salience=.9,social_signals=(SocialSignal("Player","reliability",-.5),SocialSignal("Player","obligation",2))))
     decision=m.choose(terms,own_resources={"coins":5},now=2)
     assert decision.action_id=="cash"
-    assert m.social("Player","reliability",now=2)=={"value":.2,"evidence_ids":[1],"baseline":.5,"basis":"retained witnessed social consequences"}
+    assert m.social("Player","reliability",now=2)=={"value":.2,"evidence_ids":[0,1],"baseline":.5,"basis":"retained witnessed social consequences"}
     reflection=m.reflect(now=2)
     assert reflection["assessments"][0]["evidence_ids"]==[1]
     assert any(s["policy"]=="require verification before extending credit" for s in reflection["assessments"])
@@ -233,3 +236,14 @@ def test_unaccepted_testimony_and_invalid_contracts_cannot_change_a_belief():
         ActionOption("mint","Invent an advance",1,costs={"coins":-3})
     with pytest.raises(ValueError,match="finite"):
         ActionOption("nan","Invalid utility",float("nan"))
+
+
+def test_rejected_testimony_does_not_hide_a_retained_accepted_fact_in_a_tiny_context():
+    m=mind(context_records=1)
+    m.observe(claim(0,"blocked",received=0,vintage=0))
+    for i in range(1,9):
+        rejected=asdict(claim(i,"ready",received=i,vintage=i,source="Dama",salience=1))
+        rejected["accepted"]=False
+        m.observe(Episode(**rejected))
+    assert m.believe("cargo","condition",now=10).value=="blocked"
+    assert m.choose(options(),own_resources={"coins":4},now=10).action_id=="verify"
