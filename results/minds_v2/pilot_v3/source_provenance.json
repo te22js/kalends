@@ -1,0 +1,13 @@
+{
+  "source_commit": "01ab6af",
+  "all_recorded_source_hashes_match_commit": {
+    "kalends_rebirth/minds.py": true,
+    "kalends_rebirth/mindsbench_v2.py": true,
+    "kalends/memory/base.py": true,
+    "kalends/memory/structured.py": true,
+    "kalends/memory/hybrid.py": true,
+    "kalends/memory/vector.py": true,
+    "kalends/memory/retrieval.py": true
+  },
+  "scope": "Development pilot only. Source can be restored from this commit; no heldout result is present."
+}

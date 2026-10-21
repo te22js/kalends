@@ -1,0 +1,9 @@
+{
+  "worlds": 48,
+  "executed_arm_cases_checked": 672,
+  "complete_seed_family_grid": true,
+  "accounting_goods_utility_access_and_budgets_verified": true,
+  "primary_and_family_intervals_recomputed": true,
+  "raw_sha256": "e8b63daf53daa6c65ba301a70a82ee968362551de00e887319e568132c7bb976",
+  "scope": "Independent fold of recorded transfers/goods and summary arithmetic; not independent generation, memory implementation, semantic language evaluation or human validity proof."
+}
