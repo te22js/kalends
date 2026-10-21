@@ -1,0 +1,212 @@
+{
+  "scope": "Post-run descriptive analysis of the registered rows; no changes to source, thresholds, seeds or primary contrast.",
+  "mind_minus_structured_utility_counts": {
+    "0.0": 160,
+    "1.0": 32
+  },
+  "mind_and_no_consolidation_economic_outcomes_equal": true,
+  "mind_and_no_consolidation_outcome_keys": [
+    "utility",
+    "goal_completed",
+    "cash",
+    "goods",
+    "minute",
+    "reports",
+    "verification_used",
+    "verification_cost",
+    "ledger"
+  ],
+  "mind_completion": 176,
+  "structured_completion": 176,
+  "structured_unknown_before_optional_verification": 32,
+  "no_lineage_beats_mind_cases": [
+    {
+      "seed": 97100,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97104,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97108,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97112,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97116,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97120,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97124,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    },
+    {
+      "seed": 97128,
+      "family": "correlated_testimony",
+      "utility_difference": 1.0
+    }
+  ],
+  "mind_noncompletion_cases": [
+    {
+      "seed": 97103,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97103,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97107,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97107,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97111,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97111,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97115,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97115,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97119,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97119,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97123,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97123,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97127,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97127,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    },
+    {
+      "seed": 97131,
+      "family": "correlated_testimony",
+      "unobserved_change": true,
+      "diagnostic": "missing_observation",
+      "actions": [
+        "preferred_testimony"
+      ]
+    },
+    {
+      "seed": 97131,
+      "family": "goal_revision",
+      "unobserved_change": false,
+      "diagnostic": "planning_or_execution",
+      "actions": [
+        "abstain"
+      ]
+    }
+  ],
+  "timing_stripped_raw_sha256": "4324cc2e1af654c0bbcfc9df832380898027af8eb58fb37bd55938df12e214b2",
+  "timing_digest_rule": "Read raw rows in saved order; remove only each arm selection_ms; canonical JSON with sorted keys/separators comma-colon, one newline per row."
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "Recovery execution of an already completed registered experiment after loss of uncommitted temporary outputs; not an independent replication.",
+  "original_registration": "../preregistration_v3.json",
+  "registration_receipt": "../registration_receipt.json",
+  "registration_sha256": "5943db00d7facf790ddff4f8deb2fbc55423dda96bd931d2c394681dd30135bd",
+  "source_fingerprint_verified_before_run": {
+    "sha256": "c0e78346bb44fb8fea116820c96af9d6f2acf405740d64cd830642fcfea46281",
+    "files": {
+      "kalends_rebirth/minds.py": "d02d9b5934b1212688b6bf65379b0edf1d7974c23b3aac7ff9d9510bfa5965d9",
+      "kalends_rebirth/mindsbench_v2.py": "5f2988906f3001c932fc3b2127fda712b3f8357fc39d6a726a91f6aa4a4978f9",
+      "kalends/memory/base.py": "f708285e4068fc0ea06ccf23558adaac3387f0d66059ed254460168a514c8c30",
+      "kalends/memory/structured.py": "6e328d6275273c210408eb4535b895146b0c74f944362a793a0422ddf79acc24",
+      "kalends/memory/hybrid.py": "e36a7aa6eaa202a463a5d778f7d9b8f4569c22288ebbfea467039e4e234b7b10",
+      "kalends/memory/vector.py": "7a3cadce6efb588633c1088fc13d0e86ca6372d21d22416341e2643e217bac16",
+      "kalends/memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f"
+    }
+  },
+  "source_fingerprint_unchanged_after_run": true,
+  "recovery_started_utc": "2026-10-21T13:15:24.585858+00:00",
+  "recovery_finished_utc": "2026-10-21T13:15:30.180979+00:00",
+  "lost_first_raw_sha256_reported_in_parent_summary": "739e4bfa41ae8e0672ddc2c8ec57f33343ec00affb1bc2447331c77dbc97a90f",
+  "lost_first_artifact_status": "Unavailable. The quoted SHA is inherited session evidence, not independently checked against a recovered first-run file.",
+  "identity_limit": "Measured per-decision selection_ms and run timestamps change on re-execution. The new file is preserved with a new digest; bitwise or full deterministic outcome identity to the lost artifact cannot be proved without that original artifact.",
+  "comparison_to_inherited_aggregate": "Primary mean and interval, completion counts and key null/negative findings match the prior summary. No parameter or source tuning was performed.",
+  "artifacts_sha256": {
+    "comparison.png": "fdfe80032c7050d0c1832b5f98425682e4ba4067bcc57fc7fc2eb90c9814da94",
+    "diagnostics.json": "4ae140094c98ff10788c63332298bff03ac49f74070dc35147067b648afb95f7",
+    "metadata.json": "8700d06ccea4a895e89823303fab85ef437bbd619fcec563fb25a9ec35bee032",
+    "raw.jsonl": "eeb5d7ec74d56b14a606af832c75564ead109926df1a9d91b1959dd58a7cb796",
+    "summary.json": "e93fc0aea24bca52f0f9ca52573ad0068667b37ccff1786af0f33ca52a07e628",
+    "verification.json": "6ace3a36659227a5f67fd478da1d7fc499573245093e1b48879464e079d90f29"
+  },
+  "timing_stripped_raw_sha256": "4324cc2e1af654c0bbcfc9df832380898027af8eb58fb37bd55938df12e214b2",
+  "tests": "tests/test_minds_v2.py + tests/test_mindsbench_v2.py:42 passed, Python3.12.14,0.80s",
+  "figure": "comparison.png rendered with system Python3.9 Matplotlib; all three panels and labels visually inspected."
+}
