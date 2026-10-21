@@ -1,0 +1,608 @@
+{
+  "base_commit": "277f64531eda253dd76e171ee4534d716f85075e",
+  "implementation_head": "e6ac904643f1f4d3c57b3417b2891d6b49355b42",
+  "created_utc": "2026-10-21T14:15:38.037464+00:00",
+  "scope": "Exact implementation commits through implementation_head and final working-tree changed paths, including this handoff/validation commit. Final documentation commit is discoverable in Git log; it cannot contain its own Git hash. No pushes or publication.",
+  "changed_files": [
+    {
+      "status": "A",
+      "path": "KALENDS_PLAYABILITY_MINDS_V2_HANDOFF.md"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/baseline/01_travel_prompt_mismatch.jpg"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/02_order_kept.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/03_remembered_credit.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/04_repaired_account.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/05_private_correction_lab.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/06_different_beliefs.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/07_correction_counterfactual.png"
+    },
+    {
+      "status": "A",
+      "path": "demo/minds_v2/qa/08_narrow_viewport.png"
+    },
+    {
+      "status": "A",
+      "path": "docs/minds_v2/CONTROLLER_AUDIT.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/minds_v2/DEFECT_REGISTER.md"
+    },
+    {
+      "status": "A",
+      "path": "docs/minds_v2/LITERATURE_AND_DESIGN.md"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/ai_eval.py"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/cognitive_market.py"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/language.py"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/minds.py"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/mindsbench_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/navigation_v2.py"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/server.py"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/static/app.js"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/diagnostics.js"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/static/index.html"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/navigation.js"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/probe/LICENSE.txt"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/probe/index.html"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/probe/phaser.min.js"
+    },
+    {
+      "status": "A",
+      "path": "kalends_rebirth/static/probe/probe.js"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/static/style.css"
+    },
+    {
+      "status": "M",
+      "path": "kalends_rebirth/world.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/CHANGE_MANIFEST.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/HELDOUT_FINDINGS.md"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/PILOT_FINDINGS.md"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/VALIDATION.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/ai_contract_qa/manifest.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/ai_contract_qa/raw.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/ai_contract_qa/report.md"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/ai_contract_qa/summary.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/final_artifact_verification.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/game_cases.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/game_cases_correction_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/game_cases_runtime_final.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/game_cases_runtime_final_correction_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/comparison.png"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/diagnostics.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/metadata.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/raw.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/recovery_provenance.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/summary.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/heldout_v3/verification.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/literature/source_audit.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/metadata.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/raw.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/NOTE.txt"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends/memory/base.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends/memory/hybrid.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends/memory/retrieval.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends/memory/structured.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends/memory/vector.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends_rebirth/minds.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/source_snapshot/kalends_rebirth/mindsbench_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v1/summary.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v2/metadata.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v2/raw.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v2/source_provenance.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v2/summary.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/comparison.png"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/metadata.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/raw.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/source_provenance.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/summary.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/pilot_v3/verification.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/baseline_browser_trace.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/baseline_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/baseline_movement.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/browser_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/continued_browser_trace.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/correction_fork_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/idle_committed_browser_trace.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/idle_committed_browser_trace_pre_visibility_guard.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/idle_trace_journal.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/idle_trace_protocol.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/navigation_cpu.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/navigation_cpu.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/playability/resume_verification.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/plot_results.py"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/preregistration_v3.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/registration_receipt.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/renderer/INTERPRETATION.md"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/renderer/browser_run_20261021.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/renderer/protocol.json"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/validation_frontend.txt"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/validation_python.txt"
+    },
+    {
+      "status": "A",
+      "path": "results/minds_v2/verify_artifacts.py"
+    },
+    {
+      "status": "A",
+      "path": "scripts/minds_v2_game_case.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/frontend/diagnostics_v2.test.cjs"
+    },
+    {
+      "status": "A",
+      "path": "tests/frontend/navigation_v2.test.cjs"
+    },
+    {
+      "status": "A",
+      "path": "tests/frontend/rebirth_navigation_v2.test.cjs"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_cognitive_market_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_minds_game_integration.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_minds_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_mindsbench_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_movement_v2.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_navigation_v2.py"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_rebirth_benchmark.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_rebirth_dialogue_consistency.py"
+    },
+    {
+      "status": "M",
+      "path": "tests/test_rebirth_offers.py"
+    },
+    {
+      "status": "A",
+      "path": "tests/test_route_preview_v2.py"
+    }
+  ],
+  "implementation_commits": [
+    {
+      "commit": "ae25c285b37cd42675e146b3bbafd7b8f69d2f9e",
+      "date": "2026-10-21T18:02:11+05:30",
+      "title": "Instrument playability baseline and reproduce movement defects"
+    },
+    {
+      "commit": "b48bf3596c03fcd51c53bd3806e5593ddd2f2ffb",
+      "date": "2026-10-21T18:02:00+05:30",
+      "title": "Add floor-valid V2 navigation and reproduce controller defects"
+    },
+    {
+      "commit": "f5fa331eb644d75baa9028c8d7d79ab82dfdf1a8",
+      "date": "2026-10-21T18:00:48+05:30",
+      "title": "Audit Minds V2 literature and consequential evaluation design"
+    },
+    {
+      "commit": "f5653c354f0eca43d2dbd0e632f431d249ec6cd4",
+      "date": "2026-10-21T18:03:45+05:30",
+      "title": "Implement bounded episodic semantic agent minds and validated plans"
+    },
+    {
+      "commit": "42a1c7858e9943d4ac0596c24e3a16620b7f0dda",
+      "date": "2026-10-21T18:05:19+05:30",
+      "title": "Keep rejected testimony out of belief context and require social evidence"
+    },
+    {
+      "commit": "91ba3dafc4f9f62cb5d68667f592a3970edcf64f",
+      "date": "2026-10-21T18:14:09+05:30",
+      "title": "Integrate distance-based V2 movement with exact legacy replay"
+    },
+    {
+      "commit": "9d7505f91dfc7da5d38a87dbe725b6b397b2e9c0",
+      "date": "2026-10-21T18:17:07+05:30",
+      "title": "Allow validated V2 portal steps with explicit scene coordinates"
+    },
+    {
+      "commit": "57409205ba4f4638f5ef317b6265988a626a6854",
+      "date": "2026-10-21T18:19:46+05:30",
+      "title": "Build bounded MindsBench outcome experiment and preserve development pilot"
+    },
+    {
+      "commit": "ac65a1c6889ca85f61af8c4d1c217678f273929c",
+      "date": "2026-10-21T18:22:55+05:30",
+      "title": "Enforce shared decision context and trace belief correction recovery"
+    },
+    {
+      "commit": "79f6d314e617805ee38c312f625afc8fdd65ed00",
+      "date": "2026-10-21T18:24:26+05:30",
+      "title": "Add isolated Canvas and Phaser renderer measurement probe"
+    },
+    {
+      "commit": "720230937200ed89c99725397d1f245b4f8ca5e4",
+      "date": "2026-10-21T18:28:39+05:30",
+      "title": "Add funded counter orders driven by retained beliefs and personal history"
+    },
+    {
+      "commit": "794c1d2f834ba5528bf499958bde37722be2e792",
+      "date": "2026-10-21T18:29:45+05:30",
+      "title": "Bootstrap counter minds from chronological retained experiences"
+    },
+    {
+      "commit": "95a3b50b235578e62fecd6935cb94cf176791bf3",
+      "date": "2026-10-21T18:26:36+05:30",
+      "title": "Preserve verified Minds development results and independent analysis tools"
+    },
+    {
+      "commit": "a8569bfee6e6f3c09ef4f8ae84d851afb7509fb3",
+      "date": "2026-10-21T18:28:46+05:30",
+      "title": "Preregister frozen MindsBench V3 held-out study"
+    },
+    {
+      "commit": "fc5c28ffb6a8666ceb351eecf5ce7f49a730c103",
+      "date": "2026-10-21T18:44:30+05:30",
+      "title": "Implement short-step navigation and retain measured baseline traces"
+    },
+    {
+      "commit": "87b6934246e979f8d92468153bdee27a48014770",
+      "date": "2026-10-21T18:47:11+05:30",
+      "title": "Test navigation cancellation retargeting and visible arrival contracts"
+    },
+    {
+      "commit": "ee379618fdcb592d6e6d6d3e34e9e3f92a91385a",
+      "date": "2026-10-21T18:47:48+05:30",
+      "title": "Preserve firsthand credit boundaries and cumulative late replacements"
+    },
+    {
+      "commit": "730889f3ec320acbdd017cf3ca5310faffb8b321",
+      "date": "2026-10-21T18:48:32+05:30",
+      "title": "Preserve recovered registered MindsBench results and limits"
+    },
+    {
+      "commit": "a28749246eed61cd9e40f899a27411393f6fd6d5",
+      "date": "2026-10-21T18:49:33+05:30",
+      "title": "Wire bounded counter minds into versioned game actions and World Lab"
+    },
+    {
+      "commit": "7697e9d9ee48fece9ce158ec6386988baf852d0d",
+      "date": "2026-10-21T18:49:56+05:30",
+      "title": "Check direct or corroborated supply within one decision context"
+    },
+    {
+      "commit": "0d0728159b2570f297f8a904494b1d1009a512bd",
+      "date": "2026-10-21T18:50:01+05:30",
+      "title": "Cover V2 app cancellation focus modal and scene label integration"
+    },
+    {
+      "commit": "84f0adb983d197bb82d4e8c25625ece089b0ef92",
+      "date": "2026-10-21T18:53:07+05:30",
+      "title": "Separate frozen study evidence from runtime extension claims"
+    },
+    {
+      "commit": "d079a3a7189e6998ee3ee3bd9b20e9ebe494127a",
+      "date": "2026-10-21T18:54:02+05:30",
+      "title": "Verify counter orders through reviewed durable game sessions"
+    },
+    {
+      "commit": "a48b85b3a5491f4d6c1ac70a53687c00bfee0c52",
+      "date": "2026-10-21T18:55:16+05:30",
+      "title": "Keep landmark aliases within the public short-step scene"
+    },
+    {
+      "commit": "b1ba35c21a142133e4368f73b65321e65530d388",
+      "date": "2026-10-21T18:55:41+05:30",
+      "title": "Measure matched legacy and V2 movement CPU with preserved raw samples"
+    },
+    {
+      "commit": "af74d201cdf86a9cedcb6d929ff36940c5c21aca",
+      "date": "2026-10-21T18:57:50+05:30",
+      "title": "Release conversation and pointer gestures safely after interruption"
+    },
+    {
+      "commit": "fdc1f1e1d3d8f355905db815b37ffff715e6aab0",
+      "date": "2026-10-21T18:58:14+05:30",
+      "title": "Demonstrate retained credit and private dispatch corrections in the real game"
+    },
+    {
+      "commit": "b77cdb1487b3e973996860e27eccd01fbec7a9cc",
+      "date": "2026-10-21T18:59:03+05:30",
+      "title": "Fingerprint full cognition dependencies and preserve zero-call provider QA"
+    },
+    {
+      "commit": "1485f855af565a92d22024638e3fbd10a87f218e",
+      "date": "2026-10-21T19:01:55+05:30",
+      "title": "Acknowledge the delivered market cart in current conversation and objective"
+    },
+    {
+      "commit": "9f379e6efc16cb5e3c8c1a671ce502115f69f677",
+      "date": "2026-10-21T19:02:43+05:30",
+      "title": "Explain forfeited bonds accurately in missed-order conversations"
+    },
+    {
+      "commit": "04baab1b785942d031b6e4f53bd2273ac91b6dd3",
+      "date": "2026-10-21T19:05:26+05:30",
+      "title": "Scope unsent speech drafts to their intended conversation recipient"
+    },
+    {
+      "commit": "b13e809786204c06659d28d5c58ed76b86178155",
+      "date": "2026-10-21T19:21:14+05:30",
+      "title": "Expose readable agent beliefs goals and evidence in World Lab"
+    },
+    {
+      "commit": "648314d7bf7c8554c6dcad0b4eec6b6300237f71",
+      "date": "2026-10-21T19:33:52+05:30",
+      "title": "Verify native play recovery and memory-conditioned counterfactuals"
+    },
+    {
+      "commit": "e6ac904643f1f4d3c57b3417b2891d6b49355b42",
+      "date": "2026-10-21T19:45:06+05:30",
+      "title": "Attribute idle-input feedback to matching accepted Player draws"
+    }
+  ]
+}

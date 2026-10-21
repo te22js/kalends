@@ -1,0 +1,83 @@
+{
+  "ai_contract_qa": {
+    "external_inference_calls": 0,
+    "game_provider_spend_usd": 0,
+    "passed": 42,
+    "scope": "Earlier preserved offline parser and injected fixture checkpoint; no live model quality.",
+    "source_manifest": "results/minds_v2/ai_contract_qa/manifest.json"
+  },
+  "browser": {
+    "actual_correction_fork": "results/minds_v2/playability/correction_fork_journal.json",
+    "desktop_viewport": [
+      1280,
+      720
+    ],
+    "idle_committed_draw_ms": {
+      "max": 32.8,
+      "median": 31.0,
+      "n": 8,
+      "scope": "Strictly idle inputs; matching accepted move before changed Player Canvas draw submission; small warm same-room desktop sample, not physical display."
+    },
+    "narrow_desktop_emulation": [
+      390,
+      844
+    ],
+    "physical_device_tested": false,
+    "playthrough_journal": "results/minds_v2/playability/browser_journal.json",
+    "post_trace_journal": "results/minds_v2/playability/idle_trace_journal.json",
+    "prior_trace": "results/minds_v2/playability/continued_browser_trace.json",
+    "prior_trace_scope": "Earlier next-changed-actor draw, including two residual-animation observations; not eight causal new-intent trials.",
+    "scope": "Opening and second-day funded orders, partial delivery/default/repair/credit, four rooms, retarget/Stop, editable Escape, save/restart, actual correction fork and evidence trace. No human enjoyment or general tail guarantee.",
+    "screenshots": "demo/minds_v2/qa",
+    "trace_protocol": "results/minds_v2/playability/idle_trace_protocol.json",
+    "warm_trace": "results/minds_v2/playability/idle_committed_browser_trace.json"
+  },
+  "created_utc": "2026-10-21T14:15:38.037464+00:00",
+  "frontend_suite": {
+    "failed": 0,
+    "log": "results/minds_v2/validation_frontend.txt",
+    "passed": 56,
+    "scope": "Current shipped-script VM integration/controller/diagnostic attribution regressions; native browser evidence recorded separately."
+  },
+  "implementation_commit": "e6ac904643f1f4d3c57b3417b2891d6b49355b42",
+  "node": "v24.11.1",
+  "python": "3.12.14",
+  "python_suite": {
+    "failed": 0,
+    "log": "results/minds_v2/validation_python.txt",
+    "passed": 690,
+    "scope": "Full suite including loopback HTTP. Python runtime unchanged since that run; final later edits concern browser diagnostics and documentation. Frozen study has a separate source boundary.",
+    "seconds": 19.68
+  },
+  "runtime_source_sha256": {
+    "kalends_rebirth/__init__.py": "f3dbf47db4e013f2529089859af17c345bd0fa88d83e4e5340ae33924bebd950",
+    "kalends_rebirth/ai.py": "e6e0e91141313c8289b9630c3f6ac4807036ae43e6cecdb68c91a66757a0d0a2",
+    "kalends_rebirth/ai_eval.py": "620d3b54c99e527a52a19abdbbf1ad6ac62abd78c87c39822b0da524e4220937",
+    "kalends_rebirth/benchmark.py": "3797000bede0ac037378a5c6dfcab298af6c3bbb0b135f48ef5a70e5cbaaf564",
+    "kalends_rebirth/cognitive_market.py": "57cd5fbeb37973804760b017542c5fc52506af2bc713b004dfa4844c401284ba",
+    "kalends_rebirth/immutable.py": "ee8a40f60732e649da922093342f408c0c02be504c611e3925b068e73a3bfc6d",
+    "kalends_rebirth/language.py": "219ed7da3e50d76d812d033a6040a6aba9f0c4397a14edb26e15fbaa8fec5a90",
+    "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "kalends_rebirth/mindsbench_v2.py": "5f2988906f3001c932fc3b2127fda712b3f8357fc39d6a726a91f6aa4a4978f9",
+    "kalends_rebirth/navigation_v2.py": "224851167045d8b4b5496adfe201b0562c3396c3a9fa0bdeccddb4671bc29f31",
+    "kalends_rebirth/scenario.py": "00b7e85a891973c74c1d6ce769856e2f2324dd50cd8584f98083da526fe5dbb8",
+    "kalends_rebirth/server.py": "58fec494e23dee31efac8a7f80270029c3824dc782df658f09db7fc902efefe6",
+    "kalends_rebirth/static/app.js": "36d0571d916cd21cfca38e181f4fa116f10710fd28a7253a8bd163f8fd7604e6",
+    "kalends_rebirth/static/diagnostics.js": "186193ca0e6619a7d68a3886727352052516208aef5d75834a408deecf2e59c1",
+    "kalends_rebirth/static/index.html": "f35c3786718d4a99556e1448da09cdc7c284ed76bb59611044136c6db0be9a55",
+    "kalends_rebirth/static/navigation.js": "898a618b7be0898dd251bba26debfa020816c03d1e8a02dc338b423270da6c89",
+    "kalends_rebirth/static/probe/index.html": "56e870c261efb27c7b3a515f355d863ddad045d8f7a745498e1a6ab154de8512",
+    "kalends_rebirth/static/probe/phaser.min.js": "66348b1b5141e49b7d5ebbe688cddcb502eab1cb00f21c538686a5b2c5abe4de",
+    "kalends_rebirth/static/probe/probe.js": "b8156012b1a55bfa81141713006b9bfbf22a359c3ab2f7a536c0731a150d0698",
+    "kalends_rebirth/static/responsive-preview.html": "35de4304847d45ae8b464a5a99bccc881b0f14d66856f9e8ff4d5c3212de9943",
+    "kalends_rebirth/static/style.css": "738246d3c2d9f8cdc3836831435fd978a379169f4118b2e94b4700af08feeed8",
+    "kalends_rebirth/world.py": "af3140394d1281978989fb4139b322dff5dd2f23d789359eca552ce2ec1962f1"
+  },
+  "study": {
+    "arm_cases": 2688,
+    "frozen_commit": "a8569bf",
+    "independent_fold": "results/minds_v2/final_artifact_verification.json",
+    "scope": "Exact-method artifact recovery is not independent replication; runtime extensions do not inherit effect claims.",
+    "worlds": 192
+  }
+}
