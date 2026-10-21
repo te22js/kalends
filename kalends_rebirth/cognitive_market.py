@@ -87,7 +87,9 @@ class CognitiveMarketMixin:
         # This is the one bootstrap. These are the agent's currently accessible
         # memories, not an archive scan or another person's private knowledge.
         for buyer in BUYERS:
-            for experience in self.remembered(buyer):
+            self.v2_minds[buyer].set_goals([Goal("counter-batch","Secure two flour units for an additional working batch",
+                deadline=self.minute+1+WINDOW,relevant_keys=(("grain","supply"),("Player","offered_flour")),tags=("supply","credit"))])
+            for experience in sorted(self.remembered(buyer),key=lambda e:(e.tick,e.event_id)):
                 self.v2_admit_experience(buyer,experience)
         self._v2_initializing=False
         for buyer in BUYERS:

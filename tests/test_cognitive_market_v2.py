@@ -289,3 +289,15 @@ def test_operational_reconsideration_never_refills_a_mind_from_accessible_or_arc
         w._v2_decide(buyer,w.v2_market["offers"][buyer]["cycle"])
     assert w.v2_activate_minds() is None
     assert all(w.v2_market["offers"][a]["status"]=="offered" for a in BUYERS)
+
+
+def test_bootstrap_uses_retained_experience_chronology_not_the_storage_order():
+    worlds=[MarketWorld(),MarketWorld()]
+    for w in worlds:
+        for i in range(3):
+            event=w._emit("v2_prior_direct_check","Felix checks the currently available dispatch",actors=("Felix",),scope="private")
+            w._observe("Felix",w.state.facts["grain.supply"],event.event_id,w.minute)
+    original=worlds[1].remembered
+    worlds[1].remembered=lambda agent:list(reversed(original(agent)))
+    for w in worlds:w.v2_activate_minds()
+    assert worlds[0].v2_minds["Felix"].to_dict()==worlds[1].v2_minds["Felix"].to_dict()
