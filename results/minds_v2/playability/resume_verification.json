@@ -1,0 +1,79 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "checks": {
+    "main": {
+      "save_sha256": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+      "bytes_unchanged": true,
+      "ledger_hash": "2d3e6d10b7d9553e2979fc6bc973443a0644295d7c94bde1ec0b04a9331861d6",
+      "commands": 181,
+      "minute": 608,
+      "player_coins": 4.0,
+      "player_flour": 1,
+      "location": "street",
+      "position": [
+        725.0,
+        622.0
+      ],
+      "minds_active": false,
+      "branch_hash": null,
+      "reachable_route_to_bakery": 359.4719284420836,
+      "backup": ".kalends/rebirth_session.pre_minds_v2_5f6ff85810e6.json"
+    },
+    "browser": {
+      "save_sha256": "e2a592bb4acf8b4bfd5f9be2f8a642d49ce550869fad802c063d2da6c84def4d",
+      "bytes_unchanged": true,
+      "ledger_hash": "5834274cacddcc2306e3a13e079d745c6008526041bb2dbd6ce7ebaaf50e9d08",
+      "commands": 139,
+      "minute": 1518,
+      "player_coins": 1.0,
+      "player_flour": 0,
+      "location": "thermopolium",
+      "position": [
+        1225.0,
+        656.0
+      ],
+      "minds_active": true,
+      "branch_hash": null,
+      "contracts": [
+        {
+          "buyer": "Felix",
+          "status": "fulfilled",
+          "delivered": 2,
+          "mode": "bonded",
+          "debt": 0
+        },
+        {
+          "buyer": "Sabina",
+          "status": "repaired",
+          "delivered": 2,
+          "mode": "bonded",
+          "debt": 0
+        },
+        {
+          "buyer": "Felix",
+          "status": "fulfilled",
+          "delivered": 2,
+          "mode": "advance",
+          "debt": 0
+        }
+      ]
+    },
+    "correction_fork": {
+      "save_sha256": "5f6d8302a46178f37a4e27573bc53fba174c6aaf7e051d07c0c7a79b4bc23c03",
+      "bytes_unchanged": true,
+      "ledger_hash": "4cd4554de9da0b33895c727a4c1678410cb38d0755477d7bc8921ee6509de5f3",
+      "commands": 7,
+      "minute": 263,
+      "player_coins": 5.0,
+      "player_flour": 0,
+      "location": "bakery",
+      "position": [
+        810.0,
+        275.5
+      ],
+      "minds_active": true,
+      "branch_hash": "eb4ff231a1a50df3a0a1b680542463f5c6a90e08f14a58682cdb0334b1c7025d",
+      "contracts": []
+    }
+  }
+}
