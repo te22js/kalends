@@ -1,0 +1,72 @@
+{
+  "version": 4,
+  "config": {
+    "seed": 79,
+    "horizon_days": 60,
+    "memory_capacity": 32,
+    "information_policy": "cautious",
+    "communication": true
+  },
+  "origin": null,
+  "commands": [
+    {
+      "operation": "move",
+      "data": {
+        "location": "household"
+      },
+      "at": 0,
+      "after": 8,
+      "receipt_id": 19,
+      "memory_presentation_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 744,
+        "y": 1014
+      },
+      "at": 8,
+      "after": 9,
+      "receipt_id": 21,
+      "memory_presentation_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 774,
+        "y": 829
+      },
+      "at": 9,
+      "after": 12,
+      "receipt_id": 23,
+      "memory_presentation_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 827,
+        "y": 810
+      },
+      "at": 12,
+      "after": 22,
+      "receipt_id": 25,
+      "memory_presentation_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 801,
+        "y": 810
+      },
+      "at": 22,
+      "after": 32,
+      "receipt_id": 28,
+      "memory_presentation_revision": 2
+    }
+  ],
+  "mode": "game",
+  "ledger_hash": "ab56b5333547eef5111283ecf26079aafaf14a2f12bcb314a0ce3fdad0892adc",
+  "intervention": null,
+  "telemetry_enabled": false,
+  "product_events": []
+}

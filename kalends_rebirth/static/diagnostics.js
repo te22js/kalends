@@ -3,9 +3,11 @@
   'use strict';
   if (new URLSearchParams(location.search).get('dev') !== '1') return;
   const limit = 3000, samples = [], pending = new Map();
-  let sequence = 0, previousFrame = null, lastPanel = 0, movementInput = null;
+  let sequence = 0, previousFrame = null, lastPanel = 0, movementInput = null, frozen = false;
+  let inputCounts = {accepted:0,ignored:0};
   const clock = () => performance.now();
   const record = (kind, values = {}) => {
+    if(frozen)return;
     samples.push({sequence: ++sequence, at_ms: +clock().toFixed(3), kind, ...values});
     if (samples.length > limit) samples.shift();
   };
@@ -17,7 +19,7 @@
   };
   const panel = document.createElement('details');
   panel.id = 'developer-diagnostics';
-  panel.innerHTML = '<summary>Developer trace · local</summary><pre aria-label="Performance measurements"></pre><button type="button" data-reset-trace>Reset trace</button><button type="button" data-export-trace>Export trace</button>';
+  panel.innerHTML = '<summary>Developer trace · local</summary><pre aria-label="Performance measurements"></pre><button type="button" data-focus-game>Focus game</button><button type="button" data-reset-trace>Reset trace</button><button type="button" data-freeze-trace>Freeze raw trace</button><button type="button" data-export-trace>Export trace</button>';
   document.body.append(panel);
   const report = (includeSamples=false) => {
     const frame = metric('frame','interval_ms'), draw = metric('frame','draw_ms');
@@ -27,13 +29,15 @@
       backend_roundtrip_ms:metric('backend'), input_to_first_actor_render_ms:metric('movement_feedback'),
       conversation_feedback_ms:metric('conversation'), scene_transition_ms:metric('scene_transition'),
       long_tasks_ms:metric('long_task'), memory,
-      inputs:{accepted:samples.filter(s=>s.kind==='input'&&s.accepted).length,ignored:samples.filter(s=>s.kind==='input'&&!s.accepted).length},
+      inputs:{...inputCounts}, input_count_scope:'Since last reset; frame/latency percentiles describe retained samples only.',
       estimated_missed_60hz_slots:samples.filter(s=>s.kind==='frame').reduce((n,s)=>n+Math.max(0,Math.floor(s.interval_ms/(1000/60))-1),0),
       pending_movement_input:movementInput?{label:movementInput.label,waiting_ms:+(clock()-movementInput.start).toFixed(3)}:null,
       notes:['Developer-only local trace; no typed dialogue or NPC private state.', 'Frame callback/render measurements are not physical-device or GPU benchmarks.', 'Input feedback ends at the first changed actor position rendered by the game.', 'Backend samples include local HTTP and serialization; they do not isolate Python CPU.', 'Pathfinding CPU is measured separately in the Python navigation study.'], ...(includeSamples?{samples:[...samples]}:{})};
   };
   const refresh = () => {panel.querySelector('pre').textContent=JSON.stringify(report(),null,2);};
-  panel.querySelector('[data-reset-trace]').onclick = () => {samples.length=0;pending.clear();movementInput=null;previousFrame=null;record('trace_reset');refresh();};
+  panel.querySelector('[data-focus-game]').onclick = () => document.querySelector('#town')?.focus();
+  panel.querySelector('[data-reset-trace]').onclick = () => {frozen=false;samples.length=0;pending.clear();movementInput=null;previousFrame=null;inputCounts={accepted:0,ignored:0};record('trace_reset');refresh();};
+  panel.querySelector('[data-freeze-trace]').onclick = () => {frozen=true;panel.querySelector('pre').textContent=JSON.stringify(report(true),null,2);};
   panel.querySelector('[data-export-trace]').onclick = () => {
     const url=URL.createObjectURL(new Blob([JSON.stringify(report(true),null,2)],{type:'application/json'}));
     const a=document.createElement('a');a.href=url;a.download='kalends-browser-trace.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -44,9 +48,9 @@
   window.KalendsDiagnostics = {
     begin(kind, label) {const token=++sequence;pending.set(token,{kind,label,start:clock()});return token;},
     end(token, values={}) {const p=pending.get(token);if(!p)return;pending.delete(token);record(p.kind,{label:p.label,duration_ms:+(clock()-p.start).toFixed(3),...values});},
-    input(label,accepted,reason='') {record('input',{label,accepted,reason});if(accepted)movementInput={start:clock(),label};},
+    input(label,accepted,reason='') {if(frozen)return;inputCounts[accepted?'accepted':'ignored']++;record('input',{label,accepted,reason});if(accepted)movementInput={start:clock(),label};},
     moved() {if(movementInput){record('movement_feedback',{label:movementInput.label,duration_ms:+(clock()-movementInput.start).toFixed(3)});movementInput=null;}},
-    frame(time,draw_ms,moving) {if(previousFrame!==null)record('frame',{interval_ms:+(time-previousFrame).toFixed(3),draw_ms:+draw_ms.toFixed(3),moving});previousFrame=time;if(time-lastPanel>1000){lastPanel=time;refresh();}},
+    frame(time,draw_ms,moving) {if(frozen)return;if(previousFrame!==null)record('frame',{interval_ms:+(time-previousFrame).toFixed(3),draw_ms:+draw_ms.toFixed(3),moving});previousFrame=time;if(time-lastPanel>1000){lastPanel=time;refresh();}},
     paused() {previousFrame=null;}, record
   };
   record('trace_start');refresh();

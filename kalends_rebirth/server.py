@@ -123,6 +123,7 @@ class RebirthSession:
                 'interpretation':'One accepted action removed. Later commands replay at original start times where feasible; infeasible commands are disclosed. Changed IDs alone are not an outcome.'}
         result={'world':self.original.snapshot(operator=lab),'branch':self.branch.snapshot(operator=True) if lab and self.branch else None,
             'comparison':comparison,'mode':self.mode,'telemetry_enabled':self.telemetry_enabled,'save_version':self.version,
+            'capabilities':{'navigation_revision':2,'route_preview':True},
             'language':{'mode':self.language.cognition.adapter.name,'external_calls':self.language.cognition.metrics['external_calls']},'intervention':copy.deepcopy(self.intervention) if lab else None}
         if lab:
             result['language']=self.language.cognition.debug()
@@ -135,6 +136,41 @@ class RebirthSession:
         # Rich private context stays server-side. Only deliberately authored
         # disclosures, action offers and the present relationship enter the UI.
         return {key:copy.deepcopy(view[key]) for key in ('speaker','greeting','topics','choices','relationship','dialogue_version') if key in view}
+
+    def route(self,data):
+        """Read-only route preview. Walking still commits validated short steps."""
+        from .navigation_v2 import ROOMS, PUBLIC_LOCATIONS, door_points, path_between, path_distance, point_walkable, project_point
+        if set(data)-{'x','y','location'}:raise ValueError('Unexpected route fields')
+        world=self.original;current=world.state.agent_locations['Player'];start=world.positions['Player']
+        destination=data.get('location');has_coordinates='x' in data or 'y' in data
+        if has_coordinates and not {'x','y'}<=set(data):raise ValueError('A route needs both coordinates')
+        if destination is not None:
+            if destination in ROOMS:
+                room=ROOMS[destination];target=(data['x'],data['y']) if has_coordinates else (room['x']+room['w']*.5,room['y']+room['h']*.85)
+                target_location=destination
+            elif destination=='street':
+                target=(data['x'],data['y']) if has_coordinates else door_points(current)[0] if current in ROOMS else start
+                target_location='street'
+            elif destination in PUBLIC_LOCATIONS:
+                landmark=next(p for p in world.snapshot()['map']['locations'] if p['id']==destination)
+                target=(data['x'],data['y']) if has_coordinates else (landmark['door']['x'],landmark['door']['y'])
+                target_location='street'
+            else:raise ValueError('Unknown route destination')
+        elif has_coordinates:
+            target=(data['x'],data['y'])
+            target_location=current if current in ROOMS else 'street'
+            target=project_point(target,target_location,max_distance=48)
+        else:raise ValueError('Choose a route destination')
+        points=path_between(start,target,current,target_location)
+        nodes=[]
+        for index,point in enumerate(points):
+            location='street'
+            if current in ROOMS and point_walkable(point,current):location=current
+            if target_location in ROOMS and point_walkable(point,target_location):location=target_location
+            if index==0:location=current
+            nodes.append({'x':point[0],'y':point[1],'location':location})
+        return {'revision':world.ledger.content_hash(),'navigation_revision':2,'points':nodes,'distance':path_distance(points),
+            'destination':{'x':points[-1][0],'y':points[-1][1],'location':target_location}}
 
     def propose(self,data):
         recipient=data.get('recipient');self.original.require_near(recipient)
@@ -240,6 +276,7 @@ class RebirthSession:
         with self.lock:
             if not isinstance(data,dict):raise ValueError('Expected an object')
             if operation=='propose':return self.propose(data)
+            if operation=='route':return self.route(data)
             if operation=='act':return self.act(data)
             if operation in ('move','advance'):
                 allowed={'x','y','location'} if operation=='move' else {'minutes','mode'}
