@@ -1,0 +1,33 @@
+{
+  "checkpoint": "277f645",
+  "method": "Actual baseline RebirthWorld.move, not browser latency",
+  "start": [
+    770,
+    650
+  ],
+  "requested_end": [
+    770,
+    676
+  ],
+  "path": [
+    [
+      770.0,
+      650.0
+    ],
+    [
+      770.0,
+      415
+    ],
+    [
+      770.0,
+      415
+    ],
+    [
+      770.0,
+      676.0
+    ]
+  ],
+  "requested_displacement": 26,
+  "actual_path_distance": 496.0,
+  "world_minutes_charged": 6
+}
