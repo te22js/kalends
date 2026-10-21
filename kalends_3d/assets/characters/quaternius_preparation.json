@@ -1,0 +1,103 @@
+{
+  "schema": "kalends-quaternius-preparation-v1",
+  "models": [
+    {
+      "file": "characters/roman_female.glb",
+      "bytes": 3122436,
+      "sha256": "50f4fa036e13bbfeb664848f5fbbd05b6543bcf712678888c2fa43983b20e026",
+      "source_body_sha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4",
+      "source_animation_sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "height": 1.7750511169433594,
+      "scale_to_1_7m": 0.9577188982182115,
+      "clips": [
+        "Idle_Loop",
+        "Walk_Loop",
+        "Jog_Fwd_Loop",
+        "Sprint_Loop",
+        "Idle_Talking_Loop",
+        "Interact",
+        "PickUp_Table",
+        "Fixing_Kneeling",
+        "Dance_Loop"
+      ],
+      "skins": 1,
+      "triangles": 17086,
+      "covered_body_triangles_omitted": 2250,
+      "mesh_nodes": [
+        "Eyebrows",
+        "Eyes",
+        "Superhero_Female",
+        "Kalends_Pleated_Linen_Tunic",
+        "Kalends_Woven_Belt",
+        "Quaternius_Hair_Buns"
+      ],
+      "retargeted_channels": 1755,
+      "clip_root_height_offsets_m": {
+        "Dance_Loop": 0.006665,
+        "Fixing_Kneeling": 0.01307,
+        "Idle_Loop": 0.013101,
+        "Idle_Talking_Loop": 0.01242,
+        "Interact": 0.013185,
+        "Jog_Fwd_Loop": -0.028576,
+        "PickUp_Table": 0.015573,
+        "Sprint_Loop": -0.022095,
+        "Walk_Loop": 0.003565
+      }
+    },
+    {
+      "file": "characters/roman_male.glb",
+      "bytes": 2743408,
+      "sha256": "a907ff3e834e0424d02faa37990b225ba25a5f8660a4c01bb73e34067b11c77e",
+      "source_body_sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4",
+      "source_animation_sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "height": 1.8195863962173462,
+      "scale_to_1_7m": 0.934278253307483,
+      "clips": [
+        "Idle_Loop",
+        "Walk_Loop",
+        "Jog_Fwd_Loop",
+        "Sprint_Loop",
+        "Idle_Talking_Loop",
+        "Interact",
+        "PickUp_Table",
+        "Fixing_Kneeling",
+        "Dance_Loop"
+      ],
+      "skins": 1,
+      "triangles": 15675,
+      "covered_body_triangles_omitted": 1970,
+      "mesh_nodes": [
+        "Eyebrows",
+        "Eyes",
+        "SuperHero_Male",
+        "Kalends_Pleated_Linen_Tunic",
+        "Kalends_Woven_Belt",
+        "Quaternius_Hair_SimpleParted",
+        "Quaternius_Hair_Beard"
+      ],
+      "retargeted_channels": 1755,
+      "clip_root_height_offsets_m": {
+        "Dance_Loop": 0.010913,
+        "Fixing_Kneeling": 0.017519,
+        "Idle_Loop": 0.014143,
+        "Idle_Talking_Loop": 0.013494,
+        "Interact": 0.01427,
+        "Jog_Fwd_Loop": -0.015039,
+        "PickUp_Table": 0.014833,
+        "Sprint_Loop": -0.011781,
+        "Walk_Loop": 0.011588
+      }
+    }
+  ],
+  "roles": {
+    "idle": "Idle_Loop",
+    "walk": "Walk_Loop",
+    "run": "Jog_Fwd_Loop",
+    "talk": "Idle_Talking_Loop",
+    "work": "PickUp_Table",
+    "pickup": "PickUp_Table",
+    "celebrate": "Interact"
+  },
+  "asset_sources": "sources/quaternius/IMPORT.json",
+  "scope": "Artist-authored body/hair/rig/skinning/motion; project-authored linen tunic and belt; stylistic Roman inspiration, not certified historical costume. Requires native visual QA before switching runtime variants."
+}

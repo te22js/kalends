@@ -1,0 +1,158 @@
+{
+  "schema": "kalends-pbr-materials-v1",
+  "downloaded_utc": "2026-10-21T14:32:36.386257+00:00",
+  "source": "Poly Haven",
+  "license": "CC0-1.0",
+  "license_url": "https://polyhaven.com/license",
+  "normal_convention": "OpenGL tangent-space",
+  "arm_channels": {
+    "R": "ambient_occlusion",
+    "G": "roughness",
+    "B": "metallic"
+  },
+  "color_spaces": {
+    "diff": "sRGB",
+    "nor_gl": "linear",
+    "arm": "linear"
+  },
+  "image_resolution": [
+    1024,
+    1024
+  ],
+  "assets": [
+    {
+      "name": "stone",
+      "source_asset": "cobblestone_floor_08",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "source": "https://polyhaven.com/a/cobblestone_floor_08",
+      "license": "CC0-1.0",
+      "tile_width_m": 2,
+      "maps": {
+        "diff": {
+          "file": "materials/stone_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_diff_1k.jpg",
+          "bytes": 585727,
+          "sha256": "ec131f7a99a1e7f9df25d4725609c55a6dad1df487630685e9a66ecbf41ec33a",
+          "upstream_md5": "bb640125356d18e3ad8515b9d5bfccef"
+        },
+        "nor_gl": {
+          "file": "materials/stone_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_nor_gl_1k.jpg",
+          "bytes": 1002410,
+          "sha256": "26bfff70b266a4e86983814c7e56a9b48daf93cd34dcdc16a5db13e4fabcfbb6",
+          "upstream_md5": "7a90780c7c49a1307e928d4d32c4773c"
+        },
+        "arm": {
+          "file": "materials/stone_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_08/cobblestone_floor_08_arm_1k.jpg",
+          "bytes": 198270,
+          "sha256": "4b2548135784852f07befc3bb0abb7c83738a3c022997c30527a15d5caa7a389",
+          "upstream_md5": "23e72b4638e0f6fe990a9a9b36ff31e0"
+        }
+      }
+    },
+    {
+      "name": "plaster",
+      "source_asset": "white_plaster_02",
+      "authors": [
+        "Rob Tuytel"
+      ],
+      "source": "https://polyhaven.com/a/white_plaster_02",
+      "license": "CC0-1.0",
+      "tile_width_m": 1,
+      "maps": {
+        "diff": {
+          "file": "materials/plaster_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_plaster_02/white_plaster_02_diff_1k.jpg",
+          "bytes": 527219,
+          "sha256": "a1ebbe091bd1ae93d2abd5de8d69f9003a8d0ee6532bcf9a87c2492c97051f23",
+          "upstream_md5": "7b10c2686bcfd76d1f309a20fd06b57e"
+        },
+        "nor_gl": {
+          "file": "materials/plaster_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_plaster_02/white_plaster_02_nor_gl_1k.jpg",
+          "bytes": 652310,
+          "sha256": "eb572ca3630d5bfde72e2601b1f02412da23ca005cd19384dced8690be4cb783",
+          "upstream_md5": "55fc03203ebf1dc703a380fde93ff502"
+        },
+        "arm": {
+          "file": "materials/plaster_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/white_plaster_02/white_plaster_02_arm_1k.jpg",
+          "bytes": 191017,
+          "sha256": "2bb1115821715dfd8bbd1c5a294a5bb43b97d5c46b1aa8aa8f744bcaf5eeeb10",
+          "upstream_md5": "4a5a080e2421fac4fa602680bef4c8b1"
+        }
+      }
+    },
+    {
+      "name": "terracotta",
+      "source_asset": "roof_tiles",
+      "authors": [
+        "Stephan Seeliger"
+      ],
+      "source": "https://polyhaven.com/a/roof_tiles",
+      "license": "CC0-1.0",
+      "tile_width_m": 2,
+      "maps": {
+        "diff": {
+          "file": "materials/terracotta_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_diff_1k.jpg",
+          "bytes": 1105673,
+          "sha256": "1b30c1f0a9d3f761afb1354d95b36990fc670fac5f811889af8cb2ab682c8e66",
+          "upstream_md5": "525e8cac13027e36f47844f3240fdde8"
+        },
+        "nor_gl": {
+          "file": "materials/terracotta_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_nor_gl_1k.jpg",
+          "bytes": 883229,
+          "sha256": "1eb4e911e3d1b38c7c3b06bdecb6fde5f9646dca5498caf67ffa651cb6cb8d8c",
+          "upstream_md5": "4123966e766370bd7d4b107c97a2ed97"
+        },
+        "arm": {
+          "file": "materials/terracotta_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/roof_tiles/roof_tiles_arm_1k.jpg",
+          "bytes": 1079696,
+          "sha256": "74f56737737e477f49c3c281ecc505a4457debb240d605cf50eaa2bfc5953bff",
+          "upstream_md5": "c79de39188a60e9acbdd787a1d56fdcc"
+        }
+      }
+    },
+    {
+      "name": "wood",
+      "source_asset": "weathered_brown_planks",
+      "authors": [
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "source": "https://polyhaven.com/a/weathered_brown_planks",
+      "license": "CC0-1.0",
+      "tile_width_m": 1.8,
+      "maps": {
+        "diff": {
+          "file": "materials/wood_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_brown_planks/weathered_brown_planks_diff_1k.jpg",
+          "bytes": 226049,
+          "sha256": "94833feda44e025a9139f7b5723ea84e4f0258d3b54939a79e1013c133085e29",
+          "upstream_md5": "e2fbdf7ed402e272e33e3f7ba707cf69"
+        },
+        "nor_gl": {
+          "file": "materials/wood_nor_gl_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_brown_planks/weathered_brown_planks_nor_gl_1k.jpg",
+          "bytes": 223250,
+          "sha256": "8d38f02f121c0e58eaedc19cd668faea21381ae3ff4d5332cd90de75e6683393",
+          "upstream_md5": "1180a2ce3566529b25128252e02bd049"
+        },
+        "arm": {
+          "file": "materials/wood_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/weathered_brown_planks/weathered_brown_planks_arm_1k.jpg",
+          "bytes": 204214,
+          "sha256": "a428a3a6f89f7bb5c945c9668f2ac6ec268736fda7a4a421fd3ec80d3946929c",
+          "upstream_md5": "be352d1156f18f438a44b290b494192e"
+        }
+      }
+    }
+  ],
+  "historical_scope": "Modern photographed surfaces used as artistic material references, not photographs of Pompeii or evidence for a reconstruction."
+}

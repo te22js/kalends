@@ -322,8 +322,9 @@ def make_server(session,host='127.0.0.1',port=8782):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args):pass
         def send(self,status,body,content_type='application/json'):
-            raw=canonical(body).encode() if content_type=='application/json' else body if isinstance(body,bytes) else body.encode()
-            self.send_response(status);self.send_header('Content-Type',content_type+('' if content_type.startswith('image/') else '; charset=utf-8'))
+            raw=body if isinstance(body,bytes) else canonical(body).encode() if content_type=='application/json' else body.encode()
+            textual=content_type.startswith('text/') or content_type in ('application/json','application/javascript')
+            self.send_response(status);self.send_header('Content-Type',content_type+('; charset=utf-8' if textual else ''))
             self.send_header('Content-Length',str(len(raw)));self.send_header('Cache-Control','no-store')
             self.send_header('X-Content-Type-Options','nosniff')
             self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' blob:; connect-src 'self'; frame-ancestors 'self'")
@@ -344,6 +345,20 @@ def make_server(session,host='127.0.0.1',port=8782):
                 if path in ('/history','/history-rebirth','/research'):
                     file=ROOT/'docs'/('pompeii/HISTORICAL_SOURCE_LEDGER.md' if path=='/history' else 'rebirth/HISTORY_NOTES.md' if path=='/history-rebirth' else 'rebirth/RESEARCH_RESULTS.md')
                     return self.send(200,file.read_text() if file.exists() else 'The research record is being finalized.','text/plain')
+                # The 3D client is a separate, locally built presentation. The
+                # existing client and all simulation endpoints remain intact.
+                if path=='/immersion':
+                    self.send_response(302);self.send_header('Location','/immersion/');self.end_headers();return
+                mounts=(('/immersion/',ROOT/'kalends_3d'/'dist'),('/immersion-assets/',ROOT/'kalends_3d'/'assets'))
+                for prefix,directory in mounts:
+                    if not path.startswith(prefix):continue
+                    relative=path[len(prefix):] or 'index.html'
+                    file=(directory/relative).resolve()
+                    allowed=('.html','.css','.js','.json','.glb','.gltf','.bin','.png','.jpg','.jpeg','.webp','.svg','.woff2','.ogg','.mp3','.wav','.txt')
+                    if file.is_relative_to(directory.resolve()) and file.is_file() and file.suffix in allowed:
+                        mime={'.glb':'model/gltf-binary','.gltf':'model/gltf+json','.js':'application/javascript','.bin':'application/octet-stream'}.get(file.suffix,mimetypes.guess_type(file)[0] or 'application/octet-stream')
+                        return self.send(200,file.read_bytes(),mime)
+                    return self.send(404,{'error':'3D client file missing. Run npm ci && npm run build in kalends_3d.'})
                 file=(STATIC/('index.html' if path=='/' else path.lstrip('/'))).resolve()
                 if file.is_relative_to(STATIC.resolve()) and file.is_file() and file.suffix in ('.html','.css','.js','.png','.jpg','.webp','.svg','.woff2','.json'):
                     return self.send(200,file.read_bytes(),mimetypes.guess_type(file)[0] or 'application/octet-stream')

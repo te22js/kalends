@@ -1,0 +1,432 @@
+{
+  "schema": "kalends-immersion-asset-provenance-v1",
+  "created_utc": "2026-10-21T15:06:25.330289+00:00",
+  "asset_cost_usd": 0,
+  "paid_tiers_used": false,
+  "runtime_asset_account_required": false,
+  "current_character_mapping": "assets/characters/characters.json",
+  "runtime_character_glbs": [
+    "characters/roman_female.glb",
+    "characters/roman_male.glb"
+  ],
+  "preserved_earlier_mapping": "assets/characters/kaykit_characters.json",
+  "source_groups": {
+    "quaternius_humans": {
+      "authors": [
+        "Quaternius"
+      ],
+      "license": "CC0-1.0 for artist body/hair/rig/motion. Project-created tunic/belt and transformations retain projectowner rights.",
+      "official_sources": [
+        "https://quaternius.com/packs/universalbasecharacters.html",
+        "https://quaternius.itch.io/universal-base-characters",
+        "https://quaternius.itch.io/universal-animation-library"
+      ],
+      "base_archive_sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+      "animation_archive_sha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724",
+      "standard_upload_ids": {
+        "body": 15861669,
+        "animation": 17958403
+      },
+      "license_files": [
+        "assets/licenses/Quaternius-Base-CC0.txt",
+        "assets/licenses/Quaternius-Animation-CC0.txt"
+      ],
+      "modifications": [
+        "Original body vertices, skin weights and vendor sources preserved; clothed runtime omits covered torso/hip triangles to prevent garment intersections.",
+        "Selected original hair geometry weighted rigidly to the original Head joint.",
+        "Project-authored pleated linen tunic and belt weighted to the body rig.",
+        "Nine of43 free Standard source clips selected, matched by bone name and retargeted via local rest-transform deltas.",
+        "Per-clip constant visual root-height calibration from21 sampled CPU-skinned poses.",
+        "Untextured PBR skin/linen plus original brown-eye texture; high-resolution source body maps intentionally unused.",
+        "Exact skin/cloth/trim material names support per-identity palette."
+      ],
+      "source_subset_note": "Preserved source body glTF JSON references unused vendor maps absent from this selected source subset. The preparation script intentionally replaces those materials. Runtime outputs are complete self-contained GLBs. Official complete ZIP fingerprints and free import paths are retained.",
+      "validation": "assets/characters/quaternius_validation.json:2models x9clips x5sampledposes; numericchecks, notbrowserqualitycertificate. OfficialKhronos schema reports in assets/characters/khronos_validation.json:0errors onall5 newcharacter/foliageGLBs; unchangedidentityArmatureparentwarnings oncharacters."
+    },
+    "kaykit_fallback": {
+      "authors": [
+        "Kay Lousberg / KayKit"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0",
+      "source_revision": "672074b73ba276876a19e8816ecdc5241817ab47",
+      "license_files": [
+        "assets/licenses/KayKit-CC0.txt"
+      ],
+      "runtime_status": "Earlier engine-spike mapping retained; currentcharacters.json uses Quaternius humans.",
+      "modifications": [
+        "Original Rogue/Barbarian GLBs preserved.",
+        "Civilian derivatives disable weapon, fantasyhat and cape meshes; seven source clips retained and unused animation buffers repacked."
+      ],
+      "historical_scope": "Stylized fantasy costume bases, not authentic Roman clothes."
+    },
+    "poly_haven": {
+      "authors": [
+        "Rob Tuytel",
+        "Stephan Seeliger",
+        "Dimitrios Savva",
+        "Rico Cilliers"
+      ],
+      "license": "CC0-1.0",
+      "license_url": "https://polyhaven.com/license",
+      "license_files": [
+        "assets/licenses/PolyHaven-CC0.txt"
+      ],
+      "individual_sources": "assets/materials/materials.json",
+      "modifications": "All12 downloaded1K JPGmaps unchanged and verified against upstreamMD5. Model materials may apply project palette factors.",
+      "channel_conventions": "Diffuse sRGB; OpenGL normal and ARM linear; ARM =Rao/Groughness/Bmetallic.",
+      "historical_scope": "Modern photographed material references; not photographs of Pompeii."
+    },
+    "original_district_with_cc0_materials": {
+      "authors": [
+        "Kalends project",
+        "Poly Haven material artists"
+      ],
+      "license": "Original environment geometry/layout belongs to projectowner; embedded PolyHaven maps remainCC0.",
+      "license_files": [
+        "assets/environment/LICENSE.txt",
+        "assets/licenses/PolyHaven-CC0.txt"
+      ],
+      "detail": "assets/environment/scene_manifest.json",
+      "independent_validation": "assets/characters/environment_khronos_validation.json; official Khronos validator: zero errors, generated tangent-space warnings because PlayCanvas supplies tangents at load.",
+      "historical_scope": "Roman-inspired original reconstruction, not a survey or a medieval asset represented as historical Roman architecture."
+    },
+    "project_generated": {
+      "authors": [
+        "Kalends project"
+      ],
+      "license": "Projectowner rights; no new general dedication."
+    },
+    "quaternius_nature": {
+      "authors": [
+        "Quaternius"
+      ],
+      "license": "CC0-1.0",
+      "source": "https://quaternius.itch.io/stylized-nature-megakit",
+      "standard_upload_id": 11055123,
+      "archive_sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
+      "license_files": [
+        "assets/licenses/Quaternius-Nature-CC0.txt"
+      ],
+      "detail": "assets/foliage/foliage.json",
+      "modifications": "Three original mesh/leaf-card models repackaged as self-contained GLBs; bark uses a scalar PBRmaterial instead of unused4Kmaps. LeafPNG bytes unchanged; vendor vertex colors range-clamped toglTF0..1 (exactcounts in detailmanifest).",
+      "historical_scope": "Generic stylized pine, broadleaf tree and shrub; do not label them authenticated olive/cypress species or archaeological planting."
+    }
+  },
+  "files": [
+    {
+      "file": "assets/characters/characters.json",
+      "bytes": 7967,
+      "sha256": "924df3492673d12443912a4cf0023057e9bc8ba99d196e4306c6b8ea23962e84",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/civilian_female.glb",
+      "bytes": 645804,
+      "sha256": "c07e41266d9a39dbfd58440ceb0ddc37fe5217a1a653bb2fbad5f556c860aa74",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/characters/civilian_male.glb",
+      "bytes": 642800,
+      "sha256": "981a0a8c366f92d26f2e6cae9a2bf6fdfef1ca478759f451609504f4b981004e",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/characters/environment_khronos_validation.json",
+      "bytes": 84045,
+      "sha256": "40e72befe9ebd9ac2913f55e1f29d4719e25ee09b2f763a9b80aec9b27baf43d",
+      "source_group": "original_district_with_cc0_materials"
+    },
+    {
+      "file": "assets/characters/kaykit_barbarian.glb",
+      "bytes": 3613268,
+      "sha256": "cefc311a0e10c7858b6141f5ada7e33268727564fb8ac1347aab97d000669cc6",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/characters/kaykit_characters.json",
+      "bytes": 5326,
+      "sha256": "0a3983898054acd1751bcc15dfaaf2dcb1f1e5f2fdccfbd1edce7ef18d39f817",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/characters/kaykit_rogue.glb",
+      "bytes": 3616284,
+      "sha256": "e825437cd4d2ee9c1960b517a74a69101e33eb409ae7fa8cedc7134a998fbb7d",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/characters/khronos_validation.json",
+      "bytes": 18396,
+      "sha256": "bb9c72ba36f8b6ab9d29f45cdcf9a186c58a0d056a3b668b862cecfeca504c4d",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/quaternius_characters.json",
+      "bytes": 7967,
+      "sha256": "924df3492673d12443912a4cf0023057e9bc8ba99d196e4306c6b8ea23962e84",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/quaternius_preparation.json",
+      "bytes": 3286,
+      "sha256": "492ac9f86eb38cd4c570bd07d715f0e8505e932c7e2992e96b1326292d8b67d5",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/quaternius_validation.json",
+      "bytes": 35335,
+      "sha256": "d8858f152290f6801527c168ca36026d2de78f713bb5f7d45f16433e60f56c38",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/roman_female.glb",
+      "bytes": 3122436,
+      "sha256": "50f4fa036e13bbfeb664848f5fbbd05b6543bcf712678888c2fa43983b20e026",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/characters/roman_male.glb",
+      "bytes": 2743408,
+      "sha256": "a907ff3e834e0424d02faa37990b225ba25a5f8660a4c01bb73e34067b11c77e",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/environment/LICENSE.txt",
+      "bytes": 1083,
+      "sha256": "f6350efe75cbb3bff0eb4f7b583524b0c08a49d61e91e32cd2f3895f997d0535",
+      "source_group": "original_district_with_cc0_materials"
+    },
+    {
+      "file": "assets/environment/pompeii_district.glb",
+      "bytes": 17246388,
+      "sha256": "17a4abca4673089a06d592a2c1059a7e57978aaa787a1094ac1e57b6325c27fe",
+      "source_group": "original_district_with_cc0_materials"
+    },
+    {
+      "file": "assets/environment/scene_manifest.json",
+      "bytes": 9586,
+      "sha256": "a0fa794e5c0f1b90350f0d2436271fd3be92c0bea1fd66fab2eb3068d9dfdaae",
+      "source_group": "original_district_with_cc0_materials"
+    },
+    {
+      "file": "assets/environment/validation.json",
+      "bytes": 2369,
+      "sha256": "a3510fee9f086fa815d6d83741a52d43dfd6606411a3d328cebf8123e791ada9",
+      "source_group": "original_district_with_cc0_materials"
+    },
+    {
+      "file": "assets/foliage/broadleaf.glb",
+      "bytes": 584748,
+      "sha256": "c3b92e0abce59147bc0865c53808df1c231db283f40bf2faee9ade4b89f42dde",
+      "source_group": "quaternius_nature"
+    },
+    {
+      "file": "assets/foliage/foliage.json",
+      "bytes": 3923,
+      "sha256": "232c274e03d9ec4542084bdf3223f24c6edee8947d01e2dec90713d7df33b9d5",
+      "source_group": "quaternius_nature"
+    },
+    {
+      "file": "assets/foliage/pine.glb",
+      "bytes": 193944,
+      "sha256": "9f3383eaff3b9f6f878f929f8fa2ecdb2e3097af00e9d13ef6b1b6fcdbefbce9",
+      "source_group": "quaternius_nature"
+    },
+    {
+      "file": "assets/foliage/shrub.glb",
+      "bytes": 164048,
+      "sha256": "25ceddbdff7c29f976bb9ce3461c3fbfbec32be35ae6f2f5bf45d9f72d511184",
+      "source_group": "quaternius_nature"
+    },
+    {
+      "file": "assets/licenses/KayKit-CC0.txt",
+      "bytes": 891,
+      "sha256": "ae322141814056dda0deea7540d74c41d87aee1da319977cd1bd84ee5a923629",
+      "source_group": "kaykit_fallback"
+    },
+    {
+      "file": "assets/licenses/PolyHaven-CC0.txt",
+      "bytes": 520,
+      "sha256": "a9685a0673d1ed12fa49679734298d589a550793f769f2c29ec70de85fd0710c",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/licenses/Quaternius-Animation-CC0.txt",
+      "bytes": 332,
+      "sha256": "6d01f55c6e4c49a2c9963e147e561945ae2c83958c8ca667d90a6bffdbfac061",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/licenses/Quaternius-Base-CC0.txt",
+      "bytes": 806,
+      "sha256": "0f4beaf0fe360a7732e58bbe3dbf60a2422367fbea60cb9ea4add968f383268e",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/licenses/Quaternius-Nature-CC0.txt",
+      "bytes": 852,
+      "sha256": "120710e542c3ebaf83856c4eb55b4a1e680593b39302eba7fdc5d942dfe78c58",
+      "source_group": "quaternius_nature"
+    },
+    {
+      "file": "assets/materials/materials.json",
+      "bytes": 6324,
+      "sha256": "8431402c6f4952b1d3049b503010f2655061a2da43009a8bee75e89adc95970a",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/plaster_arm_1k.jpg",
+      "bytes": 191017,
+      "sha256": "2bb1115821715dfd8bbd1c5a294a5bb43b97d5c46b1aa8aa8f744bcaf5eeeb10",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/plaster_diff_1k.jpg",
+      "bytes": 527219,
+      "sha256": "a1ebbe091bd1ae93d2abd5de8d69f9003a8d0ee6532bcf9a87c2492c97051f23",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/plaster_nor_gl_1k.jpg",
+      "bytes": 652310,
+      "sha256": "eb572ca3630d5bfde72e2601b1f02412da23ca005cd19384dced8690be4cb783",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/stone_arm_1k.jpg",
+      "bytes": 198270,
+      "sha256": "4b2548135784852f07befc3bb0abb7c83738a3c022997c30527a15d5caa7a389",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/stone_diff_1k.jpg",
+      "bytes": 585727,
+      "sha256": "ec131f7a99a1e7f9df25d4725609c55a6dad1df487630685e9a66ecbf41ec33a",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/stone_nor_gl_1k.jpg",
+      "bytes": 1002410,
+      "sha256": "26bfff70b266a4e86983814c7e56a9b48daf93cd34dcdc16a5db13e4fabcfbb6",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/terracotta_arm_1k.jpg",
+      "bytes": 1079696,
+      "sha256": "74f56737737e477f49c3c281ecc505a4457debb240d605cf50eaa2bfc5953bff",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/terracotta_diff_1k.jpg",
+      "bytes": 1105673,
+      "sha256": "1b30c1f0a9d3f761afb1354d95b36990fc670fac5f811889af8cb2ab682c8e66",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/terracotta_nor_gl_1k.jpg",
+      "bytes": 883229,
+      "sha256": "1eb4e911e3d1b38c7c3b06bdecb6fde5f9646dca5498caf67ffa651cb6cb8d8c",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/wood_arm_1k.jpg",
+      "bytes": 204214,
+      "sha256": "a428a3a6f89f7bb5c945c9668f2ac6ec268736fda7a4a421fd3ec80d3946929c",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/wood_diff_1k.jpg",
+      "bytes": 226049,
+      "sha256": "94833feda44e025a9139f7b5723ea84e4f0258d3b54939a79e1013c133085e29",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/materials/wood_nor_gl_1k.jpg",
+      "bytes": 223250,
+      "sha256": "8d38f02f121c0e58eaedc19cd668faea21381ae3ff4d5332cd90de75e6683393",
+      "source_group": "poly_haven"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_Beard.bin",
+      "bytes": 25276,
+      "sha256": "781cf9b719d75a9f8d73881d2ca0713fe580d774edc96adaded392aad37a72b7",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_Beard.gltf",
+      "bytes": 2005,
+      "sha256": "c91ef54606aad25a9d1191deaba90cb411c0067d8cef262b2f4819f242e5b365",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_Buns.bin",
+      "bytes": 131768,
+      "sha256": "4f6d4c010201278483da8d6d46ec40e3beb8d9e679ec2139bed216c561bccd38",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_Buns.gltf",
+      "bytes": 2243,
+      "sha256": "2bb3593575e21c9af39a53e48c42c1314b0a894e9577f3f14abffcb145cd56c5",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_SimpleParted.bin",
+      "bytes": 32032,
+      "sha256": "57c6359703a37e346ee38a9c7ba55c8dee761c0a02da99847d06f5a91728f3cc",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Hair_SimpleParted.gltf",
+      "bytes": 2010,
+      "sha256": "ce6c666d00bcca2baa0c58d0442505f90f8feff952592effc4697a2341e9e56d",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/IMPORT.json",
+      "bytes": 744,
+      "sha256": "f2d61f4d198888b076bc588dea35725444b3f6080bce3e670df1ce5db5b39c83",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Superhero_Female_FullBody.bin",
+      "bytes": 990808,
+      "sha256": "3a8220a485b33d05d879115a50697728b45a151781106033afb8b8c243fca208",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Superhero_Female_FullBody.gltf",
+      "bytes": 31656,
+      "sha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Superhero_Male_FullBody.bin",
+      "bytes": 720076,
+      "sha256": "459003f9745853ae562a85506a2b94dd56515c1f37728f9fa3d2ce1a3e4cd92f",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/Superhero_Male_FullBody.gltf",
+      "bytes": 30989,
+      "sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/T_Eye_Brown.png",
+      "bytes": 35958,
+      "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025",
+      "source_group": "quaternius_humans"
+    },
+    {
+      "file": "assets/sources/quaternius/UAL1_Standard.glb",
+      "bytes": 7618436,
+      "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "source_group": "quaternius_humans"
+    }
+  ],
+  "total_local_asset_bytes": 49265201,
+  "inventory_scope": "Asset files only; engine/npm licenses and application source are documented separately. Rerun scripts/immersion_assets_manifest.py after asset rebuilds to refresh exact fingerprints."
+}

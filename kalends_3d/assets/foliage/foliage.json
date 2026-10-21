@@ -1,0 +1,103 @@
+{
+  "schema": "kalends-foliage-assets-v1",
+  "artist": "Quaternius",
+  "source": "https://quaternius.itch.io/stylized-nature-megakit",
+  "license": "CC0-1.0",
+  "standard_upload_id": 11055123,
+  "archive_sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
+  "models": [
+    {
+      "file": "foliage/pine.glb",
+      "source_model": "Pine_5",
+      "source_gltf_sha256": "bb060ce1420af32dc996241078d36e4c991577397474aa64f4c691362c482cfa",
+      "sha256": "9f3383eaff3b9f6f878f929f8fa2ecdb2e3097af00e9d13ef6b1b6fcdbefbce9",
+      "bytes": 193944,
+      "triangles": 1646,
+      "bounds": {
+        "min": [
+          -2.987706422805786,
+          -0.23508861660957336,
+          -3.7784042358398438
+        ],
+        "max": [
+          3.432434320449829,
+          8.48871898651123,
+          2.4435970783233643
+        ]
+      },
+      "leaf_artwork": [
+        {
+          "file": "Leaf_Pine_C.png",
+          "sha256": "86f7ff7a214f5424de48d269568f36a15485e61c80677e426c7be9f45181eef9",
+          "bytes": 70055
+        }
+      ],
+      "clamped_vertex_color_components": 2051,
+      "max_color_clamp_change": 0.0001678466796875,
+      "scope": "Original authored mesh and leaf-card texture; bark material simplified and vendor vertex colors range-clamped. Native rendering/placement remains to verify."
+    },
+    {
+      "file": "foliage/broadleaf.glb",
+      "source_model": "CommonTree_2",
+      "source_gltf_sha256": "67160975f0ac991b4a2ffb2add4ab4037b5e9c1bef9f66dac5235fcf0ba9bd52",
+      "sha256": "c3b92e0abce59147bc0865c53808df1c231db283f40bf2faee9ade4b89f42dde",
+      "bytes": 584748,
+      "triangles": 5648,
+      "bounds": {
+        "min": [
+          -2.2230136394500732,
+          -0.24277201294898987,
+          -1.8514697551727295
+        ],
+        "max": [
+          2.24128794670105,
+          7.400223731994629,
+          2.4243826866149902
+        ]
+      },
+      "leaf_artwork": [
+        {
+          "file": "Leaves_NormalTree_C.png",
+          "sha256": "998612bdf0b76a22f5f54d65cd7a457815d2842d89653fa4348a4ebb42933ad3",
+          "bytes": 158796
+        }
+      ],
+      "clamped_vertex_color_components": 7679,
+      "max_color_clamp_change": 0.0001678466796875,
+      "scope": "Original authored mesh and leaf-card texture; bark material simplified and vendor vertex colors range-clamped. Native rendering/placement remains to verify."
+    },
+    {
+      "file": "foliage/shrub.glb",
+      "source_model": "Bush_Common",
+      "source_gltf_sha256": "77811fca92610cb254713d3d49d5029ab6cf13050c3afb61aa942786a7b2ca90",
+      "sha256": "25ceddbdff7c29f976bb9ce3461c3fbfbec32be35ae6f2f5bf45d9f72d511184",
+      "bytes": 164048,
+      "triangles": 900,
+      "bounds": {
+        "min": [
+          -0.9234761595726013,
+          -0.234694704413414,
+          -0.9743891954421997
+        ],
+        "max": [
+          0.9913685917854309,
+          1.3470909595489502,
+          0.9907516837120056
+        ]
+      },
+      "leaf_artwork": [
+        {
+          "file": "Leaves_TwistedTree_C.png",
+          "sha256": "0e459b56b14c0e81b1b7cf3d1e8c6f0bb71790eb6c46bb02a76a922d8df646ea",
+          "bytes": 70353
+        }
+      ],
+      "clamped_vertex_color_components": 1800,
+      "max_color_clamp_change": 0.0001678466796875,
+      "scope": "Original authored mesh and leaf-card texture; bark material simplified and vendor vertex colors range-clamped. Native rendering/placement remains to verify."
+    }
+  ],
+  "units": "meters; Y up; intended ground origin0; modeled roots/lower foliage extend ~0.24m below0. Scale pine~.45 for3.8m scene tree, broadleaf~.5 for3.7m, shrubs~.45 for.6m.",
+  "historical_scope": "Generic stylized pine, broadleaf tree and shrub; do not label them authenticated olive/cypress species or archaeological planting.",
+  "preparation": "scripts/immersion_assets_foliage.py with the artist's free Standard archive; no Pro/Source tier used."
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "kalends-character-assets-v1",
+  "units": "glTF meters, Y up, +Z character facing in bind pose; scale .777 yields 1.7m",
+  "clips": {
+    "idle": "Idle",
+    "walk": "Walking_A",
+    "run": "Running_A",
+    "talk": "Interact",
+    "work": "Use_Item",
+    "pickup": "PickUp",
+    "celebrate": "Cheer"
+  },
+  "variants": {
+    "Player": {
+      "file": "characters/civilian_female.glb",
+      "scale": 0.7773188004744145,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#cba076",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Felix": {
+      "file": "characters/civilian_male.glb",
+      "scale": 0.7775539409159902,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#d4ba8e",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Sabina": {
+      "file": "characters/civilian_female.glb",
+      "scale": 0.7773188004744145,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#b26e58",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Marcus": {
+      "file": "characters/civilian_male.glb",
+      "scale": 0.7775539409159902,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#b9a477",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Chreste": {
+      "file": "characters/civilian_female.glb",
+      "scale": 0.7773188004744145,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#9dafa1",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Dama": {
+      "file": "characters/civilian_male.glb",
+      "scale": 0.7775539409159902,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#9f778a",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    },
+    "Lucius": {
+      "file": "characters/civilian_male.glb",
+      "scale": 0.7775539409159902,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#bdb6a1",
+      "clips": {
+        "idle": "Idle",
+        "walk": "Walking_A",
+        "run": "Running_A",
+        "talk": "Interact",
+        "work": "Use_Item",
+        "pickup": "PickUp",
+        "celebrate": "Cheer"
+      }
+    }
+  },
+  "models": [
+    {
+      "file": "characters/civilian_female.glb",
+      "source": "characters/kaykit_rogue.glb",
+      "source_sha256": "e825437cd4d2ee9c1960b517a74a69101e33eb409ae7fa8cedc7134a998fbb7d",
+      "sha256": "c07e41266d9a39dbfd58440ceb0ddc37fe5217a1a653bb2fbad5f556c860aa74",
+      "bytes": 645804,
+      "removed_meshes": [
+        "Knife_Offhand",
+        "1H_Crossbow",
+        "2H_Crossbow",
+        "Knife",
+        "Throwable",
+        "Rogue_Cape"
+      ],
+      "clips": [
+        "Cheer",
+        "Idle",
+        "Interact",
+        "PickUp",
+        "Running_A",
+        "Use_Item",
+        "Walking_A"
+      ],
+      "bind_pose_bounds": {
+        "min": [
+          -0.9712533354759216,
+          -2.6527046429691836e-05,
+          -0.4963023364543915
+        ],
+        "max": [
+          0.9712533354759216,
+          2.186978340148926,
+          0.5192026495933533
+        ]
+      },
+      "skins": 1,
+      "scale_to_1_7m": 0.7773188004744145
+    },
+    {
+      "file": "characters/civilian_male.glb",
+      "source": "characters/kaykit_barbarian.glb",
+      "source_sha256": "cefc311a0e10c7858b6141f5ada7e33268727564fb8ac1347aab97d000669cc6",
+      "sha256": "981a0a8c366f92d26f2e6cae9a2bf6fdfef1ca478759f451609504f4b981004e",
+      "bytes": 642800,
+      "removed_meshes": [
+        "1H_Axe_Offhand",
+        "Barbarian_Round_Shield",
+        "1H_Axe",
+        "2H_Axe",
+        "Mug",
+        "Barbarian_Hat",
+        "Barbarian_Cape"
+      ],
+      "clips": [
+        "Cheer",
+        "Idle",
+        "Interact",
+        "PickUp",
+        "Running_A",
+        "Use_Item",
+        "Walking_A"
+      ],
+      "bind_pose_bounds": {
+        "min": [
+          -0.971257746219635,
+          -2.6527046429691836e-05,
+          -0.45999979972839355
+        ],
+        "max": [
+          0.9712489247322083,
+          2.186316967010498,
+          0.5261792540550232
+        ]
+      },
+      "skins": 1,
+      "scale_to_1_7m": 0.7775539409159902
+    }
+  ],
+  "license": "CC0-1.0; see assets/licenses/KayKit-CC0.txt",
+  "artist": "Kay Lousberg / KayKit",
+  "historical_scope": "Stylized fantasy meshes adapted by disabling weapon/hat/cape meshes. Clothing and body proportions are not authenticated Roman dress; purpose-built Roman wardrobe remains an art task."
+}

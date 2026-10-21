@@ -1,0 +1,443 @@
+{
+  "doors": [
+    {
+      "id": "bakery",
+      "sim_door": [
+        810,
+        350
+      ],
+      "scene_door": [
+        0.2,
+        0,
+        -1.3
+      ],
+      "scene_threshold": [
+        0.2,
+        0,
+        -2.4
+      ],
+      "opening_width_m": 1.7,
+      "groups": [
+        "bakery_shutter_left",
+        "bakery_shutter_right"
+      ]
+    },
+    {
+      "id": "fullery",
+      "sim_door": [
+        385,
+        480
+      ],
+      "scene_door": [
+        -8.3,
+        0,
+        1.3
+      ],
+      "scene_threshold": [
+        -8.3,
+        0,
+        2.0
+      ],
+      "opening_width_m": 1.35
+    },
+    {
+      "id": "thermopolium",
+      "sim_door": [
+        1225,
+        480
+      ],
+      "scene_door": [
+        8.5,
+        0,
+        1.3
+      ],
+      "scene_threshold": [
+        8.5,
+        0,
+        2.0
+      ],
+      "opening_width_m": 1.35
+    },
+    {
+      "id": "household",
+      "sim_door": [
+        770,
+        790
+      ],
+      "scene_door": [
+        -0.6,
+        0,
+        7.5
+      ],
+      "scene_threshold": [
+        -0.6,
+        0,
+        8.2
+      ],
+      "opening_width_m": 1.35
+    }
+  ],
+  "hinges": [
+    {
+      "group": "bakery_shutter_left",
+      "pivot": [
+        -0.6499999999999999,
+        0,
+        -1.9300000000000002
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "rest_rotation_degrees": 0,
+      "swing_degrees": -15,
+      "scope": "Nonblocking cosmetic shutter motion, no authoritative door-lock state."
+    },
+    {
+      "group": "bakery_shutter_right",
+      "pivot": [
+        1.05,
+        0,
+        -1.9300000000000002
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "rest_rotation_degrees": 0,
+      "swing_degrees": 15,
+      "scope": "Nonblocking cosmetic shutter motion, no authoritative door-lock state."
+    }
+  ],
+  "roof_groups": [
+    "frontage_0_roof",
+    "frontage_1_roof",
+    "frontage_2_roof",
+    "frontage_3_roof",
+    "frontage_4_roof",
+    "frontage_5_roof",
+    "frontage_6_roof",
+    "bakery_roof",
+    "fullery_roof",
+    "thermopolium_roof",
+    "household_roof"
+  ],
+  "walkable_floors": [
+    {
+      "location": "street",
+      "sim_rect": [
+        0,
+        350,
+        1600,
+        130
+      ]
+    },
+    {
+      "location": "street",
+      "sim_rect": [
+        700,
+        480,
+        140,
+        330
+      ]
+    },
+    {
+      "location": "bakery",
+      "sim_rect": [
+        665,
+        95,
+        290,
+        200
+      ]
+    },
+    {
+      "location": "fullery",
+      "sim_rect": [
+        235,
+        515,
+        300,
+        210
+      ]
+    },
+    {
+      "location": "thermopolium",
+      "sim_rect": [
+        1075,
+        515,
+        300,
+        210
+      ]
+    },
+    {
+      "location": "household",
+      "sim_rect": [
+        585,
+        825,
+        370,
+        210
+      ]
+    }
+  ],
+  "notes": [
+    "Ground and background buildings are noninteractive visual context. They do not extend the authoritative walkable map or create new residents/business inventory.",
+    "Fountain basin shifted to schematic north margin (510,322), beside named water point (510,415), so presentation does not add an unvalidated street obstruction.",
+    "Room cutaway wall variants are initially hidden and replace their corresponding normal wall group only during actual room presence. Both sets preserve identical door openings and clear floor footprints."
+  ],
+  "playable_scene_bounds": {
+    "min": [
+      -16.4,
+      -0.25,
+      -7.7
+    ],
+    "max": [
+      16.4,
+      4,
+      13.4
+    ]
+  },
+  "signs": [
+    {
+      "name": "TABERNA",
+      "position": [
+        -13.8,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "VINVM",
+      "position": [
+        -10.55,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "OLEVM",
+      "position": [
+        -7.75,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "MERCATOR",
+      "position": [
+        -4.4,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "PANIS",
+      "position": [
+        5.2,
+        2.45,
+        -2.099
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "TEXTOR",
+      "position": [
+        8.55,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "OFFICINA",
+      "position": [
+        12.8,
+        2.45,
+        -1.5190000000000001
+      ],
+      "size": [
+        1.17,
+        0.20999999999999996
+      ]
+    },
+    {
+      "name": "PISTOR FELIX",
+      "position": [
+        0.2,
+        2.68,
+        -1.7990000000000002
+      ],
+      "size": [
+        2.52,
+        0.35
+      ],
+      "group": "bakery_frontage_sign"
+    },
+    {
+      "name": "FULLONICA",
+      "position": [
+        -8.3,
+        2.65,
+        1.581
+      ],
+      "size": [
+        1.6199999999999999,
+        0.26999999999999996
+      ]
+    },
+    {
+      "name": "SABINA",
+      "position": [
+        8.5,
+        2.65,
+        1.581
+      ],
+      "size": [
+        1.6199999999999999,
+        0.26999999999999996
+      ]
+    },
+    {
+      "name": "DOMVS",
+      "position": [
+        -0.6,
+        2.65,
+        7.781000000000001
+      ],
+      "size": [
+        1.6199999999999999,
+        0.26999999999999996
+      ]
+    },
+    {
+      "name": "MENANDER",
+      "position": [
+        -0.6,
+        2.92,
+        7.7410000000000005
+      ],
+      "size": [
+        2.02,
+        0.26
+      ]
+    }
+  ],
+  "market_cart": {
+    "node": "market_cart",
+    "cargo_node": "market_cart_cargo",
+    "cargo_visual_count": 6,
+    "scene_position": [
+      4.4,
+      0,
+      -1.8
+    ],
+    "sim_presentation_offset": [
+      1020,
+      325
+    ],
+    "cargo_visibility": "Show only while authoritative story stage is unresolved or committed; hide after actual resolution. Cart remains as emptied scenery.",
+    "navigation": "Nonwalkable recessed apron. Adjacent decorative frontage is set back to y300 to avoid mesh intersection. No new walkable floor or collider.",
+    "historical_disclosure": "Original fictional market-cart reconstruction; off-floor presentation offset near Marcus, not an authoritative cart position."
+  },
+  "room_wall_variants": {
+    "bakery": {
+      "normal": "bakery_walls",
+      "cutaway": "bakery_cutaway_walls",
+      "initially_visible": "bakery_walls",
+      "cutaway_default_visible": false,
+      "hide_inside": [
+        "bakery_frontage_sign"
+      ],
+      "south_height_m": 0.82,
+      "side_height_m": 0.82,
+      "north_height_m": 2.72,
+      "method": "Distinct capped mesh geometry, not runtime scaling; mutually exclusive normal/cutaway groups."
+    },
+    "fullery": {
+      "normal": "fullery_walls",
+      "cutaway": "fullery_cutaway_walls",
+      "initially_visible": "fullery_walls",
+      "cutaway_default_visible": false,
+      "south_height_m": 0.75,
+      "side_height_m": 0.82,
+      "north_height_m": 2.6,
+      "method": "Distinct capped mesh geometry, not runtime scaling; mutually exclusive normal/cutaway groups."
+    },
+    "thermopolium": {
+      "normal": "thermopolium_walls",
+      "cutaway": "thermopolium_cutaway_walls",
+      "initially_visible": "thermopolium_walls",
+      "cutaway_default_visible": false,
+      "south_height_m": 0.75,
+      "side_height_m": 0.82,
+      "north_height_m": 2.6,
+      "method": "Distinct capped mesh geometry, not runtime scaling; mutually exclusive normal/cutaway groups."
+    },
+    "household": {
+      "normal": "household_walls",
+      "cutaway": "household_cutaway_walls",
+      "initially_visible": "household_walls",
+      "cutaway_default_visible": false,
+      "south_height_m": 0.75,
+      "side_height_m": 0.82,
+      "north_height_m": 2.6,
+      "method": "Distinct capped mesh geometry, not runtime scaling; mutually exclusive normal/cutaway groups."
+    }
+  },
+  "schema": "kalends-environment-v1",
+  "glb": "pompeii_district.glb",
+  "world_scale": 0.02,
+  "origin": [
+    800,
+    415
+  ],
+  "axis": "right-handed Y up, sim y maps to positive Z",
+  "stats": {
+    "bytes": 17246388,
+    "sha256": "17a4abca4673089a06d592a2c1059a7e57978aaa787a1094ac1e57b6325c27fe",
+    "triangles": 126608,
+    "unindexed_vertex_references": 379752,
+    "indexed_vertices": 225216,
+    "nodes": 66,
+    "material_batches": 218,
+    "materials": 39,
+    "textures": 48,
+    "bounds": {
+      "min": [
+        -32.0,
+        -0.22999999999999998,
+        -22.0
+      ],
+      "max": [
+        32.0,
+        4.5387313281472395,
+        28.0
+      ]
+    }
+  },
+  "license": "Original project-authored geometry/procedural textures, no third-party source; project rights reserved pending its release terms. Embedded Poly Haven CC0 textures have separate official provenance in ../materials/materials.json; see LICENSE.txt",
+  "furniture_navigation": "All fixed props are outside approved room inset floors and public floor rectangles. Curbs/thresholds are visual margins; no new collider is claimed.",
+  "architectural_disclosure": "Roman-inspired hand-authored procedural mesh reconstruction. Business identities and commerce are fictional. Measurements are the existing schematic map, not surveyed Pompeii."
+}

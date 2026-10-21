@@ -1,0 +1,12 @@
+{
+  "base_archive_sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+  "animation_archive_sha256": "cc73fc4e495b82958207316596317a3f40b9fa38065bde1027937452da537724",
+  "base_standard_upload_id": 15861669,
+  "animation_standard_upload_id": 17958403,
+  "official_sources": [
+    "https://quaternius.com/packs/universalbasecharacters.html",
+    "https://quaternius.itch.io/universal-base-characters",
+    "https://quaternius.itch.io/universal-animation-library"
+  ],
+  "scope": "Selected source geometry/bin/eye texture/hair and animation Standard GLB only. Source body glTF includes references to maps not used by this preparation pipeline. Runtime outputs are complete self-contained GLBs. No Source/Pro paid tier."
+}

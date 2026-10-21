@@ -1,0 +1,9 @@
+Poly Haven material asset notice
+
+These textures are original Poly Haven works dedicated under CC0 1.0 Universal.
+Official license: https://polyhaven.com/license
+CC0 legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Individual sources, authors, file hashes and unmodified download URLs are recorded in materials/materials.json.
+The materials were obtained through the public free API; there is no paid runtime or account dependency.
+Please credit Poly Haven and its artists when sharing the game.

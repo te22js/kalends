@@ -1,0 +1,249 @@
+{
+  "schema": "kalends-character-assets-v2",
+  "units": "glTF meters, Y up, +Z character facing. Per-model scale normalizes originalbodyheight to1.7m; hair adds a small amount.",
+  "clips": {
+    "idle": "Idle_Loop",
+    "walk": "Walk_Loop",
+    "run": "Jog_Fwd_Loop",
+    "talk": "Idle_Talking_Loop",
+    "work": "PickUp_Table",
+    "pickup": "PickUp_Table",
+    "celebrate": "Interact"
+  },
+  "variants": {
+    "Player": {
+      "file": "characters/roman_female.glb",
+      "scale": 0.9577188982182115,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#b97935",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#9c6846",
+      "clothTint": "#b97935",
+      "beltTint": "#533e2a"
+    },
+    "Felix": {
+      "file": "characters/roman_male.glb",
+      "scale": 0.934278253307483,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#c4b38e",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#ad7851",
+      "clothTint": "#c4b38e",
+      "beltTint": "#533e2a"
+    },
+    "Sabina": {
+      "file": "characters/roman_female.glb",
+      "scale": 0.9577188982182115,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#9c4d3d",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#926043",
+      "clothTint": "#9c4d3d",
+      "beltTint": "#533e2a"
+    },
+    "Marcus": {
+      "file": "characters/roman_male.glb",
+      "scale": 0.934278253307483,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#60694c",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#ac7d58",
+      "clothTint": "#60694c",
+      "beltTint": "#533e2a"
+    },
+    "Chreste": {
+      "file": "characters/roman_female.glb",
+      "scale": 0.9577188982182115,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#4f7771",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#b27e59",
+      "clothTint": "#4f7771",
+      "beltTint": "#533e2a"
+    },
+    "Dama": {
+      "file": "characters/roman_male.glb",
+      "scale": 0.934278253307483,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#3b465f",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#9e6c48",
+      "clothTint": "#3b465f",
+      "beltTint": "#533e2a"
+    },
+    "Lucius": {
+      "file": "characters/roman_male.glb",
+      "scale": 0.934278253307483,
+      "yaw": 0,
+      "height": 1.7,
+      "tint": "#96846a",
+      "clips": {
+        "idle": "Idle_Loop",
+        "walk": "Walk_Loop",
+        "run": "Jog_Fwd_Loop",
+        "talk": "Idle_Talking_Loop",
+        "work": "PickUp_Table",
+        "pickup": "PickUp_Table",
+        "celebrate": "Interact"
+      },
+      "skinTint": "#b38a67",
+      "clothTint": "#96846a",
+      "beltTint": "#533e2a"
+    }
+  },
+  "models": [
+    {
+      "file": "characters/roman_female.glb",
+      "bytes": 3122436,
+      "sha256": "50f4fa036e13bbfeb664848f5fbbd05b6543bcf712678888c2fa43983b20e026",
+      "source_body_sha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4",
+      "source_animation_sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "height": 1.7750511169433594,
+      "scale_to_1_7m": 0.9577188982182115,
+      "clips": [
+        "Idle_Loop",
+        "Walk_Loop",
+        "Jog_Fwd_Loop",
+        "Sprint_Loop",
+        "Idle_Talking_Loop",
+        "Interact",
+        "PickUp_Table",
+        "Fixing_Kneeling",
+        "Dance_Loop"
+      ],
+      "skins": 1,
+      "triangles": 17086,
+      "covered_body_triangles_omitted": 2250,
+      "mesh_nodes": [
+        "Eyebrows",
+        "Eyes",
+        "Superhero_Female",
+        "Kalends_Pleated_Linen_Tunic",
+        "Kalends_Woven_Belt",
+        "Quaternius_Hair_Buns"
+      ],
+      "retargeted_channels": 1755,
+      "clip_root_height_offsets_m": {
+        "Dance_Loop": 0.006665,
+        "Fixing_Kneeling": 0.01307,
+        "Idle_Loop": 0.013101,
+        "Idle_Talking_Loop": 0.01242,
+        "Interact": 0.013185,
+        "Jog_Fwd_Loop": -0.028576,
+        "PickUp_Table": 0.015573,
+        "Sprint_Loop": -0.022095,
+        "Walk_Loop": 0.003565
+      }
+    },
+    {
+      "file": "characters/roman_male.glb",
+      "bytes": 2743408,
+      "sha256": "a907ff3e834e0424d02faa37990b225ba25a5f8660a4c01bb73e34067b11c77e",
+      "source_body_sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4",
+      "source_animation_sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+      "height": 1.8195863962173462,
+      "scale_to_1_7m": 0.934278253307483,
+      "clips": [
+        "Idle_Loop",
+        "Walk_Loop",
+        "Jog_Fwd_Loop",
+        "Sprint_Loop",
+        "Idle_Talking_Loop",
+        "Interact",
+        "PickUp_Table",
+        "Fixing_Kneeling",
+        "Dance_Loop"
+      ],
+      "skins": 1,
+      "triangles": 15675,
+      "covered_body_triangles_omitted": 1970,
+      "mesh_nodes": [
+        "Eyebrows",
+        "Eyes",
+        "SuperHero_Male",
+        "Kalends_Pleated_Linen_Tunic",
+        "Kalends_Woven_Belt",
+        "Quaternius_Hair_SimpleParted",
+        "Quaternius_Hair_Beard"
+      ],
+      "retargeted_channels": 1755,
+      "clip_root_height_offsets_m": {
+        "Dance_Loop": 0.010913,
+        "Fixing_Kneeling": 0.017519,
+        "Idle_Loop": 0.014143,
+        "Idle_Talking_Loop": 0.013494,
+        "Interact": 0.01427,
+        "Jog_Fwd_Loop": -0.015039,
+        "PickUp_Table": 0.014833,
+        "Sprint_Loop": -0.011781,
+        "Walk_Loop": 0.011588
+      }
+    }
+  ],
+  "license": "Quaternius body/hair/animations CC0-1.0; project-authored tunic/belt subject to projectowner terms.",
+  "artist": "Quaternius / project-authored linen wardrobe",
+  "historical_scope": "Roman-inspired pleated linen tunic and wovenbelt with artist-authored humananatomy/hair/rig/motion. Generalstylisticreconstruction; no archaeological accuracy claim.",
+  "rendering_scope": "PBRflat skin/linen and originalbrown-eye texture; sourcebody-normal/skin-diffuse maps intentionally unused. Materialnames KALENDS_Cloth and KALENDS_Cloth_Trim support per-identity wardrobe accents.",
+  "retargeting": "Matched bone names; preserve destinationlocal resttransforms whileapplying originalanimationdeltas. Per-clip constantvisualrootheight correction from21 CPU-skinnedposes; visualpresentationonly, notworldmovement.",
+  "validation": "characters/quaternius_validation.json:90CPU-skinnedposes,18clips,2models; nativebrowservisualreviewrequired.",
+  "nominal_locomotion_mps": {
+    "Walk_Loop": 1.6,
+    "Jog_Fwd_Loop": 3.2
+  },
+  "nominal_locomotion_scope": "Playback tuning starting estimates, not measured footslip or root-motion speed.",
+  "palette_scope": "Per-instance CSS sRGB colors. Match exact KALENDS_Skin/Cloth/Cloth_Trim names and set diffuse directly; do not multiply skin by a wardrobe tint."
+}
