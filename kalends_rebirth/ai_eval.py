@@ -182,8 +182,9 @@ def write_results(destination):
         raise ValueError("Choose a new output directory; evaluation results are never overwritten")
     rows=evaluate()
     root=Path(__file__).resolve().parents[1]
-    files=list((root/"kalends").rglob("*.py"))+[
-        root/"kalends_rebirth"/name for name in ("ai.py","language.py","ai_eval.py","world.py","scenario.py","immutable.py")]
+    # Include the game modules imported by world/language as well as the
+    # transport: a manifest must not omit newly integrated validators or minds.
+    files=list((root/"kalends").rglob("*.py"))+list((root/"kalends_rebirth").rglob("*.py"))
     hashes={str(path.relative_to(root)):hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(files)}
     source_digest=hashlib.sha256(canonical(hashes).encode()).hexdigest()
     try:
