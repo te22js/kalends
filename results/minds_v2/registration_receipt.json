@@ -1,0 +1,22 @@
+{
+  "registered_utc": "2026-10-21T12:58:38.987216+00:00",
+  "research_tree_head": "cf8980d34d76410db35db27f9b80c656b4dbd702",
+  "reviewed_method_commit": "01ab6af",
+  "parent_identical_method_commit": "ac65a1c",
+  "registration_sha256": "5943db00d7facf790ddff4f8deb2fbc55423dda96bd931d2c394681dd30135bd",
+  "source_fingerprint": {
+    "sha256": "c0e78346bb44fb8fea116820c96af9d6f2acf405740d64cd830642fcfea46281",
+    "files": {
+      "kalends_rebirth/minds.py": "d02d9b5934b1212688b6bf65379b0edf1d7974c23b3aac7ff9d9510bfa5965d9",
+      "kalends_rebirth/mindsbench_v2.py": "5f2988906f3001c932fc3b2127fda712b3f8357fc39d6a726a91f6aa4a4978f9",
+      "kalends/memory/base.py": "f708285e4068fc0ea06ccf23558adaac3387f0d66059ed254460168a514c8c30",
+      "kalends/memory/structured.py": "6e328d6275273c210408eb4535b895146b0c74f944362a793a0422ddf79acc24",
+      "kalends/memory/hybrid.py": "e36a7aa6eaa202a463a5d778f7d9b8f4569c22288ebbfea467039e4e234b7b10",
+      "kalends/memory/vector.py": "7a3cadce6efb588633c1088fc13d0e86ca6372d21d22416341e2643e217bac16",
+      "kalends/memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f"
+    }
+  },
+  "heldout_started": false,
+  "review_authorization": "Parent reviewed source and design version3, approved freeze and one fresh run of97100 through97131 before registration.",
+  "prospective_scope": "Primary paired mind minus structured utility averaged over all six families per seed. No heldout effects observed at registration. Preserve all registered arms, null and negative findings."
+}
