@@ -34,7 +34,7 @@ function harness() {
     setPreview: fn => { preview = fn; }, setCommit: fn => { commit = fn; },
     setDirection: value => { direction = value; }, setBlocked: value => { blocked = value; },
     paint: distance => { remaining = distance; nav.tick(); },
-    position: () => position,
+    position: () => position, setPosition: value => { position = {...value}; },
     settle: async index => { commits[index].gate.resolve(); await flush(); },
   };
 }
@@ -146,3 +146,26 @@ test('blocked inputs are acknowledged as rejected and do not queue movement', as
   h.setBlocked(false); h.nav.tick(); await flush(); assert.equal(h.commits.length, 0); assert.equal(h.nav.active, false);
   assert.equal(h.inputs.length, 2); assert.ok(h.inputs.every(row => row[1] === false));
 });
+
+
+for (const location of ['water','forum_access']) {
+  test('saved public '+location+' start retains the short-step bound', async () => {
+    const h = harness(); h.setPosition({x: 510, y: 415, location});
+    h.nav.go({x: 1225, y: 480, location: 'street'}); await flush();
+    const first = h.commits[0];
+    assert.ok(Math.abs(Math.hypot(first.body.x-first.start.x,first.body.y-first.start.y)-48)<1e-9);
+    assert.equal(first.body.location, undefined, 'public alias change must not take the portal shortcut');
+  });
+
+  test('public '+location+' destination does not bypass short-step walking', async () => {
+    const h = harness(); h.nav.go({x: 300, y: 415, location}); await flush();
+    for (let settled = 0; settled < h.commits.length; settled++) {
+      assert.ok(settled < 20, 'the public walk must finish');
+      await h.settle(settled); h.paint(0); await flush();
+    }
+    assert.equal(h.position().x,300); assert.equal(h.position().y,415);
+    assert.equal(h.position().location,'street'); assert.equal(h.nav.active,false);
+    assert.ok(h.commits.length > 1);
+    assert.ok(h.commits.every(step => Math.hypot(step.body.x-step.start.x,step.body.y-step.start.y)<=48+1e-8));
+  });
+}

@@ -6,6 +6,10 @@
 (() => {
   'use strict';
   const length=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+  // Older saves retain landmark IDs as public locations. They share the
+  // street floor; only a genuine room change may use a whole portal segment.
+  const publicScenes=new Set(['street','water','forum_access']);
+  const sameScene=(a,b)=>a===b||(publicScenes.has(a)&&publicScenes.has(b));
   class Navigation {
     constructor(callbacks) {
       this.c=callbacks;this.epoch=0;this.intent=null;this.route=[];this.tap=null;
@@ -60,10 +64,10 @@
         return;
       }
       const p=this.c.position();let target=this.route[0],distance=length(p,target);
-      while(target&&distance<.05&&target.location===p.location){this.route.shift();target=this.route[0];distance=target?length(p,target):0;}
+      while(target&&distance<.05&&sameScene(target.location,p.location)){this.route.shift();target=this.route[0];distance=target?length(p,target):0;}
       if(!target){if(this.c.remaining()<1)this.arrived();return;}
       let body;
-      if(target.location!==p.location)body={x:target.x,y:target.y,location:target.location};
+      if(!sameScene(target.location,p.location))body={x:target.x,y:target.y,location:target.location};
       else if(distance<=this.stepLength)body={x:target.x,y:target.y};
       else body={x:p.x+(target.x-p.x)*this.stepLength/distance,y:p.y+(target.y-p.y)*this.stepLength/distance};
       this.pending=true;const epoch=this.epoch;
