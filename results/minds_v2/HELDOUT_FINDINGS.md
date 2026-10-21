@@ -66,7 +66,7 @@ The [primary-source comparison](../../docs/minds_v2/LITERATURE_AND_DESIGN.md) do
 
 The [independent verifier](verify_artifacts.py) imports neither the memory module nor the generator/evaluator. It re-folds each saved cash/goods ledger, terminal utility and completion; checks the complete seed/family/arm grid, conservation, cited observation IDs and recorded storage/context caps; and recomputes the primary and family bootstrap intervals. [Verification output](heldout_v3/verification.json) passes all 2,688 arm cases. This verifies recorded arithmetic and constraints, not external validity or the absence of every implementation bug. The 42 focused mind/benchmark tests pass.
 
-From the repository root, choose a new output directory because existing runs are preserved:
+From the frozen checkout described below, choose a new output directory because existing runs are preserved:
 
 ```sh
 python3.12 -m kalends_rebirth.mindsbench_v2 run --registration results/minds_v2/preregistration_v3.json --out /tmp/kalends-heldout-reproduction
@@ -75,3 +75,27 @@ MPLCONFIGDIR=/tmp/kalends-mpl python3 results/minds_v2/plot_results.py /tmp/kale
 ```
 
 Python3.10+ is required for the runtime; plotting uses Matplotlib and can run separately under Python3.9. Reproduction requires the registered source fingerprint: if game work later changes the mind module, use this evidence commit or restore the registered versions before rerunning. [Full summary](heldout_v3/summary.json), [descriptive diagnostics](heldout_v3/diagnostics.json) and [raw cases](heldout_v3/raw.jsonl) preserve every arm and failure.
+
+## Post-study runtime boundary and independent claims audit
+
+After the study, game integration commit `a287492` and primitive extension `7697e9d` added an explicit `BeliefCondition.allow_direct=False` default. An action can opt into accepting direct observation in place of multiple communicated roots. The check occurs within `choose`'s same capped decision context; the counter-order game code no longer performs a separate belief prequery whose directness could come from a different record set. This is a game integration correction. The benchmark module and registered rows were not changed or rerun to claim a benefit from it. Because `minds.py` changed, the current game fingerprint differs from the studied source. **All reported benchmark effects apply to the frozen source, not automatically to the extended runtime.** [Provenance](heldout_v3/recovery_provenance.json) records both versions.
+
+Use a new detached checkout of `a8569bf`, which already contains the frozen source, registration and analysis tools, for exact-method reproduction:
+
+```sh
+git worktree add --detach /tmp/kalends-minds-registered a8569bf
+cd /tmp/kalends-minds-registered
+python3.12 -m kalends_rebirth.mindsbench_v2 run --registration results/minds_v2/preregistration_v3.json --out /tmp/kalends-heldout-reproduction
+python3.12 results/minds_v2/verify_artifacts.py /tmp/kalends-heldout-reproduction
+```
+
+Choose unused paths; preserve existing evidence. No reproduction run was performed for this addendum.
+
+Independent review found the primary contrast and negative findings consistent with the preserved rows, with these additional boundaries:
+
+- The 32 seeds vary prices, wording and interference around four repeated authored variants. Family means and seed bootstrap intervals are descriptive of that design; 192 worlds and 2,688 arm executions are not 2,688 independent samples. No multiple-comparison claim or generalization probability follows from the displayed secondary contrasts.
+- Twelve records and six decision records constrain the `AgentMind` store/read, not the entire Python process, host ledger, generator observations, audit traces or save file. Serialized bytes include bounded goal/last-decision state but exclude surrounding Python object overhead and host storage. The study does not sweep capacity, sequence length, number of NPCs or total game history to establish a scaling law. Selection timing excludes admission/consolidation and external execution; no end-to-end latency or token/cost advantage is established.
+- Correlated-origin counts use supplied lineage claims, not authenticated independent witnesses. The attribution diagnostic can penalize bounded support omission; the failure labels do not identify an experimentally isolated cause. Recovery is measured relative to admitted corrections, while hidden world changes remain a separate information limitation. These qualifications are necessary when quoting zero final stale/unknown rates.
+- Primary-source rechecks support the literature distinctions: [MemoryArena](https://arxiv.org/html/2602.16313v2) already measures memory-conditioned task execution; [AMA-Agent](https://arxiv.org/html/2602.22769v2) combines constructed trajectory graphs with embedding and tool retrieval; [MEMO](https://arxiv.org/html/2603.09022v2) changes context policy through self-play; [PoS](https://arxiv.org/html/2610.01415v1) explicitly validates and revises a belief state. The first three have matching PMLR proceedings metadata, while PoS is an October2026 preprint. Their endpoints, models and budgets differ from this study, so none is a head-to-head baseline or numeric superiority target. The earlier source audit's `experimental_results_produced:false` describes its literature-only checkpoint, not the later heldout run.
+
+The renderer fixture has a separate [interpretation note](renderer/INTERPRETATION.md); its cadence measurements do not establish a framework FPS ranking or a full-game speedup.

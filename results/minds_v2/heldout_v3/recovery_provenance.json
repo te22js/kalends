@@ -32,5 +32,17 @@
   },
   "timing_stripped_raw_sha256": "4324cc2e1af654c0bbcfc9df832380898027af8eb58fb37bd55938df12e214b2",
   "tests": "tests/test_minds_v2.py + tests/test_mindsbench_v2.py:42 passed, Python3.12.14,0.80s",
-  "figure": "comparison.png rendered with system Python3.9 Matplotlib; all three panels and labels visually inspected."
+  "figure": "comparison.png rendered with system Python3.9 Matplotlib; all three panels and labels visually inspected.",
+  "post_study_runtime_extension": {
+    "recorded_after_study": true,
+    "game_integration_commit": "a287492",
+    "primitive_extension_commit": "7697e9d9ee48fece9ce158ec6386988baf852d0d",
+    "original_extension_commit": "5ff75e8",
+    "registered_source_commit": "a8569bf",
+    "frozen_minds_sha256": "d02d9b5934b1212688b6bf65379b0edf1d7974c23b3aac7ff9d9510bfa5965d9",
+    "extended_minds_sha256": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "change": "BeliefCondition.allow_direct defaults false. When explicitly true, choose can accept a directly observed belief instead of the minimum source count, using the same already capped decision records. Counter-order integration removes its separate pre-decision belief query.",
+    "claim_boundary": "Registered outcomes apply only to the frozen fingerprint. The primitive extension was not rerun on confirmatory data and is not claimed to have improved benchmark outcomes.",
+    "reproduction": "Create a new detached git worktree at a8569bf. That commit has the registered source, preregistration and analysis tools; run there into a fresh directory. Current game source intentionally has a different fingerprint and should reject the old registration."
+  }
 }
