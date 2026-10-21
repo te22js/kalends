@@ -94,6 +94,19 @@
       "third_party_game_assets_extracted": false,
       "historical_status": "Artistic reconstruction, not archaeological evidence",
       "rights_note": "Generated project asset. No third-party source image or specific game artwork supplied. No claim of exclusive copyright or legal clearance is made."
+    },
+    {
+      "file": "cart.png",
+      "purpose": "The actual disputed six-unit flour cart",
+      "origin": "Original image generated for this project with image_gen tool",
+      "created": "2026-10-21",
+      "generation_brief_summary": "Isolated ancient wooden cart holding exactly six tied linen sacks, elevated three-quarter view, warm Mediterranean gouache/watercolor, no actors/text/ground, transparent background. Original prop made after actual gameplay art review.",
+      "sha256": "4240f0a56f093ab1bdd1b61104fdbf07cb518bf2efdfbbd28aaf125bca599b9d",
+      "bytes": 1959800,
+      "width": 1254,
+      "height": 1254,
+      "third_party_game_assets_extracted": false,
+      "historical_status": "Artistic reconstruction of a fictional cart, not archaeological evidence"
     }
   ],
   "runtime_presentation": {
@@ -101,12 +114,12 @@
     "sprite_animation": "Actual authoritative paths interpolated with a two-pose Aelia walk and subtle motion; not a full directional animation set",
     "room_transitions": "Four cutaway scenes mapped to schematic authoritative coordinates",
     "code_native_props": [
-      "six-sack cart during unresolved delivery",
       "actor foot shadows",
       "door markers",
       "fountain ripples"
     ],
     "sound": "Optional original synthesized interaction tone; off by default",
-    "fonts": "Local system fonts: Georgia, Avenir and Helvetica; no external font requests"
+    "fonts": "Local system fonts: Georgia, Avenir and Helvetica; no external font requests",
+    "painted_prop": "Cart rendered only while its actual cargo is unresolved/committed"
   }
 }

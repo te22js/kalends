@@ -53,7 +53,8 @@ class RebirthSession:
             if payload.get('version')!=self.version:raise ValueError('Preserve this older save; use --migrate-from with a different new journal path')
             self.config=payload['config'];self.origin=payload.get('origin')
             self.original=self._fresh()
-            for command in payload['commands']:self._perform(self.original,command['operation'],command['data'])
+            for command in payload['commands']:
+                self._perform(self.original,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1))
             if self.original.ledger.content_hash()!=payload['ledger_hash']:raise ValueError('Rebirth replay differs from this runtime; save preserved without modification')
             self.commands=payload['commands'];self.mode=payload.get('mode','game')
             self.telemetry_enabled=payload.get('telemetry_enabled',False)
@@ -81,10 +82,20 @@ class RebirthSession:
         temporary.write_text(json.dumps(payload,indent=2,allow_nan=False)+'\n');temporary.replace(self.journal_path)
 
     @staticmethod
-    def _perform(world,operation,data):
+    def _perform(world,operation,data,*,memory_presentation_revision=2):
+        if type(memory_presentation_revision) is not int or memory_presentation_revision not in (1,2):
+            raise ValueError('Unsupported memory presentation revision; save preserved without modification')
         if operation=='move':return world.move(**data)
         if operation=='advance':return world.advance(**data)
-        if operation=='action':return execute(world,data)
+        if operation=='action':
+            # Presentation became chronological in revision2. Old accepted memory
+            # conversations/reflections must reproduce their original ledger bytes.
+            previous=getattr(world,'_memory_presentation_revision',None)
+            world._memory_presentation_revision=memory_presentation_revision
+            try:return execute(world,data)
+            finally:
+                if previous is None:del world._memory_presentation_revision
+                else:world._memory_presentation_revision=previous
         raise ValueError('Unknown accepted operation')
 
     def state(self):
@@ -120,9 +131,20 @@ class RebirthSession:
             if not choice or not choice.get('enabled',True):raise ValueError(choice.get('reason','This opportunity is unavailable') if choice else 'Unknown conversation choice')
             action=validate_action(choice['action'],recipient,view)
             proposal={'reply':None,'interpretations':[{'id':'0','label':choice['label'],'transmission':choice.get('description',choice.get('consequence','')),
-                'action':action,'cost':choice.get('cost'),'consequence':choice.get('consequence')}],
+                'action':action,'cost':choice.get('cost'),'consequence':choice.get('consequence'),**({'terms':copy.deepcopy(choice['terms'])} if 'terms' in choice else {})}],
                 'language_source':'authored contextual choice','clarification':None}
         else:proposal=self.language.propose(data.get('text'),recipient,view)
+        for interpretation in proposal.get('interpretations',[]):
+            action=interpretation['action']
+            if action['action']=='buy':
+                quote=self.original.buy_quote(action['recipient'],action.get('quantity',1))
+                interpretation.update(quote=quote,cost_amount=quote['total_cost'],cost=f"{quote['quantity']} × {quote['unit_price']:g} = {quote['total_cost']:g} coins",
+                    available=quote['available'],unavailable_reason=quote['reason'])
+            elif action['action']=='accept_commission':
+                # Typed and authored choices disclose the same authoritative terms.
+                offer=next((c for c in view['choices'] if c['id']=='accept_commission'),None)
+                if offer:
+                    interpretation.update(transmission=offer['description'],cost=offer['cost'],consequence=offer['consequence'],terms=copy.deepcopy(offer['terms']))
         if self.mode!='lab':proposal.pop('ai_receipt',None)
         self._proposal_counter+=1;identifier=f'p{len(self.commands)}-{self._proposal_counter}'
         self.proposals[identifier]={**copy.deepcopy(proposal),'revision':self.original.ledger.content_hash()}
@@ -133,7 +155,8 @@ class RebirthSession:
         trial=copy.deepcopy(self.original);at=trial.minute
         receipt=self._perform(trial,operation,copy.deepcopy(data))
         command={'operation':operation,'data':copy.deepcopy(data),'at':at,'after':trial.minute,
-            'receipt_id':receipt.get('event_id') if operation!='advance' and isinstance(receipt,dict) else None}
+            'receipt_id':receipt.get('event_id') if operation!='advance' and isinstance(receipt,dict) else None,
+            'memory_presentation_revision':2}
         previous=self.original;previous_branch=self.branch;previous_intervention=self.intervention;previous_events=copy.deepcopy(self.product_events)
         self.original=trial;self.commands.append(command);self.branch=None;self.intervention=None
         try:
@@ -179,7 +202,7 @@ class RebirthSession:
             trial=copy.deepcopy(candidate)
             try:
                 if trial.minute<command['at']:trial.advance(command['at']-trial.minute,'compress')
-                self._perform(trial,command['operation'],command['data']);candidate=trial
+                self._perform(trial,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1));candidate=trial
             except ValueError as error:skipped.append({'command':i,'reason':str(error)})
         if candidate.minute<self.original.minute:candidate.advance(self.original.minute-candidate.minute,'compress')
         self.branch=candidate;self.intervention={'kind':'remove_action','event_id':event_id,'removed_command':omitted,'skipped':skipped,

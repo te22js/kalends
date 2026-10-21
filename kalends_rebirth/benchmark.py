@@ -156,7 +156,7 @@ def build_world(seed, days, density, optimized):
         receipt = _perform(world, operation, data)
         commands.append({"operation": operation, "data": copy.deepcopy(data), "at": at,
             "receipt_id": receipt.get("event_id") if isinstance(receipt, dict) else None,
-            "after": world.minute})
+            "after": world.minute,"memory_presentation_revision":2})
         return receipt
 
     def near(agent):

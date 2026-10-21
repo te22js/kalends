@@ -309,9 +309,10 @@ class RebirthWorld(PompeiiWorld):
             if self.arc.get("declined"): raise ValueError("You have already declined to intervene.")
             return self.event_dict(self._emit("rb_declined","You leave the cart dispute to its buyers; their own deadline still approaches",actors=("Player","Sabina"),scope="private",story_patch={"declined":True}))
         if action=="reflect":
-            shared=[e for e in self.remembered(recipient) if e.subject=="rebirth" or e.subject=="relationship"][-3:]
+            revision=getattr(self,"_memory_presentation_revision",2)
+            shared=self._memory_support(recipient,revision)
             if self.flags.get(f"reflection:{recipient}:{self.minute//1440}"): raise ValueError("You have already reflected on today's dealings together.")
-            return self.event_dict(self._emit("rb_reflection",self._memory_line(recipient),actors=("Player",recipient),scope="private",parents=[e.event_id for e in shared],
+            return self.event_dict(self._emit("rb_reflection",self._memory_line(recipient,revision),actors=("Player",recipient),scope="private",parents=[e.event_id for e in shared],
                 rebirth_flags={f"reflection:{recipient}:{self.minute//1440}":True},reflection_records=[e.text for e in shared]))
         raise ValueError("Unknown Rebirth action")
 
@@ -543,9 +544,21 @@ class RebirthWorld(PompeiiWorld):
                 voice=PERSONALITY[agent]["voice"],scenario_version=SCENARIO_VERSION)
         return view
 
-    def _memory_line(self,recipient):
+    def _recent_shared_memories(self,recipient):
+        # Consolidated records precede the ordinary buffer, regardless of age.
         shared=[e for e in self.remembered(recipient) if e.subject in ("rebirth","relationship") and
-                (e.source_agent=="Player" or e.subject=="relationship")][-2:]
+                (e.source_agent=="Player" or e.subject=="relationship")]
+        return sorted(shared,key=lambda e:(e.tick,e.event_id))[-2:]
+
+    def _memory_support(self,recipient,revision=2):
+        if revision==1:
+            # Exact pre-revision parent selection, used only for old accepted commands.
+            return [e for e in self.remembered(recipient) if e.subject in ("rebirth","relationship")][-3:]
+        return self._recent_shared_memories(recipient)
+
+    def _memory_line(self,recipient,revision=2):
+        shared=self._recent_shared_memories(recipient) if revision==2 else [e for e in self.remembered(recipient) if
+            e.subject in ("rebirth","relationship") and (e.source_agent=="Player" or e.subject=="relationship")][-2:]
         if shared: return " ".join(e.text for e in shared)
         return "We have no consequential shared dealing in my retained memory yet."
 
@@ -575,8 +588,9 @@ class RebirthWorld(PompeiiWorld):
             text=f"{plan['medium_term']}. For now, I must {plan['short_term']}."
             parents=plan["evidence_ids"]
         elif topic=="memory":
-            text=self._memory_line(recipient)
-            parents=[e.event_id for e in self.remembered(recipient) if e.subject in ("rebirth","relationship")][-3:]
+            revision=getattr(self,"_memory_presentation_revision",2)
+            text=self._memory_line(recipient,revision)
+            parents=[e.event_id for e in self._memory_support(recipient,revision)]
         elif topic=="loading_record" and not self._record_known("Player","loading_record"):
             if recipient!="Marcus": raise ValueError("This character does not hold the loading account.")
             text="My loading account stays closed until the check is paid for. One coin and fifteen minutes; then you can copy what it actually says."
@@ -596,12 +610,38 @@ class RebirthWorld(PompeiiWorld):
             "ignored":"Sabina's counter still needs help after the household took the cart",
             "unclaimed":"The cart dispute ended without a buyer; ordinary work still needs doing"}.get(self.arc.get("route"),"The street has another day's work")
 
+    def buy_quote(self,recipient,quantity=1):
+        """A public offer, without disclosing the seller's private accounts.
+
+        This only reads current terms. Confirmation still checks location,
+        funds, standing and stock in the unchanged authoritative transaction.
+        """
+        if recipient not in ("Felix","Marcus"):
+            raise ValueError("This person is not selling flour.")
+        if type(quantity) is not int or not 1<=quantity<=12:
+            raise ValueError("quantity must be 1..12")
+        unit_price=self.economy.price
+        total=quantity*unit_price
+        reason=""
+        if self.state.trust.get((recipient,"Player"),.6)<.35:
+            reason="This seller is not trading with you now."
+        elif self.economy.cash["Player"]<total:
+            reason=f"You need {total:g} coins for this order."
+        elif (self.economy.inventory[recipient] if recipient=="Marcus" else self.economy.market_stock)<quantity:
+            reason="This seller cannot fill that quantity now."
+        return {"action":"buy","recipient":recipient,"quantity":quantity,"unit_price":unit_price,
+            "total_cost":total,"currency":"coins","minute":self.minute,"available":not reason,"reason":reason}
+
+    @staticmethod
+    def _due_label(deadline):
+        return f"Day {deadline//1440+1} · {(8+deadline//60)%24:02d}:{deadline%60:02d}"
+
     def choices(self,recipient):
-        def choice(action,label,description,cost="",consequence="",enabled=True,reason="",quantity=None):
+        def choice(action,label,description,cost="",consequence="",enabled=True,reason="",quantity=None,terms=None):
             payload={"action":action,"recipient":recipient}
             if quantity is not None: payload["quantity"]=quantity
             return {"id":action,"label":label,"description":description,"cost":cost,"consequence":consequence,
-                "action":payload,"enabled":bool(enabled),"reason":reason}
+                "action":payload,"enabled":bool(enabled),"reason":reason,**({"terms":copy.deepcopy(terms)} if terms is not None else {})}
         items=[];stage=self.arc.get("stage");open_arc=stage in ("unresolved","awaiting_stock")
         if recipient=="Sabina":
             if not self.arc.get("heard"): items.append(choice("hear_dispute","What happened to your order?","Hear Sabina's account before choosing a side."))
@@ -619,7 +659,7 @@ class RebirthWorld(PompeiiWorld):
         if recipient=="Lucius" and open_arc:
             items.append(choice("guarantee_household","Put my name behind the household","Accept six coins against service and give the household the cart's priority.","120 minutes of service within three days","Household work opens; Sabina loses her supply and welcomes you less.",self.economy.cash["Lucius"]>=9 and self.flags.get("affiliation")=="independent" and self.arc.get("cart_units",0)>=6,"Needs an available household advance, carrying funds and arrived sacks."))
         if recipient=="Lucius" and self.arc.get("route")=="household" and not self.arc.get("service_done") and not self.arc.get("service_missed"):
-            items.append(choice("return_service","Keep my service promise","Do the two hours you promised before taking another household account.","120 world minutes","Settles the institutional service obligation."))
+            items.append(choice("return_service","Keep my service promise","Do the two hours you promised before taking another household account.","120 world minutes","Settles the institutional service obligation.",self.minute+120<self.arc["service_due"],"The shift must finish before the household deadline."))
         if recipient=="Lucius":
             inherited_service=next((c for c in self.economy.commitments["Player"] if c["id"]=="household-service" and c["status"]=="open"),None)
             if inherited_service:
@@ -636,28 +676,58 @@ class RebirthWorld(PompeiiWorld):
         if self.arc.get("followup_ready") and not self.arc.get("followup_done"):
             target={"market":"Lucius","household":"Sabina","broker":"Marcus","ignored":"Sabina"}.get(self.arc.get("route"))
             if recipient==target:
+                reason=""
+                if recipient=="Lucius" and self.economy.cash["Player"]<3: reason="You need three coins for the replacement delivery."
+                elif recipient=="Sabina" and self.economy.inventory["Player"]<2: reason="Bring two flour units in your own bag."
+                elif recipient=="Marcus":
+                    report=self.knowledge("Player")
+                    if not report.get("direct") or self.minute-report["as_of"]>60:
+                        reason="Bring a direct supply inspection no more than an hour old."
                 items.append(choice("reconcile",{"Lucius":"Help replace the lost delivery","Sabina":"Bring something the counter can serve","Marcus":"Rebuild our working arrangement"}[recipient],
                     {"Lucius":"Contribute three coins to the household's replacement delivery.","Sabina":"Bring two flour units from your own bag.","Marcus":"Bring a direct supply inspection no more than an hour old."}[recipient],
-                    {"Lucius":"3 coins","Sabina":"2 flour units","Marcus":"Fresh inspected report"}[recipient],"Repairs this specific grievance and changes future access."))
+                    {"Lucius":"3 coins","Sabina":"2 flour units","Marcus":"Fresh inspected report"}[recipient],"Repairs this specific grievance and changes future access.",not reason,reason))
         spec=COMMISSION_SPECS.get(recipient)
         if spec and spec["access"] in self.progression["access"] and self.arc.get("followup_ready"):
             active=next((c for c in self.commissions if c["recipient"]==recipient and c["status"]=="open"),None)
-            if active: items.append(choice("fulfill_commission","Settle our commission",spec["description"],consequence=f"Receive the reserved {active['reward']} coins for actual fulfilment."))
+            if active:
+                reason=""
+                if self.minute>=active["deadline"]: reason="This commission's deadline has passed."
+                elif active["kind"]=="goods" and self.economy.inventory["Player"]<active["quantity"]:
+                    reason=f"Bring {active['quantity']} flour units in your own bag."
+                elif active["kind"]=="evidence":
+                    report=self.knowledge("Player")
+                    if not report.get("direct") or report["as_of"]<active["accepted_at"]:
+                        reason="Obtain a new direct inspection after accepting this commission."
+                if not reason and self.economy.cash.get("CommissionEscrow",0)<active["reward"]:
+                    reason="The reserved commission payment is unavailable."
+                items.append(choice("fulfill_commission","Settle our commission",spec["description"]+f" Due by {self._due_label(active['deadline'])}.",
+                    consequence=f"Receive the reserved {active['reward']} coins for actual fulfilment.",enabled=not reason,reason=reason,
+                    terms={"deadline":active["deadline"],"reward":active["reward"]}))
             else:
                 used=any(c["recipient"]==recipient and c["day"]==self.minute//1440 for c in self.commissions)
                 service_ok=recipient!="Lucius" or not self._outstanding_household_service()
                 has_credit=self.axes[recipient]["reliability"]>=.35 or self.axes[recipient]["favors"]>=1
                 spending_favor=self.axes[recipient]["reliability"]<.35 and has_credit
-                items.append(choice("accept_commission",spec["title"],spec["description"],cost="One earned favor" if spending_favor else "A promise, with no advance",
+                deadline=self.minute+spec["duration"]
+                description=spec["description"]+f" Due within {spec['duration']} world minutes, by {self._due_label(deadline)}."
+                items.append(choice("accept_commission",spec["title"],description,cost="One earned favor" if spending_favor else "A promise, with no advance",
                     consequence="A real deadline and reserved reward. An earned favor replaces the usual reliability requirement." if spending_favor else "A real deadline and reserved reward.",
                     enabled=not used and service_ok and self.economy.cash[recipient]>=spec["reward"] and has_credit and not any(c["status"]=="open" for c in self.commissions),
-                    reason="One open commission and one account per day; available funds, service and reliability or an earned favor are required."))
+                    reason="One open commission and one account per day; available funds, service and reliability or an earned favor are required.",
+                    terms={"deadline":deadline,"duration_minutes":spec["duration"],"reward":spec["reward"]}))
         if recipient in ("Sabina","Chreste"):
-            eligible=recipient!="Sabina" or self.axes["Sabina"]["affinity"]>=.35
-            items.append(choice("work","Is there paid work here?","Take a real shift, paid from the counter or household account.","55 minutes" if recipient=="Sabina" else "80 minutes","Earn three or four coins if another shift can be funded.",eligible,"Repair your dealing with Sabina first."))
+            payer="Sabina" if recipient=="Sabina" else "Lucius"
+            wage=3 if recipient=="Sabina" else 4
+            reason=""
+            if recipient=="Sabina" and self.axes["Sabina"]["affinity"]<.35: reason="Repair your dealing with Sabina first."
+            elif self.flags.get(f"work:{self.minute//1440}:{recipient}",0)>=2: reason="Today's extra work has already been taken."
+            elif self.economy.cash[payer]<wage: reason="This account cannot fund another shift now."
+            items.append(choice("work","Is there paid work here?","Take a real shift, paid from the counter or household account.","55 minutes" if recipient=="Sabina" else "80 minutes",f"The shift pays {wage} coins if funds remain available.",not reason,reason))
         if recipient in ("Felix","Marcus"):
-            items.append(choice("buy","Buy one flour unit","Trade at the current price, subject to coins, stock and standing.",consequence="One actual flour unit enters your bag.",quantity=1))
-        items.append(choice("inspect","Arrange a current supply inspection","Pay one coin; the result arrives after fifteen world minutes.","1 coin · 15 minutes","Obtain a direct dated observation."))
+            quote=self.buy_quote(recipient)
+            items.append(choice("buy","Buy one flour unit","Trade one flour unit at the offered price.",f"{quote['total_cost']:g} coins",
+                "One actual flour unit enters your bag.",quote["available"],quote["reason"],quantity=1,terms=quote))
+        items.append(choice("inspect","Arrange a current supply inspection","Pay one coin; the result arrives after fifteen world minutes.","1 coin · 15 minutes","Obtain a direct dated observation.",self.economy.cash["Player"]>=1,"You need one coin to arrange an inspection."))
         if not self.flags.get(f"reflection:{recipient}:{self.minute//1440}"):
             items.append(choice("reflect","What do you remember of our dealings?","Recall selected retained shared experiences."))
         return items
@@ -668,7 +738,7 @@ class RebirthWorld(PompeiiWorld):
         own_keys={e.predicate for e in self.remembered(recipient) if e.subject=="cart"}
         topics=[{"id":"role","label":"Your life here","text":PERSONALITY[recipient]["role"],"evidence_ids":[]},
             {"id":"goals","label":"What needs doing?","text":f"{view['plan']['medium_term']}. For now, I must {view['plan']['short_term']}.","evidence_ids":view["plan"]["evidence_ids"]},
-            {"id":"memory","label":"Our history","text":self._memory_line(recipient),"evidence_ids":[e.event_id for e in self.remembered(recipient) if e.subject in ("rebirth","relationship")][-3:]}]
+            {"id":"memory","label":"Our history","text":self._memory_line(recipient),"evidence_ids":[e.event_id for e in self._recent_shared_memories(recipient)]}]
         known=self.knowledge(recipient)
         topics.append({"id":"news","label":"What have you heard?",
             "text":f"My retained dispatch says supply was {known['value']} at world minute {known['as_of']}. It is a dated report, not a promise about now." if known["value"]!="unknown" else "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check.",
