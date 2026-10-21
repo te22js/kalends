@@ -23,7 +23,7 @@ class Element {
   }
   addEventListener(name, fn) { this.listeners.set(name, [...(this.listeners.get(name) || []), fn]); }
   async emit(name, event = {}) { for (const fn of this.listeners.get(name) || []) await fn({target: this, preventDefault() {}, ...event}); }
-  closest(selector) { return selector === 'button' && this.tag === 'button' ? this : null; }
+  closest(selector) { return selector.split(',').includes(this.tag) ? this : null; }
   setAttribute(name, value) { this[name] = value; }
   focus() {}
   scrollIntoView() {}
@@ -183,3 +183,48 @@ test('V2 Lab waits for an accepted step response before requesting the mode chan
   assert.equal(h.requests.filter(r => r.url === '/api/mode').length, 1); assert.equal(h.element('#lab').open, true);
   await h.click('#close-lab'); await paintUntilSettled(h); assert.equal(moves(h).length, 1);
 });
+
+
+test('Escape closes a conversation while the speech input has keyboard focus', async () => {
+  const h = await harness(); await h.click('#enter'); await h.click('#interact');
+  let prevented = false;
+  await h.document.emit('keydown', {key: 'Escape', target: h.element('#speech'), preventDefault() { prevented = true; }});
+  assert.equal(h.element('#conversation').hidden,true); assert.equal(prevented,true);
+  await h.walk(); assert.equal(moves(h).length,1,'closing from the input must release conversation movement blocking');
+});
+
+test('Escape inside an open native dialog is left to its native cancellation path', async () => {
+  const h = await harness(); await h.click('#enter'); await h.click('#interact');
+  h.element('#settings').showModal(); let prevented = false;
+  await h.document.emit('keydown', {key: 'Escape', target: h.element('#telemetry'), preventDefault() { prevented = true; }});
+  assert.equal(prevented,false,'the document handler must preserve browser dialog cancellation');
+  assert.equal(h.element('#conversation').hidden,false,'a native dialog Escape must not close the underlying conversation');
+  // This VM does not pretend to execute a browser's default dialog action.
+});
+
+test('Lab native cancel still performs its authoritative game-mode transition', async () => {
+  const h = await harness(); await h.click('#enter'); await h.click('#open-lab');
+  let prevented = false;
+  await h.element('#lab').emit('cancel', {preventDefault() { prevented = true; }}); await h.flush();
+  assert.equal(prevented,true,'Lab waits for its mode transaction before closing');
+  assert.equal(h.element('#lab').open,false); assert.equal(h.getState().mode,'game');
+});
+
+test('focus loss discards an unfinished left click rather than accepting a late pointerup', async () => {
+  const h = await harness(); await h.click('#enter');
+  await h.element('#town').emit('pointerdown',{clientX:640,clientY:400,button:0});
+  await h.window.emit('blur');
+  await h.element('#town').emit('pointerup',{clientX:640,clientY:400,button:0}); await h.flush();
+  assert.equal(moves(h).length,0);
+  await h.walk(); assert.equal(moves(h).length,1,'a fresh click after return must remain usable');
+});
+
+for (const interruption of ['blur','pointercancel','lostpointercapture']) {
+  test('an interrupted camera drag does not swallow the next click: '+interruption, async () => {
+    const h = await harness(); await h.click('#enter');
+    await h.element('#town').emit('pointerdown',{clientX:640,clientY:400,button:1,pointerId:7});
+    if(interruption === 'blur') await h.window.emit('blur');
+    else await h.element('#town').emit(interruption,{pointerId:7});
+    await h.walk(); assert.equal(moves(h).length,1);
+  });
+}
