@@ -7,7 +7,7 @@
  const human=v=>String(v??'').replace(/_/g,' '),fmt=v=>Number(v??0).toLocaleString(undefined,{maximumFractionDigits:1}),arr=v=>Array.isArray(v)?v:v==null?[]:Object.values(v),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
  const portraits={Sabina:0,Marcus:1,Lucius:2,Felix:3,Chreste:4,Dama:5},sprites={Player:0,Felix:1,Sabina:2,Marcus:3,Chreste:4,Dama:5,Lucius:6};
  const roomCells={bakery:0,thermopolium:1,fullery:2,household:3};
- const S={data:null,lab:false,conversationEpoch:0,started:false,transition:false,movementFlight:null,busy:false,selected:null,context:null,proposal:null,line:null,topic:null,tab:'story',live:false,timer:null,keys:new Set(),display:new Map(),camera:{x:800,y:405,zoom:1,follow:true},interior:null,desired:null,lastFrame:0,frame:0,moveAt:0,hit:[],pendingTalk:null,toast:null,marker:null,firstInteraction:false,drag:null,pointer:null,fold:false};
+ const S={data:null,lab:false,conversationEpoch:0,started:false,transition:false,movementFlight:null,busy:false,selected:null,speechRecipient:null,context:null,proposal:null,line:null,topic:null,tab:'story',live:false,timer:null,keys:new Set(),display:new Map(),camera:{x:800,y:405,zoom:1,follow:true},interior:null,desired:null,lastFrame:0,frame:0,moveAt:0,hit:[],pendingTalk:null,toast:null,marker:null,firstInteraction:false,drag:null,pointer:null,fold:false};
  let prefs={reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,large:false,contrast:false,sound:false};try{prefs={...prefs,...JSON.parse(localStorage.getItem('kalends-rebirth-preferences')||'{}')};}catch{}
  const art={};
  const w=()=>S.data?.world,p=()=>w()?.player,people=()=>w()?.agents??[],places=()=>w()?.map.locations??[];
@@ -63,6 +63,9 @@
  async function approach(id){closeJournal();const a=person(id);if(!a)return;if(navigationEnabled()){if(near().includes(id)&&!S.nav.active&&remainingWalk()<1)return openConversation(id);return move({x:a.x,y:a.y,location:place(a.location)?.interior?a.location:'street'},id);}if(near().includes(id))return openConversation(id);toast(`Walking to ${id}…`);await move(place(a.location)?.interior?{location:a.location}:{x:a.x,y:a.y},id);}
  async function openConversation(id){
   if(S.busy||!near().includes(id))return;const conversationTrace=D?.begin('conversation',id);stopLive();const epoch=++S.conversationEpoch;S.selected=id;S.proposal=null;S.line=null;S.topic=null;
+  // Keep a draft only for its intended recipient. This happens before the
+  // context request so a stale response cannot clear somebody else's draft.
+  if(S.speechRecipient!==id){$('#speech').value='';S.speechRecipient=id;}
   try{const context=await api('/api/context?recipient='+encodeURIComponent(id));if(epoch!==S.conversationEpoch||S.selected!==id)return;S.context=context;document.body.classList.add('talking');$('#conversation').hidden=false;renderConversation();note('conversation_open',{location:p().location});}
   catch(e){if(epoch===S.conversationEpoch){S.selected=null;fail(e);}}finally{D?.end(conversationTrace,{cancelled:epoch!==S.conversationEpoch});}
  }

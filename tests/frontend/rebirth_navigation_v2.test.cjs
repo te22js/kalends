@@ -33,7 +33,7 @@ class Element {
   getBoundingClientRect() { return {left: 0, top: 0, width: 1280, height: 720}; }
 }
 
-function fixture({inside = false, telemetry = false, atDoor = false} = {}) {
+function fixture({inside = false, telemetry = false, atDoor = false, withSabina = false} = {}) {
   const locations = [
     {id: 'bakery', name: 'Bread counter', x: 650, y: 80, w: 320, h: 230, door: {x: 810, y: 350}, interior: true},
     {id: 'fullery', name: 'Fullery', x: 220, y: 500, w: 330, h: 240, door: {x: 385, y: 480}, interior: true},
@@ -41,8 +41,8 @@ function fixture({inside = false, telemetry = false, atDoor = false} = {}) {
   return {mode: 'game', capabilities: {navigation_revision: 2, route_preview: true}, telemetry_enabled: telemetry, world: {
     minute: 0, day: 1, clock: '08:00', historical_note: 'Fictional fixture',
     player: {id: 'Player', name: 'Aelia', cash: 10, inventory: 0, x: inside || atDoor ? 810 : 650, y: inside ? 275 : atDoor ? 350 : 415, location: inside ? 'bakery' : 'street', path: [], progression: {access: []}, commitments: [], commissions: []},
-    agents: [{id: 'Felix', name: 'Felix', role: 'baker', x: inside ? 810 : 750, y: inside ? 230 : 415, location: inside ? 'bakery' : 'street'}],
-    nearby: ['Felix'], map: {width: 1600, height: 1100, locations},
+    agents: [{id: 'Felix', name: 'Felix', role: 'baker', x: inside ? 810 : 750, y: inside ? 230 : 415, location: inside ? 'bakery' : 'street'}, ...(withSabina ? [{id:'Sabina',name:'Sabina',role:'food seller',x:700,y:415,location:'street'}] : [])],
+    nearby: withSabina ? ['Felix','Sabina'] : ['Felix'], map: {width: 1600, height: 1100, locations},
     objective: {title: 'Two promises', description: 'Find the terms.'},
     story: {stage: 'unresolved', route: null, leads: []}, journal: [],
   }};
@@ -70,6 +70,7 @@ async function harness(options = {}) {
   const requests = [], handlers = new Map(), timers = new Map(); let timerId = 0, state = fixture(options);
   handlers.set('/api/state', () => copy(state));
   handlers.set('/api/context?recipient=Felix', () => conversation());
+  handlers.set('/api/context?recipient=Sabina', () => ({...conversation(),speaker:'Sabina',choices:[]}));
   handlers.set('/api/route', body => ({points: [copy(state.world.player), {x: body.x ?? 810, y: body.y ?? 275, location: body.location || state.world.player.location}], destination: {x: body.x ?? 810, y: body.y ?? 275, location: body.location || state.world.player.location}}));
   handlers.set('/api/mode', body => { state = copy(state); state.mode = body.mode; return copy(state); });
   handlers.set('/api/advance', body => { state = copy(state); state.world.minute += body.minutes; return copy(state); });
@@ -228,3 +229,26 @@ for (const interruption of ['blur','pointercancel','lostpointercapture']) {
     await h.walk(); assert.equal(moves(h).length,1);
   });
 }
+
+
+test('unsent speech survives reopening its recipient and clears when changing recipient', async () => {
+  const h = await harness({withSabina:true}); await h.click('#enter'); await h.click('#interact');
+  h.element('#speech').value = 'What do you remember?';
+  await h.document.emit('keydown',{key:'Escape',target:h.element('#speech')});
+  await h.click('#interact'); assert.equal(h.element('#speech').value,'What do you remember?');
+  await h.click('#close-conversation'); await h.documentClick({approach:'Sabina'});
+  assert.equal(h.element('#speaker-name').textContent,'Sabina'); assert.equal(h.element('#speech').value,'');
+  assert.equal(h.requests.filter(r=>r.url==='/api/propose').length,0,'switching recipient must not submit the abandoned draft');
+});
+
+test('a delayed old context cannot clear the new recipient speech draft', async () => {
+  const h = await harness({withSabina:true}), pending = deferred();
+  h.handlers.set('/api/context?recipient=Felix',()=>pending.promise);
+  await h.click('#enter'); await h.click('#interact');
+  await h.document.emit('keydown',{key:'Escape',target:h.element('#town')});
+  await h.documentClick({approach:'Sabina'}); h.element('#speech').value = 'My question for Sabina';
+  pending.resolve(conversation()); await h.flush();
+  assert.equal(h.element('#speaker-name').textContent,'Sabina');
+  assert.equal(h.element('#speech').value,'My question for Sabina');
+  assert.equal(h.requests.filter(r=>r.url==='/api/propose').length,0);
+});
