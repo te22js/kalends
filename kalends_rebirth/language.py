@@ -4,7 +4,7 @@ from __future__ import annotations
 import copy
 import re
 from .ai import Cognition, ProposalError, allowed_evidence, check_evidence, evidence_records
-from .cognitive_market import V2_ACTIONS, BUYERS
+from .cognitive_market import V2_ACTIONS, V2_FIXED_QUANTITIES, BUYERS
 
 OLD_ACTIONS={"accept_delivery","work","buy","deliver","inspect","patronage","service","sell_information","claim","talk"}
 NEW_TARGETS={
@@ -46,6 +46,8 @@ def validate_action(action,recipient=None,view=None,*,enforce_choices=True):
         raise ProposalError("This action contains an irrelevant free-text field")
     if type(action.get("quantity",1)) is not int or not 1<=action.get("quantity",1)<=12:
         raise ProposalError("Quantity must be an integer from one through twelve")
+    if kind in V2_FIXED_QUANTITIES and action.get("quantity",1)!=V2_FIXED_QUANTITIES[kind]:
+        raise ProposalError("This counter action requires quantity "+str(V2_FIXED_QUANTITIES[kind]))
     if kind=="claim" and action.get("value") not in ("available","disrupted"):
         raise ProposalError("Supply assertions require a supported value")
     if kind=="talk" and action.get("topic","memory") not in TOPICS:
@@ -204,6 +206,13 @@ def offline_intent(text,recipient,view):
     protected=bool(re.search(r"\b(not|never|cancel|later)\b|don't|do not",t))
     question=bool(re.match(r"(what|who|why|when|how|where)\b",t))
     if protected or question:return {**base,"action":"talk","topic":topic}
+    # The exact visible counter-order wording is also a stable typed command.
+    # Copy its disclosed quantity before broader legacy terms such as 'advance'.
+    normalize=lambda value:re.sub(r"[^\w\s]","",value.casefold()).strip()
+    for choice in view.get("choices",[]):
+        candidate=choice.get("action",{})
+        if candidate.get("action") in V2_ACTIONS and choice.get("enabled",True) and normalize(t)==normalize(choice.get("label","")):
+            return copy.deepcopy(candidate)
     offered={c.get("action",{}).get("action") for c in view.get("choices",[]) if c.get("enabled",True)}
     service_request=re.search(r"\b(return|keep|complete|finish|fulfill|fulfil)\b.*\bservice\b|\bhousehold service\b",t)
     if recipient=="Lucius" and service_request:
@@ -246,7 +255,8 @@ def offline_intent(text,recipient,view):
 def action_label(action,view):
     def parameters(candidate):
         kind=candidate.get("action")
-        if kind=="buy":return {"quantity":candidate.get("quantity",1)}
+        if kind in ("buy","v2_cash_order","v2_deliver_order","v2_replace_order"):
+            return {"quantity":candidate.get("quantity",1)}
         if kind=="claim":return {"value":candidate.get("value")}
         if kind=="talk":
             topic=candidate.get("topic","memory")

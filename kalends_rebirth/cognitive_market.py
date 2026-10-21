@@ -26,6 +26,7 @@ SUPPLIER = "V2Wholesaler"
 VERIFIER = "V2DispatchClerk"
 V2_ACTIONS = frozenset({"v2_bonded_order", "v2_advance_order", "v2_cash_order", "v2_deliver_order",
     "v2_share_report", "v2_repay_order", "v2_replace_order"})
+V2_FIXED_QUANTITIES = {"v2_cash_order":2,"v2_bonded_order":1,"v2_advance_order":1,"v2_share_report":1,"v2_repay_order":1}
 ORDER_QUANTITY = 2
 ORDER_PRICE = 6
 UNIT_CREDIT = 3
@@ -383,6 +384,8 @@ class CognitiveMarketMixin:
             raise ValueError("Ask Felix or Sabina about their counter orders")
         if type(quantity) is not int or not 1<=quantity<=12:
             raise ValueError("quantity must be1..12")
+        if action in V2_FIXED_QUANTITIES and quantity!=V2_FIXED_QUANTITIES[action]:
+            raise ValueError("This counter action requires quantity "+str(V2_FIXED_QUANTITIES[action]))
         self.require_near(recipient)
         if action in ("v2_bonded_order","v2_advance_order"):
             return self._v2_accept(recipient,"advance" if action=="v2_advance_order" else "bonded")

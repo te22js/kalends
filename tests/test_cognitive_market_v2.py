@@ -215,7 +215,7 @@ def test_proximity_resources_and_unearned_advance_cannot_be_bypassed_and_do_not_
     with pytest.raises(ValueError,match="cash bond"):
         w.v2_interact("v2_advance_order","Felix")
     with pytest.raises(ValueError,match="actual flour"):
-        w.v2_interact("v2_cash_order","Felix")
+        w.v2_interact("v2_cash_order","Felix",2)
     assert w.ledger.content_hash()==before
 
 
