@@ -267,3 +267,15 @@ def test_authored_game_cases_demonstrate_actual_funded_terms_and_private_correct
     assert correction["new_beliefs"]["Sabina"]["as_of"]<correction["paid_player_report"]["as_of"]
     assert correction["external_calls"]==a["external_calls"]==b["external_calls"]==0
     assert journal["commands"][0]["after"]==200 and "minds_revision" not in journal["commands"][0]
+
+
+def test_bonded_default_discloses_actual_forfeiture_without_inventing_advance_debt():
+    s=session();opening(s);choose(s,"Felix","v2_bonded_order")
+    deadline=s.original._v2_contract("Felix","open")["deadline"]
+    s.apply("advance",{"minutes":deadline-s.original.minute,"mode":"compress"})
+    near(s,"Felix");before=material(s)
+    topic=s.context("Felix")["topics"][0]["text"]
+    assert "2-coin bond was forfeited" in topic
+    assert "No advance coins remain owed" in topic
+    assert s.original._v2_contract("Felix","defaulted")["debt"]==0
+    assert material(s)==before

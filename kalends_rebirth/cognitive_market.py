@@ -485,7 +485,9 @@ class CognitiveMarketMixin:
         if contract:
             text=f"Your order: {contract['delivered']}/2 flour units, due by {self._due_label(contract['deadline'])}. "
             if contract["status"]=="defaulted":
-                text+=f"The missed advance still leaves {contract['debt']:g} coins owed." if contract["debt"] else "The deadline stays missed. No advance coins remain owed; replace the missing flour to repair the batch."
+                if contract["mode"]=="bonded":
+                    text+=f"The {contract['bond']:g}-coin bond was forfeited. No advance coins remain owed; replace the missing flour to repair the batch. The original deadline stays missed."
+                else:text+=f"The missed advance still leaves {contract['debt']:g} coins owed." if contract["debt"] else "The deadline stays missed. No advance coins remain owed; replace the missing flour to repair the batch."
             else:text+="Bring the actual goods; your reserved terms stay in force."
         elif offer and offer["status"]=="fulfilled":
             text="The two flour units arrived and the six-coin price is settled. "
