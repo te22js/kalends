@@ -105,18 +105,26 @@ class CognitiveMarketMixin:
         if experience.kind in ("observed","told") and (experience.subject,experience.predicate) in (("grain","supply"),("Player","offered_flour")):
             episode=Episode.from_experience(agent,experience,salience=.65,goal_tags=("supply",))
         else:
-            outcome=experience.value if experience.subject=="v2_social" else {
-                "rb_commission_settled":"kept","rb_service_kept":"kept","rb_reconcile":"repaired",
-                "rb_commission_missed":"missed","rb_service_missed":"missed"}.get(experience.predicate)
+            # An admitted communication can mention a kept bargain without
+            # becoming this buyer's own credit history. Preserve that boundary
+            # even when its structured fields resemble an authored receipt.
+            personal=experience.kind in ("observed","episodic") and experience.accepted and experience.source_agent in (None,"Player")
+            outcome=None
+            if personal and (experience.subject,experience.predicate)==("v2_social","Player"):
+                outcome=experience.value
+            elif personal and experience.subject=="rebirth":
+                outcome={"rb_commission_settled":"kept","rb_service_kept":"kept","rb_reconcile":"repaired",
+                    "rb_commission_missed":"missed","rb_service_missed":"missed"}.get(experience.predicate)
             if outcome in ("kept","missed","repaired","repaid"):
                 delta={"kept":.18,"missed":-.25,"repaired":.16,"repaid":.08}[outcome]
                 signals=(SocialSignal("Player","reliability",delta),)
                 salient=.95;tags=("credit",)
             # Non-propositional episodes retain their literal account. A rich
             # episode is not reclassified by guessing facts out of prose.
-            episode=Episode(experience.event_id,agent,experience.tick,"episodic",experience.text[:1024] or "An admitted personal experience.",
+            episode=Episode(experience.event_id,agent,experience.tick,experience.kind,experience.text[:1024] or "An admitted personal experience.",
                 participants=(agent,"Player") if signals else (),salience=salient,goal_tags=tags,social_signals=signals,
-                accepted=bool(experience.accepted))
+                source_agent=experience.source_agent,origin_event=experience.claimed_origin_event,
+                origin_observer=experience.claimed_origin_observer,as_of=experience.as_of,accepted=bool(experience.accepted))
         added=self.v2_minds[agent].observe(episode)
         if added and not self._v2_initializing and (episode.key or signals):
             self._v2_queue_decision(agent)
@@ -354,12 +362,13 @@ class CognitiveMarketMixin:
             if quantity>remaining or self.economy.inventory["Player"]<quantity:
                 raise ValueError("Replace only missing units, using actual flour in your bag")
             delivered=contract["delivered"]+quantity;complete=delivered==contract["quantity"]
-            updated={**contract,"delivered":delivered,"debt":max(0,contract["debt"]-quantity*UNIT_CREDIT),
+            replacements=contract.get("replacement_units",0)+quantity
+            updated={**contract,"delivered":delivered,"replacement_units":replacements,"debt":max(0,contract["debt"]-quantity*UNIT_CREDIT),
                 "status":"repaired" if complete else "defaulted",**({"repaired_at":self.minute} if complete else {})}
             event=self._emit("v2_order_repaired",f"You replace {quantity} missing flour units for {buyer}; no second reward is paid",actors=("Player",buyer),scope="private",
                 parents=(contract["event_id"],),inventory_delta={"Player":-quantity,batch_account(buyer):quantity},
                 relationship_axes=[self._axis_change(buyer,reliability=.16,affinity=.06)] if complete else [],
-                commitment_updates=[{"agent":"Player","id":contract["id"],"repaired":complete,"replacement_units":delivered-contract["delivered"]}],
+                commitment_updates=[{"agent":"Player","id":contract["id"],"repaired":complete,"replacement_units":replacements}],
                 v2_market_patch={"contracts":[updated],"activity":{buyer:"replacement flour has arrived after the missed order"}})
             if complete:
                 self._v2_personal(buyer,event,"repaired");self._v2_finish_batch(buyer,event.event_id)

@@ -301,3 +301,50 @@ def test_bootstrap_uses_retained_experience_chronology_not_the_storage_order():
     worlds[1].remembered=lambda agent:list(reversed(original(agent)))
     for w in worlds:w.v2_activate_minds()
     assert worlds[0].v2_minds["Felix"].to_dict()==worlds[1].v2_minds["Felix"].to_dict()
+
+
+@pytest.mark.parametrize("kind,subject,predicate,value,speaker,accepted",[
+    ("told","rebirth","rb_commission_settled","Aelia kept it","Dama",True),
+    ("told","v2_social","Player","kept","Dama",True),
+    ("episodic","v2_social","Player","kept","Player",False),
+    ("episodic","rebirth","rb_commission_settled","Aelia kept it","Dama",True),
+    ("episodic","unrelated","rb_commission_settled","Aelia kept it","Player",True),
+])
+def test_hearsay_rejected_and_unrelated_receipts_do_not_become_personal_credit(kind,subject,predicate,value,speaker,accepted):
+    w=active()
+    event=w._emit("v2_reported_receipt","Dama reports another person's receipt",actors=("Dama","Felix"),scope="private")
+    w._remember("Felix",Experience(w.minute,kind,subject,predicate,value,speaker,w.minute,accepted,event.event_id,event.payload["title"]))
+    social=w.v2_minds["Felix"].social("Player","reliability",now=w.minute)
+    assert social["value"]==.5 and social["evidence_ids"]==[]
+    w._v2_decide("Felix",w.v2_market["offers"]["Felix"]["cycle"])
+    assert w.v2_market["offers"]["Felix"]["mode"]=="bonded"
+    stored=next(e for e in w.v2_minds["Felix"].to_dict()["episodes"] if e["event_id"]==event.event_id)
+    assert stored["kind"]==kind and stored["source_agent"]==speaker and stored["accepted"] is accepted
+
+
+def test_two_partial_late_replacements_preserve_the_full_institutional_repair_account():
+    w=active();run(w,"v2_bonded_order")
+    contract=w._v2_contract("Felix","open")
+    w.advance(contract["deadline"]-w.minute,"compress")
+    buy(w,2)
+    before=w.economy.cash["Player"];completed=w.v2_market["completed_batches"]["Felix"]
+    run(w,"v2_replace_order",quantity=1)
+    partial=w._v2_contract("Felix","defaulted")
+    assert partial["delivered"]==1 and partial["replacement_units"]==1
+    run(w,"v2_replace_order",quantity=1)
+    repaired=w._v2_contract("Felix")
+    institutional=next(c for c in w.economy.commitments["Player"] if c["id"]==contract["id"])
+    assert repaired["status"]=="repaired" and repaired["replacement_units"]==2
+    assert institutional["status"]=="missed" and institutional["repaired"] and institutional["replacement_units"]==2
+    assert w.economy.cash["Player"]==before and w.economy.inventory["Player"]==0
+    assert w.v2_market["completed_batches"]["Felix"]==completed+1
+    assert w.economy.inventory[batch_account("Felix")]==0
+
+
+def test_actual_authored_rebirth_receipt_can_support_later_credit():
+    w=active()
+    event=w._emit("rb_commission_settled","Felix directly settles Aelia's completed commission",actors=("Player","Felix"),scope="private")
+    social=w.v2_minds["Felix"].social("Player","reliability",now=w.minute)
+    assert social["value"]==.68 and social["evidence_ids"]==[event.event_id]
+    w._v2_decide("Felix",w.v2_market["offers"]["Felix"]["cycle"])
+    assert w.v2_market["offers"]["Felix"]["mode"]=="advance"
