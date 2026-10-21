@@ -1,0 +1,16 @@
+{
+  "status": "interrupted_environment_no_final_summary",
+  "error": "OSError ENOSPC while saving actual session journal",
+  "seed": 83007,
+  "days": 60,
+  "completed_cells": 46,
+  "time_utc": "2026-10-20T21:05:09.850640+00:00",
+  "source_unchanged": true,
+  "disk_usage_after_error": {
+    "total": 245107195904,
+    "used": 244680265728,
+    "free": 426930176
+  },
+  "tempdir": "/var/folders/dh/f06ht5zs7dg2s3vx8pzfpttw0000gn/T",
+  "notes": "No timing effect selection or summary performed. Existing raw data retained. First-run free-space measurement was not recorded; cannot infer a normal-disk I/O latency result from this constrained host."
+}

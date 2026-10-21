@@ -158,7 +158,7 @@ an explicitly authorized bounded live-provider evaluation.
 
 `python -m kalends_rebirth.ai_eval --out <new-directory>` reproduces the fixed
 functional corpus without loading configured providers or credentials. The
-completed release run in `results/rebirth/ai_evaluation_release_v2` passes 42/42 cases, with
+completed final release run in `results/rebirth/ai_evaluation_release_final` passes 42/42 cases, with
 raw proposals/receipts, source and artifact hashes, and a readable report. Its
 22 ordinary intent cases, adversarial fixtures, world integration, stalled worker,
 zero-budget refusal and injected REST response remain distinct groups. The

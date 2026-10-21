@@ -1,0 +1,350 @@
+{
+  "version": 4,
+  "config": {
+    "seed": 79,
+    "horizon_days": 60,
+    "memory_capacity": 32,
+    "information_policy": "cautious",
+    "communication": true
+  },
+  "origin": null,
+  "commands": [
+    {
+      "operation": "action",
+      "data": {
+        "action": "examine_receipt",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 17
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 850,
+        "y": 430
+      },
+      "at": 0,
+      "after": 3,
+      "receipt_id": 19
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "examine_tablet",
+        "recipient": "Dama",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 3,
+      "after": 3,
+      "receipt_id": 20
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "verify_cart",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 3,
+      "after": 18,
+      "receipt_id": 24
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "mediate",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 18,
+      "after": 38,
+      "receipt_id": 26
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "mode": "montage",
+        "minutes": 60
+      },
+      "at": 38,
+      "after": 98,
+      "receipt_id": null
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "accept_commission",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 98,
+      "after": 98,
+      "receipt_id": 44
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "inspect",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 98,
+      "after": 98,
+      "receipt_id": 45
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "mode": "compress",
+        "minutes": 30
+      },
+      "at": 98,
+      "after": 128,
+      "receipt_id": null
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "fulfill_commission",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 128,
+      "after": 128,
+      "receipt_id": 52
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "reconcile",
+        "recipient": "Marcus",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 128,
+      "after": 128,
+      "receipt_id": 53
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "bakery"
+      },
+      "at": 128,
+      "after": 131,
+      "receipt_id": 55
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "fullery"
+      },
+      "at": 131,
+      "after": 141,
+      "receipt_id": 57
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "thermopolium"
+      },
+      "at": 141,
+      "after": 157,
+      "receipt_id": 59
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "household"
+      },
+      "at": 157,
+      "after": 172,
+      "receipt_id": 61
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Lucius",
+        "action": "talk",
+        "topic": "role",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 172,
+      "after": 172,
+      "receipt_id": 62
+    },
+    {
+      "operation": "move",
+      "data": {
+        "location": "street"
+      },
+      "at": 172,
+      "after": 179,
+      "receipt_id": 64
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "mode": "skip",
+        "minutes": 10080
+      },
+      "at": 179,
+      "after": 10259,
+      "receipt_id": null,
+      "memory_presentation_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Marcus",
+        "action": "buy",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 10259,
+      "after": 10259,
+      "receipt_id": 288,
+      "memory_presentation_revision": 2
+    }
+  ],
+  "mode": "game",
+  "ledger_hash": "9b57da7d5e23f944584085e2f8fd38e8cf46f27f34ff1bbcc7eb2114def9cfa1",
+  "intervention": null,
+  "telemetry_enabled": true,
+  "product_events": [
+    {
+      "event": "conversation_open",
+      "elapsed_seconds": 1386.366,
+      "minute": 172,
+      "detail": {
+        "location": "household"
+      }
+    },
+    {
+      "event": "decision",
+      "elapsed_seconds": 1431.573,
+      "minute": 172,
+      "detail": {
+        "choice": "talk"
+      }
+    },
+    {
+      "event": "first_interaction",
+      "elapsed_seconds": 1431.596,
+      "minute": 172,
+      "detail": {
+        "choice": "confirmed"
+      }
+    },
+    {
+      "event": "return",
+      "elapsed_seconds": 1600.906,
+      "minute": 172,
+      "detail": {
+        "screen": "street"
+      }
+    },
+    {
+      "event": "return",
+      "elapsed_seconds": 1211.425,
+      "minute": 172,
+      "detail": {
+        "screen": "street"
+      }
+    },
+    {
+      "event": "journal_open",
+      "elapsed_seconds": 1215.979,
+      "minute": 172,
+      "detail": {
+        "screen": "bag"
+      }
+    },
+    {
+      "event": "conversation_open",
+      "elapsed_seconds": 1259.619,
+      "minute": 172,
+      "detail": {
+        "location": "household"
+      }
+    },
+    {
+      "event": "return",
+      "elapsed_seconds": 26.926,
+      "minute": 179,
+      "detail": {
+        "screen": "street"
+      }
+    },
+    {
+      "event": "consequence_seen",
+      "elapsed_seconds": 31.563,
+      "minute": 10259,
+      "detail": {
+        "screen": "aftermath"
+      }
+    },
+    {
+      "event": "time_control",
+      "elapsed_seconds": 31.563,
+      "minute": 10259,
+      "detail": {
+        "mode": "skip"
+      }
+    },
+    {
+      "event": "conversation_open",
+      "elapsed_seconds": 37.026,
+      "minute": 10259,
+      "detail": {
+        "location": "street"
+      }
+    },
+    {
+      "event": "decision",
+      "elapsed_seconds": 68.913,
+      "minute": 10259,
+      "detail": {
+        "choice": "buy"
+      }
+    },
+    {
+      "event": "first_interaction",
+      "elapsed_seconds": 68.941,
+      "minute": 10259,
+      "detail": {
+        "choice": "confirmed"
+      }
+    },
+    {
+      "event": "journal_open",
+      "elapsed_seconds": 69.554,
+      "minute": 10259,
+      "detail": {
+        "screen": "bag"
+      }
+    }
+  ]
+}

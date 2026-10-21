@@ -1,0 +1,481 @@
+{
+  "basis": "Exact replay of the journal produced by actual browser UI actions",
+  "journal_sha256": "100a104c7dd2af00c7c5025903f217d33cac74824a3b14d2945ca02df1d7c996",
+  "ledger_hash": "75ebb2dc2da2d9f156cad219ec87717a3d3cdf0a91b9274fee50218e649c1cde",
+  "minute": 172,
+  "commands": 16,
+  "story": {
+    "chapter": "The account at the fountain",
+    "title": "Six sacks. Two promises.",
+    "hook": "A cart waits while two buyers insist it is theirs.",
+    "stage": "resolved",
+    "route": "broker",
+    "objective": {
+      "id": "your-place",
+      "title": "A name people can work with",
+      "status": "open",
+      "description": "Keep a commission, earn a shift, investigate a new report, or leave and see what the district does without you.",
+      "steps": []
+    },
+    "leads": [],
+    "deadline": 360,
+    "followup_ready": true,
+    "followup_done": true,
+    "service_due": null,
+    "service_done": false,
+    "service_missed": false
+  },
+  "comparison": {
+    "original_minute": 172,
+    "branch_minute": 172,
+    "identical": false,
+    "changed_fields": [
+      "cash",
+      "inventory",
+      "commitments",
+      "beliefs",
+      "decisions",
+      "flags",
+      "memories",
+      "ledger_hash",
+      "rebirth",
+      "witnessed",
+      "queue"
+    ],
+    "original_player": {
+      "id": "Player",
+      "name": "Aelia",
+      "role": "freedwoman and errand worker",
+      "x": 770.0,
+      "y": 1014.0,
+      "location": "household",
+      "cash": 9.0,
+      "inventory": 0,
+      "reputation": 2,
+      "commitments": [
+        {
+          "id": "rebirth:Marcus:0",
+          "beneficiary": "Marcus",
+          "quantity": 1,
+          "fulfilled": 1,
+          "deadline": 338,
+          "status": "fulfilled",
+          "event_id": 44,
+          "agent": "Player"
+        }
+      ],
+      "path": [
+        [
+          1225.0,
+          704.0
+        ],
+        [
+          1225,
+          480
+        ],
+        [
+          1225,
+          415
+        ],
+        [
+          1225,
+          415
+        ],
+        [
+          770,
+          415
+        ],
+        [
+          770,
+          790
+        ],
+        [
+          770.0,
+          1014.0
+        ]
+      ],
+      "affiliation": "independent",
+      "social_position": "Fictional freedwoman navigating work and household obligations",
+      "progression": {
+        "access": [
+          "broker"
+        ],
+        "completed_commissions": 1,
+        "paid_shifts": 0
+      },
+      "commissions": [
+        {
+          "id": "rebirth:Marcus:0",
+          "recipient": "Marcus",
+          "day": 0,
+          "kind": "evidence",
+          "quantity": 1,
+          "reward": 3,
+          "accepted_at": 98,
+          "deadline": 338,
+          "status": "fulfilled",
+          "event_id": 44
+        }
+      ],
+      "documents": [
+        {
+          "id": "market_receipt",
+          "title": "Sabina's wax account",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus.",
+          "event_id": 17,
+          "as_of": 0
+        },
+        {
+          "id": "household_tablet",
+          "title": "The household's delivery instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart.",
+          "event_id": 20,
+          "as_of": 0
+        },
+        {
+          "id": "loading_record",
+          "title": "The carrier's loading account",
+          "text": "Six sacks share the cart. A three-coin carrying charge must be met before release. The earlier dispatch describes readiness, not completed delivery.",
+          "event_id": 24,
+          "as_of": 0
+        }
+      ]
+    },
+    "altered_player": {
+      "id": "Player",
+      "name": "Aelia",
+      "role": "freedwoman and errand worker",
+      "x": 770.0,
+      "y": 1014.0,
+      "location": "household",
+      "cash": 5.0,
+      "inventory": 0,
+      "reputation": 0,
+      "commitments": [],
+      "path": [
+        [
+          1225.0,
+          704.0
+        ],
+        [
+          1225,
+          480
+        ],
+        [
+          1225,
+          415
+        ],
+        [
+          1225,
+          415
+        ],
+        [
+          770,
+          415
+        ],
+        [
+          770,
+          790
+        ],
+        [
+          770.0,
+          1014.0
+        ]
+      ],
+      "affiliation": "independent",
+      "social_position": "Fictional freedwoman navigating work and household obligations",
+      "progression": {
+        "access": [],
+        "completed_commissions": 0,
+        "paid_shifts": 0
+      },
+      "commissions": [],
+      "documents": [
+        {
+          "id": "market_receipt",
+          "title": "Sabina's wax account",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus.",
+          "event_id": 17,
+          "as_of": 0
+        },
+        {
+          "id": "household_tablet",
+          "title": "The household's delivery instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart.",
+          "event_id": 20,
+          "as_of": 0
+        }
+      ]
+    },
+    "original_metrics": {
+      "minute": 172,
+      "events": 63,
+      "decisions": 1,
+      "delivered": 0,
+      "required": 0,
+      "delivery_fill_rate": null,
+      "citizen_cash_change": -11.0,
+      "player_cash_change": 3.0,
+      "player_grain": 0,
+      "stock": 6,
+      "trust_player": {
+        "Felix": 0.6,
+        "Sabina": 0.6,
+        "Marcus": 0.6,
+        "Chreste": 0.6,
+        "Dama": 0.6,
+        "Lucius": 0.6
+      },
+      "information_sales": 0,
+      "inspection_cost": 2,
+      "player_commitments": [
+        {
+          "id": "rebirth:Marcus:0",
+          "beneficiary": "Marcus",
+          "quantity": 1,
+          "fulfilled": 1,
+          "deadline": 338,
+          "status": "fulfilled",
+          "event_id": 44,
+          "agent": "Player"
+        }
+      ],
+      "rebirth_route": "broker",
+      "rebirth_stage": "resolved",
+      "commission_fulfilled": 1,
+      "commission_missed": 0,
+      "relationship_axes": {
+        "Felix": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Sabina": {
+          "reliability": 0.6,
+          "credibility": 0.75,
+          "affinity": 0.62,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Marcus": {
+          "reliability": 0.76,
+          "credibility": 0.68,
+          "affinity": 0.63,
+          "competence": 0.65,
+          "favors": 1
+        },
+        "Chreste": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Dama": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Lucius": {
+          "reliability": 0.6,
+          "credibility": 0.75,
+          "affinity": 0.45,
+          "competence": 0.3,
+          "favors": 0
+        }
+      },
+      "access": [
+        "broker"
+      ]
+    },
+    "altered_metrics": {
+      "minute": 172,
+      "events": 49,
+      "decisions": 1,
+      "delivered": 0,
+      "required": 0,
+      "delivery_fill_rate": null,
+      "citizen_cash_change": -4.0,
+      "player_cash_change": -1.0,
+      "player_grain": 0,
+      "stock": 6,
+      "trust_player": {
+        "Felix": 0.6,
+        "Sabina": 0.6,
+        "Marcus": 0.6,
+        "Chreste": 0.6,
+        "Dama": 0.6,
+        "Lucius": 0.6
+      },
+      "information_sales": 0,
+      "inspection_cost": 1,
+      "player_commitments": [],
+      "rebirth_route": null,
+      "rebirth_stage": "unresolved",
+      "commission_fulfilled": 0,
+      "commission_missed": 0,
+      "relationship_axes": {
+        "Felix": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Sabina": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Marcus": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Chreste": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Dama": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        },
+        "Lucius": {
+          "reliability": 0.6,
+          "credibility": 0.6,
+          "affinity": 0.5,
+          "competence": 0.3,
+          "favors": 0
+        }
+      },
+      "access": []
+    },
+    "original_story": {
+      "chapter": "The account at the fountain",
+      "title": "Six sacks. Two promises.",
+      "hook": "A cart waits while two buyers insist it is theirs.",
+      "stage": "resolved",
+      "route": "broker",
+      "objective": {
+        "id": "your-place",
+        "title": "A name people can work with",
+        "status": "open",
+        "description": "Keep a commission, earn a shift, investigate a new report, or leave and see what the district does without you.",
+        "steps": []
+      },
+      "leads": [],
+      "deadline": 360,
+      "followup_ready": true,
+      "followup_done": true,
+      "service_due": null,
+      "service_done": false,
+      "service_missed": false
+    },
+    "altered_story": {
+      "chapter": "The account at the fountain",
+      "title": "Six sacks. Two promises.",
+      "hook": "A cart waits while two buyers insist it is theirs.",
+      "stage": "unresolved",
+      "route": null,
+      "objective": {
+        "id": "six-sacks",
+        "title": "Six sacks. Two promises.",
+        "status": "unresolved",
+        "description": "Sabina's counter and Lucius's household both claim the cart. Read their terms, pay for a different arrangement, or put your name behind one side.",
+        "steps": [
+          {
+            "text": "Hear Sabina's account by the fountain",
+            "done": false
+          },
+          {
+            "text": "Choose what your coins, evidence or promise will put first",
+            "done": false
+          }
+        ],
+        "deadline": 360
+      },
+      "leads": [
+        {
+          "id": "market_receipt",
+          "recipient": "Sabina",
+          "location": "thermopolium",
+          "title": "Read the counter's receipt",
+          "done": true
+        },
+        {
+          "id": "household_tablet",
+          "recipient": "Dama",
+          "location": "bakery",
+          "title": "Ask Dama what the household ordered",
+          "done": true
+        },
+        {
+          "id": "loading_record",
+          "recipient": "Marcus",
+          "location": "street",
+          "title": "Find out why the cart is waiting",
+          "done": false
+        },
+        {
+          "id": "household_offer",
+          "recipient": "Lucius",
+          "location": "household",
+          "title": "Hear the steward's offer",
+          "done": false
+        }
+      ],
+      "deadline": 360,
+      "followup_ready": false,
+      "followup_done": false,
+      "service_due": null,
+      "service_done": false,
+      "service_missed": false
+    },
+    "interpretation": "One accepted action removed. Later commands replay at original start times where feasible; infeasible commands are disclosed. Changed IDs alone are not an outcome."
+  },
+  "intervention": {
+    "kind": "remove_action",
+    "event_id": 24,
+    "removed_command": 3,
+    "skipped": [
+      {
+        "command": 4,
+        "reason": "This opportunity is not currently offered"
+      },
+      {
+        "command": 6,
+        "reason": "This opportunity is not currently offered"
+      },
+      {
+        "command": 9,
+        "reason": "This opportunity is not currently offered"
+      },
+      {
+        "command": 10,
+        "reason": "This opportunity is not currently offered"
+      }
+    ],
+    "scheduling": "Later accepted commands remain at their original start minutes where feasible."
+  },
+  "local_note_events": [
+    "conversation_open",
+    "decision",
+    "first_interaction",
+    "return"
+  ],
+  "raw_typed_question_in_journal": false
+}

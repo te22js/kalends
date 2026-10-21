@@ -1,0 +1,17 @@
+# The next thirty days
+
+This is a prospective execution sequence, not a report of recruited players or demand. Rebirth has a playable offline episode and tested persistence; it has no independent enjoyment or return evidence. Keep the existing game runnable throughout.
+
+| Period | Work | Evidence required to advance |
+|---|---|---|
+| Days 1–3 | Confirm stable storage before any new durable-save performance study. Review the release on actual phones. Run the six formative sessions in PRODUCT_VALIDATION.md once people and consent are available. | Exact build, raw observations, help/abandonment counts, resource/confirmation errors and physical-device failures. Separate coached success. |
+| Days 4–7 | Repair the two most repeated observed obstacles. Public quotes, reliable resource guards and exact commission deadlines are now implemented; check how well players understand them. Improve follow-up leads, foreground occlusion and authored commission/repair replies where observations warrant it. | Another complete browser route and save/restore after each repair; a changed screenshot where a visual defect was fixed. No new provider needed to repair controls. |
+| Days 8–14 | Freeze the repaired build; run twelve different uncoached sessions and the predefined optional continuation/72-hour unprompted-return protocol. | All starts in denominators, raw counts, actual active time, remembered people/decisions, causal understanding, reminders separated from organic return. Apply the prospective gates without moving them after results. |
+| Days 15–21 | Build one compact second episode using the same account/evidence/obligation contracts. Give the first agreement a visible environmental consequence and a new dilemma, rather than more flour quantities. Record authoring and debugging hours. | At least three feasible approaches, funded resources, no hidden omniscient shortcut, a connected consequence, reproducible alternatives, and a second full playthrough. Historical specialist review for new legal/social claims. |
+| Days 22–30 | If playtest evidence justifies it, evaluate a configured inexpensive model on the frozen intent/dialogue cases and observed player phrasing. Test outside authoring only after the second first-party episode. | Explicit credential source and budget; actual usage and fallback/latency/grounding results, compared with offline quality. Five outside authors is a proposed later study, not a completed platform milestone. |
+
+The release now provides structured public trade quotes, revision expiry, resource-aware contextual choices and chronological retained-memory disclosure. The next engineering improvements are stronger state-specific dialogue, a second dilemma, and local instrumentation identifiers/idle handling. The current note stream cannot estimate cross-session retention unaided. Voice, unrestricted generated biographies, a surveyed city, large populations and a creator marketplace remain separate projects.
+
+The performance change shares sealed historical records across transaction clones and caches exact ledger hashes. It does not accelerate simulated social time hierarchically. Preserve both reference and optimized implementations, the failed storage attempts, and fresh-seed registration before any new performance method is selected.
+
+Do not publish, contact participants, activate paid inference or push a branch on the strength of this plan alone. Obtain the user's authorization for those external actions; source work and local verification can continue normally.

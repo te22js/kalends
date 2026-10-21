@@ -38,7 +38,7 @@ uses actual events, a portrait and a short line rather than a JSON receipt.
 ## Pipeline and review gates
 
 All selected generated assets are copied into kalends_rebirth/static/assets.
-ASSET_MANIFEST.json records origin, generation prompt and use; no asset is left
+ASSET_MANIFEST.json records origin, generation-brief summary and use; no asset is left
 only in a tool's private output folder. Portrait atlases are clipped at render
 time, not edited into undocumented derivatives. Web display can scale images;
 original generated outputs remain available in the project.

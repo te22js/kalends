@@ -1,0 +1,45 @@
+{
+  "actual_external_inference_calls": 0,
+  "actual_external_inference_spend_usd": 0,
+  "cases": 42,
+  "evaluation_kind": "functional_contract_qa",
+  "groups": {
+    "budget_fixture": {
+      "cases": 1,
+      "passed": 1
+    },
+    "injected_contract_attacks": {
+      "cases": 6,
+      "passed": 6
+    },
+    "injected_intents": {
+      "cases": 9,
+      "passed": 9
+    },
+    "offline_intents": {
+      "cases": 22,
+      "passed": 22
+    },
+    "timeout_fixture": {
+      "cases": 1,
+      "passed": 1
+    },
+    "transport_fixture": {
+      "cases": 1,
+      "passed": 1
+    },
+    "world_integration": {
+      "cases": 2,
+      "passed": 2
+    }
+  },
+  "limitations": [
+    "Offline parser behavior and deterministic mocks are not measurements of LLM quality.",
+    "Wire-fixture token counts and prices are synthetic; no provider was contacted.",
+    "Latency is local functional-QA timing, not a controlled model comparison.",
+    "Hashes describe these source bytes; the Git HEAD may precede uncommitted changes."
+  ],
+  "offline_intent_median_seconds": 0.0004279795000456943,
+  "passed": 42,
+  "real_model_quality_measured": false
+}

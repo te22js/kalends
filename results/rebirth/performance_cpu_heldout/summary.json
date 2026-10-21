@@ -1,0 +1,244 @@
+{
+  "cells": 120,
+  "accepted_timed_transactions": 1200,
+  "warmups": 240,
+  "traced_transactions": 240,
+  "in_memory_replays": 240,
+  "rejection_checks": 240,
+  "all_semantics_equal": true,
+  "conditions": [
+    {
+      "days": 1,
+      "density": "ordinary",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        52,
+        87
+      ],
+      "memory_transaction": {
+        "geometric_mean": 1.6743689324786597,
+        "low95": 1.5946757081747656,
+        "high95": 1.7902821192166272,
+        "paired_seeds": 20,
+        "reference_median": 1.4251040000000001,
+        "optimized_median": 0.9025835
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.4650824668112416,
+        "low95": 0.4499990602845908,
+        "high95": 0.4893541520107088,
+        "paired_seeds": 20,
+        "reference_median": 0.502312,
+        "optimized_median": 1.1276665000000001
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 1.779830083031537,
+        "low95": 1.7616179366151619,
+        "high95": 1.7993602196339067,
+        "paired_seeds": 20,
+        "reference_median": 181696.0,
+        "optimized_median": 101467.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 0.5869789999999999,
+        "optimized": 0.0019165
+      }
+    },
+    {
+      "days": 1,
+      "density": "conversation_heavy",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        66,
+        101
+      ],
+      "memory_transaction": {
+        "geometric_mean": 1.6810533279284718,
+        "low95": 1.5484106521761072,
+        "high95": 1.8014281713391158,
+        "paired_seeds": 20,
+        "reference_median": 1.9024795,
+        "optimized_median": 1.1281664999999998
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.6065391959484305,
+        "low95": 0.5617618402588175,
+        "high95": 0.6540604159723272,
+        "paired_seeds": 20,
+        "reference_median": 1.5287294999999999,
+        "optimized_median": 2.5190004999999998
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 1.659890611369038,
+        "low95": 1.6026962863430922,
+        "high95": 1.722860979598389,
+        "paired_seeds": 20,
+        "reference_median": 261008.0,
+        "optimized_median": 149115.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 0.708,
+        "optimized": 0.0015
+      }
+    },
+    {
+      "days": 30,
+      "density": "ordinary",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        962,
+        1047
+      ],
+      "memory_transaction": {
+        "geometric_mean": 5.07259670914119,
+        "low95": 4.935504161591829,
+        "high95": 5.2090143225739585,
+        "paired_seeds": 20,
+        "reference_median": 13.9901665,
+        "optimized_median": 2.7618125
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.47419573790743685,
+        "low95": 0.44938655786302933,
+        "high95": 0.49301113829082394,
+        "paired_seeds": 20,
+        "reference_median": 20.6600415,
+        "optimized_median": 42.546438
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 6.0648374074041564,
+        "low95": 6.027560875771081,
+        "high95": 6.101433347801843,
+        "paired_seeds": 20,
+        "reference_median": 2137332.0,
+        "optimized_median": 351080.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 9.504375,
+        "optimized": 0.002666
+      }
+    },
+    {
+      "days": 30,
+      "density": "conversation_heavy",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        1384,
+        1467
+      ],
+      "memory_transaction": {
+        "geometric_mean": 4.130134293686626,
+        "low95": 3.965320042439678,
+        "high95": 4.28214819575891,
+        "paired_seeds": 20,
+        "reference_median": 20.228603999999997,
+        "optimized_median": 4.8432715
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.7156511509482325,
+        "low95": 0.7016934290091601,
+        "high95": 0.728970175558826,
+        "paired_seeds": 20,
+        "reference_median": 77.81589600000001,
+        "optimized_median": 107.8557705
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 3.641966990100472,
+        "low95": 3.610800781008343,
+        "high95": 3.6724184642430275,
+        "paired_seeds": 20,
+        "reference_median": 2709700.0,
+        "optimized_median": 741901.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 13.094875,
+        "optimized": 0.0034375
+      }
+    },
+    {
+      "days": 60,
+      "density": "ordinary",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        1691,
+        1866
+      ],
+      "memory_transaction": {
+        "geometric_mean": 6.257500702065156,
+        "low95": 6.050529630588628,
+        "high95": 6.455570590626698,
+        "paired_seeds": 20,
+        "reference_median": 24.2500835,
+        "optimized_median": 3.8470835
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.5076922564542259,
+        "low95": 0.478505744032411,
+        "high95": 0.5325673425349793,
+        "paired_seeds": 20,
+        "reference_median": 41.156853999999996,
+        "optimized_median": 81.5486875
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 8.52663743013835,
+        "low95": 8.229380987351487,
+        "high95": 8.806418599127092,
+        "paired_seeds": 20,
+        "reference_median": 3698340.0,
+        "optimized_median": 421517.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 17.255771,
+        "optimized": 0.0035624999999999997
+      }
+    },
+    {
+      "days": 60,
+      "density": "conversation_heavy",
+      "seeds": 20,
+      "all_semantics_equal": true,
+      "events_range": [
+        2533,
+        2706
+      ],
+      "memory_transaction": {
+        "geometric_mean": 4.574966562384951,
+        "low95": 4.476064202933955,
+        "high95": 4.680513353760131,
+        "paired_seeds": 20,
+        "reference_median": 37.790896000000004,
+        "optimized_median": 8.3554165
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.7305465576778547,
+        "low95": 0.7169962210010646,
+        "high95": 0.7461527332044653,
+        "paired_seeds": 20,
+        "reference_median": 153.564729,
+        "optimized_median": 213.770271
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 3.6762374057971425,
+        "low95": 3.6468580820272822,
+        "high95": 3.7056859787822694,
+        "paired_seeds": 20,
+        "reference_median": 4724596.0,
+        "optimized_median": 1289081.0
+      },
+      "revision_hash_median_ms": {
+        "reference": 23.958624999999998,
+        "optimized": 0.0043125
+      }
+    }
+  ],
+  "disk_usage_after": {
+    "total": 245107195904,
+    "used": 244349394944,
+    "free": 757800960
+  }
+}

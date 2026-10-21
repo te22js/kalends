@@ -1,0 +1,296 @@
+{
+  "created_utc": "2026-10-21T11:51:48.576568+00:00",
+  "baseline_manifest_verified": true,
+  "images": [
+    {
+      "path": "baseline/01_arrival.jpg",
+      "sha256": "2bc8bcb75ddac98a3babe0f1cc3dcc9117ff5ee05562192f3dbdb01ef2f25027",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/02_promise.jpg",
+      "sha256": "6255598b5b3ddc7a1345da8e93a83dbc49afefd4c02b676684f4dd3434048489",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/03_paid_work.jpg",
+      "sha256": "c90f15071ebe7281f879309528504548d3c1da27a9dc9b58b4321eef7ccedf04",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/04_promise_kept.jpg",
+      "sha256": "a92c931bbf0a49e76650e04f4ea3b3b5b05223ec2fbbfc9f0bcb4aed07b58eda",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/05_causal_records.jpg",
+      "sha256": "9106935766660cfe8f52b4c0b37ebdbbdca179e6dc6614b57def9328617794e4",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/06_week_away.jpg",
+      "sha256": "f9c33547caa673f9f33dec12ebbe8a39bf30b8999b325992e6f0712816b19236",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/07_remembered_return.jpg",
+      "sha256": "c2abaef26084b7456c0785dbf061a1f76dc512c28668b5a9f5e29ba0d6e928c1",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/08_executed_alternative.jpg",
+      "sha256": "fde6bc7885c69d8487c0be96965934d1e7a66c83518e26c1a83be7d7ba62488b",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "baseline/09_fresh_audit_street.jpg",
+      "sha256": "2bc8bcb75ddac98a3babe0f1cc3dcc9117ff5ee05562192f3dbdb01ef2f25027",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "ad979b4"
+    },
+    {
+      "path": "pass1/03_review_before_fix.jpg",
+      "sha256": "babe97a03bcec1255fffc865d35d3e5741f1722369b7eedee59665ded6645287",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass1/04_mobile_title.jpg",
+      "sha256": "1e934e2c6e28bd157bb2d64f16dcc7ebeb13a5bc9309b8999f43ab93d9698a06",
+      "width": 1265,
+      "height": 846,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/01_title.jpg",
+      "sha256": "a846572863b5a5ae212d1069e2e9569fd387947b45f5b36b83421ea73b53795d",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/02_street.jpg",
+      "sha256": "d4e91d070381bc9117a01b28cda3fbbf7ddfcf9bc366700c9cf74309e9dff9be",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/03_conversation.jpg",
+      "sha256": "5d033890acef624aa4d1191d703672e0b269b840c336ab2e3110bdb36b5d0551",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/04_review.jpg",
+      "sha256": "de9d5a625eeaf6198f022ae8021006aacf7d430af2a51a7fe23174b5a970254a",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/05_journal.jpg",
+      "sha256": "03e54db975050a450f3ef95061404e16ce54680990ee33b78280bc35c2e54299",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/06_withheld_account.jpg",
+      "sha256": "27e8f61fff0e059e16cd9efb287dcd82c4dfe05f093e6a4c806e222108087d85",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "pass2/07_aftermath.jpg",
+      "sha256": "1ba263f9f7baaa25a9515d70049ff4d47686a05a00886f06841f0d3a4aff693d",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/03_conversation_after_choice.jpg",
+      "sha256": "44fa6ae66cb87d6e06bb96e5bf3cd2f35b17847b074f78cf21ac2046b447bbd3",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/04_review.jpg",
+      "sha256": "f5ed1542bf12ae099cbe745b9f4831f8c7019fdf0e0c22d53752d06a664b965c",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/05_bag_and_progress.jpg",
+      "sha256": "f3707c19a799485752a13902382e8cd4fa67da8e1cf0613238c35dca24c82fb3",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/06_time_and_opportunity.jpg",
+      "sha256": "a54e56fe2c39c8f0b7eadb2b8b886549160dd9f674d84701114d6878e17d38d5",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/07_bakery_interior.jpg",
+      "sha256": "17f7372a8ca35787c806ca447611f7431ae33975e9698cc6f3cf6b9c5f6c7cb6",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/08_fullery_interior.jpg",
+      "sha256": "0b374de2b0d4867a2246e7018081746a9d66ebb60c8f20462e42683e1743131d",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/09_food_counter_interior.jpg",
+      "sha256": "f84b5c1d561e6477b4b363145a9b05383d55672a5d827f06a89474d0db65456c",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/10_household_interior.jpg",
+      "sha256": "ef41bd13bd68dc82cee7bf12c0fc44ed12b14e4d7b0a40a9b9139fcde48033ce",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/11_world_lab.jpg",
+      "sha256": "06b7bcd0401bce2ce8d4a19ed933d6e3fc20cb275864664ad9248eb0516bc07c",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/12_local_notes.jpg",
+      "sha256": "e2e394331777d4280e651c692e57927fc270d8ade4ac16b7941fcf6b35e48b10",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/13_final_street.jpg",
+      "sha256": "caeabe1be9c97b5c29a39c51fb9afb97ccb2cac80ad73ea835b83e6b7df0690d",
+      "width": 440,
+      "height": 724,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/14_final_title_desktop.jpg",
+      "sha256": "1db5ad35124f19cec039e32fd2607cb2469603eb5d742eacf84659f9d0a88f8e",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/15_final_street_narrow440.jpg",
+      "sha256": "caeabe1be9c97b5c29a39c51fb9afb97ccb2cac80ad73ea835b83e6b7df0690d",
+      "width": 440,
+      "height": 724,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/16_final_bag_desktop.jpg",
+      "sha256": "27399c3fdecd4e817ee9fa1113ff6c964f88c158fe68808d7e8ea391376c7f7e",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/17_final_mobile_conversation.jpg",
+      "sha256": "e0a3b822931181e6ab7fbd4ce060c024a874dda35ad1b8be3f1e70da306c4f32",
+      "width": 390,
+      "height": 844,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/18_final_mobile_review.jpg",
+      "sha256": "5811ddd514f7be2b40afa546698d0fc3387af559d1a3185da85f1b02987389d8",
+      "width": 390,
+      "height": 844,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/19_final_mobile_room.jpg",
+      "sha256": "dbe3b8d3823ebe8fb85f6a3ecadd5ddf89e4eeb0fb0040ca7604544b6210e2de",
+      "width": 390,
+      "height": 844,
+      "runtime_checkpoint": null
+    },
+    {
+      "path": "release/20_final_street_desktop.jpg",
+      "sha256": "2f242b595b38906821cd526a3e05523f61e2b99b8be3916d903ba467bbc7231a",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    },
+    {
+      "path": "release/21_final_week_return.jpg",
+      "sha256": "ef78305b5f4cf56ddae8480d8c987a5806a791bd5b0cc09d9cba45b5bb40c3df",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    },
+    {
+      "path": "release/22_final_retained_memory.jpg",
+      "sha256": "ffebfd3948c67a5b422b83dea2c744c5cdadf894c3cd311440d2db372090a728",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    },
+    {
+      "path": "release/23_final_commission_deadline.jpg",
+      "sha256": "6f58c126924383e0441c56988089f1c9917593e4b8f5975a96c4152c073d69b6",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    },
+    {
+      "path": "release/24_final_unavailable_quote.jpg",
+      "sha256": "969a3372a8ca00a97da978221996c1e9c97a777b8c9687c5c4b2f9b629c64ed9",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    },
+    {
+      "path": "release/25_final_completed_purchase.jpg",
+      "sha256": "16115e60c1cdeed5d18602016a3a1497e8e72c728b3ee93fe43959dbc6e532b9",
+      "width": 1280,
+      "height": 720,
+      "runtime_checkpoint": "2c5d9a1"
+    }
+  ],
+  "no_concept_images_substituted": true,
+  "video_recorded": false,
+  "source_notes": "Final client bytes are in2c5d9a1. Final20\u201325 follow restart to that runtime;13\u201319 precede final backend restart. Exact earlier runtime unrecorded where checkpoint is null. Responsive viewports are not physical phones."
+}

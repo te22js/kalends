@@ -1,0 +1,28 @@
+{
+  "verification": "Python model continuation of an actual browser-produced journal; not a browser button/visual test",
+  "before_minute": 172,
+  "after_minute": 10261,
+  "elapsed_skip_minutes": 10080,
+  "day": 8,
+  "coins": 9.0,
+  "completed_commissions": 1,
+  "relationship": {
+    "reliability": 0.76,
+    "credibility": 0.68,
+    "affinity": 0.63,
+    "competence": 0.65,
+    "favors": 1
+  },
+  "memory_topic": {
+    "id": "memory",
+    "label": "Our history",
+    "text": "You set the two accounts side by side: four sacks for the house, two for the counter Marcus offers you a new account: A report worth buying",
+    "evidence_ids": [
+      24,
+      26,
+      44
+    ]
+  },
+  "ledger_hash": "c260d447fc8440093893f0923b01b3592ec8a716c09f31cd3ba9ef9bb0d6e402",
+  "original_browser_journal_untouched": true
+}

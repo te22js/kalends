@@ -1,0 +1,15 @@
+{
+  "status": "interrupted_environment_no_final_summary",
+  "error": "OSError ENOSPC saving actual session journal, repeated on one exact full-protocol retry",
+  "seed": 83000,
+  "days": 60,
+  "completed_cells": 4,
+  "time_utc": "2026-10-20T21:55:53.738277+00:00",
+  "source_unchanged": true,
+  "disk_usage_after_error": {
+    "total": 245107195904,
+    "used": 244482822144,
+    "free": 624373760
+  },
+  "notes": "All disk studies stopped. No effect selection, summary or analytical pooling of incomplete attempts. No pre-first-attempt disk baseline recorded; retry pre-space in performance_retry_environment.json."
+}

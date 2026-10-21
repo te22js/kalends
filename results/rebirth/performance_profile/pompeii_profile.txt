@@ -1,0 +1,26 @@
+         187484 function calls (152330 primitive calls) in 0.042 seconds
+
+   Ordered by: cumulative time
+   List reduced from 75 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.042    0.042 /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends/pompeii/server.py:66(commit)
+  30506/7    0.018    0.000    0.040    0.006 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:118(deepcopy)
+   2062/5    0.005    0.000    0.040    0.008 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:217(_deepcopy_dict)
+    844/1    0.001    0.000    0.040    0.040 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:247(_reconstruct)
+   859/34    0.001    0.000    0.040    0.001 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:191(_deepcopy_list)
+    61916    0.007    0.000    0.007    0.000 {method 'get' of 'dict' objects}
+    38768    0.002    0.000    0.002    0.000 {built-in method builtins.id}
+      726    0.001    0.000    0.002    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:200(_deepcopy_tuple)
+     3765    0.001    0.000    0.001    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:231(_keep_alive)
+    26011    0.001    0.000    0.001    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:172(_deepcopy_atomic)
+        1    0.000    0.000    0.001    0.001 /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends/pompeii/server.py:84(state)
+        1    0.000    0.000    0.001    0.001 /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends/pompeii/world.py:509(snapshot)
+     1688    0.000    0.000    0.001    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/copy.py:252(<genexpr>)
+       40    0.000    0.000    0.001    0.000 /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends/pompeii/world.py:493(event_dict)
+       40    0.000    0.000    0.001    0.000 /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends/events.py:47(to_dict)
+       40    0.000    0.000    0.001    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py:1308(asdict)
+   908/40    0.000    0.000    0.001    0.000 /Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/dataclasses.py:1332(_asdict_inner)
+     5715    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+
+

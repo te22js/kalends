@@ -1,0 +1,39 @@
+{
+  "verified_utc": "2026-10-21T08:45:36.010569+00:00",
+  "source_checkpoint": "3c971b6",
+  "full_suite": {
+    "command": "PYTHONPYCACHEPREFIX=/tmp/kalends-pycache PYTHONPATH=/Users/tanmaygoswami/Library/Python/3.9/lib/python/site-packages bundled-python3.12 -m pytest tests/ -q",
+    "passed": 478,
+    "failed": 0,
+    "seconds": 23.51,
+    "includes_actual_loopback_http": true
+  },
+  "baseline_suite": {
+    "passed": 345,
+    "seconds": 19.69,
+    "commit": "ad979b4"
+  },
+  "release_ai_contracts": {
+    "passed": 42,
+    "total": 42,
+    "directory": "results/rebirth/ai_evaluation_release_v2",
+    "game_cognition_external_calls": 0,
+    "game_cognition_usd": 0,
+    "live_model_quality_tested": false
+  },
+  "javascript_syntax": "node --check kalends_rebirth/static/app.js passed",
+  "wheel": {
+    "file": "kalends-0.1.0-py3-none-any.whl",
+    "bytes": 14718369,
+    "sha256": "33dee8c402424b3cc1ea9884496f413a2a4d0b3ab6e8feda675d83615391efb4",
+    "built": true,
+    "entrypoint_and_5_assets_checked": true,
+    "note": "Initial metadata attempt failed ENOSPC; exact retry succeeded after free space recovered. No claim of a stable disk-latency environment. Later browser-only refinements are verified separately."
+  },
+  "unmeasured": [
+    "independent human enjoyment/retention",
+    "physical phone performance",
+    "live model conversation quality",
+    "image-generation tool billing"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "cells": 1,
+  "accepted_timed_transactions": 20,
+  "all_semantics_equal": true,
+  "conditions": [
+    {
+      "days": 1,
+      "density": "ordinary",
+      "seeds": 1,
+      "all_semantics_equal": true,
+      "events_range": [
+        73,
+        73
+      ],
+      "memory_transaction": {
+        "geometric_mean": 2.38314641130596,
+        "low95": 2.38314641130596,
+        "high95": 2.38314641130596,
+        "paired_seeds": 1,
+        "reference_median_ms": 2.624042,
+        "optimized_median_ms": 1.101083
+      },
+      "disk_transaction": {
+        "geometric_mean": 2.2944660950896334,
+        "low95": 2.2944660950896334,
+        "high95": 2.2944660950896334,
+        "paired_seeds": 1,
+        "reference_median_ms": 3.67975,
+        "optimized_median_ms": 1.60375
+      },
+      "history_speed_ratio": {
+        "geometric_mean": 0.4094489544490368,
+        "low95": 0.4094489544490368,
+        "high95": 0.4094489544490368,
+        "paired_seeds": 1
+      },
+      "transaction_peak_ratio": {
+        "geometric_mean": 2.1337466463635706,
+        "low95": 2.1337466463635706,
+        "high95": 2.1337466463635706,
+        "paired_seeds": 1
+      }
+    }
+  ]
+}

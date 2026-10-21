@@ -1,5 +1,39 @@
 # Kalends
 
+## Rebirth — the illustrated account at the fountain
+
+A painted Pompeii district, portrait conversations, and a disputed six-sack cart.
+Use documents, coins or household service; then live with changed access,
+relationships and funded commissions. Works offline with no runtime packages.
+
+```sh
+./scripts/start_rebirth.sh                     # detached, http://127.0.0.1:8782/
+./scripts/start_rebirth.sh --status             # check or use --stop
+./scripts/run_rebirth.sh                       # foreground alternative
+./scripts/run_rebirth.sh --temporary --port 8784 # separate unsaved life
+```
+
+Start with Sabina by the fountain. Click to walk, use the offered choices, and
+review before confirming. Arrows/WASD move; E talks; X leaves a room; J opens
+your journal. Actions and explicit time controls advance the world. Closing it
+preserves the present moment. Saves use `.kalends/rebirth_session.json`.
+
+[Rebirth handoff](KALENDS_REBIRTH_HANDOFF.md) ·
+[First session](docs/rebirth/FIRST_SESSION_WALKTHROUGH.md) ·
+[Actual browser screenshots](docs/rebirth/VISUAL_QA.md) ·
+[Research results and limits](docs/rebirth/RESEARCH_RESULTS.md)
+
+The detached launcher keeps the local server running when its terminal closes.
+See [local operations](docs/rebirth/LOCAL_OPERATIONS.md) for logs and restart checks.
+
+To continue an old life, choose a **new** destination; the source stays intact:
+
+```sh
+./scripts/run_rebirth.sh --migrate-from .kalends/pompeii_session.json --journal .kalends/rebirth_continuation.json
+```
+
+The earlier Pompeii chapter and its frozen studies remain available below.
+
 ## Pompeii — the playable lived-world prototype
 
 Walk a historical-fiction district, earn wages, trade flour, broker dated reports,

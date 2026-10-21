@@ -1,0 +1,8 @@
+{
+  "source_guard_matches": true,
+  "runtime_sha256": "daf68c3a424141c42ff21efb572c01b004e0fb24953dfe7a91299e42bd005d21",
+  "runner_sha256": "4952810f5a662f83ba931d3f313c245bd4a9d8abbfc58687e1a79d4b3dafd0d6",
+  "verified_utc": "2026-10-21T11:49:08.122368+00:00",
+  "checkpoint": "3c971b6",
+  "scope": "Extracted frozen Git source plus registered runner/registration; verified complete design/source guard only. Benchmark timings were not rerun."
+}

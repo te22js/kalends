@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-10-21T09:29:57.410769+00:00",
+  "source_matches_current": true,
+  "source_files": 66,
+  "runtime_sha256": "daf68c3a424141c42ff21efb572c01b004e0fb24953dfe7a91299e42bd005d21",
+  "runner_sha256": "4952810f5a662f83ba931d3f313c245bd4a9d8abbfc58687e1a79d4b3dafd0d6",
+  "complete_registered_cells": 120,
+  "summary_independently_recomputed_from_raw": true,
+  "all_fidelity_replay_rejection_flags": true,
+  "outcome_coverage": {
+    "routes": {
+      "broker": 30,
+      "market": 30,
+      "household": 30,
+      "ignored": 30
+    },
+    "commission_statuses": {
+      "fulfilled": 18,
+      "missed": 12
+    },
+    "service_kept_cells": 18,
+    "service_missed_cells": 8
+  },
+  "artifacts": {
+    "performance_cpu_preregistration.json": "cb77da78403af160dd20a6a08cb61a285161a6b16a745d62e5807ce4be213e01",
+    "performance_cpu_study.py": "4952810f5a662f83ba931d3f313c245bd4a9d8abbfc58687e1a79d4b3dafd0d6",
+    "performance_cpu_heldout/metadata.json": "7227d55516cf4158e958eb647a40f8122ea1dc47b7bea225db3c9fa7503174b0",
+    "performance_cpu_heldout/raw.jsonl": "02655e4ee5c336c46aa85e67f91508920c4191aee5f9fd7ee86c4c0d77c98189",
+    "performance_cpu_heldout/summary.json": "1bc3227b970e218afe73b2c2bfcc40783f4f8ee347e5a70cf6b965ab0e64c656"
+  },
+  "studied_checkpoint": "3c971b6",
+  "all_registered_runtime_files_match_studied_git_checkpoint": true,
+  "report_outputs": {
+    "docs/rebirth/RESEARCH_RESULTS.md": "cf9efe3c814de584c9e0d7e5a376a46e1996af4a72aa8c48278d6e9d7890bf13",
+    "results/rebirth/performance_plot.py": "2f797d3155f63a776f7b166d16c852bdaa4257c401b31e02d19d529e613aee45",
+    "results/rebirth/performance_cpu_heldout/comparison.png": "61b354c1ddc1a66866b71ec29024281546b6121d4f76b5bbc238160f0618e440"
+  },
+  "plot_visual_review": {
+    "reviewed": true,
+    "readable_labels": true,
+    "negative_write_tradeoff_visible": true,
+    "generated_pixels": [
+      2160,
+      1440
+    ],
+    "library": "Matplotlib3.9.4; outside game/runtime timings"
+  }
+}

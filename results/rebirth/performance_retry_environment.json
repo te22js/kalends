@@ -1,0 +1,12 @@
+{
+  "retry_reason": "ENOSPC during previous unchanged registered run; no timing effects inspected",
+  "time_utc": "2026-10-20T21:05:32.056434+00:00",
+  "disk_usage_before_retry": {
+    "total": 245107195904,
+    "used": 244804079616,
+    "free": 303116288
+  },
+  "prior_run": "performance_heldout_v2",
+  "new_run": "performance_heldout_v2_retry",
+  "policy": "Full registered conditions, no source/protocol/seed changes, no pooling with incomplete first attempt"
+}

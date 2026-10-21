@@ -1,0 +1,22 @@
+{
+  "basis": "Exact read-only replay of separate QA journal produced through actual browser actions, including A week and confirmed two-coin purchase",
+  "runtime_checkpoint": "2c5d9a1466372e7fd7f4274badc18c0ccb467ddd",
+  "journal_sha256": "fcab0bdd30f0327fd72c9b6107d79c572dbbf1ae9b8137c92f481ac3ca7bc37c",
+  "ledger_hash": "9b57da7d5e23f944584085e2f8fd38e8cf46f27f34ff1bbcc7eb2114def9cfa1",
+  "minute": 10259,
+  "day": 8,
+  "commands": 19,
+  "cash": 7.0,
+  "flour": 1,
+  "memory_topic": {
+    "id": "memory",
+    "label": "Our history",
+    "text": "You keep Marcus's commission and receive 3 coins You bring Marcus a checked fresh report; the trader agrees to work with your evidence",
+    "evidence_ids": [
+      52,
+      53
+    ]
+  },
+  "source_journal_unchanged": true,
+  "raw_typed_purchase_in_journal": false
+}
