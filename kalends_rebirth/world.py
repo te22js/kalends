@@ -815,7 +815,9 @@ class RebirthWorld(CognitiveMarketMixin, PompeiiWorld):
             topics.append({"id":key,"label":{"market_receipt":"The counter's order","household_tablet":"The household instructions","loading_record":"The old dispatch and the carrying charge"}.get(key,key),
                 "text":"The loading account stays closed until a paid check. One coin and fifteen minutes, then you may copy the terms." if withheld else record.text,
                 "evidence_ids":[] if withheld else [record.event_id],"withheld":withheld})
-        if self.arc.get("route")=="household" and recipient=="Sabina": greeting="My money came back. My customers did not. If you want another welcome, bring flour I can serve."
+        if self.arc.get("route")=="market" and self.arc.get("stage")=="resolved" and recipient=="Sabina":
+            greeting="Four sacks arrived here, and two went to Felix. You got the counters supplied. Lucius may tell the story differently."
+        elif self.arc.get("route")=="household" and recipient=="Sabina": greeting="My money came back. My customers did not. If you want another welcome, bring flour I can serve."
         elif self.arc.get("route")=="market" and recipient=="Lucius": greeting="You found a way to move the cart. You also chose whose account would wait. What do you propose for this house?"
         elif self.arc.get("route")=="broker" and recipient=="Marcus": greeting="You have an eye for quantities. Next time, remember the trader whose account you opened still has to earn."
         else: greeting=PERSONALITY[recipient]["opening"]
@@ -837,7 +839,9 @@ class RebirthWorld(CognitiveMarketMixin, PompeiiWorld):
                 "steps":[{"text":"Hear Sabina's account by the fountain","done":self.arc.get("heard",False)},
                     {"text":"Choose what your coins, evidence or promise will put first","done":False}],"deadline":self.arc["deadline"]}
         if not self.arc.get("followup_ready"):
-            return {"id":"cart-consequence","title":"The cart is moving","status":"waiting","description":"Your arrangement has changed who receives the flour. Let a little time pass, then return to the people affected.","steps":[]}
+            arrived=stage=="resolved"
+            return {"id":"cart-consequence","title":"The cart has arrived" if arrived else "The cart is moving","status":"waiting",
+                "description":"The flour has reached the agreed buyers. Give them a little time to take stock, then return to the people affected." if arrived else "Your arrangement has changed who receives the flour. Let a little time pass, then return to the people affected.","steps":[]}
         if route=="ignored" and not self.arc.get("followup_done"):
             return {"id":"a-counter-left-waiting","title":"The cart went on without you","status":"open",
                 "description":"The buyers settled their own bargain. Sabina still needs two flour units she can serve; helping now can open a place at her counter.","steps":[]}
