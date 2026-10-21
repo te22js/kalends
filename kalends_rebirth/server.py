@@ -54,7 +54,8 @@ class RebirthSession:
             self.config=payload['config'];self.origin=payload.get('origin')
             self.original=self._fresh()
             for command in payload['commands']:
-                self._perform(self.original,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1))
+                self._perform(self.original,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1),
+                    movement_revision=command.get('movement_revision',1))
             if self.original.ledger.content_hash()!=payload['ledger_hash']:raise ValueError('Rebirth replay differs from this runtime; save preserved without modification')
             self.commands=payload['commands'];self.mode=payload.get('mode','game')
             self.telemetry_enabled=payload.get('telemetry_enabled',False)
@@ -82,10 +83,22 @@ class RebirthSession:
         temporary.write_text(json.dumps(payload,indent=2,allow_nan=False)+'\n');temporary.replace(self.journal_path)
 
     @staticmethod
-    def _perform(world,operation,data,*,memory_presentation_revision=2):
+    def _validate_movement_revision(revision):
+        if type(revision) is not int or revision not in (1,2):
+            raise ValueError('Unsupported movement revision; save preserved without modification')
+
+    @staticmethod
+    def _perform(world,operation,data,*,memory_presentation_revision=2,movement_revision=2):
+        RebirthSession._validate_movement_revision(movement_revision)
         if type(memory_presentation_revision) is not int or memory_presentation_revision not in (1,2):
             raise ValueError('Unsupported memory presentation revision; save preserved without modification')
-        if operation=='move':return world.move(**data)
+        if operation=='move':
+            previous=getattr(world,'_movement_revision',None)
+            world._movement_revision=movement_revision
+            try:return world.move(**data)
+            finally:
+                if previous is None:del world._movement_revision
+                else:world._movement_revision=previous
         if operation=='advance':return world.advance(**data)
         if operation=='action':
             # Presentation became chronological in revision2. Old accepted memory
@@ -156,7 +169,7 @@ class RebirthSession:
         receipt=self._perform(trial,operation,copy.deepcopy(data))
         command={'operation':operation,'data':copy.deepcopy(data),'at':at,'after':trial.minute,
             'receipt_id':receipt.get('event_id') if operation!='advance' and isinstance(receipt,dict) else None,
-            'memory_presentation_revision':2}
+            'memory_presentation_revision':2,'movement_revision':2}
         previous=self.original;previous_branch=self.branch;previous_intervention=self.intervention;previous_events=copy.deepcopy(self.product_events)
         self.original=trial;self.commands.append(command);self.branch=None;self.intervention=None
         try:
@@ -198,11 +211,13 @@ class RebirthSession:
         if omitted is None:raise ValueError('Select an accepted action from this chapter')
         candidate=self._fresh();skipped=[]
         for i,command in enumerate(self.commands):
+            self._validate_movement_revision(command.get('movement_revision',1))
             if i==omitted:continue
             trial=copy.deepcopy(candidate)
             try:
                 if trial.minute<command['at']:trial.advance(command['at']-trial.minute,'compress')
-                self._perform(trial,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1));candidate=trial
+                self._perform(trial,command['operation'],command['data'],memory_presentation_revision=command.get('memory_presentation_revision',1),
+                    movement_revision=command.get('movement_revision',1));candidate=trial
             except ValueError as error:skipped.append({'command':i,'reason':str(error)})
         if candidate.minute<self.original.minute:candidate.advance(self.original.minute-candidate.minute,'compress')
         self.branch=candidate;self.intervention={'kind':'remove_action','event_id':event_id,'removed_command':omitted,'skipped':skipped,

@@ -1,6 +1,7 @@
 """Public terms must agree with the transaction the player actually confirms."""
 import copy
 import json
+from unittest.mock import patch
 
 import pytest
 
@@ -232,12 +233,20 @@ def test_week_old_fulfilled_commission_is_recalled_with_exact_support_despite_bu
 
 
 def legacy_memory_journal(tmp_path):
-    s=commission_session('Marcus');choose(s,'accept_commission','Marcus')
-    choose(s,'inspect','Marcus');s.apply('advance',{'minutes':15});choose(s,'fulfill_commission','Marcus')
-    s.apply('advance',{'minutes':10080})
-    x,y=s.original.positions['Marcus'];s.apply('move',{'x':x,'y':y})
+    # Generate the actual old-runtime fixture with its movement semantics;
+    # current Session moves use revision2 and must not redefine this pinned hash.
+    original_perform=RebirthSession._perform
+    def legacy_perform(world,operation,data,**kwargs):
+        return original_perform(world,operation,data,**{**kwargs,'movement_revision':1})
+    with patch.object(RebirthSession,'_perform',staticmethod(legacy_perform)):
+        s=commission_session('Marcus');choose(s,'accept_commission','Marcus')
+        choose(s,'inspect','Marcus');s.apply('advance',{'minutes':15});choose(s,'fulfill_commission','Marcus')
+        s.apply('advance',{'minutes':10080})
+        x,y=s.original.positions['Marcus'];s.apply('move',{'x':x,'y':y})
     commands=copy.deepcopy(s.commands)
-    for command in commands:command.pop('memory_presentation_revision',None)
+    for command in commands:
+        command.pop('memory_presentation_revision',None)
+        command.pop('movement_revision',None)
     for data in ({'action':'talk','recipient':'Marcus','topic':'memory'},{'action':'reflect','recipient':'Marcus'}):
         at=s.original.minute
         receipt=RebirthSession._perform(s.original,'action',data,memory_presentation_revision=1)

@@ -25,7 +25,11 @@ def test_conversation_stress_uses_legitimate_events_and_detached_candidate(tmp_p
     before = bench.digest(bench.semantic_snapshot(world))
     session, _, _ = bench._timed_transaction(world, commands, tmp_path / "journal.json")
     assert before == bench.digest(bench.semantic_snapshot(world))
-    assert session.original.minute == world.minute + 1
+    # V2 does not charge a fabricated minute for an already-stationary street
+    # destination. This unit test follows the current API; frozen timing studies
+    # and their source-pinned protocol remain unchanged.
+    assert session.original.minute == world.minute
+    assert session.original.ledger.events[-1].payload['travel_distance'] == 0
     replayed = RebirthSession(tmp_path / "journal.json")
     assert not bench.changed_fields(bench.semantic_snapshot(session.original), bench.semantic_snapshot(replayed.original))
     bench._reject_check(world, commands)

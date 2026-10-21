@@ -8,6 +8,7 @@ from __future__ import annotations
 import copy
 from dataclasses import asdict, replace
 import json
+import math
 
 from kalends.memory.base import Experience
 from kalends.pompeii.world import PompeiiWorld
@@ -31,6 +32,7 @@ class RebirthWorld(PompeiiWorld):
         self.commissions = []
         self.plans = {}
         self.npc_paths = {}
+        self._movement_state = {"distance":0.,"charged_minutes":0}
         self.optimized = False
         self._rebirth_ready = False
 
@@ -113,6 +115,8 @@ class RebirthWorld(PompeiiWorld):
                     commission.update(copy.deepcopy(change))
         if "plan" in payload:
             self.plans[actors[0]] = copy.deepcopy(payload["plan"])
+        if category == "player_move" and "movement_state" in payload:
+            self._movement_state = copy.deepcopy(payload["movement_state"])
         if "position" in payload and actors and actors[0] != "Player":
             self.npc_paths[actors[0]]={"event_id":event.event_id,"path":copy.deepcopy(payload.get("path",[])),"minute":self.minute}
         if category == "promise_settled":
@@ -130,6 +134,57 @@ class RebirthWorld(PompeiiWorld):
                     self._remember(agent,Experience(self.minute,"episodic","rebirth",category,title,"Player",self.minute,True,
                         event.event_id,title),significant=category in ("rb_resolution","rb_reconcile","rb_service_kept","rb_commission_settled"))
         return event
+
+    def move(self,x=None,y=None,location=None):
+        """Keep old command bytes; V2 sessions explicitly opt into new movement."""
+        revision=getattr(self,"_movement_revision",1)
+        if type(revision) is not int or revision not in (1,2):
+            raise ValueError("Unsupported movement revision.")
+        if revision == 1:
+            return super().move(x=x,y=y,location=location)
+        from .navigation_v2 import PUBLIC_LOCATIONS, door_points, path_between, path_distance, point_walkable
+        start=self.positions["Player"];current=self.state.agent_locations["Player"]
+        destination=None
+        if location is not None:
+            if not isinstance(location,str):raise ValueError("Unknown destination.")
+            if x is not None or y is not None:raise ValueError("Choose coordinates or a marked location, not both.")
+            if location == "street":
+                # Exiting reaches the actual public doorway, rather than a
+                # second invisible walk all the way to the horizontal backbone.
+                target=door_points(current)[0] if current not in PUBLIC_LOCATIONS else start
+            else:
+                destination=next((r for r in LOCATIONS if r["id"]==location),None)
+                if destination is None:raise ValueError("Unknown destination.")
+                target=(destination["x"]+destination["w"]*.5,destination["y"]+destination["h"]*.85) if destination["interior"] else (destination["door"]["x"],destination["door"]["y"])
+        else:
+            target=(x,y)
+            if current not in PUBLIC_LOCATIONS and point_walkable(target,current):
+                location=current;destination=next(r for r in LOCATIONS if r["id"]==current)
+            else:
+                location="street"
+        points=path_between(start,target,current,location)
+        distance=path_distance(points)
+        previous=self._movement_state
+        total=math.fsum((previous["distance"],distance))
+        # A prepaid partial travel minute survives stops and save/restart.
+        # The tolerance only avoids floating arithmetic crossing an exact
+        # 90-unit boundary by a few ulps; it is not a movement-speed discount.
+        charged=math.ceil(total/90-1e-10) if total else 0
+        minutes=charged-previous["charged_minutes"]
+        if self.minute+minutes > self.config.horizon_days*1440:
+            raise ValueError("There is not enough configured world time to finish this walk.")
+        if minutes:
+            self.advance(minutes,"live")
+        name=destination["name"] if destination else "the street"
+        title=f"You enter {name}" if current!=location else f"You walk through {name}"
+        event=self._emit("player_move",title,actors=("Player",),etype="move",to=location,position=points[-1],path=points,
+            movement_revision=2,travel_distance=distance,world_minutes=minutes,
+            movement_state={"distance":total,"charged_minutes":charged})
+        self.player_path=[list(point) for point in points]
+        if location in PUBLIC_LOCATIONS:
+            self._remember("Player",Experience(self.minute,"observed","grain","price",str(self.economy.price),None,self.minute,True,
+                event.event_id,"I read the street's posted flour price: %.1f coins." % self.economy.price))
+        return self.event_dict(event)
 
     def _open_chapter(self,migrated=False):
         self._rebirth_ready = True
@@ -818,7 +873,8 @@ class RebirthWorld(PompeiiWorld):
             snap["montage"]["events"]=(snap["montage"]["events"]+visible)[-10:]
         if operator:
             snap["operator"].update(story=copy.deepcopy(self.arc),relationships=copy.deepcopy(self.axes),plans=copy.deepcopy(self.plans),
-                progression=copy.deepcopy(self.progression),commissions=copy.deepcopy(self.commissions),optimized=self.optimized)
+                progression=copy.deepcopy(self.progression),commissions=copy.deepcopy(self.commissions),optimized=self.optimized,
+                movement=copy.deepcopy(self._movement_state))
         return snap
 
     def metrics(self):
@@ -832,4 +888,5 @@ class RebirthWorld(PompeiiWorld):
         state.update(rebirth={"arc":copy.deepcopy(self.arc),"axes":copy.deepcopy(self.axes),"progression":copy.deepcopy(self.progression),
             "commissions":copy.deepcopy(self.commissions),"plans":copy.deepcopy(self.plans),"documents":copy.deepcopy(self.documents),"npc_paths":copy.deepcopy(self.npc_paths)},
             witnessed=sorted(self.witnessed),disclosed=sorted(self.disclosed),queue=self.clock.snapshot())
+        state["movement_v2"]=copy.deepcopy(self._movement_state)
         return state

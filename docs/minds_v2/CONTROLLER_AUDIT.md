@@ -100,3 +100,29 @@ Use matched routes and viewport settings before/after, warm assets and include
 failed/ignored inputs in denominators. Report the actual browser/reference
 environment. 60FPS is a target until measured; mock animation frames are not
 evidence that a physical device sustains it.
+
+## Authoritative movement integration checkpoint
+
+The follow-up integration adds `RebirthWorld.move` revision2 and accepted-command
+`movement_revision` metadata. Direct world calls and old commands without the
+field retain revision1, preserving the original ledger bytes. New session moves
+use the pure floor route, end room exits at the public door, and append actual
+distance/charged-time/cumulative carry metadata. The carry is projected from
+move events into private world state, declared fidelity and World Lab. Charging
+is `ceil(cumulative_distance/90)` minus minutes already charged; a prepaid
+partial minute survives stops and restart. This is integer world-time accounting,
+not a claim about physical travel time or wall-clock animation speed.
+
+The current unit-test expectation for an already-stationary street destination
+now correctly charges zero minutes. The old performance protocol and every raw
+study artifact remain unchanged. The pinned old-memory journal fixture now
+explicitly executes movement revision1 while constructing its old prefix; its
+original `85a132c0…` expected hash was preserved. The actual saved browser prefix
+also restores the original `75ebb2dc…` hash without changing its source bytes.
+
+Full isolated suite before the last defensive fork guard: **570 passed in18.25s**.
+After that guard and its regression, affected movement, HTTP server, offer and
+benchmark suites: **109 passed in2.94s**. The guard rejects an unsupported
+revision even on the action selected for omission, before changing or saving
+the fork. Controller responsiveness and actual-browser measurement remain root's
+integration work; these passing model checks do not establish smooth play.
