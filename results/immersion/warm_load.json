@@ -1,0 +1,81 @@
+{
+  "schema": "kalends-immersion-trace-v1",
+  "gpu_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+  "engine": "PlayCanvas 2.23.3",
+  "device_type": "webgl2",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardware_concurrency": 8,
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "dpr": 2,
+    "render_width": 1920,
+    "render_height": 1080
+  },
+  "quality": "balanced",
+  "scene_resolution_scale": 1,
+  "msaa_samples": 2,
+  "actors": 7,
+  "draw_calls": 663,
+  "textures_bytes": 95706632,
+  "scope": "Browser-reported hardware and engine counters; not GPU elapsed time or physical-device qualification.",
+  "app_boot_ms": 318.80000000074506,
+  "navigation_to_ready_ms": 443.5,
+  "navigation_to_first_ready_draw_ms": 571.7999999998137,
+  "client_ready": true,
+  "samples_retained": 50,
+  "sample_limit": 12000,
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 0,
+    "ignored": 0,
+    "idle": 0,
+    "cancelled": 0,
+    "committed_draw": 0
+  },
+  "pending_input": null,
+  "frame_ms": {
+    "n": 32,
+    "mean": 22.887,
+    "p50": 16.4,
+    "p95": 74.31,
+    "p99": 133.238,
+    "max": 139.5
+  },
+  "render_submission_ms": {
+    "n": 32,
+    "mean": 8.953,
+    "p50": 2,
+    "p95": 50.73,
+    "p99": 117.329,
+    "max": 121.7
+  },
+  "idle_input_to_committed_draw_ms": null,
+  "next_changed_draw_ms": null,
+  "backend_ms": {
+    "n": 1,
+    "mean": 10.4,
+    "p50": 10.4,
+    "p95": 10.4,
+    "p99": 10.4,
+    "max": 10.400000000372529
+  },
+  "long_task_ms": {
+    "n": 2,
+    "mean": 118.5,
+    "p50": 118.5,
+    "p95": 127.05,
+    "p99": 127.81,
+    "max": 128
+  },
+  "memory": {
+    "used_js_heap_bytes": 127984487,
+    "total_js_heap_bytes": 196272339,
+    "scope": "Chromium estimate, excludes GPU and server"
+  },
+  "notes": [
+    "Small local browser sample. Canvas submission is not compositor completion or physical display.",
+    "Idle latency requires strict visual/controller idle and its matching accepted move; cancellations, supersessions and unmoved/nonidle inputs are excluded.",
+    "Frame callbacks/render submission do not measure GPU time. No external inference or telemetry."
+  ]
+}

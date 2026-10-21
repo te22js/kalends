@@ -1,0 +1,94 @@
+Browser tab: 10, Title: "Kalends · Immersion", URL: "http://127.0.0.1:8790/immersion/".
+1 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8790/immersion/
+	2 container Description: Aelia’s journal, ID: journal
+		3 container
+			4 text YOUR LIFE IN THE DISTRICT
+			5 heading Aelia’s journal, Value: 2
+				6 text Aelia’s journal
+			7 button Description: Close journal, ID: close-journal
+		8 container journal-tabs
+			9 button The account
+			10 button People
+			11 button Places
+			12 button Your dealings
+		13 container journal-content
+			14 container
+				15 heading The cart has arrived, Value: 3
+					16 text The cart has arrived
+				17 text The flour has reached the agreed buyers. Give them a little time to take stock, then return to the people affected.
+			18 heading What you witnessed, Value: 3
+				19 text What you witnessed
+			20 container
+				21 heading You enter the street, Value: 3
+					22 text You enter the street
+				23 text You enter the street Minute 24
+			24 container
+				25 heading You walk through Felix's bread counter, Value: 3
+					26 text You walk through Felix's bread counter
+				27 text You walk through Felix's bread counter Minute 23
+			28 container
+				29 heading Felix tells Player that flour supply is available (observed at minute 16), Value: 3
+					30 text Felix tells Player that flour supply is available (observed at minute 16)
+				31 text Felix tells Player that flour supply is available (observed at minute 16) Minute 23
+			32 container
+				33 heading Player obtains 1/1 flour units, Value: 3
+					34 text Player obtains 1/1 flour units
+				35 text Player obtains 1/1 flour units Minute 23
+			36 container
+				37 heading You walk through Felix's bread counter, Value: 3
+					38 text You walk through Felix's bread counter
+				39 text You walk through Felix's bread counter Minute 23
+			40 container
+				41 heading You enter Felix's bread counter, Value: 3
+					42 text You enter Felix's bread counter
+				43 text You enter Felix's bread counter Minute 23
+			44 container
+				45 heading You walk through the street, Value: 3
+					46 text You walk through the street
+				47 text You walk through the street Minute 22
+			48 container
+				49 heading You walk through the street, Value: 3
+					50 text You walk through the street
+				51 text You walk through the street Minute 22
+			52 container
+				53 heading You walk through the street, Value: 3
+					54 text You walk through the street
+				55 text You walk through the street Minute 22
+			56 container
+				57 heading You walk through the street, Value: 3
+					58 text You walk through the street
+				59 text You walk through the street Minute 21
+			60 container
+				61 heading The counters receive the cart; Lucius receives a refund and remembers whose claim you put first, Value: 3
+					62 text The counters receive the cart; Lucius receives a refund and remembers whose claim you put first
+				63 text The counters receive the cart; Lucius receives a refund and remembers whose claim you put first Minute 21
+			64 container
+				65 heading Sabina asks for a two-coin bond on a six-coin order, Value: 3
+					66 text Sabina asks for a two-coin bond on a six-coin order
+				67 text Sabina asks for a two-coin bond on a six-coin order Minute 17
+			68 container
+				69 heading Sabina reserves six working coins for two flour units; a two-coin bond is required, Value: 3
+					70 text Sabina reserves six working coins for two flour units; a two-coin bond is required
+				71 text Sabina reserves six working coins for two flour units; a two-coin bond is required Minute 16
+			72 container
+				73 heading You pay the carrying charge and stand behind the market counters, Value: 3
+					74 text You pay the carrying charge and stand behind the market counters
+				75 text You pay the carrying charge and stand behind the market counters Minute 1
+			76 container
+				77 heading Sabina asks you to find out who the six sacks were actually promised to, Value: 3
+					78 text Sabina asks you to find out who the six sacks were actually promised to
+				79 text Sabina asks you to find out who the six sacks were actually promised to Minute 1
+			80 container
+				81 heading You walk through the street, Value: 3
+					82 text You walk through the street
+				83 text You walk through the street Minute 1
+			84 container
+				85 heading Sabina pays a dispatch clerk and waits for a current inspection, Value: 3
+					86 text Sabina pays a dispatch clerk and waits for a current inspection
+				87 text Sabina pays a dispatch clerk and waits for a current inspection Minute 1
+			88 container
+				89 heading Sabina opens a working window for two additional flour units, Value: 3
+					90 text Sabina opens a working window for two additional flour units
+				91 text Sabina opens a working window for two additional flour units Minute 1
+
+The focused UI element is 7 button Description: Close journal, ID: close-journal

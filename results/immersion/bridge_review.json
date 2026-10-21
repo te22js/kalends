@@ -1,0 +1,89 @@
+{
+  "schema": "kalends-immersion-bridge-review-v1",
+  "created_utc": "2026-10-21T15:13:37.428770+00:00",
+  "reviewer": "independent bridge/integration agent",
+  "scope": "Read-only source review of main/renderer/live controls and save boundary; separate shipped bridge tests and isolated real HTTP sessions. No native browser or visual-quality claims by this reviewer.",
+  "source_sha256": {
+    "kalends_3d/bridge.js": "97a7673c24376d0e3b917615160c39d7b9c287398f5d1d4ffb4ac3c818507f73",
+    "kalends_3d/src/main.js": "225047f69e9e4008c200cc19583a626ddb5698325b9ab35e1f5fddb9525756c8",
+    "kalends_3d/src/renderer.js": "38e1313914f41264e2bf1842301d2c2ecfb4de909230f1518849af8103b4b666",
+    "kalends_3d/index.html": "25c9d00f04cfb2000088687a2135687ca6880072bf3cb0b6e1175eb49b9de53f",
+    "kalends_rebirth/server.py": "b7a1d284d82dbceab8d240a2575d2747ff074788391f82ceb007f2b1b89fe90c",
+    "kalends_rebirth/static/navigation.js": "898a618b7be0898dd251bba26debfa020816c03d1e8a02dc338b423270da6c89",
+    "scripts/start_immersion.sh": "a36c4c6d1459086508601659fc7e36746c5366dc2151dabdea966c72180f97f3",
+    "tests/frontend/immersion_bridge.test.cjs": "02ceaa2153114988624ad619ab6d985ac5f89eef5106afedb2d9eca3fcfd4243",
+    "tests/test_immersion_bridge_api.py": "8aa446ec0b1f5ac85bcceadb19e191bf59118d82ee146dcf66944cf580f58e7a",
+    "tests/frontend/immersion_live.test.cjs": "b8a0a32be09c412f748461718645a57d4f9f0fc377d094797a3d0d2d5e40b414",
+    "kalends_3d/src/measurements.js": "0848b4a372a230c377c40e9430eeef86a7a9010890b94ec548c3aa24642abf39",
+    "tests/frontend/immersion_measurements.test.cjs": "c311c634fd81067b0844740e7615618f7d66d4048c7ad857339d4592ab0b2fad"
+  },
+  "tests": {
+    "frontend": {
+      "command": "node --test tests/frontend/immersion_bridge.test.cjs",
+      "passed": 17,
+      "failed": 0,
+      "duration_ms": 74.061833,
+      "scope": "Shipped ES bridge with independent network gates; coordinate mapping, public projection, receiver binding, stale response prevention, duplicate confirmation, reject/no-retry, Lab normalization."
+    },
+    "http": {
+      "command": "python3.12 -m pytest -q tests/test_immersion_bridge_api.py",
+      "passed": 2,
+      "failed": 0,
+      "seconds": 1.23,
+      "scope": "Actual ES bridge -> HTTP -> reviewed RebirthSession purchase, duplicate prevention, invalid movement, time advance, Lab/view normalization, exact journal restore; static JSON/binary MIME, traversal/symlink, Host/Origin boundaries and legacy availability."
+    },
+    "live_scheduler": {
+      "command": "node --test tests/frontend/immersion_live.test.cjs",
+      "passed": 12,
+      "failed": 0,
+      "scope": "Actual shipped Live functions with independent timer and accepted-save gates. Pause/resume revival, stale callback, pending pause, one-minute arguments, repeated toggles, busy/navigation/conversation/modal/visual-tail guards and failed save without POST retry.",
+      "combined_bridge_and_live_run": {
+        "passed": 29,
+        "failed": 0,
+        "duration_ms": 67.690792
+      }
+    },
+    "final_frontend_suite": {
+      "passed": 98,
+      "failed": 0,
+      "duration_ms": 689.077666,
+      "log": "results/immersion/validation_frontend.txt",
+      "scope": "Fresh run after frozen-diagnostics fix. Contains the 17 bridge, 12 Live, renderer and 2 new measurement checks alongside prior-client regressions. Not a native-browser performance result."
+    }
+  },
+  "reviewed_behaviors": [
+    "Renderer and navigation retain simulator x/y units; .02 metres per unit and origin(800,415) are a presentation mapping only.",
+    "Camera-relative movement transforms input once; short accepted steps remain authoritative and interpolated separately.",
+    "Conversation/proposal epochs suppress stale replies; confirmation sends only server proposal/interpretation IDs and never client money or goods.",
+    "Public projection rejects operator snapshots; shared legacy Lab responses normalize back to game mode before entity presentation.",
+    "An accepted mutation is never retried automatically. Failed persistence remains a server rollback concern, preserved by the existing session commit boundary.",
+    "Live version-controls each timer chain and schedules only after its previous request resolves; the old pause/resume chain cannot revive. It checks movement, remaining animation, dialogs, conversation and pending API work.",
+    "New navigation, conversations, dialogs, explicit skips and page hiding stop future live timers; a tick already in flight may complete and remains part of the accepted history.",
+    "J toggles the journal, rejected repeated held keys cannot restart cancelled movement, interior exit/door labels remain available, and final action review shows server quoted cost/consequence/unavailability.",
+    "Launcher uses a separate default immersion journal and explicitly disables paid providers. The original Rebirth launcher/client remain runnable."
+  ],
+  "resolved_findings": [
+    "Initial renderer snap called nonexistent actor.setAt; root corrected the render helper call.",
+    "Static JSON asset bytes were JSON-serialized, causing 400 manifest loads; root corrected binary/text response handling and the real HTTP regression now passes.",
+    "Browser fetch was invoked with a bridge receiver; default fetch is now explicitly bound to the browser global, with an independent receiver regression.",
+    "Opening legacy World Lab could make a subsequent accepted 3D action return operator state; bridge now obtains a public game response before accepting it, without repeating the action.",
+    "Generic settled animation matching could celebrate an unfulfilled legacy delivery; root now uses explicit positive receipt categories.",
+    "Pause/Live during a pending tick could revive an old scheduling chain, increasing pending timers from one to two. Root added live-session generation checks and single-timer ownership. The independent gated regression now retains exactly one fresh-session timer after the old response resolves.",
+    "Frozen diagnostics compared an absent input ID with an undefined token, then dereferenced null after a valid move. Root added explicit frozen/pending/token guards; the two new shipped-class regressions pass in the fresh full frontend run."
+  ],
+  "remaining_limits": [
+    "This review does not establish native game feel, model appearance, WebGL performance, physical-device behavior, or human enjoyment; root performs actual browser QA separately.",
+    "World navigation remains the existing authoritative floor/portal geometry; renderer decoration must not imply additional traversable space or unsupported consequential collisions.",
+    "A network failure after server acceptance can require a state reload; economic POSTs are intentionally not retried because receipt delivery is not evidence of nonacceptance.",
+    "Live pause/cancellation does not undo an already accepted or in-flight world-minute request."
+  ],
+  "remaining_findings": [],
+  "external_model_calls_by_this_review": 0,
+  "paid_inference_usd": 0,
+  "live_race_verification": {
+    "method": "Shipped functions executed in a VM with independent timer/API gates, not source-string assertions.",
+    "before_fix_pending_timers_after_old_response": 2,
+    "after_fix_pending_timers_after_old_response": 1,
+    "expected": 1
+  }
+}

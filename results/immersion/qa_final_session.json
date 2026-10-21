@@ -1,0 +1,560 @@
+{
+  "version": 4,
+  "config": {
+    "seed": 79,
+    "horizon_days": 60,
+    "memory_capacity": 32,
+    "information_policy": "cautious",
+    "communication": true
+  },
+  "origin": null,
+  "commands": [
+    {
+      "operation": "move",
+      "data": {
+        "x": 673.7521818987076,
+        "y": 404.4248472800292
+      },
+      "at": 0,
+      "after": 1,
+      "receipt_id": 25,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "hear_dispute",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 26,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "support_market",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1,
+      "after": 21,
+      "receipt_id": 27,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 718.3274380202917,
+        "y": 386.61904649221907
+      },
+      "at": 21,
+      "after": 21,
+      "receipt_id": 44,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 762.9026941418757,
+        "y": 368.813245704409
+      },
+      "at": 21,
+      "after": 22,
+      "receipt_id": 46,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 807.4779502634598,
+        "y": 351.0074449165989
+      },
+      "at": 22,
+      "after": 22,
+      "receipt_id": 47,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 22,
+      "after": 22,
+      "receipt_id": 48,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 22,
+      "after": 23,
+      "receipt_id": 50,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 275.5
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 51,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "buy",
+        "recipient": "Felix",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 52,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Felix",
+        "action": "talk",
+        "topic": "supply",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 53,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 54,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 23,
+      "after": 24,
+      "receipt_id": 56,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "minutes": 30,
+        "mode": "compress"
+      },
+      "at": 24,
+      "after": 54,
+      "receipt_id": null,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 54,
+      "after": 54,
+      "receipt_id": 63,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 54,
+      "after": 55,
+      "receipt_id": 65,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 55,
+      "after": 55,
+      "receipt_id": 66,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 55,
+      "after": 55,
+      "receipt_id": 67,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 55,
+      "after": 56,
+      "receipt_id": 69,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 56,
+      "after": 56,
+      "receipt_id": 70,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 56,
+      "after": 56,
+      "receipt_id": 71,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 56,
+      "after": 56,
+      "receipt_id": 72,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 56,
+      "after": 57,
+      "receipt_id": 74,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 57,
+      "after": 57,
+      "receipt_id": 75,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 57,
+      "after": 58,
+      "receipt_id": 77,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 58,
+      "after": 58,
+      "receipt_id": 78,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 58,
+      "after": 59,
+      "receipt_id": 80,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 275.5
+      },
+      "at": 59,
+      "after": 59,
+      "receipt_id": 81,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295
+      },
+      "at": 59,
+      "after": 59,
+      "receipt_id": 82,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 59,
+      "after": 60,
+      "receipt_id": 84,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 60,
+      "after": 60,
+      "receipt_id": 85,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 60,
+      "after": 60,
+      "receipt_id": 86,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 60,
+      "after": 61,
+      "receipt_id": 88,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 275.5
+      },
+      "at": 61,
+      "after": 61,
+      "receipt_id": 89,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295
+      },
+      "at": 61,
+      "after": 61,
+      "receipt_id": 90,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 61,
+      "after": 62,
+      "receipt_id": 92,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 784,
+        "y": 350
+      },
+      "at": 62,
+      "after": 62,
+      "receipt_id": 93,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 62,
+      "after": 63,
+      "receipt_id": 95,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 786.2478181012924,
+        "y": 360.5751527199708
+      },
+      "at": 63,
+      "after": 63,
+      "receipt_id": 96,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 63,
+      "after": 63,
+      "receipt_id": 97,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    }
+  ],
+  "mode": "game",
+  "ledger_hash": "e178da5bdfc39e51138abb94a9cd8430f0edb96c3fafa0c2579cd6c4227a9550",
+  "intervention": null,
+  "telemetry_enabled": false,
+  "product_events": []
+}

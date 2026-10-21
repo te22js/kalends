@@ -1,0 +1,64 @@
+{
+  "schema": "kalends-immersion-independent-review-v1",
+  "created_utc": "2026-10-21T14:53:22.014999+00:00",
+  "reviewer": "immersion_adversarial",
+  "scope": "Independent source and earlier actual screenshot review; parent owns native browser QA. This reviewer did not operate the browser or repeat the full backend suite.",
+  "source_sha256": {
+    "kalends_3d/src/renderer.js": "cf8bbb7c64480a8dbd4de37c1823ce05e2d47f316e57c29eec5b1d0f918e9091",
+    "kalends_3d/src/main.js": "2f83f5f1228a9105bd48fd4244a248f8d6da0eae5d8220616bb073663930d8f8",
+    "kalends_3d/bridge.js": "97a7673c24376d0e3b917615160c39d7b9c287398f5d1d4ffb4ac3c818507f73",
+    "kalends_rebirth/server.py": "b7a1d284d82dbceab8d240a2575d2747ff074788391f82ceb007f2b1b89fe90c",
+    "tests/frontend/immersion_renderer.test.cjs": "6406ef78a40378154bda5a225b3842bb14e92cc7a2c9c81b989d7dd834b8ff97"
+  },
+  "findings": [
+    {
+      "id": "IAR-01",
+      "severity": "high",
+      "problem": "NPC target locations could authorize a conversation and screen pick before the displayed NPC crossed a room portal.",
+      "reproduction": "Felix authority=street, rendered scene=bakery and position=(810,229.5); player street at(810,350); servernearby includes Felix. Prior displayedNear returned true through the room frontage. Reverse incoming direction also failed.",
+      "disposition": "Root added per-actor displayed scene tracking, portal crossing and screen-pick gating.",
+      "verification": "Two actual displayedNear prototype tests failed before fix; all11 shipped-renderer method tests now pass."
+    },
+    {
+      "id": "IAR-02",
+      "severity": "medium",
+      "problem": "Conversation selected changed camera distance by18% in one frame despite smoothed focus.",
+      "disposition": "Root added damped cameraEffectiveDistance, with explicit reduced-motion immediate behavior.",
+      "verification": "Actual updateCamera tests cover first-frame partial motion, convergence and closing transition; reduced motion immediate selection is separate."
+    },
+    {
+      "id": "IAR-03",
+      "severity": "measurement_scope",
+      "problem": "loading_ms began after bundle/import loading, so it could not represent complete navigation-to-playable loading.",
+      "disposition": "Reported to root before final benchmarks; final report must distinguish app boot from navigation-to-ready."
+    },
+    {
+      "id": "IAR-04",
+      "severity": "visual_check",
+      "problem": "Unbounded camera orbit combined with roof-only cutaway can potentially hide a player near a full-height interior wall.",
+      "disposition": "Reported for native interior check or a restricted semi-orbit arc; not reproduced by this reviewer in a browser."
+    }
+  ],
+  "focused_tests": {
+    "file": "tests/frontend/immersion_renderer.test.cjs",
+    "passed": 11,
+    "failed": 0,
+    "seconds": 0.673727666,
+    "scope": "Shipped DistrictRenderer methods with fake GPU/entity/camera surfaces and independent authoritative/rendered states; no native input, pixel or FPS claim."
+  },
+  "checked_boundaries": [
+    "Public projection excludes operator mind state and rejects Lab snapshots; the bridge normalizes shared Lab responses without retrying accepted actions.",
+    "Confirmation posts only server-issued proposal and interpretation IDs. Simulation resources stay server-owned; duplicate in-flight confirmation shares one promise.",
+    "Movement remaining distance is in simulator units, matching the48-unit authority bound and12-unit visual catch-up gate.",
+    "NPC work poses are selected from reported activity; locomotion is selected from changed displayed position.",
+    "Static model and scenery do not create economic inventory; cart cargo rendering is tied to actual story stage.",
+    "Binary asset route is resolved within its mount, uses explicit MIME types and preserves legacy client/API routes."
+  ],
+  "limits": [
+    "Root native walkthrough/performance artifacts are required to establish the visual and gameplay acceptance checks.",
+    "Collision uses existing authoritative clear floor/portal geometry, not Recast or a general rigid-body/furniture/NPC avoidance simulation.",
+    "Earlier inspected screenshot preceded final individual material palettes, cart and foliage; final visual quality needs the parent screenshot check.",
+    "Render-submission measurements do not establish GPU completion, compositor presentation or physical input latency.",
+    "No human enjoyment, physical-device or broad hardware performance claim is supported by this review."
+  ]
+}

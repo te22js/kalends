@@ -1,0 +1,123 @@
+{
+  "schema": "kalends-immersion-release-checks-v1",
+  "created_utc": "2026-10-21T15:13:37.423656+00:00",
+  "scope": "Release-support checkpoint. Final native screenshots, browser performance/capture and the main handoff are recorded separately by the primary agent. No renderer, assets, backend, journal or Git mutation performed by these checks.",
+  "tests": {
+    "frontend": {
+      "passed": 98,
+      "failed": 0,
+      "seconds": 0.689077666,
+      "command": "node --test tests/frontend/*.cjs",
+      "run": "Fresh full frontend run after frozen/empty diagnostics acceptance guard; includes all existing and Immersion bridge/live/renderer/measurement checks. Native frozen-trace walkthrough is recorded separately by the primary agent.",
+      "log": "results/immersion/validation_frontend.txt",
+      "sha256": "351b25341c9e5909c6b303f51aa78a722f7f8f0deb01b69d702b7ce69b30642e"
+    },
+    "python": {
+      "passed": 692,
+      "failed": 0,
+      "seconds": 22.81,
+      "run": "Copied existing full Python log supplied from the primary-agent run; not rerun by this release support task. Current backend server source mtime precedes this log. Later visual/camera/loading edits are covered by separate frontend/native checks, not claimed as Python rendering tests.",
+      "log": "results/immersion/validation_python.txt",
+      "sha256": "0392a607058fd3d64b8fb1358a9de5ad70b112e8b8ef5a8dff520225ca518f70",
+      "source_log_mtime_utc": "2026-10-21T14:47:45.519732+00:00",
+      "server_mtime_utc": "2026-10-21T14:33:37.072703+00:00"
+    }
+  },
+  "original_saved_life": {
+    "path": ".kalends/rebirth_session.json",
+    "current_sha256": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2",
+    "older_backup": ".kalends/rebirth_session.pre_minds_v2_5f6ff85810e6.json",
+    "backup_sha256": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+    "expected_older_v2_sha256": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+    "current_matches_older_v2_bytes": false,
+    "older_backup_matches_expected": true,
+    "original_181_command_prefix_preserved": true,
+    "older_commands": 181,
+    "current_commands": 470,
+    "extra_operations": {
+      "move": 289
+    },
+    "older_world_minute": 608,
+    "current_world_minute": 689,
+    "current_ledger_hash": "37080708a67f5dca185ae619279404339d2e29ab73355854cc2e745947bf1836",
+    "changed_top_level_fields": [
+      "commands",
+      "ledger_hash"
+    ],
+    "current_save_mtime_utc": "2026-10-21T14:18:21.743561+00:00",
+    "immersion_brief_attachment_mtime_utc": "2026-10-21T14:26:49.739018+00:00",
+    "save_change_predates_immersion_brief": true,
+    "interpretation": "The life already contains 289 additional movement commands relative to the older V2 backup; its last file modification predates this Immersion brief. The action source is not inferred. Current life and older exact backup were not reset, restored or overwritten. Do not claim the current file is byte-identical to the old V2 backup."
+  },
+  "launcher": {
+    "command": "./scripts/start_immersion.sh --port 8790",
+    "build_command": "cd kalends_3d && npm ci && npm run build",
+    "default_journal": ".kalends/immersion_session.json",
+    "three_d_url": "http://127.0.0.1:8790/immersion/",
+    "legacy_url": "http://127.0.0.1:8790/",
+    "status_command": "./scripts/start_immersion.sh --status",
+    "status_verified": true,
+    "status_output": "Rebirth is running at http://127.0.0.1:8790/\nJournal: /Users/tanmaygoswami/Claude_backup/Projects/kalends/.kalends/immersion_session.json",
+    "forces_offline_provider": true,
+    "forces_external_inference_disabled": true,
+    "build_index_exists": true,
+    "ownership_and_concurrent_writer_guards": "Delegates to the existing process-ownership and journal-lock-aware Rebirth launcher."
+  },
+  "documentation": {
+    "reviewed": {
+      "kalends_3d/ART_GUIDE.md": {
+        "exists": true,
+        "sha256": "806c3b973e655ec560eea7dc961baad5e9d9b0c0db7e5a465bac243011b4ef60"
+      },
+      "kalends_3d/ASSET_LICENSES.md": {
+        "exists": true,
+        "sha256": "288d81ae9f7d7aaf4dc23337d54dfaa2d607c4e07a054f399ecf93c1c418ac89"
+      },
+      "kalends_3d/ASSET_PROVENANCE.json": {
+        "exists": true,
+        "sha256": "ba7b0677b56b9bd883712f5f64edb15ff84c7899910422b9e67387b532c824c3"
+      }
+    },
+    "art_guide_scope": "Scale/origin, palette/PBR, lighting, camera, animation, floor/door contract, visual quality settings and explicit asset budgets. No claimed measured 60FPS.",
+    "license_scope": "Individually sourced CC0 artist assets, preserved vendor licenses, explicit modifications and project-authored Roman-inspired wardrobe/geometry; no archaeological-authenticity or blanket public-domain claim.",
+    "main_handoff_present_at_checkpoint": false,
+    "main_handoff_path": "KALENDS_3D_HANDOFF.md"
+  },
+  "source_sha256": {
+    "kalends_3d/bridge.js": "97a7673c24376d0e3b917615160c39d7b9c287398f5d1d4ffb4ac3c818507f73",
+    "kalends_3d/index.html": "25c9d00f04cfb2000088687a2135687ca6880072bf3cb0b6e1175eb49b9de53f",
+    "kalends_3d/package.json": "8d7f7705d3eeb9bb5a454d475390aae36d7bb2118c0df96faeda926a5825f079",
+    "kalends_3d/package-lock.json": "98d68fb978295d1852057b22d10cb90d1f487b5b361a8cd4b03c90d59d415cb8",
+    "kalends_3d/vite.config.js": "409d9718416310dc021e998e08c74ffb7fae3fd50a6fe59cd7259980cc3ae3f9",
+    "kalends_rebirth/server.py": "b7a1d284d82dbceab8d240a2575d2747ff074788391f82ceb007f2b1b89fe90c",
+    "scripts/start_immersion.sh": "a36c4c6d1459086508601659fc7e36746c5366dc2151dabdea966c72180f97f3",
+    "kalends_3d/src/audio.js": "617bfb659699810152685d0b36e838e2795a63f018cfdeb03e0fe7081303974d",
+    "kalends_3d/src/capture.js": "aff5f9f2bf26e6e02e7c4be6e971ecde4999d3d0b76809afce0808ad93c82138",
+    "kalends_3d/src/main.js": "225047f69e9e4008c200cc19583a626ddb5698325b9ab35e1f5fddb9525756c8",
+    "kalends_3d/src/measurements.js": "0848b4a372a230c377c40e9430eeef86a7a9010890b94ec548c3aa24642abf39",
+    "kalends_3d/src/renderer.js": "38e1313914f41264e2bf1842301d2c2ecfb4de909230f1518849af8103b4b666",
+    "tests/frontend/immersion_bridge.test.cjs": "02ceaa2153114988624ad619ab6d985ac5f89eef5106afedb2d9eca3fcfd4243",
+    "tests/frontend/immersion_live.test.cjs": "b8a0a32be09c412f748461718645a57d4f9f0fc377d094797a3d0d2d5e40b414",
+    "tests/frontend/immersion_renderer.test.cjs": "6406ef78a40378154bda5a225b3842bb14e92cc7a2c9c81b989d7dd834b8ff97",
+    "tests/test_immersion_bridge_api.py": "8aa446ec0b1f5ac85bcceadb19e191bf59118d82ee146dcf66944cf580f58e7a",
+    "tests/frontend/immersion_measurements.test.cjs": "c311c634fd81067b0844740e7615618f7d66d4048c7ad857339d4592ab0b2fad"
+  },
+  "pending_primary_agent_evidence": [
+    "Final browser QA journal export and read-only exact replay, held until the primary agent finishes native testing.",
+    "Final browser performance/capture/screenshot report and handoff completion.",
+    "Final current-main SHA confirmation before completion."
+  ],
+  "external_model_calls_by_release_checks": 0,
+  "paid_inference_usd": 0,
+  "diagnostics_regression": {
+    "subject": "Frozen diagnostics cancelled route after an accepted move",
+    "root_cause": "With no inputPending, optional chaining produced undefined===undefined and entered a branch that assigned to null. Freeze suppressed the trace token, so the exception occurred after authoritative move acceptance.",
+    "fix": "committed() now requires !frozen, a real pending input, and its matching token before assignment.",
+    "regressions": {
+      "file": "tests/frontend/immersion_measurements.test.cjs",
+      "passed": 2,
+      "scope": "Frozen undefined token and cancelled/late token handling; no economic or movement retry."
+    },
+    "status": "Regression verified; final native frozen-trace confirmation belongs to primary-agent QA."
+  }
+}

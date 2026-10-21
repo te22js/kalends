@@ -1,0 +1,8 @@
+{
+  "archive": ".kalends/immersion_qa_verified.json",
+  "evidence": "results/immersion/qa_final_session.json",
+  "sha256": "cac3a2fb7ff70ea51b154a0e7d74b4d389b1af64241700952dc185b2f92fee96",
+  "bytes": 11730,
+  "original_save_sha256": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2",
+  "purpose": "Preserve own QA life before creating the fresh user-facing 3D life; original Rebirth journal retained."
+}

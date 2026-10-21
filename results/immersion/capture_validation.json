@@ -1,0 +1,61 @@
+{
+  "schema": "kalends-immersion-capture-validation-v1",
+  "created_utc": "2026-10-21T17:18:38.856095+00:00",
+  "file": "demo/immersion/kalends_immersion_scene.webm",
+  "bytes": 14090645,
+  "sha256": "f5e9453d2b2602f5791d43f2076ff268ad90f1bef8714e1713e85db2ac432480",
+  "method": "Read-only EBML/WebM container parser, including sibling boundaries for streaming unknown-size clusters. No transcoding, inserted frames or video alteration.",
+  "container": {
+    "doctype": "webm",
+    "muxing_application": "Chrome",
+    "writing_application": "Chrome"
+  },
+  "timecode_scale_nanoseconds": 1000000,
+  "clusters": 6,
+  "tracks": [
+    {
+      "number": 1,
+      "type": 1,
+      "codec": "V_VP9",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "video": {
+    "simple_or_block_frames": 576,
+    "all_payloads_nonempty": true,
+    "distinct_encoded_payloads": 576,
+    "keyframes": 6,
+    "first_timestamp_seconds": 0.0,
+    "last_timestamp_seconds": 19.95,
+    "duration_estimate_seconds": 19.983,
+    "duration_method": "Last minus first timestamp plus median positive frame interval; MediaRecorder streaming WebM has no declared duration.",
+    "nominal_observed_fps": 28.8245,
+    "timestamp_intervals_seconds": {
+      "mean": 0.034695652173913044,
+      "median": 0.03300000000000125,
+      "max": 0.6
+    },
+    "encoded_payload_bytes": 14086277,
+    "all_timestamps_monotonic": true,
+    "sample_payload_hashes": [
+      "219804682ea5978e8921c741922634a249569d1c4f384bc8e0e93cfb1a179905",
+      "d9b7653c13949b40952cc68538a927278ea0db19257cabcca92c3d843c85df37",
+      "8f4aea720b76c3cc447ab0f178a606409c0559a725b6c95a3b69cc4ee0b855e3"
+    ]
+  },
+  "native_decoder_check": {
+    "method": "macOS AVFoundation AVURLAsset / AVAssetImageGenerator",
+    "readable": false,
+    "playable": false,
+    "video_tracks": 0,
+    "frames_extracted": 0,
+    "interpretation": "The available native AVFoundation importer did not recognize WebM/VP9. No ffmpeg/ffprobe binary was found; no decoder downloaded or installed."
+  },
+  "limitations": [
+    "Container/frame payload validation establishes a nonempty actual encoded stream, not successful decoding or visual quality.",
+    "Requested recording rate was30fps; observed rate here is computed from encoded timestamps and frame count.",
+    "Scene capture excludes HTML HUD/dialogue/nameplates and audio.",
+    "Recording performance is separate from normal gameplay benchmark."
+  ]
+}

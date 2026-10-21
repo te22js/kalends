@@ -1,0 +1,93 @@
+{
+  "schema": "kalends-immersion-replay-v1",
+  "created_utc": "2026-10-21T17:13:37.478979+00:00",
+  "scope": "Read-only exact replay of a byte snapshot of the agent-owned browser QA life. This report contains selected public state and hashes only; no private mind state. No original save restored, reset or overwritten.",
+  "qa": {
+    "source": ".kalends/immersion_session.json",
+    "copied_journal": "results/immersion/qa_verified_session.json",
+    "sha256": "122d383280104dc37954ae0d121fb11899a1aeb0ff57caa6f8eb629bf17478fc",
+    "bytes": 9336,
+    "saved_ledger_hash": "f5b43f86f37b72f399ac02738adadb1968efef14b974b8a6ae27eaff839026aa",
+    "replayed_ledger_hash": "f5b43f86f37b72f399ac02738adadb1968efef14b974b8a6ae27eaff839026aa",
+    "ledger_match": true,
+    "two_independent_restores_equal": true,
+    "fidelity_state_sha256": "bd352d33d8915f076699e72743dbee37463080163f0652a14cb16e22ed1d322a",
+    "copied_journal_unchanged_by_restore": true,
+    "source_unchanged_at_end": true,
+    "commands": 31,
+    "operations": {
+      "move": 26,
+      "action": 4,
+      "advance": 1
+    },
+    "actions": {
+      "hear_dispute": 1,
+      "support_market": 1,
+      "buy": 1,
+      "talk": 1
+    },
+    "player": {
+      "cash": 1.0,
+      "flour": 1,
+      "minute": 60,
+      "clock": "09:00",
+      "location": "street",
+      "x": 786.2478181012924,
+      "y": 360.5751527199708
+    },
+    "story": {
+      "chapter": "The account at the fountain",
+      "title": "Six sacks. Two promises.",
+      "hook": "A cart waits while two buyers insist it is theirs.",
+      "stage": "resolved",
+      "route": "market",
+      "objective": {
+        "id": "cart-consequence",
+        "title": "The cart has arrived",
+        "status": "waiting",
+        "description": "The flour has reached the agreed buyers. Give them a little time to take stock, then return to the people affected.",
+        "steps": []
+      },
+      "leads": [],
+      "deadline": 360,
+      "followup_ready": false,
+      "followup_done": false,
+      "service_due": null,
+      "service_done": false,
+      "service_missed": false
+    },
+    "buy_count": 1,
+    "buy_quantity": 1,
+    "buy_recipient": "Felix",
+    "market_support_count": 1,
+    "market_resolution_count": 1,
+    "advance_commands": [
+      {
+        "minutes": 30,
+        "mode": "compress"
+      }
+    ],
+    "external_model_calls_during_replay": 0
+  },
+  "original_life": {
+    "path": ".kalends/rebirth_session.json",
+    "sha256": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2",
+    "matches_preexisting_immersion_checkpoint": true,
+    "bytes": 115978,
+    "commands": 470,
+    "minute": 689,
+    "saved_ledger_hash": "37080708a67f5dca185ae619279404339d2e29ab73355854cc2e745947bf1836",
+    "replayed_ledger_hash": "37080708a67f5dca185ae619279404339d2e29ab73355854cc2e745947bf1836",
+    "unchanged_by_read_only_restore": true,
+    "older_backup_path": ".kalends/rebirth_session.pre_minds_v2_5f6ff85810e6.json",
+    "older_backup_sha256": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+    "older_backup_matches_expected": true,
+    "older_command_prefix_preserved": true,
+    "older_commands": 181
+  },
+  "limitations": [
+    "This is deterministic save/replay verification, not a new browser rendering test.",
+    "Any later browser actions may advance the live QA journal; this artifact remains the identified checkpoint.",
+    "One browser purchase and one market-support action are present; absence of all possible duplication races is covered by the separate bridge single-flight tests, not inferred from one playthrough."
+  ]
+}
