@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kalends renderer probe — isolated fixture</title>
+<style>
+body{margin:0;background:#15201c;color:#eee8db;font:14px system-ui,sans-serif}header,section{padding:12px 18px}h1{font-size:19px;margin:0 0 7px}p{margin:6px 0;line-height:1.5}button{font:inherit;padding:8px 12px;margin:4px 5px 4px 0;cursor:pointer}button:disabled{cursor:default;opacity:.5}#stage{width:1280px;max-width:100%;aspect-ratio:16/9;background:#101813;overflow:hidden}#stage canvas{display:block;width:100%!important;height:100%!important}#status{color:#f2d69b;min-height:1.5em}pre{white-space:pre-wrap;word-break:break-word;background:#0b1511;padding:12px;max-height:30em;overflow:auto}#summary{max-height:20em}a{color:#e3c899}small{color:#c4c9c4}.controls{display:flex;flex-wrap:wrap;align-items:center}.separator{margin-inline:8px}#input-status{font-size:12px;color:#d1e2c9}
+</style><script src="./phaser.min.js" defer></script><script src="./probe.js" defer></script></head>
+<body>
+<header><h1>Renderer comparison · isolated presentation fixture</h1>
+<p>This page does not load a game session or change a save. It compares an empty rAF loop, Canvas2D and Phaser 4 WebGL using the same painted background and seven actors.</p>
+<div class="controls"><button id="run" disabled>Run comparison · 9 cases</button><button id="stop" disabled>Stop</button><button id="export" disabled>Export JSON</button><span class="separator">Manual previews:</span><button data-preview="canvas" disabled>Canvas</button><button data-preview="phaser" disabled>Phaser WebGL</button><button data-preview="empty" disabled>Empty rAF</button></div>
+<p id="status" role="status">Loading the two local fixture images…</p>
+<small>Each case: 30 warmup frames, then 180 observations. Three counterbalanced orders. Keep the page visible and the viewport unchanged. Roughly one minute at 30Hz; this is not a game-playability or physical-device test.</small>
+</header>
+<div id="stage" aria-label="Renderer fixture, 1280 by 720 backing pixels"></div>
+<section><p id="input-status">Manual previews accept clicks to move the first actor and show a marker. Those interactions are disabled during the automatic comparison.</p>
+<h2>Recorded summary</h2><pre id="summary">No measurement has run.</pre>
+<details><summary>Raw result JSON, including every observed interval</summary><pre id="report">{"status":"not_run"}</pre></details>
+<p>Render spans measure JavaScript submission wall time, not GPU completion. Phaser's PRE_RENDER→POST_RENDER span excludes renderer initialization/clear. Whole-step spans are recorded separately. Estimated missed 60Hz slots are a reference calculation, not measured hardware drops.</p>
+<p><a href="https://phaser.io/download/release/v4.2.1">Phaser 4.2.1 release</a> · <a href="https://phaser.io/download/license">MIT license</a> · <a href="https://docs.phaser.io/api-documentation/4.0.0/namespace/core-events">Render-hook documentation</a>. Phaser is vendored only for this probe; the game renderer is unchanged.</p></section>
+</body></html>

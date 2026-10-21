@@ -1,0 +1,100 @@
+{
+  "version": "renderer-poc-1",
+  "kind": "Fixed local renderer engineering comparison, not a human/game benchmark or novelty study",
+  "created_utc": "2026-10-21T12:53:55.324943+00:00",
+  "status": "protocol_and_source_checked_not_browser_executed",
+  "url": "/probe/index.html",
+  "controls": [
+    "Run comparison \u00b7 9 cases",
+    "Stop",
+    "Export JSON",
+    "Manual Canvas / Phaser WebGL / Empty rAF previews"
+  ],
+  "fixture": {
+    "backing_width": 1280,
+    "backing_height": 720,
+    "resolution": 1,
+    "scene": "Same decoded painted street and seven72x96 sprite atlas frames",
+    "motion": "Identical elapsed-time rectangular paths and depth order; manual clicks disabled during automatic cases",
+    "effects": "No masks, labels, shadows, filters, physics, game-state/API operations or gameplay changes"
+  },
+  "design": {
+    "orders": [
+      [
+        "empty",
+        "canvas",
+        "phaser"
+      ],
+      [
+        "canvas",
+        "phaser",
+        "empty"
+      ],
+      [
+        "phaser",
+        "empty",
+        "canvas"
+      ]
+    ],
+    "warmup_frames_per_case": 30,
+    "observed_intervals_per_case": 180,
+    "repetitions_per_mode": 3,
+    "maximum_raw_observations": 1620,
+    "timeout_per_case_ms": 30000,
+    "stop_rules": [
+      "Hidden document interrupts entire comparison",
+      "Viewport change interrupts entire comparison",
+      "Cancellation retains partial rows",
+      "WebGL unavailability/context loss/error explicitly invalidates case; no Canvas fallback masquerades as WebGL",
+      "Actual Phaser backing mismatch invalidates case"
+    ],
+    "timing_exclusions": [
+      "Shared image download/decode",
+      "Engine boot/texture upload before fixed warmup",
+      "Case teardown",
+      "Summary formatting and JSON export"
+    ]
+  },
+  "metrics": {
+    "raw_interval": "performance.now at rAF entry or Phaser PRE_STEP, not Phaser smoothed/capped delta",
+    "render_submit_cpu": "Canvas draw submission span; Phaser PRE_RENDER\u2192POST_RENDER, excluding renderer initialization/clear; neither measures GPU completion",
+    "whole_step_cpu": "Canvas handler update/draw wall time; Phaser PRE_STEP\u2192POST_RENDER wall time; includes more engine bookkeeping than render-only span",
+    "update_cpu": "Shared fixture position update and renderer object position/depth assignment",
+    "cadence": "1000/mean actual observed frame interval, not hardware refresh-rate proof",
+    "60hz_unfilled_slots": "sum(max(0,round(interval/(1000/60))-1)); estimates reference slots, not actual hardware dropped frames",
+    "memory": "Browser JS-heap API snapshot if available, not process/GPU memory; null if unsupported"
+  },
+  "validity_limits": [
+    "Single browser/apparatus and minimal fixed scene",
+    "Three ordered runs per mode; intervals within a run are dependent; no frame-level inferential confidence interval",
+    "Not a full-scene framework migration or proof of game responsiveness",
+    "No actual browser performance claimed until root runs and preserves exported JSON",
+    "Physical-device performance, GPU completion and hardware drops unmeasured",
+    "Phaser4.0 API documentation supports hooks used by vendored4.2.1; actual runtime availability/version is recorded"
+  ],
+  "vendor": {
+    "path": "kalends_rebirth/static/probe/phaser.min.js",
+    "version": "4.2.1",
+    "bytes": 1375976,
+    "sha256": "66348b1b5141e49b7d5ebbe688cddcb502eab1cb00f21c538686a5b2c5abe4de",
+    "source": "https://cdn.jsdelivr.net/npm/phaser@4.2.1/dist/phaser.min.js",
+    "release": "https://phaser.io/download/release/v4.2.1",
+    "license": "https://phaser.io/download/license"
+  },
+  "sources": {
+    "core_events": "https://docs.phaser.io/api-documentation/4.0.0/namespace/core-events",
+    "configuration": "https://docs.phaser.io/api-documentation/4.0.0/typedef/types-core",
+    "textures": "https://docs.phaser.io/api-documentation/4.0.0/class/textures-texturemanager"
+  },
+  "source_sha256": {
+    "kalends_rebirth/static/probe/LICENSE.txt": "fc8f7e34e3a0626a269a9c6018a9bd95fafca11f80b02975c9f3a9bc1af92fcb",
+    "kalends_rebirth/static/probe/index.html": "56e870c261efb27c7b3a515f355d863ddad045d8f7a745498e1a6ab154de8512",
+    "kalends_rebirth/static/probe/phaser.min.js": "66348b1b5141e49b7d5ebbe688cddcb502eab1cb00f21c538686a5b2c5abe4de",
+    "kalends_rebirth/static/probe/probe.js": "b8156012b1a55bfa81141713006b9bfbf22a359c3ab2f7a536c0731a150d0698"
+  },
+  "asset_sha256": {
+    "kalends_rebirth/static/assets/street.png": "2364f2439903f9ee4c9b2444ce3b965891172c0d14342174dc96706debce9fe8",
+    "kalends_rebirth/static/assets/sprites-original.png": "d89e58ce3603554cef8a8cdc1884134278c6b36cc4201f3036fbaaceb51ceb27"
+  },
+  "root_browser_recipe": "Set desktop viewport before Run and keep stable/visible. Read #summary for compact status. Preserve #report.textContent through DOM-backed CUA read and local file write, or use Export JSON. Take an actual screenshot. Do not call these source checks performance results."
+}
