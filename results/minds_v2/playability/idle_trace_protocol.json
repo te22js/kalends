@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-10-21T14:14:12.574030+00:00",
+  "schema": "kalends-idle-draw-protocol-v1",
+  "raw": "results/minds_v2/playability/idle_committed_browser_trace.json",
+  "raw_sha256": "c9dc863fb4031a63ff7d569bd68c9c0afb89b6e2211ee0707fd81aa25c6b9e95",
+  "native_browser": true,
+  "physical_device_tested": false,
+  "scene": "thermopolium",
+  "starting_position": [
+    1225,
+    656
+  ],
+  "input_sequence": [
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowRight",
+    "ArrowLeft",
+    "ArrowUp",
+    "ArrowDown"
+  ],
+  "eligibility": "Strict controller idle and zero remaining animation at input; matching accepted move response before changed Player draw submission. Excludes nonidle/cancelled/superseded/unmoved inputs.",
+  "draw_scope": "JavaScript Canvas submission, not browser composition or physical display. Player must pass scene filtering.",
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 8,
+    "ignored": 0,
+    "from_visual_idle": 8
+  },
+  "observations": {
+    "next_changed_actor_draw": 8,
+    "idle_committed_actor_draw": 8,
+    "cancelled_before_next_draw": 0
+  },
+  "committed_draw_ms": {
+    "n": 8,
+    "p50": 31,
+    "p95": 32.8,
+    "p99": 32.8,
+    "max": 32.8
+  },
+  "http_ms": {
+    "n": 16,
+    "p50": 8.8,
+    "p95": 16.25,
+    "p99": 16.37,
+    "max": 16.4
+  },
+  "samples_retained": 586,
+  "all_samples_preserved": true,
+  "source_sha256": {
+    "kalends_rebirth/static/app.js": "36d0571d916cd21cfca38e181f4fa116f10710fd28a7253a8bd163f8fd7604e6",
+    "kalends_rebirth/static/navigation.js": "898a618b7be0898dd251bba26debfa020816c03d1e8a02dc338b423270da6c89",
+    "kalends_rebirth/static/diagnostics.js": "186193ca0e6619a7d68a3886727352052516208aef5d75834a408deecf2e59c1"
+  },
+  "journal": "results/minds_v2/playability/idle_trace_journal.json",
+  "journal_check": {
+    "save_sha256": "a55f4b589ec845ad9c74d66e3d69bbae1190b79a9e74df96c8670702b4b02c10",
+    "bytes_unchanged": true,
+    "ledger_hash": "2148c141cf5dbc290f4b6ebcc51e04337c28681201ff4e960cf08d521ec85cfa",
+    "commands": 155,
+    "minute": 1523,
+    "player_coins": 1.0,
+    "player_flour": 0,
+    "location": "thermopolium",
+    "position": [
+      1225.0,
+      656.0
+    ]
+  },
+  "other_trace_scope": {
+    "continued_browser_trace.json": "Earlier v1 metric, lower empirical p50; two residual-motion rows; not eight new-intent causal trials.",
+    "idle_committed_browser_trace_pre_visibility_guard.json": "Earlier strict-idle run: eight matching rows, median29.45ms. Preserved before additional scene-filter guard; not final app fingerprint."
+  },
+  "limitations": [
+    "Small warm, same-scene desktop sample.",
+    "No controlled cold-start, long-history, physical-device or general-tail inference.",
+    "Draw/frame metrics do not isolate GPU or Python CPU."
+  ]
+}

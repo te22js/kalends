@@ -56,7 +56,8 @@
           "mode": "advance",
           "debt": 0
         }
-      ]
+      ],
+      "scope": "Earlier 139-command playthrough checkpoint, before two subsequent eight-tap diagnostic runs."
     },
     "correction_fork": {
       "save_sha256": "5f6d8302a46178f37a4e27573bc53fba174c6aaf7e051d07c0c7a79b4bc23c03",
@@ -74,6 +75,20 @@
       "minds_active": true,
       "branch_hash": "eb4ff231a1a50df3a0a1b680542463f5c6a90e08f14a58682cdb0334b1c7025d",
       "contracts": []
+    },
+    "trace_browser": {
+      "save_sha256": "a55f4b589ec845ad9c74d66e3d69bbae1190b79a9e74df96c8670702b4b02c10",
+      "bytes_unchanged": true,
+      "ledger_hash": "2148c141cf5dbc290f4b6ebcc51e04337c28681201ff4e960cf08d521ec85cfa",
+      "commands": 155,
+      "minute": 1523,
+      "player_coins": 1.0,
+      "player_flour": 0,
+      "location": "thermopolium",
+      "position": [
+        1225.0,
+        656.0
+      ]
     }
   }
 }

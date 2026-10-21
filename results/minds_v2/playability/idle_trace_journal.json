@@ -1,0 +1,2093 @@
+{
+  "version": 4,
+  "config": {
+    "seed": 79,
+    "horizon_days": 60,
+    "memory_capacity": 32,
+    "information_policy": "cautious",
+    "communication": true
+  },
+  "origin": null,
+  "commands": [
+    {
+      "operation": "move",
+      "data": {
+        "x": 676,
+        "y": 415
+      },
+      "at": 0,
+      "after": 1,
+      "receipt_id": 25,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 702,
+        "y": 415
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 26,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 676,
+        "y": 415
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 27,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 676,
+        "y": 441
+      },
+      "at": 1,
+      "after": 2,
+      "receipt_id": 29,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 676,
+        "y": 415
+      },
+      "at": 2,
+      "after": 2,
+      "receipt_id": 30,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 692.6259559724397,
+        "y": 460.0286307586906
+      },
+      "at": 2,
+      "after": 2,
+      "receipt_id": 31,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 700,
+        "y": 480
+      },
+      "at": 2,
+      "after": 3,
+      "receipt_id": 33,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 710.5725218288629,
+        "y": 526.8211680992499
+      },
+      "at": 3,
+      "after": 3,
+      "receipt_id": 34,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 721.1450436577259,
+        "y": 573.6423361984998
+      },
+      "at": 3,
+      "after": 4,
+      "receipt_id": 36,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 731.7175654865887,
+        "y": 620.4635042977498
+      },
+      "at": 4,
+      "after": 4,
+      "receipt_id": 37,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 742.2900873154515,
+        "y": 667.2846723969997
+      },
+      "at": 4,
+      "after": 5,
+      "receipt_id": 39,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 752.8626091443144,
+        "y": 714.1058404962496
+      },
+      "at": 5,
+      "after": 5,
+      "receipt_id": 40,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 763.4351309731774,
+        "y": 760.9270085954995
+      },
+      "at": 5,
+      "after": 6,
+      "receipt_id": 42,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 790
+      },
+      "at": 6,
+      "after": 6,
+      "receipt_id": 43,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 825,
+        "location": "household"
+      },
+      "at": 6,
+      "after": 7,
+      "receipt_id": 45,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 873
+      },
+      "at": 7,
+      "after": 7,
+      "receipt_id": 46,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 921
+      },
+      "at": 7,
+      "after": 8,
+      "receipt_id": 49,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 969
+      },
+      "at": 8,
+      "after": 8,
+      "receipt_id": 50,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 1014
+      },
+      "at": 8,
+      "after": 9,
+      "receipt_id": 52,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 966
+      },
+      "at": 9,
+      "after": 9,
+      "receipt_id": 53,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 918
+      },
+      "at": 9,
+      "after": 10,
+      "receipt_id": 55,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 744,
+        "y": 918
+      },
+      "at": 10,
+      "after": 10,
+      "receipt_id": 56,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 756.9237981120393,
+        "y": 871.7725682915517
+      },
+      "at": 10,
+      "after": 11,
+      "receipt_id": 58,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 769.8475962240786,
+        "y": 825.5451365831034
+      },
+      "at": 11,
+      "after": 11,
+      "receipt_id": 59,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 825
+      },
+      "at": 11,
+      "after": 11,
+      "receipt_id": 60,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 770,
+        "y": 790,
+        "location": "street"
+      },
+      "at": 11,
+      "after": 12,
+      "receipt_id": 62,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 759.4274781711371,
+        "y": 743.1788319007501
+      },
+      "at": 12,
+      "after": 12,
+      "receipt_id": 63,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 748.8549563422741,
+        "y": 696.3576638015002
+      },
+      "at": 12,
+      "after": 13,
+      "receipt_id": 65,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 738.2824345134113,
+        "y": 649.5364957022502
+      },
+      "at": 13,
+      "after": 13,
+      "receipt_id": 66,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 727.7099126845485,
+        "y": 602.7153276030003
+      },
+      "at": 13,
+      "after": 14,
+      "receipt_id": 68,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 717.1373908556856,
+        "y": 555.8941595037504
+      },
+      "at": 14,
+      "after": 14,
+      "receipt_id": 69,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 706.5648690268226,
+        "y": 509.0729914045005
+      },
+      "at": 14,
+      "after": 15,
+      "receipt_id": 71,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 700,
+        "y": 480
+      },
+      "at": 15,
+      "after": 15,
+      "receipt_id": 72,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 652,
+        "y": 480
+      },
+      "at": 15,
+      "after": 16,
+      "receipt_id": 80,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 604,
+        "y": 480
+      },
+      "at": 16,
+      "after": 16,
+      "receipt_id": 81,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 556,
+        "y": 480
+      },
+      "at": 16,
+      "after": 17,
+      "receipt_id": 87,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 508,
+        "y": 480
+      },
+      "at": 17,
+      "after": 17,
+      "receipt_id": 88,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 460,
+        "y": 480
+      },
+      "at": 17,
+      "after": 18,
+      "receipt_id": 90,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 412,
+        "y": 480
+      },
+      "at": 18,
+      "after": 18,
+      "receipt_id": 91,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 480
+      },
+      "at": 18,
+      "after": 19,
+      "receipt_id": 93,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 515,
+        "location": "fullery"
+      },
+      "at": 19,
+      "after": 19,
+      "receipt_id": 94,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 563
+      },
+      "at": 19,
+      "after": 20,
+      "receipt_id": 96,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 611
+      },
+      "at": 20,
+      "after": 20,
+      "receipt_id": 97,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 659
+      },
+      "at": 20,
+      "after": 21,
+      "receipt_id": 99,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 704
+      },
+      "at": 21,
+      "after": 21,
+      "receipt_id": 100,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 656
+      },
+      "at": 21,
+      "after": 22,
+      "receipt_id": 102,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 608
+      },
+      "at": 22,
+      "after": 22,
+      "receipt_id": 103,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 560
+      },
+      "at": 22,
+      "after": 23,
+      "receipt_id": 105,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 515
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 106,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 385,
+        "y": 480,
+        "location": "street"
+      },
+      "at": 23,
+      "after": 24,
+      "receipt_id": 108,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 430.90068134329556,
+        "y": 465.9597915891096
+      },
+      "at": 24,
+      "after": 24,
+      "receipt_id": 109,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 476.8013626865911,
+        "y": 451.9195831782192
+      },
+      "at": 24,
+      "after": 25,
+      "receipt_id": 112,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 522.7020440298867,
+        "y": 437.8793747673288
+      },
+      "at": 25,
+      "after": 25,
+      "receipt_id": 113,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 568.6027253731822,
+        "y": 423.8391663564384
+      },
+      "at": 25,
+      "after": 26,
+      "receipt_id": 115,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 614.5034067164778,
+        "y": 409.79895794554795
+      },
+      "at": 26,
+      "after": 26,
+      "receipt_id": 116,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 660.4040880597734,
+        "y": 395.75874953465757
+      },
+      "at": 26,
+      "after": 27,
+      "receipt_id": 118,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 706.3047694030689,
+        "y": 381.7185411237672
+      },
+      "at": 27,
+      "after": 27,
+      "receipt_id": 119,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 752.2054507463645,
+        "y": 367.67833271287674
+      },
+      "at": 27,
+      "after": 28,
+      "receipt_id": 121,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 798.10613208966,
+        "y": 353.63812430198635
+      },
+      "at": 28,
+      "after": 28,
+      "receipt_id": 122,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 28,
+      "after": 28,
+      "receipt_id": 123,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 28,
+      "after": 29,
+      "receipt_id": 125,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 247
+      },
+      "at": 29,
+      "after": 30,
+      "receipt_id": 127,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 229.5
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 128,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_bonded_order",
+        "recipient": "Felix",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 129,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Felix",
+        "action": "buy",
+        "quantity": 2,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 130,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_deliver_order",
+        "recipient": "Felix",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 134,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_deliver_order",
+        "recipient": "Felix",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 135,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 277.5
+      },
+      "at": 30,
+      "after": 30,
+      "receipt_id": 137,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295
+      },
+      "at": 30,
+      "after": 31,
+      "receipt_id": 139,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 31,
+      "after": 31,
+      "receipt_id": 140,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 782.3192065152646,
+        "y": 389.2144574367086
+      },
+      "at": 31,
+      "after": 32,
+      "receipt_id": 142,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 754.6384130305291,
+        "y": 428.4289148734171
+      },
+      "at": 32,
+      "after": 32,
+      "receipt_id": 143,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 750,
+        "y": 435
+      },
+      "at": 32,
+      "after": 32,
+      "receipt_id": 144,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "hear_dispute",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 32,
+      "after": 32,
+      "receipt_id": 145,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "examine_receipt",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 32,
+      "after": 32,
+      "receipt_id": 146,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "support_market",
+        "recipient": "Sabina",
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 32,
+      "after": 52,
+      "receipt_id": 147,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 797.7860375116773,
+        "y": 439.52709829057994
+      },
+      "at": 52,
+      "after": 53,
+      "receipt_id": 158,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 845.5720750233545,
+        "y": 444.0541965811599
+      },
+      "at": 53,
+      "after": 53,
+      "receipt_id": 159,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 893.3581125350318,
+        "y": 448.58129487173983
+      },
+      "at": 53,
+      "after": 54,
+      "receipt_id": 161,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 941.144150046709,
+        "y": 453.10839316231977
+      },
+      "at": 54,
+      "after": 54,
+      "receipt_id": 162,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 988.9301875583863,
+        "y": 457.6354914528997
+      },
+      "at": 54,
+      "after": 55,
+      "receipt_id": 164,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1036.7162250700635,
+        "y": 462.16258974347966
+      },
+      "at": 55,
+      "after": 56,
+      "receipt_id": 166,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1084.5022625817408,
+        "y": 466.6896880340596
+      },
+      "at": 56,
+      "after": 56,
+      "receipt_id": 167,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1132.288300093418,
+        "y": 471.21678632463954
+      },
+      "at": 56,
+      "after": 57,
+      "receipt_id": 169,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1180.0743376050953,
+        "y": 475.74388461521954
+      },
+      "at": 57,
+      "after": 57,
+      "receipt_id": 170,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 480
+      },
+      "at": 57,
+      "after": 58,
+      "receipt_id": 172,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 515,
+        "location": "thermopolium"
+      },
+      "at": 58,
+      "after": 58,
+      "receipt_id": 173,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 563
+      },
+      "at": 58,
+      "after": 59,
+      "receipt_id": 175,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 611
+      },
+      "at": 59,
+      "after": 59,
+      "receipt_id": 176,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 59,
+      "after": 60,
+      "receipt_id": 178,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_bonded_order",
+        "recipient": "Sabina",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 60,
+      "after": 60,
+      "receipt_id": 179,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "advance",
+      "data": {
+        "mode": "skip",
+        "minutes": 1440
+      },
+      "at": 60,
+      "after": 1500,
+      "receipt_id": null,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 608
+      },
+      "at": 1500,
+      "after": 1500,
+      "receipt_id": 219,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 560
+      },
+      "at": 1500,
+      "after": 1501,
+      "receipt_id": 221,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 515
+      },
+      "at": 1501,
+      "after": 1501,
+      "receipt_id": 222,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 480,
+        "location": "street"
+      },
+      "at": 1501,
+      "after": 1502,
+      "receipt_id": 224,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1179.1947915810003,
+        "y": 465.65138049525314
+      },
+      "at": 1502,
+      "after": 1502,
+      "receipt_id": 225,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1133.3895831620007,
+        "y": 451.3027609905063
+      },
+      "at": 1502,
+      "after": 1503,
+      "receipt_id": 227,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1087.584374743001,
+        "y": 436.9541414857594
+      },
+      "at": 1503,
+      "after": 1503,
+      "receipt_id": 228,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1041.7791663240014,
+        "y": 422.60552198101254
+      },
+      "at": 1503,
+      "after": 1504,
+      "receipt_id": 230,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 995.9739579050017,
+        "y": 408.2569024762656
+      },
+      "at": 1504,
+      "after": 1504,
+      "receipt_id": 231,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 950.1687494860021,
+        "y": 393.90828297151876
+      },
+      "at": 1504,
+      "after": 1505,
+      "receipt_id": 233,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 904.3635410670024,
+        "y": 379.55966346677184
+      },
+      "at": 1505,
+      "after": 1505,
+      "receipt_id": 234,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 858.5583326480028,
+        "y": 365.211043962025
+      },
+      "at": 1505,
+      "after": 1506,
+      "receipt_id": 236,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 812.7531242290031,
+        "y": 350.8624244572781
+      },
+      "at": 1506,
+      "after": 1506,
+      "receipt_id": 237,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350
+      },
+      "at": 1506,
+      "after": 1506,
+      "receipt_id": 238,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295,
+        "location": "bakery"
+      },
+      "at": 1506,
+      "after": 1507,
+      "receipt_id": 240,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 247
+      },
+      "at": 1507,
+      "after": 1508,
+      "receipt_id": 242,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 229.5
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 243,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_advance_order",
+        "recipient": "Felix",
+        "quantity": 1,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 244,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Felix",
+        "action": "buy",
+        "quantity": 2,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 245,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_deliver_order",
+        "recipient": "Felix",
+        "quantity": 2,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 247,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "recipient": "Felix",
+        "action": "buy",
+        "quantity": 2,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 249,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 277.5
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 250,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 295
+      },
+      "at": 1508,
+      "after": 1508,
+      "receipt_id": 251,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 810,
+        "y": 350,
+        "location": "street"
+      },
+      "at": 1508,
+      "after": 1509,
+      "receipt_id": 253,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 855.8052084189997,
+        "y": 364.34861950474686
+      },
+      "at": 1509,
+      "after": 1510,
+      "receipt_id": 255,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 901.6104168379993,
+        "y": 378.6972390094937
+      },
+      "at": 1510,
+      "after": 1510,
+      "receipt_id": 256,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 947.415625256999,
+        "y": 393.0458585142406
+      },
+      "at": 1510,
+      "after": 1511,
+      "receipt_id": 258,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 993.2208336759986,
+        "y": 407.39447801898746
+      },
+      "at": 1511,
+      "after": 1511,
+      "receipt_id": 259,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1039.0260420949983,
+        "y": 421.7430975237344
+      },
+      "at": 1511,
+      "after": 1512,
+      "receipt_id": 261,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1084.831250513998,
+        "y": 436.09171702848124
+      },
+      "at": 1512,
+      "after": 1512,
+      "receipt_id": 262,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1130.6364589329976,
+        "y": 450.44033653322816
+      },
+      "at": 1512,
+      "after": 1513,
+      "receipt_id": 265,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1176.4416673519972,
+        "y": 464.788956037975
+      },
+      "at": 1513,
+      "after": 1513,
+      "receipt_id": 266,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1222.246875770997,
+        "y": 479.1375755427219
+      },
+      "at": 1513,
+      "after": 1514,
+      "receipt_id": 268,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 480
+      },
+      "at": 1514,
+      "after": 1514,
+      "receipt_id": 269,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 515,
+        "location": "thermopolium"
+      },
+      "at": 1514,
+      "after": 1514,
+      "receipt_id": 270,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 563
+      },
+      "at": 1514,
+      "after": 1515,
+      "receipt_id": 272,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 611
+      },
+      "at": 1515,
+      "after": 1515,
+      "receipt_id": 273,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1515,
+      "after": 1516,
+      "receipt_id": 275,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "action",
+      "data": {
+        "action": "v2_replace_order",
+        "recipient": "Sabina",
+        "quantity": 2,
+        "actor_id": "Player",
+        "evidence_ids": [],
+        "needs_confirmation": true
+      },
+      "at": 1516,
+      "after": 1516,
+      "receipt_id": 276,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1516,
+      "after": 1516,
+      "receipt_id": 278,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1516,
+      "after": 1516,
+      "receipt_id": 279,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1516,
+      "after": 1517,
+      "receipt_id": 284,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1517,
+      "after": 1517,
+      "receipt_id": 285,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1517,
+      "after": 1517,
+      "receipt_id": 286,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1517,
+      "after": 1518,
+      "receipt_id": 288,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1518,
+      "after": 1518,
+      "receipt_id": 289,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1518,
+      "after": 1518,
+      "receipt_id": 290,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1518,
+      "after": 1518,
+      "receipt_id": 291,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1518,
+      "after": 1519,
+      "receipt_id": 293,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 630
+      },
+      "at": 1519,
+      "after": 1519,
+      "receipt_id": 294,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1519,
+      "after": 1519,
+      "receipt_id": 295,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1519,
+      "after": 1520,
+      "receipt_id": 297,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1520,
+      "after": 1520,
+      "receipt_id": 298,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 630
+      },
+      "at": 1520,
+      "after": 1520,
+      "receipt_id": 299,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1520,
+      "after": 1520,
+      "receipt_id": 300,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1520,
+      "after": 1521,
+      "receipt_id": 302,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1521,
+      "after": 1521,
+      "receipt_id": 303,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 630
+      },
+      "at": 1521,
+      "after": 1521,
+      "receipt_id": 304,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1521,
+      "after": 1522,
+      "receipt_id": 306,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1251,
+        "y": 656
+      },
+      "at": 1522,
+      "after": 1522,
+      "receipt_id": 307,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1522,
+      "after": 1522,
+      "receipt_id": 308,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 630
+      },
+      "at": 1522,
+      "after": 1522,
+      "receipt_id": 309,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    },
+    {
+      "operation": "move",
+      "data": {
+        "x": 1225,
+        "y": 656
+      },
+      "at": 1522,
+      "after": 1523,
+      "receipt_id": 311,
+      "memory_presentation_revision": 2,
+      "movement_revision": 2,
+      "minds_revision": 2
+    }
+  ],
+  "mode": "game",
+  "ledger_hash": "2148c141cf5dbc290f4b6ebcc51e04337c28681201ff4e960cf08d521ec85cfa",
+  "intervention": null,
+  "telemetry_enabled": false,
+  "product_events": []
+}

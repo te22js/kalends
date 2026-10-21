@@ -19,19 +19,22 @@
     get active(){return Boolean(this.intent||this.route.length||this.tap||this.planning||this.pending);}
     cancel(reason='cancelled') {
       this.epoch++;this.intent=null;this.route=[];this.tap=null;this.destination=null;this.talk=null;
+      this.traceToken=null;this.c.trace?.cancelInput?.(reason);
       this.c.trace?.record('navigation_cancel',{reason,step_in_flight:this.pending});
       this.c.changed?.();
     }
     go(body,talk=null) {
       if(this.c.blocked()){this.c.trace?.input('destination',false,'overlay or transaction');return false;}
+      const from_visual_idle=!this.active&&this.c.remaining()===0;
       this.cancel('new destination');this.intent={body:{...body},epoch:this.epoch};this.talk=talk;
-      this.c.clearKeys?.();this.c.trace?.input('destination',true);this.c.started?.();this.pump();return true;
+      this.c.clearKeys?.();this.traceToken=this.c.trace?.input('destination',true,'',{from_visual_idle});this.c.started?.();this.pump();return true;
     }
     nudge(dx,dy) {
       if(this.c.blocked()){this.c.trace?.input('direction',false,'overlay or transaction');return false;}
       const magnitude=Math.hypot(dx,dy);if(!magnitude)return false;
+      const from_visual_idle=!this.active&&this.c.remaining()===0;
       this.cancel('direction change');this.tap={dx:dx/magnitude,dy:dy/magnitude};
-      this.c.trace?.input('direction',true);this.c.started?.();this.pump();return true;
+      this.traceToken=this.c.trace?.input('direction',true,'',{from_visual_idle});this.c.started?.();this.pump();return true;
     }
     tick() {this.pump();}
     async plan(intent) {
@@ -71,7 +74,7 @@
       else if(distance<=this.stepLength)body={x:target.x,y:target.y};
       else body={x:p.x+(target.x-p.x)*this.stepLength/distance,y:p.y+(target.y-p.y)*this.stepLength/distance};
       this.pending=true;const epoch=this.epoch;
-      this.c.commit(body).catch(error=>{
+      this.c.commit(body,this.traceToken).catch(error=>{
         if(epoch===this.epoch){this.cancel('step rejected');this.c.clearKeys?.();this.c.error(error);}
       }).finally(()=>{this.pending=false;this.c.changed?.();this.pump();});
     }
