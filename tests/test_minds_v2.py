@@ -247,3 +247,34 @@ def test_rejected_testimony_does_not_hide_a_retained_accepted_fact_in_a_tiny_con
         m.observe(Episode(**rejected))
     assert m.believe("cargo","condition",now=10).value=="blocked"
     assert m.choose(options(),own_resources={"coins":4},now=10).action_id=="verify"
+
+
+def test_direct_or_corroborated_requirement_uses_only_the_actual_shared_decision_context():
+    m=mind(context_records=2)
+    m.observe(claim(1,"ready",received=1,vintage=1))
+    m.observe(Episode(3,"Felix",3,"episodic","Aelia kept a direct earlier promise.",participants=("Felix","Player"),
+        social_signals=(SocialSignal("Player","reliability",.2),)))
+    candidates=[ActionOption("advance","Offer credit on supported supply",5,
+        conditions=(BeliefCondition("cargo","condition","ready",min_sources=2,max_age=3,allow_direct=True),),
+        social_conditions=(SocialCondition("Player","reliability",minimum=.6),)),ActionOption("verify","Check first",1)]
+    assert m.choose(candidates,own_resources={},now=3).action_id=="advance"
+    # A late relay of the same dated fact takes the second context slot. The
+    # direct record is still retained and visible to a supply-only query, but
+    # cannot relax the requirement in this actual credit decision.
+    m.observe(claim(2,"ready",received=2,vintage=1,source="Dama",origin="Marcus"))
+    assert m.believe("cargo","condition",now=3).direct
+    decision=m.choose(candidates,own_resources={},now=3)
+    assert decision.action_id=="verify" and set(decision.context_event_ids)=={2,3}
+    assert 1 not in decision.evidence_ids
+    m.observe(claim(4,"ready",received=4,vintage=4))
+    assert m.choose(candidates,own_resources={},now=4).action_id=="advance"
+
+
+def test_direct_allowance_is_opt_in_and_does_not_bypass_age_or_claimed_source_requirements():
+    m=mind();m.observe(claim(1,"ready",received=1,vintage=1))
+    assert m.choose(options(independent=2),own_resources={"coins":4},now=1).action_id=="verify"
+    candidates=[ActionOption("buy","Buy supported cargo",5,
+        conditions=(BeliefCondition("cargo","condition","ready",min_sources=2,max_age=1,allow_direct=True),)),ActionOption("wait","Wait",0)]
+    assert m.choose(candidates,own_resources={},now=3).action_id=="wait"
+    with pytest.raises(ValueError,match="boolean"):
+        BeliefCondition("cargo","condition","ready",allow_direct="yes")

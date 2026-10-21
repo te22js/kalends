@@ -348,3 +348,22 @@ def test_actual_authored_rebirth_receipt_can_support_later_credit():
     assert social["value"]==.68 and social["evidence_ids"]==[event.event_id]
     w._v2_decide("Felix",w.v2_market["offers"]["Felix"]["cycle"])
     assert w.v2_market["offers"]["Felix"]["mode"]=="advance"
+
+
+def test_direct_supply_outside_the_shared_credit_context_cannot_relax_corroboration():
+    w=active(MindConfig(context_records=2))
+    event=w._emit("v2_credit_consequence","Felix directly settles an earlier delivery",actors=("Player","Felix"),scope="private")
+    w._v2_personal("Felix",event,"kept")
+    direct=w.v2_minds["Felix"].believe("grain","supply",now=w.minute)
+    report=w._hear("Felix","Dama",direct.value,direct.as_of,direct.evidence_ids[0],observer="Marcus")
+    # The supply-only query can still retrieve the direct dispatch alongside the
+    # relay; the full credit decision has room for only the relay and receipt.
+    assert w.v2_minds["Felix"].believe("grain","supply",now=w.minute).direct
+    w._v2_decide("Felix",w.v2_market["offers"]["Felix"]["cycle"])
+    decision=w.v2_minds["Felix"].last_decision
+    assert set(decision.context_event_ids)=={event.event_id,report.event_id}
+    assert w.v2_market["offers"]["Felix"]["mode"]=="bonded"
+    before=w.economy.cash["Player"]
+    with pytest.raises(ValueError,match="cash bond"):
+        run(w,"v2_advance_order")
+    assert w.economy.cash["Player"]==before

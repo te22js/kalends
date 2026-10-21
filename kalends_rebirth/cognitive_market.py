@@ -166,8 +166,10 @@ class CognitiveMarketMixin:
         mind=self.v2_minds[buyer]
         mind.set_goals([Goal("counter-batch","Secure two flour units for an additional working batch",priority=1.1 if buyer=="Felix" else 1,
             deadline=offer["deadline"],relevant_keys=(("grain","supply"),("Player","offered_flour")),tags=("supply","credit"))])
-        belief=mind.believe("grain","supply",now=self.minute)
-        supply=(BeliefCondition("grain","supply","available",min_sources=1 if belief.direct else 2,max_age=120),)
+        # Both corroboration and directness are checked inside choose's one
+        # shared context. A separate belief query could see a direct record
+        # which the actual decision context has displaced with social history.
+        supply=(BeliefCondition("grain","supply","available",min_sources=2,max_age=120,allow_direct=True),)
         blocked=self._v2_contract(buyer,"defaulted") is not None
         cash=self.economy.cash[buyer]+(offer.get("reserved",0) if offer["status"]=="offered" else 0)
         resources={"coins":cash,"credit_capacity":0 if blocked else 1,"trading_capacity":0 if blocked else 1}

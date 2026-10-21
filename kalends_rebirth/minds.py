@@ -182,6 +182,7 @@ class BeliefCondition:
     equals: str
     min_sources: int = 1
     max_age: int | None = None
+    allow_direct: bool = False
 
     def __post_init__(self):
         for key in ("subject", "predicate", "equals"):
@@ -190,6 +191,8 @@ class BeliefCondition:
             raise ValueError("min_sources must be between1 and16")
         if self.max_age is not None:
             _integer(self.max_age, "max_age")
+        if type(self.allow_direct) is not bool:
+            raise ValueError("direct observation allowance must be a boolean")
 
 
 @dataclass(frozen=True)
@@ -502,7 +505,7 @@ class AgentMind:
                 belief=self._belief(condition.subject,condition.predicate,records)
                 if belief.value!=condition.equals or belief.status!="known":
                     failures.append(f"no settled retained support for {condition.subject}.{condition.predicate}={condition.equals}")
-                elif len(belief.source_groups)<condition.min_sources:
+                elif len(belief.source_groups)<condition.min_sources and not (condition.allow_direct and belief.direct):
                     failures.append(f"too few distinct communicated source groups for {condition.subject}.{condition.predicate}")
                 elif condition.max_age is not None and now-belief.as_of>condition.max_age:
                     failures.append(f"the retained {condition.subject}.{condition.predicate} report is too old")
