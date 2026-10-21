@@ -120,7 +120,8 @@ def test_unsupported_movement_revision_rejects_save_without_overwriting_it(tmp_p
 def test_invalid_destination_and_save_failure_roll_back_travel_carry_and_every_world_effect(tmp_path,monkeypatch):
     path=tmp_path/'life.json';s=session(path);s.apply('move',{'x':676,'y':415})
     before=physical(s);saved=path.read_bytes()
-    for data in ({'x':100,'y':100},{'x':float('nan'),'y':415},{'location':'roof'},{'location':'bakery','x':810,'y':200}):
+    for data in ({'x':100,'y':100},{'x':float('nan'),'y':415},{'location':'roof'},
+                 {'location':'bakery','x':810},{'location':'bakery','x':100,'y':100}):
         with pytest.raises(ValueError):s.apply('move',data)
         assert physical(s)==before and path.read_bytes()==saved
     def no_save():raise OSError('injected storage failure')
@@ -147,3 +148,33 @@ def test_movement_rejects_insufficient_horizon_before_any_world_mutation():
         RebirthSession._perform(world,'move',{'x':676,'y':415})
     assert world.fidelity_state()==before and world.ledger.content_hash()==digest
     assert not hasattr(world,'_movement_revision')
+
+
+@pytest.mark.parametrize('room',['bakery','fullery','thermopolium','household'])
+def test_explicit_scene_coordinates_allow_short_portal_entry_and_exit(room):
+    s=session();door,threshold=door_points(room)
+    s.apply('move',{'x':door[0],'y':door[1]})
+    entered=s.apply('move',{'location':room,'x':threshold[0],'y':threshold[1]})['receipt']['payload']
+    assert s.original.state.agent_locations['Player']==room
+    assert s.original.positions['Player']==threshold
+    assert list(map(tuple,entered['path']))==[door,threshold]
+    assert entered['travel_distance']==path_distance([door,threshold])
+    assert entered['travel_distance']<=55
+    exited=s.apply('move',{'location':'street','x':door[0],'y':door[1]})['receipt']['payload']
+    assert s.original.state.agent_locations['Player']=='street'
+    assert s.original.positions['Player']==door
+    assert list(map(tuple,exited['path']))==[threshold,door]
+    assert exited['travel_distance']==entered['travel_distance']
+
+
+def test_explicit_scene_coordinate_override_is_v2_only_and_legacy_hash_is_exact():
+    original,with_fields=RebirthWorld(),RebirthWorld()
+    original.move(location='bakery')
+    RebirthSession._perform(with_fields,'move',{'location':'bakery','x':25,'y':25},movement_revision=1)
+    assert original.positions['Player']==with_fields.positions['Player']==(810.,275.5)
+    assert original.ledger.content_hash()==with_fields.ledger.content_hash()
+    assert original.fidelity_state()==with_fields.fidelity_state()
+    s=session()
+    s.apply('move',{'location':'bakery','x':810,'y':200})
+    assert s.original.positions['Player']==(810.,200.)
+    assert s.original.state.agent_locations['Player']=='bakery'

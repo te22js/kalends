@@ -147,15 +147,16 @@ class RebirthWorld(PompeiiWorld):
         destination=None
         if location is not None:
             if not isinstance(location,str):raise ValueError("Unknown destination.")
-            if x is not None or y is not None:raise ValueError("Choose coordinates or a marked location, not both.")
+            explicit=x is not None or y is not None
+            if explicit and (x is None or y is None):raise ValueError("A movement destination needs both coordinates.")
             if location == "street":
                 # Exiting reaches the actual public doorway, rather than a
                 # second invisible walk all the way to the horizontal backbone.
-                target=door_points(current)[0] if current not in PUBLIC_LOCATIONS else start
+                target=(x,y) if explicit else door_points(current)[0] if current not in PUBLIC_LOCATIONS else start
             else:
                 destination=next((r for r in LOCATIONS if r["id"]==location),None)
                 if destination is None:raise ValueError("Unknown destination.")
-                target=(destination["x"]+destination["w"]*.5,destination["y"]+destination["h"]*.85) if destination["interior"] else (destination["door"]["x"],destination["door"]["y"])
+                target=(x,y) if explicit else (destination["x"]+destination["w"]*.5,destination["y"]+destination["h"]*.85) if destination["interior"] else (destination["door"]["x"],destination["door"]["y"])
         else:
             target=(x,y)
             if current not in PUBLIC_LOCATIONS and point_walkable(target,current):
