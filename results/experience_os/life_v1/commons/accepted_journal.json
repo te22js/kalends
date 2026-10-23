@@ -1,0 +1,4604 @@
+{
+  "version": 1,
+  "spec_hash": "a4404e46a83b21112e577cad69602dc678de4d6fd31faba37992f00bbedd1d20",
+  "spec": {
+    "version": 1,
+    "id": "observatory_long_life",
+    "title": "Recorded 90-day demonstration: Shared Observatory",
+    "setting": {
+      "adapter": "commons",
+      "rules": {
+        "seed": 2718,
+        "round_minutes": 1440,
+        "capacity": 12,
+        "rounds": 90,
+        "quota": 4,
+        "inspection_cost": 1,
+        "maintenance_interval": 7,
+        "initial_condition": "fragile"
+      }
+    },
+    "participants": [
+      {
+        "id": "Player",
+        "role": "elected consortium coordinator",
+        "player": true,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_a",
+        "role": "time-sensitive sky-survey research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_b",
+        "role": "instrument maintenance and calibration research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_c",
+        "role": "long-baseline transient follow-up research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      }
+    ],
+    "institutions": [
+      {
+        "id": "consortium",
+        "members": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "capacity": 12,
+        "rule": "coordinator_quota"
+      }
+    ],
+    "observations": [
+      {
+        "id": "maintenance_log",
+        "subject": "observatory",
+        "predicate": "condition",
+        "value": "fragile",
+        "at": 0,
+        "observers": [
+          "team_b"
+        ],
+        "kind": "direct"
+      }
+    ],
+    "goals": [
+      {
+        "id": "survey_deadline",
+        "actor": "team_a",
+        "label": "Complete a four-slot survey batch by the first dusk",
+        "priority": 95,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      },
+      {
+        "id": "calibration_deadline",
+        "actor": "team_b",
+        "label": "Complete a four-slot calibration batch without promising unusable capacity",
+        "priority": 90,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      },
+      {
+        "id": "followup_deadline",
+        "actor": "team_c",
+        "label": "Complete a four-slot follow-up batch by the first dusk",
+        "priority": 85,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      }
+    ],
+    "actions": [
+      "reserve",
+      "release",
+      "share",
+      "inspect",
+      "commit",
+      "allocate",
+      "wait"
+    ],
+    "opportunities": [
+      {
+        "at": 0,
+        "label": "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+      },
+      {
+        "at": 10080,
+        "label": "Recheck instrument condition after the scheduled maintenance interval."
+      },
+      {
+        "at": 43200,
+        "label": "Compare the teams' completed work, broken promises and cumulative allocation equity."
+      },
+      {
+        "at": 86400,
+        "label": "Reconsider a prior promise using the event-grounded counterfactual retry."
+      }
+    ],
+    "horizon_minutes": 129600,
+    "termination": {
+      "at": 129600
+    },
+    "measures": [
+      "completed_rounds",
+      "failed_promises",
+      "equity",
+      "information_shared",
+      "credits_spent",
+      "unused_capacity",
+      "elapsed_days"
+    ],
+    "debrief": {
+      "objective": "Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.",
+      "questions": [
+        "Who knew the hardware condition before the first allocation, and what caused it to become available to others?",
+        "Which promises fit actual usable capacity at settlement, and which failed? Cite the events.",
+        "Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?",
+        "Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?"
+      ],
+      "transfer": {
+        "prompt": "A new laboratory advertises twelve instrument slots. Three teams need four slots each, but only the engineer has a fresh reliability report. Which plan best manages the uncertainty?",
+        "options": [
+          "Promise four slots to all three teams immediately because twelve slots are advertised.",
+          "Ask for the dated report or buy a fresh check, disclose its limits, and make a feasible allocation with an explicit review point.",
+          "Allocate everything to the most confident team and record its confidence as direct evidence."
+        ],
+        "answer": 1,
+        "rationale": "A nominal resource limit is not verified usable capacity. Legitimate evidence, an explicit cost-aware allocation and a later review point make the promise testable. This answer is conceptual and does not establish learning transfer."
+      }
+    },
+    "sources": [
+      {
+        "id": "observatory_fiction",
+        "title": "Project-authored shared-instrument allocation experiment; not an operational observatory or validated training curriculum.",
+        "url": "project://kalends/specs/shared_observatory.json",
+        "kind": "fiction"
+      }
+    ]
+  },
+  "retention": "hybrid",
+  "commands": [
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 13
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 14
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 15
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 0,
+      "after": 1440,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 1440,
+      "after": 1440,
+      "receipt_id": 35
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 1440,
+      "after": 1440,
+      "receipt_id": 36
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 1440,
+      "after": 1440,
+      "receipt_id": 37
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 1440,
+      "after": 2880,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 2880,
+      "after": 2880,
+      "receipt_id": 57
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 2880,
+      "after": 2880,
+      "receipt_id": 58
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 2880,
+      "after": 2880,
+      "receipt_id": 59
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 2880,
+      "after": 4320,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 4320,
+      "after": 4320,
+      "receipt_id": 80
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 4320,
+      "after": 4320,
+      "receipt_id": 81
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 4320,
+      "after": 4320,
+      "receipt_id": 82
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 4320,
+      "after": 5760,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 5760,
+      "after": 5760,
+      "receipt_id": 100
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 5760,
+      "after": 5760,
+      "receipt_id": 101
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 5760,
+      "after": 5760,
+      "receipt_id": 102
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 5760,
+      "after": 7200,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 7200,
+      "after": 7200,
+      "receipt_id": 122
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 7200,
+      "after": 7200,
+      "receipt_id": 123
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 7200,
+      "after": 7200,
+      "receipt_id": 124
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 7200,
+      "after": 8640,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 8640,
+      "after": 8640,
+      "receipt_id": 144
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 8640,
+      "after": 8640,
+      "receipt_id": 145
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 8640,
+      "after": 8640,
+      "receipt_id": 146
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 8640,
+      "after": 10080,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 10080,
+      "after": 10080,
+      "receipt_id": 165
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 10080,
+      "after": 10080,
+      "receipt_id": 166
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 10080,
+      "after": 10080,
+      "receipt_id": 167
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 10080,
+      "after": 11520,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 11520,
+      "after": 11520,
+      "receipt_id": 187
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 11520,
+      "after": 11520,
+      "receipt_id": 188
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 11520,
+      "after": 11520,
+      "receipt_id": 189
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 11520,
+      "after": 12960,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 12960,
+      "after": 12960,
+      "receipt_id": 209
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 12960,
+      "after": 12960,
+      "receipt_id": 210
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 12960,
+      "after": 12960,
+      "receipt_id": 211
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 12960,
+      "after": 14400,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 14400,
+      "after": 14400,
+      "receipt_id": 229
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 14400,
+      "after": 14400,
+      "receipt_id": 230
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 14400,
+      "after": 14400,
+      "receipt_id": 231
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 14400,
+      "after": 15840,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 15840,
+      "after": 15840,
+      "receipt_id": 251
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 15840,
+      "after": 15840,
+      "receipt_id": 252
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 15840,
+      "after": 15840,
+      "receipt_id": 253
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 15840,
+      "after": 17280,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 17280,
+      "after": 17280,
+      "receipt_id": 273
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 17280,
+      "after": 17280,
+      "receipt_id": 274
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 17280,
+      "after": 17280,
+      "receipt_id": 275
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 17280,
+      "after": 18720,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 18720,
+      "after": 18720,
+      "receipt_id": 293
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 18720,
+      "after": 18720,
+      "receipt_id": 294
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 18720,
+      "after": 18720,
+      "receipt_id": 295
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 18720,
+      "after": 20160,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 20160,
+      "after": 20160,
+      "receipt_id": 315
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 20160,
+      "after": 20160,
+      "receipt_id": 316
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 20160,
+      "after": 20160,
+      "receipt_id": 317
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 20160,
+      "after": 21600,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 21600,
+      "after": 21600,
+      "receipt_id": 337
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 21600,
+      "after": 21600,
+      "receipt_id": 338
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 21600,
+      "after": 21600,
+      "receipt_id": 339
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 21600,
+      "after": 23040,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 23040,
+      "after": 23040,
+      "receipt_id": 357
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 23040,
+      "after": 23040,
+      "receipt_id": 358
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 23040,
+      "after": 23040,
+      "receipt_id": 359
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 23040,
+      "after": 24480,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 24480,
+      "after": 24480,
+      "receipt_id": 379
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 24480,
+      "after": 24480,
+      "receipt_id": 380
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 24480,
+      "after": 24480,
+      "receipt_id": 381
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 24480,
+      "after": 25920,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 25920,
+      "after": 25920,
+      "receipt_id": 397
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 25920,
+      "after": 25920,
+      "receipt_id": 398
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 25920,
+      "after": 25920,
+      "receipt_id": 399
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 25920,
+      "after": 27360,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 27360,
+      "after": 27360,
+      "receipt_id": 413
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 27360,
+      "after": 27360,
+      "receipt_id": 414
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 27360,
+      "after": 27360,
+      "receipt_id": 415
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 27360,
+      "after": 28800,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 28800,
+      "after": 28800,
+      "receipt_id": 429
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 28800,
+      "after": 28800,
+      "receipt_id": 430
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 28800,
+      "after": 28800,
+      "receipt_id": 431
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 28800,
+      "after": 30240,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 30240,
+      "after": 30240,
+      "receipt_id": 445
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 30240,
+      "after": 30240,
+      "receipt_id": 446
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 30240,
+      "after": 30240,
+      "receipt_id": 447
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 30240,
+      "after": 31680,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 31680,
+      "after": 31680,
+      "receipt_id": 461
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 31680,
+      "after": 31680,
+      "receipt_id": 462
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 31680,
+      "after": 31680,
+      "receipt_id": 463
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 31680,
+      "after": 33120,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 33120,
+      "after": 33120,
+      "receipt_id": 477
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 33120,
+      "after": 33120,
+      "receipt_id": 478
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 33120,
+      "after": 33120,
+      "receipt_id": 479
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 33120,
+      "after": 34560,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 34560,
+      "after": 34560,
+      "receipt_id": 493
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 34560,
+      "after": 34560,
+      "receipt_id": 494
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 34560,
+      "after": 34560,
+      "receipt_id": 495
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 34560,
+      "after": 36000,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 36000,
+      "after": 36000,
+      "receipt_id": 509
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 36000,
+      "after": 36000,
+      "receipt_id": 510
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 36000,
+      "after": 36000,
+      "receipt_id": 511
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 36000,
+      "after": 37440,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 37440,
+      "after": 37440,
+      "receipt_id": 525
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 37440,
+      "after": 37440,
+      "receipt_id": 526
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 37440,
+      "after": 37440,
+      "receipt_id": 527
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 37440,
+      "after": 38880,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 38880,
+      "after": 38880,
+      "receipt_id": 541
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 38880,
+      "after": 38880,
+      "receipt_id": 542
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 38880,
+      "after": 38880,
+      "receipt_id": 543
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 38880,
+      "after": 40320,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 40320,
+      "after": 40320,
+      "receipt_id": 557
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 40320,
+      "after": 40320,
+      "receipt_id": 558
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 40320,
+      "after": 40320,
+      "receipt_id": 559
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 40320,
+      "after": 41760,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 41760,
+      "after": 41760,
+      "receipt_id": 573
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 41760,
+      "after": 41760,
+      "receipt_id": 574
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 41760,
+      "after": 41760,
+      "receipt_id": 575
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 41760,
+      "after": 43200,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 43200,
+      "after": 43200,
+      "receipt_id": 590
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 43200,
+      "after": 43200,
+      "receipt_id": 591
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 43200,
+      "after": 43200,
+      "receipt_id": 592
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 43200,
+      "after": 44640,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 44640,
+      "after": 44640,
+      "receipt_id": 606
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 44640,
+      "after": 44640,
+      "receipt_id": 607
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 44640,
+      "after": 44640,
+      "receipt_id": 608
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 44640,
+      "after": 46080,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 46080,
+      "after": 46080,
+      "receipt_id": 622
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 46080,
+      "after": 46080,
+      "receipt_id": 623
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 46080,
+      "after": 46080,
+      "receipt_id": 624
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 46080,
+      "after": 47520,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 47520,
+      "after": 47520,
+      "receipt_id": 638
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 47520,
+      "after": 47520,
+      "receipt_id": 639
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 47520,
+      "after": 47520,
+      "receipt_id": 640
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 47520,
+      "after": 48960,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 48960,
+      "after": 48960,
+      "receipt_id": 654
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 48960,
+      "after": 48960,
+      "receipt_id": 655
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 48960,
+      "after": 48960,
+      "receipt_id": 656
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 48960,
+      "after": 50400,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 50400,
+      "after": 50400,
+      "receipt_id": 670
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 50400,
+      "after": 50400,
+      "receipt_id": 671
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 50400,
+      "after": 50400,
+      "receipt_id": 672
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 50400,
+      "after": 51840,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 51840,
+      "after": 51840,
+      "receipt_id": 686
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 51840,
+      "after": 51840,
+      "receipt_id": 687
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 51840,
+      "after": 51840,
+      "receipt_id": 688
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 51840,
+      "after": 53280,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 53280,
+      "after": 53280,
+      "receipt_id": 702
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 53280,
+      "after": 53280,
+      "receipt_id": 703
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 53280,
+      "after": 53280,
+      "receipt_id": 704
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 53280,
+      "after": 54720,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 54720,
+      "after": 54720,
+      "receipt_id": 718
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 54720,
+      "after": 54720,
+      "receipt_id": 719
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 54720,
+      "after": 54720,
+      "receipt_id": 720
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 54720,
+      "after": 56160,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 56160,
+      "after": 56160,
+      "receipt_id": 734
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 56160,
+      "after": 56160,
+      "receipt_id": 735
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 56160,
+      "after": 56160,
+      "receipt_id": 736
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 56160,
+      "after": 57600,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 57600,
+      "after": 57600,
+      "receipt_id": 750
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 57600,
+      "after": 57600,
+      "receipt_id": 751
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 57600,
+      "after": 57600,
+      "receipt_id": 752
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 57600,
+      "after": 59040,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 59040,
+      "after": 59040,
+      "receipt_id": 766
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 59040,
+      "after": 59040,
+      "receipt_id": 767
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 59040,
+      "after": 59040,
+      "receipt_id": 768
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 59040,
+      "after": 60480,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 60480,
+      "after": 60480,
+      "receipt_id": 782
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 60480,
+      "after": 60480,
+      "receipt_id": 783
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 60480,
+      "after": 60480,
+      "receipt_id": 784
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 60480,
+      "after": 61920,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 61920,
+      "after": 61920,
+      "receipt_id": 798
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 61920,
+      "after": 61920,
+      "receipt_id": 799
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 61920,
+      "after": 61920,
+      "receipt_id": 800
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 61920,
+      "after": 63360,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 63360,
+      "after": 63360,
+      "receipt_id": 814
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 63360,
+      "after": 63360,
+      "receipt_id": 815
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 63360,
+      "after": 63360,
+      "receipt_id": 816
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 63360,
+      "after": 64800,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 64800,
+      "after": 64800,
+      "receipt_id": 830
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 64800,
+      "after": 64800,
+      "receipt_id": 831
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 64800,
+      "after": 64800,
+      "receipt_id": 832
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 64800,
+      "after": 66240,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 66240,
+      "after": 66240,
+      "receipt_id": 846
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 66240,
+      "after": 66240,
+      "receipt_id": 847
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 66240,
+      "after": 66240,
+      "receipt_id": 848
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 66240,
+      "after": 67680,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 67680,
+      "after": 67680,
+      "receipt_id": 862
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 67680,
+      "after": 67680,
+      "receipt_id": 863
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 67680,
+      "after": 67680,
+      "receipt_id": 864
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 67680,
+      "after": 69120,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 69120,
+      "after": 69120,
+      "receipt_id": 878
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 69120,
+      "after": 69120,
+      "receipt_id": 879
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 69120,
+      "after": 69120,
+      "receipt_id": 880
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 69120,
+      "after": 70560,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 70560,
+      "after": 70560,
+      "receipt_id": 894
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 70560,
+      "after": 70560,
+      "receipt_id": 895
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 70560,
+      "after": 70560,
+      "receipt_id": 896
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 70560,
+      "after": 72000,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 72000,
+      "after": 72000,
+      "receipt_id": 910
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 72000,
+      "after": 72000,
+      "receipt_id": 911
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 72000,
+      "after": 72000,
+      "receipt_id": 912
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 72000,
+      "after": 73440,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 73440,
+      "after": 73440,
+      "receipt_id": 926
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 73440,
+      "after": 73440,
+      "receipt_id": 927
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 73440,
+      "after": 73440,
+      "receipt_id": 928
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 73440,
+      "after": 74880,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 74880,
+      "after": 74880,
+      "receipt_id": 942
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 74880,
+      "after": 74880,
+      "receipt_id": 943
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 74880,
+      "after": 74880,
+      "receipt_id": 944
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 74880,
+      "after": 76320,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 76320,
+      "after": 76320,
+      "receipt_id": 958
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 76320,
+      "after": 76320,
+      "receipt_id": 959
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 76320,
+      "after": 76320,
+      "receipt_id": 960
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 76320,
+      "after": 77760,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 77760,
+      "after": 77760,
+      "receipt_id": 974
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 77760,
+      "after": 77760,
+      "receipt_id": 975
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 77760,
+      "after": 77760,
+      "receipt_id": 976
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 77760,
+      "after": 79200,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 79200,
+      "after": 79200,
+      "receipt_id": 990
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 79200,
+      "after": 79200,
+      "receipt_id": 991
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 79200,
+      "after": 79200,
+      "receipt_id": 992
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 79200,
+      "after": 80640,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 80640,
+      "after": 80640,
+      "receipt_id": 1006
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 80640,
+      "after": 80640,
+      "receipt_id": 1007
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 80640,
+      "after": 80640,
+      "receipt_id": 1008
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 80640,
+      "after": 82080,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 82080,
+      "after": 82080,
+      "receipt_id": 1022
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 82080,
+      "after": 82080,
+      "receipt_id": 1023
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 82080,
+      "after": 82080,
+      "receipt_id": 1024
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 82080,
+      "after": 83520,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 83520,
+      "after": 83520,
+      "receipt_id": 1038
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 83520,
+      "after": 83520,
+      "receipt_id": 1039
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 83520,
+      "after": 83520,
+      "receipt_id": 1040
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 83520,
+      "after": 84960,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 84960,
+      "after": 84960,
+      "receipt_id": 1054
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 84960,
+      "after": 84960,
+      "receipt_id": 1055
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 84960,
+      "after": 84960,
+      "receipt_id": 1056
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 84960,
+      "after": 86400,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 86400,
+      "after": 86400,
+      "receipt_id": 1071
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 86400,
+      "after": 86400,
+      "receipt_id": 1072
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 86400,
+      "after": 86400,
+      "receipt_id": 1073
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 86400,
+      "after": 87840,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 87840,
+      "after": 87840,
+      "receipt_id": 1087
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 87840,
+      "after": 87840,
+      "receipt_id": 1088
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 87840,
+      "after": 87840,
+      "receipt_id": 1089
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 87840,
+      "after": 89280,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 89280,
+      "after": 89280,
+      "receipt_id": 1103
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 89280,
+      "after": 89280,
+      "receipt_id": 1104
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 89280,
+      "after": 89280,
+      "receipt_id": 1105
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 89280,
+      "after": 90720,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 90720,
+      "after": 90720,
+      "receipt_id": 1119
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 90720,
+      "after": 90720,
+      "receipt_id": 1120
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 90720,
+      "after": 90720,
+      "receipt_id": 1121
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 90720,
+      "after": 92160,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 92160,
+      "after": 92160,
+      "receipt_id": 1135
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 92160,
+      "after": 92160,
+      "receipt_id": 1136
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 92160,
+      "after": 92160,
+      "receipt_id": 1137
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 92160,
+      "after": 93600,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 93600,
+      "after": 93600,
+      "receipt_id": 1151
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 93600,
+      "after": 93600,
+      "receipt_id": 1152
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 93600,
+      "after": 93600,
+      "receipt_id": 1153
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 93600,
+      "after": 95040,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 95040,
+      "after": 95040,
+      "receipt_id": 1167
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 95040,
+      "after": 95040,
+      "receipt_id": 1168
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 95040,
+      "after": 95040,
+      "receipt_id": 1169
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 95040,
+      "after": 96480,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 96480,
+      "after": 96480,
+      "receipt_id": 1183
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 96480,
+      "after": 96480,
+      "receipt_id": 1184
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 96480,
+      "after": 96480,
+      "receipt_id": 1185
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 96480,
+      "after": 97920,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 97920,
+      "after": 97920,
+      "receipt_id": 1199
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 97920,
+      "after": 97920,
+      "receipt_id": 1200
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 97920,
+      "after": 97920,
+      "receipt_id": 1201
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 97920,
+      "after": 99360,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 99360,
+      "after": 99360,
+      "receipt_id": 1215
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 99360,
+      "after": 99360,
+      "receipt_id": 1216
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 0,
+          "team_c": 4
+        }
+      },
+      "at": 99360,
+      "after": 99360,
+      "receipt_id": 1217
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 99360,
+      "after": 100800,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 100800,
+      "after": 100800,
+      "receipt_id": 1231
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 100800,
+      "after": 100800,
+      "receipt_id": 1232
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 100800,
+      "after": 100800,
+      "receipt_id": 1233
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 100800,
+      "after": 102240,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 102240,
+      "after": 102240,
+      "receipt_id": 1247
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 102240,
+      "after": 102240,
+      "receipt_id": 1248
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 102240,
+      "after": 102240,
+      "receipt_id": 1249
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 102240,
+      "after": 103680,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 103680,
+      "after": 103680,
+      "receipt_id": 1263
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 103680,
+      "after": 103680,
+      "receipt_id": 1264
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 103680,
+      "after": 103680,
+      "receipt_id": 1265
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 103680,
+      "after": 105120,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 105120,
+      "after": 105120,
+      "receipt_id": 1279
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 105120,
+      "after": 105120,
+      "receipt_id": 1280
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 105120,
+      "after": 105120,
+      "receipt_id": 1281
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 105120,
+      "after": 106560,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 106560,
+      "after": 106560,
+      "receipt_id": 1295
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 106560,
+      "after": 106560,
+      "receipt_id": 1296
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 106560,
+      "after": 106560,
+      "receipt_id": 1297
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 106560,
+      "after": 108000,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 108000,
+      "after": 108000,
+      "receipt_id": 1311
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 108000,
+      "after": 108000,
+      "receipt_id": 1312
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 108000,
+      "after": 108000,
+      "receipt_id": 1313
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 108000,
+      "after": 109440,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 109440,
+      "after": 109440,
+      "receipt_id": 1327
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 109440,
+      "after": 109440,
+      "receipt_id": 1328
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 109440,
+      "after": 109440,
+      "receipt_id": 1329
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 109440,
+      "after": 110880,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 110880,
+      "after": 110880,
+      "receipt_id": 1343
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 110880,
+      "after": 110880,
+      "receipt_id": 1344
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 110880,
+      "after": 110880,
+      "receipt_id": 1345
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 110880,
+      "after": 112320,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 112320,
+      "after": 112320,
+      "receipt_id": 1359
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 112320,
+      "after": 112320,
+      "receipt_id": 1360
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 112320,
+      "after": 112320,
+      "receipt_id": 1361
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 112320,
+      "after": 113760,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 113760,
+      "after": 113760,
+      "receipt_id": 1375
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 113760,
+      "after": 113760,
+      "receipt_id": 1376
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 113760,
+      "after": 113760,
+      "receipt_id": 1377
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 113760,
+      "after": 115200,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 115200,
+      "after": 115200,
+      "receipt_id": 1391
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 115200,
+      "after": 115200,
+      "receipt_id": 1392
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 115200,
+      "after": 115200,
+      "receipt_id": 1393
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 115200,
+      "after": 116640,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 116640,
+      "after": 116640,
+      "receipt_id": 1407
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 116640,
+      "after": 116640,
+      "receipt_id": 1408
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 116640,
+      "after": 116640,
+      "receipt_id": 1409
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 116640,
+      "after": 118080,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 118080,
+      "after": 118080,
+      "receipt_id": 1423
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 118080,
+      "after": 118080,
+      "receipt_id": 1424
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 118080,
+      "after": 118080,
+      "receipt_id": 1425
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 118080,
+      "after": 119520,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 119520,
+      "after": 119520,
+      "receipt_id": 1439
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 119520,
+      "after": 119520,
+      "receipt_id": 1440
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 119520,
+      "after": 119520,
+      "receipt_id": 1441
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 119520,
+      "after": 120960,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 120960,
+      "after": 120960,
+      "receipt_id": 1455
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 120960,
+      "after": 120960,
+      "receipt_id": 1456
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 120960,
+      "after": 120960,
+      "receipt_id": 1457
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 120960,
+      "after": 122400,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 122400,
+      "after": 122400,
+      "receipt_id": 1471
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 122400,
+      "after": 122400,
+      "receipt_id": 1472
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 122400,
+      "after": 122400,
+      "receipt_id": 1473
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 122400,
+      "after": 123840,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 123840,
+      "after": 123840,
+      "receipt_id": 1487
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 123840,
+      "after": 123840,
+      "receipt_id": 1488
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 123840,
+      "after": 123840,
+      "receipt_id": 1489
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 123840,
+      "after": 125280,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 125280,
+      "after": 125280,
+      "receipt_id": 1503
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 125280,
+      "after": 125280,
+      "receipt_id": 1504
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 125280,
+      "after": 125280,
+      "receipt_id": 1505
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 125280,
+      "after": 126720,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 126720,
+      "after": 126720,
+      "receipt_id": 1519
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 126720,
+      "after": 126720,
+      "receipt_id": 1520
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 126720,
+      "after": 126720,
+      "receipt_id": 1521
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 126720,
+      "after": 128160,
+      "receipt_id": null
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 128160,
+      "after": 128160,
+      "receipt_id": 1535
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "commit",
+        "recipient": "team_c",
+        "quantity": 4
+      },
+      "at": 128160,
+      "after": 128160,
+      "receipt_id": 1536
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 128160,
+      "after": 128160,
+      "receipt_id": 1537
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1440,
+        "mode": "compress"
+      },
+      "at": 128160,
+      "after": 129600,
+      "receipt_id": null
+    }
+  ],
+  "state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d"
+}

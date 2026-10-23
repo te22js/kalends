@@ -1,0 +1,85 @@
+Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8801/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8801/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 1
+			6 checkbox LEARN, Value: 0
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		88 text LIVE · PARTICIPATE IN A PERSISTENT WORLD
+		11 heading Browser verification: isolated Pompeii life, Value: 1, ID: title
+			89 text Browser verification: isolated Pompeii life
+		90 text Practice distinguishing dated direct evidence, testimony and uncertainty before making a consequential choice. Simulated performance does not establish human learning or transfer.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: Browser verification: isolated Pompeii life, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (disabled) A life among promises: Pompeii
+					19 (disabled) Shared Observatory: three teams, one instrument
+					20 (disabled) Browser verification: isolated Pompeii life
+		91 text DAY 1 · 30 WORLD MINUTES · 1 ACCEPTED COMMANDS
+		22 button Refresh world, ID: refresh
+		23 text The validated experience is running on the shared kernel.
+		24 container Description: Actual world outcomes, ID: metrics
+			92 text 6
+			93 text CASH
+			94 text 0
+			95 text INVENTORY
+			96 text 0
+			97 text REPUTATION
+			98 text 0
+			99 text FULFILLED OBLIGATIONS
+			100 text 0
+			101 text MISSED OBLIGATIONS
+			102 text 0.02
+			103 text ELAPSED DAYS
+		37 container pompeii
+			38 text This existing PlayCanvas client operates the same compiled Pompeii life inspected by LEARN and LAB. Use its own time controls while playing. Returning from LEARN or LAB reloads the saved scene. Your original saved game is preserved.
+			39 container Description: Live compiled Pompeii 3D experience, ID: game
+				40 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8801/immersion/?experience=browser_pompeii
+					41 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+					42 container names
+						43 text Aelia · you
+						44 button Approach Sabina
+							45 text Sabina
+							104 text E · talk
+						47 button Walk to Felix's bread counter
+					48 container hud
+						49 button Description: Open game menu, ID: menu-button
+							50 text KALENDS
+							51 text POMPEII · 79 CE
+						52 container
+							105 text DAY 1
+							106 text 08:30
+							107 text VIA DELL’ABBONDANZA
+						56 container
+							108 text ◉ 6
+							58 button Journal, ID: journal-button
+							59 button Description: Settings, ID: settings-button
+					60 container lead
+						61 text THE ACCOUNT AT THE FOUNTAIN
+						62 heading Six sacks. Two promises., Value: 2, ID: lead-title
+							109 text Six sacks. Two promises.
+						110 text Sabina's counter and Lucius's household both claim the cart. Read their terms, pay for a different arrangement, or put your name behind one side.
+						65 button Find Sabina ↗, ID: lead-action
+					66 container location-caption
+						111 text VIA DELL’ABBONDANZA
+						112 text Attested places · fictional lives
+					113 container interaction
+						114 text Sabina · food seller
+						115 button Talk E, ID: interact
+							116 text Talk 
+							117 text E
+					69 container controls
+						70 checkbox Live, Value: 0, ID: live
+						71 button Wait 30m, ID: wait
+						72 button A day later, ID: day-later
+						73 button Description: Follow Aelia, ID: recenter
+					118 text 08:30 · Six sacks. Two promises.
+		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		86 text offline cognition · 0 external calls
+		87 text  · Local single-user prototype
+
+The focused UI element is 41 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.

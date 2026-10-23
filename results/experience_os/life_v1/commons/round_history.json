@@ -1,0 +1,4190 @@
+[
+  {
+    "round": 0,
+    "elapsed_days": 1,
+    "report_event_id": 13,
+    "reported_value": "fragile",
+    "promise_event_id": 14,
+    "allocation_command_index": 2,
+    "allocation_event_id": 15,
+    "settlement_event_id": 22,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 0
+      }
+    },
+    "metrics": {
+      "rounds_settled": 1,
+      "completed_projects": 2,
+      "executed_units": 8,
+      "allocated_units": 12,
+      "promises_kept": 0,
+      "promises_missed": 1,
+      "credits_spent": 2,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "visitor",
+      "completed_rounds": 1,
+      "failed_promises": 1,
+      "equity": 0.0,
+      "information_shared": 1,
+      "unused_capacity": 0,
+      "elapsed_days": 1.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 1,
+    "elapsed_days": 2,
+    "report_event_id": 35,
+    "reported_value": "fragile",
+    "promise_event_id": 36,
+    "allocation_command_index": 6,
+    "allocation_event_id": 37,
+    "settlement_event_id": 46,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 2,
+      "completed_projects": 4,
+      "executed_units": 16,
+      "allocated_units": 20,
+      "promises_kept": 1,
+      "promises_missed": 1,
+      "credits_spent": 4,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "visitor",
+      "completed_rounds": 2,
+      "failed_promises": 1,
+      "equity": 0.5,
+      "information_shared": 2,
+      "unused_capacity": 0,
+      "elapsed_days": 2.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 2,
+    "elapsed_days": 3,
+    "report_event_id": 57,
+    "reported_value": "fragile",
+    "promise_event_id": 58,
+    "allocation_command_index": 10,
+    "allocation_event_id": 59,
+    "settlement_event_id": 66,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 3,
+      "completed_projects": 6,
+      "executed_units": 24,
+      "allocated_units": 28,
+      "promises_kept": 2,
+      "promises_missed": 1,
+      "credits_spent": 6,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 3,
+      "failed_promises": 1,
+      "equity": 1.0,
+      "information_shared": 3,
+      "unused_capacity": 0,
+      "elapsed_days": 3.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 3,
+    "elapsed_days": 4,
+    "report_event_id": 80,
+    "reported_value": "fragile",
+    "promise_event_id": 81,
+    "allocation_command_index": 14,
+    "allocation_event_id": 82,
+    "settlement_event_id": 89,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 4,
+      "completed_projects": 8,
+      "executed_units": 32,
+      "allocated_units": 36,
+      "promises_kept": 3,
+      "promises_missed": 1,
+      "credits_spent": 6,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 4,
+      "failed_promises": 1,
+      "equity": 0.6666666666666666,
+      "information_shared": 4,
+      "unused_capacity": 0,
+      "elapsed_days": 4.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 4,
+    "elapsed_days": 5,
+    "report_event_id": 100,
+    "reported_value": "fragile",
+    "promise_event_id": 101,
+    "allocation_command_index": 18,
+    "allocation_event_id": 102,
+    "settlement_event_id": 111,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 5,
+      "completed_projects": 10,
+      "executed_units": 40,
+      "allocated_units": 44,
+      "promises_kept": 4,
+      "promises_missed": 1,
+      "credits_spent": 8,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 5,
+      "failed_promises": 1,
+      "equity": 0.75,
+      "information_shared": 5,
+      "unused_capacity": 0,
+      "elapsed_days": 5.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 5,
+    "elapsed_days": 6,
+    "report_event_id": 122,
+    "reported_value": "fragile",
+    "promise_event_id": 123,
+    "allocation_command_index": 22,
+    "allocation_event_id": 124,
+    "settlement_event_id": 131,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 6,
+      "completed_projects": 12,
+      "executed_units": 48,
+      "allocated_units": 52,
+      "promises_kept": 5,
+      "promises_missed": 1,
+      "credits_spent": 10,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 6,
+      "failed_promises": 1,
+      "equity": 0.6,
+      "information_shared": 6,
+      "unused_capacity": 0,
+      "elapsed_days": 6.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 6,
+    "elapsed_days": 7,
+    "report_event_id": 144,
+    "reported_value": "fragile",
+    "promise_event_id": 145,
+    "allocation_command_index": 26,
+    "allocation_event_id": 146,
+    "settlement_event_id": 153,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 7,
+      "completed_projects": 14,
+      "executed_units": 56,
+      "allocated_units": 60,
+      "promises_kept": 6,
+      "promises_missed": 1,
+      "credits_spent": 10,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 7,
+      "failed_promises": 1,
+      "equity": 0.6666666666666666,
+      "information_shared": 7,
+      "unused_capacity": 0,
+      "elapsed_days": 7.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 7,
+    "elapsed_days": 8,
+    "report_event_id": 165,
+    "reported_value": "stable",
+    "promise_event_id": 166,
+    "allocation_command_index": 30,
+    "allocation_event_id": 167,
+    "settlement_event_id": 176,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 8,
+      "completed_projects": 17,
+      "executed_units": 68,
+      "allocated_units": 72,
+      "promises_kept": 7,
+      "promises_missed": 1,
+      "credits_spent": 12,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 8,
+      "failed_promises": 1,
+      "equity": 0.7142857142857143,
+      "information_shared": 8,
+      "unused_capacity": 0,
+      "elapsed_days": 8.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 8,
+    "elapsed_days": 9,
+    "report_event_id": 187,
+    "reported_value": "stable",
+    "promise_event_id": 188,
+    "allocation_command_index": 34,
+    "allocation_event_id": 189,
+    "settlement_event_id": 196,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 9,
+      "completed_projects": 20,
+      "executed_units": 80,
+      "allocated_units": 84,
+      "promises_kept": 8,
+      "promises_missed": 1,
+      "credits_spent": 14,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 9,
+      "failed_promises": 1,
+      "equity": 0.75,
+      "information_shared": 9,
+      "unused_capacity": 0,
+      "elapsed_days": 9.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 9,
+    "elapsed_days": 10,
+    "report_event_id": 209,
+    "reported_value": "stable",
+    "promise_event_id": 210,
+    "allocation_command_index": 38,
+    "allocation_event_id": 211,
+    "settlement_event_id": 218,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 10,
+      "completed_projects": 23,
+      "executed_units": 92,
+      "allocated_units": 96,
+      "promises_kept": 9,
+      "promises_missed": 1,
+      "credits_spent": 14,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 10,
+      "failed_promises": 1,
+      "equity": 0.7777777777777778,
+      "information_shared": 10,
+      "unused_capacity": 0,
+      "elapsed_days": 10.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 10,
+    "elapsed_days": 11,
+    "report_event_id": 229,
+    "reported_value": "stable",
+    "promise_event_id": 230,
+    "allocation_command_index": 42,
+    "allocation_event_id": 231,
+    "settlement_event_id": 240,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 11,
+      "completed_projects": 26,
+      "executed_units": 104,
+      "allocated_units": 108,
+      "promises_kept": 10,
+      "promises_missed": 1,
+      "credits_spent": 16,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 11,
+      "failed_promises": 1,
+      "equity": 0.8,
+      "information_shared": 11,
+      "unused_capacity": 0,
+      "elapsed_days": 11.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 11,
+    "elapsed_days": 12,
+    "report_event_id": 251,
+    "reported_value": "stable",
+    "promise_event_id": 252,
+    "allocation_command_index": 46,
+    "allocation_event_id": 253,
+    "settlement_event_id": 260,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 12,
+      "completed_projects": 29,
+      "executed_units": 116,
+      "allocated_units": 120,
+      "promises_kept": 11,
+      "promises_missed": 1,
+      "credits_spent": 18,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 12,
+      "failed_promises": 1,
+      "equity": 0.8181818181818182,
+      "information_shared": 12,
+      "unused_capacity": 0,
+      "elapsed_days": 12.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 12,
+    "elapsed_days": 13,
+    "report_event_id": 273,
+    "reported_value": "stable",
+    "promise_event_id": 274,
+    "allocation_command_index": 50,
+    "allocation_event_id": 275,
+    "settlement_event_id": 282,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 13,
+      "completed_projects": 32,
+      "executed_units": 128,
+      "allocated_units": 132,
+      "promises_kept": 12,
+      "promises_missed": 1,
+      "credits_spent": 18,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 13,
+      "failed_promises": 1,
+      "equity": 0.8333333333333334,
+      "information_shared": 13,
+      "unused_capacity": 0,
+      "elapsed_days": 13.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 13,
+    "elapsed_days": 14,
+    "report_event_id": 293,
+    "reported_value": "stable",
+    "promise_event_id": 294,
+    "allocation_command_index": 54,
+    "allocation_event_id": 295,
+    "settlement_event_id": 304,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 14,
+      "completed_projects": 35,
+      "executed_units": 140,
+      "allocated_units": 144,
+      "promises_kept": 13,
+      "promises_missed": 1,
+      "credits_spent": 20,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 14,
+      "failed_promises": 1,
+      "equity": 0.8461538461538461,
+      "information_shared": 14,
+      "unused_capacity": 0,
+      "elapsed_days": 14.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 14,
+    "elapsed_days": 15,
+    "report_event_id": 315,
+    "reported_value": "fragile",
+    "promise_event_id": 316,
+    "allocation_command_index": 58,
+    "allocation_event_id": 317,
+    "settlement_event_id": 324,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 15,
+      "completed_projects": 37,
+      "executed_units": 148,
+      "allocated_units": 152,
+      "promises_kept": 14,
+      "promises_missed": 1,
+      "credits_spent": 22,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 15,
+      "failed_promises": 1,
+      "equity": 0.7857142857142857,
+      "information_shared": 15,
+      "unused_capacity": 0,
+      "elapsed_days": 15.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 15,
+    "elapsed_days": 16,
+    "report_event_id": 337,
+    "reported_value": "fragile",
+    "promise_event_id": 338,
+    "allocation_command_index": 62,
+    "allocation_event_id": 339,
+    "settlement_event_id": 346,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 16,
+      "completed_projects": 39,
+      "executed_units": 156,
+      "allocated_units": 160,
+      "promises_kept": 15,
+      "promises_missed": 1,
+      "credits_spent": 22,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 16,
+      "failed_promises": 1,
+      "equity": 0.8,
+      "information_shared": 16,
+      "unused_capacity": 0,
+      "elapsed_days": 16.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 16,
+    "elapsed_days": 17,
+    "report_event_id": 357,
+    "reported_value": "fragile",
+    "promise_event_id": 358,
+    "allocation_command_index": 66,
+    "allocation_event_id": 359,
+    "settlement_event_id": 368,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 17,
+      "completed_projects": 41,
+      "executed_units": 164,
+      "allocated_units": 168,
+      "promises_kept": 16,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 17,
+      "failed_promises": 1,
+      "equity": 0.75,
+      "information_shared": 17,
+      "unused_capacity": 0,
+      "elapsed_days": 17.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 17,
+    "elapsed_days": 18,
+    "report_event_id": 379,
+    "reported_value": "fragile",
+    "promise_event_id": 380,
+    "allocation_command_index": 70,
+    "allocation_event_id": 381,
+    "settlement_event_id": 388,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 18,
+      "completed_projects": 43,
+      "executed_units": 172,
+      "allocated_units": 176,
+      "promises_kept": 17,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 18,
+      "failed_promises": 1,
+      "equity": 0.7647058823529411,
+      "information_shared": 18,
+      "unused_capacity": 0,
+      "elapsed_days": 18.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 18,
+    "elapsed_days": 19,
+    "report_event_id": 397,
+    "reported_value": "fragile",
+    "promise_event_id": 398,
+    "allocation_command_index": 74,
+    "allocation_event_id": 399,
+    "settlement_event_id": 404,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 19,
+      "completed_projects": 45,
+      "executed_units": 180,
+      "allocated_units": 184,
+      "promises_kept": 18,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 19,
+      "failed_promises": 1,
+      "equity": 0.7222222222222222,
+      "information_shared": 19,
+      "unused_capacity": 0,
+      "elapsed_days": 19.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 19,
+    "elapsed_days": 20,
+    "report_event_id": 413,
+    "reported_value": "fragile",
+    "promise_event_id": 414,
+    "allocation_command_index": 78,
+    "allocation_event_id": 415,
+    "settlement_event_id": 420,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 20,
+      "completed_projects": 47,
+      "executed_units": 188,
+      "allocated_units": 192,
+      "promises_kept": 19,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 20,
+      "failed_promises": 1,
+      "equity": 0.7368421052631579,
+      "information_shared": 20,
+      "unused_capacity": 0,
+      "elapsed_days": 20.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 20,
+    "elapsed_days": 21,
+    "report_event_id": 429,
+    "reported_value": "fragile",
+    "promise_event_id": 430,
+    "allocation_command_index": 82,
+    "allocation_event_id": 431,
+    "settlement_event_id": 436,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 21,
+      "completed_projects": 49,
+      "executed_units": 196,
+      "allocated_units": 200,
+      "promises_kept": 20,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 21,
+      "failed_promises": 1,
+      "equity": 0.7,
+      "information_shared": 21,
+      "unused_capacity": 0,
+      "elapsed_days": 21.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 21,
+    "elapsed_days": 22,
+    "report_event_id": 445,
+    "reported_value": "fragile",
+    "promise_event_id": 446,
+    "allocation_command_index": 86,
+    "allocation_event_id": 447,
+    "settlement_event_id": 452,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 22,
+      "completed_projects": 51,
+      "executed_units": 204,
+      "allocated_units": 208,
+      "promises_kept": 21,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 22,
+      "failed_promises": 1,
+      "equity": 0.7142857142857143,
+      "information_shared": 22,
+      "unused_capacity": 0,
+      "elapsed_days": 22.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 22,
+    "elapsed_days": 23,
+    "report_event_id": 461,
+    "reported_value": "fragile",
+    "promise_event_id": 462,
+    "allocation_command_index": 90,
+    "allocation_event_id": 463,
+    "settlement_event_id": 468,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 23,
+      "completed_projects": 53,
+      "executed_units": 212,
+      "allocated_units": 216,
+      "promises_kept": 22,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 23,
+      "failed_promises": 1,
+      "equity": 0.6818181818181818,
+      "information_shared": 23,
+      "unused_capacity": 0,
+      "elapsed_days": 23.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 23,
+    "elapsed_days": 24,
+    "report_event_id": 477,
+    "reported_value": "fragile",
+    "promise_event_id": 478,
+    "allocation_command_index": 94,
+    "allocation_event_id": 479,
+    "settlement_event_id": 484,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 24,
+      "completed_projects": 55,
+      "executed_units": 220,
+      "allocated_units": 224,
+      "promises_kept": 23,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 24,
+      "failed_promises": 1,
+      "equity": 0.6956521739130435,
+      "information_shared": 24,
+      "unused_capacity": 0,
+      "elapsed_days": 24.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 24,
+    "elapsed_days": 25,
+    "report_event_id": 493,
+    "reported_value": "fragile",
+    "promise_event_id": 494,
+    "allocation_command_index": 98,
+    "allocation_event_id": 495,
+    "settlement_event_id": 500,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 25,
+      "completed_projects": 57,
+      "executed_units": 228,
+      "allocated_units": 232,
+      "promises_kept": 24,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 25,
+      "failed_promises": 1,
+      "equity": 0.6666666666666666,
+      "information_shared": 25,
+      "unused_capacity": 0,
+      "elapsed_days": 25.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 25,
+    "elapsed_days": 26,
+    "report_event_id": 509,
+    "reported_value": "fragile",
+    "promise_event_id": 510,
+    "allocation_command_index": 102,
+    "allocation_event_id": 511,
+    "settlement_event_id": 516,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 26,
+      "completed_projects": 59,
+      "executed_units": 236,
+      "allocated_units": 240,
+      "promises_kept": 25,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 26,
+      "failed_promises": 1,
+      "equity": 0.68,
+      "information_shared": 26,
+      "unused_capacity": 0,
+      "elapsed_days": 26.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 26,
+    "elapsed_days": 27,
+    "report_event_id": 525,
+    "reported_value": "fragile",
+    "promise_event_id": 526,
+    "allocation_command_index": 106,
+    "allocation_event_id": 527,
+    "settlement_event_id": 532,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 27,
+      "completed_projects": 61,
+      "executed_units": 244,
+      "allocated_units": 248,
+      "promises_kept": 26,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 27,
+      "failed_promises": 1,
+      "equity": 0.6538461538461539,
+      "information_shared": 27,
+      "unused_capacity": 0,
+      "elapsed_days": 27.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 27,
+    "elapsed_days": 28,
+    "report_event_id": 541,
+    "reported_value": "fragile",
+    "promise_event_id": 542,
+    "allocation_command_index": 110,
+    "allocation_event_id": 543,
+    "settlement_event_id": 548,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 28,
+      "completed_projects": 63,
+      "executed_units": 252,
+      "allocated_units": 256,
+      "promises_kept": 27,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 28,
+      "failed_promises": 1,
+      "equity": 0.6666666666666666,
+      "information_shared": 28,
+      "unused_capacity": 0,
+      "elapsed_days": 28.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 28,
+    "elapsed_days": 29,
+    "report_event_id": 557,
+    "reported_value": "fragile",
+    "promise_event_id": 558,
+    "allocation_command_index": 114,
+    "allocation_event_id": 559,
+    "settlement_event_id": 564,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 29,
+      "completed_projects": 65,
+      "executed_units": 260,
+      "allocated_units": 264,
+      "promises_kept": 28,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 29,
+      "failed_promises": 1,
+      "equity": 0.6428571428571429,
+      "information_shared": 29,
+      "unused_capacity": 0,
+      "elapsed_days": 29.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 29,
+    "elapsed_days": 30,
+    "report_event_id": 573,
+    "reported_value": "fragile",
+    "promise_event_id": 574,
+    "allocation_command_index": 118,
+    "allocation_event_id": 575,
+    "settlement_event_id": 580,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 30,
+      "completed_projects": 67,
+      "executed_units": 268,
+      "allocated_units": 272,
+      "promises_kept": 29,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 30,
+      "failed_promises": 1,
+      "equity": 0.6551724137931034,
+      "information_shared": 30,
+      "unused_capacity": 0,
+      "elapsed_days": 30.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 30,
+    "elapsed_days": 31,
+    "report_event_id": 590,
+    "reported_value": "fragile",
+    "promise_event_id": 591,
+    "allocation_command_index": 122,
+    "allocation_event_id": 592,
+    "settlement_event_id": 597,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 31,
+      "completed_projects": 69,
+      "executed_units": 276,
+      "allocated_units": 280,
+      "promises_kept": 30,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 31,
+      "failed_promises": 1,
+      "equity": 0.6333333333333333,
+      "information_shared": 31,
+      "unused_capacity": 0,
+      "elapsed_days": 31.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 31,
+    "elapsed_days": 32,
+    "report_event_id": 606,
+    "reported_value": "fragile",
+    "promise_event_id": 607,
+    "allocation_command_index": 126,
+    "allocation_event_id": 608,
+    "settlement_event_id": 613,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 32,
+      "completed_projects": 71,
+      "executed_units": 284,
+      "allocated_units": 288,
+      "promises_kept": 31,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 32,
+      "failed_promises": 1,
+      "equity": 0.6451612903225806,
+      "information_shared": 32,
+      "unused_capacity": 0,
+      "elapsed_days": 32.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 32,
+    "elapsed_days": 33,
+    "report_event_id": 622,
+    "reported_value": "fragile",
+    "promise_event_id": 623,
+    "allocation_command_index": 130,
+    "allocation_event_id": 624,
+    "settlement_event_id": 629,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 33,
+      "completed_projects": 73,
+      "executed_units": 292,
+      "allocated_units": 296,
+      "promises_kept": 32,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 33,
+      "failed_promises": 1,
+      "equity": 0.625,
+      "information_shared": 33,
+      "unused_capacity": 0,
+      "elapsed_days": 33.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 33,
+    "elapsed_days": 34,
+    "report_event_id": 638,
+    "reported_value": "fragile",
+    "promise_event_id": 639,
+    "allocation_command_index": 134,
+    "allocation_event_id": 640,
+    "settlement_event_id": 645,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 34,
+      "completed_projects": 75,
+      "executed_units": 300,
+      "allocated_units": 304,
+      "promises_kept": 33,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 34,
+      "failed_promises": 1,
+      "equity": 0.6363636363636364,
+      "information_shared": 34,
+      "unused_capacity": 0,
+      "elapsed_days": 34.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 34,
+    "elapsed_days": 35,
+    "report_event_id": 654,
+    "reported_value": "fragile",
+    "promise_event_id": 655,
+    "allocation_command_index": 138,
+    "allocation_event_id": 656,
+    "settlement_event_id": 661,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 35,
+      "completed_projects": 77,
+      "executed_units": 308,
+      "allocated_units": 312,
+      "promises_kept": 34,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 35,
+      "failed_promises": 1,
+      "equity": 0.6176470588235294,
+      "information_shared": 35,
+      "unused_capacity": 0,
+      "elapsed_days": 35.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 35,
+    "elapsed_days": 36,
+    "report_event_id": 670,
+    "reported_value": "fragile",
+    "promise_event_id": 671,
+    "allocation_command_index": 142,
+    "allocation_event_id": 672,
+    "settlement_event_id": 677,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 36,
+      "completed_projects": 79,
+      "executed_units": 316,
+      "allocated_units": 320,
+      "promises_kept": 35,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 36,
+      "failed_promises": 1,
+      "equity": 0.6285714285714286,
+      "information_shared": 36,
+      "unused_capacity": 0,
+      "elapsed_days": 36.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 36,
+    "elapsed_days": 37,
+    "report_event_id": 686,
+    "reported_value": "fragile",
+    "promise_event_id": 687,
+    "allocation_command_index": 146,
+    "allocation_event_id": 688,
+    "settlement_event_id": 693,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 37,
+      "completed_projects": 81,
+      "executed_units": 324,
+      "allocated_units": 328,
+      "promises_kept": 36,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 37,
+      "failed_promises": 1,
+      "equity": 0.6111111111111112,
+      "information_shared": 37,
+      "unused_capacity": 0,
+      "elapsed_days": 37.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 37,
+    "elapsed_days": 38,
+    "report_event_id": 702,
+    "reported_value": "fragile",
+    "promise_event_id": 703,
+    "allocation_command_index": 150,
+    "allocation_event_id": 704,
+    "settlement_event_id": 709,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 38,
+      "completed_projects": 83,
+      "executed_units": 332,
+      "allocated_units": 336,
+      "promises_kept": 37,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 38,
+      "failed_promises": 1,
+      "equity": 0.6216216216216216,
+      "information_shared": 38,
+      "unused_capacity": 0,
+      "elapsed_days": 38.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 38,
+    "elapsed_days": 39,
+    "report_event_id": 718,
+    "reported_value": "fragile",
+    "promise_event_id": 719,
+    "allocation_command_index": 154,
+    "allocation_event_id": 720,
+    "settlement_event_id": 725,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 39,
+      "completed_projects": 85,
+      "executed_units": 340,
+      "allocated_units": 344,
+      "promises_kept": 38,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 39,
+      "failed_promises": 1,
+      "equity": 0.6052631578947368,
+      "information_shared": 39,
+      "unused_capacity": 0,
+      "elapsed_days": 39.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 39,
+    "elapsed_days": 40,
+    "report_event_id": 734,
+    "reported_value": "fragile",
+    "promise_event_id": 735,
+    "allocation_command_index": 158,
+    "allocation_event_id": 736,
+    "settlement_event_id": 741,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 40,
+      "completed_projects": 87,
+      "executed_units": 348,
+      "allocated_units": 352,
+      "promises_kept": 39,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 40,
+      "failed_promises": 1,
+      "equity": 0.6153846153846154,
+      "information_shared": 40,
+      "unused_capacity": 0,
+      "elapsed_days": 40.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 40,
+    "elapsed_days": 41,
+    "report_event_id": 750,
+    "reported_value": "fragile",
+    "promise_event_id": 751,
+    "allocation_command_index": 162,
+    "allocation_event_id": 752,
+    "settlement_event_id": 757,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 41,
+      "completed_projects": 89,
+      "executed_units": 356,
+      "allocated_units": 360,
+      "promises_kept": 40,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 41,
+      "failed_promises": 1,
+      "equity": 0.6,
+      "information_shared": 41,
+      "unused_capacity": 0,
+      "elapsed_days": 41.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 41,
+    "elapsed_days": 42,
+    "report_event_id": 766,
+    "reported_value": "fragile",
+    "promise_event_id": 767,
+    "allocation_command_index": 166,
+    "allocation_event_id": 768,
+    "settlement_event_id": 773,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 42,
+      "completed_projects": 91,
+      "executed_units": 364,
+      "allocated_units": 368,
+      "promises_kept": 41,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 42,
+      "failed_promises": 1,
+      "equity": 0.6097560975609756,
+      "information_shared": 42,
+      "unused_capacity": 0,
+      "elapsed_days": 42.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 42,
+    "elapsed_days": 43,
+    "report_event_id": 782,
+    "reported_value": "stable",
+    "promise_event_id": 783,
+    "allocation_command_index": 170,
+    "allocation_event_id": 784,
+    "settlement_event_id": 789,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 43,
+      "completed_projects": 94,
+      "executed_units": 376,
+      "allocated_units": 380,
+      "promises_kept": 42,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 43,
+      "failed_promises": 1,
+      "equity": 0.6190476190476191,
+      "information_shared": 43,
+      "unused_capacity": 0,
+      "elapsed_days": 43.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 43,
+    "elapsed_days": 44,
+    "report_event_id": 798,
+    "reported_value": "stable",
+    "promise_event_id": 799,
+    "allocation_command_index": 174,
+    "allocation_event_id": 800,
+    "settlement_event_id": 805,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 44,
+      "completed_projects": 97,
+      "executed_units": 388,
+      "allocated_units": 392,
+      "promises_kept": 43,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 44,
+      "failed_promises": 1,
+      "equity": 0.627906976744186,
+      "information_shared": 44,
+      "unused_capacity": 0,
+      "elapsed_days": 44.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 44,
+    "elapsed_days": 45,
+    "report_event_id": 814,
+    "reported_value": "stable",
+    "promise_event_id": 815,
+    "allocation_command_index": 178,
+    "allocation_event_id": 816,
+    "settlement_event_id": 821,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 45,
+      "completed_projects": 100,
+      "executed_units": 400,
+      "allocated_units": 404,
+      "promises_kept": 44,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 45,
+      "failed_promises": 1,
+      "equity": 0.6363636363636364,
+      "information_shared": 45,
+      "unused_capacity": 0,
+      "elapsed_days": 45.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 45,
+    "elapsed_days": 46,
+    "report_event_id": 830,
+    "reported_value": "stable",
+    "promise_event_id": 831,
+    "allocation_command_index": 182,
+    "allocation_event_id": 832,
+    "settlement_event_id": 837,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 46,
+      "completed_projects": 103,
+      "executed_units": 412,
+      "allocated_units": 416,
+      "promises_kept": 45,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 46,
+      "failed_promises": 1,
+      "equity": 0.6444444444444445,
+      "information_shared": 46,
+      "unused_capacity": 0,
+      "elapsed_days": 46.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 46,
+    "elapsed_days": 47,
+    "report_event_id": 846,
+    "reported_value": "stable",
+    "promise_event_id": 847,
+    "allocation_command_index": 186,
+    "allocation_event_id": 848,
+    "settlement_event_id": 853,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 47,
+      "completed_projects": 106,
+      "executed_units": 424,
+      "allocated_units": 428,
+      "promises_kept": 46,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 47,
+      "failed_promises": 1,
+      "equity": 0.6521739130434783,
+      "information_shared": 47,
+      "unused_capacity": 0,
+      "elapsed_days": 47.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 47,
+    "elapsed_days": 48,
+    "report_event_id": 862,
+    "reported_value": "stable",
+    "promise_event_id": 863,
+    "allocation_command_index": 190,
+    "allocation_event_id": 864,
+    "settlement_event_id": 869,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 48,
+      "completed_projects": 109,
+      "executed_units": 436,
+      "allocated_units": 440,
+      "promises_kept": 47,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 48,
+      "failed_promises": 1,
+      "equity": 0.6595744680851063,
+      "information_shared": 48,
+      "unused_capacity": 0,
+      "elapsed_days": 48.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 48,
+    "elapsed_days": 49,
+    "report_event_id": 878,
+    "reported_value": "stable",
+    "promise_event_id": 879,
+    "allocation_command_index": 194,
+    "allocation_event_id": 880,
+    "settlement_event_id": 885,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 49,
+      "completed_projects": 112,
+      "executed_units": 448,
+      "allocated_units": 452,
+      "promises_kept": 48,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 49,
+      "failed_promises": 1,
+      "equity": 0.6666666666666666,
+      "information_shared": 49,
+      "unused_capacity": 0,
+      "elapsed_days": 49.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 49,
+    "elapsed_days": 50,
+    "report_event_id": 894,
+    "reported_value": "stable",
+    "promise_event_id": 895,
+    "allocation_command_index": 198,
+    "allocation_event_id": 896,
+    "settlement_event_id": 901,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 50,
+      "completed_projects": 115,
+      "executed_units": 460,
+      "allocated_units": 464,
+      "promises_kept": 49,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 50,
+      "failed_promises": 1,
+      "equity": 0.673469387755102,
+      "information_shared": 50,
+      "unused_capacity": 0,
+      "elapsed_days": 50.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 50,
+    "elapsed_days": 51,
+    "report_event_id": 910,
+    "reported_value": "stable",
+    "promise_event_id": 911,
+    "allocation_command_index": 202,
+    "allocation_event_id": 912,
+    "settlement_event_id": 917,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 51,
+      "completed_projects": 118,
+      "executed_units": 472,
+      "allocated_units": 476,
+      "promises_kept": 50,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 51,
+      "failed_promises": 1,
+      "equity": 0.68,
+      "information_shared": 51,
+      "unused_capacity": 0,
+      "elapsed_days": 51.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 51,
+    "elapsed_days": 52,
+    "report_event_id": 926,
+    "reported_value": "stable",
+    "promise_event_id": 927,
+    "allocation_command_index": 206,
+    "allocation_event_id": 928,
+    "settlement_event_id": 933,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 52,
+      "completed_projects": 121,
+      "executed_units": 484,
+      "allocated_units": 488,
+      "promises_kept": 51,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 52,
+      "failed_promises": 1,
+      "equity": 0.6862745098039216,
+      "information_shared": 52,
+      "unused_capacity": 0,
+      "elapsed_days": 52.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 52,
+    "elapsed_days": 53,
+    "report_event_id": 942,
+    "reported_value": "stable",
+    "promise_event_id": 943,
+    "allocation_command_index": 210,
+    "allocation_event_id": 944,
+    "settlement_event_id": 949,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 53,
+      "completed_projects": 124,
+      "executed_units": 496,
+      "allocated_units": 500,
+      "promises_kept": 52,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 53,
+      "failed_promises": 1,
+      "equity": 0.6923076923076923,
+      "information_shared": 53,
+      "unused_capacity": 0,
+      "elapsed_days": 53.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 53,
+    "elapsed_days": 54,
+    "report_event_id": 958,
+    "reported_value": "stable",
+    "promise_event_id": 959,
+    "allocation_command_index": 214,
+    "allocation_event_id": 960,
+    "settlement_event_id": 965,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 54,
+      "completed_projects": 127,
+      "executed_units": 508,
+      "allocated_units": 512,
+      "promises_kept": 53,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 54,
+      "failed_promises": 1,
+      "equity": 0.6981132075471698,
+      "information_shared": 54,
+      "unused_capacity": 0,
+      "elapsed_days": 54.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 54,
+    "elapsed_days": 55,
+    "report_event_id": 974,
+    "reported_value": "stable",
+    "promise_event_id": 975,
+    "allocation_command_index": 218,
+    "allocation_event_id": 976,
+    "settlement_event_id": 981,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 55,
+      "completed_projects": 130,
+      "executed_units": 520,
+      "allocated_units": 524,
+      "promises_kept": 54,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 55,
+      "failed_promises": 1,
+      "equity": 0.7037037037037037,
+      "information_shared": 55,
+      "unused_capacity": 0,
+      "elapsed_days": 55.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 55,
+    "elapsed_days": 56,
+    "report_event_id": 990,
+    "reported_value": "stable",
+    "promise_event_id": 991,
+    "allocation_command_index": 222,
+    "allocation_event_id": 992,
+    "settlement_event_id": 997,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 56,
+      "completed_projects": 133,
+      "executed_units": 532,
+      "allocated_units": 536,
+      "promises_kept": 55,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 56,
+      "failed_promises": 1,
+      "equity": 0.7090909090909091,
+      "information_shared": 56,
+      "unused_capacity": 0,
+      "elapsed_days": 56.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 56,
+    "elapsed_days": 57,
+    "report_event_id": 1006,
+    "reported_value": "stable",
+    "promise_event_id": 1007,
+    "allocation_command_index": 226,
+    "allocation_event_id": 1008,
+    "settlement_event_id": 1013,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 57,
+      "completed_projects": 136,
+      "executed_units": 544,
+      "allocated_units": 548,
+      "promises_kept": 56,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 57,
+      "failed_promises": 1,
+      "equity": 0.7142857142857143,
+      "information_shared": 57,
+      "unused_capacity": 0,
+      "elapsed_days": 57.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 57,
+    "elapsed_days": 58,
+    "report_event_id": 1022,
+    "reported_value": "stable",
+    "promise_event_id": 1023,
+    "allocation_command_index": 230,
+    "allocation_event_id": 1024,
+    "settlement_event_id": 1029,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 58,
+      "completed_projects": 139,
+      "executed_units": 556,
+      "allocated_units": 560,
+      "promises_kept": 57,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 58,
+      "failed_promises": 1,
+      "equity": 0.7192982456140351,
+      "information_shared": 58,
+      "unused_capacity": 0,
+      "elapsed_days": 58.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 58,
+    "elapsed_days": 59,
+    "report_event_id": 1038,
+    "reported_value": "stable",
+    "promise_event_id": 1039,
+    "allocation_command_index": 234,
+    "allocation_event_id": 1040,
+    "settlement_event_id": 1045,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 59,
+      "completed_projects": 142,
+      "executed_units": 568,
+      "allocated_units": 572,
+      "promises_kept": 58,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 59,
+      "failed_promises": 1,
+      "equity": 0.7241379310344828,
+      "information_shared": 59,
+      "unused_capacity": 0,
+      "elapsed_days": 59.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 59,
+    "elapsed_days": 60,
+    "report_event_id": 1054,
+    "reported_value": "stable",
+    "promise_event_id": 1055,
+    "allocation_command_index": 238,
+    "allocation_event_id": 1056,
+    "settlement_event_id": 1061,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 60,
+      "completed_projects": 145,
+      "executed_units": 580,
+      "allocated_units": 584,
+      "promises_kept": 59,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 60,
+      "failed_promises": 1,
+      "equity": 0.7288135593220338,
+      "information_shared": 60,
+      "unused_capacity": 0,
+      "elapsed_days": 60.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 60,
+    "elapsed_days": 61,
+    "report_event_id": 1071,
+    "reported_value": "stable",
+    "promise_event_id": 1072,
+    "allocation_command_index": 242,
+    "allocation_event_id": 1073,
+    "settlement_event_id": 1078,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 61,
+      "completed_projects": 148,
+      "executed_units": 592,
+      "allocated_units": 596,
+      "promises_kept": 60,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 61,
+      "failed_promises": 1,
+      "equity": 0.7333333333333333,
+      "information_shared": 61,
+      "unused_capacity": 0,
+      "elapsed_days": 61.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 61,
+    "elapsed_days": 62,
+    "report_event_id": 1087,
+    "reported_value": "stable",
+    "promise_event_id": 1088,
+    "allocation_command_index": 246,
+    "allocation_event_id": 1089,
+    "settlement_event_id": 1094,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 62,
+      "completed_projects": 151,
+      "executed_units": 604,
+      "allocated_units": 608,
+      "promises_kept": 61,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 62,
+      "failed_promises": 1,
+      "equity": 0.7377049180327869,
+      "information_shared": 62,
+      "unused_capacity": 0,
+      "elapsed_days": 62.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 62,
+    "elapsed_days": 63,
+    "report_event_id": 1103,
+    "reported_value": "stable",
+    "promise_event_id": 1104,
+    "allocation_command_index": 250,
+    "allocation_event_id": 1105,
+    "settlement_event_id": 1110,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 63,
+      "completed_projects": 154,
+      "executed_units": 616,
+      "allocated_units": 620,
+      "promises_kept": 62,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 63,
+      "failed_promises": 1,
+      "equity": 0.7419354838709677,
+      "information_shared": 63,
+      "unused_capacity": 0,
+      "elapsed_days": 63.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 63,
+    "elapsed_days": 64,
+    "report_event_id": 1119,
+    "reported_value": "fragile",
+    "promise_event_id": 1120,
+    "allocation_command_index": 254,
+    "allocation_event_id": 1121,
+    "settlement_event_id": 1126,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 64,
+      "completed_projects": 156,
+      "executed_units": 624,
+      "allocated_units": 628,
+      "promises_kept": 63,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 64,
+      "failed_promises": 1,
+      "equity": 0.7301587301587301,
+      "information_shared": 64,
+      "unused_capacity": 0,
+      "elapsed_days": 64.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 64,
+    "elapsed_days": 65,
+    "report_event_id": 1135,
+    "reported_value": "fragile",
+    "promise_event_id": 1136,
+    "allocation_command_index": 258,
+    "allocation_event_id": 1137,
+    "settlement_event_id": 1142,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 65,
+      "completed_projects": 158,
+      "executed_units": 632,
+      "allocated_units": 636,
+      "promises_kept": 64,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 65,
+      "failed_promises": 1,
+      "equity": 0.734375,
+      "information_shared": 65,
+      "unused_capacity": 0,
+      "elapsed_days": 65.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 65,
+    "elapsed_days": 66,
+    "report_event_id": 1151,
+    "reported_value": "fragile",
+    "promise_event_id": 1152,
+    "allocation_command_index": 262,
+    "allocation_event_id": 1153,
+    "settlement_event_id": 1158,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 66,
+      "completed_projects": 160,
+      "executed_units": 640,
+      "allocated_units": 644,
+      "promises_kept": 65,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 66,
+      "failed_promises": 1,
+      "equity": 0.7230769230769231,
+      "information_shared": 66,
+      "unused_capacity": 0,
+      "elapsed_days": 66.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 66,
+    "elapsed_days": 67,
+    "report_event_id": 1167,
+    "reported_value": "fragile",
+    "promise_event_id": 1168,
+    "allocation_command_index": 266,
+    "allocation_event_id": 1169,
+    "settlement_event_id": 1174,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 67,
+      "completed_projects": 162,
+      "executed_units": 648,
+      "allocated_units": 652,
+      "promises_kept": 66,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 67,
+      "failed_promises": 1,
+      "equity": 0.7272727272727273,
+      "information_shared": 67,
+      "unused_capacity": 0,
+      "elapsed_days": 67.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 67,
+    "elapsed_days": 68,
+    "report_event_id": 1183,
+    "reported_value": "fragile",
+    "promise_event_id": 1184,
+    "allocation_command_index": 270,
+    "allocation_event_id": 1185,
+    "settlement_event_id": 1190,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 68,
+      "completed_projects": 164,
+      "executed_units": 656,
+      "allocated_units": 660,
+      "promises_kept": 67,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 68,
+      "failed_promises": 1,
+      "equity": 0.7164179104477612,
+      "information_shared": 68,
+      "unused_capacity": 0,
+      "elapsed_days": 68.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 68,
+    "elapsed_days": 69,
+    "report_event_id": 1199,
+    "reported_value": "fragile",
+    "promise_event_id": 1200,
+    "allocation_command_index": 274,
+    "allocation_event_id": 1201,
+    "settlement_event_id": 1206,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 0,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 69,
+      "completed_projects": 166,
+      "executed_units": 664,
+      "allocated_units": 668,
+      "promises_kept": 68,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 69,
+      "failed_promises": 1,
+      "equity": 0.7205882352941176,
+      "information_shared": 69,
+      "unused_capacity": 0,
+      "elapsed_days": 69.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 69,
+    "elapsed_days": 70,
+    "report_event_id": 1215,
+    "reported_value": "fragile",
+    "promise_event_id": 1216,
+    "allocation_command_index": 278,
+    "allocation_event_id": 1217,
+    "settlement_event_id": 1222,
+    "actual_outcome": {
+      "actual_capacity": 8,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 0,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 70,
+      "completed_projects": 168,
+      "executed_units": 672,
+      "allocated_units": 676,
+      "promises_kept": 69,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 70,
+      "failed_promises": 1,
+      "equity": 0.7101449275362319,
+      "information_shared": 70,
+      "unused_capacity": 0,
+      "elapsed_days": 70.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 70,
+    "elapsed_days": 71,
+    "report_event_id": 1231,
+    "reported_value": "stable",
+    "promise_event_id": 1232,
+    "allocation_command_index": 282,
+    "allocation_event_id": 1233,
+    "settlement_event_id": 1238,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 71,
+      "completed_projects": 171,
+      "executed_units": 684,
+      "allocated_units": 688,
+      "promises_kept": 70,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 71,
+      "failed_promises": 1,
+      "equity": 0.7142857142857143,
+      "information_shared": 71,
+      "unused_capacity": 0,
+      "elapsed_days": 71.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 71,
+    "elapsed_days": 72,
+    "report_event_id": 1247,
+    "reported_value": "stable",
+    "promise_event_id": 1248,
+    "allocation_command_index": 286,
+    "allocation_event_id": 1249,
+    "settlement_event_id": 1254,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 72,
+      "completed_projects": 174,
+      "executed_units": 696,
+      "allocated_units": 700,
+      "promises_kept": 71,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 72,
+      "failed_promises": 1,
+      "equity": 0.7183098591549296,
+      "information_shared": 72,
+      "unused_capacity": 0,
+      "elapsed_days": 72.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 72,
+    "elapsed_days": 73,
+    "report_event_id": 1263,
+    "reported_value": "stable",
+    "promise_event_id": 1264,
+    "allocation_command_index": 290,
+    "allocation_event_id": 1265,
+    "settlement_event_id": 1270,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 73,
+      "completed_projects": 177,
+      "executed_units": 708,
+      "allocated_units": 712,
+      "promises_kept": 72,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 73,
+      "failed_promises": 1,
+      "equity": 0.7222222222222222,
+      "information_shared": 73,
+      "unused_capacity": 0,
+      "elapsed_days": 73.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 73,
+    "elapsed_days": 74,
+    "report_event_id": 1279,
+    "reported_value": "stable",
+    "promise_event_id": 1280,
+    "allocation_command_index": 294,
+    "allocation_event_id": 1281,
+    "settlement_event_id": 1286,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 74,
+      "completed_projects": 180,
+      "executed_units": 720,
+      "allocated_units": 724,
+      "promises_kept": 73,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 74,
+      "failed_promises": 1,
+      "equity": 0.726027397260274,
+      "information_shared": 74,
+      "unused_capacity": 0,
+      "elapsed_days": 74.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 74,
+    "elapsed_days": 75,
+    "report_event_id": 1295,
+    "reported_value": "stable",
+    "promise_event_id": 1296,
+    "allocation_command_index": 298,
+    "allocation_event_id": 1297,
+    "settlement_event_id": 1302,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 75,
+      "completed_projects": 183,
+      "executed_units": 732,
+      "allocated_units": 736,
+      "promises_kept": 74,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 75,
+      "failed_promises": 1,
+      "equity": 0.7297297297297297,
+      "information_shared": 75,
+      "unused_capacity": 0,
+      "elapsed_days": 75.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 75,
+    "elapsed_days": 76,
+    "report_event_id": 1311,
+    "reported_value": "stable",
+    "promise_event_id": 1312,
+    "allocation_command_index": 302,
+    "allocation_event_id": 1313,
+    "settlement_event_id": 1318,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 76,
+      "completed_projects": 186,
+      "executed_units": 744,
+      "allocated_units": 748,
+      "promises_kept": 75,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 76,
+      "failed_promises": 1,
+      "equity": 0.7333333333333333,
+      "information_shared": 76,
+      "unused_capacity": 0,
+      "elapsed_days": 76.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 76,
+    "elapsed_days": 77,
+    "report_event_id": 1327,
+    "reported_value": "stable",
+    "promise_event_id": 1328,
+    "allocation_command_index": 306,
+    "allocation_event_id": 1329,
+    "settlement_event_id": 1334,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 77,
+      "completed_projects": 189,
+      "executed_units": 756,
+      "allocated_units": 760,
+      "promises_kept": 76,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 77,
+      "failed_promises": 1,
+      "equity": 0.7368421052631579,
+      "information_shared": 77,
+      "unused_capacity": 0,
+      "elapsed_days": 77.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 77,
+    "elapsed_days": 78,
+    "report_event_id": 1343,
+    "reported_value": "stable",
+    "promise_event_id": 1344,
+    "allocation_command_index": 310,
+    "allocation_event_id": 1345,
+    "settlement_event_id": 1350,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 78,
+      "completed_projects": 192,
+      "executed_units": 768,
+      "allocated_units": 772,
+      "promises_kept": 77,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 78,
+      "failed_promises": 1,
+      "equity": 0.7402597402597403,
+      "information_shared": 78,
+      "unused_capacity": 0,
+      "elapsed_days": 78.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 78,
+    "elapsed_days": 79,
+    "report_event_id": 1359,
+    "reported_value": "stable",
+    "promise_event_id": 1360,
+    "allocation_command_index": 314,
+    "allocation_event_id": 1361,
+    "settlement_event_id": 1366,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 79,
+      "completed_projects": 195,
+      "executed_units": 780,
+      "allocated_units": 784,
+      "promises_kept": 78,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 79,
+      "failed_promises": 1,
+      "equity": 0.7435897435897436,
+      "information_shared": 79,
+      "unused_capacity": 0,
+      "elapsed_days": 79.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 79,
+    "elapsed_days": 80,
+    "report_event_id": 1375,
+    "reported_value": "stable",
+    "promise_event_id": 1376,
+    "allocation_command_index": 318,
+    "allocation_event_id": 1377,
+    "settlement_event_id": 1382,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 80,
+      "completed_projects": 198,
+      "executed_units": 792,
+      "allocated_units": 796,
+      "promises_kept": 79,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 80,
+      "failed_promises": 1,
+      "equity": 0.7468354430379747,
+      "information_shared": 80,
+      "unused_capacity": 0,
+      "elapsed_days": 80.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 80,
+    "elapsed_days": 81,
+    "report_event_id": 1391,
+    "reported_value": "stable",
+    "promise_event_id": 1392,
+    "allocation_command_index": 322,
+    "allocation_event_id": 1393,
+    "settlement_event_id": 1398,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 81,
+      "completed_projects": 201,
+      "executed_units": 804,
+      "allocated_units": 808,
+      "promises_kept": 80,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 81,
+      "failed_promises": 1,
+      "equity": 0.75,
+      "information_shared": 81,
+      "unused_capacity": 0,
+      "elapsed_days": 81.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 81,
+    "elapsed_days": 82,
+    "report_event_id": 1407,
+    "reported_value": "stable",
+    "promise_event_id": 1408,
+    "allocation_command_index": 326,
+    "allocation_event_id": 1409,
+    "settlement_event_id": 1414,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 82,
+      "completed_projects": 204,
+      "executed_units": 816,
+      "allocated_units": 820,
+      "promises_kept": 81,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 82,
+      "failed_promises": 1,
+      "equity": 0.7530864197530864,
+      "information_shared": 82,
+      "unused_capacity": 0,
+      "elapsed_days": 82.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 82,
+    "elapsed_days": 83,
+    "report_event_id": 1423,
+    "reported_value": "stable",
+    "promise_event_id": 1424,
+    "allocation_command_index": 330,
+    "allocation_event_id": 1425,
+    "settlement_event_id": 1430,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 83,
+      "completed_projects": 207,
+      "executed_units": 828,
+      "allocated_units": 832,
+      "promises_kept": 82,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 83,
+      "failed_promises": 1,
+      "equity": 0.7560975609756098,
+      "information_shared": 83,
+      "unused_capacity": 0,
+      "elapsed_days": 83.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 83,
+    "elapsed_days": 84,
+    "report_event_id": 1439,
+    "reported_value": "stable",
+    "promise_event_id": 1440,
+    "allocation_command_index": 334,
+    "allocation_event_id": 1441,
+    "settlement_event_id": 1446,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 84,
+      "completed_projects": 210,
+      "executed_units": 840,
+      "allocated_units": 844,
+      "promises_kept": 83,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 84,
+      "failed_promises": 1,
+      "equity": 0.7590361445783133,
+      "information_shared": 84,
+      "unused_capacity": 0,
+      "elapsed_days": 84.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 84,
+    "elapsed_days": 85,
+    "report_event_id": 1455,
+    "reported_value": "stable",
+    "promise_event_id": 1456,
+    "allocation_command_index": 338,
+    "allocation_event_id": 1457,
+    "settlement_event_id": 1462,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 85,
+      "completed_projects": 213,
+      "executed_units": 852,
+      "allocated_units": 856,
+      "promises_kept": 84,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 85,
+      "failed_promises": 1,
+      "equity": 0.7619047619047619,
+      "information_shared": 85,
+      "unused_capacity": 0,
+      "elapsed_days": 85.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 85,
+    "elapsed_days": 86,
+    "report_event_id": 1471,
+    "reported_value": "stable",
+    "promise_event_id": 1472,
+    "allocation_command_index": 342,
+    "allocation_event_id": 1473,
+    "settlement_event_id": 1478,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 86,
+      "completed_projects": 216,
+      "executed_units": 864,
+      "allocated_units": 868,
+      "promises_kept": 85,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 86,
+      "failed_promises": 1,
+      "equity": 0.7647058823529411,
+      "information_shared": 86,
+      "unused_capacity": 0,
+      "elapsed_days": 86.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 86,
+    "elapsed_days": 87,
+    "report_event_id": 1487,
+    "reported_value": "stable",
+    "promise_event_id": 1488,
+    "allocation_command_index": 346,
+    "allocation_event_id": 1489,
+    "settlement_event_id": 1494,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 87,
+      "completed_projects": 219,
+      "executed_units": 876,
+      "allocated_units": 880,
+      "promises_kept": 86,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 87,
+      "failed_promises": 1,
+      "equity": 0.7674418604651163,
+      "information_shared": 87,
+      "unused_capacity": 0,
+      "elapsed_days": 87.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 87,
+    "elapsed_days": 88,
+    "report_event_id": 1503,
+    "reported_value": "stable",
+    "promise_event_id": 1504,
+    "allocation_command_index": 350,
+    "allocation_event_id": 1505,
+    "settlement_event_id": 1510,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 88,
+      "completed_projects": 222,
+      "executed_units": 888,
+      "allocated_units": 892,
+      "promises_kept": 87,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 88,
+      "failed_promises": 1,
+      "equity": 0.7701149425287356,
+      "information_shared": 88,
+      "unused_capacity": 0,
+      "elapsed_days": 88.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 88,
+    "elapsed_days": 89,
+    "report_event_id": 1519,
+    "reported_value": "stable",
+    "promise_event_id": 1520,
+    "allocation_command_index": 354,
+    "allocation_event_id": 1521,
+    "settlement_event_id": 1526,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 89,
+      "completed_projects": 225,
+      "executed_units": 900,
+      "allocated_units": 904,
+      "promises_kept": 88,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 89,
+      "failed_promises": 1,
+      "equity": 0.7727272727272727,
+      "information_shared": 89,
+      "unused_capacity": 0,
+      "elapsed_days": 89.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  },
+  {
+    "round": 89,
+    "elapsed_days": 90,
+    "report_event_id": 1535,
+    "reported_value": "stable",
+    "promise_event_id": 1536,
+    "allocation_command_index": 358,
+    "allocation_event_id": 1537,
+    "settlement_event_id": 1542,
+    "actual_outcome": {
+      "actual_capacity": 12,
+      "allocation": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      },
+      "completed": [
+        "team_a",
+        "team_b",
+        "team_c"
+      ],
+      "executed": {
+        "team_a": 4,
+        "team_b": 4,
+        "team_c": 4
+      }
+    },
+    "metrics": {
+      "rounds_settled": 90,
+      "completed_projects": 228,
+      "executed_units": 912,
+      "allocated_units": 916,
+      "promises_kept": 89,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 90,
+      "failed_promises": 1,
+      "equity": 0.7752808988764045,
+      "information_shared": 90,
+      "unused_capacity": 0,
+      "elapsed_days": 90.0
+    },
+    "explanation_scope": "Controller records which disclosed report it used; canonical dependencies are unchanged. Only executed omission below tests an alternative."
+  }
+]

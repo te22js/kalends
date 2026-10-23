@@ -239,3 +239,67 @@ def test_service_rejects_misnamed_authored_journal_without_resetting_it(tmp_path
         ExperienceService(directory)
     assert path.read_bytes() == saved
     assert not life.journal_path.exists()
+
+
+def test_authored_pompeii_api_selects_its_own_life_facade_review_and_save(http_service):
+    service, server, request = http_service
+    spec = json.loads((SPEC_DIR / "pompeii_life.json").read_text())
+    spec.update(id="second_pompeii", title="A separate authored Pompeii life")
+    spec["setting"]["rules"]["seed"] = 1117
+    assert request("/os/compile", {"spec": spec})[0] == 200
+    default, authored = service.get("pompeii_life"), service.get(spec["id"])
+    original_default = default.state_hash()
+    suffix = "?experience=" + spec["id"]
+    assert request("/api/advance" + suffix, {"minutes": 11})[0] == 200
+    assert request("/api/state" + suffix)[2]["world"]["minute"] == 11
+    assert request("/api/state")[2]["world"]["minute"] == 0
+    assert default.state_hash() == original_default and not default.commands
+    # A body selector is supported as well as the iframe's query selector.
+    assert request("/api/advance", {"experience": spec["id"], "minutes": 2})[0] == 200
+    assert authored.minute == 13 and default.minute == 0
+    marcus = authored.world.positions["Marcus"]
+    assert request("/api/move" + suffix, {"x": marcus[0], "y": marcus[1], "location": "street"})[0] == 200
+    assert request("/api/context" + suffix + "&recipient=Marcus")[0] == 200
+    status, _, proposal = request("/api/propose" + suffix, {"recipient": "Marcus", "choice_id": "buy"})
+    assert status == 200
+    token = {"proposal_id": proposal["proposal_id"], "interpretation_id": "0"}
+    assert request("/api/act", token)[0] == 400, "Another life has no such reviewed action"
+    before = authored.world.economy.inventory["Player"]
+    assert request("/api/act" + suffix, token)[0] == 200
+    assert authored.world.economy.inventory["Player"] == before + 1
+    assert request("/api/act" + suffix, token)[0] == 400
+    assert service.game(spec["id"]).runtime is authored
+    assert service.game().runtime is default
+    assert service.game(spec["id"]) is not service.game()
+    assert default.state_hash() == original_default and not default.commands
+    # Review freshness belongs to the selected life, including an empty minute.
+    status, _, stale = request("/api/propose" + suffix, {"recipient": "Marcus", "choice_id": "buy"})
+    assert status == 200
+    assert request("/api/advance" + suffix, {"minutes": 1})[0] == 200
+    assert request("/api/act" + suffix, {"proposal_id": stale["proposal_id"], "interpretation_id": "0"})[0] == 400
+    assert request("/api/state?experience=shared_observatory")[0] == 400
+    assert request("/api/advance?experience=shared_observatory", {"minutes": 1})[0] == 400
+    assert service.get("shared_observatory").minute == 0
+    saved = authored.journal_path.read_bytes()
+    restored = ExperienceRuntime(authored.spec, journal_path=authored.journal_path)
+    assert restored.state_hash() == authored.state_hash() and authored.journal_path.read_bytes() == saved
+
+
+def test_immersion_injects_external_host_before_bundle_preserves_selector_and_source(http_service, tmp_path, monkeypatch):
+    import kalends.experience_os.server as module
+    service, server, request = http_service
+    root = tmp_path / "retained_repository"
+    dist = root / "kalends_3d/dist"
+    dist.mkdir(parents=True)
+    original = b'<!doctype html><html><head><script type="module" src="/immersion/assets/original.js"></script></head><body>Retained 3D</body></html>'
+    (dist / "index.html").write_bytes(original)
+    monkeypatch.setattr(module, "ROOT", root)
+    status, headers, body = request("/immersion?experience=authored_pompeii")
+    assert status == 302 and headers["Location"] == "/immersion/?experience=authored_pompeii"
+    for path in ("/immersion/?experience=authored_pompeii", "/immersion/index.html?experience=authored_pompeii"):
+        status, headers, body = request(path)
+        assert status == 200 and headers["Content-Type"].startswith("text/html")
+        assert body.count(b'<script src="/game-host.js"></script>') == 1
+        assert body.index(b'/game-host.js') < body.index(b'type="module"')
+        assert b'connect-src \'self\'' in headers["Content-Security-Policy"].encode()
+    assert (dist / "index.html").read_bytes() == original

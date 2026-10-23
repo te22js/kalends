@@ -1,0 +1,100 @@
+Browser tab: 10, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8800/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8800/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8800/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 1
+			6 checkbox LEARN, Value: 0
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		401 text LIVE · PARTICIPATE IN A PERSISTENT WORLD
+		11 heading Shared Observatory: three teams, one instrument, Value: 1, ID: title
+			402 text Shared Observatory: three teams, one instrument
+		403 text Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: Shared Observatory: three teams, one instrument, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (disabled) A life among promises: Pompeii
+					19 (disabled) Shared Observatory: three teams, one instrument
+					20 (disabled) Recorded 90-day demonstration: Shared Observatory
+					21 (disabled) Recorded 120-day demonstration: Pompeii continuity
+		404 text DAY 1 · 0 WORLD MINUTES · 0 ACCEPTED COMMANDS
+		23 button Refresh world, ID: refresh
+		405 button Live step · 1m
+		406 button Compress · 1 day
+		407 button Montage · 1 week
+		408 button Skip · 30 days
+		409 button Next scheduled change
+		24 container Description: Actual world outcomes, ID: metrics
+			410 text 0
+			411 text COMPLETED PROJECTS
+			412 text 0
+			413 text PROMISES KEPT
+			414 text 0
+			415 text PROMISES MISSED
+			416 text 0
+			417 text EXECUTED UNITS
+			418 text 1
+			419 text EQUITY
+			420 text 2
+			421 text CREDITS SPENT
+		422 container coordination
+			423 container
+				424 text LIVE · THE SHARED INSTRUMENT
+				425 heading Three teams. One constrained allocation., Value: 2
+					426 text Three teams. One constrained allocation.
+				427 text The instrument offers twelve nominal units. A fragile condition leaves eight usable. Teams have private dated evidence; your promises settle when the round closes. Fixed execution order A → B → C is disclosed, so equal promises do not guarantee equal completion.
+				428 text Current team requests: B: 2 · Your credits: 12
+				429 button Ask the systems team for its retained report, ID: ask-report
+				430 button Buy a direct inspection · 1 credit, ID: inspect
+				431 text No direct condition inspection in your accessible record. A disclosed team report appears in the timeline.
+				432 container allocation
+					433 heading Commit an allocation, Value: 3
+						434 text Commit an allocation
+					435 container
+						436 text Survey · A
+						437 stepper (settable, integer) Survey · A, Value: 4, ID: team_a
+					438 container
+						439 text Calibration · B
+						440 stepper (settable, integer) Calibration · B, Value: 4, ID: team_b
+					441 container
+						442 text Follow-up · C
+						443 stepper (settable, integer) Follow-up · C, Value: 4, ID: team_c
+					444 button Review allocation →
+				445 container promise
+					446 container
+						447 text Promise capacity to
+						448 pop up button (collapsed, settable) Promise capacity to, Value: Survey · A, ID: promise-team, Secondary Actions: Expand
+							449 menu
+								450 (selected) Survey · A
+								451 Calibration · B
+								452 Follow-up · C
+					453 container
+						454 text Units
+						455 stepper (settable, integer) Units, Value: 4, ID: promise-units
+					456 button Review promise →
+				457 text No allocation committed for the current round.
+			458 container
+				459 text RECORDED CONTINUITY
+				460 heading What happened, and when, Value: 2
+					461 text What happened, and when
+				462 container timeline
+					463 text DAY 1 · MINUTE 0 · RECORD 1
+					464 text The consortium records its declared research projects
+					465 button Inspect recorded support ↗
+					466 text DAY 1 · MINUTE 0 · RECORD 2
+					467 text Negotiate the first allocation while the maintenance team alone has current hardware evidence.
+					468 button Inspect recorded support ↗
+					469 text DAY 1 · MINUTE 0 · RECORD 4
+					470 text Round 1: teams may negotiate the shared instrument
+					471 button Inspect recorded support ↗
+					472 text DAY 1 · MINUTE 0 · RECORD 9
+					473 text team_b requests 2 capacity units
+					474 button Inspect recorded support ↗
+		398 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		399 text offline cognition · 0 external calls
+		400 text  · Local single-user prototype
+
+The focused UI element is 1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8800/

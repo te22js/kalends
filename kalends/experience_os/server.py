@@ -25,7 +25,7 @@ class ExperienceService:
         self.cognition = cognition or Cognition()
         self.directory = Path(directory) if directory else None
         self.lock = threading.RLock()
-        self.worlds, self.proposals, self.game_facade = {}, {}, None
+        self.worlds, self.proposals, self.game_facades = {}, {}, {}
         for path in sorted(SPEC_DIR.glob("*.json")):
             self.add(ExperienceCompilerV1().load(path))
         # Authored lives carry their validated specification in their own journal.
@@ -58,11 +58,47 @@ class ExperienceService:
             raise ValueError("Unknown compiled experience")
         return self.worlds[ident]
 
-    def game(self):
-        runtime = self.get("pompeii_life")
-        if self.game_facade is None:
-            self.game_facade = ExperienceGameFacade(runtime, self.cognition)
-        return self.game_facade
+    def game(self, ident="pompeii_life"):
+        runtime = self.get(ident)
+        if runtime.spec.setting["adapter"] != "pompeii":
+            raise ValueError("The 3D game interface requires a compiled Pompeii experience")
+        if ident not in self.game_facades:
+            self.game_facades[ident] = ExperienceGameFacade(runtime, self.cognition)
+        return self.game_facades[ident]
+
+    def assist(self, ident, data):
+        """Host-scoped proposals over admitted records, never caller-supplied truth."""
+        from .providers import ExperienceProposals
+        proposals = ExperienceProposals(self.cognition)
+        task = data.get("task")
+        if task == "draft_spec" and set(data) == {"task", "prompt", "mode"} and data["mode"] == "lab":
+            return proposals.draft_spec(data["prompt"], [w.spec for w in list(self.worlds.values())[:4]])
+        if set(data) != {"task"} or task not in ("debrief", "consolidate", "plan"):
+            raise ValueError("Choose a supported assistance task; evidence is scoped by the host")
+        runtime = self.get(ident)
+        events = runtime.events()[-24:]
+        evidence = [{"event_id": e["event_id"], "text": e["payload"].get("title", e["payload"]["category"]), "at": e["tick"],
+                     "kind": "testimony" if e["etype"] == "tell" else "event"} for e in events]
+        view = {"minute": runtime.minute, "evidence": evidence, "allowed_event_ids": [e["event_id"] for e in evidence]}
+        if task == "debrief":
+            return proposals.debrief({**view, "viewer": "Player", "objective": runtime.spec.debrief["objective"], "questions": runtime.spec.debrief["questions"]})
+        if task == "consolidate":
+            return proposals.consolidate({**view, "actor": "Player"})
+        # Current authoritative preconditions generate offered actions. The
+        # suggestion is not an accepted action and cannot bypass review later.
+        options = []
+        if runtime.spec.setting["adapter"] == "commons":
+            candidates = [("inspect", "Buy a dated direct inspection", {"action": "inspect"}),
+                          ("ask_report", "Request the systems team's retained report", {"action": "share", "recipient": "team_b"})]
+            for option_id, label, action in candidates:
+                trial = object.__new__(ExperienceRuntime)
+                trial.__dict__ = {**runtime.__dict__, "world": copy.deepcopy(runtime.world), "journal_path": None}
+                try:
+                    trial._perform("action", action)
+                    options.append({"id": option_id, "label": label, "evidence_ids": []})
+                except ValueError:
+                    pass
+        return proposals.suggest_plan({**view, "actor": "Player", "options": options})
 
     def propose(self, ident, action):
         runtime = self.get(ident)
@@ -119,7 +155,7 @@ def make_handler(service):
                 url = urlparse(self.path)
                 path = unquote(url.path)
                 query = parse_qs(url.query)
-                ident = query.get("experience", ["shared_observatory"])[0]
+                ident = query.get("experience", ["pompeii_life" if path.startswith("/api/") else "shared_observatory"])[0]
                 lab = query.get("mode", [""])[0] == "lab"
                 with service.lock:
                     if path == "/os/catalog":
@@ -130,10 +166,13 @@ def make_handler(service):
                         return self.send(200, service.get(ident).spec.to_dict())
                     if path == "/os/debrief": return self.send(200, service.get(ident).debrief())
                     if path == "/os/trace": return self.send(200, service.get(ident).trace(int(query.get("id", ["-1"])[0]), operator=lab))
-                    if path == "/api/state": return self.send(200, service.game().state())
-                    if path == "/api/context": return self.send(200, service.game().context(query.get("recipient", [""])[0]))
+                    if path == "/api/state": return self.send(200, service.game(ident).state())
+                    if path == "/api/context": return self.send(200, service.game(ident).context(query.get("recipient", [""])[0]))
+                if path == "/history-rebirth":
+                    return self.send(200, (ROOT / "docs/rebirth/HISTORY_NOTES.md").read_bytes(), "text/plain")
                 if path == "/immersion":
-                    self.send_response(302); self.send_header("Location", "/immersion/"); self.end_headers(); return
+                    location = "/immersion/" + ("?" + url.query if url.query else "")
+                    self.send_response(302); self.send_header("Location", location); self.end_headers(); return
                 mounts = [("/immersion-assets/", ROOT / "kalends_3d/assets"), ("/immersion/", ROOT / "kalends_3d/dist"),
                           ("/assets/", ROOT / "kalends_rebirth/static/assets"), ("/", STATIC)]
                 for prefix, directory in mounts:
@@ -143,7 +182,14 @@ def make_handler(service):
                     file = (directory / relative).resolve()
                     if not file.is_relative_to(directory.resolve()) or not file.is_file() or file.suffix not in (".html", ".js", ".css", ".json", ".glb", ".gltf", ".bin", ".png", ".jpg", ".webp", ".svg", ".woff2"):
                         return self.send(404, {"error": "Unknown local resource"})
-                    return self.send(200, file.read_bytes(), {".glb": "model/gltf-binary", ".js": "application/javascript"}.get(file.suffix, mimetypes.guess_type(file)[0] or "application/octet-stream"))
+                    content = file.read_bytes()
+                    if prefix == "/immersion/" and relative == "index.html":
+                        # The OS host selects the compiled life through this
+                        # external classic script before the deferred 3D module.
+                        # The retained source and production bundle stay intact.
+                        script = b'<script src="/game-host.js"></script>'
+                        content = content.replace(b"<head>", b"<head>" + script, 1) if b"<head>" in content else script + content
+                    return self.send(200, content, {".glb": "model/gltf-binary", ".js": "application/javascript"}.get(file.suffix, mimetypes.guess_type(file)[0] or "application/octet-stream"))
             except (ValueError, TypeError, KeyError) as error:
                 self.send(400, {"error": str(error)})
 
@@ -154,14 +200,29 @@ def make_handler(service):
                 if not 0 < size <= 262144: raise ValueError("Request is empty or too large")
                 data = json.loads(self.rfile.read(size))
                 if not isinstance(data, dict): raise ValueError("Request must be an object")
-                path = urlparse(self.path).path
-                ident = data.pop("experience", "shared_observatory")
+                url = urlparse(self.path)
+                path, query = url.path, parse_qs(url.query)
+                default = "pompeii_life" if path.startswith("/api/") else "shared_observatory"
+                ident = data.pop("experience", query.get("experience", [default])[0])
                 with service.lock:
+                    if path.startswith("/api/"):
+                        game = service.game(ident)
+                        if path == "/api/route": return self.send(200, game.route(data))
+                        if path == "/api/propose": return self.send(200, game.propose(data))
+                        if path == "/api/act": return self.send(200, game.act(data))
+                        if path == "/api/move":
+                            if set(data) - {"x", "y", "location"}: raise ValueError("Move endpoint accepts coordinates and location only")
+                            game.runtime.commit("action", {**data, "action": "move"}); return self.send(200, game.state())
+                        if path == "/api/advance":
+                            game.runtime.commit("advance", data); return self.send(200, game.state())
+                        if path == "/api/mode" and data == {"mode": "game"}: return self.send(200, game.state())
+                        raise ValueError("Unsupported game operation")
                     if path == "/os/validate":
                         spec = ExperienceCompilerV1().validate(data["spec"])
                         return self.send(200, {"valid": True, "id": spec.id, "adapter": spec.setting["adapter"]})
                     if path == "/os/compile": return self.send(200, service.add(data["spec"]).snapshot())
                     runtime = service.get(ident)
+                    if path == "/os/assist": return self.send(200, service.assist(ident, data))
                     if path == "/os/propose": return self.send(200, service.propose(ident, data["action"]))
                     if path == "/os/confirm": return self.send(200, service.confirm(ident, data["proposal_id"]))
                     if path == "/os/advance": return self.send(200, runtime.commit("advance", data))
@@ -171,16 +232,6 @@ def make_handler(service):
                         choice = data["choice"]
                         if type(choice) is not int or not 0 <= choice < len(transfer["options"]): raise ValueError("Invalid assessment choice")
                         return self.send(200, {"correct": choice == transfer["answer"], "rationale": transfer["rationale"], "scope": "One authored transfer question; not evidence of learning or real-world transfer."})
-                    game = service.game()
-                    if path == "/api/route": return self.send(200, game.route(data))
-                    if path == "/api/propose": return self.send(200, game.propose(data))
-                    if path == "/api/act": return self.send(200, game.act(data))
-                    if path == "/api/move":
-                        if set(data) - {"x", "y", "location"}: raise ValueError("Move endpoint accepts coordinates and location only")
-                        game.runtime.commit("action", {**data, "action": "move"}); return self.send(200, game.state())
-                    if path == "/api/advance":
-                        game.runtime.commit("advance", data); return self.send(200, game.state())
-                    if path == "/api/mode" and data == {"mode": "game"}: return self.send(200, game.state())
                     raise ValueError("Unsupported operation")
             except (ValueError, TypeError, KeyError, OSError) as error:
                 self.send(400, {"error": str(error)})

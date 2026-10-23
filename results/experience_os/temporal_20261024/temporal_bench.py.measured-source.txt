@@ -1,0 +1,247 @@
+"""Paired temporal facade benchmark on the actual preserved town engines.
+
+This is a descriptive engineering study, not a preregistered heldout result.
+The conservative method does not pretend economic routines are cosmetic.  Its
+expected real-world result is exact refinement, with possible facade overhead.
+"""
+from __future__ import annotations
+
+import argparse
+from collections import Counter
+import gc
+import gzip
+import hashlib
+import json
+from pathlib import Path
+import platform
+import random
+import statistics
+import time
+import tracemalloc
+
+from .temporal import TemporalEngine, significance
+
+
+ROOT = Path(__file__).resolve().parents[1]
+VARIANTS = (("minute_reference", "live", "exact"),
+            ("event_exact", "compress", "exact"),
+            ("coarse_naive", "compress", "naive"),
+            ("conservative_adaptive", "compress", "adaptive"))
+
+
+def canonical(value):
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
+
+
+def digest(value):
+    return hashlib.sha256(canonical(value).encode()).hexdigest()
+
+
+def projection(world):
+    """Use the actual world's exposed semantic projection and canonical ledger."""
+    state = world.fidelity_state()
+    decisions = state.pop("decisions")
+    beliefs = state.pop("beliefs")
+    relationships = state.pop("relationships")
+    commitments = state.pop("commitments")
+    state["clock"] = world.clock.snapshot()
+    events = world.ledger.to_json()
+    # State contains the original complete ledger hash as well.  Separate
+    # outcomes/actions/belief values distinguish record drift from behavior.
+    return json.loads(canonical({"state": state, "events": events,
+        "decisions": decisions, "beliefs": beliefs,
+        "relationships": relationships, "commitments": commitments,
+        "actions": {agent: [d["action"] for d in decisions if d["agent"] == agent] for agent in world.agent_ids},
+        "belief_values": {agent: value["value"] for agent, value in beliefs.items()},
+        "outcomes": {key: value for key, value in world.metrics().items() if key not in {"minute", "events", "decisions"}}}))
+
+
+def make_world(world_name, seed, days):
+    from kalends.pompeii.district import PompeiiConfig
+    from kalends.pompeii.world import PompeiiWorld
+    from kalends_rebirth.world import RebirthWorld
+    config = PompeiiConfig(seed=seed, horizon_days=max(1, days))
+    world = (PompeiiWorld if world_name == "pompeii" else RebirthWorld)(config=config)
+    # Non-vacuous real obligations and later relationship/resource consequences.
+    # This prefix is identical and uses exact legacy game actions in every arm.
+    if world_name == "pompeii":
+        world.move(location="bakery")
+        world.interact("accept_delivery", "Felix")
+    else:
+        world.v2_activate_minds()
+        world.move(location="household")
+        world.interact("guarantee_household", "Lucius")
+    return world
+
+
+def run_world(world_name, seed, days, variant, *, traced=False):
+    if world_name not in {"pompeii", "rebirth"} or type(seed) is not int or type(days) is not int or not 1 <= days <= 365:
+        raise ValueError("invalid actual-world benchmark cell")
+    definition = next((row for row in VARIANTS if row[0] == variant), None)
+    if definition is None:
+        raise ValueError("unknown temporal benchmark variant")
+    # Import excluded consistently from timing and Python allocation peaks.
+    from kalends.pompeii.world import PompeiiWorld  # noqa: F401
+    from kalends_rebirth.world import RebirthWorld  # noqa: F401
+    gc.collect()
+    if traced:
+        tracemalloc.start()
+    started = time.perf_counter()
+    try:
+        world = make_world(world_name, seed, days)
+        constructed = time.perf_counter()
+        engine = TemporalEngine(world.clock, world.on_task, world.ledger)
+        stats = engine.advance(days * 1440, mode=definition[1], strategy=definition[2], coarse=60)
+        finished = time.perf_counter()
+        peak = tracemalloc.get_traced_memory()[1] if traced else None
+    finally:
+        if traced:
+            tracemalloc.stop()
+    projected = projection(world)
+    return {"world": world_name, "seed": seed, "days": days, "variant": variant,
+        "wall_seconds": finished - started, "advance_seconds": finished - constructed,
+        "construction_prefix_seconds": constructed - started,
+        "peak_traced_bytes": peak, "scheduler": stats,
+        "event_count": len(projected["events"]), "decision_count": len(projected["decisions"]),
+        "hashes": {key: digest(value) for key, value in projected.items()}, "projection": projected}
+
+
+def consequences(events):
+    # Exact full-record comparison counts timestamp/evidence drift as well as
+    # absent transitions.  An identity-independent effect comparison is also
+    # reported, so a different event number alone does not imply changed action.
+    full, effects = Counter(), Counter()
+    for row in events:
+        if not significance(row)["consequential"]:
+            continue
+        full[canonical(row)] += 1
+        payload = {key: value for key, value in row["payload"].items()
+                   if key not in {"parents", "title"}}
+        effects[canonical({"etype": row["etype"], "actors": row["actors"], "payload": payload})] += 1
+    return full, effects
+
+
+def comparison(reference, candidate):
+    ref_full, ref_effects = consequences(reference["projection"]["events"])
+    cand_full, cand_effects = consequences(candidate["projection"]["events"])
+    return {"equal": {key: reference["hashes"][key] == candidate["hashes"][key] for key in reference["hashes"]},
+        "missing_consequential_full_records": sum((ref_full - cand_full).values()),
+        "extra_consequential_full_records": sum((cand_full - ref_full).values()),
+        "missing_consequential_effect_records": sum((ref_effects - cand_effects).values()),
+        "extra_consequential_effect_records": sum((cand_effects - ref_effects).values()),
+        "metric_scope": "Full records include timestamps and evidence IDs; effect records omit title/parents/tick/identity but retain other payload fields. Differences are not causal attribution."}
+
+
+def fingerprint():
+    paths = [ROOT / "experience_os/temporal.py", ROOT / "experience_os/temporal_bench.py",
+             ROOT / "pompeii/temporal.py", ROOT / "pompeii/world.py", ROOT / "pompeii/district.py",
+             ROOT.parent / "kalends_rebirth/world.py", ROOT.parent / "kalends_rebirth/cognitive_market.py",
+             ROOT.parent / "kalends_rebirth/minds.py", ROOT.parent / "kalends_rebirth/immutable.py"]
+    files = {str(path.relative_to(ROOT.parent)): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
+    return {"sha256": digest(files), "files": files}
+
+
+def summarize(rows):
+    groups = []
+    for world in sorted({row["world"] for row in rows}):
+        for days in sorted({row["days"] for row in rows}):
+            for variant, _, _ in VARIANTS:
+                cells = [row for row in rows if row["world"] == world and row["days"] == days and row["variant"] == variant]
+                if not cells:
+                    continue
+                groups.append({"world": world, "days": days, "variant": variant, "seeds": len(cells),
+                    "median_world_seconds": statistics.median(row["wall_seconds"] for row in cells),
+                    "median_advance_seconds": statistics.median(row["advance_seconds"] for row in cells),
+                    "median_speedup_over_minute_reference": statistics.median(row["speedup_over_reference"] for row in cells),
+                    "median_peak_python_traced_bytes": statistics.median(row["peak_traced_bytes"] for row in cells),
+                    "all_projection_exact_cells": sum(all(row["comparison"]["equal"].values()) for row in cells),
+                    "equal_cells_by_projection": {key: sum(row["comparison"]["equal"][key] for row in cells) for key in cells[0]["comparison"]["equal"]},
+                    "missed_consequential_full_records": sum(row["comparison"]["missing_consequential_full_records"] for row in cells),
+                    "missed_consequential_effect_records": sum(row["comparison"]["missing_consequential_effect_records"] for row in cells),
+                    "handler_calls": sum(row["scheduler"]["handler_calls"] for row in cells),
+                    "scheduler_ticks": sum(row["scheduler"]["ticks_visited"] for row in cells),
+                    "task_lateness_minutes": sum(row["scheduler"]["total_lateness"] for row in cells),
+                    "cosmetic_omitted": sum(row["scheduler"]["cosmetic_omitted_count"] for row in cells)})
+    return {"groups": groups, "cells": len(rows),
+        "runtime_world_runs": sum(len(row["runtime_repeats_seconds"]) for row in rows),
+        "traced_world_runs": len(rows),
+        "all_runtime_repeats_deterministic": all(row["runtime_hashes_equal"] for row in rows),
+        "all_traced_repeats_deterministic": all(row["traced_hashes_equal"] for row in rows),
+        "interpretation": "Descriptive local engineering result. No cosmetics are declared in the preserved economic worlds: adaptive refines their tasks exactly. No inference of a novel compression algorithm, speed advantage, subjective-time compression, or learning transfer."}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--seeds", default="41800,41801,41802")
+    parser.add_argument("--days", default="30,90")
+    parser.add_argument("--worlds", default="pompeii,rebirth")
+    parser.add_argument("--repeats", type=int, default=3)
+    args = parser.parse_args(argv)
+    if args.out.exists():
+        raise SystemExit("Refusing to overwrite existing temporal results")
+    seeds = [int(value) for value in args.seeds.split(",")]
+    days_values = [int(value) for value in args.days.split(",")]
+    worlds = args.worlds.split(",")
+    if (not seeds or len(set(seeds)) != len(seeds) or not days_values
+            or any(not 1 <= days <= 365 for days in days_values)
+            or len(set(days_values)) != len(days_values)
+            or not worlds or len(set(worlds)) != len(worlds)
+            or any(world not in {"pompeii", "rebirth"} for world in worlds)
+            or args.repeats < 1):
+        raise SystemExit("invalid benchmark configuration")
+    args.out.mkdir(parents=True, exist_ok=False)
+    protocol = {"version": 1, "design": "matched real worlds with fixed legitimate obligation prefix",
+        "phase": "descriptive development; not independent heldout evidence",
+        "worlds": worlds, "seeds": seeds, "days": days_values, "variants": VARIANTS,
+        "runtime_repeats": args.repeats, "separate_traced_repeat": 1,
+        "timing": "median construction plus fixed game prefix plus advance; projection/hash comparison excluded; mode order seeded and rotated; gc before run; one-time module import excluded",
+        "memory": "Python tracemalloc peak of construction/prefix/advance; separate repeat; not RSS or browser/GPU memory",
+        "fidelity": "complete exposed world state, ledger, beliefs, relationships, commitments, executed decisions/actions and terminal outcomes compared against minute reference",
+        "significance": "explicit actual effects with conservative unknown-event retention",
+        "adaptive": "no economic task declared cosmetic; all unknown tasks exact; synthetic contract tests separately show restricted presentation coalescing",
+        "source": fingerprint(), "environment": {"python": platform.python_version(), "platform": platform.platform(), "machine": platform.machine()}}
+    (args.out / "protocol.json").write_text(json.dumps(protocol, indent=2) + "\n")
+    rows = []
+    with gzip.open(args.out / "projections.jsonl.gz", "wt") as projections:
+        for world in worlds:
+            for days in days_values:
+                for seed in seeds:
+                    variants = list(VARIANTS)
+                    random.Random(seed + days).shuffle(variants)
+                    cell = {}
+                    for variant, _, _ in variants:
+                        runs = [run_world(world, seed, days, variant) for _ in range(args.repeats)]
+                        traced = run_world(world, seed, days, variant, traced=True)
+                        first = runs[0]
+                        first["runtime_repeats_seconds"] = [row["wall_seconds"] for row in runs]
+                        first["advance_repeats_seconds"] = [row["advance_seconds"] for row in runs]
+                        first["wall_seconds"] = statistics.median(first["runtime_repeats_seconds"])
+                        first["advance_seconds"] = statistics.median(first["advance_repeats_seconds"])
+                        first["peak_traced_bytes"] = traced["peak_traced_bytes"]
+                        first["runtime_hashes_equal"] = all(row["hashes"] == first["hashes"] for row in runs)
+                        first["traced_hashes_equal"] = traced["hashes"] == first["hashes"]
+                        cell[variant] = first
+                    reference = cell["minute_reference"]
+                    for row in cell.values():
+                        row["comparison"] = comparison(reference, row)
+                        row["speedup_over_reference"] = reference["wall_seconds"] / row["wall_seconds"]
+                    for variant, _, _ in VARIANTS:
+                        row = cell[variant]
+                        projections.write(canonical({key: row[key] for key in ("world", "seed", "days", "variant", "projection")}) + "\n")
+                        del row["projection"]
+                        rows.append(row)
+                    # Preserve completed cells immediately if a later run fails.
+                    (args.out / "rows.json").write_text(json.dumps(rows, indent=2) + "\n")
+                    print(f"{world} {days} days seed {seed}: four variants complete", flush=True)
+    result = summarize(rows)
+    (args.out / "summary.json").write_text(json.dumps(result, indent=2) + "\n")
+    (args.out / "source_after.json").write_text(json.dumps(fingerprint(), indent=2) + "\n")
+    if protocol["source"] != fingerprint():
+        raise SystemExit("Measured source changed during benchmark; artifacts preserved but not a fixed-source result")
+    print(json.dumps(result, indent=2))
+    return result
+
+
+if __name__ == "__main__":
+    main()

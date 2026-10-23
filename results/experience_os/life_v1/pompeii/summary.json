@@ -1,0 +1,146 @@
+{
+  "adapter": "pompeii",
+  "elapsed_days": 120,
+  "world_minutes": 172800,
+  "commands": 12,
+  "ledger_events": 3234,
+  "final_state_hash": "2d6bb02b8ddbb8654d9725857c2c59387deae197f63c98396e9bbe001719ffd9",
+  "journal_sha256": "86302fda99423625dec6270815d11c004e36997d0e0061559694f216787fded8",
+  "exact_restart": true,
+  "metrics": {
+    "cash": 11.0,
+    "inventory": 0,
+    "reputation": 1,
+    "deliveries": 1,
+    "service_minutes": 120,
+    "completed_commissions": 0,
+    "fulfilled_obligations": 1,
+    "missed_obligations": 1,
+    "elapsed_days": 120.0
+  },
+  "checkpoints": [
+    {
+      "elapsed_days": 1,
+      "exact_restart": true,
+      "journal_sha256": "324f5ad6f32c0128901ccb7604a026a0f88c7e3770ac1296cf81cb2fdb214aa8",
+      "state_hash": "980b75056f920c58892ad032badd49587a3fb001218afff21eb9eac1a5691139",
+      "metrics": {
+        "cash": 3.0,
+        "inventory": 0,
+        "reputation": 0,
+        "deliveries": 1,
+        "service_minutes": 0,
+        "completed_commissions": 0,
+        "fulfilled_obligations": 0,
+        "missed_obligations": 1,
+        "elapsed_days": 1.0
+      }
+    },
+    {
+      "elapsed_days": 30,
+      "exact_restart": true,
+      "journal_sha256": "044b2d63ce3db620d777965851ac98b26c6b3941638d2e254bfe71c60ce8d780",
+      "state_hash": "322c7c8dd1f8c83bfcfd50e3e8a820cfbea33a545d1b968cc5dc7679426603b5",
+      "metrics": {
+        "cash": 11.0,
+        "inventory": 0,
+        "reputation": 1,
+        "deliveries": 1,
+        "service_minutes": 120,
+        "completed_commissions": 0,
+        "fulfilled_obligations": 1,
+        "missed_obligations": 1,
+        "elapsed_days": 30.0
+      }
+    },
+    {
+      "elapsed_days": 60,
+      "exact_restart": true,
+      "journal_sha256": "5333dd1a2a918580826042f9b4209c71dc69c05e98b827ba5284d86bc3eb2e62",
+      "state_hash": "bc1c6c521d5c77c8d0dd43a16a0daeb8ccadc401c62814493bc362ad7dc4354c",
+      "metrics": {
+        "cash": 11.0,
+        "inventory": 0,
+        "reputation": 1,
+        "deliveries": 1,
+        "service_minutes": 120,
+        "completed_commissions": 0,
+        "fulfilled_obligations": 1,
+        "missed_obligations": 1,
+        "elapsed_days": 60.0
+      }
+    },
+    {
+      "elapsed_days": 90,
+      "exact_restart": true,
+      "journal_sha256": "caf979b4e65b4a8662d0f8cbbb938fd9a324b6b1a62560d2d6022c1fe2ff71ab",
+      "state_hash": "f3ca09b54b80759d182ce9df3148965276dba0234de03b59411738378a063b34",
+      "metrics": {
+        "cash": 11.0,
+        "inventory": 0,
+        "reputation": 1,
+        "deliveries": 1,
+        "service_minutes": 120,
+        "completed_commissions": 0,
+        "fulfilled_obligations": 1,
+        "missed_obligations": 1,
+        "elapsed_days": 90.0
+      }
+    },
+    {
+      "elapsed_days": 120,
+      "exact_restart": true,
+      "journal_sha256": "86302fda99423625dec6270815d11c004e36997d0e0061559694f216787fded8",
+      "state_hash": "2d6bb02b8ddbb8654d9725857c2c59387deae197f63c98396e9bbe001719ffd9",
+      "metrics": {
+        "cash": 11.0,
+        "inventory": 0,
+        "reputation": 1,
+        "deliveries": 1,
+        "service_minutes": 120,
+        "completed_commissions": 0,
+        "fulfilled_obligations": 1,
+        "missed_obligations": 1,
+        "elapsed_days": 120.0
+      }
+    }
+  ],
+  "v3_decision_counts": {
+    "Chreste": 120,
+    "Dama": 120,
+    "Felix": 120,
+    "Lucius": 120,
+    "Marcus": 120,
+    "Sabina": 120
+  },
+  "player_commitments": [
+    {
+      "id": "felix-first",
+      "quantity": 4,
+      "deadline": 600,
+      "status": "missed",
+      "fulfilled": 0,
+      "beneficiary": "Felix",
+      "event_id": 28,
+      "agent": "Player"
+    },
+    {
+      "id": "household-service",
+      "quantity": 120,
+      "deadline": 5768,
+      "status": "fulfilled",
+      "fulfilled": 120,
+      "beneficiary": "Lucius",
+      "event_id": 64,
+      "agent": "Player"
+    }
+  ],
+  "affiliation": "household client",
+  "execution_and_exact_restart_seconds": 4.780431082999712,
+  "limits": [
+    "This is a bounded authored historical-fiction continuation, not a generated human biography.",
+    "The player accepts one delivery, misses it, then keeps a separate service agreement. Later state persists through exact scheduled events.",
+    "Six V3 minds select declared existing options; this does not imply six unconstrained LLM planners.",
+    "This demonstrates months of causal continuity, not measured human subjective duration or multi-month cognitive superiority."
+  ]
+}

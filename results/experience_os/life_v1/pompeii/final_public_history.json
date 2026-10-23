@@ -1,0 +1,468 @@
+{
+  "objective": "Reason about asymmetric information, resource-backed promises, social constraints and the later consequences of accepted actions. Historical participation is not evidence of real-world learning transfer.",
+  "questions": [
+    "Which account could you legitimately access before committing, and which was still private?",
+    "Which accepted choice moved actual coins, flour or service time? Cite its event.",
+    "What changed after your absence, and which actual events support that explanation?",
+    "Which alternative can the same command history replay, and which later actions become infeasible?"
+  ],
+  "choices": [
+    {
+      "index": 0,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "hear_dispute",
+        "recipient": "Sabina",
+        "quantity": 1
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 18
+    },
+    {
+      "index": 1,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "support_market",
+        "recipient": "Sabina",
+        "quantity": 1
+      },
+      "at": 0,
+      "after": 20,
+      "receipt_id": 19
+    },
+    {
+      "index": 2,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "move",
+        "location": "bakery"
+      },
+      "at": 20,
+      "after": 23,
+      "receipt_id": 27
+    },
+    {
+      "index": 3,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "accept_delivery",
+        "recipient": "Felix",
+        "quantity": 1
+      },
+      "at": 23,
+      "after": 23,
+      "receipt_id": 28
+    },
+    {
+      "index": 5,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "move",
+        "location": "household"
+      },
+      "at": 1440,
+      "after": 1448,
+      "receipt_id": 63
+    },
+    {
+      "index": 6,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "patronage",
+        "recipient": "Lucius",
+        "quantity": 1
+      },
+      "at": 1448,
+      "after": 1448,
+      "receipt_id": 64
+    },
+    {
+      "index": 7,
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "service",
+        "recipient": "Lucius",
+        "quantity": 1
+      },
+      "at": 1448,
+      "after": 1568,
+      "receipt_id": 72
+    }
+  ],
+  "consequences": [
+    {
+      "event_id": 871,
+      "tick": 40320,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 28
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 40320,
+      "parents": []
+    },
+    {
+      "event_id": 922,
+      "tick": 43200,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "experience_opportunity",
+        "title": "Return after a month and inspect the generated personal history.",
+        "parents": []
+      },
+      "scope": "private",
+      "category": "experience_opportunity",
+      "title": "Return after a month and inspect the generated personal history.",
+      "minute": 43200,
+      "parents": []
+    },
+    {
+      "event_id": 1053,
+      "tick": 50400,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 35
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 50400,
+      "parents": []
+    },
+    {
+      "event_id": 1233,
+      "tick": 60480,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 42
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 60480,
+      "parents": []
+    },
+    {
+      "event_id": 1412,
+      "tick": 70560,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 49
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 70560,
+      "parents": []
+    },
+    {
+      "event_id": 1590,
+      "tick": 80640,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 56
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 80640,
+      "parents": []
+    },
+    {
+      "event_id": 1769,
+      "tick": 90720,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 63
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 90720,
+      "parents": []
+    },
+    {
+      "event_id": 1950,
+      "tick": 100800,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 70
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 100800,
+      "parents": []
+    },
+    {
+      "event_id": 2128,
+      "tick": 110880,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 77
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 110880,
+      "parents": []
+    },
+    {
+      "event_id": 2307,
+      "tick": 120960,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 84
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 120960,
+      "parents": []
+    },
+    {
+      "event_id": 2459,
+      "tick": 129600,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "experience_opportunity",
+        "title": "Revisit one earlier accepted decision and compare a replayed alternative.",
+        "parents": []
+      },
+      "scope": "private",
+      "category": "experience_opportunity",
+      "title": "Revisit one earlier accepted decision and compare a replayed alternative.",
+      "minute": 129600,
+      "parents": []
+    },
+    {
+      "event_id": 2486,
+      "tick": 131040,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 91
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 131040,
+      "parents": []
+    },
+    {
+      "event_id": 2665,
+      "tick": 141120,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 98
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 141120,
+      "parents": []
+    },
+    {
+      "event_id": 2845,
+      "tick": 151200,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 105
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 151200,
+      "parents": []
+    },
+    {
+      "event_id": 3026,
+      "tick": 161280,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 112
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 161280,
+      "parents": []
+    },
+    {
+      "event_id": 3207,
+      "tick": 171360,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "opportunity",
+        "title": "A week of dealings brings another chance to earn household trust",
+        "parents": [],
+        "flags": {
+          "weekly_opportunity": 119
+        }
+      },
+      "scope": "private",
+      "category": "opportunity",
+      "title": "A week of dealings brings another chance to earn household trust",
+      "minute": 171360,
+      "parents": []
+    }
+  ],
+  "outcomes": {
+    "cash": 11.0,
+    "inventory": 0,
+    "reputation": 1,
+    "deliveries": 1,
+    "service_minutes": 120,
+    "completed_commissions": 0,
+    "fulfilled_obligations": 1,
+    "missed_obligations": 1,
+    "elapsed_days": 120.0
+  },
+  "transfer": {
+    "prompt": "In an unfamiliar cooperative, two buyers repeat a supplier story from the same original witness. Before accepting a deadline-backed order, which is the strongest next step?",
+    "options": [
+      "Treat the repeated reports as two independent confirmations.",
+      "Check a current primary record, then compare quantity, cost and the actual deadline.",
+      "Assume the supplier has stock because they sounded confident."
+    ]
+  },
+  "claim_limit": "This describes simulated performance and actual records. Human learning and real-world transfer have not been measured."
+}

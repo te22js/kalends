@@ -1,0 +1,175 @@
+Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8801/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8801/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 0
+			6 checkbox LEARN, Value: 1
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		10 text LEARN · REASON FROM YOUR ACTUAL CHOICES
+		11 heading Shared Observatory: three teams, one instrument, Value: 1, ID: title
+			12 text Shared Observatory: three teams, one instrument
+		13 text Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: Shared Observatory: three teams, one instrument, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (disabled) A life among promises: Pompeii
+					19 (disabled) Shared Observatory: three teams, one instrument
+		20 text DAY 2 · 1,440 WORLD MINUTES · 4 ACCEPTED COMMANDS
+		21 button Refresh world, ID: refresh
+		22 button Live step · 1m
+		23 button Compress · 1 day
+		24 button Montage · 1 week
+		25 button Skip · 30 days
+		26 button Next scheduled change
+		124 text The alternative was executed separately; your original life is preserved.
+		28 container Description: Actual world outcomes, ID: metrics
+			29 text 2
+			30 text COMPLETED PROJECTS
+			31 text 0
+			32 text PROMISES KEPT
+			33 text 1
+			34 text PROMISES MISSED
+			35 text 8
+			36 text EXECUTED UNITS
+			37 text 0
+			38 text EQUITY
+			39 text 2
+			40 text CREDITS SPENT
+		41 container learn-view
+			42 container
+				43 text LEARN · GROUNDED DEBRIEF
+				44 heading Your decisions have a record., Value: 2
+					45 text Your decisions have a record.
+				46 text Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.
+				47 button Select evidence for reflection, ID: reflect
+				125 text Record 23: Recorded settlements and deadlines revise the declared project register
+Record 24: The promise to team_c is missed
+Record 25: Recorded settlements and deadlines revise the declared project register
+Record 27: Round 2: teams may negotiate the shared instrument
+Record 28: Round 2 opens the consortium's regular instrument work
+Record 30: team_a requests 2 capacity units
+Record 32: team_b requests 2 capacity units
+Record 34: team_c requests 2 capacity units
+
+Who knew the hardware condition before the first allocation, and what caused it to become available to others?
+Which promises fit actual usable capacity at settlement, and which failed? Cite the events.
+Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?
+
+This is a reviewed proposal over supplied evidence, not an executed action or a validated learning outcome.
+Provider: offline
+				48 container debrief
+					49 text DAY 1 · MINUTE 0 · RECORD 1
+					50 text The consortium records its declared research projects
+					51 button Inspect recorded support ↗
+					52 text DAY 1 · MINUTE 0 · RECORD 2
+					53 text Negotiate the first allocation while the maintenance team alone has current hardware evidence.
+					54 button Inspect recorded support ↗
+					55 text DAY 1 · MINUTE 0 · RECORD 4
+					56 text Round 1: teams may negotiate the shared instrument
+					57 button Inspect recorded support ↗
+					58 text DAY 1 · MINUTE 0 · RECORD 13
+					59 text team_b shares a dated condition report with Player
+					60 container
+						61 text Reported condition:  fragile  · evidence dated minute 0
+					62 button Inspect recorded support ↗
+					63 text DAY 1 · MINUTE 0 · RECORD 14
+					64 text Player promises 4 units to team_c
+					65 button Inspect recorded support ↗
+					66 text DAY 1 · MINUTE 0 · RECORD 15
+					67 text The coordinator commits round 1's allocation
+					68 button Inspect recorded support ↗
+					69 text DAY 1 · MINUTE 1439 · RECORD 22
+					70 text Round 1 executes 8/12 allocated units; 2 projects complete
+					71 button Inspect recorded support ↗
+					72 text DAY 1 · MINUTE 1439 · RECORD 23
+					73 text Recorded settlements and deadlines revise the declared project register
+					74 button Inspect recorded support ↗
+					75 text DAY 1 · MINUTE 1439 · RECORD 24
+					76 text The promise to team_c is missed
+					77 button Inspect recorded support ↗
+					78 text DAY 2 · MINUTE 1440 · RECORD 25
+					79 text Recorded settlements and deadlines revise the declared project register
+					80 button Inspect recorded support ↗
+					81 text DAY 2 · MINUTE 1440 · RECORD 27
+					82 text Round 2: teams may negotiate the shared instrument
+					83 button Inspect recorded support ↗
+					84 text DAY 2 · MINUTE 1440 · RECORD 28
+					85 text Round 2 opens the consortium's regular instrument work
+					86 button Inspect recorded support ↗
+				87 heading Questions to investigate, Value: 3
+					88 text Questions to investigate
+				89 content list questions
+					90 container
+						91 AXListMarker 1. 
+						92 text Who knew the hardware condition before the first allocation, and what caused it to become available to others?
+					93 container
+						94 AXListMarker 2. 
+						95 text Which promises fit actual usable capacity at settlement, and which failed? Cite the events.
+					96 container
+						97 AXListMarker 3. 
+						98 text Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?
+					99 container
+						100 AXListMarker 4. 
+						101 text Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?
+				102 text This is simulated decision practice. No human learning or real-world transfer result has been established.
+			103 container
+				104 text A DIFFERENT SITUATION
+				105 heading Transfer challenge, Value: 2
+					106 text Transfer challenge
+				107 text A new laboratory advertises twelve instrument slots. Three teams need four slots each, but only the engineer has a fresh reliability report. Which plan best manages the uncertainty?
+				108 container transfer-options
+					109 button Promise four slots to all three teams immediately because twelve slots are advertised.
+					110 button Ask for the dated report or buy a fresh check, disclose its limits, and make a feasible allocation with an explicit review point.
+					111 button Allocate everything to the most confident team and record its confidence as direct evidence.
+				126 text Supported answer. A nominal resource limit is not verified usable capacity. Legitimate evidence, an explicit cost-aware allocation and a later review point make the promise testable. This answer is conceptual and does not establish learning transfer. One authored transfer question; not evidence of learning or real-world transfer.
+				112 heading Retry an actual choice, Value: 3
+					113 text Retry an actual choice
+				114 text Remove one accepted choice and replay the recorded continuation. Changed outcomes are computed; infeasible later commands are disclosed.
+				115 pop up button (collapsed, settable) Value: Choice 2: allocate at minute 0, ID: retry-choice, Secondary Actions: Expand
+					116 menu
+						117 Choice 0: share at minute 0
+						118 Choice 1: commit at minute 0
+						119 (selected) Choice 2: allocate at minute 0
+				120 button Execute alternative →, ID: retry
+				127 text {
+  "omitted": 2,
+  "differences": {
+    "allocated_units": {
+      "alternative": 0,
+      "original": 12
+    },
+    "completed_projects": {
+      "alternative": 0,
+      "original": 2
+    },
+    "completed_rounds": {
+      "alternative": 0,
+      "original": 1
+    },
+    "equity": {
+      "alternative": 1,
+      "original": 0
+    },
+    "executed_units": {
+      "alternative": 0,
+      "original": 8
+    },
+    "unused_capacity": {
+      "alternative": 8,
+      "original": 0
+    }
+  },
+  "skipped": [],
+  "original_hash": "dabc468e1490c495f4560477c36cec57f56efe8dea048b7ea2f36c4d2492fb26",
+  "alternative_hash": "7a12d030e739c829ea5551c798ed17888c5bafffe02040db2c9aa5bc12260577",
+  "interpretation": "Executed omission with declared later commands; not an optimal or necessary-cause proof."
+}
+		121 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		122 text offline cognition · 0 external calls
+		123 text  · Local single-user prototype
+
+The focused UI element is 1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8801/

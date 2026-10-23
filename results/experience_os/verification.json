@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "verified_at_utc": "2026-10-23T20:48:40.410185+00:00",
+  "baseline_commit": "658ccec",
+  "branch": "codex/experience-os",
+  "python": {
+    "passed": 947,
+    "failed": 0,
+    "seconds": 29.46,
+    "legacy_passed": 692,
+    "command": "python3 -m pytest tests -q",
+    "runtime": "Python 3.12.14 bundled runtime; pytest supplied by existing site-packages"
+  },
+  "frontend": {
+    "passed": 110,
+    "failed": 0,
+    "seconds": 1.009053042,
+    "legacy_passed": 98,
+    "command": "node --test tests/frontend/*.test.cjs"
+  },
+  "browser": {
+    "tool": "CUA visible browser UI only",
+    "final_url": "http://127.0.0.1:8800/",
+    "qa_port": 8801,
+    "qa_directory": "/tmp/kalends-os-final-visual-qa-20261024",
+    "qa_server_stopped": true,
+    "checks": [
+      "legitimate dated report disclosed after confirmation",
+      "four-unit promise and twelve-unit allocation",
+      "actual next-day 8/12 settlement and missed promise",
+      "transfer feedback explicitly formative",
+      "omission changed executed allocation outcomes while preserving original",
+      "offline evidence reflection selected actual record IDs",
+      "LAB showed actual private minds and world facts",
+      "unknown state_patch rejected visibly inside author dialog",
+      "offline template draft validated without enactment",
+      "new browser_pompeii spec compiled via UI",
+      "3D Wait30m advanced selected compiled life and updated parent view",
+      "default Pompeii life remained at0 commands/minute0",
+      "final four-life catalog displayed actual90-day history and untouched fresh worlds",
+      "no captured console warning/error entries"
+    ],
+    "artifacts": {
+      "compiled_3d.ax.txt": "82ba823d3fba45bd3611fdf1274af1254e490f7d5263926588aee9c604c5d3c5",
+      "compiled_3d.jpg": "58ccd09867b38057e66a5da3f5004bafa5446904b62013fb5d428395c8fc577d",
+      "default_life_preserved.ax.txt": "aaa3affc8cf2981cb1acc8bc0cac700b88150a19183f9919fddfe5db1e18f4a0",
+      "lab.jpg": "e284fae3e79d4e08f8a8621e8aded28f03b6b0b501f885a3f7a20c36bc245f6e",
+      "learn_retry.ax.txt": "30902b9d725b4bd06f156bf783b5e4ca86515ae723f4297dfd9e828c10193dd3",
+      "learn_retry.jpg": "1dff5815c781798ff4c8c82e44a874d1a94cde4a3fe32b1b3d563ca055123a56",
+      "live.ax.txt": "88bac32d296bc4d7e54a87f23c3b75554a980180e80768bcc2bec1276d1094ea",
+      "live.jpg": "2864f42afc36a2fd62cdb9cd6d24b5bf50c231d7dbce269588aa42de6aa3ec4b",
+      "recorded_life.ax.txt": "9a3f35d9edd17ce2cf98f0f1a6973f3b4d16a07406442e49676a28b1878ee1aa",
+      "recorded_life.jpg": "0bf09612d6d4f7c3e07592d3e5edf501124520662cc6a15de9a22f93511a3e19"
+    }
+  },
+  "original_journals": {
+    ".kalends/immersion_session.json": {
+      "expected": "be1667f8d5fa43cf48c5340f37553ddcf96e312ff99d833071f90e96739abd79",
+      "actual": "be1667f8d5fa43cf48c5340f37553ddcf96e312ff99d833071f90e96739abd79",
+      "unchanged": true
+    },
+    ".kalends/rebirth_session.json": {
+      "expected": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2",
+      "actual": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2",
+      "unchanged": true
+    },
+    ".kalends/rebirth_session.pre_minds_v2_5f6ff85810e6.json": {
+      "expected": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+      "actual": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2",
+      "unchanged": true
+    },
+    ".kalends/immersion_qa_verified.json": {
+      "expected": "cac3a2fb7ff70ea51b154a0e7d74b4d389b1af64241700952dc185b2f92fee96",
+      "actual": "cac3a2fb7ff70ea51b154a0e7d74b4d389b1af64241700952dc185b2f92fee96",
+      "unchanged": true
+    }
+  },
+  "new_directory": ".kalends/experience_os",
+  "new_lives": {
+    "observatory_long_life.json": {
+      "journal_sha256": "d1f83a2bc3995fda9197ecc8c8f54652de8443c0f2d187f4396ffbc261bffe4c",
+      "commands": 360,
+      "state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d",
+      "minute": 129600
+    },
+    "pompeii_life.json": {
+      "journal_sha256": "da6571dc6267aba0088ad81631b50b4d7697a55fd684e2eb17228cb90b7d5754",
+      "commands": 0,
+      "state_hash": "9b290e89c58c5f837fd9f271aa5ebdaaf50cd3b08ef530f0b10a634250f61e6e",
+      "minute": 0
+    },
+    "pompeii_long_life.json": {
+      "journal_sha256": "86302fda99423625dec6270815d11c004e36997d0e0061559694f216787fded8",
+      "commands": 12,
+      "state_hash": "2d6bb02b8ddbb8654d9725857c2c59387deae197f63c98396e9bbe001719ffd9",
+      "minute": 172800
+    },
+    "shared_observatory.json": {
+      "journal_sha256": "208885a6043a20264b4519cedf1548b37d49145d377c6186db254e6c2ec5d3f0",
+      "commands": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "minute": 0
+    }
+  },
+  "zero_live_model_calls": true,
+  "paid_api_spend_usd": 0,
+  "prior_engine_and_3d_tracked_sources_changed": false,
+  "checks": {
+    "git_diff_check": true,
+    "new_javascript_syntax": true,
+    "loopback_http_tests": true,
+    "exact_demo_restarts": true
+  },
+  "current_source_sha256": {
+    "kalends/experience_os/__init__.py": "47a84e30006fb7628aa2809beafc6d7b6afe5b1756fc55fd255bc592d8724206",
+    "kalends/experience_os/cognition_bench.py": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576",
+    "kalends/experience_os/commons.py": "aacf1336c22c3cd7f144a5c8e9352524f2f9cfadfb41761f0d7fd6306dc00ef9",
+    "kalends/experience_os/compiler.py": "69a4a1a4eaf36f9893324e449ccc8059bbee16f2f2c37138411550cb77179c8e",
+    "kalends/experience_os/contracts.py": "988fdf0a504fb189beff5a037c49b8f4b34bdeebfaaf13497e38fd29b9b5e759",
+    "kalends/experience_os/life_demo.py": "495f3292ee7c9cf2b09f31f304ef2e7ff4935e8dd430861503270e47599b9b94",
+    "kalends/experience_os/minds.py": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
+    "kalends/experience_os/providers.py": "7aac733480f233475c60db6c3eabbb11ed84987d93e0ad3ecd5ffe125d3809e5",
+    "kalends/experience_os/runtime.py": "9797414b96df3955ef846465b26a61b3c12da7f95297329d64b28d91db4bda4f",
+    "kalends/experience_os/server.py": "05de169590d18cbb02b365fda62d31383e197ef5855ca3caa83739754d478740",
+    "kalends/experience_os/static/app.js": "dd3e3f157332872c842e4e834e0b606a78d27b1a92b46487fc7457a4f30508f6",
+    "kalends/experience_os/static/game-host.js": "12e82de16e3a2ddbd97c2277e6ea890875b29ba1ed941b1619751274fae38113",
+    "kalends/experience_os/static/index.html": "6a3b29e6c8743432719cced959daed0943e39cd0a1626d222e3f51e082886d71",
+    "kalends/experience_os/static/style.css": "34b4d1ddeb79b8a17aea6fbd7319f6adb539fc0a2f6481d3afcc1519f3c6987f",
+    "kalends/experience_os/temporal.py": "5bfccda3757ad0f5e46a8a77d88b765cdcf5cebdc1d22d04823e79f72660ed94",
+    "kalends/experience_os/temporal_bench.py": "9a6783e94c97d310eaa585a424d03ff06db2d5e73af6648b5ee3adb684ecf1c3"
+  },
+  "limits": [
+    "No human learning, transfer, retention or commercial validation",
+    "Authored bounded planners; all matched V3-V2 outcome pairs tied",
+    "No economic task coalescing and no established adaptive speed advantage",
+    "Finite compiler registry with two adapters; new domains still require explicit rules",
+    "Local single-operator LAB is not production multi-user authorization"
+  ]
+}

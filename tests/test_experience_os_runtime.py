@@ -235,3 +235,132 @@ def test_replay_rejects_forged_command_timeline_or_receipt_even_when_final_state
     with pytest.raises(ValueError, match="replay|timeline|receipt|command|recorded"):
         runtime(journal_path=journal)
     assert journal.read_bytes() == corrupted
+
+
+def configured_observatory():
+    return json.loads((SPEC_DIR / "shared_observatory.json").read_text())
+
+
+def stable_observatory():
+    spec = configured_observatory()
+    spec["setting"]["rules"]["initial_condition"] = "stable"
+    spec["observations"][0]["value"] = "stable"
+    return spec
+
+
+def test_compiled_goal_prerequisite_requires_an_earlier_actual_settlement():
+    spec = stable_observatory()
+    first, dependent = spec["goals"][:2]
+    dependent["requires"] = [first["id"]]
+    dependent["deadline"] = 2880
+    life = ExperienceRuntime(spec)
+    assert life.world.get("goal_status")[dependent["id"]]["status"] == "blocked"
+    assert "team_b" not in life.world.get("requests:0")
+    # Even giving the blocked team real capacity cannot retroactively establish
+    # that its prerequisite was already completed before this first batch.
+    life.commit("action", {"action": "allocate", "allocation": {"team_a": 4, "team_b": 4, "team_c": 0}})
+    life.commit("advance", {"minutes": 1440})
+    statuses = life.world.get("goal_status")
+    assert statuses[first["id"]]["status"] == "completed"
+    assert statuses[dependent["id"]]["status"] == "active"
+    assert life.world.get("requests:1")["team_b"] == 4
+    assert next(g for g in life.minds["team_b"].goals if g.goal_id == dependent["id"]).deadline == 2880
+    life.commit("action", {"action": "allocate", "allocation": {"team_a": 0, "team_b": 4, "team_c": 0}})
+    life.commit("advance", {"minutes": 1440})
+    achieved = life.world.get("goal_status")[dependent["id"]]
+    assert achieved["status"] == "completed" and achieved["completed_at"] == 2879
+    assert life.world.ledger.events[achieved["evidence_event"]].payload["category"] == "allocation_settled"
+
+
+def test_larger_goal_target_changes_the_request_and_requires_real_full_batch_delivery():
+    spec = stable_observatory()
+    goal = spec["goals"][1]
+    goal["target"]["quantity"], goal["deadline"] = 6, 2880
+    life = ExperienceRuntime(spec)
+    assert life.world.get("requests:0")["team_b"] == 6
+    life.commit("action", {"action": "allocate", "allocation": {"team_a": 0, "team_b": 4, "team_c": 0}})
+    life.commit("advance", {"minutes": 1440})
+    assert life.world.get("goal_status")[goal["id"]]["status"] == "active"
+    life.commit("action", {"action": "allocate", "allocation": {"team_a": 0, "team_b": 6, "team_c": 0}})
+    life.commit("advance", {"minutes": 1440})
+    status = life.world.get("goal_status")[goal["id"]]
+    assert status["status"] == "completed" and status["executed_units"] == 6
+
+
+def test_declared_mid_round_deadline_expires_at_its_actual_minute():
+    spec = stable_observatory()
+    goal = spec["goals"][1]
+    goal["deadline"] = 2000
+    life = ExperienceRuntime(spec)
+    life.commit("advance", {"minutes": 1999})
+    assert life.world.get("goal_status")[goal["id"]]["status"] == "active"
+    life.commit("advance", {"minutes": 1})
+    status = life.world.get("goal_status")[goal["id"]]
+    assert status["status"] == "missed" and status["updated_at"] == 2000
+    assert all(g.goal_id != goal["id"] for g in life.minds["team_b"].goals)
+
+
+def test_all_declared_opportunities_fire_once_at_exact_times_including_zero():
+    spec = configured_observatory()
+    times = [0, 37, 719, 1440, 1499]
+    spec["opportunities"] = [{"at": at, "label": f"Declared decision opportunity at minute {at}."} for at in times]
+    life = ExperienceRuntime(spec)
+    life.commit("advance", {"minutes": 1500})
+    actual = [e for e in life.world.ledger.events if "opportunity_index" in e.payload]
+    assert [e.tick for e in actual] == times
+    assert [e.payload["title"] for e in actual] == [item["label"] for item in spec["opportunities"]]
+    assert [e.payload["declared_at"] for e in actual] == times
+
+
+def test_goal_contract_rejects_typed_or_temporally_impossible_declarations():
+    for change in ({"priority": 0}, {"label": "x" * 257}, {"id": "a" * 65}):
+        spec = configured_observatory()
+        spec["goals"][0].update(change)
+        with pytest.raises(ValueError):
+            ExperienceRuntime(spec)
+    spec = configured_observatory()
+    spec["goals"][0]["priority"] = .5
+    ExperienceRuntime(spec)
+    spec = configured_observatory()
+    spec["goals"][1]["requires"] = [spec["goals"][0]["id"]]
+    with pytest.raises(ValueError, match="prerequisite.*settle"):
+        ExperienceRuntime(spec)
+
+
+def test_relayed_testimony_preserves_original_witness_date_and_world_truth():
+    spec = configured_observatory()
+    spec["setting"]["rules"].update(seed=0, maintenance_interval=1)
+    life = ExperienceRuntime(spec)
+    first = life.commit("action", {"action": "share", "recipient": "team_b"})["receipt"]
+    original = first["payload"]["origin_event"]
+    assert first["payload"]["origin_observer"] == "team_b"
+    assert first["event_id"] in {e["event_id"] for e in life.snapshot()["own_reports"]}
+    life.commit("advance", {"minutes": 1440})
+    assert life.world.state.facts["observatory.condition"] == "stable"
+    forwarded = life.commit("action", {"action": "share", "recipient": "team_a", "event_id": first["event_id"]})["receipt"]
+    assert forwarded["etype"] == "tell" and forwarded["payload"]["value"] == "fragile"
+    assert forwarded["payload"]["as_of"] == 0
+    assert forwarded["payload"]["origin_event"] == original
+    assert forwarded["payload"]["origin_observer"] == "team_b"
+    assert life.world.state.facts["observatory.condition"] == "stable"
+    provenance = life.minds["team_a"].provenance(forwarded["event_id"])
+    assert provenance["kind"] == "testimony" and provenance["source_agent"] == "Player"
+    assert provenance["claimed_origin_observer"] == "team_b"
+    # The same transmitted claim can be relayed again without becoming another
+    # independent firsthand observation in the recipient's persistent mind.
+    second = life.commit("action", {"action": "share", "recipient": "team_a", "event_id": forwarded["event_id"]})["receipt"]
+    assert second["payload"]["origin_event"] == original
+    assert life.minds["team_a"].provenance(second["event_id"])["kind"] == "testimony"
+
+
+@pytest.mark.parametrize("name", ["shared_observatory", "pompeii_life"])
+def test_compiled_actual_worlds_match_minute_reference_with_exact_and_conservative_time(name):
+    hashes, ledgers = [], []
+    for mode, strategy in (("live", "exact"), ("compress", "exact"), ("compress", "adaptive")):
+        life = runtime(name)
+        life.commit("advance", {"minutes": 7 * 1440, "mode": mode, "strategy": strategy})
+        hashes.append(life.state_hash())
+        ledgers.append(life.world.ledger.content_hash())
+        assert life.last_time["total_lateness"] == 0
+        assert life.last_time["cosmetic_omitted_count"] == 0
+    assert len(set(hashes)) == len(set(ledgers)) == 1

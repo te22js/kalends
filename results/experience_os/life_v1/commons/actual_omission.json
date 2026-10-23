@@ -1,0 +1,4910 @@
+{
+  "omitted_command": 2,
+  "skipped": [],
+  "original": {
+    "experience": "observatory_long_life",
+    "title": "Recorded 90-day demonstration: Shared Observatory",
+    "setting": "commons",
+    "minute": 129600,
+    "day": 91,
+    "horizon": 129600,
+    "terminated": true,
+    "participants": [
+      {
+        "id": "Player",
+        "role": "elected consortium coordinator"
+      },
+      {
+        "id": "team_a",
+        "role": "time-sensitive sky-survey research team"
+      },
+      {
+        "id": "team_b",
+        "role": "instrument maintenance and calibration research team"
+      },
+      {
+        "id": "team_c",
+        "role": "long-baseline transient follow-up research team"
+      }
+    ],
+    "metrics": {
+      "rounds_settled": 90,
+      "completed_projects": 228,
+      "executed_units": 912,
+      "allocated_units": 916,
+      "promises_kept": 89,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 90,
+      "failed_promises": 1,
+      "equity": 0.7752808988764045,
+      "information_shared": 90,
+      "unused_capacity": 0,
+      "elapsed_days": 90.0
+    },
+    "objectives": "Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.",
+    "events": [
+      {
+        "event_id": 1402,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 82 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:116640:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1405,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:81"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:116640:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1407,
+        "tick": 116640,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1400,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 116640,
+          "value": "stable",
+          "origin_event": 1400,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:116640:team_b:Player",
+          "parents": [
+            1400
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1408,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:81"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:116640:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1409,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:81"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 82's allocation",
+          "semantic_key": "institution_decision:116640:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1412,
+        "tick": 117360,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:81"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:117360:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1414,
+        "tick": 118079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:81"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 82 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:118079:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1415,
+        "tick": 118079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:118079:Player:team_c",
+          "parents": [
+            1414
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1417,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 83: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1418,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 83 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1421,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:118080:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1423,
+        "tick": 118080,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1416,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 118080,
+          "value": "stable",
+          "origin_event": 1416,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:118080:team_b:Player",
+          "parents": [
+            1416
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1424,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:82"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:118080:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1425,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:82"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 83's allocation",
+          "semantic_key": "institution_decision:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1428,
+        "tick": 118800,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:118800:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1430,
+        "tick": 119519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:82"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 83 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:119519:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1431,
+        "tick": 119519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:119519:Player:team_c",
+          "parents": [
+            1430
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1433,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 84: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1434,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 84 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1437,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:119520:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1439,
+        "tick": 119520,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1432,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 119520,
+          "value": "stable",
+          "origin_event": 1432,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:119520:team_b:Player",
+          "parents": [
+            1432
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1440,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:83"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:119520:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1441,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:83"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 84's allocation",
+          "semantic_key": "institution_decision:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1444,
+        "tick": 120240,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:120240:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1446,
+        "tick": 120959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:83"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 84 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:120959:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1447,
+        "tick": 120959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:120959:Player:team_c",
+          "parents": [
+            1446
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1449,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 85: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1450,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 85 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1453,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:120960:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1455,
+        "tick": 120960,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1448,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 120960,
+          "value": "stable",
+          "origin_event": 1448,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:120960:team_b:Player",
+          "parents": [
+            1448
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1456,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:84"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:120960:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1457,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:84"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 85's allocation",
+          "semantic_key": "institution_decision:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1460,
+        "tick": 121680,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:121680:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1462,
+        "tick": 122399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:84"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 85 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:122399:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1463,
+        "tick": 122399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:122399:Player:team_c",
+          "parents": [
+            1462
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1465,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 86: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1466,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 86 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1469,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:122400:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1471,
+        "tick": 122400,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1464,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 122400,
+          "value": "stable",
+          "origin_event": 1464,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:122400:team_b:Player",
+          "parents": [
+            1464
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1472,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:85"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:122400:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1473,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:85"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 86's allocation",
+          "semantic_key": "institution_decision:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1476,
+        "tick": 123120,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:123120:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1478,
+        "tick": 123839,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:85"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 86 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:123839:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1479,
+        "tick": 123839,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:123839:Player:team_c",
+          "parents": [
+            1478
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1481,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 87: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1482,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 87 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1485,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:123840:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1487,
+        "tick": 123840,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1480,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 123840,
+          "value": "stable",
+          "origin_event": 1480,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:123840:team_b:Player",
+          "parents": [
+            1480
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1488,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:86"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:123840:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1489,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:86"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 87's allocation",
+          "semantic_key": "institution_decision:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1492,
+        "tick": 124560,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:124560:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1494,
+        "tick": 125279,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:86"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 87 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:125279:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1495,
+        "tick": 125279,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:125279:Player:team_c",
+          "parents": [
+            1494
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1497,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 88: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1498,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 88 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1501,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:125280:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1503,
+        "tick": 125280,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1496,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 125280,
+          "value": "stable",
+          "origin_event": 1496,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:125280:team_b:Player",
+          "parents": [
+            1496
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1504,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:87"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:125280:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1505,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:87"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 88's allocation",
+          "semantic_key": "institution_decision:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1508,
+        "tick": 126000,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:126000:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1510,
+        "tick": 126719,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:87"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 88 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:126719:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1511,
+        "tick": 126719,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:126719:Player:team_c",
+          "parents": [
+            1510
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1513,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 89: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1514,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 89 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1517,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:126720:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1519,
+        "tick": 126720,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1512,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 126720,
+          "value": "stable",
+          "origin_event": 1512,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:126720:team_b:Player",
+          "parents": [
+            1512
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1520,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:88"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:126720:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1521,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:88"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 89's allocation",
+          "semantic_key": "institution_decision:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1524,
+        "tick": 127440,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:127440:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1526,
+        "tick": 128159,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:88"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 89 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:128159:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1527,
+        "tick": 128159,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:128159:Player:team_c",
+          "parents": [
+            1526
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1529,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 90: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1530,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 90 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1533,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:128160:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1535,
+        "tick": 128160,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1528,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 128160,
+          "value": "stable",
+          "origin_event": 1528,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:128160:team_b:Player",
+          "parents": [
+            1528
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1536,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:89"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:128160:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1537,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:89"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 90's allocation",
+          "semantic_key": "institution_decision:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1540,
+        "tick": 128880,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:128880:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1542,
+        "tick": 129599,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:89"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 90 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:129599:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1543,
+        "tick": 129599,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:129599:Player:team_c",
+          "parents": [
+            1542
+          ]
+        },
+        "scope": "public"
+      }
+    ],
+    "montage": [
+      {
+        "event_id": 24,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.4
+            }
+          ],
+          "category": "promise_missed",
+          "title": "The promise to team_c is missed",
+          "semantic_key": "promise_missed:1439:Player:team_c",
+          "parents": [
+            22
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 26,
+          "reasons": [
+            "obligation",
+            "resource_shortage",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 47,
+        "tick": 2879,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.45
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:2879:Player:team_c",
+          "parents": [
+            46
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 67,
+        "tick": 4319,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.5
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:4319:Player:team_c",
+          "parents": [
+            66
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 90,
+        "tick": 5759,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:5759:Player:team_c",
+          "parents": [
+            89
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 112,
+        "tick": 7199,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.6000000000000001
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:7199:Player:team_c",
+          "parents": [
+            111
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 132,
+        "tick": 8639,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.6500000000000001
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:8639:Player:team_c",
+          "parents": [
+            131
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 154,
+        "tick": 10079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.7000000000000002
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:10079:Player:team_c",
+          "parents": [
+            153
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 177,
+        "tick": 11519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.7500000000000002
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:11519:Player:team_c",
+          "parents": [
+            176
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 197,
+        "tick": 12959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.8000000000000003
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:12959:Player:team_c",
+          "parents": [
+            196
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 219,
+        "tick": 14399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.8500000000000003
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:14399:Player:team_c",
+          "parents": [
+            218
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      }
+    ],
+    "command_count": 360,
+    "state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d",
+    "capabilities": {
+      "kernel": "existing ledger/state/economy",
+      "minds": "V3, authored bounded options",
+      "temporal": "existing exact clock + conservative adapter"
+    },
+    "requests": {},
+    "allocation": null,
+    "promises": {},
+    "credits": 12,
+    "own_reports": [
+      {
+        "event_id": 1471,
+        "tick": 122400,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1464,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 122400,
+          "value": "stable",
+          "origin_event": 1464,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:122400:team_b:Player",
+          "parents": [
+            1464
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1487,
+        "tick": 123840,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1480,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 123840,
+          "value": "stable",
+          "origin_event": 1480,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:123840:team_b:Player",
+          "parents": [
+            1480
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1503,
+        "tick": 125280,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1496,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 125280,
+          "value": "stable",
+          "origin_event": 1496,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:125280:team_b:Player",
+          "parents": [
+            1496
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1519,
+        "tick": 126720,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1512,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 126720,
+          "value": "stable",
+          "origin_event": 1512,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:126720:team_b:Player",
+          "parents": [
+            1512
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1535,
+        "tick": 128160,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1528,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 128160,
+          "value": "stable",
+          "origin_event": 1528,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:128160:team_b:Player",
+          "parents": [
+            1528
+          ]
+        },
+        "scope": "private"
+      }
+    ]
+  },
+  "alternative": {
+    "experience": "observatory_long_life",
+    "title": "Recorded 90-day demonstration: Shared Observatory",
+    "setting": "commons",
+    "minute": 129600,
+    "day": 91,
+    "horizon": 129600,
+    "terminated": true,
+    "participants": [
+      {
+        "id": "Player",
+        "role": "elected consortium coordinator"
+      },
+      {
+        "id": "team_a",
+        "role": "time-sensitive sky-survey research team"
+      },
+      {
+        "id": "team_b",
+        "role": "instrument maintenance and calibration research team"
+      },
+      {
+        "id": "team_c",
+        "role": "long-baseline transient follow-up research team"
+      }
+    ],
+    "metrics": {
+      "rounds_settled": 90,
+      "completed_projects": 226,
+      "executed_units": 904,
+      "allocated_units": 904,
+      "promises_kept": 89,
+      "promises_missed": 1,
+      "credits_spent": 24,
+      "credit_total": 48,
+      "initial_credit_total": 48,
+      "affiliation": "consortium_member",
+      "completed_rounds": 89,
+      "failed_promises": 1,
+      "equity": 0.7640449438202247,
+      "information_shared": 90,
+      "unused_capacity": 8,
+      "elapsed_days": 90.0
+    },
+    "objectives": "Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.",
+    "events": [
+      {
+        "event_id": 1400,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 82 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:116640:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1403,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:81"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:116640:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1405,
+        "tick": 116640,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1398,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 116640,
+          "value": "stable",
+          "origin_event": 1398,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:116640:team_b:Player",
+          "parents": [
+            1398
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1406,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:81"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:116640:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1407,
+        "tick": 116640,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:81"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 82's allocation",
+          "semantic_key": "institution_decision:116640:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1410,
+        "tick": 117360,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:81"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:117360:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1412,
+        "tick": 118079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:81"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 82 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:118079:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1413,
+        "tick": 118079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:118079:Player:team_c",
+          "parents": [
+            1412
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1415,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 83: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1416,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 83 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1419,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:118080:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1421,
+        "tick": 118080,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1414,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 118080,
+          "value": "stable",
+          "origin_event": 1414,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:118080:team_b:Player",
+          "parents": [
+            1414
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1422,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:82"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:118080:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1423,
+        "tick": 118080,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:82"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 83's allocation",
+          "semantic_key": "institution_decision:118080:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1426,
+        "tick": 118800,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:82"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:118800:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1428,
+        "tick": 119519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:82"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 83 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:119519:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1429,
+        "tick": 119519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:119519:Player:team_c",
+          "parents": [
+            1428
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1431,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 84: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1432,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 84 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1435,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:119520:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1437,
+        "tick": 119520,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1430,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 119520,
+          "value": "stable",
+          "origin_event": 1430,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:119520:team_b:Player",
+          "parents": [
+            1430
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1438,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:83"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:119520:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1439,
+        "tick": 119520,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:83"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 84's allocation",
+          "semantic_key": "institution_decision:119520:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1442,
+        "tick": 120240,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:83"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:120240:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1444,
+        "tick": 120959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:83"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 84 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:120959:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1445,
+        "tick": 120959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:120959:Player:team_c",
+          "parents": [
+            1444
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1447,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 85: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1448,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 85 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1451,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:120960:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1453,
+        "tick": 120960,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1446,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 120960,
+          "value": "stable",
+          "origin_event": 1446,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:120960:team_b:Player",
+          "parents": [
+            1446
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1454,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:84"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:120960:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1455,
+        "tick": 120960,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:84"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 85's allocation",
+          "semantic_key": "institution_decision:120960:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1458,
+        "tick": 121680,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:84"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:121680:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1460,
+        "tick": 122399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:84"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 85 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:122399:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1461,
+        "tick": 122399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:122399:Player:team_c",
+          "parents": [
+            1460
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1463,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 86: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1464,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 86 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1467,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:122400:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1469,
+        "tick": 122400,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1462,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 122400,
+          "value": "stable",
+          "origin_event": 1462,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:122400:team_b:Player",
+          "parents": [
+            1462
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1470,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:85"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:122400:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1471,
+        "tick": 122400,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:85"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 86's allocation",
+          "semantic_key": "institution_decision:122400:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1474,
+        "tick": 123120,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:85"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:123120:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1476,
+        "tick": 123839,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:85"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 86 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:123839:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1477,
+        "tick": 123839,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:123839:Player:team_c",
+          "parents": [
+            1476
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1479,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 87: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1480,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 87 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1483,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:123840:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1485,
+        "tick": 123840,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1478,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 123840,
+          "value": "stable",
+          "origin_event": 1478,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:123840:team_b:Player",
+          "parents": [
+            1478
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1486,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:86"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:123840:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1487,
+        "tick": 123840,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:86"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 87's allocation",
+          "semantic_key": "institution_decision:123840:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1490,
+        "tick": 124560,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:86"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:124560:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1492,
+        "tick": 125279,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:86"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 87 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:125279:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1493,
+        "tick": 125279,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:125279:Player:team_c",
+          "parents": [
+            1492
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1495,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 88: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1496,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 88 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1499,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:125280:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1501,
+        "tick": 125280,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1494,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 125280,
+          "value": "stable",
+          "origin_event": 1494,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:125280:team_b:Player",
+          "parents": [
+            1494
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1502,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:87"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:125280:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1503,
+        "tick": 125280,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:87"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 88's allocation",
+          "semantic_key": "institution_decision:125280:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1506,
+        "tick": 126000,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:87"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:126000:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1508,
+        "tick": 126719,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:87"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 88 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:126719:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1509,
+        "tick": 126719,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:126719:Player:team_c",
+          "parents": [
+            1508
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1511,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 89: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1512,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 89 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1515,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:126720:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1517,
+        "tick": 126720,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1510,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 126720,
+          "value": "stable",
+          "origin_event": 1510,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:126720:team_b:Player",
+          "parents": [
+            1510
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1518,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:88"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:126720:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1519,
+        "tick": 126720,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:88"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 89's allocation",
+          "semantic_key": "institution_decision:126720:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1522,
+        "tick": 127440,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:88"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:127440:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1524,
+        "tick": 128159,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:88"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 89 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:128159:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1525,
+        "tick": 128159,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:128159:Player:team_c",
+          "parents": [
+            1524
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1527,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 90: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1528,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "category": "institutional_routine",
+          "title": "Round 90 opens the consortium's regular instrument work",
+          "semantic_key": "institutional_routine:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1531,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:128160:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1533,
+        "tick": 128160,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1526,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 128160,
+          "value": "stable",
+          "origin_event": 1526,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:128160:team_b:Player",
+          "parents": [
+            1526
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1534,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:89"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:128160:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1535,
+        "tick": 128160,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:89"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":4,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 90's allocation",
+          "semantic_key": "institution_decision:128160:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1538,
+        "tick": 128880,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:89"
+          ],
+          "value": "{\"team_b\":4}",
+          "category": "request",
+          "title": "team_b requests 4 capacity units",
+          "semantic_key": "request:128880:team_b",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1540,
+        "tick": 129599,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:89"
+          ],
+          "value": "{\"actual_capacity\":12,\"allocation\":{\"team_a\":4,\"team_b\":4,\"team_c\":4},\"completed\":[\"team_a\",\"team_b\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":4,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 90 executes 12/12 allocated units; 3 projects complete",
+          "semantic_key": "allocation_settled:129599:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 1541,
+        "tick": 129599,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 1
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:129599:Player:team_c",
+          "parents": [
+            1540
+          ]
+        },
+        "scope": "public"
+      }
+    ],
+    "montage": [
+      {
+        "event_id": 22,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.4
+            }
+          ],
+          "category": "promise_missed",
+          "title": "The promise to team_c is missed",
+          "semantic_key": "promise_missed:1439:Player:team_c",
+          "parents": [
+            21
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 26,
+          "reasons": [
+            "obligation",
+            "resource_shortage",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 45,
+        "tick": 2879,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.45
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:2879:Player:team_c",
+          "parents": [
+            44
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 65,
+        "tick": 4319,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.5
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:4319:Player:team_c",
+          "parents": [
+            64
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 87,
+        "tick": 5759,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:5759:Player:team_c",
+          "parents": [
+            86
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 110,
+        "tick": 7199,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.6000000000000001
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:7199:Player:team_c",
+          "parents": [
+            109
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 130,
+        "tick": 8639,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.6500000000000001
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:8639:Player:team_c",
+          "parents": [
+            129
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 152,
+        "tick": 10079,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.7000000000000002
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:10079:Player:team_c",
+          "parents": [
+            151
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 175,
+        "tick": 11519,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.7500000000000002
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:11519:Player:team_c",
+          "parents": [
+            174
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 195,
+        "tick": 12959,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.8000000000000003
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:12959:Player:team_c",
+          "parents": [
+            194
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      },
+      {
+        "event_id": 217,
+        "tick": 14399,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.8500000000000003
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:14399:Player:team_c",
+          "parents": [
+            216
+          ]
+        },
+        "scope": "public",
+        "significance": {
+          "score": 17,
+          "reasons": [
+            "obligation",
+            "relationship"
+          ],
+          "consequential": true,
+          "model": "explicit-effects-v1"
+        }
+      }
+    ],
+    "command_count": 359,
+    "state_hash": "8279fa3b8d8b4d8be334d65ebad6acd97d88c1d4e557ca15df35e8578986bf74",
+    "capabilities": {
+      "kernel": "existing ledger/state/economy",
+      "minds": "V3, authored bounded options",
+      "temporal": "existing exact clock + conservative adapter"
+    },
+    "requests": {},
+    "allocation": null,
+    "promises": {},
+    "credits": 12,
+    "own_reports": [
+      {
+        "event_id": 1469,
+        "tick": 122400,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1462,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 122400,
+          "value": "stable",
+          "origin_event": 1462,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:122400:team_b:Player",
+          "parents": [
+            1462
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1485,
+        "tick": 123840,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1478,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 123840,
+          "value": "stable",
+          "origin_event": 1478,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:123840:team_b:Player",
+          "parents": [
+            1478
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1501,
+        "tick": 125280,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1494,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 125280,
+          "value": "stable",
+          "origin_event": 1494,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:125280:team_b:Player",
+          "parents": [
+            1494
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1517,
+        "tick": 126720,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1510,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 126720,
+          "value": "stable",
+          "origin_event": 1510,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:126720:team_b:Player",
+          "parents": [
+            1510
+          ]
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1533,
+        "tick": 128160,
+        "etype": "tell",
+        "location": "council",
+        "actors": [
+          "team_b",
+          "Player"
+        ],
+        "payload": {
+          "speaker": "team_b",
+          "listener": "Player",
+          "report_event": 1526,
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "as_of": 128160,
+          "value": "stable",
+          "origin_event": 1526,
+          "origin_observer": "team_b",
+          "category": "report",
+          "title": "team_b shares a dated condition report with Player",
+          "semantic_key": "report:128160:team_b:Player",
+          "parents": [
+            1526
+          ]
+        },
+        "scope": "private"
+      }
+    ]
+  },
+  "differences": {
+    "completed_projects": {
+      "original": 228,
+      "alternative": 226
+    },
+    "executed_units": {
+      "original": 912,
+      "alternative": 904
+    },
+    "allocated_units": {
+      "original": 916,
+      "alternative": 904
+    },
+    "completed_rounds": {
+      "original": 90,
+      "alternative": 89
+    },
+    "equity": {
+      "original": 0.7752808988764045,
+      "alternative": 0.7640449438202247
+    },
+    "unused_capacity": {
+      "original": 0,
+      "alternative": 8
+    }
+  },
+  "alternative_hash": "8279fa3b8d8b4d8be334d65ebad6acd97d88c1d4e557ca15df35e8578986bf74",
+  "interpretation": "Executed omission with declared later commands; not an optimal or necessary-cause proof."
+}

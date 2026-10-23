@@ -1,0 +1,280 @@
+"""Compatibility facade over the established Pompeii discrete-event clock.
+
+Exact scheduling is not a new temporal-abstraction algorithm.  The adaptive
+option only elides intermediate, explicitly contracted presentation assignments;
+ordinary world tasks remain exact.  A declaration is a trusted author contract,
+not a proof extracted from arbitrary Python.  Audit failures stop execution and
+do not promise rollback of a handler that has already violated its contract.
+"""
+from __future__ import annotations
+
+from collections import Counter
+from collections.abc import Callable, Iterable, Mapping
+from dataclasses import asdict, is_dataclass
+import copy
+import hashlib
+import json
+import time
+from typing import Any
+
+from kalends.pompeii.temporal import EventClock
+
+
+def _canonical(value: Any) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
+
+
+def _digest(value: Any) -> str:
+    return hashlib.sha256(_canonical(value).encode()).hexdigest()
+
+
+def _record(event: Any) -> dict:
+    if isinstance(event, Mapping):
+        return copy.deepcopy(dict(event))
+    if callable(getattr(event, "to_dict", None)):
+        return copy.deepcopy(event.to_dict())
+    if is_dataclass(event):
+        return asdict(event)
+    raise ValueError("events must be actual event records")
+
+
+def significance(event: Any) -> dict:
+    """Explain a deterministic ranking from an event's recorded effects.
+
+    The model is deliberately conservative: unknown non-cosmetic events are
+    retained as potentially consequential.  Titles are never parsed as evidence.
+    These weights express a presentation policy, not a learned utility function.
+    """
+    row = _record(event)
+    payload = row.get("payload", row)
+    if not isinstance(payload, Mapping):
+        raise ValueError("event payload must be an object")
+    category = str(payload.get("category", row.get("category", "unknown")))
+    reasons: list[str] = []
+    weights = {
+        "obligation": 10, "resource_shortage": 9, "goal_conflict": 9,
+        "belief_revision": 8, "institution": 8, "relationship": 7, "goal_change": 7,
+        "opportunity": 6, "resource_change": 6, "decision": 5,
+        "consequential_information": 5, "unknown_effects": 1,
+    }
+    if (any(word in category for word in ("promise", "commitment", "commission", "service_due", "order_missed", "order_kept", "obligation"))
+            or any(key in payload for key in ("commitment_updates", "deadline", "obligation", "obligations", "debt", "bond"))):
+        reasons.append("obligation")
+    if (any(word in category for word in ("shortage", "default", "missed"))
+            or any(isinstance(payload.get(key), (int, float)) and payload[key] > 0 for key in ("missed", "shortfall", "unmet"))):
+        reasons.append("resource_shortage")
+    if any(word in category for word in ("goal_conflict", "plan_revised", "conflict")) or payload.get("goal_conflict"):
+        reasons.append("goal_conflict")
+    if any(key in payload for key in ("goal_updates", "goals", "plan_updates")) or "goal" in category:
+        reasons.append("goal_change")
+    if (any(word in category for word in ("belief", "revision", "correction"))
+            or any(key in payload for key in ("belief_updates", "belief_revision", "supersedes"))):
+        reasons.append("belief_revision")
+    if (any(word in category for word in ("institution", "affiliation", "membership", "promotion"))
+            or any(key in payload for key in ("institution_updates", "institutional_decision", "access_add", "access_remove"))):
+        reasons.append("institution")
+    if ("relationship" in category or any(key in payload for key in ("relationship_updates", "relationship_axes", "trust_delta"))):
+        reasons.append("relationship")
+    if "opportunity" in category or payload.get("new_opportunity"):
+        reasons.append("opportunity")
+    if any(payload.get(key) for key in ("cash_delta", "inventory_delta", "market_stock_delta", "resource_updates", "resource_delta", "resource_transfers", "allocations")):
+        reasons.append("resource_change")
+    if "decision" in category or any(key in payload for key in ("choice", "chosen_action", "selected_plan")):
+        reasons.append("decision")
+    if (any(word in category for word in ("report", "inspection", "information", "supply"))
+            or (row.get("etype") == "tell") or payload.get("unexpected")):
+        reasons.append("consequential_information")
+    # Movement may change observation opportunities.  It is not cosmetic merely
+    # because its author called the event "routine".
+    cosmetic = category in {"cosmetic_frame", "presentation_assignment"} and payload.get("observation_free") is True
+    if not reasons and not cosmetic:
+        reasons.append("unknown_effects")
+    return {"score": sum(weights[reason] for reason in reasons),
+            "reasons": reasons, "consequential": bool(reasons),
+            "model": "explicit-effects-v1"}
+
+
+def select_montage(events: Iterable[Any], allowed_event_ids: Iterable[Any], limit: int = 8) -> list[dict]:
+    """Choose only supplied, accessible records, then restore chronological order.
+
+    Access is supplied by the caller's observation boundary.  An empty set grants
+    no access; the canonical ledger is never used to fill a missing history.
+    Duplicate identities and conflicting records are rejected rather than merged.
+    """
+    if type(limit) is not int or limit < 0:
+        raise ValueError("limit must be a nonnegative integer")
+    allowed = set()
+    for identity in allowed_event_ids:
+        if isinstance(identity, bool) or not isinstance(identity, (int, str)):
+            raise ValueError("allowed event IDs must be integers or strings")
+        allowed.add(identity)
+    candidates, seen = [], set()
+    for event in events:
+        row = _record(event)
+        identity = row.get("event_id")
+        if isinstance(identity, bool) or not isinstance(identity, (int, str)):
+            raise ValueError("montage records require an integer or string event_id")
+        if identity in seen:
+            raise ValueError("duplicate event identity in montage input")
+        seen.add(identity)
+        if identity not in allowed:
+            continue
+        value = significance(row)
+        if value["consequential"]:
+            row["significance"] = value
+            candidates.append(row)
+    # IDs may be strings or integers; the input position is the final stable tie
+    # breaker so there is no cross-type identity ordering assumption.
+    ranked = sorted(enumerate(candidates), key=lambda item: (-item[1]["significance"]["score"], item[0]))[:limit]
+    return [row for _, row in sorted(ranked, key=lambda item: (item[1].get("tick", item[1].get("minute", 0)), item[0]))]
+
+
+class TemporalContractViolation(RuntimeError):
+    """A supposedly presentation-only handler performed a prohibited effect."""
+
+
+class TemporalEngine:
+    """TimeEngine facade reusing ``EventClock`` and the original world handler.
+
+    ``live`` is the integer-minute reference (not a wall-clock display loop).
+    ``compress`` is exact event scheduling. ``montage`` uses the same transition
+    execution; use :meth:`montage` with accessible IDs to select its presentation.
+    ``skip`` uses the explicit target, or the next queued task when target is None.
+    ``strategy='naive'`` retains the existing coarse-grid baseline and its lateness.
+    """
+
+    def __init__(self, clock: EventClock, handler: Callable[[dict], Any], ledger=None,
+                 *, semantic_probe: Callable[[], Any] | None = None):
+        if not isinstance(clock, EventClock) or not callable(handler):
+            raise ValueError("TemporalEngine requires an existing EventClock and handler")
+        if semantic_probe is not None and not callable(semantic_probe):
+            raise ValueError("semantic_probe must be callable")
+        self.clock, self.handler, self.ledger = clock, handler, ledger
+        self.semantic_probe = semantic_probe
+        self._cosmetic: dict[str, tuple[str, ...]] = {}
+        self.last_stats: dict | None = None
+
+    def declare_cosmetic(self, kind: str, *, writes: Iterable[str]) -> None:
+        """Opt a trusted handler kind into a restricted presentation contract."""
+        writes = tuple(writes)
+        if (not isinstance(kind, str) or not kind or not writes
+                or any(not isinstance(key, str) or not key.startswith("presentation.") for key in writes)
+                or len(set(writes)) != len(writes)):
+            raise ValueError("cosmetic writes must be distinct presentation.* fields")
+        self._cosmetic[kind] = tuple(sorted(writes))
+
+    def _cosmetic_key(self, task: dict) -> tuple | None:
+        data, kind = task.get("data", {}), task.get("kind")
+        if kind not in self._cosmetic or not isinstance(data, dict) or set(data) - {"_temporal", "value", "entity"}:
+            return None
+        contract = data.get("_temporal")
+        if (not isinstance(contract, dict) or contract.get("role") != "cosmetic_assignment"
+                or contract.get("observed_by") != [] or contract.get("reads") != []
+                or contract.get("schedules") is not False or contract.get("idempotent") is not True
+                or contract.get("semantic_effects") != []
+                or not isinstance(contract.get("coalesce_key"), str) or not contract["coalesce_key"]
+                or not isinstance(contract.get("writes"), list)
+                or not all(isinstance(field, str) for field in contract["writes"])
+                or tuple(sorted(contract["writes"])) != self._cosmetic[kind]):
+            return None
+        return kind, contract["coalesce_key"], data.get("entity"), self._cosmetic[kind]
+
+    def _ledger_mark(self):
+        if self.ledger is None:
+            return None
+        if callable(getattr(self.ledger, "content_hash", None)):
+            return len(self.ledger), self.ledger.content_hash()
+        return _digest(self.ledger)
+
+    def advance(self, target: int | None = None, mode: str = "compress",
+                strategy: str = "exact", coarse: int = 60) -> dict:
+        mode = mode.lower() if isinstance(mode, str) else mode
+        if mode not in {"live", "compress", "montage", "skip"}:
+            raise ValueError("mode must be live, compress, montage, or skip")
+        if strategy not in {"exact", "adaptive", "naive"}:
+            raise ValueError("strategy must be exact, adaptive, or naive")
+        if type(coarse) is not int or coarse < 1:
+            raise ValueError("coarse must be a positive integer")
+        if target is None:
+            if mode != "skip":
+                raise ValueError("an explicit target is required except for skip")
+            target = self.clock.peek()
+            target = max(self.clock.now, target) if target is not None else self.clock.now
+        if mode == "live" and strategy != "exact":
+            raise ValueError("live is the exact minute-scanning reference")
+        started = time.perf_counter()
+        handled, omitted, audit = 0, [], []
+        task_digest = hashlib.sha256()
+        refinement = Counter()
+
+        def dispatch(task: dict):
+            nonlocal handled
+            task_digest.update((_canonical(task) + "\n").encode())
+            key = self._cosmetic_key(task) if strategy == "adaptive" else None
+            if strategy == "adaptive" and key is None:
+                refinement["unknown_or_semantic_contract"] += 1
+            if key is not None:
+                future = self.clock.queue
+                successor = future[0] if future else None
+                # Inspect the immediate next task only. A semantic/dependency
+                # barrier forbids coalescence across it, even within the bin.
+                if (successor is not None and successor["due"] <= target
+                        and successor["due"] // coarse == task["due"] // coarse
+                        and self._cosmetic_key(successor) == key):
+                    omitted.append(task["key"])
+                    return
+                refinement["retain_terminal_or_refine_dependency"] += 1
+                before_queue = self.clock.snapshot()
+                before_ledger = self._ledger_mark()
+                before_semantic = _digest(self.semantic_probe()) if self.semantic_probe else None
+                self.handler(task)
+                handled += 1
+                violations = []
+                if self.clock.snapshot() != before_queue:
+                    violations.append("scheduled_or_clock_mutation")
+                if self._ledger_mark() != before_ledger:
+                    violations.append("canonical_event_mutation")
+                if self.semantic_probe and _digest(self.semantic_probe()) != before_semantic:
+                    violations.append("semantic_state_mutation")
+                if violations:
+                    audit.append({"task": task["key"], "errors": violations})
+                    self.last_stats = {"complete": False, "mode": mode, "strategy": strategy,
+                                       "error_audit": audit, "cosmetic_omitted": omitted,
+                                       "rollback": False}
+                    raise TemporalContractViolation("cosmetic task violated: " + ", ".join(violations))
+                return
+            self.handler(task)
+            handled += 1
+
+        scheduler_mode = "live" if mode == "live" else "naive" if strategy == "naive" else "compress"
+        stats = self.clock.advance(target, dispatch, mode=scheduler_mode, coarse=coarse)
+        self.last_stats = {**stats, "mode": mode, "scheduler_mode": scheduler_mode,
+            "strategy": strategy, "complete": True,
+            "facade_wall_seconds": time.perf_counter() - started,
+            "handler_calls": handled, "cosmetic_omitted_count": len(omitted),
+            "cosmetic_omitted": omitted, "refinements": dict(refinement),
+            "error_audit": audit, "task_trace_hash": task_digest.hexdigest(),
+            "fidelity": {"consequential_handlers_omitted": 0,
+                "terminal_state": "requires_paired_world_comparison",
+                "loss": "intermediate declared observation-free presentation assignments" if omitted else "none",
+                "probe_audited": self.semantic_probe is not None,
+                "declarations_are_trusted": True},
+            "montage_selection": "separate_explicit_access_controlled_operation"}
+        return copy.deepcopy(self.last_stats)
+
+    def significant(self, events: Iterable[Any]) -> list[dict]:
+        rows = []
+        for event in events:
+            row = _record(event)
+            value = significance(row)
+            if value["consequential"]:
+                row["significance"] = value
+                rows.append(row)
+        return rows
+
+    def montage(self, events: Iterable[Any], allowed_event_ids: Iterable[Any], limit: int = 8) -> list[dict]:
+        return select_montage(events, allowed_event_ids, limit)
+
+
+# The brief uses both conceptual names; there is one implementation.
+TimeEngine = TemporalEngine

@@ -1,0 +1,33 @@
+{
+  "kind": "Projection-only correction over the identical accepted histories",
+  "runtime_projection_sha256": "9797414b96df3955ef846465b26a61b3c12da7f95297329d64b28d91db4bda4f",
+  "privacy_tests_sha256": "3b2c17e9d5866c9e8495f2fc0aabb3aa3602b31999ad43dbcee99f7a705f83d0",
+  "world_behavior_changed": false,
+  "adapters": {
+    "commons": {
+      "state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d",
+      "accepted_commands": 360,
+      "journal_sha256": "d1f83a2bc3995fda9197ecc8c8f54652de8443c0f2d187f4396ffbc261bffe4c",
+      "journal_byte_preserved": true,
+      "final_public_history_sha256": "7c2200a2126a826082c2ce3e3c684b3e601ae4d21e29d94d9729a08cad8db8fc"
+    },
+    "pompeii": {
+      "state_hash": "2d6bb02b8ddbb8654d9725857c2c59387deae197f63c98396e9bbe001719ffd9",
+      "accepted_commands": 12,
+      "journal_sha256": "86302fda99423625dec6270815d11c004e36997d0e0061559694f216787fded8",
+      "journal_byte_preserved": true,
+      "final_public_history_sha256": "47b111d4313001bf515b939cfa02972a8f80ac54b593e16125c313dadbcea589",
+      "initial_public_account_keys": {
+        "cash": [
+          "Player"
+        ],
+        "inventory": [
+          "Player"
+        ],
+        "commitments": [
+          "Player"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "adapter": "commons",
+  "elapsed_days": 90,
+  "world_minutes": 129600,
+  "commands": 360,
+  "ledger_events": 1544,
+  "final_state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d",
+  "journal_sha256": "d1f83a2bc3995fda9197ecc8c8f54652de8443c0f2d187f4396ffbc261bffe4c",
+  "metrics": {
+    "rounds_settled": 90,
+    "completed_projects": 228,
+    "executed_units": 912,
+    "allocated_units": 916,
+    "promises_kept": 89,
+    "promises_missed": 1,
+    "credits_spent": 24,
+    "credit_total": 48,
+    "initial_credit_total": 48,
+    "affiliation": "consortium_member",
+    "completed_rounds": 90,
+    "failed_promises": 1,
+    "equity": 0.7752808988764045,
+    "information_shared": 90,
+    "unused_capacity": 0,
+    "elapsed_days": 90.0
+  },
+  "initial_total_credits": 48,
+  "final_total_credits": 48,
+  "trust_player": {
+    "team_a": 0.5,
+    "team_b": 0.5,
+    "team_c": 1
+  },
+  "checkpoints": [
+    {
+      "elapsed_days": 1,
+      "exact_restart": true,
+      "journal_sha256": "2bb427c236251498dfeea95406aeaab1e19e53d2a9e813e3e5e9e393ccc30857",
+      "state_hash": "dabc468e1490c495f4560477c36cec57f56efe8dea048b7ea2f36c4d2492fb26",
+      "metrics": {
+        "rounds_settled": 1,
+        "completed_projects": 2,
+        "executed_units": 8,
+        "allocated_units": 12,
+        "promises_kept": 0,
+        "promises_missed": 1,
+        "credits_spent": 2,
+        "credit_total": 48,
+        "initial_credit_total": 48,
+        "affiliation": "visitor",
+        "completed_rounds": 1,
+        "failed_promises": 1,
+        "equity": 0.0,
+        "information_shared": 1,
+        "unused_capacity": 0,
+        "elapsed_days": 1.0
+      }
+    },
+    {
+      "elapsed_days": 30,
+      "exact_restart": true,
+      "journal_sha256": "059a7c4fa65d229d36ac2e699ee5169c4e96cc9281b03827c5e42b982b2e90af",
+      "state_hash": "e8b84990c0b6f2efcac93b4f6e5c62427a372056a7e0bc7f592facbe881d33d8",
+      "metrics": {
+        "rounds_settled": 30,
+        "completed_projects": 67,
+        "executed_units": 268,
+        "allocated_units": 272,
+        "promises_kept": 29,
+        "promises_missed": 1,
+        "credits_spent": 24,
+        "credit_total": 48,
+        "initial_credit_total": 48,
+        "affiliation": "consortium_member",
+        "completed_rounds": 30,
+        "failed_promises": 1,
+        "equity": 0.6551724137931034,
+        "information_shared": 30,
+        "unused_capacity": 0,
+        "elapsed_days": 30.0
+      }
+    },
+    {
+      "elapsed_days": 60,
+      "exact_restart": true,
+      "journal_sha256": "e998ffb5b9747c6968acbb89c546492046ea32931fe3511d14ce4f433950b2e1",
+      "state_hash": "b801f4caf991aa982f7ccde41631599ecef6b3a0dbd931cac0a965a90efb3c84",
+      "metrics": {
+        "rounds_settled": 60,
+        "completed_projects": 145,
+        "executed_units": 580,
+        "allocated_units": 584,
+        "promises_kept": 59,
+        "promises_missed": 1,
+        "credits_spent": 24,
+        "credit_total": 48,
+        "initial_credit_total": 48,
+        "affiliation": "consortium_member",
+        "completed_rounds": 60,
+        "failed_promises": 1,
+        "equity": 0.7288135593220338,
+        "information_shared": 60,
+        "unused_capacity": 0,
+        "elapsed_days": 60.0
+      }
+    },
+    {
+      "elapsed_days": 90,
+      "exact_restart": true,
+      "journal_sha256": "d1f83a2bc3995fda9197ecc8c8f54652de8443c0f2d187f4396ffbc261bffe4c",
+      "state_hash": "335e76b2f1884a70fa4b9ecd38420c6ed46ad6be24f39b2b7257ec0d3ea4529d",
+      "metrics": {
+        "rounds_settled": 90,
+        "completed_projects": 228,
+        "executed_units": 912,
+        "allocated_units": 916,
+        "promises_kept": 89,
+        "promises_missed": 1,
+        "credits_spent": 24,
+        "credit_total": 48,
+        "initial_credit_total": 48,
+        "affiliation": "consortium_member",
+        "completed_rounds": 90,
+        "failed_promises": 1,
+        "equity": 0.7752808988764045,
+        "information_shared": 90,
+        "unused_capacity": 0,
+        "elapsed_days": 90.0
+      }
+    }
+  ],
+  "omitted_command": 2,
+  "alternative_hash": "8279fa3b8d8b4d8be334d65ebad6acd97d88c1d4e557ca15df35e8578986bf74",
+  "omission_differences": {
+    "completed_projects": {
+      "original": 228,
+      "alternative": 226
+    },
+    "executed_units": {
+      "original": 912,
+      "alternative": 904
+    },
+    "allocated_units": {
+      "original": 916,
+      "alternative": 904
+    },
+    "completed_rounds": {
+      "original": 90,
+      "alternative": 89
+    },
+    "equity": {
+      "original": 0.7752808988764045,
+      "alternative": 0.7640449438202247
+    },
+    "unused_capacity": {
+      "original": 0,
+      "alternative": 8
+    }
+  },
+  "original_preserved": true,
+  "execution_and_exact_restart_seconds": 43.03875504199823,
+  "limits": [
+    "Recorded scripted choices rather than a generated biography or human study.",
+    "Membership is the explicit six-completed-project threshold; it is not a general profession or career model.",
+    "A displayed day number labels elapsed simulation; it does not represent subjective human time.",
+    "The omission holds declared later commands fixed and is not an optimal alternative-life search."
+  ]
+}

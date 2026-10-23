@@ -1,0 +1,7 @@
+{
+  "classification": "Scripted recorded life, not a human trial",
+  "days": 90,
+  "information": "Only the current report returned by the accepted Player disclosure request is used by the allocation policy.",
+  "policy": "Promise four units to team_c. First day deliberately overallocate all three teams. Thereafter: stable report -> four each; fragile report -> four for team_c plus four for alternating team_a/team_b.",
+  "limits": "The setting's fixed execution order is preserved. This is a deterministic example trajectory, not an optimal policy or a claim of human skill."
+}

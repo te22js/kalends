@@ -1,0 +1,306 @@
+[
+  {
+    "command_index": 0,
+    "receipt": {
+      "event_id": 18,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Player",
+        "Sabina"
+      ],
+      "payload": {
+        "category": "rb_dispute_heard",
+        "title": "Sabina asks you to find out who the six sacks were actually promised to",
+        "parents": [
+          10
+        ],
+        "story_patch": {
+          "heard": true
+        }
+      },
+      "scope": "private",
+      "category": "rb_dispute_heard",
+      "title": "Sabina asks you to find out who the six sacks were actually promised to",
+      "minute": 0,
+      "parents": [
+        10
+      ]
+    }
+  },
+  {
+    "command_index": 1,
+    "receipt": {
+      "event_id": 19,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "street",
+      "actors": [
+        "Player",
+        "Sabina",
+        "Marcus"
+      ],
+      "payload": {
+        "category": "rb_agreement",
+        "title": "You pay the carrying charge and stand behind the market counters",
+        "parents": [],
+        "cash_delta": {
+          "Player": -3,
+          "Carrier": 3
+        },
+        "story_patch": {
+          "stage": "committed",
+          "route": "market",
+          "choice_event": 19
+        },
+        "carrying_fee": 3
+      },
+      "scope": "private",
+      "category": "rb_agreement",
+      "title": "You pay the carrying charge and stand behind the market counters",
+      "minute": 0,
+      "parents": []
+    }
+  },
+  {
+    "command_index": 2,
+    "receipt": {
+      "event_id": 27,
+      "tick": 23,
+      "etype": "move",
+      "location": "street",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter Felix's bread counter",
+        "parents": [],
+        "to": "bakery",
+        "position": [
+          810.0,
+          275.5
+        ],
+        "path": [
+          [
+            650.0,
+            415.0
+          ],
+          [
+            810.0,
+            350.0
+          ],
+          [
+            810.0,
+            295.0
+          ],
+          [
+            810.0,
+            275.5
+          ]
+        ],
+        "movement_revision": 2,
+        "travel_distance": 247.19916039170545,
+        "world_minutes": 3,
+        "movement_state": {
+          "distance": 247.19916039170545,
+          "charged_minutes": 3
+        }
+      },
+      "scope": "public",
+      "category": "player_move",
+      "title": "You enter Felix's bread counter",
+      "minute": 23,
+      "parents": []
+    }
+  },
+  {
+    "command_index": 3,
+    "receipt": {
+      "event_id": 28,
+      "tick": 23,
+      "etype": "state_change",
+      "location": "bakery",
+      "actors": [
+        "Player",
+        "Felix"
+      ],
+      "payload": {
+        "category": "promise",
+        "title": "You promise Felix four flour units before dusk",
+        "parents": [],
+        "quantity": 4,
+        "deadline": 600,
+        "flags": {
+          "quest": "active",
+          "active_contract": "felix-first"
+        },
+        "owner": "Player",
+        "new_commitment": {
+          "id": "felix-first",
+          "quantity": 4,
+          "deadline": 600,
+          "status": "open",
+          "fulfilled": 0,
+          "beneficiary": "Felix",
+          "event_id": 28
+        }
+      },
+      "scope": "private",
+      "category": "promise",
+      "title": "You promise Felix four flour units before dusk",
+      "minute": 23,
+      "parents": []
+    }
+  },
+  {
+    "command_index": 5,
+    "receipt": {
+      "event_id": 63,
+      "tick": 1448,
+      "etype": "move",
+      "location": "bakery",
+      "actors": [
+        "Player"
+      ],
+      "payload": {
+        "category": "player_move",
+        "title": "You enter House of the Menander",
+        "parents": [],
+        "to": "household",
+        "position": [
+          770.0,
+          1014.0
+        ],
+        "path": [
+          [
+            810.0,
+            275.5
+          ],
+          [
+            810.0,
+            295.0
+          ],
+          [
+            810.0,
+            350.0
+          ],
+          [
+            770.0,
+            790.0
+          ],
+          [
+            770.0,
+            825.0
+          ],
+          [
+            770.0,
+            1014.0
+          ]
+        ],
+        "movement_revision": 2,
+        "travel_distance": 740.3144406874904,
+        "world_minutes": 8,
+        "movement_state": {
+          "distance": 987.513601079196,
+          "charged_minutes": 11
+        }
+      },
+      "scope": "public",
+      "category": "player_move",
+      "title": "You enter House of the Menander",
+      "minute": 1448,
+      "parents": []
+    }
+  },
+  {
+    "command_index": 6,
+    "receipt": {
+      "event_id": 64,
+      "tick": 1448,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "patronage",
+        "title": "You accept eight coins and promise two hours of household service within three days",
+        "parents": [],
+        "cash_delta": {
+          "Player": 8,
+          "Lucius": -8
+        },
+        "flags": {
+          "affiliation": "household client",
+          "service_due": 5768
+        },
+        "owner": "Player",
+        "new_commitment": {
+          "id": "household-service",
+          "quantity": 120,
+          "deadline": 5768,
+          "status": "open",
+          "fulfilled": 0,
+          "beneficiary": "Lucius",
+          "event_id": 64
+        }
+      },
+      "scope": "private",
+      "category": "patronage",
+      "title": "You accept eight coins and promise two hours of household service within three days",
+      "minute": 1448,
+      "parents": []
+    }
+  },
+  {
+    "command_index": 7,
+    "receipt": {
+      "event_id": 72,
+      "tick": 1568,
+      "etype": "state_change",
+      "location": "household",
+      "actors": [
+        "Player",
+        "Lucius"
+      ],
+      "payload": {
+        "category": "work_complete",
+        "title": "You keep your household service promise",
+        "parents": [
+          64
+        ],
+        "commitment_updates": [
+          {
+            "agent": "Player",
+            "id": "household-service",
+            "status": "fulfilled",
+            "fulfilled": 120
+          }
+        ],
+        "flags": {
+          "service_done": true,
+          "reputation": 1
+        },
+        "relationship_axes": [
+          {
+            "agent": "Lucius",
+            "delta": {
+              "reliability": 0.18,
+              "competence": 0.1
+            }
+          }
+        ]
+      },
+      "scope": "private",
+      "category": "work_complete",
+      "title": "You keep your household service promise",
+      "minute": 1568,
+      "parents": [
+        64
+      ]
+    }
+  }
+]

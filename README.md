@@ -1,5 +1,39 @@
 # Kalends
 
+## Experience OS — two domains, shared continuity
+
+Compile a Pompeii life or a shared-instrument coordination experience on the
+existing Kalends ledger, observation, economy and clock. LIVE participates;
+LEARN debriefs actual choices and runs an omission retry; LAB inspects the same
+world's private minds, plans and evidence. Runs offline by default.
+
+```sh
+./scripts/run_experience_os.sh                 # http://127.0.0.1:8800/
+./scripts/run_experience_os.sh --port 8802 --directory /tmp/my-kalends-lives
+```
+
+Keep the foreground terminal running; Ctrl-C stops its server. The directory
+has a writer lock. Reopening uses its embedded-spec command journals and checks
+exact replay. Existing Rebirth/Immersion saves use their original servers.
+The 3D frontend uses the existing `kalends_3d/dist/` build; if absent, build it
+with `cd kalends_3d && npm ci && npm run build`.
+
+Start in **Shared Observatory**: request the systems team's dated report,
+promise capacity, review an allocation and compress one day. Then enter LEARN
+and retry a real choice. The compiler accepts a finite supported schema, not
+arbitrary natural-language worlds. Changed specifications need new IDs.
+
+[Complete handoff](KALENDS_EXPERIENCE_OS_HANDOFF.md) ·
+[Architecture and limits](docs/experience_os/ARCHITECTURE.md) ·
+[Executed research](docs/experience_os/RESEARCH_RESULTS.md) ·
+[Company and research thesis](docs/experience_os/COMPANY_AND_RESEARCH_THESIS.md)
+
+The recorded demonstrations span 90 Commons days and 120 Pompeii days. The
+972-world final cognitive study found no V3-over-V2 outcome benefit; retention
+strategy affected promises/check costs. Conservative time compression preserved
+the measured histories but demonstrated no additional adaptive speed advantage.
+There are no human learning or subjective-time results.
+
 ## Rebirth — the illustrated account at the fountain
 
 A painted Pompeii district, portrait conversations, and a disputed six-sack cart.

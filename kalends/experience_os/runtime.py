@@ -108,18 +108,18 @@ class ExperienceRuntime:
         self._new_world()
         if self.journal_path and self.journal_path.exists():
             document = json.loads(self.journal_path.read_text())
-            if (document.get("version") != self.version or document.get("spec_hash") != self.spec_hash or
+            if (type(document.get("version")) is not int or document.get("version") != self.version or document.get("spec_hash") != self.spec_hash or
                     document.get("retention") != self.retention or digest(document.get("spec")) != self.spec_hash):
                 raise ValueError("Experience journal revision/configuration differs; original preserved")
             for command in document["commands"]:
                 if (set(command) != {"revision", "operation", "data", "at", "after", "receipt_id"} or
-                        command.get("revision") != 1 or type(command.get("at")) is not int or
+                        type(command.get("revision")) is not int or command.get("revision") != 1 or type(command.get("at")) is not int or
                         command["at"] != self.minute):
                     raise ValueError("Unsupported revision or inconsistent accepted-command start time")
                 receipt = self._perform(command["operation"], command["data"])
                 expected_id = receipt.get("event_id") if isinstance(receipt, dict) else None
                 if (type(command.get("after")) is not int or command["after"] != self.minute or
-                        command["receipt_id"] != expected_id):
+                        type(command["receipt_id"]) is not type(expected_id) or command["receipt_id"] != expected_id):
                     raise ValueError("Accepted-command replay metadata differs; original preserved")
                 self.commands.append(copy.deepcopy(command))
             if self.state_hash() != document["state_hash"]:
@@ -223,7 +223,19 @@ class ExperienceRuntime:
 
     def events(self, *, operator=False):
         allowed = self.visible_ids()
-        return [e.to_dict() for e in self.world.ledger.events if operator or e.event_id in allowed]
+        return [self._event_projection(e, operator=operator) for e in self.world.ledger.events if operator or e.event_id in allowed]
+
+    def _event_projection(self, event, *, operator=False):
+        """Visibility admits an event, not every canonical bookkeeping field.
+
+        Preserve the established Pompeii payload projection for initialization
+        accounts and commitments. Public snapshots, debriefs and dependency
+        traces share this boundary; LAB deliberately retains the operator view.
+        This changes no event, state fold, action or accepted-command revision.
+        """
+        if self.spec.setting["adapter"] == "pompeii":
+            return self.world.event_dict(event, operator=operator)
+        return event.to_dict()
 
     def metrics(self):
         w = self.world
@@ -258,7 +270,8 @@ class ExperienceRuntime:
             r = self.world.round
             result.update(requests=self.world.get(f"requests:{r}", {}), allocation=self.world.get(f"allocation:{r}"),
                           promises=self.world.get(f"promises:{r}", {}), credits=self.world.economy.cash["Player"],
-                          own_reports=[e for e in events if e["payload"].get("prop") == ["observatory", "condition"]][-5:])
+                          own_reports=[e for e in events if e["payload"].get("prop") == ["observatory", "condition"] or
+                                       e["payload"].get("category") == "report" and e["payload"].get("listener") == "Player"][-5:])
         else:
             result["world"] = self.world.snapshot(operator=False)
         if operator:
@@ -281,7 +294,7 @@ class ExperienceRuntime:
                 hidden.add(eid); continue
             seen.add(eid)
             todo.extend(self.world.ledger.events[eid].payload.get("parents", []))
-        return {"events": [self.world.ledger.events[i].to_dict() for i in sorted(seen)], "hidden_parent_count": len(hidden),
+        return {"events": [self._event_projection(self.world.ledger.events[i], operator=operator) for i in sorted(seen)], "hidden_parent_count": len(hidden),
                 "interpretation": "Recorded dependency links are evidence/accounting; only an executed intervention tests an alternative."}
 
     def debrief(self):

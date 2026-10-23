@@ -1,0 +1,97 @@
+Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8801/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8801/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 0
+			6 checkbox LEARN, Value: 1
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		88 text LEARN · REASON FROM YOUR ACTUAL CHOICES
+		11 heading A life among promises: Pompeii, Value: 1, ID: title
+			89 text A life among promises: Pompeii
+		90 text Reason about asymmetric information, resource-backed promises, social constraints and the later consequences of accepted actions. Historical participation is not evidence of real-world learning transfer.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: A life among promises: Pompeii, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (disabled) A life among promises: Pompeii
+					19 (disabled) Shared Observatory: three teams, one instrument
+					20 (disabled) Browser verification: isolated Pompeii life
+		91 text DAY 1 · 0 WORLD MINUTES · 0 ACCEPTED COMMANDS
+		22 button Refresh world, ID: refresh
+		92 button Live step · 1m
+		93 button Compress · 1 day
+		94 button Montage · 1 week
+		95 button Skip · 30 days
+		96 button Next scheduled change
+		23 text The validated experience is running on the shared kernel.
+		24 container Description: Actual world outcomes, ID: metrics
+			97 text 6
+			98 text CASH
+			99 text 0
+			100 text INVENTORY
+			101 text 0
+			102 text REPUTATION
+			103 text 0
+			104 text FULFILLED OBLIGATIONS
+			105 text 0
+			106 text MISSED OBLIGATIONS
+			107 text 0
+			108 text ELAPSED DAYS
+		109 container learn-view
+			110 container
+				111 text LEARN · GROUNDED DEBRIEF
+				112 heading Your decisions have a record., Value: 2
+					113 text Your decisions have a record.
+				114 text Reason about asymmetric information, resource-backed promises, social constraints and the later consequences of accepted actions. Historical participation is not evidence of real-world learning transfer.
+				115 button Select evidence for reflection, ID: reflect
+				116 container debrief
+					117 text DAY 1 · MINUTE 0 · RECORD 0
+					118 text Morning opens on the Via dell'Abbondanza
+					119 button Inspect recorded support ↗
+					120 text DAY 1 · MINUTE 0 · RECORD 1
+					121 text You arrive as Aelia, a freedwoman earning her place between households and shops.
+					122 button Inspect recorded support ↗
+					123 text DAY 1 · MINUTE 0 · RECORD 10
+					124 text Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”
+					125 button Inspect recorded support ↗
+					126 text DAY 1 · MINUTE 0 · RECORD 17
+					127 text Hear a private account of the disputed six-sack cart.
+					128 button Inspect recorded support ↗
+				129 heading Questions to investigate, Value: 3
+					130 text Questions to investigate
+				131 content list questions
+					132 container
+						133 AXListMarker 1. 
+						134 text Which account could you legitimately access before committing, and which was still private?
+					135 container
+						136 AXListMarker 2. 
+						137 text Which accepted choice moved actual coins, flour or service time? Cite its event.
+					138 container
+						139 AXListMarker 3. 
+						140 text What changed after your absence, and which actual events support that explanation?
+					141 container
+						142 AXListMarker 4. 
+						143 text Which alternative can the same command history replay, and which later actions become infeasible?
+				144 text This is simulated decision practice. No human learning or real-world transfer result has been established.
+			145 container
+				146 text A DIFFERENT SITUATION
+				147 heading Transfer challenge, Value: 2
+					148 text Transfer challenge
+				149 text In an unfamiliar cooperative, two buyers repeat a supplier story from the same original witness. Before accepting a deadline-backed order, which is the strongest next step?
+				150 container transfer-options
+					151 button Treat the repeated reports as two independent confirmations.
+					152 button Check a current primary record, then compare quantity, cost and the actual deadline.
+					153 button Assume the supplier has stock because they sounded confident.
+				154 heading Retry an actual choice, Value: 3
+					155 text Retry an actual choice
+				156 text Remove one accepted choice and replay the recorded continuation. Changed outcomes are computed; infeasible later commands are disclosed.
+				157 pop up button (collapsed, settable) ID: retry-choice, Secondary Actions: Expand
+				158 button (disabled) Execute alternative →, ID: retry
+		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		86 text offline cognition · 0 external calls
+		87 text  · Local single-user prototype
+
+The focused UI element is 1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8801/

@@ -301,14 +301,16 @@ class ExperienceCompilerV1:
         for i, row in enumerate(rows):
             path = f"$.goals[{i}]"
             _object(row, path, {"id", "actor", "label", "priority", "deadline", "requires", "target"})
-            ident = _text(row["id"], path + ".id", identifier=True)
+            ident = _text(row["id"], path + ".id", 64, identifier=True)
             if ident in goals:
                 _fail(path + ".id", "duplicate goal")
             goals[ident] = row
             if type(row["actor"]) is not str or row["actor"] not in actors:
                 _fail(path + ".actor", "unknown participant")
-            _text(row["label"], path + ".label")
+            _text(row["label"], path + ".label", 256)
             _number(row["priority"], path + ".priority", 0, 100)
+            if row["priority"] <= 0:
+                _fail(path + ".priority", "must be greater than zero for the typed goal contract")
             _number(row["deadline"], path + ".deadline", 1, end, integer=True)
             _unique_strings(row["requires"], path + ".requires", 64)
             target = _object(row["target"], path + ".target", {"resource", "quantity", "metric"})
@@ -340,6 +342,16 @@ class ExperienceCompilerV1:
             visited.add(ident)
         for ident in goals:
             visit(ident)
+        if adapter == "commons":
+            earliest = {}
+            def first_settlement(ident):
+                if ident not in earliest:
+                    prior = max((first_settlement(required) for required in goals[ident]["requires"]), default=-1)
+                    earliest[ident] = prior + rules["round_minutes"]
+                return earliest[ident]
+            for ident, row in goals.items():
+                if row["deadline"] < first_settlement(ident):
+                    _fail("$.goals", "prerequisite project cannot settle before its dependent deadline")
 
     @staticmethod
     def _debrief(value: Any) -> None:

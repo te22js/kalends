@@ -79,10 +79,17 @@ class CoordinationWorld(CitySimulation):
             if actor in self.minds:
                 prop = event.payload.get("prop")
                 factual = bool(prop and prop[0] == "observatory")
-                episode = Episode(event.event_id, actor, tick, "observed" if factual else "episodic", title,
-                                  subject=prop[0] if factual else None, predicate=prop[1] if factual else None,
-                                  value=str(payload["value"]) if factual else None, as_of=tick,
-                                  origin_event=event.event_id, origin_observer=actor, participants=tuple(actors),
+                testimony = factual and event.etype == "tell" and actor == payload.get("listener")
+                direct = factual and event.etype != "tell"
+                informative = testimony or direct
+                episode = Episode(event.event_id, actor, tick, "told" if testimony else "observed" if direct else "episodic", title,
+                                  subject=prop[0] if informative else None, predicate=prop[1] if informative else None,
+                                  value=str(payload["value"]) if informative else None,
+                                  as_of=payload.get("as_of", tick) if testimony else tick,
+                                  source_agent=payload.get("speaker") if testimony else None,
+                                  origin_event=payload.get("origin_event", event.event_id) if testimony else event.event_id,
+                                  origin_observer=payload.get("origin_observer") if testimony else actor,
+                                  participants=tuple(actors),
                                   salience=.9 if category in ("condition", "promise_kept", "promise_missed", "allocation_settled") else .25,
                                   goal_tags=("coordination",))
                 self.minds[actor].observe(episode)
@@ -259,12 +266,10 @@ class CoordinationWorld(CitySimulation):
             if source.payload.get("prop") != ["observatory", "condition"]:
                 raise ValueError("Only an actual condition report can be shared")
             event = self._emit(self.minute, "tell", "council", (actor, recipient), "report", f"{actor} shares a dated condition report with {recipient}",
-                               (eid,), "private", speaker=actor, listener=recipient, report_event=eid, as_of=source.tick,
-                               value=source.payload["value"], origin_event=eid, origin_observer=actor)
-            if recipient in self.minds:
-                self.minds[recipient].observe(Episode(event.event_id, recipient, self.minute, "told", event.payload["title"],
-                    "observatory", "condition", source.payload["value"], source.tick, actor, source.event_id, actor,
-                    participants=(actor, recipient), salience=.8, goal_tags=("coordination",)))
+                               (eid,), "private", speaker=actor, listener=recipient, report_event=eid,
+                               prop=["observatory", "condition"], as_of=source.payload.get("as_of", source.tick),
+                               value=source.payload["value"], origin_event=source.payload.get("origin_event", eid),
+                               origin_observer=source.payload.get("origin_observer", actor))
             return event
         if kind in ("reserve", "release"):
             if actor not in TEAMS:

@@ -1,0 +1,408 @@
+Browser tab: 10, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8800/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8800/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8800/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 0
+			6 checkbox LEARN, Value: 1
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		10 text LEARN · REASON FROM YOUR ACTUAL CHOICES
+		11 heading Recorded 90-day demonstration: Shared Observatory, Value: 1, ID: title
+			12 text Recorded 90-day demonstration: Shared Observatory
+		13 text Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: Recorded 90-day demonstration: Shared Observatory, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (disabled) A life among promises: Pompeii
+					19 (disabled) Shared Observatory: three teams, one instrument
+					20 (disabled) Recorded 90-day demonstration: Shared Observatory
+					21 (disabled) Recorded 120-day demonstration: Pompeii continuity
+		22 text DAY 91 · 129,600 WORLD MINUTES · 360 ACCEPTED COMMANDS
+		23 button Refresh world, ID: refresh
+		24 button Live step · 1m
+		25 button Compress · 1 day
+		26 button Montage · 1 week
+		27 button Skip · 30 days
+		28 button Next scheduled change
+		29 container Description: Actual world outcomes, ID: metrics
+			30 text 228
+			31 text COMPLETED PROJECTS
+			32 text 89
+			33 text PROMISES KEPT
+			34 text 1
+			35 text PROMISES MISSED
+			36 text 912
+			37 text EXECUTED UNITS
+			38 text 0.78
+			39 text EQUITY
+			40 text 24
+			41 text CREDITS SPENT
+		42 container learn-view
+			43 container
+				44 text LEARN · GROUNDED DEBRIEF
+				45 heading Your decisions have a record., Value: 2
+					46 text Your decisions have a record.
+				47 text Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.
+				48 button Select evidence for reflection, ID: reflect
+				49 container debrief
+					50 text DAY 88 · MINUTE 126719 · RECORD 1510
+					51 text Round 88 executes 12/12 allocated units; 3 projects complete
+					52 button Inspect recorded support ↗
+					53 text DAY 88 · MINUTE 126719 · RECORD 1511
+					54 text The promise to team_c is kept
+					55 button Inspect recorded support ↗
+					56 text DAY 89 · MINUTE 126720 · RECORD 1513
+					57 text Round 89: teams may negotiate the shared instrument
+					58 button Inspect recorded support ↗
+					59 text DAY 89 · MINUTE 126720 · RECORD 1514
+					60 text Round 89 opens the consortium's regular instrument work
+					61 button Inspect recorded support ↗
+					62 text DAY 89 · MINUTE 126720 · RECORD 1519
+					63 text team_b shares a dated condition report with Player
+					64 container
+						65 text Reported condition:  stable  · evidence dated minute 126720
+					66 button Inspect recorded support ↗
+					67 text DAY 89 · MINUTE 126720 · RECORD 1520
+					68 text Player promises 4 units to team_c
+					69 button Inspect recorded support ↗
+					70 text DAY 89 · MINUTE 126720 · RECORD 1521
+					71 text The coordinator commits round 89's allocation
+					72 button Inspect recorded support ↗
+					73 text DAY 89 · MINUTE 128159 · RECORD 1526
+					74 text Round 89 executes 12/12 allocated units; 3 projects complete
+					75 button Inspect recorded support ↗
+					76 text DAY 89 · MINUTE 128159 · RECORD 1527
+					77 text The promise to team_c is kept
+					78 button Inspect recorded support ↗
+					79 text DAY 90 · MINUTE 128160 · RECORD 1529
+					80 text Round 90: teams may negotiate the shared instrument
+					81 button Inspect recorded support ↗
+					82 text DAY 90 · MINUTE 128160 · RECORD 1530
+					83 text Round 90 opens the consortium's regular instrument work
+					84 button Inspect recorded support ↗
+					85 text DAY 90 · MINUTE 128160 · RECORD 1535
+					86 text team_b shares a dated condition report with Player
+					87 container
+						88 text Reported condition:  stable  · evidence dated minute 128160
+					89 button Inspect recorded support ↗
+					90 text DAY 90 · MINUTE 128160 · RECORD 1536
+					91 text Player promises 4 units to team_c
+					92 button Inspect recorded support ↗
+					93 text DAY 90 · MINUTE 128160 · RECORD 1537
+					94 text The coordinator commits round 90's allocation
+					95 button Inspect recorded support ↗
+					96 text DAY 90 · MINUTE 129599 · RECORD 1542
+					97 text Round 90 executes 12/12 allocated units; 3 projects complete
+					98 button Inspect recorded support ↗
+					99 text DAY 90 · MINUTE 129599 · RECORD 1543
+					100 text The promise to team_c is kept
+					101 button Inspect recorded support ↗
+				102 heading Questions to investigate, Value: 3
+					103 text Questions to investigate
+				104 content list questions
+					105 container
+						106 AXListMarker 1. 
+						107 text Who knew the hardware condition before the first allocation, and what caused it to become available to others?
+					108 container
+						109 AXListMarker 2. 
+						110 text Which promises fit actual usable capacity at settlement, and which failed? Cite the events.
+					111 container
+						112 AXListMarker 3. 
+						113 text Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?
+					114 container
+						115 AXListMarker 4. 
+						116 text Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?
+				117 text This is simulated decision practice. No human learning or real-world transfer result has been established.
+			118 container
+				119 text A DIFFERENT SITUATION
+				120 heading Transfer challenge, Value: 2
+					121 text Transfer challenge
+				122 text A new laboratory advertises twelve instrument slots. Three teams need four slots each, but only the engineer has a fresh reliability report. Which plan best manages the uncertainty?
+				123 container transfer-options
+					124 button Promise four slots to all three teams immediately because twelve slots are advertised.
+					125 button Ask for the dated report or buy a fresh check, disclose its limits, and make a feasible allocation with an explicit review point.
+					126 button Allocate everything to the most confident team and record its confidence as direct evidence.
+				127 heading Retry an actual choice, Value: 3
+					128 text Retry an actual choice
+				129 text Remove one accepted choice and replay the recorded continuation. Changed outcomes are computed; infeasible later commands are disclosed.
+				130 pop up button (collapsed, settable) Value: Choice 0: share at minute 0, ID: retry-choice, Secondary Actions: Expand
+					131 menu
+						132 (selected) Choice 0: share at minute 0
+						133 Choice 1: commit at minute 0
+						134 Choice 2: allocate at minute 0
+						135 Choice 4: share at minute 1440
+						136 Choice 5: commit at minute 1440
+						137 Choice 6: allocate at minute 1440
+						138 Choice 8: share at minute 2880
+						139 Choice 9: commit at minute 2880
+						140 Choice 10: allocate at minute 2880
+						141 Choice 12: share at minute 4320
+						142 Choice 13: commit at minute 4320
+						143 Choice 14: allocate at minute 4320
+						144 Choice 16: share at minute 5760
+						145 Choice 17: commit at minute 5760
+						146 Choice 18: allocate at minute 5760
+						147 Choice 20: share at minute 7200
+						148 Choice 21: commit at minute 7200
+						149 Choice 22: allocate at minute 7200
+						150 Choice 24: share at minute 8640
+						151 Choice 25: commit at minute 8640
+						152 Choice 26: allocate at minute 8640
+						153 Choice 28: share at minute 10080
+						154 Choice 29: commit at minute 10080
+						155 Choice 30: allocate at minute 10080
+						156 Choice 32: share at minute 11520
+						157 Choice 33: commit at minute 11520
+						158 Choice 34: allocate at minute 11520
+						159 Choice 36: share at minute 12960
+						160 Choice 37: commit at minute 12960
+						161 Choice 38: allocate at minute 12960
+						162 Choice 40: share at minute 14400
+						163 Choice 41: commit at minute 14400
+						164 Choice 42: allocate at minute 14400
+						165 Choice 44: share at minute 15840
+						166 Choice 45: commit at minute 15840
+						167 Choice 46: allocate at minute 15840
+						168 Choice 48: share at minute 17280
+						169 Choice 49: commit at minute 17280
+						170 Choice 50: allocate at minute 17280
+						171 Choice 52: share at minute 18720
+						172 Choice 53: commit at minute 18720
+						173 Choice 54: allocate at minute 18720
+						174 Choice 56: share at minute 20160
+						175 Choice 57: commit at minute 20160
+						176 Choice 58: allocate at minute 20160
+						177 Choice 60: share at minute 21600
+						178 Choice 61: commit at minute 21600
+						179 Choice 62: allocate at minute 21600
+						180 Choice 64: share at minute 23040
+						181 Choice 65: commit at minute 23040
+						182 Choice 66: allocate at minute 23040
+						183 Choice 68: share at minute 24480
+						184 Choice 69: commit at minute 24480
+						185 Choice 70: allocate at minute 24480
+						186 Choice 72: share at minute 25920
+						187 Choice 73: commit at minute 25920
+						188 Choice 74: allocate at minute 25920
+						189 Choice 76: share at minute 27360
+						190 Choice 77: commit at minute 27360
+						191 Choice 78: allocate at minute 27360
+						192 Choice 80: share at minute 28800
+						193 Choice 81: commit at minute 28800
+						194 Choice 82: allocate at minute 28800
+						195 Choice 84: share at minute 30240
+						196 Choice 85: commit at minute 30240
+						197 Choice 86: allocate at minute 30240
+						198 Choice 88: share at minute 31680
+						199 Choice 89: commit at minute 31680
+						200 Choice 90: allocate at minute 31680
+						201 Choice 92: share at minute 33120
+						202 Choice 93: commit at minute 33120
+						203 Choice 94: allocate at minute 33120
+						204 Choice 96: share at minute 34560
+						205 Choice 97: commit at minute 34560
+						206 Choice 98: allocate at minute 34560
+						207 Choice 100: share at minute 36000
+						208 Choice 101: commit at minute 36000
+						209 Choice 102: allocate at minute 36000
+						210 Choice 104: share at minute 37440
+						211 Choice 105: commit at minute 37440
+						212 Choice 106: allocate at minute 37440
+						213 Choice 108: share at minute 38880
+						214 Choice 109: commit at minute 38880
+						215 Choice 110: allocate at minute 38880
+						216 Choice 112: share at minute 40320
+						217 Choice 113: commit at minute 40320
+						218 Choice 114: allocate at minute 40320
+						219 Choice 116: share at minute 41760
+						220 Choice 117: commit at minute 41760
+						221 Choice 118: allocate at minute 41760
+						222 Choice 120: share at minute 43200
+						223 Choice 121: commit at minute 43200
+						224 Choice 122: allocate at minute 43200
+						225 Choice 124: share at minute 44640
+						226 Choice 125: commit at minute 44640
+						227 Choice 126: allocate at minute 44640
+						228 Choice 128: share at minute 46080
+						229 Choice 129: commit at minute 46080
+						230 Choice 130: allocate at minute 46080
+						231 Choice 132: share at minute 47520
+						232 Choice 133: commit at minute 47520
+						233 Choice 134: allocate at minute 47520
+						234 Choice 136: share at minute 48960
+						235 Choice 137: commit at minute 48960
+						236 Choice 138: allocate at minute 48960
+						237 Choice 140: share at minute 50400
+						238 Choice 141: commit at minute 50400
+						239 Choice 142: allocate at minute 50400
+						240 Choice 144: share at minute 51840
+						241 Choice 145: commit at minute 51840
+						242 Choice 146: allocate at minute 51840
+						243 Choice 148: share at minute 53280
+						244 Choice 149: commit at minute 53280
+						245 Choice 150: allocate at minute 53280
+						246 Choice 152: share at minute 54720
+						247 Choice 153: commit at minute 54720
+						248 Choice 154: allocate at minute 54720
+						249 Choice 156: share at minute 56160
+						250 Choice 157: commit at minute 56160
+						251 Choice 158: allocate at minute 56160
+						252 Choice 160: share at minute 57600
+						253 Choice 161: commit at minute 57600
+						254 Choice 162: allocate at minute 57600
+						255 Choice 164: share at minute 59040
+						256 Choice 165: commit at minute 59040
+						257 Choice 166: allocate at minute 59040
+						258 Choice 168: share at minute 60480
+						259 Choice 169: commit at minute 60480
+						260 Choice 170: allocate at minute 60480
+						261 Choice 172: share at minute 61920
+						262 Choice 173: commit at minute 61920
+						263 Choice 174: allocate at minute 61920
+						264 Choice 176: share at minute 63360
+						265 Choice 177: commit at minute 63360
+						266 Choice 178: allocate at minute 63360
+						267 Choice 180: share at minute 64800
+						268 Choice 181: commit at minute 64800
+						269 Choice 182: allocate at minute 64800
+						270 Choice 184: share at minute 66240
+						271 Choice 185: commit at minute 66240
+						272 Choice 186: allocate at minute 66240
+						273 Choice 188: share at minute 67680
+						274 Choice 189: commit at minute 67680
+						275 Choice 190: allocate at minute 67680
+						276 Choice 192: share at minute 69120
+						277 Choice 193: commit at minute 69120
+						278 Choice 194: allocate at minute 69120
+						279 Choice 196: share at minute 70560
+						280 Choice 197: commit at minute 70560
+						281 Choice 198: allocate at minute 70560
+						282 Choice 200: share at minute 72000
+						283 Choice 201: commit at minute 72000
+						284 Choice 202: allocate at minute 72000
+						285 Choice 204: share at minute 73440
+						286 Choice 205: commit at minute 73440
+						287 Choice 206: allocate at minute 73440
+						288 Choice 208: share at minute 74880
+						289 Choice 209: commit at minute 74880
+						290 Choice 210: allocate at minute 74880
+						291 Choice 212: share at minute 76320
+						292 Choice 213: commit at minute 76320
+						293 Choice 214: allocate at minute 76320
+						294 Choice 216: share at minute 77760
+						295 Choice 217: commit at minute 77760
+						296 Choice 218: allocate at minute 77760
+						297 Choice 220: share at minute 79200
+						298 Choice 221: commit at minute 79200
+						299 Choice 222: allocate at minute 79200
+						300 Choice 224: share at minute 80640
+						301 Choice 225: commit at minute 80640
+						302 Choice 226: allocate at minute 80640
+						303 Choice 228: share at minute 82080
+						304 Choice 229: commit at minute 82080
+						305 Choice 230: allocate at minute 82080
+						306 Choice 232: share at minute 83520
+						307 Choice 233: commit at minute 83520
+						308 Choice 234: allocate at minute 83520
+						309 Choice 236: share at minute 84960
+						310 Choice 237: commit at minute 84960
+						311 Choice 238: allocate at minute 84960
+						312 Choice 240: share at minute 86400
+						313 Choice 241: commit at minute 86400
+						314 Choice 242: allocate at minute 86400
+						315 Choice 244: share at minute 87840
+						316 Choice 245: commit at minute 87840
+						317 Choice 246: allocate at minute 87840
+						318 Choice 248: share at minute 89280
+						319 Choice 249: commit at minute 89280
+						320 Choice 250: allocate at minute 89280
+						321 Choice 252: share at minute 90720
+						322 Choice 253: commit at minute 90720
+						323 Choice 254: allocate at minute 90720
+						324 Choice 256: share at minute 92160
+						325 Choice 257: commit at minute 92160
+						326 Choice 258: allocate at minute 92160
+						327 Choice 260: share at minute 93600
+						328 Choice 261: commit at minute 93600
+						329 Choice 262: allocate at minute 93600
+						330 Choice 264: share at minute 95040
+						331 Choice 265: commit at minute 95040
+						332 Choice 266: allocate at minute 95040
+						333 Choice 268: share at minute 96480
+						334 Choice 269: commit at minute 96480
+						335 Choice 270: allocate at minute 96480
+						336 Choice 272: share at minute 97920
+						337 Choice 273: commit at minute 97920
+						338 Choice 274: allocate at minute 97920
+						339 Choice 276: share at minute 99360
+						340 Choice 277: commit at minute 99360
+						341 Choice 278: allocate at minute 99360
+						342 Choice 280: share at minute 100800
+						343 Choice 281: commit at minute 100800
+						344 Choice 282: allocate at minute 100800
+						345 Choice 284: share at minute 102240
+						346 Choice 285: commit at minute 102240
+						347 Choice 286: allocate at minute 102240
+						348 Choice 288: share at minute 103680
+						349 Choice 289: commit at minute 103680
+						350 Choice 290: allocate at minute 103680
+						351 Choice 292: share at minute 105120
+						352 Choice 293: commit at minute 105120
+						353 Choice 294: allocate at minute 105120
+						354 Choice 296: share at minute 106560
+						355 Choice 297: commit at minute 106560
+						356 Choice 298: allocate at minute 106560
+						357 Choice 300: share at minute 108000
+						358 Choice 301: commit at minute 108000
+						359 Choice 302: allocate at minute 108000
+						360 Choice 304: share at minute 109440
+						361 Choice 305: commit at minute 109440
+						362 Choice 306: allocate at minute 109440
+						363 Choice 308: share at minute 110880
+						364 Choice 309: commit at minute 110880
+						365 Choice 310: allocate at minute 110880
+						366 Choice 312: share at minute 112320
+						367 Choice 313: commit at minute 112320
+						368 Choice 314: allocate at minute 112320
+						369 Choice 316: share at minute 113760
+						370 Choice 317: commit at minute 113760
+						371 Choice 318: allocate at minute 113760
+						372 Choice 320: share at minute 115200
+						373 Choice 321: commit at minute 115200
+						374 Choice 322: allocate at minute 115200
+						375 Choice 324: share at minute 116640
+						376 Choice 325: commit at minute 116640
+						377 Choice 326: allocate at minute 116640
+						378 Choice 328: share at minute 118080
+						379 Choice 329: commit at minute 118080
+						380 Choice 330: allocate at minute 118080
+						381 Choice 332: share at minute 119520
+						382 Choice 333: commit at minute 119520
+						383 Choice 334: allocate at minute 119520
+						384 Choice 336: share at minute 120960
+						385 Choice 337: commit at minute 120960
+						386 Choice 338: allocate at minute 120960
+						387 Choice 340: share at minute 122400
+						388 Choice 341: commit at minute 122400
+						389 Choice 342: allocate at minute 122400
+						390 Choice 344: share at minute 123840
+						391 Choice 345: commit at minute 123840
+						392 Choice 346: allocate at minute 123840
+						393 Choice 348: share at minute 125280
+						394 Choice 349: commit at minute 125280
+						395 Choice 350: allocate at minute 125280
+						396 Choice 352: share at minute 126720
+						397 Choice 353: commit at minute 126720
+						398 Choice 354: allocate at minute 126720
+						399 Choice 356: share at minute 128160
+						400 Choice 357: commit at minute 128160
+						401 Choice 358: allocate at minute 128160
+				402 button Execute alternative →, ID: retry
+		403 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		404 text offline cognition · 0 external calls
+		405 text  · Local single-user prototype
+
+The focused UI element is 1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8800/
