@@ -1,0 +1,372 @@
+{
+  "world_runs": 972,
+  "seed_clusters": 12,
+  "families": [
+    "changed_goals",
+    "contradictory",
+    "delayed_consequence",
+    "forget_recover",
+    "important_promise",
+    "long_absence",
+    "outdated",
+    "shared_source",
+    "strategic_communication"
+  ],
+  "per_arm_means": {
+    "bm25_fifo": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.5555555555555556,
+      "promises_kept": 0.7777777777777778,
+      "promises_missed": 0.2222222222222222,
+      "exploratory_score": 2.0555555555555554,
+      "serialized_mind_bytes": 5250.787037037037,
+      "cognition_and_execution_ms": 0.5889435927168017
+    },
+    "v2_goal": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 5977.62962962963,
+      "cognition_and_execution_ms": 0.4905374631157934
+    },
+    "v2_hybrid": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 5979.62962962963,
+      "cognition_and_execution_ms": 0.4901250001946917
+    },
+    "v2_recency": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.5555555555555556,
+      "promises_kept": 0.7777777777777778,
+      "promises_missed": 0.2222222222222222,
+      "exploratory_score": 2.0555555555555554,
+      "serialized_mind_bytes": 5969.666666666667,
+      "cognition_and_execution_ms": 0.5032433888387728
+    },
+    "v2_salience": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 5981.62962962963,
+      "cognition_and_execution_ms": 0.486174009219448
+    },
+    "v3_goal": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 7307.314814814815,
+      "cognition_and_execution_ms": 1.068795527687514
+    },
+    "v3_hybrid": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 7309.314814814815,
+      "cognition_and_execution_ms": 1.0547144908101742
+    },
+    "v3_recency": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.5555555555555556,
+      "promises_kept": 0.7777777777777778,
+      "promises_missed": 0.2222222222222222,
+      "exploratory_score": 2.0555555555555554,
+      "serialized_mind_bytes": 7318.509259259259,
+      "cognition_and_execution_ms": 1.1049227966092683
+    },
+    "v3_salience": {
+      "completed_projects": 2.3333333333333335,
+      "unused_capacity": 0.4444444444444444,
+      "inspection_fees": 0.4444444444444444,
+      "promises_kept": 0.8888888888888888,
+      "promises_missed": 0.1111111111111111,
+      "exploratory_score": 2.1777777777777776,
+      "serialized_mind_bytes": 7311.314814814815,
+      "cognition_and_execution_ms": 1.0464221110211198
+    }
+  },
+  "v3_minus_v2_seed_cluster_intervals": {
+    "recency": {
+      "completed_projects": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "unused_capacity": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "inspection_fees": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_kept": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_missed": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "exploratory_score": {
+        "mean": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "serialized_mind_bytes": {
+        "mean": 1348.8425925925926,
+        "lower_95": 1329.4722222222222,
+        "upper_95": 1364.4722222222222,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "cognition_and_execution_ms": {
+        "mean": 0.6016794077704953,
+        "lower_95": 0.5828310836646038,
+        "upper_95": 0.6221485280346113,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      }
+    },
+    "salience": {
+      "completed_projects": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "unused_capacity": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "inspection_fees": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_kept": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_missed": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "exploratory_score": {
+        "mean": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "serialized_mind_bytes": {
+        "mean": 1329.6851851851852,
+        "lower_95": 1310.3333333333333,
+        "upper_95": 1345.3148148148148,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "cognition_and_execution_ms": {
+        "mean": 0.5602481018016718,
+        "lower_95": 0.546078712869968,
+        "upper_95": 0.5754326113202735,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      }
+    },
+    "goal": {
+      "completed_projects": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "unused_capacity": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "inspection_fees": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_kept": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_missed": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "exploratory_score": {
+        "mean": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "serialized_mind_bytes": {
+        "mean": 1329.6851851851852,
+        "lower_95": 1310.3333333333333,
+        "upper_95": 1345.3148148148148,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "cognition_and_execution_ms": {
+        "mean": 0.5782580645717206,
+        "lower_95": 0.5657322219323963,
+        "upper_95": 0.5916824441185411,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      }
+    },
+    "hybrid": {
+      "completed_projects": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "unused_capacity": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "inspection_fees": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_kept": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "promises_missed": {
+        "mean": 0,
+        "lower_95": 0,
+        "upper_95": 0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "exploratory_score": {
+        "mean": 0.0,
+        "lower_95": 0.0,
+        "upper_95": 0.0,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "serialized_mind_bytes": {
+        "mean": 1329.6851851851852,
+        "lower_95": 1310.3333333333333,
+        "upper_95": 1345.3148148148148,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      },
+      "cognition_and_execution_ms": {
+        "mean": 0.5645894906154825,
+        "lower_95": 0.5468085460557227,
+        "upper_95": 0.582929703476246,
+        "paired_seed_clusters": 12,
+        "bootstrap_samples": 2000
+      }
+    }
+  },
+  "matched_pre_action_access": true,
+  "limitations": [
+    "Controlled exploratory authored families; no held-out or independent replication claim.",
+    "The same existing planner and belief guards are reused, so V3 plan persistence may add bytes/latency without changing outcomes.",
+    "Record/context maxima match, not serialized bytes or token counts; V3 additionally retains up to four bounded plans.",
+    "BM25 is lexical retrieval with FIFO episode retention and no semantic consolidation; admitted structured fields are included as text so direct-check titles do not hide their factual content. It is not a dense embedding baseline.",
+    "A maximum of one paid inspection is allowed per final decision; its observation and fee are endogenous and reported.",
+    "Background team policies are suppressed for controlled matching; this does not establish emergent whole-society improvement.",
+    "These controlled decision tasks span one simulated day; long absence here is 900 minutes, not evidence of multi-month cognitive performance.",
+    "The delayed hidden hardware transition is unknowable before allocation; resulting failure is not automatically a memory defect.",
+    "Per-case timing is a short descriptive probe; machine load and arm ordering are not a controlled latency experiment.",
+    "No LLM calls, human participants, skill-transfer results or neurological time claims."
+  ],
+  "source_fingerprints_after": {
+    "kalends/experience_os/cognition_bench.py": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576",
+    "kalends/experience_os/minds.py": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
+    "kalends/experience_os/commons.py": "fba542bb2e6865d6fb5aeacfdb9653a7f6c97ee9ac19916bd45d4b384c44d160",
+    "kalends/experience_os/compiler.py": "0a7fbf1b97df9b5c1420a4af6be97d8685367b23c4c933252bf2ef7dcb2b52b0",
+    "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "kalends/memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f",
+    "specs/shared_observatory.json": "12a9233a5a5cfd0658e7ea92802456d4390a92a0765fce951e9747023fe5ffa8",
+    "kalends/events.py": "06641e037fa6e6e078fa2f14e65f75410a4d7c3e87e306d78e4b3c47f39496c8",
+    "kalends/world.py": "aeba62bcba28cf9ba7cdd6690c0ec3a1cc586fe0353796c7f64ec159a4f3927e",
+    "kalends/observation.py": "f853ecd9d2a7ac039543bf4c928115f0b1245c9334bf1ccd44200765854fb738",
+    "kalends/city/simulation.py": "8979ad5fe361dc663f5ed3440ef65834a13a666e21f6fd9b9c8bed09a7ef1c9b",
+    "kalends/genesis/simulation.py": "a3a11137f0fad5ed6b99f6db17518507e275ece9b5e6fa6a94a344c329086749",
+    "kalends/pompeii/temporal.py": "07527638009a1758add8a930513f38915306ec76bf485ca661f454fa8f52262c",
+    "kalends/rng.py": "62e2b3ef4e5644edff28b3cbaa8b2f13c9f79f51f05e2c1a88d40a1a83685887"
+  },
+  "source_stable_during_execution": true,
+  "protocol_hash": "4373e6de314163af47e92e59cbe44f48aedbfc9d31a855f79614a98a448fa56d"
+}

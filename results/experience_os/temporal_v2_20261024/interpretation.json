@@ -1,0 +1,44 @@
+{
+  "source_match": true,
+  "source_files": {
+    "sha256": "3504ecdbd781a21650f3408a2ec5a8cc59e64f27700427fb51d3bb15abd3b5cc",
+    "files": {
+      "kalends/experience_os/temporal.py": "5bfccda3757ad0f5e46a8a77d88b765cdcf5cebdc1d22d04823e79f72660ed94",
+      "kalends/experience_os/temporal_bench.py": "9a6783e94c97d310eaa585a424d03ff06db2d5e73af6648b5ee3adb684ecf1c3",
+      "kalends/pompeii/temporal.py": "07527638009a1758add8a930513f38915306ec76bf485ca661f454fa8f52262c",
+      "kalends/pompeii/world.py": "ed1d664bcc582cd9e0cfd6b20e0ec80890293e06edf10d9d853940d8e257d903",
+      "kalends/pompeii/district.py": "3b79d6290b59952eeaa640adeffe74ac33b78b208f818881cae588f74b8a6e2a",
+      "kalends_rebirth/world.py": "af3140394d1281978989fb4139b322dff5dd2f23d789359eca552ce2ec1962f1",
+      "kalends_rebirth/cognitive_market.py": "57cd5fbeb37973804760b017542c5fc52506af2bc713b004dfa4844c401284ba",
+      "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+      "kalends_rebirth/immutable.py": "ee8a40f60732e649da922093342f408c0c02be504c611e3925b068e73a3bfc6d"
+    }
+  },
+  "cells": 48,
+  "runtime_world_runs": 144,
+  "separate_traced_world_runs": 48,
+  "exact_scheduler_cells_all_projections_match": 12,
+  "adaptive_cells_all_projections_match": 12,
+  "naive_cells_all_projections_match": 0,
+  "naive_active_mind_action_mismatch_cells": 6,
+  "naive_legacy_action_mismatch_cells": 0,
+  "naive_terminal_aggregate_outcome_mismatch_cells": 0,
+  "naive_terminal_cognitive_outcome_mismatch_cells": 0,
+  "adaptive_cosmetic_assignments_omitted": 0,
+  "limits": [
+    "Three seed clusters per horizon/world; descriptive development only; no inferential superiority claim.",
+    "Existing economic routine tasks can cause observation/gossip/decisions and remain exact; adaptive does not reduce their handler work.",
+    "Minute reference scans empty minutes but calls the same actual scheduled handlers; this is not a physical continuous-time reference.",
+    "Missing full records include timestamp/evidence drift; effect-record differences are not causal attribution.",
+    "Adaptive declarations are trusted author contracts; runtime audits detect some violations but do not prove arbitrary skipped Python handlers safe and do not roll back a violating handler.",
+    "Metrics exclude rendering, real-world learning, subjective experience and live-model inference.",
+    "Initial analysis run is separately preserved; V2 adds previously omitted separate active-cognition action/belief/outcome projections."
+  ],
+  "artifact_sha256": {
+    "protocol.json": "0a77f09483adbd3ffe0588c842ef1993619181fc0ecdf680e5821a935e0a652b",
+    "rows.json": "6bf1b2ed88efd9ce1894aa44fa67cb2adb77fe843083617a24f41fb671738503",
+    "summary.json": "bf82bfde378ab6a22d42ad6278717bc15619f0946ecbfe04e4775be9961114ad",
+    "source_after.json": "704fcdda5de3c3b934ef561320cefb4b75aac1fa8e5d1a95b8ce1bfd5cf22354",
+    "projections.jsonl.gz": "fed00b1d08561d0fa884c504c48454919d405aab84773375bc3baca0b06086a1"
+  }
+}

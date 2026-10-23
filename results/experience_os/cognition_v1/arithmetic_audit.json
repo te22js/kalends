@@ -1,0 +1,65 @@
+{
+  "method": "Separate direct aggregation over saved raw records by the same implementing agent; not independent replication.",
+  "world_runs": 972,
+  "paired_v3_v2_cases": 432,
+  "primary_outcome_ties": 432,
+  "same_executed_ledger_pairs": 432,
+  "resource_conservation_passes": 972,
+  "record_context_budget_passes": 972,
+  "arm_totals": {
+    "bm25_fifo": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 24,
+      "paid_inspections": 60
+    },
+    "v2_goal": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    },
+    "v2_hybrid": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    },
+    "v2_recency": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 24,
+      "paid_inspections": 60
+    },
+    "v2_salience": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    },
+    "v3_goal": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    },
+    "v3_hybrid": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    },
+    "v3_recency": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 24,
+      "paid_inspections": 60
+    },
+    "v3_salience": {
+      "worlds": 108,
+      "completed_projects": 252,
+      "missed_promises": 12,
+      "paid_inspections": 48
+    }
+  }
+}

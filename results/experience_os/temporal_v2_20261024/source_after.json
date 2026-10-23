@@ -1,0 +1,14 @@
+{
+  "sha256": "3504ecdbd781a21650f3408a2ec5a8cc59e64f27700427fb51d3bb15abd3b5cc",
+  "files": {
+    "kalends/experience_os/temporal.py": "5bfccda3757ad0f5e46a8a77d88b765cdcf5cebdc1d22d04823e79f72660ed94",
+    "kalends/experience_os/temporal_bench.py": "9a6783e94c97d310eaa585a424d03ff06db2d5e73af6648b5ee3adb684ecf1c3",
+    "kalends/pompeii/temporal.py": "07527638009a1758add8a930513f38915306ec76bf485ca661f454fa8f52262c",
+    "kalends/pompeii/world.py": "ed1d664bcc582cd9e0cfd6b20e0ec80890293e06edf10d9d853940d8e257d903",
+    "kalends/pompeii/district.py": "3b79d6290b59952eeaa640adeffe74ac33b78b208f818881cae588f74b8a6e2a",
+    "kalends_rebirth/world.py": "af3140394d1281978989fb4139b322dff5dd2f23d789359eca552ce2ec1962f1",
+    "kalends_rebirth/cognitive_market.py": "57cd5fbeb37973804760b017542c5fc52506af2bc713b004dfa4844c401284ba",
+    "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "kalends_rebirth/immutable.py": "ee8a40f60732e649da922093342f408c0c02be504c611e3925b068e73a3bfc6d"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "classification": "controlled exploratory study, registered locally before case execution",
+  "seeds": [
+    21000,
+    21001,
+    21002,
+    21003,
+    21004,
+    21005,
+    21006,
+    21007,
+    21008,
+    21009,
+    21010,
+    21011
+  ],
+  "arms": [
+    "v2_recency",
+    "v2_salience",
+    "v2_goal",
+    "v2_hybrid",
+    "v3_recency",
+    "v3_salience",
+    "v3_goal",
+    "v3_hybrid",
+    "bm25_fifo"
+  ],
+  "families": [
+    "outdated",
+    "contradictory",
+    "shared_source",
+    "strategic_communication",
+    "long_absence",
+    "important_promise",
+    "changed_goals",
+    "forget_recover",
+    "delayed_consequence"
+  ],
+  "capacity": 16,
+  "context": 4,
+  "bootstrap_samples": 2000,
+  "primary_outcomes": [
+    "completed_projects",
+    "unused_capacity",
+    "inspection_fees",
+    "promises_kept",
+    "promises_missed"
+  ],
+  "secondary_score": "completed_projects - promises_missed - 0.1 * actual inspection fees",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "machine": "arm64"
+  },
+  "unit_of_uncertainty": "paired seed clusters, averaging the nine authored families within each seed",
+  "policy_budget": "One final allocation plus at most one real paid inspection; zero model calls. Changed-goal family additionally has one unexecuted initial plan.",
+  "source_fingerprints_before": {
+    "kalends/experience_os/cognition_bench.py": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576",
+    "kalends/experience_os/minds.py": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
+    "kalends/experience_os/commons.py": "fba542bb2e6865d6fb5aeacfdb9653a7f6c97ee9ac19916bd45d4b384c44d160",
+    "kalends/experience_os/compiler.py": "0a7fbf1b97df9b5c1420a4af6be97d8685367b23c4c933252bf2ef7dcb2b52b0",
+    "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "kalends/memory/retrieval.py": "17e6650b09bc29a2fda92eb31ac91b033cdef0b9126949921d796247c878425f",
+    "specs/shared_observatory.json": "12a9233a5a5cfd0658e7ea92802456d4390a92a0765fce951e9747023fe5ffa8",
+    "kalends/events.py": "06641e037fa6e6e078fa2f14e65f75410a4d7c3e87e306d78e4b3c47f39496c8",
+    "kalends/world.py": "aeba62bcba28cf9ba7cdd6690c0ec3a1cc586fe0353796c7f64ec159a4f3927e",
+    "kalends/observation.py": "f853ecd9d2a7ac039543bf4c928115f0b1245c9334bf1ccd44200765854fb738",
+    "kalends/city/simulation.py": "8979ad5fe361dc663f5ed3440ef65834a13a666e21f6fd9b9c8bed09a7ef1c9b",
+    "kalends/genesis/simulation.py": "a3a11137f0fad5ed6b99f6db17518507e275ece9b5e6fa6a94a344c329086749",
+    "kalends/pompeii/temporal.py": "07527638009a1758add8a930513f38915306ec76bf485ca661f454fa8f52262c",
+    "kalends/rng.py": "62e2b3ef4e5644edff28b3cbaa8b2f13c9f79f51f05e2c1a88d40a1a83685887"
+  }
+}
