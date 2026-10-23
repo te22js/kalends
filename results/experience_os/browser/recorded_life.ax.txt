@@ -104,16 +104,16 @@ Browser tab: 10, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8800/
 					103 text Questions to investigate
 				104 content list questions
 					105 container
-						106 AXListMarker 1. 
+						106 AXListMarker 1.
 						107 text Who knew the hardware condition before the first allocation, and what caused it to become available to others?
 					108 container
-						109 AXListMarker 2. 
+						109 AXListMarker 2.
 						110 text Which promises fit actual usable capacity at settlement, and which failed? Cite the events.
 					111 container
-						112 AXListMarker 3. 
+						112 AXListMarker 3.
 						113 text Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?
 					114 container
-						115 AXListMarker 4. 
+						115 AXListMarker 4.
 						116 text Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?
 				117 text This is simulated decision practice. No human learning or real-world transfer result has been established.
 			118 container
@@ -401,7 +401,7 @@ Browser tab: 10, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8800/
 						400 Choice 357: commit at minute 128160
 						401 Choice 358: allocate at minute 128160
 				402 button Execute alternative →, ID: retry
-		403 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		403 text One authoritative event history · Existing Kalends ledger, observation, economy and clock ·
 		404 text offline cognition · 0 external calls
 		405 text  · Local single-user prototype
 

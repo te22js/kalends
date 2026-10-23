@@ -104,16 +104,16 @@ Provider: offline
 					88 text Questions to investigate
 				89 content list questions
 					90 container
-						91 AXListMarker 1. 
+						91 AXListMarker 1.
 						92 text Who knew the hardware condition before the first allocation, and what caused it to become available to others?
 					93 container
-						94 AXListMarker 2. 
+						94 AXListMarker 2.
 						95 text Which promises fit actual usable capacity at settlement, and which failed? Cite the events.
 					96 container
-						97 AXListMarker 3. 
+						97 AXListMarker 3.
 						98 text Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?
 					99 container
-						100 AXListMarker 4. 
+						100 AXListMarker 4.
 						101 text Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?
 				102 text This is simulated decision practice. No human learning or real-world transfer result has been established.
 			103 container
@@ -168,7 +168,7 @@ Provider: offline
   "alternative_hash": "7a12d030e739c829ea5551c798ed17888c5bafffe02040db2c9aa5bc12260577",
   "interpretation": "Executed omission with declared later commands; not an optimal or necessary-cause proof."
 }
-		121 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		121 text One authoritative event history · Existing Kalends ledger, observation, economy and clock ·
 		122 text offline cognition · 0 external calls
 		123 text  · Local single-user prototype
 

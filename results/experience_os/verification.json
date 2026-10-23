@@ -41,17 +41,18 @@
       "no captured console warning/error entries"
     ],
     "artifacts": {
-      "compiled_3d.ax.txt": "82ba823d3fba45bd3611fdf1274af1254e490f7d5263926588aee9c604c5d3c5",
+      "compiled_3d.ax.txt": "eeae217182582614bf693f2a4683152a42505fa06cd71462dccfe05f78e72c81",
       "compiled_3d.jpg": "58ccd09867b38057e66a5da3f5004bafa5446904b62013fb5d428395c8fc577d",
-      "default_life_preserved.ax.txt": "aaa3affc8cf2981cb1acc8bc0cac700b88150a19183f9919fddfe5db1e18f4a0",
+      "default_life_preserved.ax.txt": "c4dd72da132ef20028e8b1093b2b199a16c8cacad4be49b3d12e169e4d4a2b80",
       "lab.jpg": "e284fae3e79d4e08f8a8621e8aded28f03b6b0b501f885a3f7a20c36bc245f6e",
-      "learn_retry.ax.txt": "30902b9d725b4bd06f156bf783b5e4ca86515ae723f4297dfd9e828c10193dd3",
+      "learn_retry.ax.txt": "e15448ff5277444f4e46c7ea56c6c3fb38c2aa5a17ced13fd4fe3e6f2ad0538d",
       "learn_retry.jpg": "1dff5815c781798ff4c8c82e44a874d1a94cde4a3fe32b1b3d563ca055123a56",
-      "live.ax.txt": "88bac32d296bc4d7e54a87f23c3b75554a980180e80768bcc2bec1276d1094ea",
+      "live.ax.txt": "e523d1e6dd0821e9bc80d8956bb678a36e8a6df1a083a45016b5677b772805a4",
       "live.jpg": "2864f42afc36a2fd62cdb9cd6d24b5bf50c231d7dbce269588aa42de6aa3ec4b",
-      "recorded_life.ax.txt": "9a3f35d9edd17ce2cf98f0f1a6973f3b4d16a07406442e49676a28b1878ee1aa",
+      "recorded_life.ax.txt": "30c0c4c55c61c9c696f9cc1b3637009648825aa5b5576768d9eaaf7c8045d6ad",
       "recorded_life.jpg": "0bf09612d6d4f7c3e07592d3e5edf501124520662cc6a15de9a22f93511a3e19"
-    }
+    },
+    "text_normalization": "Accessibility captures preserve content/order with trailing line whitespace normalized; screenshots are unmodified."
   },
   "original_journals": {
     ".kalends/immersion_session.json": {
@@ -112,15 +113,15 @@
     "exact_demo_restarts": true
   },
   "current_source_sha256": {
-    "kalends/experience_os/__init__.py": "47a84e30006fb7628aa2809beafc6d7b6afe5b1756fc55fd255bc592d8724206",
+    "kalends/experience_os/__init__.py": "f608e7d2a88056c963e54c9e6da9e1e0f7177bcc071a915050f4a11c682edc16",
     "kalends/experience_os/cognition_bench.py": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576",
-    "kalends/experience_os/commons.py": "aacf1336c22c3cd7f144a5c8e9352524f2f9cfadfb41761f0d7fd6306dc00ef9",
+    "kalends/experience_os/commons.py": "c032e0966f301d56dedd4e8251522f669a3fa8e85024b0275c0522452cb85cb7",
     "kalends/experience_os/compiler.py": "69a4a1a4eaf36f9893324e449ccc8059bbee16f2f2c37138411550cb77179c8e",
     "kalends/experience_os/contracts.py": "988fdf0a504fb189beff5a037c49b8f4b34bdeebfaaf13497e38fd29b9b5e759",
     "kalends/experience_os/life_demo.py": "495f3292ee7c9cf2b09f31f304ef2e7ff4935e8dd430861503270e47599b9b94",
     "kalends/experience_os/minds.py": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
     "kalends/experience_os/providers.py": "7aac733480f233475c60db6c3eabbb11ed84987d93e0ad3ecd5ffe125d3809e5",
-    "kalends/experience_os/runtime.py": "9797414b96df3955ef846465b26a61b3c12da7f95297329d64b28d91db4bda4f",
+    "kalends/experience_os/runtime.py": "a9c8047b3d01dfa93187bb1d36d99432fad384a5c37040b071ea7f249ae41dc9",
     "kalends/experience_os/server.py": "05de169590d18cbb02b365fda62d31383e197ef5855ca3caa83739754d478740",
     "kalends/experience_os/static/app.js": "dd3e3f157332872c842e4e834e0b606a78d27b1a92b46487fc7457a4f30508f6",
     "kalends/experience_os/static/game-host.js": "12e82de16e3a2ddbd97c2277e6ea890875b29ba1ed941b1619751274fae38113",

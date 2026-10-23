@@ -93,7 +93,7 @@ Browser tab: 10, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8800/
 					472 text DAY 1 · MINUTE 0 · RECORD 9
 					473 text team_b requests 2 capacity units
 					474 button Inspect recorded support ↗
-		398 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		398 text One authoritative event history · Existing Kalends ledger, observation, economy and clock ·
 		399 text offline cognition · 0 external calls
 		400 text  · Local single-user prototype
 

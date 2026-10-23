@@ -64,16 +64,16 @@ Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/"
 					130 text Questions to investigate
 				131 content list questions
 					132 container
-						133 AXListMarker 1. 
+						133 AXListMarker 1.
 						134 text Which account could you legitimately access before committing, and which was still private?
 					135 container
-						136 AXListMarker 2. 
+						136 AXListMarker 2.
 						137 text Which accepted choice moved actual coins, flour or service time? Cite its event.
 					138 container
-						139 AXListMarker 3. 
+						139 AXListMarker 3.
 						140 text What changed after your absence, and which actual events support that explanation?
 					141 container
-						142 AXListMarker 4. 
+						142 AXListMarker 4.
 						143 text Which alternative can the same command history replay, and which later actions become infeasible?
 				144 text This is simulated decision practice. No human learning or real-world transfer result has been established.
 			145 container
@@ -90,7 +90,7 @@ Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/"
 				156 text Remove one accepted choice and replay the recorded continuation. Changed outcomes are computed; infeasible later commands are disclosed.
 				157 pop up button (collapsed, settable) ID: retry-choice, Secondary Actions: Expand
 				158 button (disabled) Execute alternative →, ID: retry
-		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock ·
 		86 text offline cognition · 0 external calls
 		87 text  · Local single-user prototype
 

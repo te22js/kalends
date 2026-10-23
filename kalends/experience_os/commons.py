@@ -342,4 +342,3 @@ class CoordinationWorld(CitySimulation):
     def fidelity_state(self):
         return {"minute": self.minute, "state": asdict(self.state), "accounts": dict(self.economy.cash), "clock": self.clock.snapshot(),
                 "minds": {a: m.to_dict() for a, m in self.minds.items()}, "decisions": copy.deepcopy(self.decisions), "ledger": self.ledger.content_hash()}
-

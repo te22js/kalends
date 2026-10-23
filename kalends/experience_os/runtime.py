@@ -367,4 +367,3 @@ class ExperienceGameFacade:
         result = self.runtime.commit("action", interpretation["action"])
         session.proposals.clear()
         return {**self.state(), "receipt": result["receipt"]}
-

@@ -70,7 +70,7 @@ Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/"
 					113 container interaction
 						114 text Sabina · food seller
 						115 button Talk E, ID: interact
-							116 text Talk 
+							116 text Talk
 							117 text E
 					69 container controls
 						70 checkbox Live, Value: 0, ID: live
@@ -78,7 +78,7 @@ Browser tab: 9, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8801/"
 						72 button A day later, ID: day-later
 						73 button Description: Follow Aelia, ID: recenter
 					118 text 08:30 · Six sacks. Two promises.
-		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		85 text One authoritative event history · Existing Kalends ledger, observation, economy and clock ·
 		86 text offline cognition · 0 external calls
 		87 text  · Local single-user prototype
 
