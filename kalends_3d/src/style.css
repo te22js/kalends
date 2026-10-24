@@ -15,6 +15,7 @@ body{--ui-scale:1}body[data-text-size="large"]{--ui-scale:1.2}body[data-text-siz
 #lead p{font-size:calc(14px * var(--ui-scale));line-height:1.5;opacity:1;max-width:none}
 #lead button{font-size:calc(13px * var(--ui-scale));line-height:1.4;padding:8px 0;margin-top:6px}
 #guide-tools{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:4px}#lead #guide-tools button{width:auto;border:0;text-decoration:underline;text-underline-offset:3px;font-size:calc(12px * var(--ui-scale))}
+#lead-actions{position:sticky;top:0;z-index:2;background:#243b2d;box-shadow:0 5px 0 #243b2d;margin-bottom:12px}#lead-actions #lead-action{margin-top:0}
 #time-policy{display:block;font-size:calc(11px * var(--ui-scale));line-height:1.5;color:#f0d7a8;margin-top:10px}
 #guide-range{border-top:1px solid #dfceaa55;padding-top:8px;margin-top:8px}
 #world:focus-visible{outline:3px solid #f6d68c;outline-offset:-5px}
@@ -30,6 +31,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .speaker small,#conversation-status{font-size:calc(12px * var(--ui-scale));opacity:1}
 #topics button,#choices small,#speech-form label{font-size:calc(12px * var(--ui-scale));opacity:1}
 #choices button,#speech,#interpretations button,#review p,#interpretations p,#cancel-review{font-size:calc(14px * var(--ui-scale));line-height:1.5}
+#choices .choice-cost{font-weight:600;color:#314a2f}
 #speech{min-height:44px}#topics button{padding:9px}#choices small{color:#55513f}
 dialog{max-height:90vh;overflow:auto}dialog p,#settings label,#settings select,.journal-row p{font-size:calc(14px * var(--ui-scale));line-height:1.6;opacity:1}
 dialog nav{flex-wrap:wrap}dialog nav button,.journal-row button,.journal-row small,#resume{font-size:calc(12px * var(--ui-scale));white-space:normal;line-height:1.5}

@@ -12,7 +12,7 @@ export function guideView(value){
         id:string(action.id,80),target:string(action.target,80),recipient:string(action.recipient,80),
         location:string(action.location,80),card_id:string(action.card_id||action.card,80)}},
     hint:{text:string(hint.text,600),target:['person','location'].includes(target.type)&&string(target.id,80)?
-      {type:target.type,id:string(target.id,80),person:string(target.person,80),
+      {type:target.type,id:string(target.id,80),person:string(target.person,80),basis:string(target.basis,240),
         ...(Number.isFinite(target.x)&&Number.isFinite(target.y)?{x:target.x,y:target.y}:{}),
         ...(Number.isFinite(target.at)?{at:target.at}:{})}:null}};
 }
@@ -37,9 +37,13 @@ export function installSceneGuideHost({windowObject=globalThis.window,onGuide=()
 export function knownGuideTarget(guide,world,isNear=()=>false){
   const target=guide?.hint?.target;if(!target||!world)return null;
   if(target.type==='person')return isNear(target.id)&&world.nearby?.includes(target.id)?{type:'person',id:target.id}:null;
-  if(!world.map?.locations?.some(p=>p.id===target.id))return null;
+  // `street` is an existing canonical navigation floor, represented by public
+  // rectangles in map.streets rather than an entry in map.locations.
+  const publicStreet=target.id==='street'&&Number.isFinite(target.x)&&Number.isFinite(target.y)&&world.map?.streets?.some(r=>
+    [r.x,r.y,r.w,r.h].every(Number.isFinite)&&target.x>=r.x&&target.x<=r.x+r.w&&target.y>=r.y&&target.y<=r.y+r.h);
+  if(!world.map?.locations?.some(p=>p.id===target.id)&&!publicStreet)return null;
   return {type:'location',id:target.id,...(Number.isFinite(target.x)&&Number.isFinite(target.y)?
-    {x:target.x,y:target.y,person:target.person,at:target.at}:{})};
+    {x:target.x,y:target.y,person:target.person,...(Number.isFinite(target.at)?{at:target.at}:{}),...(target.basis?{basis:target.basis}:{})}:{})};
 }
 
 export function sceneActivity(actor,{moving=false,talking=false}={}){
@@ -85,6 +89,14 @@ export function quantityCopy(value,singular,plural=singular+'s'){
   return Number.isFinite(value)?value+' '+(value===1?singular:plural):'Quantity not recorded';
 }
 export function contractCopy(contract){return (contract.delivered??0)+' of '+quantityCopy(contract.quantity??2,'flour unit')+' delivered.';}
+export function choiceDetails(choice){
+  const description=string(choice?.description).trim(),cost=string(choice?.cost,600).trim(),reason=string(choice?.reason).trim();
+  const sentence=value=>value&&!/[.!?…]$/.test(value)?value+'.':value,details=[];
+  if(description&&description!==cost)details.push({kind:'description',text:sentence(description)});
+  if(cost)details.push({kind:'cost',text:sentence('Cost: '+cost)});
+  if(choice?.enabled===false&&reason&&reason!==description&&reason!==cost)details.push({kind:'reason',text:sentence(reason.startsWith('Needs ')?'This action needs '+reason.slice(6):reason)});
+  return details;
+}
 export function confirmationLabel(action,speaker){
   return ({hear_dispute:'Hear '+speaker+'’s account',examine_receipt:'Copy this account',examine_tablet:'Copy these instructions',
     verify_cart:'Pay for this check',inspect:'Pay for this inspection',work:'Start this shift',decline_dispute:'Leave the decision to the buyers',

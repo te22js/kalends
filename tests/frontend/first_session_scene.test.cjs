@@ -67,6 +67,23 @@ test('a stale contact hint preserves the admitted meeting point instead of track
  assert.deepEqual(target,{type:'location',id:'street',x:850,y:430,at:0,person:'Dama'});
  assert.notEqual(target.x,world.agents[1].x);assert.equal(knownGuideTarget({hint:{target:{type:'location',id:'private-room'}}},world),null);
 });
+test('the canonical street floor admits a public meeting point even though map.locations lists only named places',async()=>{
+ const {guideView,knownGuideTarget}=await modulePromise,sample={...world,map:{locations:world.map.locations.filter(p=>p.id!=='street'),streets:[{x:0,y:350,w:1600,h:130,name:'Via dell’Abbondanza'}]}};
+ const guide=guideView({hint:{target:{type:'location',id:'street',x:850,y:430,person:'Dama',basis:'public opening cart meeting point'}}});
+ assert.deepEqual(knownGuideTarget(guide,sample),{type:'location',id:'street',x:850,y:430,person:'Dama',basis:'public opening cart meeting point'});
+ assert.equal('at' in knownGuideTarget(guide,sample),false);assert.notEqual(knownGuideTarget(guide,sample).x,sample.agents[1].x);
+ assert.equal(knownGuideTarget({hint:{target:{type:'location',id:'street',x:850,y:800}}},sample),null,'an arbitrary point outside the declared street is not admitted');
+ assert.equal(knownGuideTarget({hint:{target:{type:'location',id:'private-room',x:850,y:430}}},sample),null);
+});
+test('an undated public street point never renders as a last sighting or an undefined timestamp',async()=>{
+ const {guideView,knownGuideTarget}=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function guidePlace('),end=source.indexOf('const sceneGuide=',begin),node={};
+ const sample={...world,map:{locations:world.map.locations.filter(p=>p.id!=='street'),streets:[{x:0,y:350,w:1600,h:130}]}};
+ const S={guide:guideView({enabled:true,step:{action:{kind:'scene',label:'Seek another account'}},hint:{target:{type:'location',id:'street',x:850,y:430,person:'Dama',basis:'public opening cart meeting point'}}}),renderer:{currentScene:'thermopolium',player:{position:{x:1225,y:656}}}};
+ const sandbox={S,$:()=>node,place:id=>sample.map.locations.find(p=>p.id===id),guideTarget:()=>knownGuideTarget(S.guide,sample),worldDistance:(a,b)=>Math.hypot(a.x-b.x,a.y-b.y)};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderGuideRange();assert.match(node.textContent,/Public meeting point for Dama/);assert.match(sandbox.guideActionText(),/Walk to the public street meeting point/);assert.doesNotMatch(node.textContent,/last.seen|undefined|world minute/i);
+ S.renderer.player.position={x:850,y:430};sandbox.renderGuideRange();assert.match(node.textContent,/You reached the public meeting point/);assert.doesNotMatch(node.textContent,/undefined|world minute/);
+ S.guide.hint.target.at=0;sandbox.renderGuideRange();assert.match(node.textContent,/last-seen point/);assert.match(node.textContent,/world minute 0/);
+});
 test('activity describes accepted movement and public work without inventing deliveries',async()=>{const {sceneActivity}=await modulePromise;
  assert.equal(sceneActivity({activity:'working at the food counter'}),'Working at the food counter');
  assert.equal(sceneActivity({activity:'carrying household instructions'},{moving:true}),'Walking · recorded movement');
@@ -123,18 +140,19 @@ test('a pending save blocks guide navigation and keeps its conversation and revi
 test('the marker hint closes only the local interaction and never walks or advances time',()=>{
  const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function prepareGuideNavigation('),end=source.indexOf('function renderContext(',begin),calls=[];
  const S={selected:'Sabina',renderer:{showTarget:(point,duration)=>calls.push(['marker',point,duration])}};
- const sandbox={S,bridge:{pending:false},guideTarget:()=>({type:'location',id:'thermopolium'}),place:()=>({name:'Food counter',door:{x:1225,y:480}}),closeConversation:()=>{S.selected=null;calls.push('close conversation');},closeDialog(){},sceneGuide:{request:action=>calls.push(action)},toast:text=>calls.push(text),go:()=>assert.fail('A marker hint cannot walk')};
+ const sandbox={S,bridge:{pending:false},guideTarget:()=>({type:'location',id:'thermopolium'}),guidePlace:()=>({name:'Food counter',door:{x:1225,y:480}}),closeConversation:()=>{S.selected=null;calls.push('close conversation');},closeDialog(){},sceneGuide:{request:action=>calls.push(action)},toast:text=>calls.push(text),go:()=>assert.fail('A marker hint cannot walk')};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.showGuideWay();assert.equal(S.selected,null);assert.ok(calls.some(c=>Array.isArray(c)&&c[0]==='marker'));assert.ok(calls.some(c=>typeof c==='string'&&c.includes('does not walk or advance time')));
 });
 test('the shipped conversation renders readable opening, topic questions and an explicit acceptance verb',async()=>{
  const helpers=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
  const begin=source.indexOf('function renderConversation('),end=source.indexOf('async function propose(',begin),elements=new Map();
  const $=id=>{if(!elements.has(id))elements.set(id,{style:{}});return elements.get(id);};
- const S={selected:'Sabina',line:null,topic:null,context:{greeting:{text:'Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed.'},topics:[{id:'role',label:'Your life here',text:'I run the counter.'}],choices:[]},proposal:null};
+ const S={selected:'Sabina',line:null,topic:null,context:{greeting:{text:'Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed.'},topics:[{id:'role',label:'Your life here',text:'I run the counter.'}],choices:[{id:'support_market',enabled:true,label:'Help the market arrangement',description:'Pay the carrying charge and direct four flour units to Sabina and two to Felix.',cost:'3 coins · 20 minutes'},{id:'duplicate',enabled:true,label:'A repeated cost fixture',description:'1 coin',cost:'1 coin'}]},proposal:null};
  const sandbox={S,$,all:()=>[],person:()=>({role:'food seller'}),w:()=>world,bridge:{pending:false},textOf:value=>typeof value==='string'?value:value?.text||value?.title||'',escapeHTML:value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'),...helpers};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderConversation();
  assert.equal($('#dialogue-line').textContent,'I paid Marcus for flour for my food counter. The household also has a claim on the cart. Hear our accounts before deciding whether to help.');
  assert.match($('#topics').innerHTML,/What is your work here\?/);
+ assert.match($('#choices').innerHTML,/Pay the carrying charge and direct four flour units to Sabina and two to Felix\./);assert.match($('#choices').innerHTML,/Cost: 3 coins · 20 minutes\./);assert.equal(($('#choices').innerHTML.match(/1 coin/g)||[]).length,1,'an exact duplicate cost is rendered once');
  S.proposal={reply:null,interpretations:[{id:'zero',label:'Review the arrangement',action:{action:'support_market'},cost:'0 coins',consequence:'No delivery has been recorded yet.'}]};sandbox.renderConversation();
  assert.match($('#interpretations').innerHTML,/0 coins/);assert.match($('#interpretations').innerHTML,/Confirm arrangement/);assert.match($('#interpretations').innerHTML,/No delivery has been recorded yet/);
 });
@@ -153,6 +171,11 @@ test('arrival owns the guidance layer until the participant enters the scene',()
  const sandbox={S,$:()=>lead,w:()=>null};vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);
  sandbox.renderHUD();assert.equal(lead.hidden,true);S.started=true;sandbox.renderHUD();assert.equal(lead.hidden,false);
  const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8');assert.match(html,/<aside id="lead"[^>]* hidden>/);
+});
+test('the objective primary and Help remain before long copy in keyboard and reading order',()=>{
+ const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8'),css=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/style.css'),'utf8');
+ assert.ok(html.indexOf('id="lead-action"')<html.indexOf('id="lead-copy"'));assert.ok(html.indexOf('id="guide-help"')<html.indexOf('id="lead-copy"'));
+ assert.match(css,/#lead-actions\{position:sticky;top:0;[^}]*background:#243b2d/);
 });
 test('crowded scene labels retain every target while reserving the primary guide marker',async()=>{
  const {layoutSceneLabels}=await modulePromise,labels=[
