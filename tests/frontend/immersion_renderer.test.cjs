@@ -97,3 +97,11 @@ test('reduced motion may select the conversation camera distance immediately',as
   const r=await cameraHarness();r.reduced=true;r.selected='Felix';r.updateCamera(1/60);
   assert.equal(r.cameraEffectiveDistance,13.5*.82);
 });
+
+test('the conversation framing retains its initial focus while a recorded NPC route finishes',async()=>{
+  const r=await cameraHarness();r.follow=true;r.cameraFocus={x:0,y:.7,z:0,lerp(target){this.x=target.x;this.y=target.y;this.z=target.z;}};
+  r.selected='Felix';r.updateCamera(1/60);const fixed={...r.conversationCamera};
+  r.actors.get('Felix').entity.getPosition=()=>({x:4,y:0,z:3});r.updateCamera(1/60);
+  assert.deepEqual(r.conversationCamera,fixed);assert.equal(r.cameraFocus.x,fixed.x);assert.equal(r.cameraFocus.z,fixed.z);
+  r.selected=null;r.updateCamera(1/60);assert.equal(r.conversationCamera,null);
+});

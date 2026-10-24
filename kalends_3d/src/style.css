@@ -6,3 +6,34 @@
 #interpretations h4{font-size:15px;font-weight:400;margin:8px 0}#interpretations p{font:11px/1.5 system-ui;margin:8px 0}#interpretations .quoted-cost{color:#3b5338;font-weight:600}#interpretations button{width:100%}#interpretations button:disabled{opacity:.45}
 
 #lead{padding:17px 18px;background:linear-gradient(110deg,#243b2de8,#243b2db8);border:1px solid #e0c38922;border-radius:4px;backdrop-filter:blur(8px);width:260px}#lead h2{font-size:23px}#lead p{font-size:11px;text-shadow:none}#lead button{margin-top:13px}@media(max-width:750px){#lead{width:205px;padding:12px 14px}#lead h2{font-size:19px}}
+
+/* The guide is an immediate instruction, with help recoverable in place. */
+body{--ui-scale:1}body[data-text-size="large"]{--ui-scale:1.2}body[data-text-size="largest"]{--ui-scale:1.4}
+#lead{width:310px;max-width:calc(100vw - 36px);max-height:calc(100vh - 265px);overflow:auto;background:#243b2df2;text-shadow:none}
+#lead .eyebrow{font-size:calc(10px * var(--ui-scale));letter-spacing:.1em}
+#lead h2{font-size:calc(22px * var(--ui-scale));line-height:1.2}
+#lead p{font-size:calc(14px * var(--ui-scale));line-height:1.5;opacity:1;max-width:none}
+#lead button{font-size:calc(13px * var(--ui-scale));line-height:1.4;padding:8px 0;margin-top:6px}
+#guide-tools{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:4px}#lead #guide-tools button{width:auto;border:0;text-decoration:underline;text-underline-offset:3px;font-size:calc(12px * var(--ui-scale))}
+#time-policy{display:block;font-size:calc(11px * var(--ui-scale));line-height:1.5;color:#f0d7a8;margin-top:10px}
+#guide-range{border-top:1px solid #dfceaa55;padding-top:8px;margin-top:8px}
+#world:focus-visible{outline:3px solid #f6d68c;outline-offset:-5px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d49437;outline-offset:3px}
+.nameplate{font-size:calc(12px * var(--ui-scale));letter-spacing:0}.nameplate small{font-size:calc(10px * var(--ui-scale));white-space:normal;line-height:1.4;max-width:190px;background:#23362cf0;border-radius:3px;padding:3px 5px}
+.doorplate{font-size:calc(12px * var(--ui-scale));padding:8px 11px}
+#loading .arrival-copy{font:calc(17px * var(--ui-scale))/1.6 Georgia,serif;max-width:620px;opacity:1;margin-bottom:18px}
+#loading h1{font-size:clamp(38px,5.8vw,80px);margin:18px 0}#loading small{font-size:calc(12px * var(--ui-scale));opacity:.9;max-width:540px;line-height:1.5}#loading #load-status{opacity:1;font-size:14px}#loading #skip-controls{font-size:14px;width:260px;padding:12px 0;border-top:0}
+#conversation{width:min(470px,calc(100vw - 36px));max-height:calc(100vh - 130px);bottom:88px}
+#dialogue-line{font-size:calc(17px * var(--ui-scale));line-height:1.55}
+.speaker small,#conversation-status{font-size:calc(12px * var(--ui-scale));opacity:1}
+#topics button,#choices small,#speech-form label{font-size:calc(12px * var(--ui-scale));opacity:1}
+#choices button,#speech,#interpretations button,#review p,#interpretations p,#cancel-review{font-size:calc(14px * var(--ui-scale));line-height:1.5}
+#speech{min-height:44px}#topics button{padding:9px}#choices small{color:#55513f}
+dialog{max-height:90vh;overflow:auto}dialog p,#settings label,#settings select,.journal-row p{font-size:calc(14px * var(--ui-scale));line-height:1.6;opacity:1}
+dialog nav{flex-wrap:wrap}dialog nav button,.journal-row button,.journal-row small,#resume{font-size:calc(12px * var(--ui-scale));white-space:normal;line-height:1.5}
+.journal-row{align-items:flex-start}.journal-row button{flex-shrink:0;max-width:45%}
+#time-review button:not(header button){background:#3b4d39;color:#f6edda;padding:12px 16px;margin:8px 10px 0 0;border-radius:3px;font:calc(14px * var(--ui-scale))/1.5 system-ui}
+#controls{font-size:calc(12px * var(--ui-scale));padding:16px 24px}#controls button{font-size:calc(12px * var(--ui-scale));min-height:42px;padding:9px 11px}#controls>div{flex-wrap:wrap;justify-content:flex-end}#controls small{opacity:1}
+#toast{font-size:calc(14px * var(--ui-scale));max-height:35vh;overflow:auto}
+@media(max-width:900px){#controls>span{max-width:30%;line-height:1.5}#lead{width:270px;top:112px}#location-caption{display:none}}
+@media(max-width:600px){#lead{left:12px;top:114px;width:250px;max-height:43vh;padding:10px 12px}#lead h2{font-size:calc(19px * var(--ui-scale));margin:6px 0}#lead p{font-size:calc(13px * var(--ui-scale))}#guide-tools{gap:0 8px}#lead #guide-tools button{font-size:calc(11px * var(--ui-scale))}#time-policy{font-size:calc(10px * var(--ui-scale));margin-top:5px}#controls{padding:10px 12px}#controls>div{gap:5px;max-width:100%}#controls>span{display:none}#controls button{font-size:calc(11px * var(--ui-scale));padding:8px}#conversation{right:12px;bottom:112px;width:calc(100vw - 24px);max-height:calc(100vh - 135px);padding:16px}#interaction{bottom:120px;max-width:90vw}#loading{padding:24px;overflow:auto}#loading .arrival-copy{font-size:calc(15px * var(--ui-scale));line-height:1.45}#loading small{margin-top:14px}#loading progress{margin-bottom:15px}.journal-row{display:block}.journal-row button{max-width:100%;margin-top:8px}dialog{padding:20px}}
