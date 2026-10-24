@@ -1,0 +1,18 @@
+{
+  "branch": "codex/continuity-release-prep",
+  "release_commit": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+  "checked": {
+    "saves": 26,
+    "historical_artifacts": 2212
+  },
+  "live_display_metadata_drift": [
+    {
+      "path": ".kalends/next_phase/.product/state.json",
+      "baseline_sha256": "0cdb830008ec591def54ad4b0683c4035f2d73bdc97926af5aeffb26b1326f2b",
+      "current_sha256": "95dcfcc40b28b175d090437f197583a527dbd47bb7d12b50a8ea6644ac45f3ac",
+      "attribution": "Existing-process/external change; origin unconfirmed. No claim of byte preservation for this metadata."
+    }
+  ],
+  "candidate": "frozen",
+  "checked_at_utc": "2026-10-24T15:32:54.244079+00:00"
+}

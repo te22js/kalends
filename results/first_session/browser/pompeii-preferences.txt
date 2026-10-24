@@ -1,0 +1,41 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			6 text Pompeii
+			7 text Aelia · ed48dde8
+			8 text Day 1 · 08:16 · World time
+			9 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container Pompeii · your saved life
+			14 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_11a5ed48dde8
+				15 container settings
+					16 container
+						17 heading Make yourself at home., Value: 2
+							18 text Make yourself at home.
+						19 button Description: Close settings, ID: close-settings
+					20 container
+						21 text Visual quality
+						22 pop up button (collapsed, settable) Visual quality, Value: Balanced · soft shadows, MSAA, ID: quality, Secondary Actions: Expand
+							23 menu
+								24 High · shadows, ambient occlusion, MSAA
+								25 (selected) Balanced · soft shadows, MSAA
+								26 Low · reduced resolution
+					27 container
+						28 text Text size
+						29 pop up button (collapsed, settable) Text size, Value: Extra large, ID: text-size, Secondary Actions: Expand
+							30 menu
+								31 Standard
+								32 Large
+								33 (selected) Extra large
+					34 checkbox (settable, integer) Description: Reduced motion, Value: 1, ID: reduced
+					35 checkbox (settable, integer) Description: Ambient sound, Value: 0, ID: sound
+					36 text Walk: WASD or arrow keys. Interact: E. Stop or leave a conversation: Escape. Journal: J. Leave a room: X.
+					37 text Right-drag to adjust the view · Wheel to zoom · [ / ] rotate · F follows Aelia. The view stays fixed while you speak.
+					38 text Attested places, fictional lives. The district is a schematic artistic reconstruction, not a surveyed model.
+
+The focused UI element is 29 pop up button (collapsed, settable) Text size, Value: Extra large, ID: text-size, Secondary Actions: Expand

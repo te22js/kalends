@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "lives": {
+    "pompeii_life": {
+      "template_id": "pompeii_life",
+      "created_at": "2026-10-24T14:42:11.693687+00:00",
+      "updated_at": null,
+      "started": false,
+      "example": false,
+      "seen_revision": 0,
+      "last_seen_minute": 0,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": []
+    },
+    "shared_observatory": {
+      "template_id": "shared_observatory",
+      "created_at": "2026-10-24T14:42:11.693824+00:00",
+      "updated_at": null,
+      "started": false,
+      "example": false,
+      "seen_revision": 0,
+      "last_seen_minute": 0,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": []
+    },
+    "observatory_long_life": {
+      "template_id": "shared_observatory",
+      "created_at": "2026-10-24T14:42:12.279745+00:00",
+      "updated_at": null,
+      "started": true,
+      "example": true,
+      "seen_revision": 0,
+      "last_seen_minute": 0,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": []
+    },
+    "pompeii_long_life": {
+      "template_id": "pompeii_life",
+      "created_at": "2026-10-24T14:42:13.042688+00:00",
+      "updated_at": null,
+      "started": true,
+      "example": true,
+      "seen_revision": 0,
+      "last_seen_minute": 0,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": []
+    },
+    "pompeii_11a5ed48dde8": {
+      "template_id": "pompeii_life",
+      "created_at": "2026-10-24T14:42:57.994793+00:00",
+      "updated_at": "2026-10-24T15:20:00.853366+00:00",
+      "started": true,
+      "example": false,
+      "seen_revision": 35,
+      "last_seen_minute": 16,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": [],
+      "guide": {
+        "version": "first-session-v1",
+        "enabled": false,
+        "learn": true,
+        "practice": false,
+        "guided_origin": true,
+        "ack": [
+          "role_arrival",
+          "reflection_done"
+        ],
+        "read_cards": [
+          "food_counter"
+        ]
+      }
+    },
+    "observatory_188b91ee9911": {
+      "template_id": "shared_observatory",
+      "created_at": "2026-10-24T15:02:09.077567+00:00",
+      "updated_at": "2026-10-24T15:18:25.153564+00:00",
+      "started": true,
+      "example": false,
+      "seen_revision": 5,
+      "last_seen_minute": 1440,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": [],
+      "guide": {
+        "version": "first-session-v1",
+        "enabled": false,
+        "learn": false,
+        "practice": false,
+        "ack": [
+          "role_arrival",
+          "request_read",
+          "reflection_done"
+        ],
+        "read_cards": [],
+        "guided_origin": true
+      }
+    },
+    "pompeii_a21844646586": {
+      "template_id": "pompeii_life",
+      "created_at": "2026-10-24T15:17:02.406026+00:00",
+      "updated_at": "2026-10-24T15:24:09.483594+00:00",
+      "started": true,
+      "example": false,
+      "seen_revision": 2,
+      "last_seen_minute": 360,
+      "operator_exposed": false,
+      "telemetry_opt_in": false,
+      "provenance_unknown": false,
+      "notes": [],
+      "bookmarks": [],
+      "guide": {
+        "version": "first-session-v1",
+        "enabled": true,
+        "learn": true,
+        "practice": true,
+        "guided_origin": true,
+        "ack": [
+          "role_arrival",
+          "controls_known"
+        ],
+        "read_cards": []
+      },
+      "practice_of": {
+        "life_id": "pompeii_11a5ed48dde8",
+        "revision": 38
+      }
+    }
+  }
+}

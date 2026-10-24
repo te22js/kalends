@@ -1,0 +1,76 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			6 text Pompeii
+			7 text Aelia · ed48dde8
+			8 text Day 1 · 08:02 · World time
+			9 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container world-main
+			21 container Pompeii · your saved life
+				22 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_11a5ed48dde8
+					23 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+					24 container names
+						25 text Aelia · you
+						26 button Sabina, Waiting by her disputed order. Talk
+							27 text Sabina
+							28 text Waiting by her disputed order · E to talk
+						29 button Marcus, Minding the flour cart. Approach to speak
+							30 text Marcus
+							31 text Minding the flour cart · approach to speak
+						32 button Dama, Carrying household instructions. Talk
+							33 text Dama
+							34 text Carrying household instructions · E to talk
+						35 button Walk to Felix's bread counter
+					36 container hud
+						37 button Description: Open game menu, ID: menu-button
+							38 text KALENDS
+							39 text POMPEII · 79 CE
+						40 container
+							41 text DAY 1
+							42 text 08:02
+							43 text VIA DELL’ABBONDANZA
+						44 container
+							45 text 6 coins
+							46 button Journal J, ID: journal-button
+								47 text Journal 
+								48 text J
+							49 button Description: Settings, ID: settings-button
+					50 container Description: Your next step, ID: lead
+						51 text YOUR NEXT STEP
+						52 heading Talk to Sabina, the food seller., Value: 2, ID: lead-title
+							53 text Talk to Sabina, the food seller.
+						54 text When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it.
+						55 text You are close enough to Sabina. Select them or press E.
+						56 button Find Sabina and speak, ID: lead-action
+						57 container guide-tools
+							58 button What should I do next?, ID: guide-help
+							59 button Show me the way, ID: guide-hint
+							60 button Turn guidance off, ID: guide-toggle
+						61 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+					62 container location-caption
+						63 text VIA DELL’ABBONDANZA
+						64 text Attested places · fictional lives
+					65 container interaction
+						66 text Sabina · food seller · Waiting by her disputed order
+						67 button Talk E, ID: interact
+							68 text Talk 
+							69 text E
+					70 container controls
+						71 container movement-controls
+							72 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+						73 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+						74 button Wait 30m, ID: wait
+						75 button A day later, ID: day-later
+						76 button Description: Follow Aelia, ID: recenter
+			18 container world-notice
+				77 text Your place is still here.
+				19 text World time advances by 1 minutes World time advances by 1 minutes
+				20 button Continue from here →
+
+The focused UI element is 23 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.

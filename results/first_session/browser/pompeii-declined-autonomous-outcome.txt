@@ -1,0 +1,58 @@
+Browser tab: 16, Title: "Aelia — a place in the city · separate practice copy · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_a21844646586".
+0 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586
+	1 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_a21844646586#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			15 text Pompeii
+			16 text Aelia · Practice copy · 44646586
+			17 text Day 1 · 14:00 · World time
+			18 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		13 container Pompeii · your saved life
+			14 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_a21844646586
+				19 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				20 container names
+					21 button Marcus, Keeping the trader's accounts. Approach to speak
+					22 text Aelia · you
+					23 button Walk to Felix's bread counter
+				24 container hud
+					25 button Description: Open game menu, ID: menu-button
+						26 text KALENDS
+						27 text POMPEII · 79 CE
+					28 container
+						29 text DAY 1
+						30 text 14:00
+						60 text VIA DELL’ABBONDANZA
+					32 container
+						33 text 6 coins
+						34 button Journal J, ID: journal-button
+							35 text Journal 
+							36 text J
+						37 button Description: Settings, ID: settings-button
+				38 container Description: Your next step, ID: lead
+					39 text YOUR NEXT STEP
+					40 heading Your decision, and the history behind it., Value: 2, ID: lead-title
+						41 text Your decision, and the history behind it.
+					42 container lead-actions
+						43 button Review what happened, ID: lead-action
+						44 container guide-tools
+							45 button What should I do next?, ID: guide-help
+							46 button Turn guidance off, ID: guide-toggle
+					47 text The recorded delivery sent 6 flour units to Lucius. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.
+					48 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				49 container location-caption
+					61 text VIA DELL’ABBONDANZA
+					62 text Attested places · fictional lives
+				52 container controls
+					53 container movement-controls
+						54 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					55 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					56 button Wait 30m, ID: wait
+					57 button A day later, ID: day-later
+					58 button Description: Follow Aelia, ID: recenter
+				59 text It is now 14:00. The buyers settled their own bargain. Sabina still needs two flour units she can serve; helping now can open a place at her counter.
+
+The focused UI element is 19 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.

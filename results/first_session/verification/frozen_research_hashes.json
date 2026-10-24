@@ -1,0 +1,26 @@
+{
+  "verified_at_utc": "2026-10-24T15:25:55.325245+00:00",
+  "checks": {
+    "kalends/continuity_release/evaluation.py": true,
+    "tests/test_continuity_evaluation.py": true,
+    "docs/continuity_release/RESEARCH_PROTOCOL.md": true,
+    "docs/continuity_release/TASK_CONTRACT.md": true,
+    "docs/continuity_release/blind_design.md": true,
+    "docs/continuity_release/blind_manifest.json": true,
+    "kalends/next_phase/diagnostic.py": true,
+    "kalends/experience_os/minds.py": true,
+    "kalends_rebirth/minds.py": true,
+    "kalends/experience_os/cognition_bench.py": true,
+    "kalends/events.py": true,
+    "kalends/world.py": true,
+    "kalends/genesis/simulation.py": true,
+    "kalends/city/simulation.py": true,
+    "kalends/pompeii/temporal.py": true,
+    "kalends/memory/retrieval.py": true,
+    "kalends/memory/base.py": true,
+    "results/continuity_release/candidate_freeze.json": true,
+    "specs/continuity_release/development.json": true,
+    "specs/continuity_release/heldout.json": true
+  },
+  "all_match": true
+}

@@ -1,0 +1,28 @@
+Browser tab: 14, Title: "Your shared observatory · separate practice copy · Kalends", URL: "http://127.0.0.1:8822/lives/observatory_4ba95fb62e67".
+1 AXWebArea Your shared observatory · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/observatory_4ba95fb62e67
+	2 container Spend some time here., ID: time-dialog
+		3 container
+			4 text YOUR PACE
+		5 button Close time controls
+		6 heading Spend some time here., Value: 2, ID: time-heading
+			7 text Spend some time here.
+		8 text The world advances only when you play or choose to advance time. Waiting does not make promises or spend resources for you.
+		9 container known-deadlines
+			10 heading Start the next round, Value: 3
+				11 text Start the next round
+			12 text Advance from Day 1 · 23:59 to Day 2 · 00:00: 1 world minute.
+			13 text The previous delivery stays in your saved history. New requests become available when the next round opens.
+			14 text No open promise is recorded for the upcoming step. The previous settlement remains in your history.
+			15 button Confirm: start the next round
+		16 button Stay with the day Advance one hour through the exact scheduler.
+			17 text Stay with the day
+			18 text Advance one hour through the exact scheduler.
+		19 button Continue the day Advance up to one day, protecting known choice windows.
+			20 text Continue the day
+			21 text Advance up to one day, protecting known choice windows.
+		22 button Advance with highlights Up to one week. Read selected actual events afterward.
+			23 text Advance with highlights
+			24 text Up to one week. Read selected actual events afterward.
+		25 text Known deadlines can stop an advance early. Highlights are excerpts, not the complete history.
+
+The focused UI element is 5 button Close time controls

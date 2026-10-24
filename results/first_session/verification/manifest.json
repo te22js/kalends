@@ -1,0 +1,42 @@
+{
+  "checked_at_utc": "2026-10-24T15:32:54.244686+00:00",
+  "source_sha256": {
+    "kalends/experience_os/guide.py": "447476d5891683371b47be4a2c731eca6c68fd8f983519470cb198481e904431",
+    "kalends/experience_os/history_cards.py": "c3d16d7958cdcbe234df917a4cc1d98b4ef0138f1a5a917062ac23ac1101932a",
+    "kalends/experience_os/participant_copy.py": "0fec0f54e6d498e593d0062e9dba33d8ddd289fd6e73287d86c0ce49308b03fe",
+    "kalends/experience_os/history.py": "b7176a4b8e18a1ab2696c67d2e591c648ef12197f4b00e817f7c3c959a63c2fd",
+    "kalends/experience_os/product.py": "29989ecd01b95379fa665a8d0047cf01bb49c88a9bbc11f73964727fc9992a6b",
+    "kalends/experience_os/product_server.py": "faf21671297cbaee259e3cf724f9ceef77c5d0c76e065b78a4eeaea93589f8a9",
+    "kalends/experience_os/runtime.py": "7eecba90a7e36d99e54846506fc28734be4249e8a9a28d49fe9950c2ea40177c",
+    "kalends/experience_os/static/product/app.js": "994f0931e19be15911a6e39e141d049a55712cde4d3093e34bcb68e053f26a4a",
+    "kalends/experience_os/static/product/style.css": "ebbb49b451958e82d3fbfdbe702aa7ca76424146a20b1fa63ad53c8fa38e2552",
+    "kalends/experience_os/static/product/index.html": "5ca14b1db10752e67ac532b40830c46b90f19f359fe1739a79ab65924d90d4c3",
+    "kalends_3d/index.html": "220106c9f923eb9e860e9cab79af6a348d1efb42d8f67e2c43ee72549a2e26b0",
+    "kalends_3d/src/main.js": "6bc4fc677ca006c541f4e31bb2c449a6c064139dc306953748f0a3a6047a69cd",
+    "kalends_3d/src/scene_guide.js": "bb244b99768f87538cfa62d0c815710e662d620d411624331ea15555ec6d9a5c",
+    "kalends_3d/src/renderer.js": "029a3be9aee1cfa20dd6bfd8e2335c5d77469447fd83c4424e4fa603a8b3ef23",
+    "kalends_3d/src/style.css": "d8091e6639178118ff06b5b3f0d6f57beb10b17732d88866029aa96a118392cb"
+  },
+  "verification": {
+    "python": {
+      "passed": 1176,
+      "exit_code": 0,
+      "log": "pytest-final.log"
+    },
+    "frontend": {
+      "passed": 224,
+      "failed": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "log": "frontend-final.log"
+    },
+    "vite": {
+      "exit_code": 0,
+      "log": "vite-final.log",
+      "javascript": "index-CbuBMLFg.js",
+      "css": "index-BdUbm4iJ.css"
+    }
+  },
+  "human_test": "Not performed. Owner comprehension gate remains open.",
+  "browser_scope": "Agent native inputs in four separate disposable lives. PNG/AX/accepted journals; not a full-interface video."
+}

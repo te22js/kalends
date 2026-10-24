@@ -63,3 +63,22 @@ npm run build > /tmp/kalends-first-session-post-return-vite.log 2>&1
 Result on 24 October 2026 around 15:24 UTC: **224 frontend tests passed, 0 failed/skipped, 2.187 s**. Vite exited 0 in 1.40 s, producing **`index-CbuBMLFg.js` / `index-BdUbm4iJ.css`**, with the same three notices. `/tmp/kalends-first-session-post-return-head.log`, `git-before.log` and `git-after.log` record the source commit and dirty documentation/catalog artifacts. The corresponding frontend/build `.exit` files both contain 0.
 
 The earlier **1,174 Python passes apply only to `e04e26d`**. They do **not** cover the later `history.py` grouped-title change and its new test (`08796c5`). The integration owner is responsible for the final complete Python rerun; this agent did not repeat Python for a presentation-only scene fix. Human and native-browser release gates remain separate from these automated results.
+
+## Integration owner's final verification
+
+The complete backend suite was rerun after `08796c5` with the command above,
+redirected to `/tmp/kalends-first-session-final-python-post-browser.log`:
+**1,176 passed in 53.73 seconds**, exit 0. This includes the travel-clock grouping
+regression and the expanded rendered-copy cases. Python runtime sources were
+unchanged during that final run. The final frontend suite was then rerun after
+the last no-allocation explanatory sentence: **224 passed, 0 failed/skipped**, exit
+0, 703.87ms; `/tmp/kalends-first-session-frontend-final-post-browser.log`.
+The last edit clarifies that finishing settles a round even when there is no
+saved allocation; it changes no action or time behavior.
+
+Copies of both final logs, the successful final Vite build log, candidate/research
+hash checks, disabled-pilot status and the preservation audit are retained in
+`results/first_session/verification/`. The final native zero-allocation and
+next-round review captures verify the explanatory text and cancelled jump.
+These results supplement, rather than replace, `BROWSER_QA.md` and the outstanding
+human comprehension gate.

@@ -1,0 +1,53 @@
+Browser tab: 15, Title: "Kalends disposable viewport QA", URL: "http://127.0.0.1:8822/product/qa-viewport.html".
+1 AXWebArea Kalends disposable viewport QA, URL: 127.0.0.1:8822/product/qa-viewport.html
+	2 heading 390px viewport fixture, Value: 1
+		3 text 390px viewport fixture
+	4 text Use a disposable QA server. This checks embedded layout, not a physical mobile device.
+	5 container Kalends at 390 pixels
+		6 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586
+			7 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_a21844646586#world-main
+			8 container Description: Your world, ID: life-shell
+				9 container
+					10 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+					11 text Pompeii
+					12 text Aelia · Practice copy · 44646586
+					13 text Day 1 · 14:00 · World time
+					14 button Help, ID: help-button
+					15 button Your story, ID: story-button
+					16 button Description: World menu, ID: world-menu-button
+				17 container Pompeii · your saved life
+					18 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_a21844646586
+						19 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+						20 container names
+							21 text Aelia · you
+							22 button Walk to Felix's bread counter
+						23 container hud
+							24 button Description: Open game menu, ID: menu-button
+								25 text KALENDS
+								26 text POMPEII · 79 CE
+							27 container
+								28 text DAY 1
+								29 text 14:00
+								51 text VIA DELL’ABBONDANZA
+							31 container
+								32 text 6 coins
+								33 button Journal, ID: journal-button
+								34 button Description: Settings, ID: settings-button
+						35 container Description: Your next step, ID: lead
+							36 text YOUR NEXT STEP
+							37 heading Your decision, and the history behind it., Value: 2, ID: lead-title
+								38 text Your decision, and the history behind it.
+							39 container lead-actions
+								40 button Review what happened, ID: lead-action
+								41 container guide-tools
+									42 button What should I do next?, ID: guide-help
+									43 button Turn guidance off, ID: guide-toggle
+							44 text The recorded delivery sent 6 flour units to Lucius. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.
+							45 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+						46 container controls
+							47 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+							48 button Wait 30m, ID: wait
+							49 button A day later, ID: day-later
+							50 button Description: Follow Aelia, ID: recenter
+
+The focused UI element is 6 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586

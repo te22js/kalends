@@ -1,0 +1,173 @@
+Browser tab: 14, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8822/lives/observatory_188b91ee9911".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8822/lives/observatory_188b91ee9911
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/observatory_188b91ee9911#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			6 text Shared Observatory
+			7 text You, the coordinator · 91ee9911
+			8 text Day 1 · 23:59 · World time
+			9 text Saved locally
+			10 button Help, ID: help-button
+			11 button Your story, ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container world-main
+			14 container Description: Your next step, ID: guide-panel
+				15 container
+					16 text GUIDED ROUND
+				17 heading Read what actually happened., Value: 2
+					18 text Read what actually happened.
+				19 text The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 4 units and received 4 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 0 units. You promised 4 units to Lin, so that promise was not met.
+				20 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				21 button Review the actual result
+				22 button What should I do next?
+				23 button Turn guidance off
+			24 container observatory-stage
+				25 container
+					26 text SHARED OBSERVATORY · YOU ARE THE COORDINATOR
+				27 heading Three teams. One instrument., Value: 1
+					28 text Three teams. One instrument.
+				29 text Each team has work to complete. Read a request, obtain a report, then decide how to divide capacity. Promises are optional. A unit is a simplified share of instrument use in this exercise.
+				30 text Current round · Day 1 · 23:59
+				31 container
+					32 text THE SHARED INSTRUMENT
+					33 heading Twelve rated units. Three teams need them., Value: 2
+						34 text Twelve rated units.
+						35 text Three teams need them.
+					36 text Mira’s report described 8 usable units, observed Day 1 · 00:00. The instrument’s rated capacity is twelve. This earlier observation may no longer describe its current condition. Public exercise rule: a fragile condition supports eight usable units; a sound condition supports twelve. You must obtain evidence to know which condition was observed. Rated units · Requested: Amir 2 / Mira 2 / Lin 2
+					37 text At settlement, the instrument supplies Amir first, then Mira, then Lin. This exercise rule can leave a later team with less than you allocated.
+				38 container People you can speak with
+					39 checkbox Amir Survey, Value: 0
+						40 text Amir
+						41 text Survey
+					42 checkbox Mira Instrument systems, Value: 0
+						43 text Mira
+						44 text Instrument systems
+					45 checkbox Lin Follow-up, Value: 1
+						46 text Lin
+						47 text Follow-up
+				48 container Conversation with Lin
+					49 text FOLLOW-UP
+					50 heading Lin, Value: 2
+						51 text Lin
+					52 text “Our follow-up work also depends on time at the instrument. I need to know what we can actually count on.”
+					53 container
+						54 text Recorded settlement: Lin received 0 of 4 allocated units. 
+						55 button Read supporting evidence 
+					56 button (disabled) Discuss a promise
+					57 button Buy a direct inspection · 1 credit
+					58 container common-speech
+						59 text field (settable) Description: What would you like to say to Lin?, ID: common-speech-input
+						60 button Say
+					61 text You can ask about a report, an inspection, a promise or an allocation. Other requests may need clarification. Speaking does not confirm a choice.
+				62 container
+					63 heading A few recent moments, Value: 2
+						64 text A few recent moments
+					65 text Day 1 · 23:59
+					66 text The promise to Lin is missed.
+					67 button Read supporting evidence 
+					68 text Day 1 · 23:59
+					69 text Recorded settlements and deadlines revise the declared project register.
+					70 button Read supporting evidence 
+					71 text Day 1 · 23:59
+					72 text Round 1 executes 8/12 allocated units; 2 projects complete.
+					73 button Read supporting evidence 
+				74 container
+					75 container
+						76 text REQUESTED → PROMISED → ALLOCATED → DELIVERED
+					77 heading Choose an allocation., Value: 2
+						78 text Choose an allocation.
+					79 text The teams’ current requests are shown below. A promise creates an obligation; an allocation is a separate choice. Actual delivery is recorded at settlement.
+					80 container allocation-form
+						81 container
+							82 text Amir 2 requested · No promise · 4 allocated
+						83 stepper (disabled, settable, integer) Amir 2 requested · No promise · 4 allocated, Value: 4, ID: allocate-team_a
+						84 container
+							85 text Mira 2 requested · No promise · 4 allocated
+						86 stepper (disabled, settable, integer) Mira 2 requested · No promise · 4 allocated, Value: 4, ID: allocate-team_b
+						87 container
+							88 text Lin 2 requested · 4 promised · 4 allocated
+						89 stepper (disabled, settable, integer) Lin 2 requested · 4 promised · 4 allocated, Value: 4, ID: allocate-team_c
+						90 container allocation-total
+							91 text Total: 12 of 12 rated units.
+							92 text Your allocation exceeds the 8 usable units in your last dated report. If that condition still holds, the public execution order may leave a team short. You may review this plan if you intend that risk.
+						93 button (disabled) Round settled
+					94 text This round has settled. Advance to the next day for new choices.
+					95 heading Project requirements, Value: 3
+						96 text Project requirements
+					97 text Mira: 4 units in a settled batch; deadline minute 1440.
+					98 text Lin: 4 units in a settled batch; deadline minute 1440.
+					99 text Amir: 4 units in a settled batch; deadline minute 1440.
+					100 container
+						101 text You have  12 credits . A direct inspection costs 1.
+					102 heading What you have promised, Value: 2
+						103 text What you have promised
+					104 text No open promise is recorded for this round.
+					105 button Continue to the next round Review the time jump and your known commitments before confirming.
+						106 text Continue to the next round
+						107 text Review the time jump and your known commitments before confirming.
+					108 button Choose another time jump
+					109 link Description: Read your complete story , Value: 127.0.0.1:8822/lives/observatory_188b91ee9911/history
+				110 container ID: obs-result, ACTUAL RECORDED RESULT · DAY 1 · 23:59 What each team received Requests, promises, your allocation and actual delivery are different quantities. The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 4 units and received 4 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 0 units. You promised 4 units to Lin, so that promise was not met. Execution follows this exercise’s public order: Amir, then Mira, then Lin. It is not a universal observatory rule. Review my choice or try a separate alternative Continue to the next round Optional reflection: what was the difference between the amount you allocated and what was delivered? I have reviewed this result
+					111 container
+						112 text ACTUAL RECORDED RESULT · DAY 1 · 23:59
+					113 heading What each team received, Value: 2
+						114 text What each team received
+					115 table Requests, promises, your allocation and actual delivery are different quantities.
+						116 text Requests, promises, your allocation and actual delivery are different quantities.
+						117 row
+							118 cell
+								119 text Team
+							120 cell
+								121 text Requested
+							122 cell
+								123 text Promised
+							124 cell
+								125 text Allocated
+							126 cell
+								127 text Delivered
+						128 row
+							129 cell
+								130 text Amir
+							131 cell
+								132 text 2
+							133 cell
+								134 text No promise
+							135 cell
+								136 text 4
+							137 cell
+								138 text 4
+						139 row
+							140 cell
+								141 text Mira
+							142 cell
+								143 text 2
+							144 cell
+								145 text No promise
+							146 cell
+								147 text 4
+							148 cell
+								149 text 4
+						150 row
+							151 cell
+								152 text Lin
+							153 cell
+								154 text 2
+							155 cell
+								156 text 4
+							157 cell
+								158 text 4
+							159 cell
+								160 text 0
+					161 text The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.
+					162 text Amir was allocated 4 units and received 4 units.
+					163 text Mira was allocated 4 units and received 4 units.
+					164 text Lin was allocated 4 units and received 0 units.
+					165 text You promised 4 units to Lin, so that promise was not met.
+					166 text Execution follows this exercise’s public order: Amir, then Mira, then Lin. It is not a universal observatory rule.
+					167 link Description: Review my choice or try a separate alternative, Value: 127.0.0.1:8822/lives/observatory_188b91ee9911/reflect
+					168 button Continue to the next round
+					169 text Optional reflection: what was the difference between the amount you allocated and what was delivered?
+					170 button I have reviewed this result
+
+The focused UI element is 110 container ID: obs-result, ACTUAL RECORDED RESULT · DAY 1 · 23:59 What each team received Requests, promises, your allocation and actual delivery are different quantities. The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 4 units and received 4 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 0 units. You promised 4 units to Lin, so that promise was not met. Execution follows this exercise’s public order: Amir, then Mira, then Lin. It is not a universal observatory rule. Review my choice or try a separate alternative Continue to the next round Optional reflection: what was the difference between the amount you allocated and what was delivered? I have reviewed this result

@@ -1,0 +1,189 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container Your story, ID: story-drawer
+			5 container
+				6 text YOUR RECORDED HISTORY
+			7 heading Your story, Value: 2, ID: story-heading
+				8 text Your story
+			9 button Description: Close your story, ID: close-story
+			10 container Your story views
+				11 button Chapters
+				12 button People
+				13 button Reflect
+			14 container story-content
+				15 container
+					16 heading What you chose. What followed., Value: 3
+						17 text What you chose. What followed.
+					18 text Revisit an exact accepted action and the evidence available before it. Later corrections are not inserted into your earlier knowledge.
+				19 container
+					20 heading A choice to revisit, Value: 3
+						21 text A choice to revisit
+					22 pop up button (collapsed, settable) Description: Accepted action to revisit, Value: Day 1 · 08:16 · Pay for the market delivery, ID: reflect-choice, Secondary Actions: Expand
+						23 menu
+							24 Day 1 · 08:00 · Walk to a place
+							25 Day 1 · 08:01 · Walk to a place
+							26 Day 1 · 08:02 · Hear an account of the delivery dispute
+							27 Day 1 · 08:02 · Copy the food counter’s account
+							28 Day 1 · 08:02 · Walk to a place
+							29 Day 1 · 08:02 · Walk to a place
+							30 Day 1 · 08:03 · Walk to a place
+							31 Day 1 · 08:03 · Walk to a place
+							32 Day 1 · 08:03 · Walk to a place
+							33 Day 1 · 08:04 · Walk to a place
+							34 Day 1 · 08:05 · Walk to a place
+							35 Day 1 · 08:05 · Walk to a place
+							36 Day 1 · 08:06 · Walk to a place
+							37 Day 1 · 08:06 · Walk to a place
+							38 Day 1 · 08:07 · Walk to a place
+							39 Day 1 · 08:07 · Walk to a place
+							40 Day 1 · 08:07 · Walk to a place
+							41 Day 1 · 08:08 · Walk to a place
+							42 Day 1 · 08:08 · Walk to a place
+							43 Day 1 · 08:09 · Walk to a place
+							44 Day 1 · 08:09 · Walk to a place
+							45 Day 1 · 08:10 · Walk to a place
+							46 Day 1 · 08:10 · Walk to a place
+							47 Day 1 · 08:11 · Walk to a place
+							48 Day 1 · 08:11 · Walk to a place
+							49 Day 1 · 08:12 · Walk to a place
+							50 Day 1 · 08:12 · Walk to a place
+							51 Day 1 · 08:13 · Walk to a place
+							52 Day 1 · 08:13 · Walk to a place
+							53 Day 1 · 08:14 · Walk to a place
+							54 Day 1 · 08:14 · Walk to a place
+							55 Day 1 · 08:15 · Walk to a place
+							56 Day 1 · 08:15 · Walk to a place
+							57 Day 1 · 08:16 · Walk to a place
+							58 Day 1 · 08:16 · Copy the household instructions
+							59 (selected) Day 1 · 08:16 · Pay for the market delivery
+							60 Day 1 · 09:06 · Walk to a place
+					61 container then-evidence
+						62 heading What you knew then, Value: 4
+							63 text What you knew then
+						64 text Most recent 8 of 55 admitted records.
+						65 container
+							66 text Day 1 · 08:14  · You walk through the street.
+						67 container
+							68 text Day 1 · 08:15  · World time advances by 1 minute.
+						69 container
+							70 text Day 1 · 08:15  · You walk through the street.
+						71 container
+							72 text Day 1 · 08:15  · You walk through the street.
+						73 container
+							74 text Day 1 · 08:16  · World time advances by 1 minute.
+						75 container
+							76 text Day 1 · 08:16  · You walk through the street.
+						77 container
+							78 text Day 1 · 08:16  · You walk through the street.
+						79 container
+							80 text Day 1 · 08:16  · You read the document “The household's delivery instructions”.
+						92 container
+							93 button (expanded) Earlier admitted records (47), Secondary Actions: Collapse
+								94 text Earlier admitted records (47)
+							95 text Day 1 · 08:00
+							96 text  · Morning opens on the Via dell'Abbondanza.
+							97 text Day 1 · 08:00
+							98 text  · You arrive as Aelia, a freedwoman earning her place between households and shops.
+							99 text Day 1 · 08:00
+							100 text  · Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”
+							101 text Day 1 · 08:00
+							102 text  · Hear a private account of the disputed six-sack cart.
+							103 text Day 1 · 08:01
+							104 text  · World time advances by 1 minute.
+							105 text Day 1 · 08:01
+							106 text  · You walk through the street.
+							107 text Day 1 · 08:02
+							108 text  · World time advances by 1 minute.
+							109 text Day 1 · 08:02
+							110 text  · You walk through the street.
+							111 text Day 1 · 08:02
+							112 text  · Sabina asks you to find out who the six sacks were actually promised to.
+							113 text Day 1 · 08:02
+							114 text  · You read the document “Sabina's wax account”.
+							115 text Day 1 · 08:02
+							116 text  · You walk through the street.
+							117 text Day 1 · 08:03
+							118 text  · World time advances by 1 minute.
+							119 text Day 1 · 08:03
+							120 text  · You walk through the street.
+							121 text Day 1 · 08:03
+							122 text  · You walk through the street.
+							123 text Day 1 · 08:03
+							124 text  · You walk through the street.
+							125 text Day 1 · 08:04
+							126 text  · World time advances by 1 minute.
+							127 text Day 1 · 08:04
+							128 text  · You walk through the street.
+							129 text Day 1 · 08:05
+							130 text  · World time advances by 1 minute.
+							131 text Day 1 · 08:05
+							132 text  · You walk through the street.
+							133 text Day 1 · 08:05
+							134 text  · You walk through the street.
+							135 text Day 1 · 08:06
+							136 text  · World time advances by 1 minute.
+							137 text Day 1 · 08:06
+							138 text  · You walk through the street.
+							139 text Day 1 · 08:06
+							140 text  · You walk through the street.
+							141 text Day 1 · 08:07
+							142 text  · World time advances by 1 minute.
+							143 text Day 1 · 08:07
+							144 text  · You walk through the street.
+							145 text Day 1 · 08:07
+							146 text  · You walk through the street.
+							147 text Day 1 · 08:07
+							148 text  · You walk through the street.
+							149 text Day 1 · 08:08
+							150 text  · World time advances by 1 minute.
+							151 text Day 1 · 08:08
+							152 text  · You enter Thermopolium of Vetutius Placidus.
+							153 text Day 1 · 08:08
+							154 text  · You walk through Thermopolium of Vetutius Placidus.
+							155 text Day 1 · 08:09
+							156 text  · World time advances by 1 minute.
+							157 text Day 1 · 08:09
+							158 text  · You walk through Thermopolium of Vetutius Placidus.
+							159 text Day 1 · 08:09
+							160 text  · You walk through Thermopolium of Vetutius Placidus.
+							161 text Day 1 · 08:10
+							162 text  · World time advances by 1 minute.
+							163 text Day 1 · 08:10
+							164 text  · You walk through Thermopolium of Vetutius Placidus.
+							165 text Day 1 · 08:10
+							166 text  · You walk through Thermopolium of Vetutius Placidus.
+							167 text Day 1 · 08:11
+							168 text  · World time advances by 1 minute.
+							169 text Day 1 · 08:11
+							170 text  · You walk through Thermopolium of Vetutius Placidus.
+							171 text Day 1 · 08:11
+							172 text  · You walk through Thermopolium of Vetutius Placidus.
+							173 text Day 1 · 08:12
+							174 text  · World time advances by 1 minute.
+							175 text Day 1 · 08:12
+							176 text  · You walk through Thermopolium of Vetutius Placidus.
+							177 text Day 1 · 08:12
+							178 text  · You enter the street.
+							179 text Day 1 · 08:13
+							180 text  · World time advances by 1 minute.
+							181 text Day 1 · 08:13
+							182 text  · You walk through the street.
+							183 text Day 1 · 08:13
+							184 text  · You walk through the street.
+							185 text Day 1 · 08:14
+							186 text  · World time advances by 1 minute.
+							187 text Day 1 · 08:14
+							188 text  · You walk through the street.
+						83 text This is the admitted prefix before the choice. It is separate from another person’s current retained memory.
+					84 heading Try this history without that choice., Value: 3
+						85 text Try this history without that choice.
+					86 text This executes one omission. Later declared choices stay the same where they remain feasible. It is not an optimal alternative, and it never replaces your original life.
+					87 button Execute this alternative, ID: execute-alternative
+				88 container
+					89 heading What remains uncertain, Value: 3
+						90 text What remains uncertain
+					91 text Testimony may be dated. Events outside your participant’s knowledge remain outside this view. Executed differences are specific to the declared alternative and continuation.
+
+The focused UI element is 93 button (expanded) Earlier admitted records (47), Secondary Actions: Collapse

@@ -1,0 +1,30 @@
+Browser tab: 16, Title: "Aelia — a place in the city · separate practice copy · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_a21844646586".
+0 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586
+	1 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_a21844646586#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			84 text Pompeii
+			85 text Aelia · Practice copy · 44646586
+			86 text Day 1 · 08:00 · World time
+			87 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		13 container Pompeii · your saved life
+			14 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_a21844646586
+				88 container Review the time advance, ID: time-review
+					89 container
+						90 heading Review the time advance, Value: 2, ID: time-review-title
+							91 text Review the time advance
+						92 button Description: Cancel time advance, ID: close-time-review
+					93 text Advance 360 world minutes, from minute 0 to 360.
+					94 container time-review-deadlines
+						95 heading Known deadlines crossed, Value: 3
+							96 text Known deadlines crossed
+						97 text The disputed delivery reaches its decision deadline. Due at world minute 360.
+					98 text People will follow their recorded duties and accepted commitments may fall due. Reading this review does not advance world time.
+					99 button Advance 360 minutes, ID: confirm-time
+					100 button Keep playing from now, ID: cancel-time
+
+The focused UI element is 92 button Description: Cancel time advance, ID: close-time-review

@@ -1,0 +1,129 @@
+{
+  "origin": "Agent-operated native browser QA; not human playtests or research benchmark runs.",
+  "files": {
+    "pompeii_11a5ed48dde8": {
+      "source_path": "/private/tmp/kalends-first-session-qa/pompeii_11a5ed48dde8.json",
+      "sha256": "db53c8003e2d463f15534cb0f6ff9de432833b5c0da606e7e595f379496ca476",
+      "accepted_commands": 38,
+      "last_world_minute": 67,
+      "journal_state_hash": "21d88e65d71cb7f881fb2c1cf21b6c43b48a18669cc2f99fbb72cb457eb59b12",
+      "replayed_without_mutation": true,
+      "final_guide_step": "p9",
+      "recorded_result": {
+        "at": 36,
+        "event_id": 72,
+        "delivered": {
+          "Sabina": 4,
+          "Felix": 2
+        },
+        "explanation": [
+          "You paid 3 coins for the arrangement.",
+          "The recorded delivery sent 4 flour units to Sabina.",
+          "The recorded delivery sent 2 flour units to Felix.",
+          "Sabina\u2019s recorded regard for you improved after this arrangement.",
+          "Lucius\u2019s recorded regard for you fell after this arrangement."
+        ],
+        "relationship_note": "Read the affected person\u2019s response or your story for the recorded relationship changes. Other people can react differently to the same agreement."
+      }
+    },
+    "observatory_188b91ee9911": {
+      "source_path": "/private/tmp/kalends-first-session-qa/observatory_188b91ee9911.json",
+      "sha256": "c28c3ef0f66ee6eea6a6f91829765764141baaf9a559f6969f784756f21e0bc5",
+      "accepted_commands": 5,
+      "last_world_minute": 1440,
+      "journal_state_hash": "d55e45e397f03f718297c4e723bd7492c17dc98a0900442ee700bfc75197466f",
+      "replayed_without_mutation": true,
+      "final_guide_step": "o7",
+      "recorded_result": {
+        "at": 1439,
+        "event_id": 22,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {
+          "team_c": 4
+        },
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        },
+        "executed": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [
+          "team_c"
+        ],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 4 units and received 4 units.",
+          "Mira was allocated 4 units and received 4 units.",
+          "Lin was allocated 4 units and received 0 units.",
+          "You promised 4 units to Lin, so that promise was not met."
+        ]
+      }
+    },
+    "pompeii_a21844646586": {
+      "source_path": "/private/tmp/kalends-first-session-qa/pompeii_a21844646586.json",
+      "sha256": "fe49ffe9b2e359a82ecac03043f0215d59b59b8c733613a82f8610109c341315",
+      "accepted_commands": 2,
+      "last_world_minute": 360,
+      "journal_state_hash": "3cb2643893e4a4f6308ebf9f44c9683b2bde44458b79d2b2b38fbd340956caaf",
+      "replayed_without_mutation": true,
+      "final_guide_step": "p8",
+      "recorded_result": {
+        "at": 360,
+        "event_id": 41,
+        "delivered": {
+          "Lucius": 6
+        },
+        "explanation": [
+          "The recorded delivery sent 6 flour units to Lucius."
+        ],
+        "relationship_note": "Read the affected person\u2019s response or your story for the recorded relationship changes. Other people can react differently to the same agreement."
+      }
+    },
+    "observatory_4ba95fb62e67": {
+      "source_path": "/private/tmp/kalends-first-session-qa/observatory_4ba95fb62e67.json",
+      "sha256": "dc3304daf81455ea622d9d36e0795eb2525244d8ada7260e1d380e742af73825",
+      "accepted_commands": 1,
+      "last_world_minute": 1439,
+      "journal_state_hash": "57520dbd63035e59a7cf2d4f31ecc001bc489af3f6e8e9e4aa63df69aed05560",
+      "replayed_without_mutation": true,
+      "final_guide_step": "o6",
+      "recorded_result": {
+        "at": 1439,
+        "event_id": 19,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {},
+        "allocation": {
+          "team_a": 0,
+          "team_b": 0,
+          "team_c": 0
+        },
+        "executed": {
+          "team_a": 0,
+          "team_b": 0,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 0 units and received 0 units.",
+          "Mira was allocated 0 units and received 0 units.",
+          "Lin was allocated 0 units and received 0 units."
+        ]
+      }
+    }
+  }
+}

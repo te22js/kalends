@@ -1,0 +1,60 @@
+Browser tab: 17, Title: "Aelia — a place in the city · separate practice copy · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_a21844646586".
+1 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_a21844646586#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8822/your-worlds
+			6 text Pompeii
+			7 text Aelia · Practice copy · 44646586
+			8 text Day 1 · 14:00 · World time
+			9 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container Pompeii · your saved life
+			14 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8822/immersion/?experience=pompeii_a21844646586
+				15 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				16 container names
+					17 button Marcus, Keeping the trader's accounts. Approach to speak
+					18 text Aelia · you
+					19 button Walk to Felix's bread counter
+				20 container hud
+					21 button Description: Open game menu, ID: menu-button
+						22 text KALENDS
+						23 text POMPEII · 79 CE
+					24 container
+						25 text DAY 1
+						26 text 14:00
+						27 text VIA DELL’ABBONDANZA
+					28 container
+						29 text 6 coins
+						30 button Journal J, ID: journal-button
+							31 text Journal 
+							32 text J
+						33 button Description: Settings, ID: settings-button
+				34 container location-caption
+					35 text VIA DELL’ABBONDANZA
+					36 text A reconstructed corner of Pompeii
+				37 container controls
+					38 container movement-controls
+						39 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					40 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					41 button Wait 30m, ID: wait
+					42 button A day later, ID: day-later
+					43 button Description: Follow Aelia, ID: recenter
+				44 container loading
+					45 text KALENDS · POMPEII
+					46 heading Continue as Aelia., Value: 1, ID: loading-title
+						47 text Continue as Aelia.
+					48 heading Your decision, and the history behind it., Value: 2, ID: arrival-goal
+						49 text Your decision, and the history behind it.
+					50 text You continue as Aelia, a fictional freedwoman: a woman who was once enslaved and is now free. The recorded delivery sent 6 flour units to Lucius. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.
+					51 text Continue from this saved moment. Click the ground to walk, or use WASD or the arrow keys. Press E to speak when you are close.
+					52 text The district is ready. Automatic time is off. Moving and accepted actions can advance time.
+					53 progress indicator Value: 100, ID: load-progress
+					54 button Continue as Aelia →, ID: enter
+						55 text Continue as Aelia
+						56 text →
+					57 text Reading: world time is paused. Your accepted choices are saved on this installation.
+
+The focused UI element is 1 AXWebArea Aelia — a place in the city · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/pompeii_a21844646586

@@ -1,0 +1,54 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8
+	2 container History notebook, ID: notebook-dialog
+		3 heading History notebook, Value: 2, ID: notebook-heading
+			4 text History notebook
+		5 button Close history notebook
+		6 container notebook-content
+			7 text Modern historical explanations belong to your learning notebook. They do not reveal hidden facts about this delivery or enter another character’s memory.
+			8 button A food counter on the street Saved in your notebook
+				9 text A food counter on the street
+				10 text Saved in your notebook
+			11 button (disabled) A home turned into a workplace Find the relevant place or evidence first
+				12 text A home turned into a workplace
+				13 text Find the relevant place or evidence first
+			14 button A person who had been freed Read and save this card
+				15 text A person who had been freed
+				16 text Read and save this card
+			17 button (disabled) Political messages on walls Find the relevant place or evidence first
+				18 text Political messages on walls
+				19 text Find the relevant place or evidence first
+			20 button Evidence, reconstruction and invented choices Read and save this card
+				21 text Evidence, reconstruction and invented choices
+				22 text Read and save this card
+			23 container
+				24 heading A food counter on the street, Value: 3
+					25 text A food counter on the street
+				26 text Historical evidence Reconstruction Fictional gameplay
+				27 heading What you encountered, Value: 4
+					28 text What you encountered
+				29 text The game represents a counter and inset jar forms. This is a schematic model of the food-counter setting.
+				30 heading Historical claim, Value: 4
+					31 text Historical claim
+				32 text The thermopolium, or food-and-drink counter, of Vetutius Placidus had large storage jars built into its serving counter.
+				33 heading Evidence, Value: 4
+					34 text Evidence
+				35 text The Park describes the surviving counter and its embedded vessels.
+				36 heading Limits of the evidence, Value: 4
+					37 text Limits of the evidence
+				38 text A counter does not establish its exact daily menu or the identity of everyone who worked there.
+				39 heading What the game changed, Value: 4
+					40 text What the game changed
+				41 text Sabina, her stock, prices and the flour dispute are fictional. The model is not a surveyed reconstruction.
+				42 heading A question to consider, Value: 4
+					43 text A question to consider
+				44 text Which visible feature suggests that customers were served here? You do not need to answer a quiz to continue playing.
+				45 heading Sources, Value: 4
+					46 text Sources
+				47 content list
+					48 container
+						49 AXListMarker • 
+						50 link Description: Archaeological Park of Pompeii: Along the streets of Pompeii ↗, Value: pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/
+				51 text Text-only evidence card. Source links do not grant permission to reuse a source’s photographs.
+
+The focused UI element is 1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8

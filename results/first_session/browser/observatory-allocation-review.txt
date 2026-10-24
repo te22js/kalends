@@ -1,0 +1,23 @@
+Browser tab: 14, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8822/lives/observatory_188b91ee9911".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8822/lives/observatory_188b91ee9911
+	2 container Commit the proposed allocation, ID: review-dialog
+		3 container
+			4 text BEFORE YOU COMMIT
+		5 button Close review
+		6 heading Commit the proposed allocation, Value: 2, ID: review-heading
+			7 text Commit the proposed allocation
+		8 container review-content
+			9 text Amir · Survey
+			10 text 4 units
+			11 text Mira · Instrument systems
+			12 text 4 units
+			13 text Lin · Follow-up
+			14 text 4 units
+			15 text These are allocated amounts. The instrument executes the actual available capacity in the disclosed order Amir → Mira → Lin.
+			16 text Settlement: Day 1 · 23:59
+			17 text The public round deadline is world minute 1439. A promise and an allocation are recorded separately.
+			18 text No change has been accepted yet. Confirmation rechecks this exact proposal against your saved world. If time or terms changed, review again.
+		19 button Keep considering
+		20 button Confirm this choice →, ID: confirm-choice
+
+The focused UI element is 5 button Close review

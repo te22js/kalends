@@ -1,0 +1,34 @@
+Browser tab: 14, Title: "Your shared observatory · separate practice copy · Kalends", URL: "http://127.0.0.1:8822/lives/observatory_4ba95fb62e67".
+1 AXWebArea Your shared observatory · separate practice copy · Kalends, URL: 127.0.0.1:8822/lives/observatory_4ba95fb62e67
+	2 container Spend some time here., ID: time-dialog
+		3 container
+			4 text YOUR PACE
+		5 button Close time controls
+		6 heading Spend some time here., Value: 2, ID: time-heading
+			7 text Spend some time here.
+		8 text The world advances only when you play or choose to advance time. Waiting does not make promises or spend resources for you.
+		9 container known-deadlines
+			10 heading Review the end of this round, Value: 3
+				11 text Review the end of this round
+			12 text Advance from Day 1 · 00:00 to Day 1 · 23:59: 1439 world minutes.
+			13 text The round will settle using the allocation you recorded and the capacity actually available. This can leave a promise unmet.
+			14 text You have not recorded an allocation. The round will use zero for each team.
+			15 text Current usable capacity has not been confirmed in your received reports.
+			16 text Execution order: Amir, then Mira, then Lin.
+			17 heading Known deadlines reached, Value: 4
+				18 text Known deadlines reached
+			19 text Day 1 · 23:59 · The current allocation settles at this publicly declared deadline.
+			20 text No open promise is recorded. Finishing will settle this round.
+			21 button Confirm: finish this round
+		22 button Stay with the day Advance one hour through the exact scheduler.
+			23 text Stay with the day
+			24 text Advance one hour through the exact scheduler.
+		25 button Continue the day Advance up to one day, protecting known choice windows.
+			26 text Continue the day
+			27 text Advance up to one day, protecting known choice windows.
+		28 button Advance with highlights Up to one week. Read selected actual events afterward.
+			29 text Advance with highlights
+			30 text Up to one week. Read selected actual events afterward.
+		31 text Known deadlines can stop an advance early. Highlights are excerpts, not the complete history.
+
+The focused UI element is 5 button Close time controls

@@ -1,0 +1,11 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 104-106
+~			85 text Day 1 · 08:02 · World time
+~					23 button Dama, Carrying household instructions. Talk
+~						89 text Carrying household instructions · E to talk
+~						91 text 08:02
+~					101 text Sabina · food seller · Waiting by her disputed order
+~					82 button Talk E, ID: interact
+~						102 text Talk 
+The focused UI element is 14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.

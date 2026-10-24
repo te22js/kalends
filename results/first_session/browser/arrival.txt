@@ -1,0 +1,7 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 19, 22, 25
++						74 text Waiting by her disputed order · E to talk
++						75 text Minding the flour cart · approach to speak
++						76 text Carrying household instructions · approach to speak
+The focused UI element is 0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8

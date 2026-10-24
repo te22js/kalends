@@ -1,0 +1,75 @@
+Browser tab: 16, Title: "Your worlds · Kalends", URL: "http://127.0.0.1:8822/your-worlds".
+1 AXWebArea Your worlds · Kalends, URL: 127.0.0.1:8822/your-worlds
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/your-worlds#main
+	3 container public-shell
+		4 container
+			5 link Description: Kalends home, Value: 127.0.0.1:8822/
+			6 container Main navigation
+				7 link Description: Experiences, Value: 127.0.0.1:8822/worlds
+				8 link Description: Research, Value: 127.0.0.1:8822/research
+				9 link Description: About, Value: 127.0.0.1:8822/about
+				10 link Description: Your worlds , Value: 127.0.0.1:8822/your-worlds
+		11 container main
+			43 container
+				44 text YOUR WORLDS
+			12 heading Pick up where you left off., Value: 1
+				45 text Pick up where you left off.
+			46 text Each life has its own choices, people and history. Nothing progressed simply because you were away.
+			13 container
+				47 text MOST RECENTLY USED
+				14 heading Aelia — a place in the city · separate practice copy, Value: 2
+					48 text Aelia — a place in the city · separate practice copy
+				49 text Aelia · Day 1 · 14:00 · street Paused at street. Continue when you choose.
+				15 link Description: Continue, Value: 127.0.0.1:8822/lives/pompeii_a21844646586
+				16 link Description: Your story , Value: 127.0.0.1:8822/lives/pompeii_a21844646586/history
+				50 text Saved on this installation
+			17 container
+				51 text SAVED LIFE
+				18 heading Your shared observatory, Value: 2
+					52 text Your shared observatory
+				53 text You, the coordinator · Day 2 · 00:00 · council Paused at council. Continue when you choose.
+				19 link Description: Continue, Value: 127.0.0.1:8822/lives/observatory_188b91ee9911
+				20 link Description: Your story , Value: 127.0.0.1:8822/lives/observatory_188b91ee9911/history
+				54 text Saved on this installation
+			21 container
+				55 text SAVED LIFE
+				22 heading Aelia — a place in the city, Value: 2
+					56 text Aelia — a place in the city
+				57 text Aelia · Day 1 · 09:07 · street Paused at street. Continue when you choose.
+				23 link Description: Continue, Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8
+				24 link Description: Your story , Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history
+				58 text Saved on this installation
+			25 container
+				26 heading Recorded research lives, Value: 2
+					59 text Recorded research lives
+				60 text Read-only examples from actual runs. They are kept separate from your personal worlds.
+				61 container
+					62 text RECORDED EXAMPLE
+				27 heading Recorded 120-day demonstration: Pompeii continuity, Value: 2
+					63 text Recorded 120-day demonstration: Pompeii continuity
+				64 text Aelia · Day 121 · 08:00 · household
+				65 text Paused at household. Continue when you choose.
+				28 link Description: Inspect example, Value: 127.0.0.1:8822/lives/pompeii_long_life
+				29 link Description: Your story , Value: 127.0.0.1:8822/lives/pompeii_long_life/history
+				66 text Read-only example · Original preserved
+				67 container
+					68 text RECORDED EXAMPLE
+				30 heading Recorded 90-day demonstration: Shared Observatory, Value: 2
+					69 text Recorded 90-day demonstration: Shared Observatory
+				70 text You, the coordinator · Day 91 · 00:00 · council
+				71 text Paused at council. Continue when you choose.
+				31 link Description: Inspect example, Value: 127.0.0.1:8822/lives/observatory_long_life
+				32 link Description: Your story , Value: 127.0.0.1:8822/lives/observatory_long_life/history
+				72 text Read-only example · Original preserved
+		33 container
+			34 link Description: kalends, Value: 127.0.0.1:8822/
+			35 text Take part, make a choice, and see what follows.
+			36 container Footer
+				37 link Description: About, Value: 127.0.0.1:8822/about
+				38 link Description: Research, Value: 127.0.0.1:8822/research
+				39 link Description: Accessibility, Value: 127.0.0.1:8822/accessibility
+				40 link Description: Data & saves, Value: 127.0.0.1:8822/data-and-saves
+				41 link Description: Sources & assets, Value: 127.0.0.1:8822/acknowledgements
+			42 text Early local prototype · Two supported worlds
+
+The focused UI element is 1 AXWebArea Your worlds · Kalends, URL: 127.0.0.1:8822/your-worlds

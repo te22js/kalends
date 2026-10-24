@@ -1,75 +1,54 @@
-# Continuity release plan — working draft
+# Next release: first-session repair and continuity evidence
 
-Prepare a reviewable local milestone over the existing two finite worlds. Keep
-user saves, prior study artifacts, historical baselines, and accepted-command
-formats protected. The branch is `codex/continuity-release-prep`, based on
-`6ebe9ec`; the protection inventory is
-`results/continuity_release/protection/baseline.json`. A local commit is a
-checkpoint, not publication, deployment, or permission to enable paid inference.
+The owner’s failed first-session test is the primary release blocker. The
+implemented repair is ready for another observed session, not declared successful
+from engineering checks. The preparation branch is `codex/continuity-release-prep`;
+the verified `codex/experience-journey` ref remains at `6ebe9ec`.
 
-## Product gate
+## Delivered review milestone
 
-Validate the existing first-session and return loop in disposable journals:
-understand the role, meet a character, review and accept or decline a meaningful
-choice, inspect an actual recorded consequence, leave, and resume the same life.
-Keep optional measurement off until consent. Verify timing categories, bounded
-payload fields, opt-out, accepted-action identity, note/text exclusion, reload,
-same-tab return, and visible operator exposure. Preserve the mounted Pompeii
-scene and the existing world rules. See `PRODUCT_AUDIT.md` for implementation
-details and the audit's recorded deterministic checks.
+1. **Product:** both accepted-state guided introductions, rewritten rendered
+   participant copy, sourced Pompeii notebook, understandable existing work and
+   movement, clear costs/results, recoverable Help, separate practice and smooth
+   saved-world entry. Consent-based bounded local instrumentation remains optional.
+   Native walkthroughs executed market delivery, autonomous buyer settlement,
+   Observatory shortfall/missed promise and a zero-allocation alternative. No new
+   map, engine, renderer or AI framework was added.
+2. **Research:** candidate and dependencies frozen before final held-out access;
+   independently authored multi-step correction/obligation tasks; five arms under
+   matched logical budgets. The 800 executions include real failed, partial,
+   unknown, rejected and successful outcomes plus uninterrupted replay comparison.
+   Candidate and V3 tie at 140/160 primary cases; no advantage established. Preserve
+   final cases and all results; do not tune on them.
+3. **Optional AI pilot:** bounded character-language proposal integration using
+   existing providers is implemented and disabled. An explicitly authorized
+   endpoint, positive numeric cap and enable configuration are prerequisites.
+   No paid call or live-character quality claim belongs to this milestone.
 
-Before a broader product release, record native-browser checks in normal and
-narrow layouts, iframe focus/visibility transitions, reload/restart, return
-summaries, consent and the actual local event payload. Run the relevant frontend
-and backend suites against the final combined changes. Passing simulated-DOM
-tests alone does not establish rendering, device accessibility, or human value.
+[The handoff](../../KALENDS_FIRST_SESSION_REPAIR_HANDOFF.md) links the actual
+captures, copy review, source ledger, exact commands, failures and protection audit.
+The review build runs at <http://127.0.0.1:8823/> with separate durable saves.
 
-## Research gate
+## Release gate and next implementation priorities
 
-Freeze independently authored task bytes and the scoring rubric before final
-comparisons. Freeze the candidate and every evaluated dependency separately.
-Use the existing kernel and one common controller; count complete retained state,
-retrieval context and controller state under declared byte budgets. Score actual
-executed outcomes, unfinished obligations, corrections, partial/failed/uncertain
-actions, duplicate effects and recovery costs. Include structurally distinct
-held-out workflows and current-information, irrelevant-history, and
-unobserved-change controls. See `TASK_CONTRACT.md` and `blind_design.md` for the
-declared interface and design boundary.
+Run the owner’s fresh first-session test again, then a small consenting unfamiliar
+participant study. Observe a 15-minute target session and an actual return. Ask
+whether they can identify their role, situation, supported actions, costs and
+consequences, executed result, and historical evidence versus invention. Apply
+the brief’s proposed five-of-six unaided threshold; log coaching and failures.
+Guide acknowledgements and elapsed open-tab time are not comprehension evidence.
 
-Attach the exact freeze manifests, reproduction command, executed comparison
-artifact, failures, uncertainty and claim limits before making a superiority
-claim. Report ties, regressions and information limits. This draft records no
-final comparison outcome; a task design or completed harness is not a result.
+Fix observed confusion before adding features. Then prioritize character continuity,
+credible grounded responses, understandable autonomous consequences, player agency
+and reliable return. Choose priorities from the observed failures; do not enlarge
+the map. Physical-phone, assistive-technology, longer-save and broad conversational
+coverage remain limited. Any later pilot needs its own endpoint/cap decision and
+human assessment of grounding and character continuity.
 
-## Optional character pilot gate
+## Preservation boundary
 
-The pilot stays outside public product APIs and remains disabled by default.
-`AI_PILOT.md` documents its exact existing-runtime host caller and offline mock
-demonstration. Provider input is bounded retained/admitted NPC evidence already
-authorized for the viewer. Model output selects reviewed phrase/evidence/option
-identities; literal clauses retain source type and observation time, and an
-action remains `OFFERED` pending review, confirmation and current-state checks.
-
-The local pilot/provider verification has run: **163 tests passed**, including
-61 pilot tests, with mocks/injected wire fixtures only. These establish local
-contract behavior, not live-model quality. No real endpoint or paid call is
-authorized in this phase. Any later experiment requires explicit endpoint,
-numeric session cap and enable configuration, the existing provider gates, and
-a separately authorized host. This is a bounded paid-live limit gate, not
-production authorization or a billing guarantee.
-
-## Human feedback and release decision
-
-Recruit consenting participants for a small observed session only after the
-combined engineering gate. Explain measurement, allow decline/withdrawal, use
-disposable or explicitly agreed lives, and keep raw utterances and notes out of
-telemetry. Ask whether the role was clear, choices felt owned, the character's
-responses fit available history, consequences were understandable, and returning
-to the life was useful. Observe a 15-minute target session and an actual return;
-do not substitute simulated activity or elapsed open-tab time for either.
-
-No consenting human session, enjoyment, demand, learning, retention, subjective
-time benefit, or paid-model quality result is established by this release draft.
-The release decision needs the final combined test/browser record, audited
-research artifacts with bounded claims, and actual participant feedback. Keep
-remaining failures and unanswered questions explicit in the handoff.
+Existing journals and historical artifacts remain hash-checked. One pre-existing
+live display-metadata file changed with unconfirmed origin; its drift is audited,
+not silently reset or represented as preserved bytes. No remote is configured,
+so there is no hosted branch-protection claim. Keep the verified release ref
+unchanged until a real human release decision and retain separate QA lives.

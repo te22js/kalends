@@ -1,0 +1,81 @@
+Browser tab: 16, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history
+	2 link Description: Skip to content, Value: 127.0.0.1:8822/lives/pompeii_11a5ed48dde8/history#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container Your story, ID: story-drawer
+			5 container
+				6 text YOUR RECORDED HISTORY
+			7 heading Your story, Value: 2, ID: story-heading
+				8 text Your story
+			9 button Description: Close your story, ID: close-story
+			10 container Your story views
+				11 button Chapters
+				12 button People
+				13 button Reflect
+			14 container story-content
+				15 text These are your choices and the events you saw or learned about. A supporting record does not by itself prove what caused a result.
+				16 container
+					17 heading Elsewhere in this world, Value: 3
+						18 text Elsewhere in this world
+					19 heading Dama goes to household for their duties., Value: 4
+						20 text Dama goes to household for their duties.
+					21 button Read supporting evidence 
+					22 button Bookmark
+				23 container
+					24 text Day 1 · 08:36 · affiliation
+					25 heading The counters receive the cart; Lucius receives a refund and remembers whose claim you put first., Value: 3
+						26 text The counters receive the cart; Lucius receives a refund and remembers whose claim you put first.
+					27 button Read supporting evidence 
+					28 button Bookmark
+					29 button (collapsed) Everyday activity · 5 records, Secondary Actions: Expand
+						30 text Everyday activity · 5 records
+				31 container
+					32 text Day 1 · 08:00 · arrival
+					33 heading You arrive as Aelia, a freedwoman earning her place between households and shops., Value: 3
+						34 text You arrive as Aelia, a freedwoman earning her place between households and shops.
+					35 button Read supporting evidence 
+					36 button Bookmark
+					37 heading Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”, Value: 4
+						38 text Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”
+					39 button Read supporting evidence 
+					40 button Bookmark
+					41 heading Hear a private account of the disputed six-sack cart., Value: 4
+						42 text Hear a private account of the disputed six-sack cart.
+					43 button Read supporting evidence 
+					44 button Bookmark
+					45 heading Sabina asks you to find out who the six sacks were actually promised to., Value: 4
+						46 text Sabina asks you to find out who the six sacks were actually promised to.
+					47 button Read supporting evidence 
+					48 button Bookmark
+					49 heading You read the document “Sabina's wax account”., Value: 4
+						50 text You read the document “Sabina's wax account”.
+					51 button Read supporting evidence 
+					52 button Bookmark
+					53 heading You read the document “The household's delivery instructions”., Value: 4
+						54 text You read the document “The household's delivery instructions”.
+					55 button Read supporting evidence 
+					56 button Bookmark
+					57 heading You pay the carrying charge and stand behind the market counters., Value: 4
+						58 text You pay the carrying charge and stand behind the market counters.
+					59 button Read supporting evidence 
+					60 button Bookmark
+					61 button (collapsed) Everyday activity · 4 records, Secondary Actions: Expand
+						62 text Everyday activity · 4 records
+					63 button (collapsed) Everyday activity · 44 records, Secondary Actions: Expand
+						64 text Everyday activity · 44 records
+				65 container
+					66 text Day 1 · 08:00 · arrival
+					67 heading Morning opens on the Via dell'Abbondanza., Value: 3
+						68 text Morning opens on the Via dell'Abbondanza.
+					69 button Read supporting evidence 
+					70 button Bookmark
+				71 container
+					72 heading Your personal notes, Value: 3
+						73 text Your personal notes
+					74 text These are your interpretations. They are kept separate from recorded history and are never installed into another person’s memory.
+					75 container history-notes
+						76 text Add a personal note
+						77 text entry area (settable) Add a personal note, ID: personal-note
+						78 button Save personal note
+
+The focused UI element is 9 button Description: Close your story, ID: close-story
