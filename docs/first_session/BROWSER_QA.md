@@ -25,7 +25,11 @@ All artifact names below are relative to
 | `observatory-allocation-review-repaired.png` and `.txt` | At 503 pixels, the modal shows total twelve, the admitted eight-unit report and its date, a conditional four-unit excess warning, public order and settlement time. Remaining text and confirmation controls continue in the modal scroll area. |
 | `observatory-settlement-review.txt` | The review states the exact time jump, known promise and public execution order before confirmation. |
 | `observatory-executed-shortfall.png` and `.txt` | Requested, promised, allocated and delivered quantities remain distinct. Lin was promised four, allocated four and delivered zero; the missed promise is stated. The screenshot and tree contain actual recorded results. |
+| `observatory-zero-allocation-review.txt` | A separate practice life reviews the actual 1,439-minute first-round settlement with no recorded allocation, zero for each team, unconfirmed received capacity and no open promise. The review says finishing will settle the round. It does not force a report or promise into the reviewed terms. |
+| `observatory-settled-summary-repaired.png` and `.txt` | The same practice life is at 23:59 and reaches the result guide. The recorded summary says total allocated zero, actual delivery zero and round settled, with no invitation to review the old risk. The full result tree records zero delivery for all three teams. |
+| `observatory-next-round-review-repaired.png` and `.txt` | The review states 23:59 to 00:00, one world minute, and explicitly preserves the previous settlement in history. Starting the next round remains an explicit confirmation. These artifacts verify review terms and do not claim a further executed settlement. |
 | `pompeii-reflection-repaired.png` and `.txt` | The market delivery is selected despite a later walking command. The recent-eight excerpt states its total of 55 records. Expanded earlier 47 records include Sabina's copied account. The omission button remains an explicit choice; no omission execution was verified in this pass. |
+| `pompeii-grouped-story.png` and `.txt` | The full tree exposes the two copied-account headings and accepted delivery decision outside collapsed routine groups of five, four and 44 records. The screenshot shows the readable chapter presentation and a collapsed five-record group; the 44-record group is further down in the tree. This checks grouping without claiming a native expansion of that group. The singular one-record label has a separate rendered-shell regression. |
 | `separate-saves-return.png` and `.txt` | The practice life at 14:00 and original QA life at 09:07 have distinct identities and one Day label each. The original card is below the screenshot's visible portion and was read in the full tree. |
 | `pompeii-saved-entry-repaired.png` and `.txt` | The saved practice life stays at 14:00. Its tree says Continue as Aelia and includes the already recorded six-unit delivery to Lucius, rather than presenting the dispute as still pending. The screenshot is scrolled within the entry layer and shows the continuation button and complete reading footnote; the title above that visible portion was read in the tree. |
 | `pompeii-390-guide.png` / `.txt` and `observatory-390-result.png` / `.txt` | Real product pages embedded at 390 CSS pixels retain readable primary guide controls and recorded-result prose. These are labelled viewport fixtures, not physical mobile device tests. The Observatory tree also marks the earlier projects completed or missed instead of presenting every requirement as open. |
@@ -39,10 +43,9 @@ The recorded defects and corrections are described in the copy review and the
 release defect register.
 
 No additional copy blocker was found in the repaired states actually inspected
-above. The settled-allocation future-tense correction and next-round sentence
-have real-shell regressions, but their final native modal states have not been
-independently inspected here. The later story routine singular label and
-grouping also need their own final native history evidence. Saved-entry,
+above. The later settled-summary, next-round and grouped-story captures now
+provide the native evidence previously missing from this review. This closes
+those particular inspection gaps, not every possible browser state. Saved-entry,
 saved-life card and reflection captures verify their listed presentation
 repairs; they do not establish every return interaction. Map labels remain
 visible behind the saved-entry layer; no comprehensive contrast audit was run.

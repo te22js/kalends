@@ -182,8 +182,17 @@ settled allocation form: “You may review this plan if you intend that risk.”
 This and the separately observed next-round modal sentence that implied another
 allocation execution were corrected in commit `3c5bdb4`. Focused real-shell
 regressions check recorded delivery after settlement, missing-result handling,
-and a one-minute next-round step that preserves the previous result. Fresh
-native verification of those two later corrections is still pending.
+and a one-minute next-round step that preserves the previous result. The final
+independent native pass inspected
+`browser/observatory-zero-allocation-review.txt`,
+`browser/observatory-settled-summary-repaired.png` and its full `.txt` tree,
+plus `browser/observatory-next-round-review-repaired.png` and its full `.txt`
+tree. In a separate practice life, the review explicitly says no allocation was
+recorded, capacity is unconfirmed and zero will be used for each team. The
+actual result at 23:59 records zero allocated and delivered, then the next-round
+review states a one-minute advance and preserves the previous settlement.
+These captures verify the review and summary repairs; no next-round execution
+is claimed by them.
 No new native invalid-number capture has been inspected. This inspection did
 not exercise keyboard focus, every guide step, the complete saved-life return
 sequence or an unfamiliar participant.
@@ -252,3 +261,12 @@ recorded delivery to Lucius. The screenshot is scrolled within the entry layer
 and shows the continuation button and complete reading footnote. Its title and
 earlier prose above the visible portion were verified in the tree. This checks
 the captured saved-entry state, not every possible return branch.
+
+The final `browser/pompeii-grouped-story.png` and complete `.txt` tree were also
+read. The two copied accounts and accepted delivery decision remain visible as
+material history outside the collapsed routine groups. The full tree lists
+groups of five, four and 44 records; the screenshot shows a collapsed
+five-record group near its lower edge. This supports the grouped
+presentation without claiming that the 44-record group was opened in the
+browser. The renderer's backend cases include every routine record, and the
+rendered-shell regression separately checks zero, one and plural record labels.
