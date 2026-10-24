@@ -2,6 +2,9 @@
 
 24 October 2026 · `codex/continuity-release-prep`, based on the verified
 `codex/experience-journey` commit `6ebe9ec463c0144ba4ce53cb182646f5bf87f152`.
+Verified implementation and walkthrough milestone: **`16cc062`**. Later
+handoff-only commits do not change that implementation; `git rev-parse HEAD`
+identifies the final local documentation checkpoint.
 The owner’s reported inability to understand the original experience remains
 the motivating release blocker. This is an implemented and browser-checked
 repair ready for another observed first session; it is not a passed human
