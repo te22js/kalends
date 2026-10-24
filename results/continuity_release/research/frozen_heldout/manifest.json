@@ -1,0 +1,46 @@
+{
+  "task_sha256": "9e0c8a1e05a85129e010f0237ddef98296e24161b323e70517272d08727bc644",
+  "task_file": "/Users/tanmaygoswami/Claude_backup/Projects/kalends/specs/continuity_release/heldout.json",
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "arms": [
+    "dependency_retention",
+    "v3_hybrid",
+    "bm25_fifo",
+    "bm25_task",
+    "latest_per_key"
+  ],
+  "budgets": {
+    "state_bytes": 16384,
+    "context_bytes": 4096,
+    "records": 16,
+    "context_records": 4
+  },
+  "source_sha256": {
+    "kalends/continuity_release/__init__.py": "501fd6f2bca3c393ce289cbe3a25bdaf4a0c824146bdc17d1aff7f9b73332d68",
+    "kalends/continuity_release/evaluation.py": "0e0361447c43d935e48a4fba275dbd1af3f37c9ba17f60ac22f7890237ebae25",
+    "kalends/continuity_release/pilot.py": "e138f33e4059f05db1db7cd239a61a0ec5d25383c5f9fa04c2bc6cf57073bca7"
+  },
+  "model_calls": 0,
+  "spend_usd": 0
+}
