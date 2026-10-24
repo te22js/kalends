@@ -245,7 +245,7 @@ def build_history(runtime, *, last_seen_minute=0, seen_revision=None):
             "known_commitments": commitments, "known_stops": _known_stops(runtime, events, commitments),
             "return_summary": {"changes": material, "independent_developments": independent,
                                "unresolved": commitments[:1], "from_minute": last_seen_minute,
-                               "text": "Your saved world resumes from its recorded moment. Time advances when you choose a supported time control.",
+                               "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time.",
                                "offline_progress": False},
             "elapsed_policy": "Paused while the local server is stopped; no offline progression is claimed.",
             "uncertainties": ["History contains participant-admitted evidence. Testimony remains testimony; related records do not prove necessary causes."]}
