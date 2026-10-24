@@ -12,7 +12,7 @@ from .participant_copy import event_text, quantity
 
 PERSON_LABELS = {"Player": "Aelia", "team_a": "Amir", "team_b": "Mira", "team_c": "Lin"}
 ROLES = {"team_a": "Survey", "team_b": "Instrument systems", "team_c": "Follow-up"}
-_ROUTINES = {"move", "movement", "player_move", "routine", "institutional_routine", "routine_note", "request", "inspection_paid"}
+_ROUTINES = {"move", "movement", "player_move", "time_advanced", "routine", "institutional_routine", "routine_note", "request", "inspection_paid"}
 
 
 def _label(actor, setting):

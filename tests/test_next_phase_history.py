@@ -99,3 +99,18 @@ def test_quiet_routines_are_expandable_and_unchanged_by_projection():
     assert routine_groups and all(group["expandable"] for group in routine_groups)
     assert any(b["kind"] == "routine" for b in history["beats"])
     assert life.state_hash() == before
+
+
+def test_short_travel_clock_records_do_not_drown_out_received_accounts():
+    life = ExperienceService().get('pompeii_life')
+    life.commit('action', {'action':'move','x':750,'y':430,'location':'street'})
+    life.commit('advance', {'minutes':1})
+    life.commit('action', {'action':'hear_dispute','recipient':'Sabina'})
+    before=life.state_hash()
+    history=build_history(life)
+    routine_beats=[b for chapter in history['chapters'] for group in chapter['routines'] for b in group['beats']]
+    all_beats=[b for chapter in history['chapters'] for b in chapter['beats']]+routine_beats
+    assert any('World time advances' in b['text'] for b in routine_beats)
+    assert any('Sabina asks' in b['text'] and b['kind']!='routine' for b in all_beats)
+    assert len({b['id'] for b in all_beats})==len(history['beats'])
+    assert life.state_hash()==before
