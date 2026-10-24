@@ -64,9 +64,9 @@ test('guided introduction prevents Live even if a former timer tries to resume',
 });
 test('the actual scene action walks only to an admitted point and sends history to the participant notebook',async()=>{
  const {knownGuideTarget}=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
- const begin=source.indexOf('async function guideAction('),end=source.indexOf('function renderContext(',begin),walks=[],requests=[],messages=[];
+ const begin=source.indexOf('function prepareGuideNavigation('),end=source.indexOf('function renderContext(',begin),walks=[],requests=[],messages=[];
  const S={guide:{enabled:true,step:{action:{kind:'scene'}},hint:{target:{type:'location',id:'street',x:850,y:430,at:0,person:'Dama'}}},renderer:{currentScene:'street'}};
- const sandbox={S,w:()=>world,guideTarget:()=>knownGuideTarget(S.guide,world,()=>false),closeDialog(){},
+ const sandbox={S,bridge:{pending:false},w:()=>world,guideTarget:()=>knownGuideTarget(S.guide,world,()=>false),closeDialog(){},
   go:body=>walks.push(body),openDialog:id=>messages.push(id),toast:text=>messages.push(text),approach:()=>assert.fail('Unseen actor must not be approached'),
   sceneGuide:{request:(...args)=>requests.push(args)}};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);await sandbox.guideAction();
@@ -74,6 +74,31 @@ test('the actual scene action walks only to an admitted point and sends history 
  S.guide.hint.target={type:'person',id:'Dama'};await sandbox.guideAction();assert.equal(walks.length,1);assert.match(messages.at(-1),/not close enough/);
  S.guide.step.action={kind:'history',card_id:'food_counter'};await sandbox.guideAction();assert.deepEqual(JSON.parse(JSON.stringify(requests)),[['history',{card_id:'food_counter',location:'street'}]]);
  S.guide.step.action={kind:'ack'};await sandbox.guideAction();assert.equal(requests.at(-1)[0],'begin');assert.equal(walks.length,1);
+});
+test('explicit guide walking leaves the conversation safely and preserves the unsent draft',async()=>{
+ const {knownGuideTarget}=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
+ const begin=source.indexOf('function prepareGuideNavigation('),end=source.indexOf('function renderContext(',begin),closeBegin=source.indexOf('function closeConversation('),closeEnd=source.indexOf('function renderConversation(',closeBegin),calls=[],elements=new Map();
+ const $=id=>{if(!elements.has(id))elements.set(id,{value:'Unsent question for Sabina',focus(){}});return elements.get(id);};
+ const S={selected:'Sabina',speechRecipient:'Sabina',conversationEpoch:3,proposal:{proposal_id:'unconfirmed'},renderer:{selected:'Sabina',currentScene:'street'},guide:{enabled:true,step:{action:{kind:'history',card_id:'food_counter'}},hint:{target:{type:'location',id:'thermopolium'}}}};
+ const bridge={pending:false,cancelConversation:()=>calls.push('cancel review')};
+ const sandbox={S,bridge,$,w:()=>world,guideTarget:()=>knownGuideTarget(S.guide,world,()=>false),closeDialog(){},
+  go:body=>calls.push(['walk',body]),toast:text=>calls.push(text),renderContext(){},document:{body:{classList:{remove(){}}}},productHost:{notifyView:()=>calls.push('draft view saved')},sceneGuide:{request:()=>assert.fail('Walking must not confirm or save history')}};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end)+source.slice(closeBegin,closeEnd),sandbox);await sandbox.guideAction();
+ assert.equal(S.selected,null);assert.equal(S.proposal,null);assert.equal(S.speechRecipient,'Sabina');assert.equal($('#speech').value,'Unsent question for Sabina');assert.equal(S.conversationEpoch,4);
+ assert.deepEqual(JSON.parse(JSON.stringify(calls.find(c=>Array.isArray(c)))),['walk',{location:'thermopolium'}]);assert.ok(calls.includes('cancel review'));assert.ok(calls.includes('draft view saved'));
+});
+test('a pending save blocks guide navigation and keeps its conversation and review intact',async()=>{
+ const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function prepareGuideNavigation('),end=source.indexOf('function renderContext(',begin),messages=[];
+ const S={selected:'Sabina',proposal:{proposal_id:'saving'},renderer:{currentScene:'street'},guide:{enabled:true,step:{action:{kind:'history'}},hint:{target:{type:'location',id:'thermopolium'}}}};
+ const sandbox={S,bridge:{pending:true},guideTarget:()=>S.guide.hint.target,toast:text=>messages.push(text),closeConversation:()=>assert.fail('Do not close during a save'),closeDialog:()=>assert.fail('Do not close during a save'),go:()=>assert.fail('Do not walk during a save'),sceneGuide:{request:()=>assert.fail('Do not send a hint during a save')}};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);await sandbox.guideAction();sandbox.showGuideWay();
+ assert.equal(S.selected,'Sabina');assert.equal(S.proposal.proposal_id,'saving');assert.ok(messages.every(message=>/still being saved/.test(message)));
+});
+test('the marker hint closes only the local interaction and never walks or advances time',()=>{
+ const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function prepareGuideNavigation('),end=source.indexOf('function renderContext(',begin),calls=[];
+ const S={selected:'Sabina',renderer:{showTarget:(point,duration)=>calls.push(['marker',point,duration])}};
+ const sandbox={S,bridge:{pending:false},guideTarget:()=>({type:'location',id:'thermopolium'}),place:()=>({name:'Food counter',door:{x:1225,y:480}}),closeConversation:()=>{S.selected=null;calls.push('close conversation');},closeDialog(){},sceneGuide:{request:action=>calls.push(action)},toast:text=>calls.push(text),go:()=>assert.fail('A marker hint cannot walk')};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.showGuideWay();assert.equal(S.selected,null);assert.ok(calls.some(c=>Array.isArray(c)&&c[0]==='marker'));assert.ok(calls.some(c=>typeof c==='string'&&c.includes('does not walk or advance time')));
 });
 test('the shipped conversation renders readable opening, topic questions and an explicit acceptance verb',async()=>{
  const helpers=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
