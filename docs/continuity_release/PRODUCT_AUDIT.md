@@ -27,6 +27,7 @@ A compelling 15-minute session is the design target, not an observed result.
 | High | Every successful scene `move` emitted `meaningful_action`. | Baseline authoritative `telemetry.meaningful_revision` and require a typed scene acceptance with its exact accepted revision; only a newly accepted non-navigation/non-wait action can emit this event. Deduplicate repeated reconciliation; mark the first such event in a tab session. |
 | High | Time since the last event was counted as active whenever the document happened to be visible. Idle and unfocused time could inflate engagement. | Accumulate interval deltas across visibility/focus boundaries. Active is the focused-and-visible part within 30 seconds of an interaction; remaining foreground time is idle. Flush every 15 seconds and at lifecycle boundaries. |
 | High | Same-origin iframe input does not bubble to the host. | Bind event-presence listeners to the scene document after iframe load. Neither the key, field value, coordinates nor event count is retained or transmitted. Existing scene/draft ownership is unchanged. |
+| Medium | Beginning a new life displayed “Your saved world resumes” immediately. | Track the new identity returned by Begin/Studio and skip its first return notice; a later visit still offers the saved-place summary, including for a life with zero choices. |
 | High | A same-tab return notice was suppressed forever after the first entry. | Key the notice to the admitted saved revision, so a later return with changed history shows the saved change summary. |
 | Medium | Every `advance()` completion claimed a consequence view, including skipped mutations and histories without consequences. | Refresh/show the follow-up only after a returned mutation result. Count a consequence view only for consequence material actually rendered in a visible, focused view, or an executed alternative result. |
 | Medium | Existing event names for returns, declines, errors and Research entry were unused. | Emit explicit return/resume, review-cancel, bounded error-category and acknowledged Research-entry events. Display the life’s persistent operator-exposed marker in its menu. |
@@ -90,7 +91,7 @@ Run deterministic UI checks from the repository root:
 node --test tests/frontend/continuity_product.test.cjs tests/frontend/next_phase_product.test.cjs tests/frontend/experience_os_host.test.cjs
 ```
 
-The integrated audit run passed **53 frontend tests**: 17 timing/consent/continuity
+The integrated audit run passed **55 frontend tests**: 19 timing/consent/continuity
 regressions, 19 retained shell regressions and 17 scene bridge regressions. The
 focused backend suite passed **78 tests**, including exact accepted revision,
 move/wait rejection, timing partitions, fixed reason/identity fields, durable

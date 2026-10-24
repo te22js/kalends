@@ -194,3 +194,13 @@ test('failed opt-out remains locally paused across reload instead of trusting st
   await h.consent(false);const reload=await shellHarness({initialLife:h.life,initialStored:h.stored});assert.deepEqual(reload.events(),[]);assert.equal(reload.node('#telemetry-opt-in').checked,false);
   await reload.consent(true);assert.ok(reload.events().some(e=>e.event==='life_entered'));
 });
+
+test('beginning a new Observatory life skips the return notice but a later return keeps it',async()=>{
+  const h=await shellHarness({path:'/worlds/shared_observatory',initialLife:{life:{id:'life_a',template_id:'shared_observatory',revision:0},snapshot:{setting:'commons',command_count:0,minute:0}},responder:({url,life})=>url==='/product/api/start'?{body:life}:undefined});
+  await h.clickData({start:'shared_observatory'});await h.settle();assert.equal(h.location.pathname,'/lives/life_a');assert.equal(h.node('#world-notice').hidden,true);assert.equal(h.node('#world-notice').innerHTML,'');
+  await h.navigate('/your-worlds');await h.navigate('/lives/life_a');assert.equal(h.node('#world-notice').hidden,false);assert.match(h.node('#world-notice').innerHTML,/Your place is still here/);
+});
+
+test('opening an existing zero-choice life still offers its saved-place return notice',async()=>{
+  const h=await shellHarness();assert.equal(h.life.life.revision,0);assert.equal(h.node('#world-notice').hidden,false);assert.match(h.node('#world-notice').innerHTML,/Your place is still here/);
+});

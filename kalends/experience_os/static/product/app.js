@@ -63,7 +63,7 @@
 
   const $ = selector => document.querySelector(selector), $$ = selector => [...document.querySelectorAll(selector)], esc = escapeHTML;
   const API = '/product/api/';
-  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Map(), lab:null, metadataWarnings:new Map(), toastTimer:null, lastSceneRequest:0, sessionId:null, usage:{id:null,clock:null,timer:null,contexts:new Map(),consentPending:new Map(),suppressed:new Set()}};
+  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Map(), newLives:new Set(), lab:null, metadataWarnings:new Map(), toastTimer:null, lastSceneRequest:0, sessionId:null, usage:{id:null,clock:null,timer:null,contexts:new Map(),consentPending:new Map(),suppressed:new Set()}};
   class ApiError extends Error { constructor(message, code, status) { super(message); this.name='ApiError'; this.code=code; this.status=status; } }
   async function api(path, body, signal, keepalive=false) {
     const response = await fetch(API + path, body === undefined ? {cache:'no-store',signal} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal,keepalive});
@@ -164,7 +164,7 @@
     if(location.hash) requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());else scrollTo(0,0);
   }
   async function enterLife(id, routeEpoch) {
-    const changed=S.id!==id; if(changed){saveCommonDraft();leaveUsage();pauseFrames();S.id=id;S.gate.select(id);S.data=null;S.reflection=null;S.proposal=null;S.conversationEpoch++;$('#life-loading').hidden=false;}
+    const changed=S.id!==id; if(changed){saveCommonDraft();leaveUsage();pauseFrames();S.id=id;S.gate.select(id);S.data=null;S.reflection=null;S.proposal=null;S.conversationEpoch++;$('#world-notice').hidden=true;$('#life-loading').hidden=false;}
     try {
       const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);
       const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));
@@ -260,6 +260,7 @@
   }
   function showNotice(title,body,reconcile=false) { const n=$('#world-notice');n.innerHTML=`<strong>${esc(title)}</strong>${esc(body)}<br>${reconcile?'<button class="text-link" data-reconcile style="background:transparent">Refresh this life →</button>':''}<button class="text-link" data-dismiss-return style="background:transparent">Continue from here →</button>`;n.hidden=false; }
   function showReturn() {
+    if(S.newLives.delete(S.id)){$('#world-notice').hidden=true;$('#world-notice').replaceChildren();return;}
     if(!S.data||S.returnSeen.get(S.id)===metadata(S.data).revision)return;const d=S.data,r=d.return_summary||d.history?.return_summary||{},changes=r.changes||r.clauses||[],l=metadata(d);
     const summary=returnText(r)||r.text||`Paused ${l.location?'at '+l.location:'at your recorded moment'}. Time advances when you choose.`;
     showNotice('Your place is still here.',summary);S.returnSeen.set(S.id,l.revision);recordSummaryConsequences(r,'return');
@@ -398,7 +399,7 @@
     const b=event.target.closest('button');if(!b||b.disabled)return;
     const task=async()=>{
       if(b.hasAttribute('data-close-dialog')){b.closest('dialog').close();return;}
-      if(b.dataset.start){b.disabled=true;b.textContent='Creating a separate life…';try{const result=await api('start',{template_id:b.dataset.start});await loadCatalog();const id=lifeId(metadata(result));if(!id)throw Error('The server did not return a new life identity.');rememberMetadataWarning(id,result);navigate(lifeURL(id));}finally{if(b.isConnected){b.disabled=false;b.textContent='Begin a new life →';}}return;}
+      if(b.dataset.start){b.disabled=true;b.textContent='Creating a separate life…';try{const result=await api('start',{template_id:b.dataset.start});await loadCatalog();const id=lifeId(metadata(result));if(!id)throw Error('The server did not return a new life identity.');S.newLives.add(id);rememberMetadataWarning(id,result);navigate(lifeURL(id));}finally{if(b.isConnected){b.disabled=false;b.textContent='Begin a new life →';}}return;}
       if(b.dataset.person){saveCommonDraft();S.selected.set(S.id,b.dataset.person);S.conversationEpoch++;renderObservatory();return;}
       if(b.dataset.action==='report'){await propose({action:'share',recipient:'team_b'});return;}
       if(b.dataset.action==='inspect'){await propose({action:'inspect'});return;}
@@ -434,7 +435,7 @@
       if(event.target.id==='allocation-form'){saveCommonDraft();await propose({action:'allocate',allocation:Object.fromEntries(['team_a','team_b','team_c'].map(id=>[id,Number(event.target.elements[id].value)]))});}
       else if(event.target.id==='common-speech'){saveCommonDraft();const input=$('#common-speech-input'),utterance=input.value.trim();if(!utterance)return;const id=S.id,person=S.selected.get(id)||'team_b',conversationEpoch=S.conversationEpoch;status('Interpreting within the supported offline actions…');let result;try{result=await S.gate.run(signal=>api('intent',{id,text:utterance,recipient:person},signal));}catch(error){if(error.status===404){status('Try “ask for the report”, “inspect”, or use a suggested choice. This installation uses a finite offline grammar.');return;}throw error;}if(id!==S.id||conversationEpoch!==S.conversationEpoch)return;if(result.action){await propose(result.action);}else status(result.clarification||result.reply||result.message||'Choose a suggested action or ask about a report, inspection, promise or allocation.');}
       else if(event.target.id==='promise-form'){const quantity=Number($('#promise-quantity').value),recipient=$('#promise-recipient').value;$('#review-dialog').close();$('#confirm-choice').hidden=false;await propose({action:'commit',recipient,quantity});}
-      else if(event.target.id==='studio-form'){const spec=studioSpec();if(!spec)return;const r=await api('studio/compile',spec);await loadCatalog();const id=lifeId(metadata(r));rememberMetadataWarning(id,r);navigate(lifeURL(id));}
+      else if(event.target.id==='studio-form'){const spec=studioSpec();if(!spec)return;const r=await api('studio/compile',spec);await loadCatalog();const id=lifeId(metadata(r));S.newLives.add(id);rememberMetadataWarning(id,r);navigate(lifeURL(id));}
       else if(event.target.id==='history-notes'){const id=S.id,note=$('#personal-note').value.trim();if(!note)return;await api('annotation',{id,note});if(id===S.id){draft(id).note='';await refreshLife();status('Personal note saved separately from world history.');}}
     };task().catch(error=>{if(event.target.id==='studio-form'&&$('#studio-result'))$('#studio-result').textContent=error.message;notifyError(error);});
   });
