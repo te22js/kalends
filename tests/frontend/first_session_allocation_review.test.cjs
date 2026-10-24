@@ -39,3 +39,18 @@ test('invalid allocation entries suppress totals and reassuring report compariso
  await h.inputAllocation({team_a:0,team_b:4,team_c:4});assert.match(h.node('#allocation-total').innerHTML,/Total: 8 of 12/);assert.match(h.node('#allocation-total').innerHTML,/fits your last dated report/);
  assert.equal(h.requests.some(r=>/\/(propose|confirm)$/.test(r.url)),false);
 });
+
+test('next-round review preserves the prior settlement without claiming another execution',async()=>{
+ const initial=initialLife(null);initial.snapshot.minute=1439;initial.snapshot.round_closed=true;
+ const h=await shellHarness({initialLife:initial});await h.clickData({guideAction:'next_round'});
+ const markup=h.node('#known-deadlines').innerHTML;
+ assert.equal(h.node('#time-dialog').open,true);assert.match(markup,/Advance from Day 1 · 23:59 to Day 2 · 00:00: 1 world minute\./);assert.match(markup,/No open promise is recorded for the upcoming step\. The previous settlement remains in your history\./);assert.doesNotMatch(markup,/Finishing still executes/);assert.equal(h.requests.some(r=>r.url.endsWith('/advance')),false);
+});
+
+test('settled allocation summary uses recorded delivery and drops prospective review advice',async()=>{
+ const initial=initialLife({usable:8,as_of:0,kind:'testimony'});initial.snapshot.round_closed=true;initial.snapshot.allocation={team_a:4,team_b:4,team_c:4};initial.guide.result={at:1439,allocation:initial.snapshot.allocation,executed:{team_a:4,team_b:4,team_c:0},explanation:[]};
+ const h=await shellHarness({initialLife:initial});await h.inputAllocation({team_a:-1,team_b:4,team_c:4});
+ const markup=h.node('#allocation-total').innerHTML;
+ assert.match(markup,/Total allocated: 12 units/);assert.match(markup,/Actual delivery: 8 units/);assert.match(markup,/This round has settled/);assert.doesNotMatch(markup,/may review|If that condition|fits your|Total unavailable/);
+ const unavailable=initialLife(null);unavailable.snapshot.round_closed=true;const absent=await shellHarness({initialLife:unavailable});assert.match(absent.node('#allocation-total').innerHTML,/This round has settled/);assert.doesNotMatch(absent.node('#allocation-total').innerHTML,/Actual delivery|0 units/);
+});
