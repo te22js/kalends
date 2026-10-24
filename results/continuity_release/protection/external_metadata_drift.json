@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-24T13:45:09.095305+00:00",
+  "changes": [
+    {
+      "group": "saves",
+      "path": ".kalends/next_phase/.product/state.json",
+      "baseline_sha256": "0cdb830008ec591def54ad4b0683c4035f2d73bdc97926af5aeffb26b1326f2b",
+      "observed_sha256": "6b03e2d3bd1c8b90f069724c54a8e26d870fd2d6c21fb2ef503e05472e5991c3",
+      "modified_utc": "2026-10-24T13:44:35.168171+00:00"
+    }
+  ],
+  "attribution": "Unconfirmed existing-process/external metadata update. The original port8810 server and user browser remained live. Root made no API requests there; product/pilot tests used temporary roots or mocks. Do not revert this file. Accepted-command save files and all historical artifacts match the baseline.",
+  "policy": "This audit acknowledges only the exact observed hash of this one metadata file; every later change still fails the guard."
+}

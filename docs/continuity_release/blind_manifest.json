@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "release": "continuity_release_blind_v1",
+  "frozen_at_utc": "2026-10-24T13:45:04.757420+00:00",
+  "status": "frozen_before_candidate_comparisons",
+  "author_role": "independent_task_designer",
+  "artifacts": [
+    {
+      "path": "specs/continuity_release/development.json",
+      "sha256": "f19efb951f6af748971d9306b94875636866c85cc246c625ce1703cf75a6490b",
+      "bytes": 99896
+    },
+    {
+      "path": "specs/continuity_release/heldout.json",
+      "sha256": "9e0c8a1e05a85129e010f0237ddef98296e24161b323e70517272d08727bc644",
+      "bytes": 127364
+    },
+    {
+      "path": "docs/continuity_release/blind_design.md",
+      "sha256": "96fd6706bf9b5869e2854b6d05bdcfa1158c3f3ab4953f0164a5f14d507131d6",
+      "bytes": 15390
+    }
+  ],
+  "public_contract": {
+    "path": "docs/continuity_release/TASK_CONTRACT.md",
+    "sha256": "62ecadeb8226667d0608565fafaa06427c01b3bb080eee5f08596f14732579f3"
+  },
+  "inventory": {
+    "development": {
+      "cases": 6,
+      "assertions": 57
+    },
+    "heldout": {
+      "cases": 8,
+      "assertions": 76
+    }
+  },
+  "total_assertions": 133,
+  "scoring": {
+    "primary": "all declared assertions pass per case",
+    "assertion_weight": 1,
+    "principal_heldout_cases": 5,
+    "control_heldout_cases": 3,
+    "aggregate": "unweighted case means, principal and controls separately"
+  },
+  "validation": [
+    "JSON parsing",
+    "case/action/goal/window/noise bounds",
+    "all proposition values are strings",
+    "chronological event and decision times",
+    "action and assertion references",
+    "public completion and prerequisite keys",
+    "known assertion forms and fixed weights",
+    "public execution gates and closing event",
+    "relevant declared inspection keys for scripted outcomes"
+  ],
+  "preexisting_files_read": [
+    "/Users/tanmaygoswami/Claude_backup/Projects/kalends/docs/continuity_release/TASK_CONTRACT.md"
+  ],
+  "authored_files_read": [
+    "/Users/tanmaygoswami/Claude_backup/Projects/kalends/specs/continuity_release/development.json",
+    "/Users/tanmaygoswami/Claude_backup/Projects/kalends/specs/continuity_release/heldout.json",
+    "/Users/tanmaygoswami/Claude_backup/Projects/kalends/docs/continuity_release/blind_design.md",
+    "/Users/tanmaygoswami/Claude_backup/Projects/kalends/docs/continuity_release/blind_manifest.json"
+  ],
+  "other_inputs": [
+    "inherited system/developer instructions and user environment context",
+    "root independent-design assignment",
+    "root notice of public interface and interface bounds",
+    "root clarification of recovery-key relevance, deadlines, and information-limited negative case",
+    "root readiness coordination and notice of candidate configuration freeze",
+    "root public-controller clarification: scripted outcome values remain private, written-key names support recovery relevance, and independent obligations proceed during recovery"
+  ],
+  "attestation": {
+    "target_implementation_read": false,
+    "agent_or_policy_code_read": false,
+    "git_history_read": false,
+    "previous_results_or_research_reports_read": false,
+    "candidate_comparisons_run_or_seen": false,
+    "external_inference_or_paid_calls": false,
+    "existing_user_saves_or_artifacts_modified": false,
+    "candidate_specific_tuning": false
+  },
+  "immutability": "Do not alter heldout bytes or scoring after comparisons begin. Corrections require a newly identified release."
+}

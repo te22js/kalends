@@ -1,0 +1,19 @@
+{
+  "release_commit": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+  "candidate": "kalends.next_phase.diagnostic.DependencyRetentionMind",
+  "implementation_sha256": "08bed546094fe3e36bfc6462141f195d8d36cf6f7b167f7471d94a6a6f391342",
+  "source_sha256": {
+    "kalends/next_phase/diagnostic.py": "10451c73cfa5f5fb86189b50077e812ed352c20f421231026c01be2c95f7ef18",
+    "kalends/experience_os/minds.py": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
+    "kalends_rebirth/minds.py": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+    "kalends/experience_os/cognition_bench.py": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576"
+  },
+  "parameters": {
+    "capacity": 16,
+    "context_records": 4,
+    "retention_policy": "hybrid",
+    "state_bytes": 16384,
+    "context_bytes": 4096
+  },
+  "policy": "No target source or parameter change; final cases and rubric remain independent of mechanism. Shared public controller is part of each charged arm."
+}

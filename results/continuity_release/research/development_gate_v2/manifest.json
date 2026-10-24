@@ -1,0 +1,32 @@
+{
+  "task_sha256": "f19efb951f6af748971d9306b94875636866c85cc246c625ce1703cf75a6490b",
+  "task_file": "/Users/tanmaygoswami/Claude_backup/Projects/kalends/specs/continuity_release/development.json",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "arms": [
+    "dependency_retention",
+    "v3_hybrid",
+    "bm25_fifo",
+    "bm25_task",
+    "latest_per_key"
+  ],
+  "budgets": {
+    "state_bytes": 16384,
+    "context_bytes": 4096,
+    "records": 16,
+    "context_records": 4
+  },
+  "source_sha256": {
+    "kalends/continuity_release/__init__.py": "501fd6f2bca3c393ce289cbe3a25bdaf4a0c824146bdc17d1aff7f9b73332d68",
+    "kalends/continuity_release/evaluation.py": "6a3b80e52b70ad24fe7df2febd6689847363ad3e4fcdb4db8bc9e09d60dd49f4",
+    "kalends/continuity_release/pilot.py": "e138f33e4059f05db1db7cd239a61a0ec5d25383c5f9fa04c2bc6cf57073bca7"
+  },
+  "model_calls": 0,
+  "spend_usd": 0
+}
