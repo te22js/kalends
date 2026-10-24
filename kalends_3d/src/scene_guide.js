@@ -91,6 +91,26 @@ export function confirmationLabel(action,speaker){
     talk:'Ask '+speaker}[action]||'Confirm this action');
 }
 
+/** Position HTML markers without changing their world anchors or hit actions.
+ * Priority markers keep the closest available position; secondary labels use
+ * compact measured boxes. All labels remain keyboard and pointer reachable. */
+export function layoutSceneLabels(labels,width,height){
+  const placed=[],result=new Map(),margin=8,gap=7;
+  const offsets=[];for(const dy of [0,-22,22,-44,44,-66,66,-88,88])for(const dx of [0,-28,28,-56,56,-84,84])offsets.push({dx,dy});
+  offsets.sort((a,b)=>Math.abs(a.dy)+Math.abs(a.dx)*1.3-Math.abs(b.dy)-Math.abs(b.dx)*1.3);
+  for(const label of [...labels].sort((a,b)=>(b.priority||0)-(a.priority||0))){
+    const w=Math.min(label.width,Math.max(1,width-margin*2)),h=Math.min(label.height,Math.max(1,height-margin*2));
+    let chosen;
+    for(const {dx,dy} of offsets){const x=Math.max(margin+w/2,Math.min(width-margin-w/2,label.x+dx)),y=Math.max(margin+h,Math.min(height-margin,label.y+dy));
+      const box={left:x-w/2,right:x+w/2,top:y-h,bottom:y};
+      if(!chosen)chosen={x,y,box};
+      if(!placed.some(p=>box.left<p.right+gap&&box.right>p.left-gap&&box.top<p.bottom+gap&&box.bottom>p.top-gap)){chosen={x,y,box};break;}
+    }
+    placed.push(chosen.box);result.set(label.id,{x:chosen.x,y:chosen.y});
+  }
+  return result;
+}
+
 export function timeReview(world,minutes){
   const from=Number(world?.minute)||0,to=from+minutes,known=[];
   for(const c of world?.player?.commitments||[]){const due=Number(c.deadline??c.due);

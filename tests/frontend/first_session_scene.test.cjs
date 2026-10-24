@@ -96,3 +96,23 @@ test('the shipped journal keeps zero delivery, singular quantities and missing o
  assert.match(content.innerHTML,/1 coin/);assert.doesNotMatch(content.innerHTML,/1 coins/);assert.match(content.innerHTML,/1 flour unit/);assert.doesNotMatch(content.innerHTML,/1 flour units/);
  assert.match(content.innerHTML,/0 of 1 flour unit delivered\./);assert.match(content.innerHTML,/Promised quantity: 0\./);assert.doesNotMatch(content.innerHTML,/undefined|\[object Object\]|\{"status"/);
 });
+test('arrival owns the guidance layer until the participant enters the scene',()=>{
+ const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
+ const begin=source.indexOf('function renderHUD('),end=source.indexOf('function guideTarget(',begin),lead={hidden:false},S={started:false};
+ const sandbox={S,$:()=>lead,w:()=>null};vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);
+ sandbox.renderHUD();assert.equal(lead.hidden,true);S.started=true;sandbox.renderHUD();assert.equal(lead.hidden,false);
+ const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8');assert.match(html,/<aside id="lead"[^>]* hidden>/);
+});
+test('crowded scene labels retain every target while reserving the primary guide marker',async()=>{
+ const {layoutSceneLabels}=await modulePromise,labels=[
+  {id:'Sabina',x:754,y:342,width:190,height:60,priority:200},
+  {id:'Dama',x:895,y:380,width:65,height:27,priority:50},
+  {id:'Marcus',x:1028,y:405,width:68,height:27,priority:50},
+  {id:'bakery',x:850,y:373,width:113,height:33,priority:10},
+ ];
+ const positions=layoutSceneLabels(labels,1280,643);assert.equal(positions.size,4);assert.deepEqual(positions.get('Sabina'),{x:754,y:342});
+ const boxes=labels.map(label=>{const q=positions.get(label.id);return {left:q.x-label.width/2,right:q.x+label.width/2,top:q.y-label.height,bottom:q.y};});
+ for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++){const a=boxes[i],b=boxes[j];assert.equal(a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top,false,'all four labels remain separate');}
+ assert.ok([...positions.values()].every(q=>q.x>=8&&q.x<=1272&&q.y>=8&&q.y<=635));
+ const css=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/style.css'),'utf8');assert.match(css,/\.nameplate small\{display:none\}/);assert.match(css,/\.nameplate:focus-visible small\{display:block\}/);
+});

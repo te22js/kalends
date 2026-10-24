@@ -21,6 +21,8 @@ body{--ui-scale:1}body[data-text-size="large"]{--ui-scale:1.2}body[data-text-siz
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d49437;outline-offset:3px}
 .nameplate{font-size:calc(12px * var(--ui-scale));letter-spacing:0}.nameplate small{font-size:calc(10px * var(--ui-scale));white-space:normal;line-height:1.4;max-width:190px;background:#23362cf0;border-radius:3px;padding:3px 5px}
 .doorplate{font-size:calc(12px * var(--ui-scale));padding:8px 11px}
+.nameplate small{display:none}.nameplate.primary small,.nameplate:hover small,.nameplate:focus-visible small{display:block}
+.nameplate{z-index:2}.doorplate{z-index:1}.nameplate.primary{z-index:3}.nameplate:hover,.nameplate:focus-visible{z-index:4}
 #loading .arrival-copy{font:calc(17px * var(--ui-scale))/1.6 Georgia,serif;max-width:620px;opacity:1;margin-bottom:18px}
 #loading h1{font-size:clamp(38px,5.8vw,80px);margin:18px 0}#loading small{font-size:calc(12px * var(--ui-scale));opacity:.9;max-width:540px;line-height:1.5}#loading #load-status{opacity:1;font-size:14px}#loading #skip-controls{font-size:14px;width:260px;padding:12px 0;border-top:0}
 #conversation{width:min(470px,calc(100vw - 36px));max-height:calc(100vh - 130px);bottom:88px}
