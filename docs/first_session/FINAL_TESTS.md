@@ -28,13 +28,13 @@ The Python suite received sandbox escalation to allow its loopback HTTP test ser
 | Before native public-street repair | 1,157 passed in 45.27 s | 208 passed, 0 failed/skipped | Exit 0 | Superseded by native defects; logs retained with `/tmp/kalends-first-session-pre-street-` prefix. |
 | After public-street and sticky-action repair | 1,157 passed in 33.58 s | 214 passed, 0 failed/skipped, 1.145 s | Exit 0 | Full rerun completed 24 October 2026 around 15:05 UTC. These broad checks preceded the later priced-choice presentation repair. |
 | After priced-choice presentation repair | Followed by the full run below | Targeted scene suite: 23 passed | Exit 0 | Regression checked the shipped rendered HTML before native reinspection. |
-| Final behavior-stable run | **1,174 passed in 32.94 s** | **216 passed, 0 failed/skipped, 1.129 s** | **Exit 0, 678 ms** | Ran 24 October 2026, 15:11:05–15:11:46 UTC. Full Python and frontend suites, plus one final Vite build. |
+| Full run at `e04e26d` | **1,174 passed in 32.94 s** | **216 passed, 0 failed/skipped, 1.129 s** | **Exit 0, 678 ms** | Ran 24 October 2026, 15:11:05–15:11:46 UTC. Full Python and frontend suites, plus Vite build. Later native findings are checked below. |
 
 The earlier post-street broad run kept HEAD at `44868e575da0df5a343a3dc44219ea50d6c88edc`, but tested a working tree with concurrent integration-owner changes. `history.py` became modified during that run, so it was superseded by the final run. Those logs are retained with the `/tmp/kalends-first-session-pre-choice-` prefix. No failing product test was hidden or reclassified as passing.
 
 The final run began and ended at **`e04e26dc6307b828666de0979eacaa9b5135598a`**. Product runtime paths (`kalends`, `kalends_rebirth`, `kalends_3d/src`, `kalends_3d/index.html`) had no working-tree diff before or after validation. The independent copy-catalog work was dirty: `COPY_REVIEW.md`, generated `copy_review.html/json`, `scripts/render_first_session_copy.py` and `tests/test_first_session_copy_review.py`. `BACKEND_REVIEW.md`, browser captures and existing test fixtures were untracked. The complete suite collected the available tests, including the expanded copy review. Exact before/after status logs retain these paths. The validator made no runtime edits during this final run.
 
-Final build: `index-D6M7c_WY.js`, `index-Bk7JdV6u.css`. Vite succeeded and retained three notices: the separately served classic `/navigation.js` is not bundled; `/assets/portraits.png` resolves at runtime; the PlayCanvas bundle exceeds the default 500 kB warning threshold. These are build notices, not a claimed runtime asset or performance certification.
+The build for that full run was `index-D6M7c_WY.js`, `index-Bk7JdV6u.css`. Vite succeeded and retained three notices: the separately served classic `/navigation.js` is not bundled; `/assets/portraits.png` resolves at runtime; the PlayCanvas bundle exceeds the default 500 kB warning threshold. These are build notices, not a claimed runtime asset or performance certification.
 
 ## Log locations
 
@@ -46,4 +46,20 @@ Final build: `index-D6M7c_WY.js`, `index-Bk7JdV6u.css`. Vite succeeded and retai
 - `/tmp/kalends-first-session-final-diff-check.log` and `.exit`: whitespace check, exit 0.
 - `/tmp/kalends-first-session-final-runtime-diff.exit`: runtime working-tree comparison, exit 0.
 
-Broad automated validation is complete for the runtime at the recorded HEAD. A later behavior change requires a fresh check of its affected behavior. Human and native-browser release gates remain separate.
+## Native-follow-up validation
+
+Later native checks found reflection defaults and story-record labels, then an existing-world arrival overlay that contradicted a resolved outcome. The reflection/label fixes were committed by the independent review agent. The scene fix resumes the current admitted step/objective, keeps fresh arrival separate, prevents a repeat P0 acknowledgement and lets enlarged entry text scroll to its controls. The source fix and its regressions are committed at **`aa394751095a4c124710588d421c10b83528726b`**.
+
+After that source commit, the following commands ran without another behavior change:
+
+```sh
+# /Users/tanmaygoswami/Claude_backup/Projects/kalends
+node --test tests/frontend/*.test.cjs > /tmp/kalends-first-session-post-return-frontend.log 2>&1
+
+# /Users/tanmaygoswami/Claude_backup/Projects/kalends/kalends_3d
+npm run build > /tmp/kalends-first-session-post-return-vite.log 2>&1
+```
+
+Result on 24 October 2026 around 15:24 UTC: **224 frontend tests passed, 0 failed/skipped, 2.187 s**. Vite exited 0 in 1.40 s, producing **`index-CbuBMLFg.js` / `index-BdUbm4iJ.css`**, with the same three notices. `/tmp/kalends-first-session-post-return-head.log`, `git-before.log` and `git-after.log` record the source commit and dirty documentation/catalog artifacts. The corresponding frontend/build `.exit` files both contain 0.
+
+The earlier **1,174 Python passes apply only to `e04e26d`**. They do **not** cover the later `history.py` grouped-title change and its new test (`08796c5`). The integration owner is responsible for the final complete Python rerun; this agent did not repeat Python for a presentation-only scene fix. Human and native-browser release gates remain separate from these automated results.
