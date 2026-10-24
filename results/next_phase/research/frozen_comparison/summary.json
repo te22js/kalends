@@ -1,0 +1,564 @@
+{
+  "worlds": 760,
+  "groups": [
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 12093,
+      "median_runtime_seconds": 0.05882587500000014
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7969,
+      "median_runtime_seconds": 0.04426264600000085
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 8,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7711,
+      "median_runtime_seconds": 0.051837895500000286
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "dependency_retention",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8683,
+      "median_runtime_seconds": 0.056855354000000524
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8672,
+      "median_runtime_seconds": 0.05477370849999996
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 8,
+      "max_total_state_bytes": 31561,
+      "median_runtime_seconds": 0.16540114600000067
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8061,
+      "median_runtime_seconds": 0.08400772899999964
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8517,
+      "median_runtime_seconds": 0.09966727100000039
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "dependency_retention",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8818,
+      "median_runtime_seconds": 0.10716458349999947
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 9317,
+      "median_runtime_seconds": 0.11067235400000008
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 32854,
+      "median_runtime_seconds": 0.17000958300000013
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8088,
+      "median_runtime_seconds": 0.08917152050000005
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8401,
+      "median_runtime_seconds": 0.09966747949999988
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "dependency_retention",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8788,
+      "median_runtime_seconds": 0.11544516650000003
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 4,
+      "inspection_credits": 8,
+      "missed_promises": 4,
+      "max_total_state_bytes": 9316,
+      "median_runtime_seconds": 0.11079914599999974
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 32855,
+      "median_runtime_seconds": 0.17172852049999987
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8086,
+      "median_runtime_seconds": 0.08496231250000008
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8401,
+      "median_runtime_seconds": 0.09665550049999982
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "dependency_retention",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8789,
+      "median_runtime_seconds": 0.10885779150000108
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 4,
+      "inspection_credits": 8,
+      "missed_promises": 4,
+      "max_total_state_bytes": 9321,
+      "median_runtime_seconds": 0.10993447900000053
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_current_correction",
+      "arm": "admissible_history",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 12101,
+      "median_runtime_seconds": 0.05848164600000061
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_current_correction",
+      "arm": "bm25_fifo",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7975,
+      "median_runtime_seconds": 0.045111437000000976
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_current_correction",
+      "arm": "current_observation",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 30,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7724,
+      "median_runtime_seconds": 0.05363641649999984
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_current_correction",
+      "arm": "dependency_retention",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8687,
+      "median_runtime_seconds": 0.057076812500000074
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_current_correction",
+      "arm": "v3_hybrid",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8676,
+      "median_runtime_seconds": 0.05594974999999991
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_hidden_reversal",
+      "arm": "admissible_history",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 30,
+      "max_total_state_bytes": 10799,
+      "median_runtime_seconds": 0.055972729500002316
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_hidden_reversal",
+      "arm": "bm25_fifo",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 30,
+      "max_total_state_bytes": 7894,
+      "median_runtime_seconds": 0.04326591650000111
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_hidden_reversal",
+      "arm": "current_observation",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 6517,
+      "median_runtime_seconds": 0.04902649950000182
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_hidden_reversal",
+      "arm": "dependency_retention",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8697,
+      "median_runtime_seconds": 0.05442570849999839
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_hidden_reversal",
+      "arm": "v3_hybrid",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8686,
+      "median_runtime_seconds": 0.053640542000000124
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_improvement_overload",
+      "arm": "admissible_history",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 53952,
+      "median_runtime_seconds": 0.3489858749999968
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_improvement_overload",
+      "arm": "bm25_fifo",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8098,
+      "median_runtime_seconds": 0.11894381249999952
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_improvement_overload",
+      "arm": "current_observation",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8421,
+      "median_runtime_seconds": 0.14354014599999232
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_improvement_overload",
+      "arm": "dependency_retention",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8819,
+      "median_runtime_seconds": 0.15216652099999806
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_improvement_overload",
+      "arm": "v3_hybrid",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 30,
+      "missed_promises": 0,
+      "max_total_state_bytes": 9205,
+      "median_runtime_seconds": 0.15874333299999677
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_unchanged_interruption",
+      "arm": "admissible_history",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 53558,
+      "median_runtime_seconds": 0.3423187915000021
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_unchanged_interruption",
+      "arm": "bm25_fifo",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8095,
+      "median_runtime_seconds": 0.11776233300000172
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_unchanged_interruption",
+      "arm": "current_observation",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 8540,
+      "median_runtime_seconds": 0.14074172900000192
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_unchanged_interruption",
+      "arm": "dependency_retention",
+      "worlds": 30,
+      "completed_chains": 30,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8849,
+      "median_runtime_seconds": 0.14991393700000089
+    },
+    {
+      "split": "reviewer_holdout",
+      "case": "review_unchanged_interruption",
+      "arm": "v3_hybrid",
+      "worlds": 30,
+      "completed_chains": 0,
+      "inspection_credits": 30,
+      "missed_promises": 30,
+      "max_total_state_bytes": 9356,
+      "median_runtime_seconds": 0.15287329150000062
+    }
+  ],
+  "candidate_vs_v3": [
+    {
+      "case": "dev_current",
+      "split": "development",
+      "paired_worlds": 8,
+      "completion_rate_difference": 0,
+      "conditional_paired_bootstrap_95": [
+        0,
+        0
+      ],
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 8,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "dev_hidden",
+      "split": "development",
+      "paired_worlds": 8,
+      "completion_rate_difference": 0,
+      "conditional_paired_bootstrap_95": [
+        0,
+        0
+      ],
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 8,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "dev_interrupted",
+      "split": "development",
+      "paired_worlds": 8,
+      "completion_rate_difference": 0.5,
+      "conditional_paired_bootstrap_95": [
+        0.125,
+        0.875
+      ],
+      "candidate_wins": 4,
+      "baseline_wins": 0,
+      "ties": 4,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "dev_reverse",
+      "split": "development",
+      "paired_worlds": 8,
+      "completion_rate_difference": 0.5,
+      "conditional_paired_bootstrap_95": [
+        0.125,
+        0.875
+      ],
+      "candidate_wins": 4,
+      "baseline_wins": 0,
+      "ties": 4,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "review_current_correction",
+      "split": "reviewer_holdout",
+      "paired_worlds": 30,
+      "completion_rate_difference": 0,
+      "conditional_paired_bootstrap_95": [
+        0,
+        0
+      ],
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 30,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "review_hidden_reversal",
+      "split": "reviewer_holdout",
+      "paired_worlds": 30,
+      "completion_rate_difference": 0,
+      "conditional_paired_bootstrap_95": [
+        0,
+        0
+      ],
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 30,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "review_improvement_overload",
+      "split": "reviewer_holdout",
+      "paired_worlds": 30,
+      "completion_rate_difference": 0,
+      "conditional_paired_bootstrap_95": [
+        0,
+        0
+      ],
+      "candidate_wins": 0,
+      "baseline_wins": 0,
+      "ties": 30,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    },
+    {
+      "case": "review_unchanged_interruption",
+      "split": "reviewer_holdout",
+      "paired_worlds": 30,
+      "completion_rate_difference": 1,
+      "conditional_paired_bootstrap_95": [
+        1,
+        1
+      ],
+      "candidate_wins": 30,
+      "baseline_wins": 0,
+      "ties": 0,
+      "limitation": "seed resampling conditional on this single authored template; zero width is not general equivalence/certainty"
+    }
+  ],
+  "live_model_calls": 0,
+  "embedding_calls": 0,
+  "interpretation": "Internal authored diagnostic with fixed controller; conditional on these task templates, not independent replication.",
+  "failures": [],
+  "source_unchanged": true
+}

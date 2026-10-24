@@ -1,0 +1,3430 @@
+[
+  {
+    "arm": "current_observation",
+    "public_evidence_id": 6,
+    "decision": {
+      "action_id": "protect",
+      "goal_id": "chain",
+      "utility": 4,
+      "reasons": [
+        "retained observatory.condition=fragile, dated99"
+      ],
+      "evidence_ids": [
+        6
+      ],
+      "context_event_ids": [
+        6
+      ],
+      "rejected": [
+        [
+          "equal",
+          [
+            "no settled retained support for observatory.condition=stable"
+          ]
+        ]
+      ],
+      "previous_action": null
+    },
+    "actual_receipt_id": 7,
+    "prerequisite_completed": true,
+    "trace": {
+      "at": 99,
+      "public_register": {
+        "credits": 1,
+        "promises": {
+          "team_c": 4
+        },
+        "projects": {
+          "deferred": {
+            "actor": "team_c",
+            "deadline": 2880,
+            "quantity": 4,
+            "requires": [
+              "prerequisite"
+            ],
+            "status": "blocked",
+            "updated_at": 0
+          },
+          "prerequisite": {
+            "actor": "team_c",
+            "deadline": 1440,
+            "quantity": 4,
+            "requires": [],
+            "status": "active",
+            "updated_at": 0
+          }
+        },
+        "round": 0
+      },
+      "controller_plan_read": {
+        "ingress_watermark": -1,
+        "next": "allocate_after_evidence_review",
+        "phase": "review_after_interruption",
+        "receipt_ids": [
+          5
+        ],
+        "round": 0,
+        "support_ids": []
+      },
+      "private_state_before": {
+        "version": 3,
+        "base": {
+          "version": 1,
+          "agent_id": "Player",
+          "config": {
+            "capacity": 16,
+            "context_records": 4,
+            "retention_policy": "hybrid",
+            "consolidation": true,
+            "source_lineage": true,
+            "belief_revision": true,
+            "max_goals": 8,
+            "max_options": 16
+          },
+          "episodes": [
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "text": "A public current instrument reading is posted",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 1
+            }
+          ],
+          "semantic": [
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 2
+            }
+          ],
+          "revisions": [],
+          "reflections": [],
+          "goals": [
+            {
+              "goal_id": "chain",
+              "label": "Complete the assigned prerequisite and follow-up batches",
+              "priority": 1,
+              "deadline": 2880,
+              "relevant_keys": [
+                [
+                  "observatory",
+                  "condition"
+                ]
+              ],
+              "tags": [
+                "coordination"
+              ],
+              "status": "active"
+            }
+          ],
+          "last_decision": null,
+          "serial": 2,
+          "observed_count": 1
+        },
+        "plans": [],
+        "plan_capacity": 4,
+        "plan_serial": 0,
+        "cycle_serial": 0,
+        "last_cycle_at": null
+      },
+      "options": [
+        {
+          "action_id": "equal",
+          "label": "Allocate four units to each team",
+          "utility": 5,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "stable",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "protect",
+          "label": "Allocate four units to the first and assigned follow-up team",
+          "utility": 4,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "fragile",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "inspect",
+          "label": "Pay for a current direct inspection",
+          "utility": 1,
+          "goal_id": "chain",
+          "costs": {
+            "credits": 1
+          },
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "wait",
+          "label": "Wait without supported allocation evidence",
+          "utility": 0,
+          "goal_id": null,
+          "costs": {},
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        }
+      ],
+      "option_hash": "4379c84d4a52b211cab51fe77938a56be4baf7d2f3c1a8ddc0f2ff4589ae90f4",
+      "decision": {
+        "action_id": "protect",
+        "goal_id": "chain",
+        "utility": 4,
+        "reasons": [
+          "retained observatory.condition=fragile, dated99"
+        ],
+        "evidence_ids": [
+          6
+        ],
+        "context_event_ids": [
+          6
+        ],
+        "rejected": [
+          [
+            "equal",
+            [
+              "no settled retained support for observatory.condition=stable"
+            ]
+          ]
+        ],
+        "previous_action": null
+      },
+      "context": [
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "text": "A public current instrument reading is posted",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "participants": [
+            "Player",
+            "team_a",
+            "team_b",
+            "team_c"
+          ],
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "episode",
+          "serial": 1
+        },
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "semantic",
+          "compact": true,
+          "serial": 2
+        }
+      ],
+      "state_bytes_after": 2241
+    },
+    "ledger": [
+      {
+        "event_id": 0,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [],
+        "payload": {
+          "cash": {
+            "Player": 1,
+            "team_a": 12,
+            "team_b": 12,
+            "team_c": 12,
+            "consortium": 0
+          },
+          "inventory": {
+            "Player": 0,
+            "team_a": 0,
+            "team_b": 0,
+            "team_c": 0,
+            "consortium": 0
+          },
+          "commitments": {
+            "Player": [],
+            "team_a": [],
+            "team_b": [],
+            "team_c": [],
+            "consortium": []
+          },
+          "category": "city_initialized",
+          "title": "The consortium opens its finite credit accounts",
+          "semantic_key": "city_initialized:0:",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"blocked\",\"updated_at\":0},\"prerequisite\":{\"actor\":\"team_c\",\"deadline\":1440,\"quantity\":4,\"requires\":[],\"status\":\"active\",\"updated_at\":0}}",
+          "category": "goal_register",
+          "title": "The consortium records its declared research projects",
+          "semantic_key": "goal_register:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 2,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "opportunity_index": 0,
+          "declared_at": 0,
+          "category": "opportunity",
+          "title": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 3,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "stable",
+          "category": "condition",
+          "title": "The systems team inspects the instrument condition",
+          "semantic_key": "condition:0:team_b",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 4,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:0"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 1: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 5,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:0"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:0:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 6,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "fragile",
+          "category": "condition",
+          "title": "A public current instrument reading is posted",
+          "semantic_key": "condition:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 7,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:0"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":0,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 1's allocation",
+          "semantic_key": "institution_decision:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 8,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:0"
+          ],
+          "value": "{\"actual_capacity\":8,\"allocation\":{\"team_a\":4,\"team_b\":0,\"team_c\":4},\"completed\":[\"team_a\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":0,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 1 executes 8/8 allocated units; 2 projects complete",
+          "semantic_key": "allocation_settled:1439:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 9,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"active\",\"updated_at\":1439},\"prerequisite\":{\"actor\":\"team_c\",\"completed_at\":1439,\"deadline\":1440,\"evidence_event\":8,\"executed_units\":4,\"quantity\":4,\"requires\":[],\"status\":\"completed\",\"updated_at\":1439}}",
+          "category": "goal_revision",
+          "title": "Recorded settlements and deadlines revise the declared project register",
+          "semantic_key": "goal_revision:1439:Player:team_a:team_b:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 10,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:1439:Player:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      }
+    ]
+  },
+  {
+    "arm": "v3_hybrid",
+    "public_evidence_id": 6,
+    "decision": {
+      "action_id": "protect",
+      "goal_id": "chain",
+      "utility": 4,
+      "reasons": [
+        "retained observatory.condition=fragile, dated99"
+      ],
+      "evidence_ids": [
+        6
+      ],
+      "context_event_ids": [
+        6
+      ],
+      "rejected": [
+        [
+          "equal",
+          [
+            "no settled retained support for observatory.condition=stable"
+          ]
+        ]
+      ],
+      "previous_action": null
+    },
+    "actual_receipt_id": 7,
+    "prerequisite_completed": true,
+    "trace": {
+      "at": 99,
+      "public_register": {
+        "credits": 1,
+        "promises": {
+          "team_c": 4
+        },
+        "projects": {
+          "deferred": {
+            "actor": "team_c",
+            "deadline": 2880,
+            "quantity": 4,
+            "requires": [
+              "prerequisite"
+            ],
+            "status": "blocked",
+            "updated_at": 0
+          },
+          "prerequisite": {
+            "actor": "team_c",
+            "deadline": 1440,
+            "quantity": 4,
+            "requires": [],
+            "status": "active",
+            "updated_at": 0
+          }
+        },
+        "round": 0
+      },
+      "controller_plan_read": {
+        "ingress_watermark": -1,
+        "next": "allocate_after_evidence_review",
+        "phase": "review_after_interruption",
+        "receipt_ids": [
+          5
+        ],
+        "round": 0,
+        "support_ids": []
+      },
+      "private_state_before": {
+        "version": 3,
+        "base": {
+          "version": 1,
+          "agent_id": "Player",
+          "config": {
+            "capacity": 16,
+            "context_records": 4,
+            "retention_policy": "hybrid",
+            "consolidation": true,
+            "source_lineage": true,
+            "belief_revision": true,
+            "max_goals": 8,
+            "max_options": 16
+          },
+          "episodes": [
+            {
+              "event_id": 1,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "The consortium records its declared research projects",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 1,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 1
+            },
+            {
+              "event_id": 2,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 2,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 2
+            },
+            {
+              "event_id": 4,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Round 1: teams may negotiate the shared instrument",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 4,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 3
+            },
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Player promises 4 units to team_c",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_c"
+              ],
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 4
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "text": "A public current instrument reading is posted",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 6
+            }
+          ],
+          "semantic": [
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 5
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 7
+            }
+          ],
+          "revisions": [],
+          "reflections": [],
+          "goals": [
+            {
+              "goal_id": "chain",
+              "label": "Complete the assigned prerequisite and follow-up batches",
+              "priority": 1,
+              "deadline": 2880,
+              "relevant_keys": [
+                [
+                  "observatory",
+                  "condition"
+                ]
+              ],
+              "tags": [
+                "coordination"
+              ],
+              "status": "active"
+            }
+          ],
+          "last_decision": null,
+          "serial": 7,
+          "observed_count": 5
+        },
+        "plans": [],
+        "plan_capacity": 4,
+        "plan_serial": 0,
+        "cycle_serial": 0,
+        "last_cycle_at": null
+      },
+      "options": [
+        {
+          "action_id": "equal",
+          "label": "Allocate four units to each team",
+          "utility": 5,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "stable",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "protect",
+          "label": "Allocate four units to the first and assigned follow-up team",
+          "utility": 4,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "fragile",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "inspect",
+          "label": "Pay for a current direct inspection",
+          "utility": 1,
+          "goal_id": "chain",
+          "costs": {
+            "credits": 1
+          },
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "wait",
+          "label": "Wait without supported allocation evidence",
+          "utility": 0,
+          "goal_id": null,
+          "costs": {},
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        }
+      ],
+      "option_hash": "4379c84d4a52b211cab51fe77938a56be4baf7d2f3c1a8ddc0f2ff4589ae90f4",
+      "decision": {
+        "action_id": "protect",
+        "goal_id": "chain",
+        "utility": 4,
+        "reasons": [
+          "retained observatory.condition=fragile, dated99"
+        ],
+        "evidence_ids": [
+          6
+        ],
+        "context_event_ids": [
+          6
+        ],
+        "rejected": [
+          [
+            "equal",
+            [
+              "no settled retained support for observatory.condition=stable"
+            ]
+          ]
+        ],
+        "previous_action": null
+      },
+      "context": [
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "text": "A public current instrument reading is posted",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "participants": [
+            "Player",
+            "team_a",
+            "team_b",
+            "team_c"
+          ],
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "episode",
+          "serial": 6
+        },
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "semantic",
+          "compact": true,
+          "serial": 7
+        }
+      ],
+      "state_bytes_after": 4844
+    },
+    "ledger": [
+      {
+        "event_id": 0,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [],
+        "payload": {
+          "cash": {
+            "Player": 1,
+            "team_a": 12,
+            "team_b": 12,
+            "team_c": 12,
+            "consortium": 0
+          },
+          "inventory": {
+            "Player": 0,
+            "team_a": 0,
+            "team_b": 0,
+            "team_c": 0,
+            "consortium": 0
+          },
+          "commitments": {
+            "Player": [],
+            "team_a": [],
+            "team_b": [],
+            "team_c": [],
+            "consortium": []
+          },
+          "category": "city_initialized",
+          "title": "The consortium opens its finite credit accounts",
+          "semantic_key": "city_initialized:0:",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"blocked\",\"updated_at\":0},\"prerequisite\":{\"actor\":\"team_c\",\"deadline\":1440,\"quantity\":4,\"requires\":[],\"status\":\"active\",\"updated_at\":0}}",
+          "category": "goal_register",
+          "title": "The consortium records its declared research projects",
+          "semantic_key": "goal_register:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 2,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "opportunity_index": 0,
+          "declared_at": 0,
+          "category": "opportunity",
+          "title": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 3,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "stable",
+          "category": "condition",
+          "title": "The systems team inspects the instrument condition",
+          "semantic_key": "condition:0:team_b",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 4,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:0"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 1: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 5,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:0"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:0:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 6,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "fragile",
+          "category": "condition",
+          "title": "A public current instrument reading is posted",
+          "semantic_key": "condition:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 7,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:0"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":0,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 1's allocation",
+          "semantic_key": "institution_decision:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 8,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:0"
+          ],
+          "value": "{\"actual_capacity\":8,\"allocation\":{\"team_a\":4,\"team_b\":0,\"team_c\":4},\"completed\":[\"team_a\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":0,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 1 executes 8/8 allocated units; 2 projects complete",
+          "semantic_key": "allocation_settled:1439:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 9,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"active\",\"updated_at\":1439},\"prerequisite\":{\"actor\":\"team_c\",\"completed_at\":1439,\"deadline\":1440,\"evidence_event\":8,\"executed_units\":4,\"quantity\":4,\"requires\":[],\"status\":\"completed\",\"updated_at\":1439}}",
+          "category": "goal_revision",
+          "title": "Recorded settlements and deadlines revise the declared project register",
+          "semantic_key": "goal_revision:1439:Player:team_a:team_b:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 10,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:1439:Player:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      }
+    ]
+  },
+  {
+    "arm": "bm25_fifo",
+    "public_evidence_id": 6,
+    "decision": {
+      "action_id": "protect",
+      "goal_id": "chain",
+      "utility": 4,
+      "reasons": [
+        "retained observatory.condition=fragile, dated99"
+      ],
+      "evidence_ids": [
+        6
+      ],
+      "context_event_ids": [
+        6
+      ],
+      "rejected": [
+        [
+          "equal",
+          [
+            "no settled retained support for observatory.condition=stable"
+          ]
+        ]
+      ],
+      "previous_action": null
+    },
+    "actual_receipt_id": 7,
+    "prerequisite_completed": true,
+    "trace": {
+      "at": 99,
+      "public_register": {
+        "credits": 1,
+        "promises": {
+          "team_c": 4
+        },
+        "projects": {
+          "deferred": {
+            "actor": "team_c",
+            "deadline": 2880,
+            "quantity": 4,
+            "requires": [
+              "prerequisite"
+            ],
+            "status": "blocked",
+            "updated_at": 0
+          },
+          "prerequisite": {
+            "actor": "team_c",
+            "deadline": 1440,
+            "quantity": 4,
+            "requires": [],
+            "status": "active",
+            "updated_at": 0
+          }
+        },
+        "round": 0
+      },
+      "controller_plan_read": {
+        "ingress_watermark": -1,
+        "next": "allocate_after_evidence_review",
+        "phase": "review_after_interruption",
+        "receipt_ids": [
+          5
+        ],
+        "round": 0,
+        "support_ids": []
+      },
+      "private_state_before": {
+        "version": 1,
+        "agent_id": "Player",
+        "config": {
+          "capacity": 16,
+          "context_records": 4,
+          "retention_policy": "recency",
+          "consolidation": false,
+          "source_lineage": true,
+          "belief_revision": true,
+          "max_goals": 8,
+          "max_options": 16
+        },
+        "episodes": [
+          {
+            "event_id": 1,
+            "agent_id": "Player",
+            "observed_at": 0,
+            "kind": "episodic",
+            "text": "The consortium records its declared research projects",
+            "subject": null,
+            "predicate": null,
+            "value": null,
+            "as_of": 0,
+            "source_agent": null,
+            "origin_event": 1,
+            "origin_observer": null,
+            "accepted": true,
+            "participants": [
+              "Player",
+              "team_a",
+              "team_b",
+              "team_c"
+            ],
+            "salience": 0.12,
+            "goal_tags": [],
+            "social_signals": [],
+            "prediction_error": 0.0,
+            "record_type": "episode",
+            "serial": 1
+          },
+          {
+            "event_id": 2,
+            "agent_id": "Player",
+            "observed_at": 0,
+            "kind": "episodic",
+            "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+            "subject": null,
+            "predicate": null,
+            "value": null,
+            "as_of": 0,
+            "source_agent": null,
+            "origin_event": 2,
+            "origin_observer": null,
+            "accepted": true,
+            "participants": [
+              "Player",
+              "team_a",
+              "team_b",
+              "team_c"
+            ],
+            "salience": 0.12,
+            "goal_tags": [],
+            "social_signals": [],
+            "prediction_error": 0.0,
+            "record_type": "episode",
+            "serial": 2
+          },
+          {
+            "event_id": 4,
+            "agent_id": "Player",
+            "observed_at": 0,
+            "kind": "episodic",
+            "text": "Round 1: teams may negotiate the shared instrument",
+            "subject": null,
+            "predicate": null,
+            "value": null,
+            "as_of": 0,
+            "source_agent": null,
+            "origin_event": 4,
+            "origin_observer": null,
+            "accepted": true,
+            "participants": [
+              "Player",
+              "team_a",
+              "team_b",
+              "team_c"
+            ],
+            "salience": 0.12,
+            "goal_tags": [],
+            "social_signals": [],
+            "prediction_error": 0.0,
+            "record_type": "episode",
+            "serial": 3
+          },
+          {
+            "event_id": 5,
+            "agent_id": "Player",
+            "observed_at": 0,
+            "kind": "episodic",
+            "text": "Player promises 4 units to team_c",
+            "subject": null,
+            "predicate": null,
+            "value": null,
+            "as_of": 0,
+            "source_agent": null,
+            "origin_event": 5,
+            "origin_observer": null,
+            "accepted": true,
+            "participants": [
+              "Player",
+              "team_c"
+            ],
+            "salience": 0.95,
+            "goal_tags": [
+              "obligation"
+            ],
+            "social_signals": [
+              {
+                "other": "team_c",
+                "axis": "obligation",
+                "delta": 4
+              }
+            ],
+            "prediction_error": 0.0,
+            "record_type": "episode",
+            "serial": 4
+          },
+          {
+            "event_id": 6,
+            "agent_id": "Player",
+            "observed_at": 99,
+            "kind": "observed",
+            "text": "A public current instrument reading is posted",
+            "subject": "observatory",
+            "predicate": "condition",
+            "value": "fragile",
+            "as_of": 99,
+            "source_agent": null,
+            "origin_event": 6,
+            "origin_observer": "Player",
+            "accepted": true,
+            "participants": [
+              "Player",
+              "team_a",
+              "team_b",
+              "team_c"
+            ],
+            "salience": 0.65,
+            "goal_tags": [
+              "condition"
+            ],
+            "social_signals": [],
+            "prediction_error": 0.0,
+            "record_type": "episode",
+            "serial": 5
+          }
+        ],
+        "semantic": [],
+        "revisions": [],
+        "reflections": [],
+        "goals": [
+          {
+            "goal_id": "chain",
+            "label": "Complete the assigned prerequisite and follow-up batches",
+            "priority": 1,
+            "deadline": 2880,
+            "relevant_keys": [
+              [
+                "observatory",
+                "condition"
+              ]
+            ],
+            "tags": [
+              "coordination"
+            ],
+            "status": "active"
+          }
+        ],
+        "last_decision": null,
+        "serial": 5,
+        "observed_count": 5
+      },
+      "options": [
+        {
+          "action_id": "equal",
+          "label": "Allocate four units to each team",
+          "utility": 5,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "stable",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "protect",
+          "label": "Allocate four units to the first and assigned follow-up team",
+          "utility": 4,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "fragile",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "inspect",
+          "label": "Pay for a current direct inspection",
+          "utility": 1,
+          "goal_id": "chain",
+          "costs": {
+            "credits": 1
+          },
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "wait",
+          "label": "Wait without supported allocation evidence",
+          "utility": 0,
+          "goal_id": null,
+          "costs": {},
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        }
+      ],
+      "option_hash": "4379c84d4a52b211cab51fe77938a56be4baf7d2f3c1a8ddc0f2ff4589ae90f4",
+      "decision": {
+        "action_id": "protect",
+        "goal_id": "chain",
+        "utility": 4,
+        "reasons": [
+          "retained observatory.condition=fragile, dated99"
+        ],
+        "evidence_ids": [
+          6
+        ],
+        "context_event_ids": [
+          6
+        ],
+        "rejected": [
+          [
+            "equal",
+            [
+              "no settled retained support for observatory.condition=stable"
+            ]
+          ]
+        ],
+        "previous_action": null
+      },
+      "context": [
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "text": "A public current instrument reading is posted",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "participants": [
+            "Player",
+            "team_a",
+            "team_b",
+            "team_c"
+          ],
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "episode",
+          "serial": 5
+        }
+      ],
+      "state_bytes_after": 3190
+    },
+    "ledger": [
+      {
+        "event_id": 0,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [],
+        "payload": {
+          "cash": {
+            "Player": 1,
+            "team_a": 12,
+            "team_b": 12,
+            "team_c": 12,
+            "consortium": 0
+          },
+          "inventory": {
+            "Player": 0,
+            "team_a": 0,
+            "team_b": 0,
+            "team_c": 0,
+            "consortium": 0
+          },
+          "commitments": {
+            "Player": [],
+            "team_a": [],
+            "team_b": [],
+            "team_c": [],
+            "consortium": []
+          },
+          "category": "city_initialized",
+          "title": "The consortium opens its finite credit accounts",
+          "semantic_key": "city_initialized:0:",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"blocked\",\"updated_at\":0},\"prerequisite\":{\"actor\":\"team_c\",\"deadline\":1440,\"quantity\":4,\"requires\":[],\"status\":\"active\",\"updated_at\":0}}",
+          "category": "goal_register",
+          "title": "The consortium records its declared research projects",
+          "semantic_key": "goal_register:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 2,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "opportunity_index": 0,
+          "declared_at": 0,
+          "category": "opportunity",
+          "title": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 3,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "stable",
+          "category": "condition",
+          "title": "The systems team inspects the instrument condition",
+          "semantic_key": "condition:0:team_b",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 4,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:0"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 1: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 5,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:0"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:0:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 6,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "fragile",
+          "category": "condition",
+          "title": "A public current instrument reading is posted",
+          "semantic_key": "condition:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 7,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:0"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":0,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 1's allocation",
+          "semantic_key": "institution_decision:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 8,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:0"
+          ],
+          "value": "{\"actual_capacity\":8,\"allocation\":{\"team_a\":4,\"team_b\":0,\"team_c\":4},\"completed\":[\"team_a\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":0,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 1 executes 8/8 allocated units; 2 projects complete",
+          "semantic_key": "allocation_settled:1439:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 9,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"active\",\"updated_at\":1439},\"prerequisite\":{\"actor\":\"team_c\",\"completed_at\":1439,\"deadline\":1440,\"evidence_event\":8,\"executed_units\":4,\"quantity\":4,\"requires\":[],\"status\":\"completed\",\"updated_at\":1439}}",
+          "category": "goal_revision",
+          "title": "Recorded settlements and deadlines revise the declared project register",
+          "semantic_key": "goal_revision:1439:Player:team_a:team_b:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 10,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:1439:Player:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      }
+    ]
+  },
+  {
+    "arm": "admissible_history",
+    "public_evidence_id": 6,
+    "decision": {
+      "action_id": "protect",
+      "goal_id": "chain",
+      "utility": 4,
+      "reasons": [
+        "retained observatory.condition=fragile, dated99"
+      ],
+      "evidence_ids": [
+        6
+      ],
+      "context_event_ids": [
+        6
+      ],
+      "rejected": [
+        [
+          "equal",
+          [
+            "no settled retained support for observatory.condition=stable"
+          ]
+        ]
+      ],
+      "previous_action": null
+    },
+    "actual_receipt_id": 7,
+    "prerequisite_completed": true,
+    "trace": {
+      "at": 99,
+      "public_register": {
+        "credits": 1,
+        "promises": {
+          "team_c": 4
+        },
+        "projects": {
+          "deferred": {
+            "actor": "team_c",
+            "deadline": 2880,
+            "quantity": 4,
+            "requires": [
+              "prerequisite"
+            ],
+            "status": "blocked",
+            "updated_at": 0
+          },
+          "prerequisite": {
+            "actor": "team_c",
+            "deadline": 1440,
+            "quantity": 4,
+            "requires": [],
+            "status": "active",
+            "updated_at": 0
+          }
+        },
+        "round": 0
+      },
+      "controller_plan_read": {
+        "ingress_watermark": -1,
+        "next": "allocate_after_evidence_review",
+        "phase": "review_after_interruption",
+        "receipt_ids": [
+          5
+        ],
+        "round": 0,
+        "support_ids": []
+      },
+      "private_state_before": {
+        "version": 3,
+        "base": {
+          "version": 1,
+          "agent_id": "Player",
+          "config": {
+            "capacity": 256,
+            "context_records": 4,
+            "retention_policy": "hybrid",
+            "consolidation": true,
+            "source_lineage": true,
+            "belief_revision": true,
+            "max_goals": 8,
+            "max_options": 16
+          },
+          "episodes": [
+            {
+              "event_id": 1,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "The consortium records its declared research projects",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 1,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 1
+            },
+            {
+              "event_id": 2,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 2,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 2
+            },
+            {
+              "event_id": 4,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Round 1: teams may negotiate the shared instrument",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 4,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 3
+            },
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Player promises 4 units to team_c",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_c"
+              ],
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 4
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "text": "A public current instrument reading is posted",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 6
+            }
+          ],
+          "semantic": [
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 5
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 7
+            }
+          ],
+          "revisions": [],
+          "reflections": [],
+          "goals": [
+            {
+              "goal_id": "chain",
+              "label": "Complete the assigned prerequisite and follow-up batches",
+              "priority": 1,
+              "deadline": 2880,
+              "relevant_keys": [
+                [
+                  "observatory",
+                  "condition"
+                ]
+              ],
+              "tags": [
+                "coordination"
+              ],
+              "status": "active"
+            }
+          ],
+          "last_decision": null,
+          "serial": 7,
+          "observed_count": 5
+        },
+        "plans": [],
+        "plan_capacity": 4,
+        "plan_serial": 0,
+        "cycle_serial": 0,
+        "last_cycle_at": null
+      },
+      "options": [
+        {
+          "action_id": "equal",
+          "label": "Allocate four units to each team",
+          "utility": 5,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "stable",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "protect",
+          "label": "Allocate four units to the first and assigned follow-up team",
+          "utility": 4,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "fragile",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "inspect",
+          "label": "Pay for a current direct inspection",
+          "utility": 1,
+          "goal_id": "chain",
+          "costs": {
+            "credits": 1
+          },
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "wait",
+          "label": "Wait without supported allocation evidence",
+          "utility": 0,
+          "goal_id": null,
+          "costs": {},
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        }
+      ],
+      "option_hash": "4379c84d4a52b211cab51fe77938a56be4baf7d2f3c1a8ddc0f2ff4589ae90f4",
+      "decision": {
+        "action_id": "protect",
+        "goal_id": "chain",
+        "utility": 4,
+        "reasons": [
+          "retained observatory.condition=fragile, dated99"
+        ],
+        "evidence_ids": [
+          6
+        ],
+        "context_event_ids": [
+          6
+        ],
+        "rejected": [
+          [
+            "equal",
+            [
+              "no settled retained support for observatory.condition=stable"
+            ]
+          ]
+        ],
+        "previous_action": null
+      },
+      "context": [
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "text": "A public current instrument reading is posted",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "participants": [
+            "Player",
+            "team_a",
+            "team_b",
+            "team_c"
+          ],
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "episode",
+          "serial": 6
+        },
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "semantic",
+          "compact": true,
+          "serial": 7
+        }
+      ],
+      "state_bytes_after": 4854
+    },
+    "ledger": [
+      {
+        "event_id": 0,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [],
+        "payload": {
+          "cash": {
+            "Player": 1,
+            "team_a": 12,
+            "team_b": 12,
+            "team_c": 12,
+            "consortium": 0
+          },
+          "inventory": {
+            "Player": 0,
+            "team_a": 0,
+            "team_b": 0,
+            "team_c": 0,
+            "consortium": 0
+          },
+          "commitments": {
+            "Player": [],
+            "team_a": [],
+            "team_b": [],
+            "team_c": [],
+            "consortium": []
+          },
+          "category": "city_initialized",
+          "title": "The consortium opens its finite credit accounts",
+          "semantic_key": "city_initialized:0:",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"blocked\",\"updated_at\":0},\"prerequisite\":{\"actor\":\"team_c\",\"deadline\":1440,\"quantity\":4,\"requires\":[],\"status\":\"active\",\"updated_at\":0}}",
+          "category": "goal_register",
+          "title": "The consortium records its declared research projects",
+          "semantic_key": "goal_register:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 2,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "opportunity_index": 0,
+          "declared_at": 0,
+          "category": "opportunity",
+          "title": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 3,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "stable",
+          "category": "condition",
+          "title": "The systems team inspects the instrument condition",
+          "semantic_key": "condition:0:team_b",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 4,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:0"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 1: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 5,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:0"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:0:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 6,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "fragile",
+          "category": "condition",
+          "title": "A public current instrument reading is posted",
+          "semantic_key": "condition:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 7,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:0"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":0,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 1's allocation",
+          "semantic_key": "institution_decision:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 8,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:0"
+          ],
+          "value": "{\"actual_capacity\":8,\"allocation\":{\"team_a\":4,\"team_b\":0,\"team_c\":4},\"completed\":[\"team_a\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":0,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 1 executes 8/8 allocated units; 2 projects complete",
+          "semantic_key": "allocation_settled:1439:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 9,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"active\",\"updated_at\":1439},\"prerequisite\":{\"actor\":\"team_c\",\"completed_at\":1439,\"deadline\":1440,\"evidence_event\":8,\"executed_units\":4,\"quantity\":4,\"requires\":[],\"status\":\"completed\",\"updated_at\":1439}}",
+          "category": "goal_revision",
+          "title": "Recorded settlements and deadlines revise the declared project register",
+          "semantic_key": "goal_revision:1439:Player:team_a:team_b:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 10,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:1439:Player:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      }
+    ]
+  },
+  {
+    "arm": "dependency_retention",
+    "public_evidence_id": 6,
+    "decision": {
+      "action_id": "protect",
+      "goal_id": "chain",
+      "utility": 4,
+      "reasons": [
+        "retained observatory.condition=fragile, dated99"
+      ],
+      "evidence_ids": [
+        6
+      ],
+      "context_event_ids": [
+        6
+      ],
+      "rejected": [
+        [
+          "equal",
+          [
+            "no settled retained support for observatory.condition=stable"
+          ]
+        ]
+      ],
+      "previous_action": null
+    },
+    "actual_receipt_id": 7,
+    "prerequisite_completed": true,
+    "trace": {
+      "at": 99,
+      "public_register": {
+        "credits": 1,
+        "promises": {
+          "team_c": 4
+        },
+        "projects": {
+          "deferred": {
+            "actor": "team_c",
+            "deadline": 2880,
+            "quantity": 4,
+            "requires": [
+              "prerequisite"
+            ],
+            "status": "blocked",
+            "updated_at": 0
+          },
+          "prerequisite": {
+            "actor": "team_c",
+            "deadline": 1440,
+            "quantity": 4,
+            "requires": [],
+            "status": "active",
+            "updated_at": 0
+          }
+        },
+        "round": 0
+      },
+      "controller_plan_read": {
+        "ingress_watermark": -1,
+        "next": "allocate_after_evidence_review",
+        "phase": "review_after_interruption",
+        "receipt_ids": [
+          5
+        ],
+        "round": 0,
+        "support_ids": []
+      },
+      "private_state_before": {
+        "version": 3,
+        "base": {
+          "version": 1,
+          "agent_id": "Player",
+          "config": {
+            "capacity": 16,
+            "context_records": 4,
+            "retention_policy": "hybrid",
+            "consolidation": true,
+            "source_lineage": true,
+            "belief_revision": true,
+            "max_goals": 8,
+            "max_options": 16
+          },
+          "episodes": [
+            {
+              "event_id": 1,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "The consortium records its declared research projects",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 1,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 1
+            },
+            {
+              "event_id": 2,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 2,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 2
+            },
+            {
+              "event_id": 4,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Round 1: teams may negotiate the shared instrument",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 4,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.12,
+              "goal_tags": [],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 3
+            },
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "text": "Player promises 4 units to team_c",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_c"
+              ],
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 4
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "text": "A public current instrument reading is posted",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "participants": [
+                "Player",
+                "team_a",
+                "team_b",
+                "team_c"
+              ],
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "episode",
+              "serial": 6
+            }
+          ],
+          "semantic": [
+            {
+              "event_id": 5,
+              "agent_id": "Player",
+              "observed_at": 0,
+              "kind": "episodic",
+              "subject": null,
+              "predicate": null,
+              "value": null,
+              "as_of": 0,
+              "source_agent": null,
+              "origin_event": 5,
+              "origin_observer": null,
+              "accepted": true,
+              "salience": 0.95,
+              "goal_tags": [
+                "obligation"
+              ],
+              "social_signals": [
+                {
+                  "other": "team_c",
+                  "axis": "obligation",
+                  "delta": 4
+                }
+              ],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 5
+            },
+            {
+              "event_id": 6,
+              "agent_id": "Player",
+              "observed_at": 99,
+              "kind": "observed",
+              "subject": "observatory",
+              "predicate": "condition",
+              "value": "fragile",
+              "as_of": 99,
+              "source_agent": null,
+              "origin_event": 6,
+              "origin_observer": "Player",
+              "accepted": true,
+              "salience": 0.65,
+              "goal_tags": [
+                "condition"
+              ],
+              "social_signals": [],
+              "prediction_error": 0.0,
+              "record_type": "semantic",
+              "compact": true,
+              "serial": 7
+            }
+          ],
+          "revisions": [],
+          "reflections": [],
+          "goals": [
+            {
+              "goal_id": "chain",
+              "label": "Complete the assigned prerequisite and follow-up batches",
+              "priority": 1,
+              "deadline": 2880,
+              "relevant_keys": [
+                [
+                  "observatory",
+                  "condition"
+                ]
+              ],
+              "tags": [
+                "coordination"
+              ],
+              "status": "active"
+            }
+          ],
+          "last_decision": null,
+          "serial": 7,
+          "observed_count": 5
+        },
+        "plans": [],
+        "plan_capacity": 4,
+        "plan_serial": 0,
+        "cycle_serial": 0,
+        "last_cycle_at": null
+      },
+      "options": [
+        {
+          "action_id": "equal",
+          "label": "Allocate four units to each team",
+          "utility": 5,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "stable",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "protect",
+          "label": "Allocate four units to the first and assigned follow-up team",
+          "utility": 4,
+          "goal_id": "chain",
+          "costs": {},
+          "conditions": [
+            {
+              "subject": "observatory",
+              "predicate": "condition",
+              "equals": "fragile",
+              "min_sources": 1,
+              "max_age": 2880,
+              "allow_direct": true
+            }
+          ],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "inspect",
+          "label": "Pay for a current direct inspection",
+          "utility": 1,
+          "goal_id": "chain",
+          "costs": {
+            "credits": 1
+          },
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        },
+        {
+          "action_id": "wait",
+          "label": "Wait without supported allocation evidence",
+          "utility": 0,
+          "goal_id": null,
+          "costs": {},
+          "conditions": [],
+          "social_conditions": [],
+          "duration": 0,
+          "deadline": null
+        }
+      ],
+      "option_hash": "4379c84d4a52b211cab51fe77938a56be4baf7d2f3c1a8ddc0f2ff4589ae90f4",
+      "decision": {
+        "action_id": "protect",
+        "goal_id": "chain",
+        "utility": 4,
+        "reasons": [
+          "retained observatory.condition=fragile, dated99"
+        ],
+        "evidence_ids": [
+          6
+        ],
+        "context_event_ids": [
+          6
+        ],
+        "rejected": [
+          [
+            "equal",
+            [
+              "no settled retained support for observatory.condition=stable"
+            ]
+          ]
+        ],
+        "previous_action": null
+      },
+      "context": [
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "text": "A public current instrument reading is posted",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "participants": [
+            "Player",
+            "team_a",
+            "team_b",
+            "team_c"
+          ],
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "episode",
+          "serial": 6
+        },
+        {
+          "event_id": 6,
+          "agent_id": "Player",
+          "observed_at": 99,
+          "kind": "observed",
+          "subject": "observatory",
+          "predicate": "condition",
+          "value": "fragile",
+          "as_of": 99,
+          "source_agent": null,
+          "origin_event": 6,
+          "origin_observer": "Player",
+          "accepted": true,
+          "salience": 0.65,
+          "goal_tags": [
+            "condition"
+          ],
+          "social_signals": [],
+          "prediction_error": 0.0,
+          "record_type": "semantic",
+          "compact": true,
+          "serial": 7
+        }
+      ],
+      "state_bytes_after": 4855
+    },
+    "ledger": [
+      {
+        "event_id": 0,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [],
+        "payload": {
+          "cash": {
+            "Player": 1,
+            "team_a": 12,
+            "team_b": 12,
+            "team_c": 12,
+            "consortium": 0
+          },
+          "inventory": {
+            "Player": 0,
+            "team_a": 0,
+            "team_b": 0,
+            "team_c": 0,
+            "consortium": 0
+          },
+          "commitments": {
+            "Player": [],
+            "team_a": [],
+            "team_b": [],
+            "team_c": [],
+            "consortium": []
+          },
+          "category": "city_initialized",
+          "title": "The consortium opens its finite credit accounts",
+          "semantic_key": "city_initialized:0:",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 1,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"blocked\",\"updated_at\":0},\"prerequisite\":{\"actor\":\"team_c\",\"deadline\":1440,\"quantity\":4,\"requires\":[],\"status\":\"active\",\"updated_at\":0}}",
+          "category": "goal_register",
+          "title": "The consortium records its declared research projects",
+          "semantic_key": "goal_register:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 2,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "opportunity_index": 0,
+          "declared_at": 0,
+          "category": "opportunity",
+          "title": "Negotiate the first allocation while the maintenance team alone has current hardware evidence.",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 3,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "team_b"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "stable",
+          "category": "condition",
+          "title": "The systems team inspects the instrument condition",
+          "semantic_key": "condition:0:team_b",
+          "parents": []
+        },
+        "scope": "private"
+      },
+      {
+        "event_id": 4,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "requests:0"
+          ],
+          "value": "{}",
+          "category": "opportunity",
+          "title": "Round 1: teams may negotiate the shared instrument",
+          "semantic_key": "opportunity:0:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 5,
+        "tick": 0,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "promises:0"
+          ],
+          "value": "{\"team_c\":4}",
+          "category": "promise",
+          "title": "Player promises 4 units to team_c",
+          "semantic_key": "promise:0:Player:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 6,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "observatory",
+            "condition"
+          ],
+          "value": "fragile",
+          "category": "condition",
+          "title": "A public current instrument reading is posted",
+          "semantic_key": "condition:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 7,
+        "tick": 99,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "allocation:0"
+          ],
+          "value": "{\"team_a\":4,\"team_b\":0,\"team_c\":4}",
+          "category": "institution_decision",
+          "title": "The coordinator commits round 1's allocation",
+          "semantic_key": "institution_decision:99:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 8,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "outcome:0"
+          ],
+          "value": "{\"actual_capacity\":8,\"allocation\":{\"team_a\":4,\"team_b\":0,\"team_c\":4},\"completed\":[\"team_a\",\"team_c\"],\"executed\":{\"team_a\":4,\"team_b\":0,\"team_c\":4}}",
+          "category": "allocation_settled",
+          "title": "Round 1 executes 8/8 allocated units; 2 projects complete",
+          "semantic_key": "allocation_settled:1439:Player:team_a:team_b:team_c",
+          "parents": []
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 9,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "payload": {
+          "prop": [
+            "experience",
+            "goal_status"
+          ],
+          "value": "{\"deferred\":{\"actor\":\"team_c\",\"deadline\":2880,\"quantity\":4,\"requires\":[\"prerequisite\"],\"status\":\"active\",\"updated_at\":1439},\"prerequisite\":{\"actor\":\"team_c\",\"completed_at\":1439,\"deadline\":1440,\"evidence_event\":8,\"executed_units\":4,\"quantity\":4,\"requires\":[],\"status\":\"completed\",\"updated_at\":1439}}",
+          "category": "goal_revision",
+          "title": "Recorded settlements and deadlines revise the declared project register",
+          "semantic_key": "goal_revision:1439:Player:team_a:team_b:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      },
+      {
+        "event_id": 10,
+        "tick": 1439,
+        "etype": "state_change",
+        "location": "council",
+        "actors": [
+          "Player",
+          "team_c"
+        ],
+        "payload": {
+          "relationship_updates": [
+            {
+              "listener": "team_c",
+              "speaker": "Player",
+              "value": 0.55
+            }
+          ],
+          "category": "promise_kept",
+          "title": "The promise to team_c is kept",
+          "semantic_key": "promise_kept:1439:Player:team_c",
+          "parents": [
+            8
+          ]
+        },
+        "scope": "public"
+      }
+    ]
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "raw_worlds_checked": 760,
+  "arithmetic_errors": [],
+  "controls": {
+    "history": {
+      "chain_complete": true,
+      "decisions": [
+        "equal",
+        "protect"
+      ],
+      "final_ledger_hash": "676d83cf7f31bf18d8c7a7153e839a1d28c6aa2deeff74ce5a345961eb25abf1",
+      "scientific_hash": "1c3a0cc05268ddc12e37b24b23d68e6d7cb40e3d23b42abfc9c586cd74bcfab7"
+    },
+    "relevant_record_removed": {
+      "chain_complete": false,
+      "decisions": [
+        "inspect",
+        "equal",
+        "equal"
+      ],
+      "final_ledger_hash": "a2b8ff64eaf2b8d39809110d6ef5cc751abff379e1ad5b29e10d24849e2fa280",
+      "scientific_hash": "8f9dc272c2faba73e8e5c2f827e23b829a93d4f6d5f5e4573cf337e3923ababe"
+    },
+    "irrelevant_distractors": {
+      "chain_complete": true,
+      "decisions": [
+        "equal",
+        "protect"
+      ],
+      "final_ledger_hash": "3caf724f37470d26663638466d25e2339348c78a21196d0aeb144bfaef570dce",
+      "scientific_hash": "f33078bd88e228ce3b288f7519200213d3f94ddc1fe268ae250dacd56f7b72c1"
+    },
+    "earlier_fragile_evidence": {
+      "chain_complete": true,
+      "decisions": [
+        "protect",
+        "protect"
+      ],
+      "final_ledger_hash": "65646d5ec560afa5b3ca6471e991149496fda2477454b9dfd04b2d3b06a44de0",
+      "scientific_hash": "ee3b9a063b42bb9035a63b5440d8a5daae58cc2a7a6b50fcb2586cca2fc74da0"
+    },
+    "candidate": {
+      "chain_complete": true,
+      "decisions": [
+        "equal",
+        "protect"
+      ],
+      "final_ledger_hash": "3caf724f37470d26663638466d25e2339348c78a21196d0aeb144bfaef570dce",
+      "scientific_hash": "22d29297cc8a2ccf37bb19d496182b0894bebeee1339f40cae8843872183d2b9"
+    },
+    "legacy_plan_erased": {
+      "chain_complete": true,
+      "decisions": [
+        "equal",
+        "protect"
+      ],
+      "final_ledger_hash": "3caf724f37470d26663638466d25e2339348c78a21196d0aeb144bfaef570dce",
+      "scientific_hash": "5fe76601c05eea69f86a8bb20b12bf459e3cb64b3bf6fdcc8d2d1bf5eac98233"
+    }
+  },
+  "record_removal_changes_completion": true,
+  "irrelevant_distractor_invariance": true,
+  "legacy_plan_ablation_ties": true,
+  "public_observation_all_complete": true,
+  "changed_commitment_control": {
+    "detected": true,
+    "reason": "the assigned obligation must exist in the shared public register",
+    "receipt": {
+      "event_id": 5,
+      "tick": 0,
+      "etype": "state_change",
+      "location": "council",
+      "actors": [
+        "Player",
+        "team_c"
+      ],
+      "payload": {
+        "prop": [
+          "experience",
+          "promises:0"
+        ],
+        "value": "{\"team_c\":2}",
+        "category": "promise",
+        "title": "Player promises 2 units to team_c",
+        "semantic_key": "promise:0:Player:team_c",
+        "parents": []
+      },
+      "scope": "public"
+    },
+    "current_register": {
+      "team_c": 2
+    }
+  },
+  "interpretation": "Arithmetic independently recounted from actual ledger effects; controller probes are authored internal controls, not independent replication."
+}

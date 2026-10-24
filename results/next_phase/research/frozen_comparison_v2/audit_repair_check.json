@@ -1,0 +1,6 @@
+{
+  "worlds": 760,
+  "before_choice_traces_checked": 1840,
+  "outcome_or_trace_errors": [],
+  "interpretation": "Audit snapshot repair only; all world receipts/choices/outcomes compared against the preserved first execution."
+}

@@ -1,0 +1,186 @@
+{
+  "worlds": 128,
+  "groups": [
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 12093,
+      "median_runtime_seconds": 0.05064939550000069
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7969,
+      "median_runtime_seconds": 0.040077395999999155
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 8,
+      "missed_promises": 0,
+      "max_total_state_bytes": 7711,
+      "median_runtime_seconds": 0.045844687499999814
+    },
+    {
+      "split": "development",
+      "case": "dev_current",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 8672,
+      "median_runtime_seconds": 0.04872416699999915
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 0,
+      "missed_promises": 8,
+      "max_total_state_bytes": 30845,
+      "median_runtime_seconds": 0.14354150000000043
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 7854,
+      "median_runtime_seconds": 0.0752874169999993
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8278,
+      "median_runtime_seconds": 0.08696341699999977
+    },
+    {
+      "split": "development",
+      "case": "dev_hidden",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 9078,
+      "median_runtime_seconds": 0.09577047900000046
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 32138,
+      "median_runtime_seconds": 0.15664981249999999
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 7925,
+      "median_runtime_seconds": 0.07847262500000018
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8207,
+      "median_runtime_seconds": 0.08959862500000004
+    },
+    {
+      "split": "development",
+      "case": "dev_interrupted",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 9078,
+      "median_runtime_seconds": 0.10058939599999994
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "admissible_history",
+      "worlds": 8,
+      "completed_chains": 8,
+      "inspection_credits": 0,
+      "missed_promises": 0,
+      "max_total_state_bytes": 32139,
+      "median_runtime_seconds": 0.15046502100000003
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "bm25_fifo",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 7922,
+      "median_runtime_seconds": 0.07612168750000015
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "current_observation",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 8207,
+      "median_runtime_seconds": 0.08816447950000006
+    },
+    {
+      "split": "development",
+      "case": "dev_reverse",
+      "arm": "v3_hybrid",
+      "worlds": 8,
+      "completed_chains": 0,
+      "inspection_credits": 8,
+      "missed_promises": 8,
+      "max_total_state_bytes": 9083,
+      "median_runtime_seconds": 0.09652839550000003
+    }
+  ],
+  "live_model_calls": 0,
+  "embedding_calls": 0,
+  "interpretation": "Internal authored diagnostic with fixed controller; conditional on these task templates, not independent replication.",
+  "failures": [],
+  "source_unchanged": true
+}

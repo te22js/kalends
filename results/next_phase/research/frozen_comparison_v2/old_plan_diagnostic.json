@@ -1,0 +1,12 @@
+{
+  "original_decisions": [
+    "equal",
+    "protect-stable"
+  ],
+  "without_pending_plan": [
+    "equal",
+    "protect-stable"
+  ],
+  "same": true,
+  "finding": "Shipped PersistentMind chooses before writing its next-action plan; old task does not show a causal benefit from that plan."
+}

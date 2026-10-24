@@ -1,0 +1,62 @@
+{
+  "classification": "reproduction from preserved frozen source, not independent implementation",
+  "checks": [
+    {
+      "case": "review_current_correction",
+      "arm": "v3_hybrid",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"373bc834147fc5bdfe83fe3629e8c01429b7aa9583b2ad94cd130a5b1bae4d2c\"}",
+      "error": ""
+    },
+    {
+      "case": "review_current_correction",
+      "arm": "dependency_retention",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"726823cffc755f4d8096bcec6fe6721ac27d79d3b1e7c37842e0ce2ad0381310\"}",
+      "error": ""
+    },
+    {
+      "case": "review_hidden_reversal",
+      "arm": "v3_hybrid",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"bd04d1821ee9c8e1c44e94fdb08d5b74fab47dcbcbb4e814c9e5666c0ca12ced\"}",
+      "error": ""
+    },
+    {
+      "case": "review_hidden_reversal",
+      "arm": "dependency_retention",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"9a081f1a6ec5398a192738f29761155b7d112d3856a576242879efa07cb1af18\"}",
+      "error": ""
+    },
+    {
+      "case": "review_unchanged_interruption",
+      "arm": "v3_hybrid",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"804927d243d2fcb7e2b814fa615bfb88d36ab56c36c4be46cccf8ac3c17783f5\"}",
+      "error": ""
+    },
+    {
+      "case": "review_unchanged_interruption",
+      "arm": "dependency_retention",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"f53ad9b203ef6e795876b310eee5e4b22a562c1dfed428bac9fc3cc65fa7d532\"}",
+      "error": ""
+    },
+    {
+      "case": "review_improvement_overload",
+      "arm": "v3_hybrid",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"00175e429a63c924ae2a0091af0ce80ae3da40839d3be3701e740fb62e3e18f5\"}",
+      "error": ""
+    },
+    {
+      "case": "review_improvement_overload",
+      "arm": "dependency_retention",
+      "returncode": 0,
+      "output": "{\"exact_replay\": true, \"scientific_hash\": \"c2502a03cbce12863956ad226d72979cef3262c59b2341aa6d34f5950131d0de\"}",
+      "error": ""
+    }
+  ],
+  "all_exact": true
+}
