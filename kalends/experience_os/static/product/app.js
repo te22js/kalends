@@ -37,23 +37,43 @@
     if (action.action === 'wait') return 'Wait in the world';
     return String(action.action || 'choice').replaceAll('_', ' ');
   }
-  const core = {escapeHTML, LifeRequestGate, LifeRevisionGate, StaleRequest, acceptsSceneMessage, describeAction};
+  // Usage time is a conservative interaction estimate, never a claim of attention.
+  // All values are interval deltas. Hidden or unfocused time cannot become active.
+  class UsageClock {
+    constructor(now=0, {visible=true, focused=true, idleAfter=30000}={}) {
+      this.last=now;this.visible=visible;this.focused=focused;this.idleAfter=idleAfter;
+      this.lastActivity=-Infinity;this.totals={visible_ms:0,foreground_ms:0,active_ms:0,idle_ms:0};
+    }
+    settle(now) {
+      now=Math.max(this.last,now);const span=now-this.last;
+      if(this.visible){this.totals.visible_ms+=span;if(this.focused){const active=Math.max(0,Math.min(now,this.lastActivity+this.idleAfter)-this.last);this.totals.foreground_ms+=span;this.totals.active_ms+=active;this.totals.idle_ms+=span-active;}}
+      this.last=now;
+    }
+    activity(now) {this.settle(now);if(this.visible&&this.focused)this.lastActivity=now;}
+    boundary(now, {visible=this.visible,focused=this.focused}={}) {this.settle(now);this.visible=visible;this.focused=focused;if(!visible||!focused)this.lastActivity=-Infinity;}
+    drain(now) {this.settle(now);const result=Object.fromEntries(Object.entries(this.totals).map(([key,value])=>[key,Math.min(3600000,Math.max(0,Math.round(value)))]));result.idle_ms=result.foreground_ms-result.active_ms;for(const key of Object.keys(this.totals))this.totals[key]=0;return result;}
+  }
+  function usageSessionId(storage, generate) {
+    try{const existing=storage.getItem('kalends:usage-session');if(/^[A-Za-z0-9_-]{1,64}$/.test(existing||''))return existing;}catch(_){}
+    const id=generate();try{storage.setItem('kalends:usage-session',id);}catch(_){}return id;
+  }
+  const core = {escapeHTML, LifeRequestGate, LifeRevisionGate, StaleRequest, acceptsSceneMessage, describeAction, UsageClock, usageSessionId};
   if (typeof module !== 'undefined' && module.exports) module.exports = core;
   if (typeof document === 'undefined') return;
 
   const $ = selector => document.querySelector(selector), $$ = selector => [...document.querySelectorAll(selector)], esc = escapeHTML;
   const API = '/product/api/';
-  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Set(), lab:null, metadataWarnings:new Map(), toastTimer:null, lastSceneRequest:0, sessionId:crypto.randomUUID(), activeSince:performance.now()};
+  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Map(), lab:null, metadataWarnings:new Map(), toastTimer:null, lastSceneRequest:0, sessionId:null, usage:{id:null,clock:null,timer:null,contexts:new Map(),consentPending:new Map(),suppressed:new Set()}};
   class ApiError extends Error { constructor(message, code, status) { super(message); this.name='ApiError'; this.code=code; this.status=status; } }
-  async function api(path, body, signal) {
-    const response = await fetch(API + path, body === undefined ? {cache:'no-store',signal} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal});
+  async function api(path, body, signal, keepalive=false) {
+    const response = await fetch(API + path, body === undefined ? {cache:'no-store',signal} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal,keepalive});
     let result;
     try { result = await response.json(); } catch (_) { throw new ApiError('The local server returned an unreadable response. Refresh to reconcile this life.', 'unreadable_response', response.status); }
     if (!response.ok || result.error) throw new ApiError(result.save_failed===true?'The world journal could not be saved. This choice was not accepted; your previously accepted history is preserved.':typeof result.error === 'string' ? result.error : result.error?.message || result.message || 'The local request could not be completed.', result.save_failed===true?'journal_save_failed':result.code || result.error?.code, response.status);
     return result;
   }
   function status(message, duration = 6500) { const node=$('#global-status'); node.textContent=message; node.dataset.errorCode=''; node.hidden=false; clearTimeout(S.toastTimer); S.toastTimer=setTimeout(()=>{node.hidden=true;},duration); }
-  function notifyError(error) { if (error instanceof StaleRequest || error.name==='AbortError') return; status(error.message || 'The local request could not be completed.',10000);$('#global-status').dataset.errorCode=error.code||''; }
+  function notifyError(error) { if (error instanceof StaleRequest || error.name==='AbortError') return; telemetry('error',{reason:errorReason(error)});status(error.message || 'The local request could not be completed.',10000);$('#global-status').dataset.errorCode=error.code||''; }
   function timeLabel(minute,setting) { const n=Number(minute||0);if(setting==='pompeii'||setting===undefined&&S.data?.snapshot?.setting==='pompeii')return `World minute ${n.toLocaleString()}`;return `Day ${Math.floor(n/1440)+1} · ${String(Math.floor(n%1440/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`; }
   function personName(id) { return (S.data?.people || S.data?.history?.people || []).find(p=>p.id===id)?.name || ({team_a:'Amir',team_b:'Mira',team_c:'Lin',Player:S.data?.snapshot?.setting==='commons'?'You':'Aelia'}[id]) || id; }
   function human(text) { return String(text||'').replace(/team_[abc]|Player/g, match=>personName(match)); }
@@ -108,7 +128,7 @@
     const pages={
       '/about':['The idea','Worlds worth spending time in.',`<p>Kalends explores curated persistent worlds: places you can inhabit, people with their own circumstances, and choices that leave a history.</p><p>The long-term ambition spans different settings, learning through experience and replaceable interfaces. Today’s working expression is smaller: a Roman-inspired neighborhood and a shared-instrument decision experience.</p><h2>Ordinary life belongs here.</h2><p>A recognizable routine, an unhurried exchange and returning to a person matter alongside consequential decisions. The world need not turn every moment into a reward, crisis or score.</p><h2>What persistence means today.</h2><p>Accepted actions are kept in a local journal. People and institutions act through authored rules and bounded memories. Time advances during play or when you explicitly choose it. This is a local early prototype, with no claim of sentience, unrestricted generation or validated training.</p><p><a href="/worlds">Explore the two worlds</a> or <a href="/research">read the evidence and limits</a>.</p>`],
       '/accessibility':['Accessibility','A readable way into the world.',`<p>The web shell uses semantic controls, visible focus, keyboard navigation, labelled dialogs and reduced-motion support. The Observatory decision experience presents consequential choices as text.</p><p>Pompeii retains its existing 3D client and settings. A participant history presents recorded consequences and evidence in text. A full assistive-technology audit has not been completed; this page does not claim WCAG certification.</p><h2>Keyboard controls</h2><p>Use Tab and Shift+Tab to move between controls, Enter or Space to activate buttons, and Escape to close dialogs or the story drawer. The 3D client lists its own movement and interaction controls.</p><h2>Reading and motion</h2><p>Your browser’s text zoom is supported. The shell respects the system reduced-motion preference. The world keeps its own accessibility settings, preserved when opening and closing your story.</p>`],
-      '/data-and-saves':['Data & saves','Your history stays on this installation.',`<p>World journals are saved by the local Kalends server. “Local” means this installation’s filesystem, rather than a cloud account or synchronized browser profile. This release has no account system.</p><h2>Separate lives, explicit identity.</h2><p>Beginning a new life creates a new journal. It does not reset another life. Incompatible journals are preserved and reported rather than silently replaced. Only one server writer may open a save directory.</p><h2>Paused time.</h2><p>The world does not simulate while its local server is stopped. Returning after a real-world interval resumes the recorded moment. Advancing simulated time is an explicit choice.</p><h2>Optional local usage events.</h2><p>You may opt in through the world menu. Events record limited actions such as entering a life, opening history and accepted choices, with build, life and anonymous session identifiers. Raw conversation text is not collected by these events. The world’s accepted action journal is separate.</p><h2>Research exposure.</h2><p>Research Lab reveals information your participant may not know. Opening it requires an explicit acknowledgement and marks that life as operator-exposed for future analysis. Viewing research does not install hidden facts into NPC memories.</p><p>No automatic upload, recruitment or external model use is enabled by these pages.</p>`],
+      '/data-and-saves':['Data & saves','Your history stays on this installation.',`<p>World journals are saved by the local Kalends server. “Local” means this installation’s filesystem, rather than a cloud account or synchronized browser profile. This release has no account system.</p><h2>Separate lives, explicit identity.</h2><p>Beginning a new life creates a new journal. It does not reset another life. Incompatible journals are preserved and reported rather than silently replaced. Only one server writer may open a save directory.</p><h2>Paused time.</h2><p>The world does not simulate while its local server is stopped. Returning after a real-world interval resumes the recorded moment. Advancing simulated time is an explicit choice.</p><h2>Optional local usage events.</h2><p>You may opt in through the world menu. Events record entry, returns, accepted non-navigation choices, viewed consequences, declined reviews and error categories, with build, life and anonymous tab-session identifiers. Timing separates visible time, focused foreground time and an active estimate that ends after 30 seconds without an interaction. These timers do not measure attention. No raw conversation text, keystrokes, coordinates or error messages are collected by these events. The world’s accepted action journal is separate.</p><h2>Research exposure.</h2><p>Research Lab reveals information your participant may not know. Opening it requires an explicit acknowledgement and marks that life as operator-exposed for future analysis. Viewing research does not install hidden facts into NPC memories.</p><p>No automatic upload, recruitment or external model use is enabled by these pages.</p>`],
       '/acknowledgements':['Sources & assets','An authored world, honestly labelled.',`<p>Pompeii is historical fiction in a small Roman-inspired neighborhood. It is not a surveyed reconstruction or a complete ancient city. Microhistories, situations and character speech are authored or reconstructed.</p><p>The public Pompeii image is an actual capture from this repository’s existing prototype. It shows the earlier interface; the playable scene may use a newer shell. Shared Observatory’s orbital illustration is a labelled conceptual diagram.</p><p>Shared Observatory is a project-authored instrument-allocation scenario, not an operational observatory or accredited curriculum. Its representative names are fictional display metadata over fixed internal team identities.</p><h2>Existing project asset register</h2><p>The retained renderer and its source assets remain in the Kalends repository. <a href="/research/artifacts/assets">Open the local asset and source register</a> for provenance and usage details.</p>`]
     };
     const p=pages[path];return p?`<div class="page prose-page">${pageHead(p[0],p[1])}${p[2]}</div>`:errorPage('Page unavailable','That page is not available in this local prototype.','/','Return to Kalends');
@@ -129,7 +149,7 @@
       if(r.life.view) await openStory(r.life.view==='reflect'?'reflect':'history'); else closeStory(false);
       document.title=`${metadata(S.data).title||'Your world'} · Kalends`; return;
     }
-    pauseFrames(); S.gate.select(null); S.id=null; S.data=null; S.proposal=null; S.reflection=null; closeStory(false);
+    leaveUsage();pauseFrames(); S.gate.select(null); S.id=null; S.data=null; S.proposal=null; S.reflection=null; closeStory(false);
     $('#life-shell').hidden=true;$('#public-shell').hidden=false;document.body.classList.remove('in-world');
     for(const a of $$('.site-header nav a')) a.setAttribute('aria-current',r.path.startsWith(a.pathname)?'page':'false');
     if(r.path==='/') $('#main').innerHTML=homePage();
@@ -144,14 +164,14 @@
     if(location.hash) requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());else scrollTo(0,0);
   }
   async function enterLife(id, routeEpoch) {
-    const changed=S.id!==id; if(changed){saveCommonDraft();pauseFrames();S.id=id;S.gate.select(id);S.data=null;S.reflection=null;S.proposal=null;S.conversationEpoch++;$('#life-loading').hidden=false;}
+    const changed=S.id!==id; if(changed){saveCommonDraft();leaveUsage();pauseFrames();S.id=id;S.gate.select(id);S.data=null;S.reflection=null;S.proposal=null;S.conversationEpoch++;$('#life-loading').hidden=false;}
     try {
       const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);
       const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));
       if(routeEpoch!==S.routeEpoch)return;
       if(readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;
-      S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);renderLife();
-      if(changed) { const resumed=await api('resume',{id});if(id!==S.id)return;rememberMetadataWarning(id,resumed);showReturn();telemetry('life_entered'); }
+      S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);if(changed)openUsage(id,data);renderLife();
+      if(changed) { const resumed=await api('resume',{id});if(id!==S.id)return;rememberMetadataWarning(id,resumed);showReturn(); }
       showMetadataWarning(id);
     } catch(error) {
       if(error instanceof StaleRequest||error.name==='AbortError')return;
@@ -166,13 +186,13 @@
     $('#world-participant').textContent=(l.participant||(roman?'Aelia':'Consortium coordinator'))+' · '+String(l.id||S.id).slice(-8);
     $('#world-date').textContent=(roman&&s.world?.clock?`Day ${s.world.day} · ${s.world.clock}`:timeLabel(l.minute??s.minute))+' · World time';$('#world-saving').textContent=S.pending.has(S.id)?'Saving…':l.save_status==='error'?saveStatus(l.save_status):metadataWarning()?'World saved · Display metadata needs attention':saveStatus(l.save_status);
     $('#scene-frames').hidden=!roman;$('#observatory-stage').hidden=roman;$('#life-loading').hidden=true;
-    $('#menu-lab').href='/lab/'+encodeURIComponent(S.id);$('#telemetry-opt-in').checked=!!d.telemetry?.opt_in;
+    $('#menu-lab').href='/lab/'+encodeURIComponent(S.id);$('#telemetry-opt-in').checked=!!d.telemetry?.opt_in&&!usageSuppressed(S.id);$('#operator-exposure').hidden=!d.telemetry?.operator_exposed;
     if(roman) ensureFrame(S.id);else renderObservatory();
     if(!$('#story-drawer').hidden) renderStory();
   }
   function ensureFrame(id) {
     let item=S.frames.get(id),wasHidden=!!item?.wrapper.hidden;
-    if(!item){const wrapper=document.createElement('div');wrapper.className='scene-frame-wrap';wrapper.dataset.life=id;const frame=document.createElement('iframe');frame.className='scene-frame';frame.title='Pompeii · your saved life';frame.src='/immersion/?experience='+encodeURIComponent(id);wrapper.append(frame);const loading=document.createElement('div');loading.className='scene-frame-loading';loading.textContent='Entering the neighborhood…';wrapper.append(loading);$('#scene-frames').append(wrapper);let persisted=null;try{persisted=JSON.parse(sessionStorage.getItem('kalends:scene:'+id)||'null');}catch(_){}item={wrapper,frame,loading,ready:false,initialView:persisted,requests:new Map(),retryCount:0};S.frames.set(id,item);}
+    if(!item){const wrapper=document.createElement('div');wrapper.className='scene-frame-wrap';wrapper.dataset.life=id;const frame=document.createElement('iframe');frame.className='scene-frame';frame.title='Pompeii · your saved life';frame.src='/immersion/?experience='+encodeURIComponent(id);frame.addEventListener('load',()=>bindSceneActivity(frame));wrapper.append(frame);const loading=document.createElement('div');loading.className='scene-frame-loading';loading.textContent='Entering the neighborhood…';wrapper.append(loading);$('#scene-frames').append(wrapper);let persisted=null;try{persisted=JSON.parse(sessionStorage.getItem('kalends:scene:'+id)||'null');}catch(_){}item={wrapper,frame,loading,ready:false,initialView:persisted,requests:new Map(),retryCount:0};S.frames.set(id,item);}
     for(const [key,value] of S.frames){value.wrapper.hidden=key!==id;if(key!==id)host(key,'pause');}
     if(item.ready&&wasHidden&&$('#story-drawer').hidden) host(id,'refresh');
   }
@@ -214,7 +234,7 @@
   }
   function supportLink(ids) { return ids?.length?`<button class="text-link" data-evidence="${Number(ids[0])}" style="background:transparent">Inspect dated support <span aria-hidden="true">↗</span></button>`:''; }
   function setPendingControls() { for(const b of $$('[data-life-write]'))b.disabled=S.pending.has(S.id)||S.uncertain.has(S.id)||!!S.data?.snapshot?.terminated||!!metadata(S.data).example||(b.hasAttribute('data-allocation-review')&&(S.data?.snapshot?.round_closed||S.data?.snapshot?.allocation!==null&&S.data?.snapshot?.allocation!==undefined));$('#confirm-choice').disabled=S.pending.has(S.id)||S.uncertain.has(S.id); }
-  async function refreshLife() { const id=S.id;if(!id)return;const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));if(id!==S.id||readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);renderLife();showMetadataWarning(id);return data; }
+  async function refreshLife() { const id=S.id;if(!id)return;const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));if(id!==S.id||readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);syncUsageConsent(id,data);renderLife();showMetadataWarning(id);return data; }
   async function mutate(path, body, onSuccess) {
     const id=S.id;if(!id||S.pending.has(id))return;if(S.uncertain.has(id)){status('Refresh this life to reconcile its last request before making another choice.');return;}
     S.pending.add(id);setPendingControls();$('#world-saving').textContent='Saving…';
@@ -235,19 +255,19 @@
   async function confirmChoice() {
     const proposal=S.proposal;if(!proposal||proposal.id!==S.id)return;
     $('#review-error').textContent='';$('#confirm-choice').textContent='Committing and saving…';
-    try {await mutate('confirm',{proposal_id:proposal.proposal_id},()=>{if(proposal.id===S.id){S.proposal=null;$('#review-dialog').close();status('Accepted, recorded and saved.');telemetry('meaningful_action');}});}
+    try {await mutate('confirm',{proposal_id:proposal.proposal_id},()=>{if(proposal.id===S.id){S.proposal=null;$('#review-dialog').close();status('Accepted, recorded and saved.');recordMeaningful(proposal.id,S.data);}});}
     catch(error){if(proposal.id===S.id){$('#review-error').textContent=error.message;$('#confirm-choice').textContent='Review this choice again';S.proposal=null;$('#confirm-choice').disabled=true;}notifyError(error);}
   }
   function showNotice(title,body,reconcile=false) { const n=$('#world-notice');n.innerHTML=`<strong>${esc(title)}</strong>${esc(body)}<br>${reconcile?'<button class="text-link" data-reconcile style="background:transparent">Refresh this life →</button>':''}<button class="text-link" data-dismiss-return style="background:transparent">Continue from here →</button>`;n.hidden=false; }
   function showReturn() {
-    if(!S.data||S.returnSeen.has(S.id))return;const d=S.data,r=d.return_summary||d.history?.return_summary||{},changes=r.changes||r.clauses||[],l=metadata(d);
+    if(!S.data||S.returnSeen.get(S.id)===metadata(S.data).revision)return;const d=S.data,r=d.return_summary||d.history?.return_summary||{},changes=r.changes||r.clauses||[],l=metadata(d);
     const summary=returnText(r)||r.text||`Paused ${l.location?'at '+l.location:'at your recorded moment'}. Time advances when you choose.`;
-    showNotice('Your place is still here.',summary);S.returnSeen.add(S.id);
+    showNotice('Your place is still here.',summary);S.returnSeen.set(S.id,l.revision);recordSummaryConsequences(r,'return');
   }
   function returnText(summary) {const elsewhere=(summary.independent_developments||[]).at(-1),independent=new Set((summary.independent_developments||[]).flatMap(b=>b.evidence_ids||[])),changes=(summary.changes||summary.clauses||[]).filter(b=>!(b.evidence_ids||[]).some(id=>independent.has(id))),unresolved=summary.unresolved?.[0];return [changes.slice(-2).map(text).join(' '),unresolved?'Still open: '+text(unresolved):'',elsewhere?'Elsewhere in this world: '+text(elsewhere):''].filter(Boolean).join(' ');}
   async function dismissReturn() { $('#world-notice').hidden=true;if(!S.id||!S.data)return;try{await api('seen',{id:S.id,revision:metadata(S.data).revision??S.data.history?.revision??S.data.snapshot?.command_count??0});}catch(error){notifyError(error);} }
   async function openStory(tab) {
-    if(!S.data)return;S.storyTab=tab;$('#story-backdrop').hidden=false;$('#story-drawer').hidden=false;$('#world-main').inert=true;$('.world-header').inert=true;host(S.id,'pause');renderStory();$('#close-story').focus();telemetry('history_opened');if(tab==='reflect')await loadReflection();
+    if(!S.data)return;S.storyTab=tab;$('#story-backdrop').hidden=false;$('#story-drawer').hidden=false;$('#world-main').inert=true;$('.world-header').inert=true;host(S.id,'pause');renderStory();$('#close-story').focus();telemetry('history_opened',{reason:'history'});recordHistoryConsequences();if(tab==='reflect')await loadReflection();
   }
   function closeStory(updateRoute=true) {
     const wasOpen=!$('#story-drawer').hidden;$('#story-backdrop').hidden=true;$('#story-drawer').hidden=true;$('#world-main').inert=false;$('.world-header').inert=false;
@@ -287,7 +307,7 @@
   function evidenceValueHTML(raw) {let value=raw;if(typeof raw==='string'){try{value=JSON.parse(raw);}catch(_){}}if(value&&typeof value==='object'){const rows=Object.entries(value);return `<details><summary class="fine-print">Supported register · ${rows.length} entries</summary><ul>${rows.slice(0,12).map(([key,v])=>`<li>${esc(human(key).replaceAll('_',' '))}: ${esc(v&&typeof v==='object'?Array.isArray(v)?`${v.length} recorded items`:'recorded constraints':v)}</li>`).join('')}</ul></details>`;}return `<p>Recorded value: ${esc(value)}</p>`;}
   async function executeAlternative() {
     const id=S.id,index=Number($('#reflect-choice')?.value),button=$('#execute-alternative');if(!Number.isInteger(index))return;button.disabled=true;button.textContent='Executing a separate history…';
-    try{const result=await S.gate.run(signal=>api('fork',{id,command_index:index},signal));if(id!==S.id)return;const differences=result.differences||{},skipped=result.skipped||[];$('#alternative-result').innerHTML=`<div class="alternative-result"><h4>Your original life is preserved.</h4><p>Accepted command ${index} was omitted. Later declared commands were replayed at their recorded times where possible.</p>${Object.keys(differences).length?`<ul>${Object.entries(differences).map(([k,v])=>`<li>${esc(k.replaceAll('_',' '))}: ${esc(v.original)} → ${esc(v.alternative)}</li>`).join('')}</ul>`:'<p>No difference appeared in the reported measures at the matching horizon.</p>'}${skipped.length?`<p class="warning">${skipped.length} later command(s) became infeasible.</p><ul>${skipped.map(x=>`<li>Command ${Number(x.index)}: ${esc(x.reason||'Not feasible in the alternative')}</li>`).join('')}</ul>`:'<p>All later declared commands remained feasible.</p>'}<p class="fine-print">${esc(result.interpretation||'One executed omission, with a fixed continuation. This does not prove a necessary cause or discover the best possible history.')}</p></div>`;telemetry('consequence_viewed');}
+    try{const result=await S.gate.run(signal=>api('fork',{id,command_index:index},signal));if(id!==S.id)return;const differences=result.differences||{},skipped=result.skipped||[];$('#alternative-result').innerHTML=`<div class="alternative-result"><h4>Your original life is preserved.</h4><p>Accepted command ${index} was omitted. Later declared commands were replayed at their recorded times where possible.</p>${Object.keys(differences).length?`<ul>${Object.entries(differences).map(([k,v])=>`<li>${esc(k.replaceAll('_',' '))}: ${esc(v.original)} → ${esc(v.alternative)}</li>`).join('')}</ul>`:'<p>No difference appeared in the reported measures at the matching horizon.</p>'}${skipped.length?`<p class="warning">${skipped.length} later command(s) became infeasible.</p><ul>${skipped.map(x=>`<li>Command ${Number(x.index)}: ${esc(x.reason||'Not feasible in the alternative')}</li>`).join('')}</ul>`:'<p>All later declared commands remained feasible.</p>'}<p class="fine-print">${esc(result.interpretation||'One executed omission, with a fixed continuation. This does not prove a necessary cause or discover the best possible history.')}</p></div>`;telemetry('consequence_viewed',{reason:'alternative'});}
     finally{if(id===S.id&&button.isConnected){button.disabled=false;button.textContent='Execute this alternative →';}}
   }
   async function inspectEvidence(eventId) {
@@ -302,17 +322,17 @@
   }
   async function advance(minutes, mode, protect=true) {
     const id=S.id;$('#time-dialog').close();status('Advancing this world through its exact scheduler…');
-    await mutate('advance',{minutes,mode,protect_known:protect},r=>{if(id===S.id){const detail=r.protected_stop||r.stopped_at||r.stop;status(detail?'Stopped at a participant-known choice window. Review what is due before advancing again.':'Time advanced and the resulting history was saved.');}});
-    if(id===S.id){host(id,'refresh');showReturnChanges();telemetry('consequence_viewed');}
+    const result=await mutate('advance',{minutes,mode,protect_known:protect},r=>{if(id===S.id){const detail=r.protected_stop||r.stopped_at||r.stop;status(detail?'Stopped at a participant-known choice window. Review what is due before advancing again.':'Time advanced and the resulting history was saved.');}});
+    if(result&&id===S.id){host(id,'refresh');showReturnChanges();}
   }
-  function showReturnChanges() { const r=S.data?.return_summary||S.data?.history?.return_summary||{},summary=returnText(r);if(summary)showNotice('What followed.',summary); }
+  function showReturnChanges() { const r=S.data?.return_summary||S.data?.history?.return_summary||{},summary=returnText(r);if(summary){showNotice('What followed.',summary);recordSummaryConsequences(r,'advance');} }
   async function renderLab(id,epoch) {
     const l=(S.catalog.lives||[]).find(l=>lifeId(l)===id);
     $('#main').innerHTML=`<div class="page prose-page">${pageHead('Research Lab','Beyond your participant’s view.')}<div class="lab-warning"><h2>This view reveals private information.</h2><p>It can show canonical truth, private minds and records your character may not know. Entering marks this life as operator-exposed for research analysis.</p><p>Hidden facts are not installed into the characters’ memories. This is a local operator tool, without production multi-user authorization.</p><button class="button" data-enter-lab="${esc(id)}">I understand · Open Lab <span aria-hidden="true">↗</span></button></div><a class="text-link" href="${lifeURL(id)}">Return to ${esc(l?.title||'this life')} <span aria-hidden="true">→</span></a></div>`;
   }
   async function enterLab(id) {
     const epoch=S.routeEpoch,r=await api('lab',{id,acknowledged:true});if(epoch!==S.routeEpoch||routeParts().path!=='/lab/'+id)return;S.lab=r;
-    const snapshot=r.snapshot||r,lab=snapshot.lab||r.lab||{};
+    if(!usageSuppressed(id)&&!S.usage.contexts.get(id)?.optIn&&r.life?.telemetry_opt_in){S.sessionId ||= usageSessionId(sessionStorage,()=>crypto.randomUUID());S.usage.contexts.set(id,{optIn:true,enteredAt:Date.now(),firstMeaningful:false,meaningfulRevision:0});}telemetry('research_entered',{},id);const snapshot=r.snapshot||r,lab=snapshot.lab||r.lab||{};
     $('#main').innerHTML=`<div class="page lab-container">${pageHead('Research Lab','The same life, an operator’s view.')}<p class="lab-exposed">Operator-exposed · This life is marked as having revealed private information.</p><a class="text-link" href="${lifeURL(id)}">Return to participant view <span aria-hidden="true">→</span></a><h2>Canonical truth</h2><p class="fine-print">This includes facts unavailable to the participant. Dependency links are recorded support, rather than automatic proof of necessary causes.</p><details><summary>Inspect full simulator truth</summary><pre>${esc(JSON.stringify(lab.truth||{},null,2))}</pre></details><h2>People, goals and retained evidence</h2>${Object.entries(lab.minds||{}).map(([actor,mind])=>`<details><summary>${esc(human(actor))} · Retained state</summary><pre>${esc(JSON.stringify(mind,null,2))}</pre></details>`).join('')}<details><summary>Accepted command history</summary><pre>${esc(JSON.stringify(lab.commands||[],null,2))}</pre></details></div>`;
   }
   async function renderStudio(epoch) {
@@ -326,7 +346,51 @@
     $('#main').innerHTML=`<div class="page">${pageHead('Experimental Studio','A supported variation.','Changes compile into a new identity. Existing lives and source templates are preserved.')}<form id="studio-form" class="studio-form"><label>Supported template<select name="template_id" id="studio-template">${(S.catalog.templates||[]).map(item=>`<option value="${esc(item.id)}" ${item.id===templateId?'selected':''}>${esc(item.title)}</option>`).join('')}</select></label><label>Title<input name="title" value="${esc((t?.title||'World')+' · authored variation')}" required maxlength="90"></label><fieldset><legend>Supported parameters</legend><label>Simulation seed<input name="seed" type="number" min="0" max="1000000" step="1" value="2718" required></label><label>Horizon in world days<input name="horizon_days" type="number" min="1" max="90" step="1" value="30" required></label><p class="studio-note">The backend validator enforces supported ranges and dependencies. Actor IDs, initial private evidence, executable rules and arbitrary code cannot be changed here.</p></fieldset><div class="hero-actions"><button class="button secondary" type="button" id="validate-studio">Validate this specification</button><button class="button" type="submit">Compile into a new life →</button></div><div id="studio-result" role="status"></div></form></div>`;
   }
   function studioSpec() {const form=$('#studio-form');if(!form.reportValidity())return null;return {template_id:form.elements.template_id.value,title:form.elements.title.value.trim(),seed:Number(form.elements.seed.value),horizon_days:Number(form.elements.horizon_days.value)};}
-  function telemetry(event) { if(!S.id||!S.data?.telemetry?.opt_in)return;const now=performance.now(),active_ms=document.hidden?0:Math.min(3600000,Math.max(0,Math.round(now-S.activeSince)));S.activeSince=now;api('telemetry',{id:S.id,event,active_ms,session_id:S.sessionId}).catch(()=>{}); }
+  function focused() {return typeof document.hasFocus!=='function'||document.hasFocus();}
+  function usageSuppressed(id) {if(S.usage.suppressed.has(id))return true;try{return sessionStorage.getItem('kalends:usage-paused:'+id)==='1';}catch(_){return false;}}
+  function setUsageSuppressed(id,paused) {if(paused)S.usage.suppressed.add(id);else S.usage.suppressed.delete(id);try{sessionStorage.setItem('kalends:usage-paused:'+id,paused?'1':'0');}catch(_){}}
+  function usageState(id) {try{return JSON.parse(sessionStorage.getItem('kalends:usage:'+id)||'null');}catch(_){return null;}}
+  function persistUsage(id,context) {try{sessionStorage.setItem('kalends:usage:'+id,JSON.stringify({enteredAt:context.enteredAt,firstMeaningful:context.firstMeaningful,sessionId:S.sessionId}));}catch(_){}}
+  function beginUsage(id,data,reason='consent') {
+    if(!data?.telemetry?.opt_in||usageSuppressed(id))return;
+    S.sessionId ||= usageSessionId(sessionStorage,()=>crypto.randomUUID());
+    const previous=usageState(id),same=previous?.sessionId===S.sessionId,returning=S.usage.contexts.has(id),entryReason=same?(returning?'return':'reload'):(metadata(data).revision||0)>0?'return':'new';
+    const context={optIn:true,enteredAt:same&&Number.isFinite(previous.enteredAt)?previous.enteredAt:Date.now(),firstMeaningful:same&&previous.firstMeaningful===true,meaningfulRevision:data.telemetry.meaningful_revision||0};
+    S.usage.contexts.set(id,context);S.usage.id=id;S.usage.clock=new UsageClock(performance.now(),{visible:!document.hidden,focused:focused()});persistUsage(id,context);
+    if(!same)telemetry('session_start',{reason});
+    telemetry('life_entered',{reason:reason==='consent'?'consent':entryReason});
+    if(reason!=='consent'&&(same||(metadata(data).revision||0)>0))telemetry('return_resumed',{reason:entryReason});
+    clearTimeout(S.usage.timer);scheduleUsage();
+  }
+  function openUsage(id,data) {beginUsage(id,data,'new');}
+  function syncUsageConsent(id,data) {
+    if(S.usage.consentPending.has(id)||usageSuppressed(id))return;const context=S.usage.contexts.get(id),enabled=!!data?.telemetry?.opt_in;
+    if(enabled&&(!context?.optIn||S.usage.id!==id))beginUsage(id,data);
+    else if(!enabled&&context?.optIn)stopUsage(id);
+  }
+  function stopUsage(id) {const context=S.usage.contexts.get(id);if(context)context.optIn=false;if(S.usage.id===id){S.usage.id=null;S.usage.clock=null;clearTimeout(S.usage.timer);}}
+  function leaveUsage() {if(S.usage.id){telemetry('life_left',{reason:'leave'},S.usage.id);S.usage.id=null;S.usage.clock=null;}clearTimeout(S.usage.timer);}
+  function scheduleUsage() {if(!S.usage.id)return;S.usage.timer=setTimeout(()=>{if(S.usage.id){S.usage.clock.boundary(performance.now(),{visible:!document.hidden,focused:focused()});telemetry('active_interval',{reason:'interval'});scheduleUsage();}},15000);}
+  function recordActivity(event) {if(event?.isTrusted===false||!S.usage.clock)return;S.usage.clock.boundary(performance.now(),{visible:!document.hidden,focused:focused()});S.usage.clock.activity(performance.now());}
+  function bindSceneActivity(frame) {
+    try{const doc=frame.contentDocument;if(!doc||doc.__kalendsUsageBound)return;doc.__kalendsUsageBound=true;for(const type of ['click','input','pointerdown','wheel','scroll'])doc.addEventListener(type,event=>{if(S.frames.get(S.id)?.frame!==frame)return;recordActivity(event);if(type==='click'&&event.isTrusted!==false){const button=event.target.closest?.('button');if(button?.id==='cancel-review'&&!button.disabled)telemetry('choice_declined',{reason:'cancelled'});}},{capture:true,passive:true});}catch(_){}
+  }
+  function errorReason(error) {if(error?.code==='journal_save_failed')return 'save_failed';if(error?.code==='unreadable_response')return 'unreadable';if(/stale|changed|expired/.test(error?.code||''))return 'stale';return error instanceof ApiError?'rejected':'network';}
+  function recordMeaningful(id,data,acceptedRevision=data?.telemetry?.meaningful_revision) {
+    const context=S.usage.contexts.get(id),revision=acceptedRevision;
+    if(!context?.optIn||!Number.isInteger(revision)||revision<=context.meaningfulRevision)return;
+    context.meaningfulRevision=revision;const first_meaningful=!context.firstMeaningful;context.firstMeaningful=true;persistUsage(id,context);
+    telemetry('meaningful_action',{accepted_revision:revision,first_meaningful},id);
+  }
+  function recordSummaryConsequences(summary,reason) {if((summary.changes||summary.clauses||[]).some(beat=>beat.kind==='consequence'))telemetry('consequence_viewed',{reason});}
+  function recordHistoryConsequences() {if(S.storyTab==='history'&&(S.data?.history?.chapters||[]).slice(-(S.chapterLimits.get(S.id)||8)).some(chapter=>chapter.kind==='consequence'||(chapter.beats||[]).some(beat=>beat.kind==='consequence')))telemetry('consequence_viewed',{reason:'history'});}
+  function telemetry(event,details={},id=S.id) {
+    if(['history_opened','consequence_viewed'].includes(event)&&(document.hidden||!focused()))return;
+    const context=S.usage.contexts.get(id);if(!id||!context?.optIn)return;
+    const timing=S.usage.id===id&&S.usage.clock?S.usage.clock.drain(performance.now()):{visible_ms:0,foreground_ms:0,active_ms:0,idle_ms:0};
+    const row={id,event,...timing,elapsed_ms:Math.min(3600000,Math.max(0,Date.now()-context.enteredAt)),session_id:S.sessionId,...details};
+    api('telemetry',row,undefined,event==='session_end').catch(()=>{});
+  }
 
   document.addEventListener('click',event=>{
     const a=event.target.closest('a[href]');
@@ -343,8 +407,8 @@
       if(b.dataset.advance){await advance(Number(b.dataset.advance),b.dataset.mode,b.dataset.protect!=='false');return;}
       if(b.dataset.evidence){await inspectEvidence(Number(b.dataset.evidence));return;}
       if(b.dataset.bookmark){const id=S.id;await api('annotation',{id,event_id:Number(b.dataset.bookmark)});if(id===S.id){await refreshLife();status('Bookmarked in your personal history.');}return;}
-      if(b.hasAttribute('data-earlier-chapters')){S.chapterLimits.set(S.id,(S.chapterLimits.get(S.id)||8)+8);renderStory();return;}
-      if(b.dataset.storyTab){S.storyTab=b.dataset.storyTab;renderStory();if(S.storyTab==='reflect')await loadReflection();return;}
+      if(b.hasAttribute('data-earlier-chapters')){S.chapterLimits.set(S.id,(S.chapterLimits.get(S.id)||8)+8);renderStory();recordHistoryConsequences();return;}
+      if(b.dataset.storyTab){S.storyTab=b.dataset.storyTab;renderStory();recordHistoryConsequences();if(S.storyTab==='reflect')await loadReflection();return;}
       if(b.dataset.enterLab){b.disabled=true;try{await enterLab(b.dataset.enterLab);}finally{b.disabled=false;}return;}
       if(b.hasAttribute('data-dismiss-return')){await dismissReturn();return;}
       if(b.hasAttribute('data-reconcile')){await refreshLife();$('#world-notice').hidden=true;status('This life has been reconciled with its saved journal.');return;}
@@ -377,10 +441,10 @@
   document.addEventListener('input',event=>{if(event.target.closest('#observatory-stage'))saveCommonDraft();if(event.target.id==='personal-note'&&S.id)draft(S.id).note=event.target.value;});
   document.addEventListener('change',event=>{
     if(event.target.id==='reflect-choice')renderThenEvidence();
-    if(event.target.id==='telemetry-opt-in'&&S.id){const opt_in=event.target.checked,id=S.id,epoch=S.gate.epoch;event.target.disabled=true;S.readVersions.set(id,(S.readVersions.get(id)||0)+1);api('telemetry',{id,opt_in}).then(()=>{S.readVersions.set(id,(S.readVersions.get(id)||0)+1);if(id!==S.id||epoch!==S.gate.epoch)return;if(S.data)S.data.telemetry={...S.data.telemetry,opt_in};status(opt_in?'Optional usage events are enabled locally.':'Optional usage events are disabled.');}).catch(error=>{if(id!==S.id||epoch!==S.gate.epoch)return;event.target.checked=!opt_in;notifyError(error);}).finally(()=>{event.target.disabled=false;});}
+    if(event.target.id==='telemetry-opt-in'&&S.id){const opt_in=event.target.checked,id=S.id,epoch=S.gate.epoch;event.target.disabled=true;S.usage.consentPending.set(id,opt_in);if(!opt_in){setUsageSuppressed(id,true);stopUsage(id);}S.readVersions.set(id,(S.readVersions.get(id)||0)+1);api('telemetry',{id,opt_in}).then(()=>{S.readVersions.set(id,(S.readVersions.get(id)||0)+1);if(id!==S.id||epoch!==S.gate.epoch)return;if(S.data)S.data.telemetry={...S.data.telemetry,opt_in};if(opt_in){setUsageSuppressed(id,false);beginUsage(id,S.data);recordActivity();}status(opt_in?'Optional usage events are enabled locally.':'Optional usage events are disabled.');}).catch(error=>{if(id!==S.id||epoch!==S.gate.epoch)return;event.target.checked=false;if(opt_in)notifyError(error);else status('Usage collection is paused in this tab, but the server preference could not be saved. Try disabling it again before using another tab.',12000);}).finally(()=>{S.usage.consentPending.delete(id);event.target.disabled=false;});}
     if(event.target.id==='studio-template')renderStudioForm(event.target.value);
   });
-  $('#review-dialog').addEventListener('close',()=>{if(!S.pending.has(S.id))S.proposal=null;$('#confirm-choice').hidden=false;});
+  $('#review-dialog').addEventListener('close',()=>{if(!S.pending.has(S.id)){if(S.proposal)telemetry('choice_declined',{reason:'cancelled'});S.proposal=null;}$('#confirm-choice').hidden=false;});
   $('#story-backdrop').addEventListener('click',()=>closeStory());
   document.addEventListener('keydown',event=>{
     const drawer=$('#story-drawer');if(drawer.hidden||$('dialog[open]'))return;
@@ -400,11 +464,16 @@
         if(id===S.id&&!document.hidden&&$('#story-drawer').hidden&&item.retryCount<7){const delay=Math.min(1200,100*2**item.retryCount++);item.retryTimer=setTimeout(()=>{if(id===S.id&&!document.hidden&&$('#story-drawer').hidden){item.wrapper.hidden=false;host(id,request.action,request.view);}},delay);}
       }
       if(event.data.status==='ok'&&request&&['refresh','restore'].includes(request.action)){item.pendingRequest=null;item.retryCount=0;clearTimeout(item.retryTimer);}
-      if(event.data.status==='error'&&id===S.id)status(event.data.error||'The scene could not refresh its saved state.');
+      if(event.data.status==='error'&&id===S.id){telemetry('error',{reason:'scene'});status(event.data.error||'The scene could not refresh its saved state.');}
     }
-    if(event.data.kind==='kalends:accepted'&&id===S.id){refreshLife().then(()=>{telemetry('meaningful_action');if(item.pendingRequest&&!document.hidden&&$('#story-drawer').hidden){item.wrapper.hidden=false;const pending=item.pendingRequest;host(id,pending.action,pending.view);}}).catch(notifyError);}
+    if(event.data.kind==='kalends:rejected'&&id===S.id)telemetry('error',{reason:['network','save_failed'].includes(event.data.reason)?event.data.reason:'rejected'});
+    if(event.data.kind==='kalends:accepted'&&id===S.id){refreshLife().then(data=>{if(event.data.operation==='action'&&Number.isInteger(event.data.accepted_revision))recordMeaningful(id,data,event.data.accepted_revision);if(item.pendingRequest&&!document.hidden&&$('#story-drawer').hidden){item.wrapper.hidden=false;const pending=item.pendingRequest;host(id,pending.action,pending.view);}}).catch(notifyError);}
   });
   window.addEventListener('popstate',()=>route().catch(notifyError));
-  document.addEventListener('visibilitychange',()=>{S.activeSince=performance.now();if(document.hidden)pauseFrames();else if(S.id&&$('#story-drawer').hidden){const item=S.frames.get(S.id);if(item){item.wrapper.hidden=false;host(S.id,item.pendingRequest?.action||'refresh',item.pendingRequest?.view);}}});
+  document.addEventListener('visibilitychange',()=>{if(S.usage.clock){S.usage.clock.boundary(performance.now(),{visible:!document.hidden,focused:focused()});telemetry('active_interval',{reason:'visibility'});}if(document.hidden)pauseFrames();else if(S.id&&$('#story-drawer').hidden){const item=S.frames.get(S.id);if(item){item.wrapper.hidden=false;host(S.id,item.pendingRequest?.action||'refresh',item.pendingRequest?.view);}}});
+  for(const type of ['click','input','pointerdown','wheel','scroll'])document.addEventListener(type,recordActivity,{capture:true,passive:true});
+  for(const type of ['focus','blur'])window.addEventListener(type,()=>{if(S.usage.clock){S.usage.clock.boundary(performance.now(),{visible:!document.hidden,focused:focused()});telemetry('active_interval',{reason:'focus'});}});
+  window.addEventListener('pagehide',()=>{if(S.usage.clock)S.usage.clock.boundary(performance.now(),{visible:false,focused:false});telemetry('session_end',{reason:'pagehide'});});
+  window.addEventListener('pageshow',event=>{if(event.persisted&&S.usage.clock){S.usage.clock.boundary(performance.now(),{visible:!document.hidden,focused:focused()});telemetry('return_resumed',{reason:'return'});}});
   route().catch(error=>{notifyError(error);$('#main').innerHTML=errorPage('Kalends could not connect.',error.message,'/','Try again');});
 })(typeof window!=='undefined'?window:globalThis);

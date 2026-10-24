@@ -11,7 +11,7 @@ import re
 from urllib.parse import parse_qs, unquote, urlparse
 
 from .compiler import ExperienceCompilerV1
-from .product import ProductService, TEMPLATES
+from .product import meaningful_command, ProductService, TEMPLATES
 from .server import ROOT, STATIC, make_handler
 
 ARTIFACTS = {
@@ -74,6 +74,7 @@ def make_product_handler(service):
 
         def do_POST(self):
             ident = None
+            path = None
             try:
                 self.safe()
                 size = int(self.headers.get("Content-Length", "0"))
@@ -128,6 +129,10 @@ def make_product_handler(service):
                         else: raise ValueError("Unsupported game operation")
                         if len(game.runtime.commands) != before:
                             accepted = service.accepted(ident, {})
+                            # Capture this POST’s exact accepted prefix under the
+                            # same service lock, before another tab can mutate it.
+                            if meaningful_command(game.runtime.commands[-1]):
+                                result["accepted_revision"] = len(game.runtime.commands)
                             if accepted.get("metadata_warning"): result["metadata_warning"] = accepted["metadata_warning"]
                         return self.send(200, result)
                     if path == "/os/validate":
@@ -160,6 +165,9 @@ def make_product_handler(service):
                     if path == "/os/advance": return self.send(200, service.advance_product(ident, data.get("minutes"), mode=data.get("mode", "compress"), protect_known=False))
                     raise ValueError("Unsupported operation")
             except (ValueError, TypeError, KeyError, OSError) as error:
+                if path == "/product/api/telemetry" and isinstance(error, OSError):
+                    return self.send(400, {"error": "Optional usage events could not be saved. World choices are unaffected.",
+                                           "code": "telemetry_save_failed", "save_failed": False})
                 if isinstance(error, OSError) and ident in service.worlds:
                     service.save_errors[ident] = "The change could not be saved. The previous accepted world is preserved. Reload its current state before deciding what to do next."
                 return self.send(400, {"error": str(error)[:500], "save_failed": isinstance(error, OSError), "retry_policy": "Read the current life before reviewing again. Never automatically resubmit a choice."})
@@ -191,7 +199,7 @@ def make_product_handler(service):
             # setup before it is ever offered to a participant.
             import secrets
             from .runtime import ExperienceRuntime
-            from .product import utc
+            from .product import meaningful_command, utc
             if sum(bool(m.get("started")) and not m.get("example") for m in service.metadata.values()) >= 8: raise ValueError("This local prototype has eight personal lives")
             spec = validated.to_dict()
             spec["id"] = "authored_" + secrets.token_hex(6)

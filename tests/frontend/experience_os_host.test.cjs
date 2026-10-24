@@ -75,7 +75,7 @@ test('successful API POST preserves the exact confirmation body and sends a life
   assert.deepEqual(JSON.parse(h.requests[0].options.body), {proposal_id: 'review-9', interpretation_id: '0'});
   assert.equal(new URL(h.requests[0].input, h.location.origin).searchParams.get('experience'), 'participant_branch');
   assert.equal(response, h.response);
-  assert.deepEqual(h.messages, [{payload: {kind: 'kalends:accepted', experience: 'participant_branch'}, origin: 'http://localhost:8800'}]);
+  assert.deepEqual(h.messages, [{payload: {kind: 'kalends:accepted', operation:'action', experience: 'participant_branch'}, origin: 'http://localhost:8800'}]);
 });
 
 test('the parent receives no early acceptance signal while the native POST is still unresolved', async () => {
@@ -95,7 +95,7 @@ test('failed API POST returns its response without announcing acceptance', async
   const h = harness({fetchImpl: async () => rejected});
   assert.equal(await h.window.fetch('/api/act', {method: 'POST', body: '{}'}), rejected);
   assert.equal(h.requests.length, 1);
-  assert.deepEqual(h.messages, []);
+  assert.deepEqual(h.messages, [{payload:{kind:'kalends:rejected',reason:'rejected',experience:'custom_life'},origin:'http://127.0.0.1:8800'}]);
 });
 
 test('route previews, proposed choices and mode reads are not accepted world actions', async () => {
@@ -112,7 +112,7 @@ test('network rejection propagates unchanged and cannot trigger a parent refresh
   const h = harness({fetchImpl: async () => { throw error; }});
   await assert.rejects(h.window.fetch('/api/advance', {method: 'POST', body: '{"minutes":30}'}), received => received === error);
   assert.equal(h.requests.length, 1);
-  assert.deepEqual(h.messages, []);
+  assert.deepEqual(h.messages, [{payload:{kind:'kalends:rejected',reason:'network',experience:'custom_life'},origin:'http://127.0.0.1:8800'}]);
 });
 
 test('successful reads and non-POST requests do not announce accepted actions', async () => {
@@ -165,4 +165,28 @@ test('top-level gameplay routes correctly but never posts a notification to itse
   await h.window.fetch('/api/move', {method: 'POST', body: '{"location":"street"}'});
   assert.equal(new URL(h.requests[0].input, h.location.origin).searchParams.get('experience'), 'custom_life');
   assert.deepEqual(h.messages, []);
+});
+
+test('typed scene acceptance reads only a clone and forwards its exact accepted revision',async()=>{
+  let cloneReads=0;const response={ok:true,status:200,json(){throw Error('original response consumed');},clone(){return {json:async()=>{cloneReads++;return {accepted_revision:7,receipt:{text:'PRIVATE RECEIPT'}};}};}};
+  const h=harness({fetchImpl:async()=>response});assert.equal(await h.window.fetch('/api/act',{method:'POST',body:'{}'}),response);
+  assert.equal(cloneReads,1);assert.deepEqual(h.messages,[{payload:{kind:'kalends:accepted',operation:'action',accepted_revision:7,experience:'custom_life'},origin:'http://127.0.0.1:8800'}]);
+  assert.doesNotMatch(JSON.stringify(h.messages),/PRIVATE RECEIPT/);
+});
+
+test('navigation and advances never forward a meaningful revision even if a response contains one',async()=>{
+  const response={ok:true,status:200,clone(){throw Error('must not inspect movement content');}};
+  const h=harness({fetchImpl:async()=>response});await h.window.fetch('/api/move',{method:'POST',body:'{}'});await h.window.fetch('/api/advance',{method:'POST',body:'{}'});
+  assert.deepEqual(h.messages.map(m=>m.payload.operation),['move','advance']);assert.ok(h.messages.every(m=>!('accepted_revision' in m.payload)));
+});
+
+test('missing revision on a reviewed wait preserves refresh but cannot claim meaningful acceptance',async()=>{
+  const response={ok:true,status:200,clone(){return {json:async()=>({receipt:{action:'wait'},accepted_revision:null})};}};
+  const h=harness({fetchImpl:async()=>response});await h.window.fetch('/api/act',{method:'POST',body:'{}'});assert.equal(h.messages[0].payload.operation,'action');assert.equal('accepted_revision' in h.messages[0].payload,false);
+});
+
+test('journal rejection forwards only a fixed save failure category',async()=>{
+  const response={ok:false,status:400,clone(){return {json:async()=>({save_failed:true,error:'PRIVATE FILE PATH'})};}};
+  const h=harness({fetchImpl:async()=>response});assert.equal(await h.window.fetch('/api/act',{method:'POST',body:'{}'}),response);
+  assert.equal(h.messages[0].payload.reason,'save_failed');assert.doesNotMatch(JSON.stringify(h.messages),/PRIVATE FILE PATH/);
 });

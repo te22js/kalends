@@ -412,3 +412,126 @@ def test_http_confirm_metadata_failure_is_an_accepted_receipt_not_a_false_failed
     assert advance_status == 200 and advanced["life"]["metadata_warning"] is None
     assert request(f"/product/api/life?id={ident}")[1]["life"]["metadata_warning"] is None
     assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 2
+
+
+def test_usage_meaningful_status_comes_only_from_accepted_non_navigation_commands(product):
+    ident = start(product)
+    runtime = product.get(ident)
+    assert product.life(ident)["telemetry"]["meaningful_revision"] == 0
+    runtime.commit("advance", {"minutes": 1})
+    runtime.commit("action", {"action": "wait"})
+    assert product.life(ident)["telemetry"]["meaningful_revision"] == 0
+    proposal = product.review(ident, {"action": "inspect"})
+    assert product.life(ident)["telemetry"]["meaningful_revision"] == 0
+    accepted = product.confirm_review(ident, proposal["proposal_id"])
+    assert accepted["telemetry"]["meaningful_revision"] == 3
+    assert accepted["telemetry"]["meaningful_kind"] == "inspect"
+    product.advance_product(ident, 1)
+    assert product.life(ident)["telemetry"]["meaningful_revision"] == 3
+
+
+def test_usage_partition_exact_choice_and_operator_identity_are_validated_without_world_mutation(product):
+    from kalends.experience_os.product import BUILD
+    ident = start(product)
+    runtime = product.get(ident)
+    proposal = product.review(ident, {"action": "inspect"})
+    product.confirm_review(ident, proposal["proposal_id"])
+    product.advance_product(ident, 1)
+    before = runtime.state_hash(), runtime.journal_path.read_bytes()
+    product.telemetry(ident, {"opt_in": True})
+    product.expose_lab(ident, True)
+    assert product.telemetry(ident, {"event": "meaningful_action", "session_id": "test_session",
+        "accepted_revision": 1, "first_meaningful": True, "active_ms": 30000,
+        "foreground_ms": 45000, "visible_ms": 50000, "idle_ms": 15000, "elapsed_ms": 70000})["recorded"]
+    row = json.loads((product.directory / ".product/events.jsonl").read_text())
+    assert row == {"schema": "kalends-usage-v2", "build": BUILD, "life_id": ident, "session_id": "test_session",
+                   "world_minute": runtime.minute, "event": "meaningful_action", "at": row["at"],
+                   "operator_exposed": True, "accepted_revision": 1, "meaningful_kind": "inspect",
+                   "first_meaningful": True, "active_ms": 30000, "foreground_ms": 45000,
+                   "visible_ms": 50000, "idle_ms": 15000, "elapsed_ms": 70000}
+    assert (runtime.state_hash(), runtime.journal_path.read_bytes()) == before
+    assert "fragile" not in json.dumps(row)
+
+
+@pytest.mark.parametrize("patch", [
+    {"text": "PRIVATE"}, {"note": "PRIVATE"}, {"key": "PRIVATE"}, {"x": 812},
+    {"build": "spoofed"}, {"operator_exposed": False}, {"reason": "PRIVATE ERROR"},
+    {"event": "PRIVATE EVENT"}, {"active_ms": True}, {"visible_ms": -1},
+    {"elapsed_ms": 3600001}, {"foreground_ms": 2, "active_ms": 3},
+    {"foreground_ms": 10, "active_ms": 3, "idle_ms": 8},
+    {"foreground_ms": 10, "visible_ms": 9}, {"session_id": "PRIVATE SESSION WITH SPACES"},
+    {"accepted_revision": 1}, {"first_meaningful": False},
+])
+def test_usage_rejects_free_text_spoofed_identity_invalid_time_and_misplaced_markers(product, patch):
+    ident = start(product)
+    product.telemetry(ident, {"opt_in": True})
+    with pytest.raises(ValueError):
+        product.telemetry(ident, {"event": "active_interval", **patch})
+    assert not (product.directory / ".product/events.jsonl").exists()
+
+
+@pytest.mark.parametrize("revision", [0, -1, True, 1, 2, 3, 4])
+def test_usage_cannot_call_navigation_waiting_unaccepted_or_boolean_revision_meaningful(product, revision):
+    ident = start(product, "pompeii_life")
+    runtime = product.get(ident)
+    runtime.commit("action", {"action": "move", "location": "street"})
+    runtime.commit("action", {"action": "wait"})
+    runtime.commit("advance", {"minutes": 1})
+    product.telemetry(ident, {"opt_in": True})
+    with pytest.raises(ValueError):
+        product.telemetry(ident, {"event": "meaningful_action", "accepted_revision": revision, "first_meaningful": True})
+    assert not (product.directory / ".product/events.jsonl").exists()
+
+
+def test_invalid_usage_cannot_implicitly_enable_collection_and_opt_out_is_durable(product):
+    ident = start(product)
+    with pytest.raises(ValueError):
+        product.telemetry(ident, {"opt_in": True, "event": "history_opened", "text": "PRIVATE"})
+    assert product.life(ident)["telemetry"]["opt_in"] is False
+    product.telemetry(ident, {"opt_in": True})
+    product.telemetry(ident, {"event": "life_entered", "reason": "new"})
+    path = product.directory / ".product/events.jsonl"
+    original = path.read_bytes()
+    product.telemetry(ident, {"opt_in": False})
+    assert product.telemetry(ident, {"event": "active_interval"})["recorded"] is False
+    assert path.read_bytes() == original
+    restored = ProductService(product.directory, include_examples=False)
+    assert restored.life(ident)["telemetry"]["opt_in"] is False
+
+
+def test_http_scene_acceptance_attaches_exact_meaningful_revision_and_never_movement(product_http):
+    service, _, request = product_http
+    ident = start(service, "pompeii_life")
+    runtime = service.get(ident)
+    suffix = "?experience=" + ident
+    marcus = runtime.world.positions["Marcus"]
+    status, moved = request("/api/move" + suffix, {"x": marcus[0], "y": marcus[1], "location": "street"})
+    assert status == 200 and "accepted_revision" not in moved
+    status, proposal = request("/api/propose" + suffix, {"recipient": "Marcus", "choice_id": "buy"})
+    assert status == 200 and "accepted_revision" not in proposal
+    status, accepted = request("/api/act" + suffix, {"proposal_id": proposal["proposal_id"], "interpretation_id": "0"})
+    assert status == 200 and accepted["accepted_revision"] == 2
+    assert runtime.commands[accepted["accepted_revision"] - 1]["data"]["action"] == "buy"
+    # A later local command cannot relabel the exact revision from that response.
+    status, advanced = request("/api/advance" + suffix, {"minutes": 1})
+    assert status == 200 and "accepted_revision" not in advanced
+    assert accepted["accepted_revision"] == 2
+    status, life = request("/product/api/life?id=" + ident)
+    assert status == 200 and life["telemetry"]["meaningful_revision"] == 2
+    assert life["telemetry"]["meaningful_kind"] == "buy"
+
+
+def test_http_optional_usage_write_failure_does_not_mark_saved_world_as_failed(product_http):
+    service, _, request = product_http
+    ident = start(service)
+    runtime = service.get(ident)
+    before = runtime.state_hash(), runtime.journal_path.read_bytes()
+    assert request("/product/api/telemetry", {"id": ident, "opt_in": True})[0] == 200
+    path = service.directory / ".product/events.jsonl"
+    path.mkdir()
+    status, failed = request("/product/api/telemetry", {"id": ident, "event": "history_opened"})
+    assert status == 400 and failed["code"] == "telemetry_save_failed"
+    assert failed["save_failed"] is False
+    assert "World choices are unaffected" in failed["error"]
+    assert service.life(ident)["life"]["save_status"] == "saved"
+    assert (runtime.state_hash(), runtime.journal_path.read_bytes()) == before

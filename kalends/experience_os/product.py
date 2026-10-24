@@ -17,7 +17,7 @@ from .history import build_history, choices_then
 from .runtime import ExperienceRuntime, digest
 from .server import ExperienceService, ROOT
 
-BUILD = "kalends-journey-1"
+BUILD = "kalends-continuity-1"
 TEAMS = {"team_a": ("Amir", "Survey"), "team_b": ("Mira", "Instrument systems"), "team_c": ("Lin", "Follow-up")}
 TEMPLATES = {
     "pompeii_life": {"title": "Pompeii", "subtitle": "A place in the city",
@@ -32,6 +32,29 @@ TEMPLATES = {
         "opening": "Amir, Mira and Lin have work to complete on one instrument. Twelve nominal units are available; its usable condition must be checked or legitimately reported.",
         "actions": ["Meet the three representatives", "Ask for a dated report", "Make a feasible promise and allocation"], "preview_url": None},
 }
+
+
+USAGE_EVENTS = frozenset({"session_start", "life_entered", "meaningful_action", "consequence_viewed",
+                          "history_opened", "return_resumed", "research_entered", "error", "active_interval",
+                          "choice_declined", "life_left", "session_end"})
+USAGE_REASONS = frozenset({"consent", "new", "return", "reload", "interval", "leave", "pagehide",
+                           "visibility", "focus", "history", "alternative", "advance", "save_failed",
+                           "unreadable", "stale", "rejected", "network", "scene", "cancelled"})
+USAGE_TIMINGS = ("active_ms", "visible_ms", "foreground_ms", "idle_ms", "elapsed_ms")
+
+
+def meaningful_command(command):
+    """Classify only accepted participant commands; never inspect their text."""
+    return (command.get("operation") == "action" and
+            command.get("data", {}).get("action") not in {None, "move", "wait"})
+
+
+def meaningful_status(runtime):
+    for index in range(len(runtime.commands) - 1, -1, -1):
+        command = runtime.commands[index]
+        if meaningful_command(command):
+            return {"meaningful_revision": index + 1, "meaningful_kind": command["data"]["action"]}
+    return {"meaningful_revision": 0, "meaningful_kind": None}
 
 
 def utc():
@@ -235,7 +258,8 @@ class ProductService(ExperienceService):
                 "people": people, "history": history, "known_commitments": history["known_commitments"],
                 "return_summary": history["return_summary"], "time": {"minute": runtime.minute, "paused": True,
                     "known_stops": history["known_stops"], "elapsed_policy": history["elapsed_policy"]},
-                "telemetry": {"opt_in": meta.get("telemetry_opt_in", False), "operator_exposed": meta.get("operator_exposed", False)},
+                "telemetry": {"opt_in": meta.get("telemetry_opt_in", False), "operator_exposed": meta.get("operator_exposed", False),
+                              **meaningful_status(runtime)},
                 "notes": copy.deepcopy(meta.get("notes", [])), "bookmarks": copy.deepcopy(meta.get("bookmarks", []))}
 
     def resume(self, ident):
@@ -384,24 +408,54 @@ class ProductService(ExperienceService):
 
     def telemetry(self, ident, data):
         runtime = self.get(ident)
-        if set(data) - {"id", "opt_in", "event", "active_ms", "session_id"}:
+        fields = {"id", "opt_in", "event", "session_id", "reason", "accepted_revision", "first_meaningful", *USAGE_TIMINGS}
+        if set(data) - fields:
             raise ValueError("Raw conversations and unknown telemetry fields are not collected")
-        if "opt_in" in data:
-            if type(data["opt_in"]) is not bool:
-                raise ValueError("Telemetry consent must be a boolean")
-            self._update_meta(ident, telemetry_opt_in=data["opt_in"])
-        if not self.metadata[ident].get("telemetry_opt_in") or not data.get("event"):
-            return {"opt_in": self.metadata[ident].get("telemetry_opt_in", False), "recorded": False}
-        if data["event"] not in {"session_start", "life_entered", "meaningful_action", "consequence_viewed", "history_opened", "return_resumed", "research_entered", "error", "active_interval"}:
+        if "opt_in" in data and type(data["opt_in"]) is not bool:
+            raise ValueError("Telemetry consent must be a boolean")
+        event = data.get("event")
+        if event is not None and (not isinstance(event, str) or event not in USAGE_EVENTS):
             raise ValueError("Unsupported local event")
+        if "reason" in data and (not isinstance(data["reason"], str) or data["reason"] not in USAGE_REASONS):
+            raise ValueError("Usage reasons must be a supported category, never free text")
+        for key in USAGE_TIMINGS:
+            if key in data and (type(data[key]) is not int or not 0 <= data[key] <= 3600000):
+                raise ValueError("Usage time must be a bounded whole number of milliseconds")
+        # Retain the older explicit-active-only client boundary; new clients send
+        # the complete partition. No server wall time is inferred to be active.
         active = data.get("active_ms", 0)
-        if type(active) is not int or not 0 <= active <= 3600000:
-            raise ValueError("Active time must be bounded")
+        foreground = data.get("foreground_ms", active + data.get("idle_ms", 0))
+        visible = data.get("visible_ms", foreground)
+        idle = data.get("idle_ms", foreground - active)
+        if not 0 <= active <= foreground <= visible <= 3600000 or idle != foreground - active:
+            raise ValueError("Usage time must consistently partition visible and foreground intervals")
         session = data.get("session_id", "local")
         if not isinstance(session, str) or not re.fullmatch(r"[A-Za-z0-9_-]{1,64}", session):
             raise ValueError("Session identity must be a short opaque local identifier")
-        row = {"build": BUILD, "session_id": session, "life_id": ident, "world_minute": runtime.minute,
-               "active_ms": active, "event": data["event"], "at": utc(), "operator_exposed": self.metadata[ident].get("operator_exposed", False)}
+        action = {}
+        if event == "meaningful_action":
+            revision = data.get("accepted_revision")
+            if type(revision) is not int or not 1 <= revision <= len(runtime.commands):
+                raise ValueError("Meaningful usage must identify an accepted command revision")
+            command = runtime.commands[revision - 1]
+            if not meaningful_command(command):
+                raise ValueError("Navigation and waiting are not meaningful accepted choices")
+            if type(data.get("first_meaningful")) is not bool:
+                raise ValueError("First meaningful marker must be a boolean")
+            action = {"accepted_revision": revision, "meaningful_kind": command["data"]["action"],
+                      "first_meaningful": data["first_meaningful"]}
+        elif "accepted_revision" in data or "first_meaningful" in data:
+            raise ValueError("Accepted revision markers belong only to meaningful action events")
+        if "opt_in" in data:
+            self._update_meta(ident, telemetry_opt_in=data["opt_in"])
+        enabled = self.metadata[ident].get("telemetry_opt_in", False)
+        if not enabled or event is None:
+            return {"opt_in": enabled, "recorded": False}
+        row = {"schema": "kalends-usage-v2", "build": BUILD, "session_id": session, "life_id": ident,
+               "world_minute": runtime.minute, "active_ms": active, "visible_ms": visible,
+               "foreground_ms": foreground, "idle_ms": idle, "elapsed_ms": data.get("elapsed_ms", 0),
+               "event": event, "at": utc(), "operator_exposed": self.metadata[ident].get("operator_exposed", False),
+               **({"reason": data["reason"]} if "reason" in data else {}), **action}
         if self.directory:
             path = self.directory / ".product/events.jsonl"
             path.parent.mkdir(parents=True, exist_ok=True)
