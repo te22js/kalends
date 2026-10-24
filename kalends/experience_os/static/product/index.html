@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta name="description" content="Enter a world. Leave a history. Two early Kalends experiences with saved choices and persistent consequences.">
+  <title>Kalends · Enter a world. Leave a history.</title>
+  <link rel="stylesheet" href="/product/style.css">
+  <script src="/product/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="public-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Kalends home">kalends<span class="brand-mark" aria-hidden="true">✳</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/worlds">Worlds</a><a href="/research">Research</a><a href="/about">About</a>
+        <a class="nav-saves" href="/your-worlds">Your worlds <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1"><div class="page-loading" role="status">Opening Kalends…</div></main>
+    <footer class="site-footer">
+      <a class="wordmark" href="/">kalends<span class="brand-mark" aria-hidden="true">✳</span></a>
+      <p>Places to inhabit. Histories to return to.</p>
+      <nav aria-label="Footer"><a href="/about">About</a><a href="/research">Research</a><a href="/accessibility">Accessibility</a><a href="/data-and-saves">Data & saves</a><a href="/acknowledgements">Sources & assets</a></nav>
+      <small>Early local prototype · Two supported worlds</small>
+    </footer>
+  </div>
+  <section id="life-shell" hidden aria-label="Your world">
+    <header class="world-header">
+      <a class="world-exit" href="/your-worlds" aria-label="Back to your worlds">k<span aria-hidden="true">✳</span></a>
+      <div class="world-identity"><strong id="world-title"></strong><span id="world-participant"></span></div>
+      <div class="world-clock"><span class="paused-dot" aria-hidden="true"></span><span id="world-date"></span><small id="world-saving">Saved locally</small></div>
+      <button class="world-story" id="story-button">Your story <span aria-hidden="true">↗</span></button>
+      <button class="icon-button" id="world-menu-button" aria-label="World menu">☰</button>
+    </header>
+    <main id="world-main" tabindex="-1">
+      <div id="scene-frames"></div>
+      <div id="observatory-stage" hidden></div>
+      <div id="life-loading" class="life-loading" role="status" hidden>Opening your saved world…</div>
+      <div id="world-notice" class="world-notice" role="status" hidden></div>
+    </main>
+    <div id="story-backdrop" class="drawer-backdrop" hidden></div>
+    <aside id="story-drawer" class="story-drawer" role="dialog" aria-modal="true" aria-labelledby="story-heading" hidden>
+      <div class="drawer-header"><div><p class="eyebrow">Your recorded history</p><h2 id="story-heading">Your story</h2></div><button class="icon-button" id="close-story" aria-label="Close your story">×</button></div>
+      <nav class="story-tabs" aria-label="Your story views"><button data-story-tab="history">Chapters</button><button data-story-tab="people">People</button><button data-story-tab="reflect">Reflect</button></nav>
+      <div id="story-content"></div>
+    </aside>
+  </section>
+  <div id="global-status" class="global-status" role="status" hidden></div>
+  <dialog id="review-dialog" aria-labelledby="review-heading"><div class="dialog-heading"><p class="eyebrow">Before you commit</p><button class="icon-button" data-close-dialog aria-label="Close review">×</button></div><h2 id="review-heading">Review your choice</h2><div id="review-content"></div><p id="review-error" role="alert"></p><div class="dialog-actions"><button class="button secondary" data-close-dialog>Keep considering</button><button class="button" id="confirm-choice">Confirm this choice <span aria-hidden="true">→</span></button></div></dialog>
+  <dialog id="evidence-dialog" aria-labelledby="evidence-heading"><div class="dialog-heading"><p class="eyebrow">Dated support</p><button class="icon-button" data-close-dialog aria-label="Close evidence">×</button></div><h2 id="evidence-heading">What supports this</h2><div id="evidence-content"></div></dialog>
+  <dialog id="time-dialog" aria-labelledby="time-heading"><div class="dialog-heading"><p class="eyebrow">Your pace</p><button class="icon-button" data-close-dialog aria-label="Close time controls">×</button></div><h2 id="time-heading">Spend some time here.</h2><p>The world advances only when you play or choose to advance time. Waiting does not make promises or spend resources for you.</p><div id="known-deadlines"></div><div class="time-options"><button data-advance="60" data-mode="compress"><strong>Stay with the day <span aria-hidden="true">→</span></strong><span>Advance one hour through the exact scheduler.</span></button><button data-advance="1440" data-mode="compress"><strong>Continue the day <span aria-hidden="true">→</span></strong><span>Advance up to one day, protecting known choice windows.</span></button><button data-advance="10080" data-mode="montage"><strong>Advance with highlights <span aria-hidden="true">→</span></strong><span>Up to one week. Read selected actual events afterward.</span></button></div><p class="fine-print">Known deadlines can stop an advance early. Highlights are excerpts, not the complete history.</p></dialog>
+  <dialog id="world-menu" aria-labelledby="menu-heading"><div class="dialog-heading"><p class="eyebrow">Your world</p><button class="icon-button" data-close-dialog aria-label="Close world menu">×</button></div><h2 id="menu-heading">Keep your place.</h2><div class="menu-links"><button id="menu-time">Choose how time passes <span aria-hidden="true">→</span></button><a href="/your-worlds">Return to your worlds <span aria-hidden="true">→</span></a><a id="menu-lab" href="/research">Inspect in Research Lab <span aria-hidden="true">↗</span></a><a href="/data-and-saves">Data & saves <span aria-hidden="true">→</span></a></div><label class="telemetry-choice"><input id="telemetry-opt-in" type="checkbox"> Share usage events with this local installation</label><p class="fine-print">Optional. No raw conversation text. Events stay on this installation.</p></dialog>
+  <noscript><p class="no-script">Kalends needs JavaScript for its saved-world interface. Your existing lives are preserved.</p></noscript>
+</body>
+</html>

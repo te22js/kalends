@@ -98,6 +98,15 @@ test('failed API POST returns its response without announcing acceptance', async
   assert.deepEqual(h.messages, []);
 });
 
+test('route previews, proposed choices and mode reads are not accepted world actions', async () => {
+  const h = harness();
+  for (const path of ['/api/route', '/api/propose', '/api/mode']) {
+    await h.window.fetch(path, {method: 'POST', body: '{}'});
+  }
+  assert.equal(h.requests.length, 3);
+  assert.deepEqual(h.messages, [], 'only accepted act/move/advance responses may count as meaningful actions');
+});
+
 test('network rejection propagates unchanged and cannot trigger a parent refresh', async () => {
   const error = new TypeError('Fixture connection rejected');
   const h = harness({fetchImpl: async () => { throw error; }});
