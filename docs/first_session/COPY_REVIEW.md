@@ -11,7 +11,7 @@ Reproduce from the repository root:
 
 ```sh
 python3 scripts/render_first_session_copy.py
-python3 -m pytest -q tests/test_first_session_copy_review.py tests/test_first_session_guide.py
+python3 -m pytest -q tests/test_first_session_copy_review.py tests/test_first_session_guide.py tests/test_next_phase_history.py
 ```
 
 `--out PATH` chooses a different artifact directory. Collection creates its own
@@ -78,7 +78,7 @@ fixed. A focused regression checks these evaluated sentences. No remaining
 instance of these particular defects appeared in the final generated cases;
 that is narrower than a claim that every possible product sentence is correct.
 
-The current catalog contains **265 unique string values in 599 displayed
+The current catalog contains **279 unique string values in 649 displayed
 blocks across the same 52 cases**. The independent final reading included all
 changed values after the complete intermediate pass: concrete market,
 household and evidence-route choices; their immediate twenty-minute action
@@ -87,9 +87,13 @@ sentence; project requirements with open, completed and missed status from
 admitted revisions; and the cards' representation labels and illustration
 explanations. Those project and card fields were previously omitted by the
 review renderer and are now included without changing product behavior. The
-source fingerprints in the JSON identify this exact generated version. The
-current copy and guide checks pass **36 tests**; these remain automated fixture
-checks rather than comprehension evidence.
+source fingerprints in the JSON identify this exact generated version. The last
+regeneration follows commit `08796c5`, which groups time-advance records with
+expandable routine history. The renderer includes the complete routine records,
+their real counts and their text, so grouping does not omit them from this
+catalog. The additional routine and request strings were independently read.
+The current copy, guide and history checks pass **45 tests**; these remain
+automated fixture checks rather than comprehension evidence.
 
 The review leaves all backend wording unchanged when rendering it. It does not
 silently repair these sentences or replace terse errors with invented product
@@ -203,3 +207,48 @@ units delivered to Sabina and two to Felix, then offers “Review what happened.
 The result paragraph continues in the guide's scroll area; its complete text
 was read in the accessibility tree rather than inferred from the visible first
 lines of the screenshot.
+
+The repaired separate-practice arrival was inspected in
+`browser/pompeii-practice-arrival-repaired.png` and its full `.txt` tree. It
+labels the life as a practice copy and displays the role and controls without
+the earlier duplicate guide overlay. At Extra large text, the final reading
+footnote continues below the screenshot edge; Begin and the controls-skip
+choice remain visible. `browser/pompeii-decline-deadline-review.txt` states a
+360-minute advance and the buyer decision deadline before confirmation. The
+subsequent `browser/pompeii-declined-autonomous-outcome.png` and full `.txt`
+tree show the practice life at 14:00 and a recorded six-unit delivery to Lucius.
+The editorial record does not infer that the original life changed from the
+practice outcome. The additional `browser/pompeii-scheduled-duty.png` shows a
+readable continuation instruction and separate nearby labels; a still image
+does not establish the timing or cause of character movement.
+
+Later native review also found that reflection initially selected a walking
+step rather than the accepted delivery decision, and that the latest-eight
+evidence excerpt did not disclose its truncation. Commit `ecb6c56` defaults to
+the latest accepted action other than movement, labels the recent-eight
+excerpt with its full count, and keeps all earlier admitted records in a
+collapsed disclosure. Commit `a14b992` removes a duplicate Day label on the
+Pompeii saved-life card. Fresh native verification then inspected
+`browser/pompeii-reflection-repaired.png` and its complete `.txt` tree: the
+market delivery was selected despite a later walking command, the excerpt was
+labelled “Most recent 8 of 55 admitted records,” and the expanded earlier 47
+contained Sabina's copied account. No alternative execution is claimed by this
+capture.
+
+`browser/separate-saves-return.png` and its full `.txt` tree show distinct
+practice and original QA lives at 14:00 and 09:07 respectively, with one Day
+label in each saved-life date. The original card occurs below the portion
+visible in the screenshot and was read in the full tree. The paired
+`browser/pompeii-390-guide` and `browser/observatory-390-result` PNG/text files
+were also inspected. These are 390 CSS pixel embedded viewport fixtures, not
+physical mobile device tests. They preserve the primary guide controls and
+readable recorded-result prose in their captured states. Full browser evidence
+and remaining limits are recorded in [BROWSER_QA.md](BROWSER_QA.md).
+
+Finally, `browser/pompeii-saved-entry-repaired.png` and its complete `.txt` tree
+were inspected after the saved-entry repair. The practice life remains at
+14:00; its entry title is “Continue as Aelia” and its prose includes the already
+recorded delivery to Lucius. The screenshot is scrolled within the entry layer
+and shows the continuation button and complete reading footnote. Its title and
+earlier prose above the visible portion were verified in the tree. This checks
+the captured saved-entry state, not every possible return branch.

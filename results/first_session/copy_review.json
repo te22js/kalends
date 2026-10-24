@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-10-24T15:10:52.273493+00:00",
+  "generated_at": "2026-10-24T15:22:23.209862+00:00",
   "scope": "Rendered backend copy review in disposable offline lives, not browser UI coverage or a human playtest.",
   "source_sha256": {
-    "scripts/render_first_session_copy.py": "9cd83c1328a95fd1d6c6344575e8ccf402dd3643b6513c9f28a785e547b062cc",
+    "scripts/render_first_session_copy.py": "ce99bd29d880da375490e8ae29b200e44cd6bfb0c24c1191d22326e010e6fbc4",
     "kalends/experience_os/product.py": "29989ecd01b95379fa665a8d0047cf01bb49c88a9bbc11f73964727fc9992a6b",
     "kalends/experience_os/guide.py": "447476d5891683371b47be4a2c731eca6c68fd8f983519470cb198481e904431",
     "kalends/experience_os/history_cards.py": "c3d16d7958cdcbe234df917a4cc1d98b4ef0138f1a5a917062ac23ac1101932a",
-    "kalends/experience_os/history.py": "c4ca7f547183009682b90c5575b75b6d485e6e14568bcc14e79a936412baf13a",
+    "kalends/experience_os/history.py": "b7176a4b8e18a1ab2696c67d2e591c648ef12197f4b00e817f7c3c959a63c2fd",
     "kalends/experience_os/runtime.py": "7eecba90a7e36d99e54846506fc28734be4249e8a9a28d49fe9950c2ea40177c",
     "kalends/experience_os/participant_copy.py": "0fec0f54e6d498e593d0062e9dba33d8ddd289fd6e73287d86c0ce49308b03fe",
     "kalends_rebirth/language.py": "219ed7da3e50d76d812d033a6040a6aba9f0c4397a14edb26e15fbaa8fec5a90",
@@ -1419,19 +1419,7 @@
         },
         {
           "label": "Minute 2",
-          "text": "World time advances by 2 minutes."
-        },
-        {
-          "label": "Minute 2",
           "text": "Sabina asks you to find out who the six sacks were actually promised to."
-        },
-        {
-          "label": "Minute 9",
-          "text": "World time advances by 7 minutes."
-        },
-        {
-          "label": "Minute 17",
-          "text": "World time advances by 8 minutes."
         },
         {
           "label": "Minute 17",
@@ -1442,24 +1430,96 @@
           "text": "You read the document “The household's delivery instructions”."
         },
         {
+          "label": "Minute 56",
+          "text": "You pay the carrying charge and stand behind the market counters."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "2"
+        },
+        {
+          "label": "Minute 2",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 2",
+          "text": "You walk through the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "4"
+        },
+        {
+          "label": "Minute 9",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 9",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Minute 17",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "12"
+        },
+        {
           "label": "Minute 24",
           "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 24",
+          "text": "You enter House of the Menander."
         },
         {
           "label": "Minute 31",
           "text": "World time advances by 7 minutes."
         },
         {
+          "label": "Minute 31",
+          "text": "You enter the street."
+        },
+        {
           "label": "Minute 33",
           "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 33",
+          "text": "You enter Felix's bread counter."
         },
         {
           "label": "Minute 42",
           "text": "World time advances by 9 minutes."
         },
         {
+          "label": "Minute 42",
+          "text": "You enter Fullonica of Stephanus."
+        },
+        {
           "label": "Minute 48",
           "text": "World time advances by 6 minutes."
+        },
+        {
+          "label": "Minute 48",
+          "text": "You enter the street."
         },
         {
           "label": "Minute 56",
@@ -1467,7 +1527,7 @@
         },
         {
           "label": "Minute 56",
-          "text": "You pay the carrying charge and stand behind the market counters."
+          "text": "You enter Thermopolium of Vetutius Placidus."
         },
         {
           "label": "Chapter",
@@ -1476,6 +1536,14 @@
         {
           "label": "Minute 76",
           "text": "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
         },
         {
           "label": "Minute 76",
@@ -2083,19 +2151,7 @@
         },
         {
           "label": "Minute 2",
-          "text": "World time advances by 2 minutes."
-        },
-        {
-          "label": "Minute 2",
           "text": "Sabina asks you to find out who the six sacks were actually promised to."
-        },
-        {
-          "label": "Minute 9",
-          "text": "World time advances by 7 minutes."
-        },
-        {
-          "label": "Minute 17",
-          "text": "World time advances by 8 minutes."
         },
         {
           "label": "Minute 17",
@@ -2106,24 +2162,96 @@
           "text": "You read the document “The household's delivery instructions”."
         },
         {
+          "label": "Minute 56",
+          "text": "You pay the carrying charge and stand behind the market counters."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "2"
+        },
+        {
+          "label": "Minute 2",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 2",
+          "text": "You walk through the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "4"
+        },
+        {
+          "label": "Minute 9",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 9",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Minute 17",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "12"
+        },
+        {
           "label": "Minute 24",
           "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 24",
+          "text": "You enter House of the Menander."
         },
         {
           "label": "Minute 31",
           "text": "World time advances by 7 minutes."
         },
         {
+          "label": "Minute 31",
+          "text": "You enter the street."
+        },
+        {
           "label": "Minute 33",
           "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 33",
+          "text": "You enter Felix's bread counter."
         },
         {
           "label": "Minute 42",
           "text": "World time advances by 9 minutes."
         },
         {
+          "label": "Minute 42",
+          "text": "You enter Fullonica of Stephanus."
+        },
+        {
           "label": "Minute 48",
           "text": "World time advances by 6 minutes."
+        },
+        {
+          "label": "Minute 48",
+          "text": "You enter the street."
         },
         {
           "label": "Minute 56",
@@ -2131,7 +2259,7 @@
         },
         {
           "label": "Minute 56",
-          "text": "You pay the carrying charge and stand behind the market counters."
+          "text": "You enter Thermopolium of Vetutius Placidus."
         },
         {
           "label": "Chapter",
@@ -2140,6 +2268,14 @@
         {
           "label": "Minute 76",
           "text": "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
         },
         {
           "label": "Minute 76",
@@ -2947,6 +3083,18 @@
           "text": "The coordinator commits round 1's allocation."
         },
         {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
           "label": "Chapter",
           "text": "You promise 4 units to Lin."
         },
@@ -2961,6 +3109,26 @@
         {
           "label": "Minute 1439",
           "text": "Round 1 executes 8/12 allocated units; 2 projects complete."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "3"
+        },
+        {
+          "label": "Minute 720",
+          "text": "Amir requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Lin requests 2 capacity units."
         },
         {
           "label": "Chapter",
@@ -3531,12 +3699,44 @@
           "text": "The coordinator commits round 1's allocation."
         },
         {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
           "label": "Chapter",
           "text": "Round 1 executes 1/1 allocated unit; 0 projects complete."
         },
         {
           "label": "Minute 1439",
           "text": "Round 1 executes 1/1 allocated unit; 0 projects complete."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "3"
+        },
+        {
+          "label": "Minute 720",
+          "text": "Amir requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Lin requests 2 capacity units."
         },
         {
           "label": "Chapter",

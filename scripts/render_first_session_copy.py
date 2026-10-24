@@ -69,6 +69,11 @@ def projected_copy(data, surface="guide", *, card_id=None):
             blocks += _block("Chapter", chapter["title"])
             for beat in chapter.get("beats", []):
                 blocks += _block("Minute " + str(beat["at"]), beat.get("text", beat.get("body")))
+            for routine in chapter.get("routines", []):
+                blocks += _block("Routine", routine.get("title"))
+                blocks += _block("Routine record count", routine.get("count"))
+                for beat in routine.get("beats", []):
+                    blocks += _block("Minute " + str(beat["at"]), beat.get("text", beat.get("body")))
         for person in data.get("people", []):
             blocks += _block(person["name"] + " · " + person.get("role", ""), person.get("reply"))
             blocks += _block("Recorded outcome", person.get("outcome", {}).get("text"))

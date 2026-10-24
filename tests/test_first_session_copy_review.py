@@ -94,3 +94,11 @@ def test_public_project_status_and_card_representation_prose_are_in_the_catalog(
     notices = find(review, "History notebook · Political messages on walls")
     assert any(block["label"] == "Illustration" and "not a transcription" in block["text"]
                for block in notices["blocks"])
+
+
+def test_grouped_history_keeps_all_routine_copy_available_in_the_review(review):
+    story = find(review, "Story after actual delivery")
+    assert any(block["label"] == "Routine" for block in story["blocks"])
+    assert any(block["label"] == "Routine record count" for block in story["blocks"])
+    assert any(block["text"] == "World time advances by 2 minutes." for block in story["blocks"])
+    assert any("You walk through" in block["text"] for block in story["blocks"])
