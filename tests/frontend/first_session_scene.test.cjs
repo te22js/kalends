@@ -172,6 +172,26 @@ test('arrival owns the guidance layer until the participant enters the scene',()
  sandbox.renderHUD();assert.equal(lead.hidden,true);S.started=true;sandbox.renderHUD();assert.equal(lead.hidden,false);
  const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8');assert.match(html,/<aside id="lead"[^>]* hidden>/);
 });
+test('the shipped loading overlay resumes a resolved saved life and retains the fresh introduction only for a fresh life',async()=>{
+ const helpers=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function savedArrival('),end=source.indexOf('function guideTarget(',begin),elements=new Map();
+ const $=id=>{if(!elements.has(id))elements.set(id,{});return elements.get(id);};
+ const sample={minute:360,day:1,clock:'14:00',player:{cash:6,inventory:0,documents:[]},objective:{title:'The delivery has been settled.',description:'Lucius received six flour units. You can review the outcome.'}};
+ const S={started:false,snapshot:{command_count:0},guide:{enabled:false}},sandbox={S,$,w:()=>sample,sceneGuide:{hosted:true},guideActionText:()=> 'Open your journal',...helpers};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderHUD();
+ assert.equal($('#loading-title').textContent,'Continue as Aelia.');assert.equal($('#arrival-goal').textContent,sample.objective.title);assert.match($('#arrival-situation').textContent,/Lucius received six flour units/);assert.match($('#arrival-situation').textContent,/fictional freedwoman/);assert.match($('#enter').innerHTML,/Continue as Aelia/);assert.doesNotMatch($('#arrival-situation').textContent,/delivery of flour is disputed/);assert.doesNotMatch($('#arrival-controls').textContent,/Start by finding Sabina/);assert.equal($('#skip-controls').hidden,true);
+ S.guide={enabled:true,step:{id:'p8',title:'Review your actual decision.',body:'The recorded delivery sent six flour units to Lucius.',action:{kind:'reflect'}}};sandbox.renderHUD();assert.equal($('#loading-title').textContent,'Continue as Aelia.');assert.equal($('#arrival-goal').textContent,'Review your actual decision.');assert.match($('#arrival-situation').textContent,/recorded delivery sent six flour units to Lucius/);
+ sample.minute=0;S.guide={enabled:true,step:{id:'p0',title:'You are Aelia.',action:{kind:'ack'}}};sandbox.renderHUD();assert.equal($('#loading-title').textContent,'You are Aelia.');assert.equal($('#arrival-goal').hidden,true);assert.match($('#arrival-situation').textContent,/A delivery of flour is disputed/);assert.match($('#arrival-controls').textContent,/Start by finding Sabina/);assert.match($('#enter').innerHTML,/Begin/);
+ S.snapshot.command_count=1;sandbox.renderHUD();assert.match($('#enter').innerHTML,/Continue as Aelia/);assert.equal($('#skip-controls').hidden,true);
+});
+test('continuing a saved life does not acknowledge the initial guide step again',async()=>{
+ const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('async function enterWorld('),end=source.indexOf("$('#enter').onclick",begin),requests=[],S={ready:true,started:false,guide:{enabled:true,step:{id:'p0'}}};let returning=true;
+ const sandbox={S,$:()=>({focus(){}}),preferences:{sound:false},renderContext(){},trace:{record(){}},savedArrival:()=>returning,sceneGuide:{request:action=>requests.push(action)}};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);await sandbox.enterWorld();assert.deepEqual(requests,[]);returning=false;await sandbox.enterWorld();assert.deepEqual(requests,['begin']);
+});
+test('the loading overlay can scroll enlarged saved-world text without shrinking it or clipping its controls',()=>{
+ const css=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/style.css'),'utf8');
+ assert.match(css,/#loading\{overflow-y:auto;justify-content:safe center\}/);assert.match(css,/#loading>\*\{flex-shrink:0\}/);
+});
 test('the objective primary and Help remain before long copy in keyboard and reading order',()=>{
  const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8'),css=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/style.css'),'utf8');
  assert.ok(html.indexOf('id="lead-action"')<html.indexOf('id="lead-copy"'));assert.ok(html.indexOf('id="guide-help"')<html.indexOf('id="lead-copy"'));

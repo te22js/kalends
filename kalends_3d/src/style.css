@@ -25,6 +25,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .nameplate small{display:none}.nameplate.primary small,.nameplate:hover small,.nameplate:focus-visible small{display:block}
 .nameplate{z-index:2}.doorplate{z-index:1}.nameplate.primary{z-index:3}.nameplate:hover,.nameplate:focus-visible{z-index:4}
 #loading .arrival-copy{font:calc(17px * var(--ui-scale))/1.6 Georgia,serif;max-width:620px;opacity:1;margin-bottom:18px}
+#loading{overflow-y:auto;justify-content:safe center}#loading>*{flex-shrink:0}#loading #arrival-goal{font:calc(20px * var(--ui-scale))/1.35 Georgia,serif;max-width:620px;margin-bottom:16px}
 #loading h1{font-size:clamp(38px,5.8vw,80px);margin:18px 0}#loading small{font-size:calc(12px * var(--ui-scale));opacity:.9;max-width:540px;line-height:1.5}#loading #load-status{opacity:1;font-size:14px}#loading #skip-controls{font-size:14px;width:260px;padding:12px 0;border-top:0}
 #conversation{width:min(470px,calc(100vw - 36px));max-height:calc(100vh - 130px);bottom:88px}
 #dialogue-line{font-size:calc(17px * var(--ui-scale));line-height:1.55}
