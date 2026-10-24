@@ -51,6 +51,9 @@ def _evidence(events):
         elif p.get('category') == 'report' and p.get('listener') == 'Player':
             rows.append({'event_id':e['event_id'],'title':'Dated instrument report','text':f"The reported condition was {p.get('value')}.",
                          'source':TEAMS.get(p.get('speaker'),p.get('speaker','A speaker')), 'at':p.get('as_of',e['tick']), 'kind':'Testimony'})
+        elif p.get('category') == 'conversation' and p.get('topic') == 'dispute' and p.get('spoken_text') and 'Lucius' in e.get('actors',[]):
+            rows.append({'event_id':e['event_id'],'title':'The household steward’s account','text':p['spoken_text'],
+                         'source':'Lucius','at':e['tick'],'kind':'Testimony; not a verified delivery record'})
     return rows[-8:]
 
 
@@ -138,6 +141,8 @@ def _pompeii(snapshot, commands, events, prefs):
     moved=any(c.get('operation')=='move' or c.get('operation')=='action' and c.get('data',{}).get('action')=='move' for c in commands)
     heard='hear_dispute' in actions or 'rb_dispute_heard' in categories
     documents={e['payload'].get('document_key') for e in events if e['payload'].get('category')=='rb_evidence'}
+    second_account = any(e['payload'].get('category')=='conversation' and e['payload'].get('topic')=='dispute'
+                         and e['payload'].get('spoken_text') and 'Lucius' in e.get('actors',[]) for e in events)
     chosen=any(a in actions for a in ('mediate','support_market','guarantee_household','decline_dispute'))
     resolutions=[e for e in events if e['payload'].get('category')=='rb_resolution']
     notices=[e for e in events if e['payload'].get('category')=='rb_public_notice']
@@ -161,10 +166,15 @@ def _pompeii(snapshot, commands, events, prefs):
         e=notices[-1]; actual_result={'at':e['tick'],'event_id':e['event_id'],'delivered':{},'explanation':[e['payload']['title']], 'relationship_note':'Only the admitted notice is shown; unseen quantities are not inferred.'}
     done={'p0':'role_arrival' in ack,'p1':moved or heard or chosen or 'controls_known' in ack,
           'p2':heard or bool(documents) or chosen or resolved,'p3':'dispute_explained' in ack or bool(documents) or chosen or resolved,
-          'p4':historical,'p5':{'market_receipt','household_tablet'} <= documents or 'loading_record' in documents or chosen or resolved,
+          'p4':historical,'p5':{'market_receipt','household_tablet'} <= documents or 'loading_record' in documents or second_account or chosen or resolved,
           'p6':chosen or resolved,'p7':resolved,'p8':resolved and 'reflection_done' in ack}
     sabina,hint=known_target(world,events,'Sabina','thermopolium')
     dama,dhint=known_target(world,events,'Dama','household')
+    if dama.get('id')=='household' and not any(e.get('etype')=='move' and 'Dama' in e.get('actors',[]) for e in events):
+        # The opening's cart meeting point is a fixed public scenario landmark,
+        # not a query for the messenger's later private endpoint.
+        dama={'type':'location','id':'street','x':850,'y':430,'person':'Dama','basis':'public opening cart meeting point'}
+        dhint='Try the cart meeting point on the public street. This does not track Dama. If she has left, try the known household doorway, or review another supported arrangement.'
     summary=[]
     if heard: summary.append('Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim.')
     if documents: summary.append('You obtained '+', '.join({'market_receipt':"Sabina’s account",'household_tablet':"the household instructions",'loading_record':"the checked loading account"}.get(d,d) for d in sorted(documents))+'.')
@@ -175,7 +185,7 @@ def _pompeii(snapshot, commands, events, prefs):
         _step('p2','Talk to Sabina, the food seller.','When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it.','scene','Find Sabina and speak',target=sabina),
         _step('p3','Understand the two claims.','Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept.','ack','Look at the evidence',ack='dispute_explained'),
         _step('p4','Learn one historical idea in place.','Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock.','history','What is this place?',card='food_counter',target={'type':'location','id':'thermopolium'}),
-        _step('p5','Compare the accounts you actually obtained.','A copied claim is evidence of what its holder recorded, not automatic proof of the whole dispute. Dama can share the household instructions. Marcus can check his loading account for one coin and fifteen minutes. You may instead choose any eligible arrangement; the guide never requires a payment you cannot afford.','scene','Seek another account',target=dama),
+        _step('p5','Compare the accounts you actually obtained.','A copied claim is evidence of what its holder recorded, not automatic proof of the whole dispute. Dama can share the household instructions. If she has moved, ask Lucius about the dispute at the household and confirm that conversation. Marcus can check his loading account for one coin and fifteen minutes. You may instead choose any eligible arrangement; the guide never requires a payment you cannot afford.','scene','Seek another account',target=dama),
         _step('p6','Choose whether and how to help.','Return to a claimant and review an eligible arrangement. The market route costs three coins. A household advance creates a later service obligation. The evidence route requires the actual copied accounts. You may also tell Sabina you will leave the decision to the buyers. Confirm only terms you intend to accept.','scene','Review your available choices',target=sabina),
         _step('p7','See the actual delivery.','Your accepted choice is recorded. Some arrangements execute their delivery during their displayed twenty-minute action; declining leaves the buyers’ own deadline in place. Use the deliberate time controls if nothing has settled. The guide never silently pays, promises or advances time.','time','Review time and known obligations'),
         _step('p8','Your decision, and the history behind it.',' '.join(actual_result['explanation'])+' The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.' if actual_result else 'Keep exploring; the first outcome has not yet reached you.','reflect','Review what happened',ack='reflection_done'),

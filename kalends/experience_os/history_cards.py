@@ -63,11 +63,14 @@ CARDS = [
 
 def cards_for(snapshot, commands, read=()):
     world = snapshot.get('world', {})
-    visited = {world.get('player', {}).get('location')}
+    # This existing adapter starts every life on the public street. Moving to
+    # an interior must not erase that already encountered learning location.
+    visited = {'street', world.get('player', {}).get('location')}
     visited.update(c.get('data', {}).get('location') for c in commands if c.get('operation') == 'move' or c.get('operation') == 'action' and c.get('data',{}).get('action') == 'move')
     result = []
     for original in CARDS:
         card = copy.deepcopy(original)
+        card['encounter_label'] = 'Reconstruction' if card['id'] in ('food_counter','fullery') else 'Fictional gameplay' if card['id']=='freedwoman' else 'Modern learning material'
         card.update(sources=[copy.deepcopy(SOURCES[s]) for s in card.pop('source_ids')],
                     available=card['location'] is None or card['location'] in visited,
                     read=card['id'] in read, rights='Original prose and schematic game geometry. No external image reproduced.')

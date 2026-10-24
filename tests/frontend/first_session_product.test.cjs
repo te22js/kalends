@@ -131,3 +131,20 @@ test('direct inspection and copied testimony retain their actual evidence type a
  const initial=commons(freshGuide(steps.allocation,{practice:true,enabled:false,known:{report:{kind:'direct observation'},evidence:[{title:'An account',text:'One person described an expectation.',source:'Mira',kind:'Testimony'},{title:'Copied order',text:'Its holder recorded a claim.',source:'Sabina',kind:'Copied fictional document; its contents are a claim'}]}}));initial.snapshot.own_reports=[{etype:'observe',tick:0,payload:{category:'condition',value:'fragile'}}];
  const h=await shellHarness({initialLife:initial});assert.match(h.node('#observatory-stage').innerHTML,/Your direct inspection found 8 usable units/);assert.doesNotMatch(h.node('#observatory-stage').innerHTML,/Mira’s report described/);assert.match(h.node('#world-participant').textContent,/Practice copy/);await h.clickId('help-button');assert.match(h.node('#help-content').innerHTML,/Dated testimony/);assert.match(h.node('#help-content').innerHTML,/Copied fictional document; its contents are a claim/);
 });
+
+test('quantity and old return sentences preserve zero, singular, plural and punctuation',()=>{
+  const core=require('../../kalends/experience_os/static/product/app.js');
+  assert.equal(core.unitQuantity(0),'0 units');
+  assert.equal(core.unitQuantity(1),'1 unit');
+  assert.equal(core.unitQuantity(12),'12 units');
+  assert.equal(core.unitQuantity(1,'credit'),'1 credit');
+  assert.equal(core.readableSentence('World time advances by 1 minutes'),'World time advances by 1 minute.');
+  assert.equal(core.readableSentence('World time advances by 11 minutes.'),'World time advances by 11 minutes.');
+  assert.equal(core.describeAction({action:'commit',quantity:1,recipient:'team_a'}),'Promise 1 unit to Amir');
+});
+
+test('missing requests and allocations are not displayed as explicit zero records',async()=>{
+ const initial=commons(freshGuide(steps.allocation));initial.snapshot.requests={team_a:0};
+ const h=await shellHarness({initialLife:initial});const markup=h.node('#observatory-stage').innerHTML;
+ assert.match(markup,/0 requested/);assert.match(markup,/No request/);assert.match(markup,/Not allocated/);
+});

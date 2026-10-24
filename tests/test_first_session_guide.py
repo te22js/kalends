@@ -185,3 +185,15 @@ def test_context_never_previews_uncopied_document_or_private_report(service):
     topic=next(t for t in facade.context('Sabina')['topics'] if t['id']=='market_receipt')
     assert not topic['withheld'] and '4 coins' in topic['text']
     assert set(topic['evidence_ids'])<=runtime.visible_ids()
+
+
+def test_confirmed_second_account_is_a_valid_alternative_to_the_messenger(service):
+    ident,data=begin(service)
+    ack(service,ident,'role_arrival'); ack(service,ident,'controls_known'); ack(service,ident,'skip_history')
+    act(service,ident,{'action':'hear_dispute','recipient':'Sabina'})
+    ack(service,ident,'dispute_explained')
+    act(service,ident,{'action':'move','location':'household'})
+    act(service,ident,{'action':'talk','recipient':'Lucius','topic':'dispute'})
+    guide=service.life(ident)['guide']
+    assert 'p5' in guide['completed']
+    assert any(e['source']=='Lucius' and 'Four sacks' in e['text'] for e in guide['known']['evidence'])
