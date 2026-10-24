@@ -1,0 +1,82 @@
+{
+  "baseline_commit": "21127f0",
+  "branch": "codex/experience-journey",
+  "recorded_utc": "2026-10-23T21:53:03.411629+00:00",
+  "original_journals": {
+    ".kalends/city_session.json": {
+      "bytes": 3117,
+      "sha256": "c533f102b97a36841b68938e96df1262e42d5728774b61ec7a8f1c48dcdc3292"
+    },
+    ".kalends/genesis_demo.20261020T140507986979Z.json": {
+      "bytes": 4017,
+      "sha256": "996597545c4418ed51166ef1342da29944ccd23d9f08c517ec0dff0095b35583"
+    },
+    ".kalends/genesis_demo.json": {
+      "bytes": 5577,
+      "sha256": "4b20b37969209ca723ac99282a5d6950912b8fd5d68bf62ad8df97c5b25fb4c0"
+    },
+    ".kalends/genesis_session.json": {
+      "bytes": 2138,
+      "sha256": "9f20e45cd6b433c6a639f616191f52bb8188701612dd308a8d12e24240173b70"
+    },
+    ".kalends/immersion_qa_verified.json": {
+      "bytes": 11730,
+      "sha256": "cac3a2fb7ff70ea51b154a0e7d74b4d389b1af64241700952dc185b2f92fee96"
+    },
+    ".kalends/immersion_session.json": {
+      "bytes": 116957,
+      "sha256": "be1667f8d5fa43cf48c5340f37553ddcf96e312ff99d833071f90e96739abd79"
+    },
+    ".kalends/pompeii_qa.json": {
+      "bytes": 7449,
+      "sha256": "fc4081703e5a6973e634bfd3f0a39dde08645662b18c444a158a5b28fff5ea90"
+    },
+    ".kalends/pompeii_session.development_20261021.json": {
+      "bytes": 465,
+      "sha256": "adba70600608d8f0dd06f69e13b89b94b2dfd2a71a728e9c4c22de9c7ca5d740"
+    },
+    ".kalends/pompeii_session.json": {
+      "bytes": 626,
+      "sha256": "a505652e127429a10a6f39a9afca3979e7c7082ce51535eb023aeed4ab28723a"
+    },
+    ".kalends/qa_minds_v2_controller.json": {
+      "bytes": 106247,
+      "sha256": "7b0776e273d89a172c2048734f71ed3ae0d94e5634e07dd3e715f150d256fd19"
+    },
+    ".kalends/qa_minds_v2_correction.json": {
+      "bytes": 2632,
+      "sha256": "5f6d8302a46178f37a4e27573bc53fba174c6aaf7e051d07c0c7a79b4bc23c03"
+    },
+    ".kalends/rebirth_session.json": {
+      "bytes": 115978,
+      "sha256": "118e303c163e8b79cb9d24a310387bd97acaab1fe4080ff7f24e031ce30e25e2"
+    },
+    ".kalends/rebirth_session.pre_minds_v2_5f6ff85810e6.json": {
+      "bytes": 36116,
+      "sha256": "5f6ff85810e63884868a3586a7ccd72131ec9465e0a84342001886dfad0501e2"
+    },
+    ".kalends/experience_os/observatory_long_life.json": {
+      "bytes": 90466,
+      "sha256": "d1f83a2bc3995fda9197ecc8c8f54652de8443c0f2d187f4396ffbc261bffe4c"
+    },
+    ".kalends/experience_os/pompeii_life.json": {
+      "bytes": 7138,
+      "sha256": "da6571dc6267aba0088ad81631b50b4d7697a55fd684e2eb17228cb90b7d5754"
+    },
+    ".kalends/experience_os/pompeii_long_life.json": {
+      "bytes": 9777,
+      "sha256": "86302fda99423625dec6270815d11c004e36997d0e0061559694f216787fded8"
+    },
+    ".kalends/experience_os/shared_observatory.json": {
+      "bytes": 6044,
+      "sha256": "208885a6043a20264b4519cedf1548b37d49145d377c6186db254e6c2ec5d3f0"
+    }
+  },
+  "archive_sha256": "14ff254166c93810f9e1929c4a52371eb8b7e494938260f86498782ee7d87bfa",
+  "archive_manifest_verified": true,
+  "baseline_qa_port": 8811,
+  "original_service_ports_preserved": [
+    8790,
+    8800
+  ]
+}

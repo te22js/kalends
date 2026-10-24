@@ -1,0 +1,38 @@
+{
+  "prepared_date": "2026-10-24",
+  "artifact_type": "implementation_and_research_brief",
+  "repository_modified": false,
+  "local_website_inspected": false,
+  "files": [
+    {
+      "name": "00_DECISIONS_AND_SOURCES.md",
+      "bytes": 17696,
+      "words": 2367,
+      "sha256": "a0f9d16f73a7c47ae15d771f10eab4622a34dbec2239f07793dce9a46b4c3d4a"
+    },
+    {
+      "name": "01_PRODUCT_AND_WEBSITE_SPEC.md",
+      "bytes": 38271,
+      "words": 5545,
+      "sha256": "38cf51420fba49597513ebb8fc751c5209349777b03eb327390c2bc0e7a94a18"
+    },
+    {
+      "name": "02_RESEARCH_PROTOCOL.md",
+      "bytes": 19900,
+      "words": 2735,
+      "sha256": "70bcb5f30f37bb56f83e37ec002ac4ef4706056dce15834753c0f1d9799c601b"
+    },
+    {
+      "name": "03_AGENT_EXECUTION_PROMPT.md",
+      "bytes": 15954,
+      "words": 2210,
+      "sha256": "e83f243684519bdcad8c8ceb69f706b87746feb9b0ae6213c1e7a2720330a0e5"
+    },
+    {
+      "name": "README.md",
+      "bytes": 2402,
+      "words": 310,
+      "sha256": "5d114050615b07422efa07ed2fc7bd097fc175409dd1e63ae1838c370cda903d"
+    }
+  ]
+}
