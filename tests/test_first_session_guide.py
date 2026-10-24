@@ -151,8 +151,12 @@ def test_observatory_does_not_leak_report_and_follows_actual_settlement(service)
     assert guide['result']['promises']['team_c']==4
     assert guide['result']['missed_promises']==['team_c']
     assert 'promise was not met' in ' '.join(guide['result']['explanation'])
+    assert len(guide['known']['project_requirements'])==3
+    assert [p['status'] for p in guide['known']['project_requirements']].count('completed')==2
     ack(service,ident,'reflection_done')
     assert service.life(ident)['guide']['step']['id']=='o7'
+    service.advance_product(ident,1,protect_known=False)
+    assert [p['status'] for p in service.life(ident)['guide']['known']['project_requirements']].count('missed')==1
 
 
 def test_history_cards_are_specific_and_have_no_unlicensed_image_or_fake_latin(service):
@@ -197,3 +201,126 @@ def test_confirmed_second_account_is_a_valid_alternative_to_the_messenger(servic
     guide=service.life(ident)['guide']
     assert 'p5' in guide['completed']
     assert any(e['source']=='Lucius' and 'Four sacks' in e['text'] for e in guide['known']['evidence'])
+
+
+@pytest.mark.parametrize('malformed', [
+    True,
+    {'version': 1},
+    {'enabled': 1},
+    {'learn': 'yes'},
+    {'practice': 1},
+    {'guided_origin': 'yes'},
+    {'ack': None},
+    {'ack': [{}]},
+    {'read_cards': None},
+    {'read_cards': [False]},
+])
+def test_malformed_guide_on_restart_preserves_metadata_and_valid_journal(service, malformed):
+    ident, _ = begin(service)
+    act(service, ident, {'action': 'hear_dispute', 'recipient': 'Sabina'})
+    runtime = service.get(ident)
+    original_hash, journal = runtime.state_hash(), runtime.journal_path.read_bytes()
+    document = json.loads(service.meta_path.read_text())
+    document['lives'][ident]['guide'] = malformed
+    service.meta_path.write_text(json.dumps(document))
+    metadata = service.meta_path.read_bytes()
+
+    restored = ProductService(service.directory, include_examples=False)
+    assert 'product_metadata' in restored.failures
+    assert restored.catalog()['failures']
+    assert restored.life(ident)['snapshot']['state_hash'] == original_hash
+    assert not restored.life(ident)['guide']['enabled']
+    with pytest.raises(ValueError, match='incompatible'):
+        restored.guide_update(ident, {'enabled': True})
+    assert restored.meta_path.read_bytes() == metadata
+    assert restored.get(ident).journal_path.read_bytes() == journal
+
+
+def test_pure_guide_projection_update_and_usage_defend_against_bad_optional_metadata(service):
+    from kalends.experience_os.guide import preferences
+    ident, _ = begin(service)
+    runtime = service.get(ident)
+    before = runtime.state_hash(), runtime.journal_path.read_bytes()
+    for malformed in (True, {'ack': None}, {'ack': [{}]}, {'read_cards': None}):
+        prefs = preferences(malformed)
+        assert prefs['ack'] == [] and prefs['read_cards'] == []
+    service.metadata[ident]['guide'] = True
+    assert not service.life(ident)['guide']['enabled']
+    service.metadata[ident]['telemetry_opt_in'] = True
+    assert service.telemetry(ident, {'event': 'guide_help'})['recorded']
+    assert service.guide_update(ident, {'enabled': True})['guide']['enabled']
+    assert before == (runtime.state_hash(), runtime.journal_path.read_bytes())
+
+
+def test_unknown_guide_version_resets_steps_but_preserves_assistance_exclusion(service):
+    ident, _ = begin(service)
+    service.metadata[ident]['guide'] = {'version': 'earlier-guide', 'enabled': True,
+                                      'practice': True, 'ack': ['role_arrival']}
+    guide = service.life(ident)['guide']
+    assert not guide['enabled'] and guide['ack'] == [] and 'p0' not in guide['completed']
+    assert guide['practice'] and guide['guided_origin']
+    assert guide['excluded_from_unassisted_research']
+
+
+@pytest.mark.parametrize('practice', [False, True])
+def test_recovered_newborn_metadata_failure_never_classifies_assistance_as_unassisted(service, monkeypatch, practice):
+    import kalends.experience_os.product as module
+    with monkeypatch.context() as patch:
+        patch.setattr(module, 'atomic_json', lambda *args: (_ for _ in ()).throw(OSError('injected display metadata failure')))
+        created = service.start('pompeii_life', guided=True, practice=practice)
+    ident = created['life']['id']
+    runtime = service.get(ident)
+    before = runtime.state_hash(), runtime.journal_path.read_bytes()
+    assert created['metadata_warning']
+
+    restored = ProductService(service.directory, include_examples=False)
+    recovered = restored.life(ident)
+    assert recovered['life']['provenance_unknown']
+    assert recovered['guide']['provenance_unknown']
+    assert recovered['guide']['excluded_from_unassisted_research']
+    assert 'provenance could not be verified' in recovered['life']['metadata_warning']
+    restored.telemetry(ident, {'opt_in': True})
+    assert restored.telemetry(ident, {'event': 'guide_help'})['recorded']
+    row = json.loads((restored.directory / '.product/events.jsonl').read_text())
+    assert row['provenance_unknown'] and row['excluded_from_unassisted_research']
+    again = ProductService(service.directory, include_examples=False)
+    assert again.life(ident)['guide']['provenance_unknown']
+    assert before == (again.get(ident).state_hash(), again.get(ident).journal_path.read_bytes())
+
+
+def test_new_life_persists_known_guidance_provenance_and_legacy_missing_guide_is_unknown(service):
+    ident, created = begin(service, guided=False)
+    assert not created['life']['provenance_unknown']
+    restored = ProductService(service.directory, include_examples=False)
+    assert not restored.life(ident)['guide']['provenance_unknown']
+    assert not restored.life(ident)['guide']['excluded_from_unassisted_research']
+    document = json.loads(restored.meta_path.read_text())
+    del document['lives'][ident]['guide']
+    restored.meta_path.write_text(json.dumps(document))
+    metadata = restored.meta_path.read_bytes()
+    journal = restored.get(ident).journal_path.read_bytes()
+    recovered = ProductService(restored.directory, include_examples=False)
+    assert recovered.life(ident)['guide']['provenance_unknown']
+    assert recovered.life(ident)['guide']['excluded_from_unassisted_research']
+    assert recovered.meta_path.read_bytes() == metadata
+    assert recovered.get(ident).journal_path.read_bytes() == journal
+
+
+def test_market_copy_explains_immediate_time_cost_without_changing_exact_action(service):
+    ident,_=begin(service)
+    facade=service.game(ident); runtime=service.get(ident)
+    choice=next(c for c in facade.context('Sabina')['choices'] if c['id']=='support_market')
+    assert choice['label']=='Pay for the market delivery'
+    assert choice['cost']=='3 coins · 20 world minutes'
+    assert 'four sacks of flour to Sabina and two to Felix' in choice['description']
+    before=runtime.state_hash(),len(runtime.commands)
+    proposal=facade.propose({'recipient':'Sabina','choice_id':'support_market'})
+    offered=proposal['interpretations'][0]
+    assert offered['label']==choice['label'] and offered['cost']==choice['cost']
+    stored=facade.legacy.proposals[proposal['proposal_id']]['interpretations'][0]
+    assert offered['action']==stored['action']
+    assert offered['action']['action']=='support_market' and offered['action']['recipient']=='Sabina'
+    assert before==(runtime.state_hash(),len(runtime.commands))
+    facade.act({'proposal_id':proposal['proposal_id'],'interpretation_id':offered['id']})
+    result=service.life(ident)['guide']['result']
+    assert runtime.minute==20 and result['delivered']=={'Sabina':4,'Felix':2}

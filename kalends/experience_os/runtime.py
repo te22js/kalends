@@ -349,7 +349,7 @@ class ExperienceGameFacade:
         return result
 
     def context(self, recipient):
-        from .participant_copy import event_text, sentence
+        from .participant_copy import event_text, sentence, choice_copy
         view = self.sync().context(recipient)
         allowed = self.runtime.visible_ids()
         admitted = {e['event_id']: e for e in self.runtime.events()}
@@ -371,6 +371,7 @@ class ExperienceGameFacade:
                 topic['text'] = ' '.join(event_text(admitted[i]) for i in topic['evidence_ids'])
             topics.append(topic)
         view['topics'] = topics
+        view['choices'] = [choice_copy(choice) for choice in view.get('choices', [])]
         return view
 
     def route(self, data):
@@ -379,7 +380,10 @@ class ExperienceGameFacade:
     def propose(self, data):
         result = self.sync().propose(data)
         self.legacy.proposals[result["proposal_id"]]["experience_revision"] = self.runtime.state_hash()
-        return result
+        from .participant_copy import choice_copy
+        # Only the returned prose is copied. The stored exact action/proposal
+        # remains the existing engine's authoritative confirmation contract.
+        return {**result, 'interpretations': [choice_copy(i) for i in result.get('interpretations', [])]}
 
     def act(self, data):
         session = self.sync()

@@ -16,13 +16,23 @@ TEAMS = {'team_a':'Amir','team_b':'Mira','team_c':'Lin'}
 
 
 def preferences(raw=None):
-    raw = raw or {}
+    # Metadata loaded from disk is validated by ProductService. Keep this pure
+    # projection defensive too, so a malformed optional guide cannot make a
+    # valid world unreadable or turn a flag into a truthy non-boolean value.
+    raw = raw if isinstance(raw,dict) else {}
+    origin = raw.get('guided_origin') is True or raw.get('enabled') is True
+    ack = raw.get('ack',[])
+    read = raw.get('read_cards',[])
+    ack = ack if isinstance(ack,list) else []
+    read = read if isinstance(read,list) else []
     if raw.get('version', VERSION) != VERSION:
         # Do not mistake old tutorial acknowledgements for this version's steps.
-        return {'version':VERSION,'enabled':False,'learn':False,'practice':bool(raw.get('practice')), 'ack':[], 'read_cards':[]}
+        return {'version':VERSION,'enabled':False,'learn':False,'practice':raw.get('practice') is True,
+                'guided_origin':origin, 'ack':[], 'read_cards':[]}
     return {'version':VERSION,'enabled':raw.get('enabled') is True,'learn':raw.get('learn') is True,
-            'practice':raw.get('practice') is True, 'ack':[x for x in raw.get('ack',[]) if x in ACKS],
-            'read_cards':[x for x in raw.get('read_cards',[]) if isinstance(x,str)][:5]}
+            'practice':raw.get('practice') is True, 'guided_origin':origin,
+            'ack':[x for x in ack if isinstance(x,str) and x in ACKS],
+            'read_cards':[x for x in read if isinstance(x,str)][:5]}
 
 
 def _payload_value(e):
@@ -102,12 +112,14 @@ def _commons(snapshot, commands, events, prefs, settings):
                 'usable':capacity if condition=='stable' else max(1,capacity*2//3) if condition=='fragile' else None,
                 'event_id':e['event_id']}
     projects=[]
-    for e in events:
-        if e['payload'].get('category')=='goal_register':
+    for e in reversed(events):
+        if e['payload'].get('category') in ('goal_register','goal_revision'):
             raw=_payload_value(e)
             if isinstance(raw,dict):
                 for ident,g in raw.items():
-                    projects.append({'id':ident, 'label':g.get('label',ident), 'text':f"{TEAMS.get(g.get('actor'),g.get('actor','Team'))}: {g.get('quantity',g.get('target',{}).get('quantity','the stated'))} units in a settled batch; deadline minute {g.get('deadline','not stated')}."})
+                    status={'completed':'completed','missed':'missed','blocked':'waiting on an earlier project','active':'open'}.get(g.get('status'),'not stated')
+                    projects.append({'id':ident, 'label':g.get('label',ident), 'status':status, 'text':f"{TEAMS.get(g.get('actor'),g.get('actor','Team'))}: {g.get('quantity',g.get('target',{}).get('quantity','the stated'))} units in a settled batch; deadline minute {g.get('deadline','not stated')}; status: {status}."})
+            break
     done={'o0': 'role_arrival' in ack, 'o1':'request_read' in ack or bool(allocation) or bool(result),
           'o2':bool(report) or bool(result),'o3':allocation is not None or bool(result),
           'o4':bool(promises) or 'promise_explained' in ack or bool(result),'o5':bool(result),
@@ -185,7 +197,7 @@ def _pompeii(snapshot, commands, events, prefs):
         _step('p2','Talk to Sabina, the food seller.','When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it.','scene','Find Sabina and speak',target=sabina),
         _step('p3','Understand the two claims.','Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept.','ack','Look at the evidence',ack='dispute_explained'),
         _step('p4','Learn one historical idea in place.','Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock.','history','What is this place?',card='food_counter',target={'type':'location','id':'thermopolium'}),
-        _step('p5','Compare the accounts you actually obtained.','A copied claim is evidence of what its holder recorded, not automatic proof of the whole dispute. Dama can share the household instructions. If she has moved, ask Lucius about the dispute at the household and confirm that conversation. Marcus can check his loading account for one coin and fifteen minutes. You may instead choose any eligible arrangement; the guide never requires a payment you cannot afford.','scene','Seek another account',target=dama),
+        _step('p5','Compare the accounts you actually obtained.','Ask Dama for the household instructions. If she has left, ask Lucius about the dispute at the household. Marcus offers a check for one coin and fifteen minutes. These are accounts, not automatic proof. You may instead review an eligible arrangement.','scene','Seek another account',target=dama),
         _step('p6','Choose whether and how to help.','Return to a claimant and review an eligible arrangement. The market route costs three coins. A household advance creates a later service obligation. The evidence route requires the actual copied accounts. You may also tell Sabina you will leave the decision to the buyers. Confirm only terms you intend to accept.','scene','Review your available choices',target=sabina),
         _step('p7','See the actual delivery.','Your accepted choice is recorded. Some arrangements execute their delivery during their displayed twenty-minute action; declining leaves the buyers’ own deadline in place. Use the deliberate time controls if nothing has settled. The guide never silently pays, promises or advances time.','time','Review time and known obligations'),
         _step('p8','Your decision, and the history behind it.',' '.join(actual_result['explanation'])+' The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.' if actual_result else 'Keep exploring; the first outcome has not yet reached you.','reflect','Review what happened',ack='reflection_done'),
@@ -213,5 +225,5 @@ def guide_view(snapshot, commands, events, settings, meta=None):
     return {**prefs,'step':current,'completed':[s['id'] for s in steps if done.get(s['id'])],
             'chapters':[{'id':s['id'],'title':s['title'],'status':'complete' if done.get(s['id']) else 'current' if s['id']==current['id'] else 'upcoming'} for s in steps],
             'known':known,'result':result,'hint':hint,'history_cards':cards,
-            'excluded_from_unassisted_research':prefs['enabled'] or prefs['practice'] or bool((meta or {}).get('guided_origin')),
+            'excluded_from_unassisted_research':prefs['enabled'] or prefs['practice'] or prefs['guided_origin'],
             'not_a_comprehension_score':True}

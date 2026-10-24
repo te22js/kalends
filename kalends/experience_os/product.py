@@ -85,7 +85,7 @@ class ProductService(ExperienceService):
                 for ident, meta in document["lives"].items():
                     if not isinstance(ident, str) or not isinstance(meta, dict):
                         raise ValueError("Malformed life metadata")
-                    for key in ("started", "example", "operator_exposed", "telemetry_opt_in"):
+                    for key in ("started", "example", "operator_exposed", "telemetry_opt_in", "provenance_unknown"):
                         if key in meta and type(meta[key]) is not bool:
                             raise ValueError("Malformed life metadata flag")
                     for key in ("seen_revision", "last_seen_minute"):
@@ -95,6 +95,16 @@ class ProductService(ExperienceService):
                         raise ValueError("Malformed personal annotations")
                     if any(key in meta and meta[key] is not None and not isinstance(meta[key], str) for key in ("created_at", "updated_at", "template_id")):
                         raise ValueError("Malformed life identity metadata")
+                    if "guide" in meta:
+                        guide = meta["guide"]
+                        if not isinstance(guide, dict):
+                            raise ValueError("Malformed guide metadata")
+                        if "version" in guide and not isinstance(guide["version"], str):
+                            raise ValueError("Malformed guide metadata version")
+                        if any(key in guide and type(guide[key]) is not bool for key in ("enabled", "learn", "practice", "guided_origin")):
+                            raise ValueError("Malformed guide metadata flag")
+                        if any(key in guide and (not isinstance(guide[key], list) or any(not isinstance(item, str) for item in guide[key])) for key in ("ack", "read_cards")):
+                            raise ValueError("Malformed guide reading metadata")
                 self.metadata = document["lives"]
             except (ValueError, OSError, KeyError):
                 # Keep the original bytes and surface a warning; do not replace
@@ -125,7 +135,14 @@ class ProductService(ExperienceService):
                         world.save()
         for ident, runtime in self.worlds.items():
             initial = self._initial_meta(runtime, started=bool(runtime.commands) or ident not in TEMPLATES)
-            self.metadata[ident] = {**initial, **self.metadata.get(ident, {})}
+            saved = self.metadata.get(ident, {})
+            guide = saved.get("guide", {})
+            known_origin = isinstance(guide, dict) and all(type(guide.get(key)) is bool for key in ("enabled", "guided_origin", "practice"))
+            self.metadata[ident] = {**initial, **saved}
+            if ident not in TEMPLATES and (not known_origin or saved.get("provenance_unknown") is True):
+                # A journal recovers actual choices, not lost display metadata.
+                # Do not infer unassisted use from missing guidance provenance.
+                self.metadata[ident]["provenance_unknown"] = True
         if include_examples:
             for adapter in ("commons", "pompeii"):
                 path = ROOT / f"results/experience_os/life_v1/{adapter}/accepted_journal.json"
@@ -145,7 +162,8 @@ class ProductService(ExperienceService):
         template = "pompeii_life" if runtime.spec.setting["adapter"] == "pompeii" else "shared_observatory"
         return {"template_id": template, "created_at": utc(), "updated_at": None,
                 "started": started, "example": example, "seen_revision": 0, "last_seen_minute": 0,
-                "operator_exposed": False, "telemetry_opt_in": False, "notes": [], "bookmarks": []}
+                "operator_exposed": False, "telemetry_opt_in": False, "provenance_unknown": False,
+                "notes": [], "bookmarks": []}
 
     def _persist_meta(self, values):
         if "product_metadata" in self.failures:
@@ -177,7 +195,8 @@ class ProductService(ExperienceService):
                 "minute": runtime.minute, "day": runtime.minute // 1440 + 1, "revision": len(runtime.commands),
                 "state_hash": runtime.state_hash(), "location": location, "save_status": "error" if ident in self.save_errors else "read_only" if ident in self.examples else "saved",
                 "save_error": self.save_errors.get(ident),
-                "metadata_warning": self.metadata_warnings.get(ident),
+                "metadata_warning": self.metadata_warnings.get(ident) or
+                    ("Earlier guidance/practice provenance could not be verified; this life is excluded from unassisted research." if meta.get("provenance_unknown") else None),
                 "read_only": ident in self.examples, "terminated": runtime.minute >= runtime.spec.termination["at"]}
 
     def catalog(self):
@@ -268,6 +287,8 @@ class ProductService(ExperienceService):
                                      {"id": "inspect", "label": "Arrange a direct inspection", "action": {"action": "inspect"}}]
         snapshot = self.public_snapshot(runtime)
         guide = guide_view(snapshot, runtime.commands, runtime.events(), runtime.spec.setting["rules"], meta.get("guide"))
+        guide["provenance_unknown"] = meta.get("provenance_unknown") is True
+        guide["excluded_from_unassisted_research"] = guide["excluded_from_unassisted_research"] or guide["provenance_unknown"]
         snapshot["outcome"] = guide["result"]
         return {"build": BUILD, "life": self.metadata_for(ident), "snapshot": snapshot, "guide": guide,
                 "people": people, "history": history, "known_commitments": history["known_commitments"],
@@ -281,10 +302,7 @@ class ProductService(ExperienceService):
         runtime = self.mutable(ident)
         if set(data) - {"id", "enabled", "learn", "ack", "card"}:
             raise ValueError("Guide updates contain only preferences and reading acknowledgements")
-        raw = self.metadata[ident].get("guide", {})
-        prefs = guide_preferences(raw)
-        if raw.get("guided_origin"):
-            prefs["guided_origin"] = True
+        prefs = guide_preferences(self.metadata[ident].get("guide"))
         for field in ("enabled", "learn"):
             if field in data:
                 if type(data[field]) is not bool:
@@ -512,9 +530,10 @@ class ProductService(ExperienceService):
                "foreground_ms": foreground, "idle_ms": idle, "elapsed_ms": data.get("elapsed_ms", 0),
                "event": event, "at": utc(), "operator_exposed": self.metadata[ident].get("operator_exposed", False),
                **({"reason": data["reason"]} if "reason" in data else {}), **action}
-        guide = self.metadata[ident].get("guide", {})
+        guide = guide_preferences(self.metadata[ident].get("guide"))
         row.update(guided=bool(guide.get("guided_origin") or guide.get("enabled")), practice=guide.get("practice") is True,
-                   excluded_from_unassisted_research=bool(guide.get("guided_origin") or guide.get("enabled") or guide.get("practice") or row["operator_exposed"]))
+                   provenance_unknown=self.metadata[ident].get("provenance_unknown") is True,
+                   excluded_from_unassisted_research=bool(guide.get("guided_origin") or guide.get("enabled") or guide.get("practice") or row["operator_exposed"] or self.metadata[ident].get("provenance_unknown")))
         if self.directory:
             path = self.directory / ".product/events.jsonl"
             path.parent.mkdir(parents=True, exist_ok=True)

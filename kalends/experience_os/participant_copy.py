@@ -36,6 +36,46 @@ def event_copy(event):
     return result
 
 
+# The existing cart actions and costs are unchanged. These are presentation
+# descriptions of their reviewed terms, not a claim that delivery has occurred.
+_CART_CHOICES = {
+    'support_market': {
+        'label': 'Pay for the market delivery',
+        'description': 'Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix.',
+        'cost': '3 coins · 20 world minutes',
+        'consequence': 'The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority.',
+    },
+    'mediate': {
+        'label': 'Negotiate a delivery using the three accounts',
+        'description': 'Use the copied market, household and loading accounts to arrange four sacks for the household and two for Sabina.',
+        'cost': 'Three copied accounts · 20 world minutes',
+        'consequence': 'Marcus covers the carrying charge. The action advances twenty minutes and attempts delivery. Review the actual receipt afterwards. Broker work opens; Marcus resents the scrutiny.',
+    },
+    'guarantee_household': {
+        'label': 'Accept the household advance and service obligation',
+        'description': 'Receive six coins and give the household priority over the flour cart. You commit to two hours of service within three days.',
+        'cost': '20 world minutes now · 120 minutes of service due within three days',
+        'consequence': 'Delivery is attempted during this action. Review the actual receipt afterwards. The service remains a separate obligation. Household work opens; Sabina loses priority and welcomes you less.',
+    },
+    'decline_dispute': {
+        'label': 'Leave the decision to the buyers',
+        'description': 'Decline to arrange this delivery. The buyers can act at their own deadline.',
+        'consequence': 'No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome.',
+    },
+}
+
+
+def choice_copy(choice):
+    result = copy.deepcopy(choice)
+    action = result.get('action', {}).get('action')
+    prose = _CART_CHOICES.get(action)
+    if prose:
+        result.update(prose)
+        if 'transmission' in choice:
+            result['transmission'] = prose['description']
+    return result
+
+
 def game_world_copy(world):
     result=copy.deepcopy(world)
     for field in ('journal',):
