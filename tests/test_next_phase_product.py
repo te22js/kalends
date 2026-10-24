@@ -448,7 +448,8 @@ def test_usage_partition_exact_choice_and_operator_identity_are_validated_withou
                    "world_minute": runtime.minute, "event": "meaningful_action", "at": row["at"],
                    "operator_exposed": True, "accepted_revision": 1, "meaningful_kind": "inspect",
                    "first_meaningful": True, "active_ms": 30000, "foreground_ms": 45000,
-                   "visible_ms": 50000, "idle_ms": 15000, "elapsed_ms": 70000}
+                   "visible_ms": 50000, "idle_ms": 15000, "elapsed_ms": 70000,
+                   "guided": False, "practice": False, "excluded_from_unassisted_research": True}
     assert (runtime.state_hash(), runtime.journal_path.read_bytes()) == before
     assert "fragile" not in json.dumps(row)
 

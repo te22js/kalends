@@ -14,20 +14,21 @@ import secrets
 
 from .compiler import ExperienceCompilerV1, SPEC_DIR
 from .history import build_history, choices_then
+from .guide import ACKS, VERSION as GUIDE_VERSION, guide_view, preferences as guide_preferences
 from .runtime import ExperienceRuntime, digest
 from .server import ExperienceService, ROOT
 
-BUILD = "kalends-continuity-1"
+BUILD = "kalends-first-session-1"
 TEAMS = {"team_a": ("Amir", "Survey"), "team_b": ("Mira", "Instrument systems"), "team_c": ("Lin", "Follow-up")}
 TEMPLATES = {
-    "pompeii_life": {"title": "Pompeii", "subtitle": "A place in the city",
-        "description": "Work, trade and navigate obligations in a small Roman-inspired neighborhood. Your decisions become part of your local history.",
-        "badges": ["Historical fiction", "3D", "Persistent life"], "role": "Aelia, an independent freedwoman",
-        "opening": "Sabina's counter and Lucius's household both claim a six-sack cart. You can listen, investigate, work, or decide whether to become involved.",
+    "pompeii_life": {"title": "Pompeii", "subtitle": "A day in the neighborhood",
+        "description": "Walk through a small Roman-inspired district as Aelia. Meet its residents, help resolve a disputed flour delivery, and learn what archaeological evidence tells us about work and daily life.",
+        "badges": ["Historical fiction", "3D", "Persistent life"], "role": "Aelia, a fictional freedwoman",
+        "opening": "Sabina, a food seller, and Lucius, a household steward, both claim flour from the same six-sack cart. Hear their accounts, inspect a written order, and decide whether or how to help.",
         "actions": ["Walk and meet the neighbors", "Ask Sabina about her day", "Choose whether to take on an obligation"],
         "preview_url": "/product/assets/hero.png"},
-    "shared_observatory": {"title": "Shared Observatory", "subtitle": "Three teams, one instrument",
-        "description": "Coordinate competing requests with incomplete information. Find out what your promises mean when shared capacity is put to use.",
+    "shared_observatory": {"title": "Shared Observatory", "subtitle": "Decide who gets to use the instrument",
+        "description": "Three teams need the same instrument. Check the reports, decide how to divide its capacity, and see whether your promises can be kept.",
         "badges": ["Decision experience", "Conversation and planning", "Persistent consequences"], "role": "The consortium's elected coordinator",
         "opening": "Amir, Mira and Lin have work to complete on one instrument. Twelve nominal units are available; its usable condition must be checked or legitimately reported.",
         "actions": ["Meet the three representatives", "Ask for a dated report", "Make a feasible promise and allocation"], "preview_url": None},
@@ -36,10 +37,10 @@ TEMPLATES = {
 
 USAGE_EVENTS = frozenset({"session_start", "life_entered", "meaningful_action", "consequence_viewed",
                           "history_opened", "return_resumed", "research_entered", "error", "active_interval",
-                          "choice_declined", "life_left", "session_end"})
+                          "choice_declined", "life_left", "session_end", "guide_help", "guide_step", "guide_dismissed", "history_card_opened", "invalid_action"})
 USAGE_REASONS = frozenset({"consent", "new", "return", "reload", "interval", "leave", "pagehide",
                            "visibility", "focus", "history", "alternative", "advance", "save_failed",
-                           "unreadable", "stale", "rejected", "network", "scene", "cancelled"})
+                           "unreadable", "stale", "rejected", "network", "scene", "cancelled", "guide", "notebook", "control_help", "unavailable", "affordability"})
 USAGE_TIMINGS = ("active_ms", "visible_ms", "foreground_ms", "idle_ms", "elapsed_ms")
 
 
@@ -188,7 +189,9 @@ class ProductService(ExperienceService):
                 "failures": list(self.failures.values()), "life_limit": 8,
                 "elapsed_policy": "Worlds advance when you play or explicitly advance time. No offline progression."}
 
-    def start(self, template_id):
+    def start(self, template_id, *, guided=False, practice=False, _source=None, _practice_of=None):
+        if type(guided) is not bool or type(practice) is not bool:
+            raise ValueError("Guidance and practice settings must be booleans")
         if "product_metadata" in self.failures:
             raise ValueError("Product metadata is incompatible; choose a separate directory. Original preserved.")
         if template_id not in TEMPLATES:
@@ -197,16 +200,22 @@ class ProductService(ExperienceService):
         # deliberately small local capacity as the retained service.
         if sum(bool(m.get("started")) and not m.get("example") for m in self.metadata.values()) >= 8:
             raise ValueError("This local prototype has eight personal lives. Existing histories are preserved.")
-        source = self.templates[template_id].to_dict()
+        source = copy.deepcopy(_source) if _source is not None else self.templates[template_id].to_dict()
         ident = ("pompeii_" if template_id == "pompeii_life" else "observatory_") + secrets.token_hex(6)
         source["id"] = ident
         source["title"] = "Aelia — a place in the city" if template_id == "pompeii_life" else "Your shared observatory"
+        if practice:
+            source["title"] += " · separate practice copy"
         journal = self.directory / (ident + ".json") if self.directory else None
         runtime = ExperienceRuntime(source, journal_path=journal)
         runtime.save()
         self.worlds[ident] = runtime
         values = copy.deepcopy(self.metadata)
-        values[ident] = {**self._initial_meta(runtime, started=True), "updated_at": utc()}
+        values[ident] = {**self._initial_meta(runtime, started=True), "updated_at": utc(),
+                         "guide": {"version": GUIDE_VERSION, "enabled": guided, "guided_origin": guided,
+                                   "learn": guided and template_id == "pompeii_life", "practice": practice, "ack": [], "read_cards": []}}
+        if _practice_of:
+            values[ident]["practice_of"] = _practice_of
         try:
             self._persist_meta(values)
         except (OSError, ValueError):
@@ -232,6 +241,9 @@ class ProductService(ExperienceService):
 
     def public_snapshot(self, runtime):
         snapshot = runtime.snapshot()
+        if isinstance(snapshot.get('world'), dict):
+            from .participant_copy import game_world_copy
+            snapshot['world'] = game_world_copy(snapshot['world'])
         snapshot["metrics"] = self.participant_metrics(runtime)
         if runtime.spec.setting["adapter"] == "commons":
             snapshot["round_closed"] = any(e["payload"].get("prop") == ["experience", f"outcome:{runtime.world.round}"] for e in runtime.events())
@@ -254,13 +266,57 @@ class ProductService(ExperienceService):
                                    "team_c": "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."}[person["id"]]
                 person["actions"] = [{"id": "ask_report", "label": "Ask about the dated report", "action": {"action": "share", "recipient": person["id"]}},
                                      {"id": "inspect", "label": "Arrange a direct inspection", "action": {"action": "inspect"}}]
-        return {"build": BUILD, "life": self.metadata_for(ident), "snapshot": self.public_snapshot(runtime),
+        snapshot = self.public_snapshot(runtime)
+        guide = guide_view(snapshot, runtime.commands, runtime.events(), runtime.spec.setting["rules"], meta.get("guide"))
+        snapshot["outcome"] = guide["result"]
+        return {"build": BUILD, "life": self.metadata_for(ident), "snapshot": snapshot, "guide": guide,
                 "people": people, "history": history, "known_commitments": history["known_commitments"],
                 "return_summary": history["return_summary"], "time": {"minute": runtime.minute, "paused": True,
                     "known_stops": history["known_stops"], "elapsed_policy": history["elapsed_policy"]},
                 "telemetry": {"opt_in": meta.get("telemetry_opt_in", False), "operator_exposed": meta.get("operator_exposed", False),
                               **meaningful_status(runtime)},
                 "notes": copy.deepcopy(meta.get("notes", [])), "bookmarks": copy.deepcopy(meta.get("bookmarks", []))}
+
+    def guide_update(self, ident, data):
+        runtime = self.mutable(ident)
+        if set(data) - {"id", "enabled", "learn", "ack", "card"}:
+            raise ValueError("Guide updates contain only preferences and reading acknowledgements")
+        raw = self.metadata[ident].get("guide", {})
+        prefs = guide_preferences(raw)
+        if raw.get("guided_origin"):
+            prefs["guided_origin"] = True
+        for field in ("enabled", "learn"):
+            if field in data:
+                if type(data[field]) is not bool:
+                    raise ValueError("Guide settings must be booleans")
+                prefs[field] = data[field]
+        if prefs["enabled"]:
+            prefs["guided_origin"] = True
+        current = guide_view(self.public_snapshot(runtime), runtime.commands, runtime.events(), runtime.spec.setting["rules"], prefs)
+        if "ack" in data:
+            ack = data["ack"]
+            if not isinstance(ack, str) or ack not in ACKS:
+                raise ValueError("Only a reading or controls acknowledgement can be saved; world actions need their ordinary review")
+            if ack == "reflection_done" and current["result"] is None:
+                raise ValueError("There is no recorded result to review yet")
+            if ack == "request_read" and not current["known"].get("request", {}).get("quantities") and current["result"] is None:
+                raise ValueError("No request has been published yet")
+            if ack == "dispute_explained" and not any(c.get("data", {}).get("action") == "hear_dispute" for c in runtime.commands):
+                raise ValueError("Hear an account before acknowledging its explanation")
+            prefs["ack"] = list(dict.fromkeys([*prefs["ack"], ack]))
+        if "card" in data:
+            card = next((c for c in current["history_cards"] if c["id"] == data["card"]), None)
+            if card is None or not card["available"]:
+                raise ValueError("Visit this represented place before recording its location card; other notebook cards are available now")
+            prefs["read_cards"] = list(dict.fromkeys([*prefs["read_cards"], card["id"]]))
+        self._update_meta(ident, guide=prefs)
+        return self.life(ident)
+
+    def practice(self, ident):
+        runtime = self.get(ident)
+        template = self.metadata[ident]["template_id"]
+        return self.start(template, guided=True, practice=True, _source=runtime.spec.to_dict(),
+                          _practice_of={"life_id": ident, "revision": len(runtime.commands)})
 
     def resume(self, ident):
         if ident not in self.examples:
@@ -456,6 +512,9 @@ class ProductService(ExperienceService):
                "foreground_ms": foreground, "idle_ms": idle, "elapsed_ms": data.get("elapsed_ms", 0),
                "event": event, "at": utc(), "operator_exposed": self.metadata[ident].get("operator_exposed", False),
                **({"reason": data["reason"]} if "reason" in data else {}), **action}
+        guide = self.metadata[ident].get("guide", {})
+        row.update(guided=bool(guide.get("guided_origin") or guide.get("enabled")), practice=guide.get("practice") is True,
+                   excluded_from_unassisted_research=bool(guide.get("guided_origin") or guide.get("enabled") or guide.get("practice") or row["operator_exposed"]))
         if self.directory:
             path = self.directory / ".product/events.jsonl"
             path.parent.mkdir(parents=True, exist_ok=True)

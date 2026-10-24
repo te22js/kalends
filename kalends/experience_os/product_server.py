@@ -88,7 +88,7 @@ def make_product_handler(service):
                 with service.lock:
                     if path.startswith("/product/api/"):
                         ident = data.get("id")
-                        if path == "/product/api/start": result = service.start(data.get("template_id"))
+                        if path == "/product/api/start": result = service.start(data.get("template_id"), guided=data.get("guided", False), practice=data.get("practice", False))
                         elif path == "/product/api/resume": result = service.resume(ident)
                         elif path == "/product/api/propose": result = service.review(ident, data.get("action"))
                         elif path == "/product/api/confirm": result = service.confirm_review(ident, data.get("proposal_id"))
@@ -98,6 +98,8 @@ def make_product_handler(service):
                         elif path == "/product/api/intent": result = service.intention(ident, data.get("text"), data.get("recipient", "team_b"))
                         elif path == "/product/api/annotation": result = service.annotation(ident, note=data.get("note"), event_id=data.get("event_id"))
                         elif path == "/product/api/telemetry": result = service.telemetry(ident, data)
+                        elif path == "/product/api/guide": result = service.guide_update(ident, data)
+                        elif path == "/product/api/practice": result = service.practice(ident)
                         elif path == "/product/api/fork":
                             result = service.public_fork(ident, data.get("command_index"))
                         elif path == "/product/api/studio/validate": result = self.studio(data, compile=False)
@@ -168,6 +170,9 @@ def make_product_handler(service):
                 if path == "/product/api/telemetry" and isinstance(error, OSError):
                     return self.send(400, {"error": "Optional usage events could not be saved. World choices are unaffected.",
                                            "code": "telemetry_save_failed", "save_failed": False})
+                if path in {"/product/api/guide", "/product/api/practice"} and isinstance(error, OSError):
+                    return self.send(400, {"error": "The guide preference or separate practice copy could not be saved. Your active world is unchanged.",
+                                           "code": "guide_metadata_save_failed", "save_failed": False})
                 if isinstance(error, OSError) and ident in service.worlds:
                     service.save_errors[ident] = "The change could not be saved. The previous accepted world is preserved. Reload its current state before deciding what to do next."
                 return self.send(400, {"error": str(error)[:500], "save_failed": isinstance(error, OSError), "retry_policy": "Read the current life before reviewing again. Never automatically resubmit a choice."})

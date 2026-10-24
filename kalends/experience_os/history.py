@@ -7,10 +7,11 @@ from __future__ import annotations
 
 import copy
 import json
+from .participant_copy import event_text, quantity
 
 
 PERSON_LABELS = {"Player": "Aelia", "team_a": "Amir", "team_b": "Mira", "team_c": "Lin"}
-ROLES = {"team_a": "Survey", "team_b": "Calibration", "team_c": "Follow-up"}
+ROLES = {"team_a": "Survey", "team_b": "Instrument systems", "team_c": "Follow-up"}
 _ROUTINES = {"move", "movement", "player_move", "routine", "institutional_routine", "routine_note", "request", "inspection_paid"}
 
 
@@ -62,7 +63,7 @@ def _evidence(events, setting):
     for e in events:
         p = e["payload"]
         row = {"event_id": e["event_id"], "at": e["tick"], "category": p.get("category", "record"),
-               "title": _human(p.get("title", p.get("category", "Record")), setting),
+               "title": _human(event_text(e), setting),
                "actors": list(e.get("actors", ())),
                "claim_kind": "testimony" if e.get("etype") == "tell" else "recorded_observation",
                "related_event_ids": [i for i in p.get("parents", ()) if i in allowed]}
@@ -80,10 +81,10 @@ def _evidence(events, setting):
 
 def _beat(event, setting, allowed):
     p = event["payload"]
-    title = _human(p.get("title", p.get("category", "Recorded moment")), setting)
+    title = _human(event_text(event), setting)
     factual = title
     if p.get("category") in ("report", "condition") and "value" in p:
-        factual = f"{title}. Reported condition: {p['value']}, dated minute {p.get('as_of', event['tick'])}."
+        factual = f"{title} Reported condition: {p['value']}, dated minute {p.get('as_of', event['tick'])}."
     return {"id": f"event-{event['event_id']}", "kind": _kind(event), "at": event["tick"],
             "title": title, "text": factual, "body": factual,
             "participants": [{"id": a, "name": _label(a, setting)} for a in event.get("actors", ())],
@@ -108,7 +109,7 @@ def _known_commitments(runtime, events):
             if support is None:
                 continue
             deadline = (r + 1) * runtime.world.rules["round_minutes"] - 1
-            text = f"You promised {quantity} units to {_label(actor, setting)} by minute {deadline}. Allocation and delivery are separate steps."
+            text = f"You promised {quantity} {'unit' if quantity == 1 else 'units'} to {_label(actor, setting)} by minute {deadline}. Allocation and delivery are separate steps."
             rows.append({"id": f"promise:{r}:{actor}", "recipient": actor, "person": _label(actor, setting),
                          "quantity": quantity, "fulfilled": 0, "deadline": deadline, "status": "open",
                          "text": text, "evidence_ids": [support["event_id"]], "source": "own institutional promise register"})
@@ -226,7 +227,7 @@ def build_history(runtime, *, last_seen_minute=0, seen_revision=None):
                 event = settled[-1]
                 outcome = _value(event)
                 allocated, delivered = outcome["allocation"].get(actor, 0), outcome["executed"].get(actor, 0)
-                row["outcome"] = {"text": f"{row['name']} received {delivered} of {allocated} allocated units.",
+                row["outcome"] = {"text": f"{row['name']} received {delivered} of {allocated} allocated {'unit' if allocated == 1 else 'units'}.",
                                   "allocated": allocated, "delivered": delivered, "evidence_ids": [event["event_id"]], "claim_kind": "recorded_outcome"}
         people.append(row)
     if seen_revision is not None:

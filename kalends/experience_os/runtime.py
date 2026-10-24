@@ -343,10 +343,35 @@ class ExperienceGameFacade:
         return self.legacy
 
     def state(self):
-        return self.sync().state()
+        from .participant_copy import game_world_copy
+        result = self.sync().state()
+        result['world'] = game_world_copy(result['world'])
+        return result
 
     def context(self, recipient):
-        return self.sync().context(recipient)
+        from .participant_copy import event_text, sentence
+        view = self.sync().context(recipient)
+        allowed = self.runtime.visible_ids()
+        admitted = {e['event_id']: e for e in self.runtime.events()}
+        documents = {e['payload'].get('document_key'): e for e in self.runtime.events()
+                     if e['payload'].get('category') == 'rb_evidence'}
+        topics = []
+        for original in view.get('topics', []):
+            topic = copy.deepcopy(original)
+            identifier = topic.get('id')
+            if identifier in {'market_receipt', 'household_tablet', 'loading_record'} and identifier in documents:
+                # Render the account actually copied by this participant, not
+                # the NPC's possibly changed or forgotten private record.
+                event = documents[identifier]
+                topic.update(text=event['payload']['document'].get('text', ''), evidence_ids=[event['event_id']], withheld=False)
+            elif identifier in {'market_receipt', 'household_tablet', 'loading_record'} or not set(topic.get('evidence_ids', [])) <= allowed:
+                topic.update(text='Ask for this account through a reviewed conversation or document choice. You have not received its private contents yet.',
+                             evidence_ids=[], withheld=True)
+            elif identifier == 'memory' and topic.get('evidence_ids'):
+                topic['text'] = ' '.join(event_text(admitted[i]) for i in topic['evidence_ids'])
+            topics.append(topic)
+        view['topics'] = topics
+        return view
 
     def route(self, data):
         return self.sync().route(data)
@@ -366,4 +391,5 @@ class ExperienceGameFacade:
             raise ValueError("Unknown reviewed choice")
         result = self.runtime.commit("action", interpretation["action"])
         session.proposals.clear()
-        return {**self.state(), "receipt": result["receipt"]}
+        from .participant_copy import event_copy
+        return {**self.state(), "receipt": event_copy(result["receipt"]) if isinstance(result.get('receipt'),dict) and 'payload' in result['receipt'] else result.get('receipt')}
