@@ -98,3 +98,7 @@ The destination must not exist. The bundle manifest hashes source modules, fixed
 - Cloudflare signed-token validation (optional mode): https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/
 
 No domain, paid plan or paid inference service was purchased. This release's remaining human decision is whether the mentor can understand and use the first session without assistance; automated and agent-operated checks do not establish that.
+
+## Live handoff recorded
+
+The final live instance was created from commit `4974c6e0b47def13b81aff9ebac71b0c9b62f295` with **zero started lives**. Twenty final public HTTPS route checks passed again after the switch. Access expires **26 October 2026 at 01:38 IST**. See `results/mentor_demo/live-release.json`, `public-live-checks.json` and `live-home.png` for the exact handoff record. QA lives and their accepted journals remain in the stopped QA instance.

@@ -1,0 +1,14 @@
+{
+  "origin": "https://unloader-cheek-pond.ngrok-free.dev",
+  "mode": "public link; no login",
+  "live_instance": "mentor-demo-live-20261025",
+  "source_commit": "4974c6e0b47def13b81aff9ebac71b0c9b62f295",
+  "started_lives_at_handoff": 0,
+  "templates": [
+    "pompeii_life",
+    "shared_observatory"
+  ],
+  "expires_ist": "2026-10-26T01:38:32+05:30",
+  "qa_instance_preserved": "mentor-public-qa-20261025",
+  "checks_file": "public-live-checks.json"
+}
