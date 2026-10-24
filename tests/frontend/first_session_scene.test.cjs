@@ -9,18 +9,44 @@ const world={minute:20,nearby:['Sabina'],agents:[{id:'Sabina',x:750,y:435},{id:'
   player:{commitments:[{id:'delivery',title:'Deliver flour',status:'open',deadline:40},{id:'old',status:'fulfilled',deadline:25}]},
   story:{stage:'committed',deadline:360}};
 
-async function hostHarness(){const {installSceneGuideHost}=await modulePromise,events=new Map(),received=[],messages=[];
+async function hostHarness(){const {installSceneGuideHost}=await modulePromise,events=new Map(),received=[],messages=[],actions=[];
  const parent={postMessage:(data,origin)=>messages.push({data,origin})};
  const host={parent,location:{origin:'http://localhost:8817',href:'http://localhost:8817/immersion/?experience=first_life'},
   addEventListener:(type,fn)=>events.set(type,fn),removeEventListener:type=>events.delete(type)};
- const guide=installSceneGuideHost({windowObject:host,onGuide:value=>received.push(value)});
+ const guide=installSceneGuideHost({windowObject:host,onGuide:value=>received.push(value),onAction:value=>actions.push(value)});
  const receive=(data={},override={})=>events.get('message')({origin:host.location.origin,source:parent,
   data:{kind:'kalends:guide',life_id:'first_life',guide:{enabled:true,step:{id:'p1',body:'Find Sabina.'}},...data},...override});
- return {guide,host,events,messages,received,receive};}
+ return {guide,host,events,messages,received,actions,receive};}
 
 test('guide comes only from the same-origin parent for this exact life',async()=>{const h=await hostHarness();
  h.receive({}, {origin:'https://other.example'});h.receive({}, {source:{}});h.receive({life_id:'second_life'});h.receive({kind:'kalends:host'});
  assert.equal(h.received.length,0);h.receive();assert.equal(h.received[0].step.body,'Find Sabina.');h.guide.destroy();assert.equal(h.events.size,0);
+});
+test('only a same-origin parent primary intent can invoke the guide action; updates never invoke it',async()=>{const h=await hostHarness();
+ h.receive();assert.deepEqual(h.actions,[]);
+ h.receive({kind:'kalends:guide-action',action:'primary'},{origin:'https://other.example'});
+ h.receive({kind:'kalends:guide-action',action:'primary'},{source:{}});
+ h.receive({kind:'kalends:guide-action',action:'primary',life_id:'second_life'});
+ h.receive({kind:'kalends:guide-action',action:'pay'});assert.deepEqual(h.actions,[]);
+ h.receive({kind:'kalends:guide-action',action:'primary',payload:{action:'pay',recipient:'private_actor'}});assert.deepEqual(h.actions,['primary']);assert.equal(h.received.length,1);
+});
+test('the Help scene button closes Help and sends display state before its one explicit primary intent',async()=>{
+ const {shellHarness}=require('./helpers/product_harness.cjs');
+ const guide={version:'first-session-v1',enabled:true,step:{id:'p5',title:'Seek another account.',body:'Use a known meeting place.',action:{kind:'scene',label:'Seek another account'}},hint:{target:{type:'location',id:'household'}},known:{},chapters:[]};
+ const h=await shellHarness({initialLife:{guide}});await h.clickId('help-button');const frame=h.frame();assert.equal(h.node('#help-dialog').open,true);
+ assert.equal(h.messages.some(m=>m.data.kind==='kalends:guide-action'),false);await h.clickData({guideAction:'scene'});
+ assert.equal(h.node('#help-dialog').open,false);assert.equal(h.frame(),frame);
+ const relevant=h.messages.filter(m=>['kalends:guide','kalends:guide-action'].includes(m.data.kind));assert.equal(relevant.at(-2).data.kind,'kalends:guide');assert.equal(relevant.at(-1).data.kind,'kalends:guide-action');assert.deepEqual(JSON.parse(JSON.stringify(relevant.at(-1).data)),{kind:'kalends:guide-action',life_id:'life_a',action:'primary'});
+ await h.scene({status:'ready'});assert.equal(h.messages.filter(m=>m.data.kind==='kalends:guide-action').length,1,'a later guide update cannot walk again');assert.equal(h.requests.some(r=>r.method==='POST'&&/\/(confirm|advance|act|move)$/.test(r.url)),false);
+});
+test('an explicit parent action reconciles a paused scene once, then honors pending-save protection',async()=>{
+ const vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('async function hostGuidePrimary('),end=source.indexOf('function prepareGuideNavigation(',begin),calls=[];
+ let release;const read=new Promise(resolve=>release=resolve),S={hostPaused:true,transition:false};
+ const bridge={pending:false,state:async()=>{calls.push('read current state');await read;}};
+ const sandbox={S,bridge,toast:text=>calls.push(text),sceneVisibility:()=>{S.hostPaused=false;calls.push('resume presentation');},guideAction:async()=>calls.push('safe primary')};
+ vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);const intent=sandbox.hostGuidePrimary();assert.equal(S.transition,true);assert.deepEqual(calls,['resume presentation','read current state']);
+ await sandbox.hostGuidePrimary();assert.match(calls.at(-1),/still being saved/);release();await intent;assert.equal(S.transition,false);assert.equal(calls.filter(c=>c==='safe primary').length,1);
+ bridge.pending=true;await sandbox.hostGuidePrimary();assert.equal(calls.filter(c=>c==='safe primary').length,1);assert.match(calls.at(-1),/still being saved/);
 });
 test('guide presentation drops private fields and oversized strings',async()=>{const {guideView}=await modulePromise;
  const projected=guideView({enabled:true,private:'secret',step:{title:'x'.repeat(300),body:'Read the account.',action:{kind:'scene',action:'pay',cash:999}},hint:{target:{type:'person',id:'Sabina',private:'secret'}}});

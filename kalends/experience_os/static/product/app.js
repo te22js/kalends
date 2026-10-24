@@ -298,7 +298,7 @@
     if(kind==='results'){$('#help-dialog').close();$('#obs-result').scrollIntoView({behavior:'auto',block:'center'});$('#obs-result').focus();return;}
     if(kind==='reflect'){$('#help-dialog').close();navigate(lifeURL(S.id,'/reflect'));return;}
     if(kind==='complete'){await updateGuide({enabled:false});return;}
-    if(kind==='scene'){status(g?.hint?.text||'Use the highlighted control in the scene. Help remains available here.');sendSceneGuide(S.id);return;}
+    if(kind==='scene'){$('#help-dialog').close();sendSceneGuide(S.id);S.frames.get(S.id)?.frame.contentWindow?.postMessage({kind:'kalends:guide-action',life_id:S.id,action:'primary'},location.origin);return;}
     openHelp();
   }
   function roundResultHTML() {

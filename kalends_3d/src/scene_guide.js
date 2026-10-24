@@ -17,12 +17,13 @@ export function guideView(value){
         ...(Number.isFinite(target.at)?{at:target.at}:{})}:null}};
 }
 
-export function installSceneGuideHost({windowObject=globalThis.window,onGuide=()=>{}}={}){
+export function installSceneGuideHost({windowObject=globalThis.window,onGuide=()=>{},onAction=()=>{}}={}){
   const host=windowObject;
   if(!host||host.parent===host)return {hosted:false,request(){return false;},destroy(){}};
   const origin=host.location.origin,lifeId=new URL(host.location.href).searchParams.get('experience')||'pompeii_life';
-  const receive=event=>{const data=event.data;if(event.origin!==origin||event.source!==host.parent||!data||
-    data.kind!=='kalends:guide'||data.life_id!==lifeId)return;onGuide(guideView(data.guide));};
+  const receive=event=>{const data=event.data;if(event.origin!==origin||event.source!==host.parent||!data||data.life_id!==lifeId)return;
+    if(data.kind==='kalends:guide')onGuide(guideView(data.guide));
+    else if(data.kind==='kalends:guide-action'&&data.action==='primary')onAction('primary');};
   host.addEventListener('message',receive);
   return {hosted:true,request(action,extra={}){if(!ACTIONS.has(action))return false;
     host.parent.postMessage({kind:'kalends:guide-request',life_id:lifeId,action,
