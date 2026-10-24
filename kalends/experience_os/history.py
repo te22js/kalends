@@ -19,6 +19,13 @@ def _label(actor, setting):
     return "You" if actor == "Player" and setting == "commons" else PERSON_LABELS.get(actor, actor)
 
 
+def _clock(minute, setting):
+    if type(minute) is not int:
+        return 'an unspecified time'
+    shown = minute + (480 if setting == 'pompeii' else 0)
+    return f"Day {minute//1440+1}, {shown%1440//60:02d}:{shown%60:02d}"
+
+
 def _human(text, setting):
     text = str(text)
     for actor in ("team_a", "team_b", "team_c", "Player"):
@@ -84,7 +91,7 @@ def _beat(event, setting, allowed):
     title = _human(event_text(event), setting)
     factual = title
     if p.get("category") in ("report", "condition") and "value" in p:
-        factual = f"{title} Reported condition: {p['value']}, dated minute {p.get('as_of', event['tick'])}."
+        factual = f"{title} Reported condition: {p['value']}, observed at {_clock(p.get('as_of', event['tick']), setting)}."
     return {"id": f"event-{event['event_id']}", "kind": _kind(event), "at": event["tick"],
             "title": title, "text": factual, "body": factual,
             "participants": [{"id": a, "name": _label(a, setting)} for a in event.get("actors", ())],
@@ -109,7 +116,7 @@ def _known_commitments(runtime, events):
             if support is None:
                 continue
             deadline = (r + 1) * runtime.world.rules["round_minutes"] - 1
-            text = f"You promised {quantity} {'unit' if quantity == 1 else 'units'} to {_label(actor, setting)} by minute {deadline}. Allocation and delivery are separate steps."
+            text = f"You promised {quantity} {'unit' if quantity == 1 else 'units'} to {_label(actor, setting)} by {_clock(deadline, setting)}. Allocation and delivery are separate steps."
             rows.append({"id": f"promise:{r}:{actor}", "recipient": actor, "person": _label(actor, setting),
                          "quantity": quantity, "fulfilled": 0, "deadline": deadline, "status": "open",
                          "text": text, "evidence_ids": [support["event_id"]], "source": "own institutional promise register"})
@@ -132,7 +139,7 @@ def _known_commitments(runtime, events):
                 continue
             recipient = c.get("beneficiary", "")
             unit = "service minutes" if c.get("id") in {"rebirth-service", "household-service"} else "units"
-            text = f"Your agreement with {recipient}: {c.get('fulfilled', 0)} of {c.get('quantity', 0)} {unit} completed, due minute {c.get('deadline')}."
+            text = f"Your agreement with {recipient}: {c.get('fulfilled', 0)} of {c.get('quantity', 0)} {unit} completed, due {_clock(c.get('deadline'), setting)}."
             rows.append({"id": c.get("id"), "recipient": recipient, "person": recipient,
                          "quantity": c.get("quantity", 0), "fulfilled": c.get("fulfilled", 0),
                          "unit": unit,

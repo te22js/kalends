@@ -43,10 +43,14 @@ def _payload_value(e):
     return value
 
 
+def clock_label(minute):
+    return f"Day {minute//1440+1}, {minute%1440//60:02d}:{minute%60:02d}"
+
+
 def _step(ident,title,body,kind,label,**action):
-    return {'id':ident,'title':title,'body':body,'hint':'You can ask for help, leave this guide or take another supported route.',
+    return {'id':ident,'title':title,'body':body,'hint':'Help is here whenever you need it.',
             'action':{'kind':kind,'label':label,**action},
-            'time_policy':'Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.'}
+            'time_policy':'Reading pauses time. Moving and work keep their shown time costs.'}
 
 
 def _evidence(events):
@@ -118,7 +122,12 @@ def _commons(snapshot, commands, events, prefs, settings):
             if isinstance(raw,dict):
                 for ident,g in raw.items():
                     status={'completed':'completed','missed':'missed','blocked':'waiting on an earlier project','active':'open'}.get(g.get('status'),'not stated')
-                    projects.append({'id':ident, 'label':g.get('label',ident), 'status':status, 'text':f"{TEAMS.get(g.get('actor'),g.get('actor','Team'))}: {g.get('quantity',g.get('target',{}).get('quantity','the stated'))} units in a settled batch; deadline minute {g.get('deadline','not stated')}; status: {status}."})
+                    amount = g.get('quantity',g.get('target',{}).get('quantity'))
+                    deadline = g.get('deadline')
+                    projects.append({'id':ident, 'actor':g.get('actor'), 'quantity':amount, 'deadline':deadline,
+                                     'label':g.get('label') or {'survey_deadline':'Survey project','calibration_deadline':'Calibration project','followup_deadline':'Follow-up project'}.get(ident, 'Team project'), 'status':status,
+                                     'text':f"{TEAMS.get(g.get('actor'),g.get('actor','Team'))}: {amount} units in one delivery; due {clock_label(deadline) if type(deadline) is int else 'date not stated'}; {status}.",
+                                     'completion_rule':'A project needs its full requirement in one settled delivery. Smaller deliveries remain recorded, but this exercise gives them no partial project completion.'})
             break
     done={'o0': 'role_arrival' in ack, 'o1':'request_read' in ack or bool(allocation) or bool(result),
           'o2':bool(report) or bool(result),'o3':allocation is not None or bool(result),
@@ -128,13 +137,13 @@ def _commons(snapshot, commands, events, prefs, settings):
     request_text=f"{TEAMS.get(first_request[0],first_request[0])} currently requests {quantity(first_request[1], 'capacity unit')}." if first_request else 'No team has an active request in the current register yet.'
     steps=[
         _step('o0','You coordinate one shared instrument.',"Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time.",'ack','Begin the guided round',ack='role_arrival'),
-        _step('o1','Read a real request.',request_text+' A request says what a team wants. It creates neither a promise nor an allocation. Blank quantities mean no record; an explicit zero is a recorded zero.','ack','I understand this request',ack='request_read'),
-        _step('o2','Ask Mira for her dated report.','The rated capacity is twelve units. The current condition is not yet known from your received reports. Ask Mira to share what she observed; confirmation records the actual disclosure. A direct inspection is another supported route and costs one credit.','report','Ask Mira for the report'),
-        _step('o3','Choose an allocation you can explain.',('The latest admitted report describes '+str(report['usable'])+' usable units, dated minute '+str(report['as_of'])+'. It may be out of date. ' if report else '')+'Set a quantity for each team and review the total. Delivery follows the public exercise order: Amir, then Mira, then Lin. A project needs its stated minimum in a settled batch; equal shares are not always useful.','allocation','Review your allocation'),
+        _step('o1','Read a team’s request.',request_text+' A request is what the team asks for. Your promise and allocation are separate choices.','ack','Continue',ack='request_read'),
+        _step('o2','Ask Mira for her dated report.','The instrument is rated for twelve units; its current condition is unknown. Ask Mira for her report, or pay one credit for an inspection.','report','Ask Mira for the report'),
+        _step('o3','Choose an allocation you can explain.',(report['source']+'’s report describes '+str(report['usable'])+' usable units, observed at '+clock_label(report['as_of'])+'. '+('That observation is older than the current time. ' if snapshot['minute'] > report['as_of'] else '') if report else '')+'Set a quantity for each team and review the total. Delivery follows the public exercise order: Amir, then Mira, then Lin. Each project needs its stated minimum in one delivery. Smaller deliveries are recorded, but do not complete a project.','allocation','Review your allocation'),
         _step('o4','A promise is optional and separate.','A promise tells a team what you commit to provide. An allocation instructs the division of capacity; settlement determines delivery. You may review a promise to one team, or continue without making one. Changing an allocation field never creates a promise.','promise','Review an optional promise',ack='promise_explained'),
         _step('o5','Finish this round deliberately.','Your allocation is recorded, but delivery has not happened. Review the target time and every known commitment, then explicitly finish the round. Reading this panel does not move the clock.','finish_round','Review and finish this round'),
-        _step('o6','Read what actually happened.',' '.join(result['explanation']) if result else 'No settlement has been recorded yet.','results','Review the actual result',ack='reflection_done'),
-        _step('o7','Continue with less guidance.','Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. This is an optional reflection, not a measured test result.','complete','Continue exploring'),
+        _step('o6','See what each team received.',' '.join(result['explanation']) if result else 'No settlement has been recorded yet.','results','Review the result',ack='reflection_done'),
+        _step('o7','Continue with less guidance.','Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. What would you change next time?','complete','Continue exploring'),
     ]
     # A closed or early-completed round is reviewed instead of impossible work.
     if result and not done['o6']:
@@ -165,15 +174,11 @@ def _pompeii(snapshot, commands, events, prefs):
     if resolutions:
         e=resolutions[-1]; p=e['payload']; delivery=p.get('allocation',{})
         payment=sum(-e['payload'].get('cash_delta',{}).get('Player',0) for e in events if e['payload'].get('category')=='rb_agreement')
-        explanation=[f"The recorded delivery sent {quantity(q, 'flour unit')} to {who}." for who,q in delivery.items()]
+        explanation=[f"The delivery sent {quantity(q, 'flour unit')} to {who}." for who,q in delivery.items()]
         if payment>0: explanation.insert(0,f'You paid {payment:g} coins for the arrangement.')
         elif payment<0: explanation.insert(0,f'You received {-payment:g} coins for arranging the delivery.')
-        for change in p.get('relationship_axes',[]):
-            delta=change.get('delta',{}).get('affinity',0)
-            if delta:
-                explanation.append(f"{change['agent']}’s recorded regard for you {'improved' if delta>0 else 'fell'} after this arrangement.")
         if not explanation: explanation=[p.get('title','The buyers completed their own arrangement.')]
-        actual_result={'at':e['tick'],'event_id':e['event_id'],'delivered':delivery,'explanation':explanation,'relationship_note':'Read the affected person’s response or your story for the recorded relationship changes. Other people can react differently to the same agreement.'}
+        actual_result={'at':e['tick'],'event_id':e['event_id'],'delivered':delivery,'explanation':explanation,'relationship_note':'Return to the people affected to hear their response.'}
     elif notices:
         e=notices[-1]; actual_result={'at':e['tick'],'event_id':e['event_id'],'delivered':{},'explanation':[e['payload']['title']], 'relationship_note':'Only the admitted notice is shown; unseen quantities are not inferred.'}
     done={'p0':'role_arrival' in ack,'p1':moved or heard or chosen or 'controls_known' in ack,
@@ -192,15 +197,15 @@ def _pompeii(snapshot, commands, events, prefs):
     if documents: summary.append('You obtained '+', '.join({'market_receipt':"Sabina’s account",'household_tablet':"the household instructions",'loading_record':"the checked loading account"}.get(d,d) for d in sorted(documents))+'.')
     if not documents: summary.append('You have not copied a written order yet. No hidden account is supplied by the guide.')
     steps=[
-        _step('p0','You are Aelia.','You play a fictional freedwoman in Pompeii: a woman who was enslaved and is now free. A flour delivery is disputed. Hear the accounts before deciding whether to help. Aelia’s biography and opportunities are invented; they do not represent every freedwoman.','ack','Begin',ack='role_arrival'),
-        _step('p1','Find Sabina.','Click the ground to walk, or use the movement controls shown in the scene. Moving advances world time by its actual travel cost. You may take another route or explicitly skip the controls lesson.','scene','Show me the way',target=sabina),
-        _step('p2','Talk to Sabina, the food seller.','When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it.','scene','Find Sabina and speak',target=sabina),
-        _step('p3','Understand the two claims.','Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept.','ack','Look at the evidence',ack='dispute_explained'),
-        _step('p4','Learn one historical idea in place.','Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock.','history','What is this place?',card='food_counter',target={'type':'location','id':'thermopolium'}),
-        _step('p5','Compare the accounts you actually obtained.','Ask Dama for the household instructions. If she has left, ask Lucius about the dispute at the household. Marcus offers a check for one coin and fifteen minutes. These are accounts, not automatic proof. You may instead review an eligible arrangement.','scene','Seek another account',target=dama),
-        _step('p6','Choose whether and how to help.','Return to a claimant and review an eligible arrangement. The market route costs three coins. A household advance creates a later service obligation. The evidence route requires the actual copied accounts. You may also tell Sabina you will leave the decision to the buyers. Confirm only terms you intend to accept.','scene','Review your available choices',target=sabina),
-        _step('p7','See the actual delivery.','Your accepted choice is recorded. Some arrangements execute their delivery during their displayed twenty-minute action; declining leaves the buyers’ own deadline in place. Use the deliberate time controls if nothing has settled. The guide never silently pays, promises or advances time.','time','Review time and known obligations'),
-        _step('p8','Your decision, and the history behind it.',' '.join(actual_result['explanation'])+' The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.' if actual_result else 'Keep exploring; the first outcome has not yet reached you.','reflect','Review what happened',ack='reflection_done'),
+        _step('p0','You are Aelia.','A flour cart has arrived, but two buyers claim it. Start by hearing Sabina’s account. Aelia is a fictional freedwoman: she was enslaved and later freed.','ack','Begin',ack='role_arrival'),
+        _step('p1','Find Sabina.','Click the ground to approach Sabina, or use the movement keys. Moving takes world time.','scene','Show me the way',target=sabina),
+        _step('p2','Talk to Sabina, the food seller.','Select Sabina when you are close enough. Ask what happened to her order.','scene','Find Sabina and speak',target=sabina),
+        _step('p3','Two buyers, two accounts.','Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept.','ack','Look at the evidence',ack='dispute_explained'),
+        _step('p4','Look at the counter.','Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock.','history','What is this place?',card='food_counter',target={'type':'location','id':'thermopolium'}),
+        _step('p5','Compare the accounts you received.','Ask Dama for the household instructions, or speak with Lucius. Marcus’s loading check costs one coin and fifteen minutes. Compare the accounts, or choose with what you know.','scene','Seek another account',target=dama),
+        _step('p6','Choose whether and how to help.','Return to Sabina to review a market delivery or leave the decision to the buyers. The household offers an advance with later service; Marcus can negotiate using three copied accounts.','scene','Review your available choices',target=sabina),
+        _step('p7','See the actual delivery.','Check the delivery. If the buyers still need time, review the next deadline before moving the clock.','time','Review time and known obligations'),
+        _step('p8','See what happened.',' '.join(actual_result['explanation'])+' The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.' if actual_result else 'Keep exploring; the first outcome has not yet reached you.','reflect','Review what happened',ack='reflection_done'),
     ]
     # If the opportunity has passed, never keep asking for an impossible order.
     if resolved:

@@ -215,8 +215,11 @@ def test_3d_dialogue_facade_acts_on_the_same_compiled_world_and_invalidates_stal
     assert life.world.economy.inventory["Player"] == before + 1
     assert accepted["world"]["player"]["inventory"] == before + 1
     assert facade.legacy.original is life.world and life.commands[-1]["data"]["action"] == "buy"
-    with pytest.raises(ValueError):
-        facade.act({"proposal_id": proposal["proposal_id"], "interpretation_id": "0"})
+    commands_before_retry = len(life.commands)
+    duplicate = facade.act({"proposal_id": proposal["proposal_id"], "interpretation_id": "0"})
+    assert duplicate['outcome'] == 'already_accepted'
+    assert duplicate['receipt'] == accepted['receipt']
+    assert len(life.commands) == commands_before_retry
     stale = facade.propose({"recipient": "Marcus", "choice_id": "buy"})
     life.commit("advance", {"minutes": 1})
     with pytest.raises(ValueError, match="changed"):

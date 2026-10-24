@@ -190,3 +190,11 @@ test('journal rejection forwards only a fixed save failure category',async()=>{
   const h=harness({fetchImpl:async()=>response});assert.equal(await h.window.fetch('/api/act',{method:'POST',body:'{}'}),response);
   assert.equal(h.messages[0].payload.reason,'save_failed');assert.doesNotMatch(JSON.stringify(h.messages),/PRIVATE FILE PATH/);
 });
+
+test('free observations notify the same life without consuming or repeating the answer',async()=>{
+  const response={ok:true,status:200,clone(){return {json:async()=>({accepted_revision:3,receipt:{text:'PRIVATE ANSWER'}})};}};
+  const h=harness({fetchImpl:async()=>response});const options={method:'POST',body:JSON.stringify({action:{action:'hear_dispute',recipient:'Sabina'},expected_revision:2,expected_state_hash:'hash'})};
+  assert.equal(await h.window.fetch('/api/observe',options),response);assert.equal(h.requests.length,1);assert.equal(h.requests[0].options,options);
+  assert.deepEqual(h.messages[0].payload,{kind:'kalends:accepted',operation:'action',accepted_revision:3,experience:'custom_life'});
+  assert.doesNotMatch(JSON.stringify(h.messages),/PRIVATE ANSWER/);
+});

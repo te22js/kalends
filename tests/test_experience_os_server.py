@@ -267,7 +267,9 @@ def test_authored_pompeii_api_selects_its_own_life_facade_review_and_save(http_s
     before = authored.world.economy.inventory["Player"]
     assert request("/api/act" + suffix, token)[0] == 200
     assert authored.world.economy.inventory["Player"] == before + 1
-    assert request("/api/act" + suffix, token)[0] == 400
+    retry_status, _, retry = request("/api/act" + suffix, token)
+    assert retry_status == 200 and retry["outcome"] == "already_accepted"
+    assert authored.world.economy.inventory["Player"] == before + 1
     assert service.game(spec["id"]).runtime is authored
     assert service.game().runtime is default
     assert service.game(spec["id"]) is not service.game()

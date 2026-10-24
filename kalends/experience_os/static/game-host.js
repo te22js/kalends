@@ -10,7 +10,7 @@
     let operation = null;
     if (gameRequest) {
       const url = new URL(input, location.origin);
-      operation = ({'/api/act':'action','/api/move':'move','/api/advance':'advance'})[url.pathname] || null;
+      operation = ({'/api/act':'action','/api/observe':'action','/api/move':'move','/api/advance':'advance'})[url.pathname] || null;
       url.searchParams.set('experience', experience);
       input = url.pathname + url.search;
     }

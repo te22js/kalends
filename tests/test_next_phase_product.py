@@ -70,8 +70,9 @@ def test_review_and_cancel_are_nonmutating_and_private_result_is_disclosed_only_
     assert accepted["receipt"]["payload"]["value"] == "fragile"
     assert accepted["snapshot"]["metrics"]["own_inspection_spend"] == 1
     assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 1
-    with pytest.raises(ValueError, match="stale|consumed"):
-        product.confirm_review(ident, proposal["proposal_id"])
+    duplicate = product.confirm_review(ident, proposal["proposal_id"])
+    assert duplicate['outcome'] == 'already_accepted'
+    assert duplicate['receipt'] == accepted['receipt']
     assert len(runtime.commands) == 1
 
 
@@ -86,7 +87,7 @@ def test_invalid_cross_life_and_stale_reviews_preserve_actual_accounts(product):
     with pytest.raises(ValueError):
         product.confirm_review(other, proposal["proposal_id"])
     product.advance_product(ident, 1)
-    with pytest.raises(ValueError, match="stale|consumed"):
+    with pytest.raises(ValueError, match="offer changed"):
         product.confirm_review(ident, proposal["proposal_id"])
     assert runtime.world.economy.cash["Player"] == 12
     assert not product.get(other).commands
@@ -131,8 +132,7 @@ def test_metadata_write_failure_after_acceptance_reports_saved_choice_and_never_
     assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 1
     restored = ProductService(product.directory, include_examples=False)
     assert restored.get(ident).state_hash() == runtime.state_hash()
-    with pytest.raises(ValueError):
-        product.confirm_review(ident, proposal["proposal_id"])
+    assert product.confirm_review(ident, proposal["proposal_id"])['outcome'] == 'already_accepted'
     assert len(runtime.commands) == 1
 
 
@@ -402,7 +402,8 @@ def test_http_confirm_metadata_failure_is_an_accepted_receipt_not_a_false_failed
     read_status, reloaded = request(f"/product/api/life?id={ident}")
     assert read_status == 200 and reloaded["life"]["metadata_warning"]
     # A retry of the same accepted review cannot create another debit.
-    assert request("/product/api/confirm", {"id": ident, "proposal_id": proposal["proposal_id"]})[0] == 400
+    retry_status, retry = request("/product/api/confirm", {"id": ident, "proposal_id": proposal["proposal_id"]})
+    assert retry_status == 200 and retry["outcome"] == "already_accepted"
     assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 1
     restored = ProductService(service.directory, include_examples=False)
     assert restored.get(ident).state_hash() == runtime.state_hash()
@@ -536,3 +537,24 @@ def test_http_optional_usage_write_failure_does_not_mark_saved_world_as_failed(p
     assert "World choices are unaffected" in failed["error"]
     assert service.life(ident)["life"]["save_status"] == "saved"
     assert (runtime.state_hash(), runtime.journal_path.read_bytes()) == before
+
+
+def test_http_free_question_reconciles_exact_prefix_without_second_disclosure(product_http):
+    service, _, request = product_http
+    ident = start(service)
+    runtime = service.get(ident)
+    body = {'id': ident, 'action': {'action': 'share', 'recipient': 'team_b'},
+            'expected_revision': 0, 'expected_state_hash': runtime.state_hash()}
+    before = runtime.minute, runtime.world.economy.cash['Player']
+    status, first = request('/product/api/observe', body)
+    assert status == 200 and first['outcome'] == 'accepted', first
+    assert len(runtime.commands) == 1 and first['snapshot']['own_reports']
+    accepted_hash = runtime.state_hash()
+    status, duplicate = request('/product/api/observe', body)
+    assert status == 200 and duplicate['outcome'] == 'already_accepted'
+    assert first['observation_id'] == duplicate['observation_id']
+    assert runtime.state_hash() == accepted_hash and len(runtime.commands) == 1
+    assert (runtime.minute, runtime.world.economy.cash['Player']) == before
+    status, rejected = request('/product/api/observe', {**body, 'action': {'action':'inspect'}})
+    assert status == 400 and rejected['code'] == 'observation_not_permitted'
+    assert runtime.state_hash() == accepted_hash

@@ -43,7 +43,7 @@ CARDS = [
      'labels':['Historical evidence','Fictional gameplay'],'source_ids':['S3','S4']},
     {'id':'wall_notices','title':'Political messages on walls','location':'street',
      'encounter':'This learning card describes surviving painted notices. It does not identify a game wall as an excavated inscription.',
-     'claim':'Pompeian electoral notices named candidates, the offices sought and supporters.',
+     'claim':'Pompeian electoral notices could name candidates, the offices sought and supporters.',
      'evidence':'The Naples museum presents painted inscription fragments and explains their recurring forms.',
      'limits':'An endorsement does not establish an election result or equal political rights for every resident.',
      'game_changed':'There is no voting mechanic here. Aelia reading this card implies no eligibility for office. Any decorative wall marks in the model are reconstruction, not quoted ancient text.',
@@ -74,5 +74,19 @@ def cards_for(snapshot, commands, read=()):
         card.update(sources=[copy.deepcopy(SOURCES[s]) for s in card.pop('source_ids')],
                     available=card['location'] is None or card['location'] in visited,
                     read=card['id'] in read, rights='Original prose and schematic game geometry. No external image reproduced.')
+        # Stable qualified IDs avoid collision with the older research ledger.
+        for source in card['sources']:
+            source['qualified_id'] = 'first-session-history-v1:' + source['brief_id']
+            source['ledger_crosswalk'] = source['id']
+        card['voice'] = 'historian'
+        card['primary'] = {'title':card['title'], 'text':card['claim']}
+        card['details'] = [
+            {'label':'Evidence', 'text':card['evidence'] + ' ' + card['limits']},
+            {'label':'Reconstruction', 'text':card.get('illustration', card['encounter'])},
+            {'label':'Fictional gameplay', 'text':card['game_changed']},
+        ]
+        # Geometry must be inspected by the scene before asking someone to
+        # identify it visually. The source-backed explanation remains readable.
+        card['visual_prompt_requires'] = {'food_counter':'recognizable_counter_and_inset_jars', 'fullery':'recognizable_workshop_basins'}.get(card['id'])
         result.append(card)
     return result

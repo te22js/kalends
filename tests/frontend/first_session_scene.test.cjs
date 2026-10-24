@@ -79,14 +79,15 @@ test('an undated public street point never renders as a last sighting or an unde
  const {guideView,knownGuideTarget}=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8'),begin=source.indexOf('function guidePlace('),end=source.indexOf('const sceneGuide=',begin),node={};
  const sample={...world,map:{locations:world.map.locations.filter(p=>p.id!=='street'),streets:[{x:0,y:350,w:1600,h:130}]}};
  const S={guide:guideView({enabled:true,step:{action:{kind:'scene',label:'Seek another account'}},hint:{target:{type:'location',id:'street',x:850,y:430,person:'Dama',basis:'public opening cart meeting point'}}}),renderer:{currentScene:'thermopolium',player:{position:{x:1225,y:656}}}};
- const sandbox={S,$:()=>node,place:id=>sample.map.locations.find(p=>p.id===id),guideTarget:()=>knownGuideTarget(S.guide,sample),worldDistance:(a,b)=>Math.hypot(a.x-b.x,a.y-b.y)};
+ const {pompeiiTime}=await import(pathToFileURL(path.resolve(__dirname,'../../kalends_3d/src/conversation_presenter.js')).href);
+ const sandbox={S,pompeiiTime,$:()=>node,place:id=>sample.map.locations.find(p=>p.id===id),guideTarget:()=>knownGuideTarget(S.guide,sample),worldDistance:(a,b)=>Math.hypot(a.x-b.x,a.y-b.y)};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderGuideRange();assert.match(node.textContent,/Public meeting point for Dama/);assert.match(sandbox.guideActionText(),/Walk to the public street meeting point/);assert.doesNotMatch(node.textContent,/last.seen|undefined|world minute/i);
  S.renderer.player.position={x:850,y:430};sandbox.renderGuideRange();assert.match(node.textContent,/You reached the public meeting point/);assert.doesNotMatch(node.textContent,/undefined|world minute/);
- S.guide.hint.target.at=0;sandbox.renderGuideRange();assert.match(node.textContent,/last-seen point/);assert.match(node.textContent,/world minute 0/);
+ S.guide.hint.target.at=0;sandbox.renderGuideRange();assert.match(node.textContent,/last-seen point/);assert.match(node.textContent,/Day 1 · 08:00/);
 });
 test('activity describes accepted movement and public work without inventing deliveries',async()=>{const {sceneActivity}=await modulePromise;
  assert.equal(sceneActivity({activity:'working at the food counter'}),'Working at the food counter');
- assert.equal(sceneActivity({activity:'carrying household instructions'},{moving:true}),'Walking · recorded movement');
+ assert.equal(sceneActivity({activity:'carrying household instructions'},{moving:true}),'Walking');
  assert.equal(sceneActivity({activity:'secret report'},{talking:true}),'In conversation');assert.equal(sceneActivity({}),'At this place');
 });
 test('an owner-held order cannot be read as a topic before a legitimate copy is received',async()=>{const {admittedTopics}=await modulePromise;
@@ -125,7 +126,7 @@ test('explicit guide walking leaves the conversation safely and preserves the un
  const S={selected:'Sabina',speechRecipient:'Sabina',conversationEpoch:3,proposal:{proposal_id:'unconfirmed'},renderer:{selected:'Sabina',currentScene:'street'},guide:{enabled:true,step:{action:{kind:'history',card_id:'food_counter'}},hint:{target:{type:'location',id:'thermopolium'}}}};
  const bridge={pending:false,cancelConversation:()=>calls.push('cancel review')};
  const sandbox={S,bridge,$,w:()=>world,guideTarget:()=>knownGuideTarget(S.guide,world,()=>false),closeDialog(){},
-  go:body=>calls.push(['walk',body]),toast:text=>calls.push(text),renderContext(){},document:{body:{classList:{remove(){}}}},productHost:{notifyView:()=>calls.push('draft view saved')},sceneGuide:{request:()=>assert.fail('Walking must not confirm or save history')}};
+  go:body=>calls.push(['walk',body]),toast:text=>calls.push(text),renderContext(){},renderHUD(){},document:{body:{classList:{remove(){}}}},productHost:{notifyView:()=>calls.push('draft view saved')},sceneGuide:{request:()=>assert.fail('Walking must not confirm or save history')}};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end)+source.slice(closeBegin,closeEnd),sandbox);await sandbox.guideAction();
  assert.equal(S.selected,null);assert.equal(S.proposal,null);assert.equal(S.speechRecipient,'Sabina');assert.equal($('#speech').value,'Unsent question for Sabina');assert.equal(S.conversationEpoch,4);
  assert.deepEqual(JSON.parse(JSON.stringify(calls.find(c=>Array.isArray(c)))),['walk',{location:'thermopolium'}]);assert.ok(calls.includes('cancel review'));assert.ok(calls.includes('draft view saved'));
@@ -144,17 +145,17 @@ test('the marker hint closes only the local interaction and never walks or advan
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.showGuideWay();assert.equal(S.selected,null);assert.ok(calls.some(c=>Array.isArray(c)&&c[0]==='marker'));assert.ok(calls.some(c=>typeof c==='string'&&c.includes('does not walk or advance time')));
 });
 test('the shipped conversation renders readable opening, topic questions and an explicit acceptance verb',async()=>{
- const helpers=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
+ const helpers={...await modulePromise,...await import(pathToFileURL(path.resolve(__dirname,'../../kalends_3d/src/conversation_presenter.js')).href)},vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
  const begin=source.indexOf('function renderConversation('),end=source.indexOf('async function propose(',begin),elements=new Map();
  const $=id=>{if(!elements.has(id))elements.set(id,{style:{}});return elements.get(id);};
  const S={selected:'Sabina',line:null,topic:null,context:{greeting:{text:'Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed.'},topics:[{id:'role',label:'Your life here',text:'I run the counter.'}],choices:[{id:'support_market',enabled:true,label:'Help the market arrangement',description:'Pay the carrying charge and direct four flour units to Sabina and two to Felix.',cost:'3 coins · 20 minutes'},{id:'duplicate',enabled:true,label:'A repeated cost fixture',description:'1 coin',cost:'1 coin'}]},proposal:null};
  const sandbox={S,$,all:()=>[],person:()=>({role:'food seller'}),w:()=>world,bridge:{pending:false},textOf:value=>typeof value==='string'?value:value?.text||value?.title||'',escapeHTML:value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;'),...helpers};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderConversation();
- assert.equal($('#dialogue-line').textContent,'I paid Marcus for flour for my food counter. The household also has a claim on the cart. Hear our accounts before deciding whether to help.');
+ assert.equal($('#dialogue-line').textContent,'I paid Marcus for flour for my counter. Now the household is claiming the cart. Can you find out what happened?');
  assert.match($('#topics').innerHTML,/What is your work here\?/);
  assert.match($('#choices').innerHTML,/Pay the carrying charge and direct four flour units to Sabina and two to Felix\./);assert.match($('#choices').innerHTML,/Cost: 3 coins · 20 minutes\./);assert.equal(($('#choices').innerHTML.match(/1 coin/g)||[]).length,1,'an exact duplicate cost is rendered once');
  S.proposal={reply:null,interpretations:[{id:'zero',label:'Review the arrangement',action:{action:'support_market'},cost:'0 coins',consequence:'No delivery has been recorded yet.'}]};sandbox.renderConversation();
- assert.match($('#interpretations').innerHTML,/0 coins/);assert.match($('#interpretations').innerHTML,/Confirm arrangement/);assert.match($('#interpretations').innerHTML,/No delivery has been recorded yet/);
+ assert.match($('#interpretations').innerHTML,/0 coins/);assert.match($('#interpretations').innerHTML,/Pay 0 coins/);assert.match($('#interpretations').innerHTML,/No delivery has been recorded yet/);
 });
 test('the shipped journal keeps zero delivery, singular quantities and missing optional values readable',async()=>{
  const helpers=await modulePromise,vm=require('node:vm'),source=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/main.js'),'utf8');
@@ -178,9 +179,9 @@ test('the shipped loading overlay resumes a resolved saved life and retains the 
  const sample={minute:360,day:1,clock:'14:00',player:{cash:6,inventory:0,documents:[]},objective:{title:'The delivery has been settled.',description:'Lucius received six flour units. You can review the outcome.'}};
  const S={started:false,snapshot:{command_count:0},guide:{enabled:false}},sandbox={S,$,w:()=>sample,sceneGuide:{hosted:true},guideActionText:()=> 'Open your journal',...helpers};
  vm.createContext(sandbox);vm.runInContext(source.slice(begin,end),sandbox);sandbox.renderHUD();
- assert.equal($('#loading-title').textContent,'Continue as Aelia.');assert.equal($('#arrival-goal').textContent,sample.objective.title);assert.match($('#arrival-situation').textContent,/Lucius received six flour units/);assert.match($('#arrival-situation').textContent,/fictional freedwoman/);assert.match($('#enter').innerHTML,/Continue as Aelia/);assert.doesNotMatch($('#arrival-situation').textContent,/delivery of flour is disputed/);assert.doesNotMatch($('#arrival-controls').textContent,/Start by finding Sabina/);assert.equal($('#skip-controls').hidden,true);
+ assert.equal($('#loading-title').textContent,'Continue as Aelia.');assert.equal($('#arrival-goal').textContent,sample.objective.title);assert.match($('#arrival-situation').textContent,/Lucius received six flour units/);assert.match(fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8'),/id="arrival-role">Aelia is a fictional freedwoman/);assert.match($('#enter').innerHTML,/Continue as Aelia/);assert.doesNotMatch($('#arrival-situation').textContent,/delivery of flour is disputed/);assert.doesNotMatch($('#arrival-controls').textContent,/Start by finding Sabina/);assert.equal($('#skip-controls').hidden,true);
  S.guide={enabled:true,step:{id:'p8',title:'Review your actual decision.',body:'The recorded delivery sent six flour units to Lucius.',action:{kind:'reflect'}}};sandbox.renderHUD();assert.equal($('#loading-title').textContent,'Continue as Aelia.');assert.equal($('#arrival-goal').textContent,'Review your actual decision.');assert.match($('#arrival-situation').textContent,/recorded delivery sent six flour units to Lucius/);
- sample.minute=0;S.guide={enabled:true,step:{id:'p0',title:'You are Aelia.',action:{kind:'ack'}}};sandbox.renderHUD();assert.equal($('#loading-title').textContent,'You are Aelia.');assert.equal($('#arrival-goal').hidden,true);assert.match($('#arrival-situation').textContent,/A delivery of flour is disputed/);assert.match($('#arrival-controls').textContent,/Start by finding Sabina/);assert.match($('#enter').innerHTML,/Begin/);
+ sample.minute=0;S.guide={enabled:true,step:{id:'p0',title:'You are Aelia.',action:{kind:'ack'}}};sandbox.renderHUD();assert.equal($('#loading-title').textContent,'You are Aelia.');assert.equal($('#arrival-goal').hidden,true);assert.match($('#arrival-situation').textContent,/A flour cart has arrived, but two buyers claim it/);assert.match($('#arrival-controls').textContent,/Start by finding Sabina/);assert.match($('#enter').innerHTML,/Begin/);
  S.snapshot.command_count=1;sandbox.renderHUD();assert.match($('#enter').innerHTML,/Continue as Aelia/);assert.equal($('#skip-controls').hidden,true);
 });
 test('continuing a saved life does not acknowledge the initial guide step again',async()=>{
@@ -194,8 +195,8 @@ test('the loading overlay can scroll enlarged saved-world text without shrinking
 });
 test('the objective primary and Help remain before long copy in keyboard and reading order',()=>{
  const html=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/index.html'),'utf8'),css=fs.readFileSync(path.resolve(__dirname,'../../kalends_3d/src/style.css'),'utf8');
- assert.ok(html.indexOf('id="lead-action"')<html.indexOf('id="lead-copy"'));assert.ok(html.indexOf('id="guide-help"')<html.indexOf('id="lead-copy"'));
- assert.match(css,/#lead-actions\{position:sticky;top:0;[^}]*background:#243b2d/);
+ assert.ok(html.indexOf('id="lead-action"')<html.indexOf('id="lead-copy"'));assert.ok(html.indexOf('Help &amp; directions</summary>')<html.indexOf('id="lead-copy"'));
+ assert.match(html,/<details id="guide-details"><summary>Help &amp; directions<\/summary>/);assert.match(css,/#lead-actions\{position:static;background:none/);
 });
 test('crowded scene labels retain every target while reserving the primary guide marker',async()=>{
  const {layoutSceneLabels}=await modulePromise,labels=[

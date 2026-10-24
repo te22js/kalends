@@ -73,7 +73,10 @@ def test_observed_editorial_regressions_stay_fixed_in_evaluated_sentences(review
     assert not any("1/1 allocated units" in text for text in values)
     recall = find(review, "Sabina · real public conversation and offered choices")
     memory = next(block["text"] for block in recall["blocks"] if block["label"] == "Our history")
-    assert '. You read the document “Sabina' in memory
+    assert memory == 'I don’t remember us doing business before.'
+    returned = find(review, 'Sabina · grounded response after the delivery')
+    assert any('Thank you' in b['text'] and '4 flour units' in b['text'] for b in returned['blocks'])
+    assert 'You read the document' not in memory
     assert not any(block["label"] == "Mira · Calibration"
         for case in review["cases"] for block in case["blocks"])
 
@@ -81,8 +84,8 @@ def test_observed_editorial_regressions_stay_fixed_in_evaluated_sentences(review
 def test_public_project_status_and_card_representation_prose_are_in_the_catalog(review):
     projects = [block["text"] for case in review["cases"] for block in case["blocks"]
                 if block["label"] == "Project requirement"]
-    assert projects and all("status:" in text for text in projects)
-    assert any("status: completed" in text for text in projects)
+    assert projects and all("due Day " in text for text in projects)
+    assert any("; completed." in text for text in projects)
     cards = [case for case in review["cases"] if case["surface"] == "card"]
     assert len(cards) == 5
     for card in cards:
@@ -102,3 +105,13 @@ def test_grouped_history_keeps_all_routine_copy_available_in_the_review(review):
     assert any(block["label"] == "Routine record count" for block in story["blocks"])
     assert any(block["text"] == "World time advances by 2 minutes." for block in story["blocks"])
     assert any("You walk through" in block["text"] for block in story["blocks"])
+
+
+def test_open_and_closed_zero_promises_have_separate_actual_cases(review):
+    opened = find(review, "Open-round zero promise is rejected without a commitment")
+    closed = find(review, "Closed-round zero promise is rejected because the round settled")
+    assert opened['world_minute'] == 0 and closed['world_minute'] == 1439
+    assert opened['unchanged_after_rejection'] and closed['unchanged_after_rejection']
+    duplicate = find(review, "Double confirmation reconciles the accepted allocation")
+    assert duplicate['surface'] == 'reconciliation'
+    assert duplicate['blocks'][0]['text'] == 'That action already went through.'

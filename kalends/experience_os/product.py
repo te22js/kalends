@@ -18,7 +18,7 @@ from .guide import ACKS, VERSION as GUIDE_VERSION, guide_view, preferences as gu
 from .runtime import ExperienceRuntime, digest
 from .server import ExperienceService, ROOT
 
-BUILD = "kalends-first-session-1"
+BUILD = "kalends-experience-redesign-1"
 TEAMS = {"team_a": ("Amir", "Survey"), "team_b": ("Mira", "Instrument systems"), "team_c": ("Lin", "Follow-up")}
 TEMPLATES = {
     "pompeii_life": {"title": "Pompeii", "subtitle": "A day in the neighborhood",
@@ -74,6 +74,7 @@ class ProductService(ExperienceService):
     def __init__(self, directory=None, *, cognition=None, include_examples=True):
         super().__init__(None, cognition=cognition)
         self.directory = Path(directory) if directory else None
+        self.confirmed_receipts = {}
         self.templates = {p.stem: ExperienceCompilerV1().load(p) for p in SPEC_DIR.glob("*.json")}
         self.metadata, self.failures, self.examples, self.save_errors, self.metadata_warnings = {}, {}, set(), {}, {}
         self.meta_path = self.directory / ".product/state.json" if self.directory else None
@@ -278,12 +279,25 @@ class ProductService(ExperienceService):
                 reports = [e for e in runtime.events() if e["etype"] == "tell" and e["payload"].get("listener") == "Player" and e["payload"].get("speaker") == person["id"] and e["payload"].get("category") == "report"]
                 report = reports[-1] if reports else None
                 person["known_report"] = ({"condition": report["payload"]["value"], "as_of": report["payload"]["as_of"],
+                                           "received_at":report["tick"], "origin_observer":report["payload"].get("origin_observer"),
                                            "kind": "testimony", "evidence_ids": [report["event_id"]]} if report else None)
                 person["style"] = {"team_a": "Concise and focused on completing the survey.", "team_b": "Careful about dated instrument evidence.", "team_c": "Attentive to what allocations actually deliver."}[person["id"]]
                 person["reply"] = {"team_a": "Our survey work has a deadline. Please distinguish what you promise us from what the instrument actually delivers.",
                                    "team_b": "I work on the instrument systems. You can ask about the dated report before deciding what to promise.",
                                    "team_c": "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."}[person["id"]]
-                person["actions"] = [{"id": "ask_report", "label": "Ask about the dated report", "action": {"action": "share", "recipient": person["id"]}},
+                if report:
+                    from .guide import clock_label
+                    observed = report['payload'].get('as_of', report['tick'])
+                    condition = report['payload']['value']
+                    nominal = runtime.spec.setting['rules']['capacity']
+                    usable = nominal if condition == 'stable' else max(1, nominal * 2 // 3) if condition == 'fragile' else None
+                    origin = report['payload'].get('origin_observer')
+                    description = f"{usable} usable units" if usable is not None else f"a {condition} condition"
+                    person['reply'] = (f"I observed {description} at {clock_label(observed)}." if origin == person['id']
+                                       else f"The report I shared described {description}, observed at {clock_label(observed)}.")
+                    person['reply_voice'] = 'person'
+                    person['reply_evidence_ids'] = [report['event_id']]
+                person["actions"] = [{"id": "ask_report", "label": "Ask about the dated report", "interaction": "observation", "action": {"action": "share", "recipient": person["id"]}},
                                      {"id": "inspect", "label": "Arrange a direct inspection", "action": {"action": "inspect"}}]
         snapshot = self.public_snapshot(runtime)
         guide = guide_view(snapshot, runtime.commands, runtime.events(), runtime.spec.setting["rules"], meta.get("guide"))
@@ -351,6 +365,30 @@ class ProductService(ExperienceService):
             self._update_meta(ident, seen_revision=revision, last_seen_minute=minute)
         return {"saved": True, "revision": revision}
 
+    def observe(self, ident, data, *, scene=False):
+        from .observation import observe, ParticipantOperationError
+        if set(data) - {'action', 'expected_revision', 'expected_state_hash'}:
+            raise ParticipantOperationError('Unexpected fields in the question.', 'observation_invalid_identity')
+        runtime = self.mutable(ident)
+        result = observe(runtime, data.get('action'), data.get('expected_revision'), data.get('expected_state_hash'))
+        from .participant_copy import event_copy
+        if isinstance(result.get('receipt'), dict) and 'payload' in result['receipt']:
+            result['receipt'] = event_copy(result['receipt'])
+        accepted = self.accepted(ident, result)
+        response = self.game(ident).state() if scene else accepted
+        if scene:
+            try:
+                response['conversation'] = self.game(ident).context(data['action']['recipient'])
+            except ValueError:
+                response['conversation'] = None  # accepted retry may now be away from the speaker
+            receipt = result.get('receipt') or {}
+            category = receipt.get('payload', {}).get('category')
+            text = ('Can you find out whom those six sacks were promised to?' if category == 'rb_dispute_heard'
+                    else 'Here is the account you asked for.' if category == 'rb_evidence' else None)
+            response['reply'] = {'text': text, 'voice': 'person', 'kind': 'speech', 'evidence_ids': [receipt['event_id']]} if text else None
+        return {**response, **{k: result[k] for k in ('outcome', 'observation_id', 'command_index', 'accepted_revision', 'receipt')},
+                **({'metadata_warning': accepted['metadata_warning']} if accepted.get('metadata_warning') else {})}
+
     def review(self, ident, action):
         runtime = self.mutable(ident)
         if not isinstance(action, dict):
@@ -359,7 +397,14 @@ class ProductService(ExperienceService):
             raise ValueError("This round has settled. Advance to the next day before making a new promise or allocation.")
         trial = object.__new__(ExperienceRuntime)
         trial.__dict__ = {**runtime.__dict__, "world": copy.deepcopy(runtime.world), "commands": list(runtime.commands), "journal_path": None}
-        trial._perform("action", copy.deepcopy(action))
+        try:
+            trial._perform("action", copy.deepcopy(action))
+        except ValueError as error:
+            if str(error) == 'Insufficient owned credits' and action.get('action') == 'inspect':
+                cost = runtime.spec.setting['rules']['inspection_cost']
+                available = runtime.world.economy.cash['Player']
+                raise ValueError(f"An inspection costs {cost:g} {'credit' if cost == 1 else 'credits'}. You have {available:g}.") from error
+            raise
         token = secrets.token_hex(12)
         self.proposals[token] = {"id": ident, "hash": runtime.state_hash(), "action": copy.deepcopy(action)}
         if len(self.proposals) > 16:
@@ -367,11 +412,11 @@ class ProductService(ExperienceService):
         summary = {"inspect": "Pay for a direct inspection; its result is disclosed after confirmation.",
                    "share": "Ask for a legitimately retained dated report; its content is disclosed after confirmation.",
                    "commit": "Make this quantity an obligation at the public settlement deadline.",
-                   "allocate": "Commit this allocation. Actual delivery is determined at settlement."}.get(action.get("action"), "Review this supported action before accepting it.")
+                   "allocate": "Fix this allocation for this round. It cannot be edited after confirmation. Actual delivery is determined at settlement."}.get(action.get("action"), "Review the terms before deciding.")
         return {"proposal_id": token, "action": copy.deepcopy(action), "summary": summary,
                 "before": self.participant_metrics(runtime), "after": self.participant_metrics(trial),
                 "revision": len(runtime.commands), "state_hash": runtime.state_hash(), "needs_confirmation": True,
-                "notice": "New observations and private results are never disclosed in a trial preview."}
+                "notice": "The result appears after the choice goes through."}
 
     def accepted(self, ident, result):
         self.save_errors.pop(ident, None)
@@ -388,8 +433,24 @@ class ProductService(ExperienceService):
                 **({"metadata_warning": result["metadata_warning"]} if result.get("metadata_warning") else {})}
 
     def confirm_review(self, ident, proposal_id):
-        self.mutable(ident)
-        return self.accepted(ident, super().confirm(ident, proposal_id))
+        from .observation import ParticipantOperationError
+        runtime = self.mutable(ident)
+        if not isinstance(proposal_id, str):
+            raise ParticipantOperationError('The review is missing. Reopen this choice.', 'review_missing')
+        key = (ident, proposal_id)
+        if key in self.confirmed_receipts:
+            saved = self.confirmed_receipts[key]
+            return {**self.accepted(ident, saved), 'outcome':'already_accepted', 'message':'That action already went through.'}
+        proposal = self.proposals.get(proposal_id)
+        if not proposal or proposal.get('id') != ident:
+            raise ParticipantOperationError('We could not confirm this review’s result. Check your saved choices before trying again.', 'outcome_unknown', outcome='uncertain')
+        if proposal['hash'] != runtime.state_hash():
+            raise ParticipantOperationError('The offer changed. Check the new terms before deciding.', 'offer_changed')
+        result = super().confirm(ident, proposal_id)
+        self.confirmed_receipts[key] = copy.deepcopy(result)
+        if len(self.confirmed_receipts) > 32:
+            self.confirmed_receipts.pop(next(iter(self.confirmed_receipts)))
+        return {**self.accepted(ident, result), 'outcome':'accepted'}
 
     def advance_product(self, ident, minutes, *, mode="compress", protect_known=True):
         runtime = self.mutable(ident)
@@ -459,8 +520,15 @@ class ProductService(ExperienceService):
             if not quantity:
                 return {"clarification": "How many units would you like to promise? You will review it before committing.", "suggestions": ["Ask for the dated report", "Arrange an inspection", "Promise 4 units"]}
             action = {"action": "commit", "recipient": recipient, "quantity": int(quantity.group(1))}
+        elif re.search(r"\b(need|needs|project|projects|request|requests)\b", words):
+            view = self.life(ident)
+            rows = [row['text'] for row in view.get('guide', {}).get('known', {}).get('project_requirements', []) if row.get('actor') == recipient]
+            amount = view['snapshot'].get('requests', {}).get(recipient)
+            request = f"Current request: {amount} capacity units." if amount is not None else "This team has not submitted a request in this round. That is different from requesting zero."
+            return {"reply": "The public project register: " + ' '.join(rows or ["No project requirement is recorded for this team."]) + " " + request,
+                    "kind": "public_record", "language_source": "authored public register"}
         else:
-            return {"clarification": "This offline prototype supports asking for a dated report, arranging an inspection, and reviewing a quantified promise. Ordinary speech is not a commitment.",
+            return {"clarification": "Ask what the team's project needs, request a dated report, arrange an inspection, or review a quantified promise. Ordinary speech is not a commitment.",
                     "suggestions": ["Ask for the dated report", "Arrange an inspection", "Promise 4 units"]}
         return {**self.review(ident, action), "language_source": "offline supported-intent grammar"}
 

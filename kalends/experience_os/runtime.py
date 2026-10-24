@@ -333,6 +333,7 @@ class ExperienceGameFacade:
     """Reuse the shipped dialogue/route protocol against the SAME compiled life."""
     def __init__(self, runtime, cognition=None):
         self.runtime = runtime
+        self.confirmed_receipts = {}
         from kalends_rebirth.ai import Cognition
         from kalends_rebirth.language import Language
         self.legacy = RebirthSession(config=runtime.spec.setting["rules"], language=Language(cognition or Cognition()))
@@ -346,6 +347,8 @@ class ExperienceGameFacade:
         from .participant_copy import game_world_copy
         result = self.sync().state()
         result['world'] = game_world_copy(result['world'])
+        result['command_count'] = len(self.runtime.commands)
+        result['state_hash'] = self.runtime.state_hash()
         return result
 
     def context(self, recipient):
@@ -371,8 +374,12 @@ class ExperienceGameFacade:
                 topic['text'] = ' '.join(event_text(admitted[i]) for i in topic['evidence_ids'])
             topics.append(topic)
         view['topics'] = topics
+        from .observation import is_observation
+        from .participant_copy import participant_context
         view['choices'] = [choice_copy(choice) for choice in view.get('choices', [])]
-        return view
+        for choice in view['choices']:
+            choice['interaction'] = 'observation' if choice.get('enabled', True) and is_observation('pompeii', choice.get('action')) else 'review'
+        return participant_context(self.runtime, recipient, view)
 
     def route(self, data):
         return self.sync().route(data)
@@ -383,17 +390,53 @@ class ExperienceGameFacade:
         from .participant_copy import choice_copy
         # Only the returned prose is copied. The stored exact action/proposal
         # remains the existing engine's authoritative confirmation contract.
-        return {**result, 'interpretations': [choice_copy(i) for i in result.get('interpretations', [])]}
+        output = {**result, 'interpretations': [choice_copy(i) for i in result.get('interpretations', [])]}
+        # Typed questions use the same participant disclosure projection as the
+        # conversation panel. A raw legacy private topic must never leak here.
+        if result.get('reply'):
+            view = self.context(data['recipient'])
+            action = next(iter(result.get('interpretations', [])), {}).get('action', {})
+            topic_id = action.get('topic', result['reply'].get('topic', 'memory'))
+            topic_id = {'history':'memory','supply':'news','plans':'goals','relationship':'memory'}.get(topic_id, topic_id)
+            topic = next((t for t in view.get('topics', []) if t['id'] == topic_id), None)
+            output['reply'] = ({'text':topic['text'], 'evidence_ids':topic.get('evidence_ids', []),
+                                'voice':topic['voice'], 'kind':topic['kind']} if topic else None)
+        output['clarification'] = 'Check the terms, or keep looking.' if output.get('interpretations') else output.get('clarification')
+        return output
 
     def act(self, data):
-        session = self.sync()
-        proposal = session.proposals.get(data.get("proposal_id"))
-        if not proposal or proposal.get("experience_revision") != self.runtime.state_hash():
-            raise ValueError("The situation changed. Review this choice again.")
-        interpretation = next((i for i in proposal["interpretations"] if i["id"] == data.get("interpretation_id")), None)
-        if not interpretation:
-            raise ValueError("Unknown reviewed choice")
-        result = self.runtime.commit("action", interpretation["action"])
-        session.proposals.clear()
+        from .observation import ParticipantOperationError
         from .participant_copy import event_copy
-        return {**self.state(), "receipt": event_copy(result["receipt"]) if isinstance(result.get('receipt'),dict) and 'payload' in result['receipt'] else result.get('receipt')}
+        session = self.sync()
+        token, choice = data.get('proposal_id'), data.get('interpretation_id')
+        if not isinstance(token, str) or not isinstance(choice, str):
+            raise ParticipantOperationError('The review is missing. Reopen this choice.', 'review_missing')
+        key = (token, choice)
+        if key in self.confirmed_receipts:
+            saved = self.confirmed_receipts[key]
+            return {**self.state(), **copy.deepcopy(saved), 'outcome':'already_accepted', 'message':'That action already went through.'}
+        proposal = session.proposals.get(token)
+        if not proposal:
+            raise ParticipantOperationError('We could not confirm this review’s result. Check your saved choices before trying again.', 'outcome_unknown', outcome='uncertain')
+        if proposal.get('experience_revision') != self.runtime.state_hash():
+            raise ParticipantOperationError('The offer changed. Check the new terms before deciding.', 'offer_changed')
+        interpretation = next((i for i in proposal['interpretations'] if i['id'] == choice), None)
+        if not interpretation:
+            raise ParticipantOperationError('This choice was not in the review. Reopen the conversation.', 'review_missing')
+        result = self.runtime.commit('action', interpretation['action'])
+        session.proposals.clear()
+        receipt = event_copy(result['receipt']) if isinstance(result.get('receipt'),dict) and 'payload' in result['receipt'] else result.get('receipt')
+        saved = {'receipt':receipt, 'accepted_revision':len(self.runtime.commands), 'command_index':result['command_index']}
+        recipient = interpretation['action'].get('recipient')
+        if recipient and self.runtime.world._near(recipient):
+            conversation = self.context(recipient)
+            saved['conversation'] = conversation
+            topic_id = interpretation['action'].get('topic', 'memory' if interpretation['action'].get('action') == 'reflect' else None)
+            topic_id = {'history':'memory','supply':'news','plans':'goals','relationship':'memory'}.get(topic_id, topic_id)
+            topic = next((t for t in conversation.get('topics', []) if t['id'] == topic_id), None)
+            saved['reply'] = ({'text':topic['text'], 'evidence_ids':topic.get('evidence_ids', []),
+                              'voice':topic['voice'], 'kind':topic['kind']} if topic else conversation['greeting'])
+        self.confirmed_receipts[key] = copy.deepcopy(saved)
+        if len(self.confirmed_receipts)>32:
+            self.confirmed_receipts.pop(next(iter(self.confirmed_receipts)))
+        return {**self.state(), **saved, 'outcome':'accepted'}

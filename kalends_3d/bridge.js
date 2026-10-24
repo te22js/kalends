@@ -48,12 +48,19 @@ export function projectSnapshot(payload) {
     // This is the server's player-facing market summary, not its operator mind.
     counter_market:pick(w.counter_market,['active','version','title','contracts','nearby_offers','completed_batches']),
   };
-  return {world,mode:'game',...pick(payload,['capabilities','save_version','telemetry_enabled']),language:pick(payload.language,['mode','external_calls'])};
+  return {world,mode:'game',...pick(payload,['capabilities','save_version','telemetry_enabled','command_count']),language:pick(payload.language,['mode','external_calls'])};
 }
 
 export function projectContext(context) {
   if (!context || typeof context.speaker !== 'string') throw new Error('A valid conversation is required.');
-  return pick(context,['speaker','greeting','topics','choices','relationship','dialogue_version','counter_order']);
+  return pick(context,['speaker','greeting','topics','choices','relationship','dialogue_version','counter_order','revision','state_hash']);
+}
+
+export function projectReceipt(receipt){
+  if(!receipt)return null;
+  return {...pick(receipt,['event_id','minute','category','text','title','accepted']),
+    ...(receipt.category?{}:receipt.payload?.category?{category:receipt.payload.category}:{}),
+    ...(receipt.minute!==undefined?{}:Number.isFinite(receipt.tick)?{minute:receipt.tick}:{})};
 }
 
 export class BusyError extends Error {constructor(){super('The previous action is still being saved.');this.name='BusyError';}}
@@ -63,7 +70,7 @@ export class KalendsBridge {
   constructor({fetchImpl=globalThis.fetch?.bind(globalThis),base='',onState=()=>{},onStatus=()=>{},onTiming=()=>{}}={}) {
     if (typeof fetchImpl !== 'function') throw new TypeError('A fetch implementation is required.');
     this.fetchImpl=fetchImpl;this.base=base.replace(/\/$/,'');this.onState=onState;this.onStatus=onStatus;this.onTiming=onTiming;
-    this.snapshot=null;this._pending=null;this._stateEpoch=0;this._conversationEpoch=0;this._proposal=null;this._confirmation=null;
+    this.snapshot=null;this._pending=null;this._stateEpoch=0;this._conversationEpoch=0;this._proposal=null;this._confirmation=null;this._observation=null;
   }
   get pending(){return Boolean(this._pending);}
   get proposal(){return copy(this._proposal);}
@@ -75,7 +82,7 @@ export class KalendsBridge {
       const response=await this.fetchImpl(this.base+path,body===undefined?{cache:'no-store',credentials:'same-origin'}:{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       let value;
       try {value=await response.json();} catch {throw new Error('The local game returned an unreadable response.');}
-      if (!response.ok || value?.error) throw new Error(value?.error||`Local game request failed (${response.status}).`);
+      if (!response.ok || value?.error) {const error=new Error(value?.error||`Local game request failed (${response.status}).`);error.code=value?.code;error.status=response.status;throw error;}
       ok=true;return value;
     } finally {
       this.onTiming({path,duration_ms:(globalThis.performance?.now?.()??Date.now())-begin,ok});
@@ -87,8 +94,9 @@ export class KalendsBridge {
     if(payload?.mode==='lab')payload=await this.request('/api/mode',{mode:'game'});
     const projected=projectSnapshot(payload);this.snapshot=projected;this.onState(projected);return projected;
   }
-  _exclusive(label,operation,{invalidateConversation=true}={}) {
+  _exclusive(label,operation,{invalidateConversation=true,reconcile=false}={}) {
     if(this.pending)return Promise.reject(new BusyError());
+    if(!reconcile&&(this.confirmationUncertain||this.observationUncertain))return Promise.reject(new Error('Check the previous answer or saved choice before making another change.'));
     if(invalidateConversation)this.cancelConversation();
     this._stateEpoch++;
     const marker={label};this._pending=marker;this.onStatus({pending:true,label});
@@ -124,21 +132,70 @@ export class KalendsBridge {
       this._proposal=proposal;return copy(proposal);
     },{invalidateConversation:false});
   }
+  observe(context, choice) {
+    if(this.confirmationUncertain)return Promise.reject(new Error('Check the previous saved choice before asking another question.'));
+    if(choice?.interaction!=='observation'||!choice.enabled||!choice.action) return Promise.reject(new Error('Choose an available question.'));
+    if(!Number.isInteger(context?.revision)||typeof context?.state_hash!=='string') return Promise.reject(new StaleResponseError());
+    const body={action:copy(choice.action),expected_revision:context.revision,expected_state_hash:context.state_hash};
+    const key=JSON.stringify(body);
+    if(this._observation?.key===key&&this._observation.promise)return this._observation.promise;
+    if(this.pending)return Promise.reject(new BusyError());
+    if(this._observation?.uncertain&&this._observation.key!==key)return Promise.reject(new Error('First check whether your previous question went through.'));
+    return this._observeBody(body,key);
+  }
+  get observationUncertain(){return this._observation?.uncertain===true;}
+  retryObservation(){
+    const record=this._observation;
+    if(!record?.uncertain)return Promise.reject(new Error('There is no question awaiting confirmation.'));
+    if(record.promise)return record.promise;
+    return this._observeBody(record.body,record.key);
+  }
+  _observeBody(body,key){
+    const record={body:copy(body),key,uncertain:false,promise:null};
+    const promise=this._exclusive('Listening',async()=>{
+      try {
+        const payload=await this.request('/api/observe',body);
+        const result=await this._accept(payload);
+        return {...result,receipt:projectReceipt(payload.receipt),reply:copy(payload.reply),conversation:payload.conversation?projectContext(payload.conversation):null,outcome:payload.outcome};
+      } catch(error) {
+        // A transport failure cannot tell us whether the journal accepted it.
+        // Keep the exact original observation for the server's reconciliation.
+        record.uncertain=!error.status||error.status>=500;
+        throw error;
+      } finally {record.promise=null;if(!record.uncertain&&this._observation===record)this._observation=null;}
+    },{reconcile:true});
+    record.promise=promise;this._observation=record;return promise;
+  }
+  get confirmationUncertain(){return this._confirmation?.uncertain===true;}
+  retryConfirmation(){
+    const record=this._confirmation;
+    if(!record?.uncertain)return Promise.reject(new Error('There is no choice awaiting confirmation.'));
+    if(record.promise)return record.promise;
+    return this._confirmBody(record.body,record.key);
+  }
   confirm(proposalId,interpretationId='0') {
     const key=proposalId+':'+interpretationId;
-    if(this._confirmation?.key===key)return this._confirmation.promise;
+    if(this._confirmation?.key===key)return this._confirmation.promise||this.retryConfirmation();
     if(this.pending)return Promise.reject(new BusyError());
+    if(this.confirmationUncertain||this.observationUncertain)return Promise.reject(new Error('Check the previous answer or saved choice before making another change.'));
     if(this._proposal?.proposal_id!==proposalId)return Promise.reject(new StaleResponseError());
     if(!this._proposal.interpretations.some(option=>option.id===interpretationId))return Promise.reject(new Error('Review the response you want to confirm.'));
     this._proposal=null;
-    const promise=this._exclusive('Saving choice',async()=>{
-      const payload=await this.request('/api/act',{proposal_id:proposalId,interpretation_id:interpretationId});
-      const result=await this._accept(payload);
-      return {...result,receipt:pick(payload.receipt,['event_id','minute','category','text','title','accepted']),reply:copy(payload.reply),conversation:payload.conversation?projectContext(payload.conversation):null};
-    });
-    const record={key,promise};this._confirmation=record;
-    promise.finally(()=>{if(this._confirmation===record)this._confirmation=null;}).catch(()=>{});
-    return promise;
+    return this._confirmBody({proposal_id:proposalId,interpretation_id:interpretationId},key);
+  }
+  _confirmBody(body,key){
+    const record={body:copy(body),key,uncertain:false,promise:null};
+    const promise=this._exclusive('Checking saved choice',async()=>{
+      try {
+        const payload=await this.request('/api/act',body);
+        const result=await this._accept(payload);
+        return {...result,receipt:projectReceipt(payload.receipt),reply:copy(payload.reply),conversation:payload.conversation?projectContext(payload.conversation):null,outcome:payload.outcome};
+      } catch(error) {
+        record.uncertain=!error.status||error.status>=500||error.code==='outcome_unknown';
+        throw error;
+      } finally {record.promise=null;if(!record.uncertain&&this._confirmation===record)this._confirmation=null;}
+    },{reconcile:true});
+    record.promise=promise;this._confirmation=record;return promise;
   }
   async route(body) {
     const value=await this.request('/api/route',pick(body,['x','y','location']));

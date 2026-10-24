@@ -18,9 +18,9 @@ function harness(){
  const button={textContent:'',attributes:{},setAttribute(key,value){this.attributes[key]=value;}};
  const S={live:false,liveTimer:null,liveEpoch:0,started:true,nav:{active:false},selected:null,renderer:{remaining:()=>remaining}};
  const bridge={pending:false,advance:(...args)=>{requests.push(args);return advance(...args);}};
- const sandbox={S,bridge,$:()=>button,dialogOpen:()=>dialog,fail:error=>errors.push(error),setTimeout:(callback,delay)=>{const id=++timerId;timers.set(id,{callback,delay});return id;},clearTimeout:id=>timers.delete(id)};
+ const sandbox={document:{hidden:false},S,bridge,$:()=>button,dialogOpen:()=>dialog,fail:error=>errors.push(error),setTimeout:(callback,delay)=>{const id=++timerId;timers.set(id,{callback,delay});return id;},clearTimeout:id=>timers.delete(id)};
  vm.createContext(sandbox);vm.runInContext(functions,sandbox,{filename:'main.js:live-scheduler'});
- return{S,bridge,timers,requests,errors,button,setLive:sandbox.setLive,
+ return{document:sandbox.document,S,bridge,timers,requests,errors,button,setLive:sandbox.setLive,
   setAdvance:fn=>advance=fn,setDialog:value=>dialog=value,setRemaining:value=>remaining=value,
   run(id=S.liveTimer){const timer=timers.get(id);if(!timer)throw Error('No timer '+id);timers.delete(id);return timer.callback();},
  };
@@ -77,4 +77,13 @@ for(const reason of ['not started','API pending','navigation active','conversati
 test('a failed save stops Live and reports once without automatic POST retry',async()=>{
  const h=harness(),failure=Error('Save failed');h.setAdvance(()=>Promise.reject(failure));h.setLive(true);await h.run();
  assert.equal(h.S.live,false);assert.equal(h.timers.size,0);assert.deepEqual(h.requests,[[1,'live']]);assert.deepEqual(h.errors,[failure]);
+});
+
+test('reading and host overlays pause the selected Live mode and resume it only when all scopes close',async()=>{
+ const h=harness();h.setLive(true);h.S.selected='Sabina';await h.run();assert.equal(h.requests.length,0);assert.equal(h.S.live,true);
+ h.S.selected=null;h.S.hostPaused=true;await h.run();assert.equal(h.requests.length,0);
+ h.S.hostPaused=false;h.document.hidden=true;await h.run();assert.equal(h.requests.length,0);
+ h.document.hidden=false;h.bridge.confirmationUncertain=true;await h.run();assert.equal(h.requests.length,0);
+ h.bridge.confirmationUncertain=false;await h.run();assert.deepEqual(h.requests,[[1,'live']]);
+ h.setLive(false);assert.equal(h.timers.size,0);
 });

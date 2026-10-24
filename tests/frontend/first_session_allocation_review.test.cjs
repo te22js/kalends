@@ -19,14 +19,14 @@ async function review(report,allocation={team_a:4,team_b:4,team_c:4}) {
 test('allocation review repeats the total and admitted dated capacity before explicit confirmation',async()=>{
  const h=await review({usable:8,as_of:0,kind:'testimony',source:'Mira'}),markup=h.node('#review-content').innerHTML;
  assert.equal(h.node('#review-dialog').open,true);
- for(const phrase of ['Total allocation: 12 of 12 rated units.','8 usable units','Day 1 · 00:00 (world minute 0)','may be out of date','exceeds the reported usable capacity by 4 units','If that condition still holds','Amir → Mira → Lin','Settlement: Day 1 · 23:59','Delivery has not happened yet.'])assert.ok(markup.includes(phrase),phrase);
- assert.equal(h.node('#confirm-choice').disabled,false);
+ for(const phrase of ['Total allocation: 12 of 12 rated units.','8 usable units','Day 1 · 00:00','This is an earlier observation; conditions may have changed.','exceeds the reported usable capacity by 4 units','If that condition still holds','Amir → Mira → Lin','Settlement: Day 1 · 23:59','Delivery has not happened yet.'])assert.ok(markup.includes(phrase),phrase);
+ assert.doesNotMatch(markup,/world minute|admitted/);assert.equal(h.node('#confirm-choice').disabled,false);
  assert.equal(h.requests.some(r=>r.url.endsWith('/confirm')),false);
  assert.equal(h.life.life.revision,0);
 });
 
 test('allocation review uses public guide evidence only and handles no report or missing date honestly',async()=>{
- const unknown=await review(null);assert.match(unknown.node('#review-content').innerHTML,/Usable capacity is unconfirmed in your admitted evidence/);assert.doesNotMatch(unknown.node('#review-content').innerHTML,/8 units|world minute 0|exceeds the reported/);
+ const unknown=await review(null);assert.match(unknown.node('#review-content').innerHTML,/You have not received a usable-capacity report yet/);assert.doesNotMatch(unknown.node('#review-content').innerHTML,/8 units|world minute 0|exceeds the reported/);
  const undated=await review({usable:8,kind:'direct observation'},{team_a:4,team_b:4,team_c:0});assert.match(undated.node('#review-content').innerHTML,/Your direct inspection described/);assert.match(undated.node('#review-content').innerHTML,/observation date unavailable/);assert.doesNotMatch(undated.node('#review-content').innerHTML,/world minute 0|exceeds the reported/);
 });
 
@@ -34,9 +34,9 @@ test('invalid allocation entries suppress totals and reassuring report compariso
  const h=await shellHarness({initialLife:initialLife({usable:8,as_of:0,kind:'testimony'})});
  for(const value of [-1,1.5,'',13,'not a number']){
   const allocation={team_a:value,team_b:4,team_c:4};await h.inputAllocation(allocation);
-  assert.equal(allocationTotal(allocation),null);assert.match(h.node('#allocation-total').innerHTML,/Total unavailable/);assert.match(h.node('#allocation-total').innerHTML,/whole number from 0 to 12/);assert.doesNotMatch(h.node('#allocation-total').innerHTML,/fits your last dated report|Total:|exceeds the 8/);
+  assert.equal(allocationTotal(allocation),null);assert.match(h.node('#allocation-total').innerHTML,/Total unavailable/);assert.match(h.node('#allocation-total').innerHTML,/whole number from 0 to 12/);assert.doesNotMatch(h.node('#allocation-total').innerHTML,/fits the 8 units in your report|Total:|exceeds the 8/);
  }
- await h.inputAllocation({team_a:0,team_b:4,team_c:4});assert.match(h.node('#allocation-total').innerHTML,/Total: 8 of 12/);assert.match(h.node('#allocation-total').innerHTML,/fits your last dated report/);
+ await h.inputAllocation({team_a:0,team_b:4,team_c:4});assert.match(h.node('#allocation-total').innerHTML,/Total: 8 of 12/);assert.match(h.node('#allocation-total').innerHTML,/fits the 8 units in your report/);
  assert.equal(h.requests.some(r=>/\/(propose|confirm)$/.test(r.url)),false);
 });
 
@@ -44,7 +44,7 @@ test('next-round review preserves the prior settlement without claiming another 
  const initial=initialLife(null);initial.snapshot.minute=1439;initial.snapshot.round_closed=true;
  const h=await shellHarness({initialLife:initial});await h.clickData({guideAction:'next_round'});
  const markup=h.node('#known-deadlines').innerHTML;
- assert.equal(h.node('#time-dialog').open,true);assert.match(markup,/Advance from Day 1 · 23:59 to Day 2 · 00:00: 1 world minute\./);assert.match(markup,/No open promise is recorded for the upcoming step\. The previous settlement remains in your history\./);assert.doesNotMatch(markup,/Finishing still executes/);assert.equal(h.requests.some(r=>r.url.endsWith('/advance')),false);
+ assert.equal(h.node('#time-dialog').open,true);assert.match(markup,/Advance from Day 1 · 23:59 to Day 2 · 00:00: 1 minute\./);assert.match(markup,/No open promise is recorded for the upcoming step\. The previous settlement remains in your history\./);assert.doesNotMatch(markup,/Finishing still executes/);assert.equal(h.requests.some(r=>r.url.endsWith('/advance')),false);
 });
 
 test('settled allocation summary uses recorded delivery and drops prospective review advice',async()=>{

@@ -27,7 +27,7 @@ SOURCE_FILES = tuple(map(Path, (
     "scripts/render_first_session_copy.py", "kalends/experience_os/product.py",
     "kalends/experience_os/guide.py", "kalends/experience_os/history_cards.py",
     "kalends/experience_os/history.py", "kalends/experience_os/runtime.py",
-    "kalends/experience_os/participant_copy.py", "kalends_rebirth/language.py",
+    "kalends/experience_os/participant_copy.py", "kalends/experience_os/observation.py", "kalends_rebirth/language.py",
     "kalends_rebirth/server.py", "kalends_rebirth/scenario.py",
     "kalends_rebirth/world.py", "kalends/pompeii/world.py")))
 
@@ -94,6 +94,8 @@ def projected_copy(data, surface="guide", *, card_id=None):
         for choice in data.get("choices", []):
             for key in ("label", "description", "cost", "consequence", "reason"):
                 blocks += _block("Offered choice · " + key, choice.get(key))
+    elif surface == "reconciliation":
+        blocks += _block("Result", data.get("message", "That action already went through."))
     elif surface == "review":
         for key in ("summary", "notice", "clarification"):
             blocks += _block(key.title(), data.get(key))
@@ -211,6 +213,9 @@ class ReviewRun:
         self.act(s, ident, {"action": "support_market", "recipient": "Sabina"})
         self.record("Actual market-route payment, delivery and relationship result", s, ident)
         self.record("Story after actual delivery", s, ident, surface="story")
+        self.walk_to(s, ident, "Sabina")
+        self.record("Sabina · grounded response after the delivery", s, ident,
+                    data=s.game(ident).context("Sabina"), surface="conversation")
         self.record("Continue after optional reflection acknowledgement", s, ident,
             data=self.ack(s, ident, "reflection_done"))
         for card in s.life(ident)["guide"]["history_cards"]:
@@ -251,8 +256,12 @@ class ReviewRun:
         self.record("Actual Observatory consequence story", s, ident, surface="story")
         self.record("Optional reflection, without a comprehension claim", s, ident,
             data=self.ack(s, ident, "reflection_done"))
-        self.error("Double confirmation of an accepted allocation", s, ident,
-            lambda: s.confirm_review(ident, review["proposal_id"]))
+        before = s.get(ident).state_hash(), len(s.get(ident).commands)
+        duplicate = s.confirm_review(ident, review["proposal_id"])
+        assert duplicate['outcome'] == 'already_accepted'
+        assert before == (s.get(ident).state_hash(), len(s.get(ident).commands))
+        self.record("Double confirmation reconciles the accepted allocation", s, ident,
+                    data=duplicate, surface="reconciliation", note="Original receipt returned; no second allocation executed.")
         self.error("Closed-round allocation", s, ident,
             lambda: s.review(ident, {"action": "allocate", "allocation": {"team_a": 0, "team_b": 0, "team_c": 0}}))
         s.advance_product(ident, 1, protect_known=False)
@@ -260,6 +269,9 @@ class ReviewRun:
 
         edge = self.service("observatory-quantities")
         ident = edge.start("shared_observatory", guided=True)["life"]["id"]
+        assert not edge.life(ident)['snapshot']['round_closed']
+        self.error("Open-round zero promise is rejected without a commitment", edge, ident,
+            lambda: edge.review(ident, {"action":"commit", "recipient":"team_b", "quantity":0}))
         self.act(edge, ident, {"action": "commit", "recipient": "team_a", "quantity": 1})
         self.record("Actual singular promise and missing optional report", edge, ident)
         self.act(edge, ident, {"action": "allocate", "allocation": {"team_a": 1, "team_b": 0, "team_c": 0}})
@@ -272,7 +284,7 @@ class ReviewRun:
             self.act(edge, ident, {"action": "inspect"})
         self.error("Actual exhausted-credit inspection error", edge, ident,
             lambda: edge.review(ident, {"action": "inspect"}))
-        self.error("Invalid zero promise is different from no promise", edge, ident,
+        self.error("Closed-round zero promise is rejected because the round settled", edge, ident,
             lambda: edge.review(ident, {"action": "commit", "recipient": "team_b", "quantity": 0}))
 
     def formatting(self):

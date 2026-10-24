@@ -32,3 +32,7 @@ include = ["kalends*"]
 
 "kalends_rebirth" = ["static/*.html", "static/*.css", "static/*.js", "static/assets/*.png", "static/assets/*.json"]
 "kalends.experience_os" = ["static/*.html", "static/*.css", "static/*.js"]
+
+# Supplied design-reference tests under docs are evidence, not the app suite.
+[tool.pytest.ini_options]
+testpaths = ["tests"]

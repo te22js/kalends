@@ -15,6 +15,7 @@ from .product import meaningful_command, ProductService, TEMPLATES
 from .server import ROOT, STATIC, make_handler
 
 ARTIFACTS = {
+    "continuity": ROOT / "docs/continuity_release/RESEARCH_RESULTS.md",
     "cognition": ROOT / "docs/experience_os/RESEARCH_RESULTS.md",
     "lives": ROOT / "results/experience_os/life_v1/REPORT.md",
     "next-phase": ROOT / "docs/next_phase/RESEARCH_REPORT.md",
@@ -91,6 +92,7 @@ def make_product_handler(service):
                         if path == "/product/api/start": result = service.start(data.get("template_id"), guided=data.get("guided", False), practice=data.get("practice", False))
                         elif path == "/product/api/resume": result = service.resume(ident)
                         elif path == "/product/api/propose": result = service.review(ident, data.get("action"))
+                        elif path == "/product/api/observe": result = service.observe(ident, {k:v for k,v in data.items() if k != "id"})
                         elif path == "/product/api/confirm": result = service.confirm_review(ident, data.get("proposal_id"))
                         elif path == "/product/api/advance": result = service.advance_product(ident, data.get("minutes"), mode=data.get("mode", "compress"), protect_known=data.get("protect_known", True))
                         elif path == "/product/api/seen": result = service.seen(ident, data.get("revision"))
@@ -112,6 +114,7 @@ def make_product_handler(service):
                     ident = data.pop("experience", query.get("experience", [default])[0])
                     if path.startswith("/api/"):
                         game = service.game(ident)
+                        if path == "/api/observe": return self.send(200, service.observe(ident, data, scene=True))
                         if path == "/api/route": return self.send(200, game.route(data))
                         if path == "/api/propose":
                             service.mutable(ident)
@@ -175,7 +178,7 @@ def make_product_handler(service):
                                            "code": "guide_metadata_save_failed", "save_failed": False})
                 if isinstance(error, OSError) and ident in service.worlds:
                     service.save_errors[ident] = "The change could not be saved. The previous accepted world is preserved. Reload its current state before deciding what to do next."
-                return self.send(400, {"error": str(error)[:500], "save_failed": isinstance(error, OSError), "retry_policy": "Read the current life before reviewing again. Never automatically resubmit a choice."})
+                return self.send(400, {"error": str(error)[:500], "code": getattr(error, "code", "operation_rejected"), "outcome": getattr(error, "outcome", "not_saved" if isinstance(error, OSError) else "rejected"), "save_failed": isinstance(error, OSError), "retry_policy": "Read the current life before reviewing again. Never automatically resubmit a choice."})
 
         def studio(self, data, *, compile):
             # Finite authored template editor, not unconstrained generation.

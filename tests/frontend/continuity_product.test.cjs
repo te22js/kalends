@@ -78,7 +78,7 @@ test('cancelled review records only a fixed decline category and acceptance does
 });
 
 test('consequence views require a displayed consequence, and later same-tab returns show new saved changes',async()=>{
-  const h=await shellHarness({initialLife:{telemetry:{opt_in:true,meaningful_revision:0}}});await h.clickId('story-button');assert.equal(h.events().filter(e=>e.event==='consequence_viewed').length,0);await h.clickId('close-story');
+  const h=await shellHarness({initialLife:{telemetry:{opt_in:true,meaningful_revision:0}}});await h.scene({kind:'kalends:scene',request_id:'view',status:'ok',view:{started:true}});await h.clickId('story-button');assert.equal(h.events().filter(e=>e.event==='consequence_viewed').length,0);await h.clickId('close-story');
   await h.navigate('/your-worlds');h.life.life.revision=1;h.life.history.chapters=[{title:'A result',kind:'consequence',beats:[{title:'Recorded delivery',kind:'consequence'}]}];h.life.return_summary={changes:[{kind:'consequence',text:'A saved delivery changed.'}]};await h.navigate('/lives/life_a');
   assert.match(h.node('#world-notice').innerHTML,/A saved delivery changed/);assert.equal(h.events().find(e=>e.event==='return_resumed').reason,'return');
   assert.ok(h.events().some(e=>e.event==='consequence_viewed'&&e.reason==='return'));await h.clickId('story-button');assert.ok(h.events().some(e=>e.event==='consequence_viewed'&&e.reason==='history'));
@@ -125,6 +125,6 @@ test('beginning a new Observatory life skips the return notice but a later retur
   await h.navigate('/your-worlds');await h.navigate('/lives/life_a');assert.equal(h.node('#world-notice').hidden,false);assert.match(h.node('#world-notice').innerHTML,/Your place is still here/);
 });
 
-test('opening an existing zero-choice life still offers its saved-place return notice',async()=>{
-  const h=await shellHarness();assert.equal(h.life.life.revision,0);assert.equal(h.node('#world-notice').hidden,false);assert.match(h.node('#world-notice').innerHTML,/Your place is still here/);
+test('a fresh Pompeii tab delegates saved arrival to the scene instead of covering its Continue control',async()=>{
+  const h=await shellHarness();assert.equal(h.life.life.revision,0);assert.equal(h.node('#world-notice').hidden,true);assert.equal(h.requests.some(r=>/\/(confirm|advance|observe)$/.test(r.url)),false);
 });

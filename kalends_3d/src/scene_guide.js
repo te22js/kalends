@@ -48,7 +48,7 @@ export function knownGuideTarget(guide,world,isNear=()=>false){
 
 export function sceneActivity(actor,{moving=false,talking=false}={}){
   if(talking)return 'In conversation';
-  if(moving)return 'Walking · recorded movement';
+  if(moving)return 'Walking';
   const activity=string(actor?.activity,150);
   return activity?activity.charAt(0).toUpperCase()+activity.slice(1):'At this place';
 }
@@ -63,7 +63,7 @@ export function admittedTopics(context,world){
 
 const OPENINGS=new Map([
   ['Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed.',
-    'I paid Marcus for flour for my food counter. The household also has a claim on the cart. Hear our accounts before deciding whether to help.'],
+    'I paid Marcus for flour for my counter. Now the household is claiming the cart. Can you find out what happened?'],
   ['The order was ready at first light. That is what my message said. Ready is not the same as carried to your door.',
     'My message said the flour was ready at first light. That did not mean it had been delivered. Ask to check the loading account before drawing a conclusion.'],
   ['I was told to repeat the quantity, not argue about it. If you want the instructions, ask plainly.',
@@ -73,11 +73,11 @@ const OPENINGS=new Map([
   ['A cart can stand still all morning while people make speeches. Someone must still bake.',
     'I bake and sell bread. I need flour and reliable help. You can ask about my work or review an available offer.'],
   ['If you want work, there is work here. The household pays for extra help. Do not mistake that for my freedom to leave.',
-    'I work in this fullery under constraint. The household pays for extra help, but I am not free to leave. Ask about the work before accepting a paid shift.'],
+    'I am enslaved in this fullery. I cannot leave. The household pays free workers for extra help; you can ask about a shift.'],
 ]);
 export function greetingCopy(value){const text=typeof value==='string'?value:value?.text||'';return OPENINGS.get(text)||text;}
 export function topicCopy(topic){
-  if(topic?.id==='memory'&&topic.text==='We have no consequential shared dealing in my retained memory yet.')return 'I do not remember discussing a past dealing with you.';
+  if(topic?.id==='memory'&&topic.text==='We have no consequential shared dealing in my retained memory yet.')return 'I don’t remember us doing business before.';
   if(topic?.id==='goals'&&typeof topic.text==='string'){
     const [aim,...rest]=topic.text.split('. For now, I must ');
     if(rest.length)return 'I need to '+aim.charAt(0).toLowerCase()+aim.slice(1)+'. For now, I must '+rest.join('. For now, I must ');
@@ -86,18 +86,20 @@ export function topicCopy(topic){
 }
 export const topicLabel=topic=>({role:'What is your work here?',goals:'What do you need now?',memory:'Do you remember our dealings?',news:'Do you have a dated report?'}[topic?.id]||string(topic?.label,160));
 export function quantityCopy(value,singular,plural=singular+'s'){
-  return Number.isFinite(value)?value+' '+(value===1?singular:plural):'Quantity not recorded';
+  return Number.isFinite(value)?value+' '+(value===1?singular:plural):'Quantity unknown';
 }
 export function contractCopy(contract){return (contract.delivered??0)+' of '+quantityCopy(contract.quantity??2,'flour unit')+' delivered.';}
 export function choiceDetails(choice){
-  const description=string(choice?.description).trim(),cost=string(choice?.cost,600).trim(),reason=string(choice?.reason).trim();
+  const description=string(choice?.description).trim(),cost=string(choice?.cost,600).trim().replace(/world minutes?/g,match=>match.endsWith('s')?'minutes':'minute'),reason=string(choice?.reason).trim();
   const sentence=value=>value&&!/[.!?…]$/.test(value)?value+'.':value,details=[];
   if(description&&description!==cost)details.push({kind:'description',text:sentence(description)});
   if(cost)details.push({kind:'cost',text:sentence('Cost: '+cost)});
   if(choice?.enabled===false&&reason&&reason!==description&&reason!==cost)details.push({kind:'reason',text:sentence(reason.startsWith('Needs ')?'This action needs '+reason.slice(6):reason)});
   return details;
 }
-export function confirmationLabel(action,speaker){
+export function confirmationLabel(action,speaker,cost){
+  const payment=typeof cost==='string'?cost.match(/^(\d+) coins?\b/):null;
+  if(action==='support_market'&&payment)return 'Pay '+payment[1]+(Number(payment[1])===1?' coin':' coins');
   return ({hear_dispute:'Hear '+speaker+'’s account',examine_receipt:'Copy this account',examine_tablet:'Copy these instructions',
     verify_cart:'Pay for this check',inspect:'Pay for this inspection',work:'Start this shift',decline_dispute:'Leave the decision to the buyers',
     reflect:'Ask about our dealings',support_market:'Confirm arrangement',guarantee_household:'Confirm arrangement',mediate:'Confirm arrangement',
@@ -127,7 +129,7 @@ export function layoutSceneLabels(labels,width,height){
 export function timeReview(world,minutes){
   const from=Number(world?.minute)||0,to=from+minutes,known=[];
   for(const c of world?.player?.commitments||[]){const due=Number(c.deadline??c.due);
-    if(c.status==='open'&&Number.isFinite(due)&&due>=from&&due<=to)known.push({at:due,title:string(c.title||c.id||'Your recorded commitment',200)});}
+    if(c.status==='open'&&Number.isFinite(due)&&due>=from&&due<=to)known.push({at:due,title:string(c.title||c.id||'Your commitment',200)});}
   const deadline=world?.story?.deadline;
   if(Number.isFinite(deadline)&&deadline>=from&&deadline<=to&&['unresolved','awaiting_stock','committed'].includes(world?.story?.stage))
     known.push({at:deadline,title:'The disputed delivery reaches its decision deadline.'});
