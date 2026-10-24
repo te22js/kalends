@@ -1,0 +1,73 @@
+{
+  "origin": "https://unloader-cheek-pond.ngrok-free.dev",
+  "cookie_session": "none",
+  "forged_identity_headers": true,
+  "checks": [
+    {
+      "path": "/",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/product/api/catalog",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/product/app.js",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/immersion-assets/characters/characters.json",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/research",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/studio",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/lab/x",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/os/catalog",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/product/api/trace",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/access.json",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    },
+    {
+      "path": "/.git/config",
+      "status": 302,
+      "redirect_host": "idp.ngrok.com",
+      "requires_oauth": true
+    }
+  ]
+}

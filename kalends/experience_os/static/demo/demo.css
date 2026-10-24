@@ -1,0 +1,7 @@
+/* UI affordances are paired with an independent server route allowlist. */
+[hidden]{display:none!important}
+.demo-banner{background:#302d26;color:#fff3d7;padding:7px 16px;font:12px/1.5 system-ui;text-align:center}
+body.in-world .demo-banner{position:fixed;bottom:0;left:0;right:0;z-index:100;pointer-events:none;font-size:10px;padding:2px}
+#diagnostics,#menu-lab,[data-practice],[data-story-tab="reflect"],[data-bookmark],a[href="/research"],a[href^="/lab/"],a[href^="/studio"],a[href$="/reflect"]{display:none!important}
+
+html body .site-header nav a[hidden]{display:none!important}

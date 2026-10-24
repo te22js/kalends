@@ -1,0 +1,139 @@
+{
+  "origin": "https://unloader-cheek-pond.ngrok-free.dev",
+  "cookie_session": "none",
+  "forged_identity_headers": true,
+  "mode": "public-link",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 200
+    },
+    {
+      "path": "/product/api/catalog",
+      "status": 200,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 200
+    },
+    {
+      "path": "/product/app.js",
+      "status": 200,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 200
+    },
+    {
+      "path": "/immersion-assets/characters/characters.json",
+      "status": 200,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 200
+    },
+    {
+      "path": "/research",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/studio",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/lab/x",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/os/catalog",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/trace",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/access.json",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404,
+      "redirect_host": null,
+      "requires_oauth": false,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/lab",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/studio/compile",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/studio/validate",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/fork",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/practice",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/annotation",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/telemetry",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/export",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    },
+    {
+      "path": "/product/api/admin",
+      "method": "POST",
+      "status": 404,
+      "expected_status": 404
+    }
+  ]
+}

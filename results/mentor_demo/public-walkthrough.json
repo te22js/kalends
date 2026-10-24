@@ -1,0 +1,60 @@
+{
+  "origin": "https://unloader-cheek-pond.ngrok-free.dev",
+  "kind": "agent browser walkthrough, not a human playtest",
+  "lives": [
+    {
+      "id": "observatory_c41a25f00cd4",
+      "accepted_commands": 3,
+      "is_qa": true
+    },
+    {
+      "id": "pompeii_c0e8f5cd3eca",
+      "accepted_commands": 3,
+      "is_qa": true
+    },
+    {
+      "id": "shared_observatory",
+      "accepted_commands": 0,
+      "is_qa": true
+    },
+    {
+      "id": "pompeii_life",
+      "accepted_commands": 0,
+      "is_qa": true
+    }
+  ],
+  "pompeii": [
+    "guided begin",
+    "hear Sabina",
+    "read wax account early",
+    "review delivery",
+    "cancel",
+    "review again",
+    "accept 3 coin delivery",
+    "see 4 sacks to Sabina and 2 to Felix",
+    "complete review"
+  ],
+  "observatory": [
+    "guided begin",
+    "read request",
+    "receive Mira report: 8 units",
+    "draft 4/4/4",
+    "review warning",
+    "cancel",
+    "review and confirm",
+    "skip optional promise",
+    "review settlement",
+    "run",
+    "see 4/4/0",
+    "skip reflection",
+    "reload saved 23:59 result"
+  ],
+  "clients": [
+    "public Chrome: anonymous notice, Google OAuth before requested removal, public shell and loaded 3D after removal",
+    "public in-app browser: both full guided routes"
+  ],
+  "remaining": [
+    "Initial Chrome frame opening was slow; standalone scene and later embedded scene reached ready. No measured load-time claim.",
+    "No human mentor playtest conducted."
+  ]
+}

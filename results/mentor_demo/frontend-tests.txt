@@ -1,0 +1,47 @@
+✔ allocation review repeats the total and admitted dated capacity before explicit confirmation (26.688125ms)
+✔ allocation review uses public guide evidence only and handles no report or missing date honestly (7.879666ms)
+✔ invalid allocation entries suppress totals and reassuring report comparisons (3.689417ms)
+✔ next-round review preserves the prior settlement without claiming another execution (2.582292ms)
+✔ settled allocation summary uses recorded delivery and drops prospective review advice (2.289417ms)
+✔ homepage and world details explain the role, real actions, guidance and fiction plainly (14.898917ms)
+✔ guided and unguided starts send an explicit preference without confirming a game action (10.7475ms)
+✔ guide acknowledgements and on/off/resume remain metadata-only and render server progress (7.619917ms)
+✔ an explicit free question admits one observation without pre-click disclosure or a review (3.580708ms)
+✔ a delayed free answer prevents a second observation and keeps undisclosed state private (1.690833ms)
+✔ allocation totals use admitted dated evidence and keep no-promise distinct from explicit zero (2.036833ms)
+✔ finish-round review explains the exact target, saved allocation, evidence and obligations before advancing (3.051167ms)
+✔ actual result shows all four quantities and never invents an unmade promise or a retry outcome (3.050208ms)
+✔ a later open round keeps the previous result but does not invite skipping the active round (1.195667ms)
+✔ history cards use specific evidence labels, safe sources and an explicit metadata save (2.005334ms)
+✔ unavailable history cards cannot be saved by forged UI requests (0.839959ms)
+✔ Help and notebook pause the scene and close without remounting it (1.551833ms)
+✔ optional learning preference changes only guide metadata (0.754208ms)
+✔ help and invalid-action telemetry stay optional and carry fixed categories only (4.286208ms)
+✔ a practice request creates a separate life through the dedicated endpoint without replaying the original (4.793417ms)
+✔ one guided Observatory round uses real action handlers and never auto-promises or advances (20.269459ms)
+✔ unavailable historical learning remains optional and learn-off accepts the server’s next step (3.036375ms)
+✔ unsupported language records a fixed invalid-loop category without storing the utterance (2.243ms)
+✔ direct inspection and copied testimony retain their actual evidence type and practice stays labelled (3.440333ms)
+✔ quantity and old return sentences preserve zero, singular, plural and punctuation (0.915167ms)
+✔ missing requests and allocations are not displayed as explicit zero records (9.374458ms)
+✔ report age is explicit without describing a current observation as old (4.64825ms)
+✔ accepted allocation quantities override stale tab drafts in every saved summary (6.955ms)
+✔ an incomplete historical result preserves missing quantities instead of manufacturing zero (2.396417ms)
+✔ a stale free question is rejected without installing an answer or retrying automatically (1.73475ms)
+✔ a paid inspection still reviews the actual fee and cancellation admits no report (3.094625ms)
+✔ repeated speech submission while interpretation is pending cannot admit the same question twice (25.709292ms)
+✔ notebook comparison does not turn a spoken account into a copied document (8.072ms)
+✔ each team exposes its public project threshold before an allocation without inventing a request (2.775292ms)
+✔ a valid public project question stays readable and is not counted as an invalid action (3.201666ms)
+✔ reviewing the previous result opens its disclosure after the next day begins (7.445666ms)
+✔ reflection defaults to the latest accepted decision even after later walking and never executes it (24.579917ms)
+✔ a movement-only history selects its latest accepted walk and an empty history has no invented choice (5.663458ms)
+✔ reflection labels the recent-eight excerpt and keeps the entire admitted prefix available read-only (4.748042ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374.194833
