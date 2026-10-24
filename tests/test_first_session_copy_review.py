@@ -76,3 +76,21 @@ def test_observed_editorial_regressions_stay_fixed_in_evaluated_sentences(review
     assert '. You read the document “Sabina' in memory
     assert not any(block["label"] == "Mira · Calibration"
         for case in review["cases"] for block in case["blocks"])
+
+
+def test_public_project_status_and_card_representation_prose_are_in_the_catalog(review):
+    projects = [block["text"] for case in review["cases"] for block in case["blocks"]
+                if block["label"] == "Project requirement"]
+    assert projects and all("status:" in text for text in projects)
+    assert any("status: completed" in text for text in projects)
+    cards = [case for case in review["cases"] if case["surface"] == "card"]
+    assert len(cards) == 5
+    for card in cards:
+        assert any(block["label"] == "Encounter Label" for block in card["blocks"])
+        assert any(block["label"] == "Evidence label" for block in card["blocks"])
+    counter = find(review, "History notebook · A food counter on the street")
+    assert any(block["label"] == "Illustration" and "not an archaeological photograph" in block["text"]
+               for block in counter["blocks"])
+    notices = find(review, "History notebook · Political messages on walls")
+    assert any(block["label"] == "Illustration" and "not a transcription" in block["text"]
+               for block in notices["blocks"])

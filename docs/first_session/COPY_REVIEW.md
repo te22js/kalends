@@ -69,7 +69,7 @@ regenerated artifact before closing the release gate:
 | 044–046 | “You promised 1 units”, “Amir was allocated 1 units”, and “received 1 of 1 allocated units”. | Apply singular/plural choices consistently to guide, obligation, story and outcome sentences. Preserve numerical state. |
 | 039 | The history role said “Mira · Calibration”, while the product identity uses Instrument systems. | Align display-role metadata without changing team identity or world rules. |
 
-The regenerated pass now contains **252 unique string values**. Independent
+An intermediate regenerated pass contained **252 unique string values**. Independent
 re-reading confirmed the fixes: document titles are quoted with their proper
 names; Sabina's recalled events are separate sentences; both guide and story
 use “1 unit”; the one-of-one settlement uses “allocated unit”; and Mira's role
@@ -77,6 +77,19 @@ is Instrument systems. The intermediate report-story double full stop was also
 fixed. A focused regression checks these evaluated sentences. No remaining
 instance of these particular defects appeared in the final generated cases;
 that is narrower than a claim that every possible product sentence is correct.
+
+The current catalog contains **265 unique string values in 599 displayed
+blocks across the same 52 cases**. The independent final reading included all
+changed values after the complete intermediate pass: concrete market,
+household and evidence-route choices; their immediate twenty-minute action
+costs and separate service obligation; the corrected time-advance return
+sentence; project requirements with open, completed and missed status from
+admitted revisions; and the cards' representation labels and illustration
+explanations. Those project and card fields were previously omitted by the
+review renderer and are now included without changing product behavior. The
+source fingerprints in the JSON identify this exact generated version. The
+current copy and guide checks pass **36 tests**; these remain automated fixture
+checks rather than comprehension evidence.
 
 The review leaves all backend wording unchanged when rendering it. It does not
 silently repair these sentences or replace terse errors with invented product
@@ -126,3 +139,67 @@ movement diff recorded world time advancing to 08:02 and an interaction control;
 it is not a complete accessibility tree or evidence of an entire successful
 session. No normal/narrow full sequence or focus-order review is certified from
 these three files. Later captures need their own actual inspection record.
+
+The follow-up inspection read `browser/pompeii-p5-repaired.png` and
+`browser/pompeii-history-card.png` at 1280×720, plus
+`browser/observatory-o0.png` at 503×703 and the complete
+`browser/observatory-o0.txt` and `browser/history-card.txt` accessibility trees.
+The repaired p5 view placed the primary movement instruction before its longer,
+scrollable prose. The narrow Observatory introduction wrapped without visible
+overlap in that capture. The notebook tree contained the actual food-counter
+claim, evidence, limits, fictional changes and source link. Its screenshot
+showed the notebook index at the top of the scroll area, so it does not establish
+the visual layout of all card prose. No additional copy blocker was found in
+these particular screens.
+
+`browser/observatory-allocation-review.txt` and
+`browser/observatory-invalid-allocation-before-fix.txt` record the earlier
+allocation-warning and invalid-total defects. They are pre-fix evidence, not
+verification of their repair. The corrected real-shell regression checks the
+modal's total, admitted report capacity and date, conditional shortfall warning,
+missing evidence and invalid numeric entries.
+
+The subsequent independent pass inspected
+`browser/observatory-allocation-review-repaired.png` and its complete `.txt`
+tree, `browser/observatory-settlement-review.txt`, and
+`browser/observatory-executed-shortfall.png` and its complete `.txt` tree. The
+503-pixel-wide allocation screenshot visibly includes total 12, the admitted
+eight-unit report and its date, the conditional four-unit excess warning, and
+the settlement time. The remaining modal content and confirmation controls
+continue below the scroll area. The settlement tree states the exact time jump,
+known promise and public execution order before confirmation. The result image
+and tree distinguish requested, promised, allocated and delivered quantities;
+Lin was promised four, allocated four and delivered zero, with the missed
+promise stated explicitly. These are captured executed results, not a predicted
+delivery invented by the review generator.
+
+The result tree also exposed stale prospective wording beneath the disabled
+settled allocation form: “You may review this plan if you intend that risk.”
+This and the separately observed next-round modal sentence that implied another
+allocation execution were corrected in commit `3c5bdb4`. Focused real-shell
+regressions check recorded delivery after settlement, missing-result handling,
+and a one-minute next-round step that preserves the previous result. Fresh
+native verification of those two later corrections is still pending.
+No new native invalid-number capture has been inspected. This inspection did
+not exercise keyboard focus, every guide step, the complete saved-life return
+sequence or an unfamiliar participant.
+
+`browser/pompeii-extra-large.png` was inspected at 1280×720 alongside
+`browser/pompeii-preferences.txt`. The preferences tree reported Extra large
+text, reduced motion selected, and explicit current movement, interaction,
+Escape, journal and room-exit keys. In the screenshot, the primary “Talk to
+Sabina” instruction and help controls remained above the scrollable longer
+copy; the nearby Sabina, Dama and Marcus labels were separate. That static
+capture does not establish motion behavior or a keyboard-only session.
+
+The final Pompeii delivery pass inspected
+`browser/pompeii-market-review-repaired.png` and its complete `.txt` tree, then
+`browser/pompeii-market-executed.png` and its complete `.txt` tree. At Extra
+large text, the reviewed choice visibly stated what the carrying charge buys,
+the **3 coins · 20 world minutes** cost, the attempted-delivery consequence and
+the explicit confirmation button. The subsequent captured state advanced from
+08:16 to 08:36 and from six coins to three. Its guide tree reports four flour
+units delivered to Sabina and two to Felix, then offers “Review what happened.”
+The result paragraph continues in the guide's scroll area; its complete text
+was read in the accessibility tree rather than inferred from the visible first
+lines of the screenshot.

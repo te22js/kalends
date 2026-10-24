@@ -54,6 +54,8 @@ def projected_copy(data, surface="guide", *, card_id=None):
             blocks += _block(key.replace("_", " ").title(), step.get(key))
         blocks += _block("Action label", step.get("action", {}).get("label"))
         blocks += _block("What you know", guide.get("known", {}).get("summary", []))
+        for project in guide.get("known", {}).get("project_requirements", []):
+            blocks += _block("Project requirement", project.get("text"))
         blocks += _block("Actual result", (guide.get("result") or {}).get("explanation", []))
         for record in guide.get("known", {}).get("evidence", []):
             blocks += _block("Evidence: " + record.get("title", "Record"), record.get("text"))
@@ -75,8 +77,9 @@ def projected_copy(data, surface="guide", *, card_id=None):
             blocks += _block("Return summary", summary.get("text", summary.get("summary")))
     elif surface == "card":
         card = next(c for c in data["guide"]["history_cards"] if c["id"] == card_id)
-        for key in ("title", "encounter", "claim", "evidence", "limits", "game_changed", "question", "rights"):
+        for key in ("title", "encounter_label", "encounter", "illustration", "claim", "evidence", "limits", "game_changed", "question", "rights"):
             blocks += _block(key.replace("_", " ").title(), card.get(key))
+        blocks += _block("Evidence label", card.get("labels", []))
         for source in card["sources"]:
             blocks += _block("Source", source["title"] + " · " + source["url"])
     elif surface == "conversation":

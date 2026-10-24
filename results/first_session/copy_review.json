@@ -1,15 +1,15 @@
 {
   "version": 1,
-  "generated_at": "2026-10-24T14:48:00.656307+00:00",
+  "generated_at": "2026-10-24T15:10:52.273493+00:00",
   "scope": "Rendered backend copy review in disposable offline lives, not browser UI coverage or a human playtest.",
   "source_sha256": {
-    "scripts/render_first_session_copy.py": "8c0573ddca8e054184831c29984306052f4003ee2efe06910584ce92044dc8b1",
-    "kalends/experience_os/product.py": "088728dece54ecbd567176766ebf2e23588aa20d3513e9a4a28a38c3dca16597",
-    "kalends/experience_os/guide.py": "6a40c3d2ee07ed74e5c8d028faf3f3526a576380fbc5ff6f12e463e4982b9b7d",
-    "kalends/experience_os/history_cards.py": "d90bfeb39dbd6301e3b578d93f85dc16992db9a0afa912208ab6df07ff90264d",
-    "kalends/experience_os/history.py": "d00c325d89db9568d94c5fe5837e96a624f0d028bb0fed3e73ae6084f9a74c2a",
-    "kalends/experience_os/runtime.py": "d93c592949e85f1c0d0f3f625c5f3e30b93cc8c245b203263a0b9160bb3b0d42",
-    "kalends/experience_os/participant_copy.py": "6c563fcc1342d627a2265d7fe8329dce3806b2375889f961cffad0e3db88d50f",
+    "scripts/render_first_session_copy.py": "9cd83c1328a95fd1d6c6344575e8ccf402dd3643b6513c9f28a785e547b062cc",
+    "kalends/experience_os/product.py": "29989ecd01b95379fa665a8d0047cf01bb49c88a9bbc11f73964727fc9992a6b",
+    "kalends/experience_os/guide.py": "447476d5891683371b47be4a2c731eca6c68fd8f983519470cb198481e904431",
+    "kalends/experience_os/history_cards.py": "c3d16d7958cdcbe234df917a4cc1d98b4ef0138f1a5a917062ac23ac1101932a",
+    "kalends/experience_os/history.py": "c4ca7f547183009682b90c5575b75b6d485e6e14568bcc14e79a936412baf13a",
+    "kalends/experience_os/runtime.py": "7eecba90a7e36d99e54846506fc28734be4249e8a9a28d49fe9950c2ea40177c",
+    "kalends/experience_os/participant_copy.py": "0fec0f54e6d498e593d0062e9dba33d8ddd289fd6e73287d86c0ce49308b03fe",
     "kalends_rebirth/language.py": "219ed7da3e50d76d812d033a6040a6aba9f0c4397a14edb26e15fbaa8fec5a90",
     "kalends_rebirth/server.py": "b7a1d284d82dbceab8d240a2575d2747ff074788391f82ceb007f2b1b89fe90c",
     "kalends_rebirth/scenario.py": "00b7e85a891973c74c1d6ce769856e2f2324dd50cd8584f98083da526fe5dbb8",
@@ -254,19 +254,19 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "Stand behind the market"
+          "text": "Pay for the market delivery"
         },
         {
           "label": "Offered choice · description",
-          "text": "Pay the carrying charge and direct four sacks to Sabina and two to Felix."
+          "text": "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
         },
         {
           "label": "Offered choice · cost",
-          "text": "3 coins"
+          "text": "3 coins · 20 world minutes"
         },
         {
           "label": "Offered choice · consequence",
-          "text": "Household advance refunded; market work opens; Lucius loses priority."
+          "text": "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
         },
         {
           "label": "Offered choice · reason",
@@ -274,15 +274,15 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "This is not my bargain"
+          "text": "Leave the decision to the buyers"
         },
         {
           "label": "Offered choice · description",
-          "text": "Let the buyers decide at their own deadline."
+          "text": "Decline to arrange this delivery. The buyers can act at their own deadline."
         },
         {
           "label": "Offered choice · consequence",
-          "text": "The world will settle the dispute without your choice."
+          "text": "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
         },
         {
           "label": "Offered choice · label",
@@ -482,7 +482,7 @@
         },
         {
           "label": "Body",
-          "text": "A copied claim is evidence of what its holder recorded, not automatic proof of the whole dispute. Dama can share the household instructions. Marcus can check his loading account for one coin and fifteen minutes. You may instead choose any eligible arrangement; the guide never requires a payment you cannot afford."
+          "text": "Ask Dama for the household instructions. If she has left, ask Lucius about the dispute at the household. Marcus offers a check for one coin and fifteen minutes. These are accounts, not automatic proof. You may instead review an eligible arrangement."
         },
         {
           "label": "Hint",
@@ -709,19 +709,19 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "Put my name behind the household"
+          "text": "Accept the household advance and service obligation"
         },
         {
           "label": "Offered choice · description",
-          "text": "Accept six coins against service and give the household the cart's priority."
+          "text": "Receive six coins and give the household priority over the flour cart. You commit to two hours of service within three days."
         },
         {
           "label": "Offered choice · cost",
-          "text": "120 minutes of service within three days"
+          "text": "20 world minutes now · 120 minutes of service due within three days"
         },
         {
           "label": "Offered choice · consequence",
-          "text": "Household work opens; Sabina loses her supply and welcomes you less."
+          "text": "Delivery is attempted during this action. Review the actual receipt afterwards. The service remains a separate obligation. Household work opens; Sabina loses priority and welcomes you less."
         },
         {
           "label": "Offered choice · reason",
@@ -825,19 +825,19 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "Put the two accounts together"
+          "text": "Negotiate a delivery using the three accounts"
         },
         {
           "label": "Offered choice · description",
-          "text": "Use the actual documents to bargain for four household sacks and two market sacks."
+          "text": "Use the copied market, household and loading accounts to arrange four sacks for the household and two for Sabina."
         },
         {
           "label": "Offered choice · cost",
-          "text": "Three retained documents"
+          "text": "Three copied accounts · 20 world minutes"
         },
         {
           "label": "Offered choice · consequence",
-          "text": "Broker work opens; Marcus resents the scrutiny."
+          "text": "Marcus covers the carrying charge. The action advances twenty minutes and attempts delivery. Review the actual receipt afterwards. Broker work opens; Marcus resents the scrutiny."
         },
         {
           "label": "Offered choice · reason",
@@ -1120,19 +1120,19 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "Stand behind the market"
+          "text": "Pay for the market delivery"
         },
         {
           "label": "Offered choice · description",
-          "text": "Pay the carrying charge and direct four sacks to Sabina and two to Felix."
+          "text": "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
         },
         {
           "label": "Offered choice · cost",
-          "text": "3 coins"
+          "text": "3 coins · 20 world minutes"
         },
         {
           "label": "Offered choice · consequence",
-          "text": "Household advance refunded; market work opens; Lucius loses priority."
+          "text": "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
         },
         {
           "label": "Offered choice · reason",
@@ -1140,15 +1140,15 @@
         },
         {
           "label": "Offered choice · label",
-          "text": "This is not my bargain"
+          "text": "Leave the decision to the buyers"
         },
         {
           "label": "Offered choice · description",
-          "text": "Let the buyers decide at their own deadline."
+          "text": "Decline to arrange this delivery. The buyers can act at their own deadline."
         },
         {
           "label": "Offered choice · consequence",
-          "text": "The world will settle the dispute without your choice."
+          "text": "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
         },
         {
           "label": "Offered choice · label",
@@ -1483,7 +1483,7 @@
         },
         {
           "label": "Return summary",
-          "text": "Your saved world resumes from its recorded moment. Time advances when you choose a supported time control."
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
         }
       ]
     },
@@ -1645,8 +1645,16 @@
           "text": "A food counter on the street"
         },
         {
+          "label": "Encounter Label",
+          "text": "Reconstruction"
+        },
+        {
           "label": "Encounter",
           "text": "The game represents a counter and inset jar forms. This is a schematic model of the food-counter setting."
+        },
+        {
+          "label": "Illustration",
+          "text": "The in-game counter is an original schematic reconstruction, not an archaeological photograph."
         },
         {
           "label": "Claim",
@@ -1671,6 +1679,18 @@
         {
           "label": "Rights",
           "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
         },
         {
           "label": "Source",
@@ -1710,8 +1730,16 @@
           "text": "A home turned into a workplace"
         },
         {
+          "label": "Encounter Label",
+          "text": "Reconstruction"
+        },
+        {
           "label": "Encounter",
           "text": "The game represents washing basins inside a simplified workshop."
+        },
+        {
+          "label": "Illustration",
+          "text": "The game basins are schematic geometry, not a measured plan."
         },
         {
           "label": "Claim",
@@ -1736,6 +1764,18 @@
         {
           "label": "Rights",
           "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
         },
         {
           "label": "Source",
@@ -1775,6 +1815,10 @@
           "text": "A person who had been freed"
         },
         {
+          "label": "Encounter Label",
+          "text": "Fictional gameplay"
+        },
+        {
           "label": "Encounter",
           "text": "Aelia is a fictional freedwoman: she was enslaved and was later freed."
         },
@@ -1801,6 +1845,14 @@
         {
           "label": "Rights",
           "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
         },
         {
           "label": "Source",
@@ -1844,8 +1896,16 @@
           "text": "Political messages on walls"
         },
         {
+          "label": "Encounter Label",
+          "text": "Modern learning material"
+        },
+        {
           "label": "Encounter",
           "text": "This learning card describes surviving painted notices. It does not identify a game wall as an excavated inscription."
+        },
+        {
+          "label": "Illustration",
+          "text": "Modern English structure guide: candidate → office sought → supporter. This is not a transcription."
         },
         {
           "label": "Claim",
@@ -1870,6 +1930,14 @@
         {
           "label": "Rights",
           "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
         },
         {
           "label": "Source",
@@ -1909,6 +1977,10 @@
           "text": "Evidence, reconstruction and invented choices"
         },
         {
+          "label": "Encounter Label",
+          "text": "Modern learning material"
+        },
+        {
           "label": "Encounter",
           "text": "Compare the represented counter or workshop with the delivery dispute you are playing."
         },
@@ -1935,6 +2007,18 @@
         {
           "label": "Rights",
           "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
         },
         {
           "label": "Source",
@@ -2063,7 +2147,7 @@
         },
         {
           "label": "Return summary",
-          "text": "Your saved world resumes from its recorded moment. Time advances when you choose a supported time control."
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
         }
       ]
     },
@@ -2225,6 +2309,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         }
       ],
       "public_result": null,
@@ -2270,6 +2366,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         }
       ],
       "public_result": null,
@@ -2315,6 +2423,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         }
       ],
       "public_result": null,
@@ -2393,6 +2513,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         },
         {
           "label": "Evidence: Dated instrument report",
@@ -2508,6 +2640,18 @@
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
         },
         {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
           "label": "Evidence: Dated instrument report",
           "text": "The reported condition was fragile."
         },
@@ -2579,6 +2723,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         },
         {
           "label": "Evidence: Dated instrument report",
@@ -2656,6 +2812,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
         },
         {
           "label": "Actual result",
@@ -2836,7 +3004,7 @@
         },
         {
           "label": "Return summary",
-          "text": "Your saved world resumes from its recorded moment. Time advances when you choose a supported time control."
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
         }
       ]
     },
@@ -2884,6 +3052,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
         },
         {
           "label": "Actual result",
@@ -3047,6 +3227,18 @@
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
         },
         {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: missed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
+        },
+        {
           "label": "Actual result",
           "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
         },
@@ -3170,6 +3362,18 @@
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
         },
         {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
           "label": "Current obligation",
           "text": "You promised 1 unit to Amir by minute 1439. Allocation and delivery are separate steps."
         }
@@ -3220,6 +3424,18 @@
         {
           "label": "What you know",
           "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
         },
         {
           "label": "Actual result",
@@ -3356,7 +3572,7 @@
         },
         {
           "label": "Return summary",
-          "text": "Your saved world resumes from its recorded moment. Time advances when you choose a supported time control."
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
         }
       ]
     },
