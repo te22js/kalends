@@ -51,7 +51,7 @@ class ProductService(ExperienceService):
         super().__init__(None, cognition=cognition)
         self.directory = Path(directory) if directory else None
         self.templates = {p.stem: ExperienceCompilerV1().load(p) for p in SPEC_DIR.glob("*.json")}
-        self.metadata, self.failures, self.examples, self.save_errors = {}, {}, set(), {}
+        self.metadata, self.failures, self.examples, self.save_errors, self.metadata_warnings = {}, {}, set(), {}, {}
         self.meta_path = self.directory / ".product/state.json" if self.directory else None
         if self.meta_path and self.meta_path.exists():
             try:
@@ -153,6 +153,7 @@ class ProductService(ExperienceService):
                 "minute": runtime.minute, "day": runtime.minute // 1440 + 1, "revision": len(runtime.commands),
                 "state_hash": runtime.state_hash(), "location": location, "save_status": "error" if ident in self.save_errors else "read_only" if ident in self.examples else "saved",
                 "save_error": self.save_errors.get(ident),
+                "metadata_warning": self.metadata_warnings.get(ident),
                 "read_only": ident in self.examples, "terminated": runtime.minute >= runtime.spec.termination["at"]}
 
     def catalog(self):
@@ -189,7 +190,8 @@ class ProductService(ExperienceService):
             # The saved newborn life is recoverable from its embedded journal.
             # Surface the failure; never delete it to simulate rollback.
             self.metadata[ident] = values[ident]
-            return {**self.life(ident), "metadata_warning": "New life journal saved; display metadata could not be updated. Its journal remains recoverable."}
+            self.metadata_warnings[ident] = "New life journal saved; display metadata could not be updated. Its journal remains recoverable."
+            return {**self.life(ident), "metadata_warning": self.metadata_warnings[ident]}
         return self.life(ident)
 
     def participant_metrics(self, runtime):
@@ -278,10 +280,12 @@ class ProductService(ExperienceService):
         if ident not in self.examples:
             try:
                 self._update_meta(ident, updated_at=utc(), started=True)
+                self.metadata_warnings.pop(ident, None)
             except (OSError, ValueError):
                 # The world journal was already durably accepted. Do not tell
                 # the user that its financial action failed, or resubmit it.
                 result = {**result, "metadata_warning": "World choice saved; display metadata could not be updated."}
+                self.metadata_warnings[ident] = result["metadata_warning"]
         return {**self.life(ident), "receipt": result.get("receipt"), "command_index": result.get("command_index"),
                 **({"metadata_warning": result["metadata_warning"]} if result.get("metadata_warning") else {})}
 

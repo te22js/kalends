@@ -181,7 +181,8 @@ def make_product_handler(service):
             # Keep the finite template's horizon and event schedule consistent.
             spec["horizon_minutes"] = days * 1440
             spec["termination"]["at"] = days * 1440
-            spec["opportunities"] = [o for o in spec["opportunities"] if o["at"] <= days * 1440]
+            spec["setting"]["rules"]["horizon_days" if spec["setting"]["adapter"] == "pompeii" else "rounds"] = days
+            spec["opportunities"] = [o for o in spec["opportunities"] if o["at"] < days * 1440]
             spec["goals"] = [g for g in spec["goals"] if g.get("deadline", 0) <= days * 1440]
             validated = ExperienceCompilerV1().validate(spec)
             if not compile: return {"valid": True, "template_id": template_id, "title": title.strip(), "horizon_days": days, "scope": "Only the two existing adapters; private setup is not a participant observation."}
@@ -202,7 +203,8 @@ def make_product_handler(service):
             try:
                 service._update_meta(runtime.spec.id, started=True)
             except (ValueError, OSError):
-                return {**service.life(runtime.spec.id), "metadata_warning": "New life journal saved; display metadata could not be updated."}
+                service.metadata_warnings[runtime.spec.id] = "New life journal saved; display metadata could not be updated."
+                return {**service.life(runtime.spec.id), "metadata_warning": service.metadata_warnings[runtime.spec.id]}
             return service.life(runtime.spec.id)
 
     return Handler

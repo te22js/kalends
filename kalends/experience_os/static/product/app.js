@@ -43,22 +43,25 @@
 
   const $ = selector => document.querySelector(selector), $$ = selector => [...document.querySelectorAll(selector)], esc = escapeHTML;
   const API = '/product/api/';
-  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Set(), lab:null, toastTimer:null, lastSceneRequest:0, sessionId:crypto.randomUUID(), activeSince:performance.now()};
+  const S = {catalog:null, id:null, data:null, routeEpoch:0, conversationEpoch:0, proposalEpoch:0, gate:new LifeRequestGate(), revisions:new LifeRevisionGate(), readVersions:new Map(), chapterLimits:new Map(), frames:new Map(), views:new Map(), drafts:new Map(), selected:new Map(), pending:new Set(), uncertain:new Set(), proposal:null, reflection:null, storyTab:'history', returnSeen:new Set(), lab:null, metadataWarnings:new Map(), toastTimer:null, lastSceneRequest:0, sessionId:crypto.randomUUID(), activeSince:performance.now()};
   class ApiError extends Error { constructor(message, code, status) { super(message); this.name='ApiError'; this.code=code; this.status=status; } }
   async function api(path, body, signal) {
     const response = await fetch(API + path, body === undefined ? {cache:'no-store',signal} : {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal});
     let result;
     try { result = await response.json(); } catch (_) { throw new ApiError('The local server returned an unreadable response. Refresh to reconcile this life.', 'unreadable_response', response.status); }
-    if (!response.ok || result.error) throw new ApiError(typeof result.error === 'string' ? result.error : result.error?.message || result.message || 'The local request could not be completed.', result.code || result.error?.code, response.status);
+    if (!response.ok || result.error) throw new ApiError(result.save_failed===true?'The world journal could not be saved. This choice was not accepted; your previously accepted history is preserved.':typeof result.error === 'string' ? result.error : result.error?.message || result.message || 'The local request could not be completed.', result.save_failed===true?'journal_save_failed':result.code || result.error?.code, response.status);
     return result;
   }
-  function status(message, duration = 6500) { const node=$('#global-status'); node.textContent=message; node.hidden=false; clearTimeout(S.toastTimer); S.toastTimer=setTimeout(()=>{node.hidden=true;},duration); }
-  function notifyError(error) { if (error instanceof StaleRequest || error.name==='AbortError') return; status(error.message || 'The local request could not be completed.',10000); }
+  function status(message, duration = 6500) { const node=$('#global-status'); node.textContent=message; node.dataset.errorCode=''; node.hidden=false; clearTimeout(S.toastTimer); S.toastTimer=setTimeout(()=>{node.hidden=true;},duration); }
+  function notifyError(error) { if (error instanceof StaleRequest || error.name==='AbortError') return; status(error.message || 'The local request could not be completed.',10000);$('#global-status').dataset.errorCode=error.code||''; }
   function timeLabel(minute,setting) { const n=Number(minute||0);if(setting==='pompeii'||setting===undefined&&S.data?.snapshot?.setting==='pompeii')return `World minute ${n.toLocaleString()}`;return `Day ${Math.floor(n/1440)+1} · ${String(Math.floor(n%1440/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`; }
   function personName(id) { return (S.data?.people || S.data?.history?.people || []).find(p=>p.id===id)?.name || ({team_a:'Amir',team_b:'Mira',team_c:'Lin',Player:S.data?.snapshot?.setting==='commons'?'You':'Aelia'}[id]) || id; }
   function human(text) { return String(text||'').replace(/team_[abc]|Player/g, match=>personName(match)); }
   function text(value) { if (typeof value==='string') return value; return value?.text || value?.body || value?.title || value?.label || ''; }
   function metadata(data) { return data?.life || data || {}; }
+  function rememberMetadataWarning(id,data) { const warning=data?.metadata_warning||data?.life?.metadata_warning;if(warning)S.metadataWarnings.set(id,warning);else if(data?.life&&Object.hasOwn(data.life,'metadata_warning'))S.metadataWarnings.delete(id);return warning||S.metadataWarnings.get(id); }
+  function metadataWarning(id=S.id,data=S.data) { return data?.metadata_warning||data?.life?.metadata_warning||S.metadataWarnings.get(id); }
+  function showMetadataWarning(id=S.id,data=S.data) { const warning=metadataWarning(id,data);if(!warning||metadata(data).save_status==='error')return false;status(warning+' The world journal is saved; do not repeat the accepted choice.',12000);if(id===S.id)$('#world-saving').textContent='World saved · Display metadata needs attention';return true; }
   function lifeId(life) { return life.id || life.life_id || life.experience; }
   function lifeURL(id, suffix='') { return '/lives/'+encodeURIComponent(id)+suffix; }
   function savedLives() { return [...S.catalog?.lives||[],...S.catalog?.examples||[],...S.catalog?.failures||[]].sort((a,b)=>String(b.updated_at||b.created_at||'').localeCompare(String(a.updated_at||a.created_at||''))); }
@@ -88,7 +91,7 @@
   }
   function saveCard(l, recent) {
     const id=lifeId(l), unavailable=['incompatible','incompatible_version','writer_conflict'].includes(l.save_status), unresolved=(l.unresolved||[])[0];
-    return `<article class="save-card"><p class="eyebrow">${l.example?'Recorded example':recent?'Most recently used':'Saved life'}</p><h2>${esc(l.title||template(l.template_id)?.title||'Saved world')}</h2><p class="save-person">${esc(l.participant||(/pompeii/i.test(l.template_id||id)?'Aelia':'Consortium coordinator'))} · ${esc(isPompeii(l)?`Day ${l.day||Math.floor((l.minute||0)/1440)+1} · ${timeLabel(l.minute,'pompeii')}`:timeLabel(l.minute,'commons'))}${l.location?' · '+esc(l.location):''}</p><p class="save-summary">${esc(unavailable?'This journal could not be opened. Its saved contents have been preserved.':text(unresolved)||`Paused ${l.location?'at '+l.location:'at its saved moment'}. Continue when you choose.`)}</p><div class="save-actions">${!unavailable?`<a class="button" href="${lifeURL(id)}">${l.example?'Inspect example':'Continue'} <span aria-hidden="true">→</span></a><a class="text-link" href="${lifeURL(id,'/history')}">Your story <span aria-hidden="true">↗</span></a>`:`<button class="button secondary" data-save-diagnostic="${esc(id)}">Show diagnostics</button>`}</div><span class="save-status">${esc(l.example?'Read-only example · Original preserved':saveStatus(l.save_status))}</span></article>`;
+    return `<article class="save-card"><p class="eyebrow">${l.example?'Recorded example':recent?'Most recently used':'Saved life'}</p><h2>${esc(l.title||template(l.template_id)?.title||'Saved world')}</h2><p class="save-person">${unavailable?'Preserved local journal':`${esc(l.participant||(/pompeii/i.test(l.template_id||id)?'Aelia':'Consortium coordinator'))} · ${esc(isPompeii(l)?`Day ${l.day||Math.floor((l.minute||0)/1440)+1} · ${timeLabel(l.minute,'pompeii')}`:timeLabel(l.minute,'commons'))}${l.location?' · '+esc(l.location):''}`}</p><p class="save-summary">${esc(unavailable?'This journal could not be opened. Its saved contents have been preserved.':text(unresolved)||`Paused ${l.location?'at '+l.location:'at its saved moment'}. Continue when you choose.`)}</p><div class="save-actions">${!unavailable?`<a class="button" href="${lifeURL(id)}">${l.example?'Inspect example':'Continue'} <span aria-hidden="true">→</span></a><a class="text-link" href="${lifeURL(id,'/history')}">Your story <span aria-hidden="true">↗</span></a>`:`<button class="button secondary" data-save-diagnostic="${esc(id)}">Show diagnostics</button>`}</div><span class="save-status">${esc(l.example?'Read-only example · Original preserved':saveStatus(l.save_status))}</span></article>`;
   }
   function saveStatus(value) { return ({saving:'Saving…',saved:'Saved on this installation',error:'Save error · Your previous history is preserved',incompatible:'Incompatible save · Preserved for inspection',incompatible_version:'Incompatible version · Preserved for inspection',writer_conflict:'Another writer is active'})[value] || 'Saved locally by this installation'; }
   function researchPage() {
@@ -147,8 +150,9 @@
       const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));
       if(routeEpoch!==S.routeEpoch)return;
       if(readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;
-      S.data=data;S.uncertain.delete(id);renderLife();
-      if(changed) { await api('resume',{id}); if(id!==S.id)return; showReturn(); telemetry('life_entered'); }
+      S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);renderLife();
+      if(changed) { const resumed=await api('resume',{id});if(id!==S.id)return;rememberMetadataWarning(id,resumed);showReturn();telemetry('life_entered'); }
+      showMetadataWarning(id);
     } catch(error) {
       if(error instanceof StaleRequest||error.name==='AbortError')return;
       $('#life-loading').hidden=true;
@@ -160,7 +164,7 @@
     const d=S.data,s=d.snapshot||{},l=metadata(d),roman=s.setting==='pompeii'||isPompeii(l);
     $('#world-title').textContent=roman?'Pompeii':'Shared Observatory';
     $('#world-participant').textContent=(l.participant||(roman?'Aelia':'Consortium coordinator'))+' · '+String(l.id||S.id).slice(-8);
-    $('#world-date').textContent=(roman&&s.world?.clock?`Day ${s.world.day} · ${s.world.clock}`:timeLabel(l.minute??s.minute))+' · World time';$('#world-saving').textContent=S.pending.has(S.id)?'Saving…':saveStatus(l.save_status);
+    $('#world-date').textContent=(roman&&s.world?.clock?`Day ${s.world.day} · ${s.world.clock}`:timeLabel(l.minute??s.minute))+' · World time';$('#world-saving').textContent=S.pending.has(S.id)?'Saving…':l.save_status==='error'?saveStatus(l.save_status):metadataWarning()?'World saved · Display metadata needs attention':saveStatus(l.save_status);
     $('#scene-frames').hidden=!roman;$('#observatory-stage').hidden=roman;$('#life-loading').hidden=true;
     $('#menu-lab').href='/lab/'+encodeURIComponent(S.id);$('#telemetry-opt-in').checked=!!d.telemetry?.opt_in;
     if(roman) ensureFrame(S.id);else renderObservatory();
@@ -210,12 +214,12 @@
   }
   function supportLink(ids) { return ids?.length?`<button class="text-link" data-evidence="${Number(ids[0])}" style="background:transparent">Inspect dated support <span aria-hidden="true">↗</span></button>`:''; }
   function setPendingControls() { for(const b of $$('[data-life-write]'))b.disabled=S.pending.has(S.id)||S.uncertain.has(S.id)||!!S.data?.snapshot?.terminated||!!metadata(S.data).example||(b.hasAttribute('data-allocation-review')&&(S.data?.snapshot?.round_closed||S.data?.snapshot?.allocation!==null&&S.data?.snapshot?.allocation!==undefined));$('#confirm-choice').disabled=S.pending.has(S.id)||S.uncertain.has(S.id); }
-  async function refreshLife() { const id=S.id;if(!id)return;const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));if(id!==S.id||readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;S.data=data;S.uncertain.delete(id);renderLife();return data; }
+  async function refreshLife() { const id=S.id;if(!id)return;const readVersion=(S.readVersions.get(id)||0)+1;S.readVersions.set(id,readVersion);const data=await S.gate.run(signal=>api('life?id='+encodeURIComponent(id),undefined,signal));if(id!==S.id||readVersion!==S.readVersions.get(id)||!S.revisions.admit(id,data))return;S.data=data;rememberMetadataWarning(id,data);S.uncertain.delete(id);renderLife();showMetadataWarning(id);return data; }
   async function mutate(path, body, onSuccess) {
     const id=S.id;if(!id||S.pending.has(id))return;if(S.uncertain.has(id)){status('Refresh this life to reconcile its last request before making another choice.');return;}
     S.pending.add(id);setPendingControls();$('#world-saving').textContent='Saving…';
-    try { const result=await api(path,{id,...body}); if(id!==S.id)return result;if(result.life&&S.revisions.admit(id,result))S.data=result; if(onSuccess)await onSuccess(result); await refreshLife(); $('#world-saving').textContent='Saved locally';return result; }
-    catch(error){if(!(error instanceof ApiError)||error.code==='unreadable_response'){S.uncertain.add(id);if(id===S.id){showNotice('The save status needs checking.','The response was interrupted. The server may have accepted the choice. Refresh this life before trying again.',true);}}else if(id===S.id){$('#world-saving').textContent='Choice not accepted';}throw error;}
+    try { const result=await api(path,{id,...body}); if(id!==S.id)return result;rememberMetadataWarning(id,result);if(result.life&&S.revisions.admit(id,result))S.data=result; if(onSuccess)await onSuccess(result); await refreshLife();if(id!==S.id)return result;const warning=result.metadata_warning||result.life?.metadata_warning;if(warning)S.metadataWarnings.set(id,warning);if(!showMetadataWarning(id))$('#world-saving').textContent='Saved locally';return result; }
+    catch(error){if(!(error instanceof ApiError)||error.code==='unreadable_response'){S.uncertain.add(id);if(id===S.id){showNotice('The save status needs checking.','The response was interrupted. The server may have accepted the choice. Refresh this life before trying again.',true);}}else if(id===S.id){$('#world-saving').textContent=error.code==='journal_save_failed'?'Save error · Previous accepted history preserved':'Choice not accepted';}throw error;}
     finally {S.pending.delete(id);if(id===S.id)setPendingControls();}
   }
   async function propose(action) {
@@ -319,7 +323,7 @@
   }
   function renderStudioForm(templateId) {
     const t=template(templateId);
-    $('#main').innerHTML=`<div class="page">${pageHead('Experimental Studio','A supported variation.','Changes compile into a new identity. Existing lives and source templates are preserved.')}<form id="studio-form" class="studio-form"><label>Supported template<select name="template_id" id="studio-template">${(S.catalog.templates||[]).map(item=>`<option value="${esc(item.id)}" ${item.id===templateId?'selected':''}>${esc(item.title)}</option>`).join('')}</select></label><label>Title<input name="title" value="${esc((t?.title||'World')+' · authored variation')}" required maxlength="160"></label><fieldset><legend>Supported parameters</legend><label>Simulation seed<input name="seed" type="number" min="0" max="2147483647" step="1" value="2718" required></label><label>Horizon in world days<input name="horizon_days" type="number" min="1" max="365" step="1" value="30" required></label><p class="studio-note">The backend validator enforces supported ranges and dependencies. Actor IDs, initial private evidence, executable rules and arbitrary code cannot be changed here.</p></fieldset><div class="hero-actions"><button class="button secondary" type="button" id="validate-studio">Validate this specification</button><button class="button" type="submit">Compile into a new life →</button></div><div id="studio-result" role="status"></div></form></div>`;
+    $('#main').innerHTML=`<div class="page">${pageHead('Experimental Studio','A supported variation.','Changes compile into a new identity. Existing lives and source templates are preserved.')}<form id="studio-form" class="studio-form"><label>Supported template<select name="template_id" id="studio-template">${(S.catalog.templates||[]).map(item=>`<option value="${esc(item.id)}" ${item.id===templateId?'selected':''}>${esc(item.title)}</option>`).join('')}</select></label><label>Title<input name="title" value="${esc((t?.title||'World')+' · authored variation')}" required maxlength="90"></label><fieldset><legend>Supported parameters</legend><label>Simulation seed<input name="seed" type="number" min="0" max="1000000" step="1" value="2718" required></label><label>Horizon in world days<input name="horizon_days" type="number" min="1" max="90" step="1" value="30" required></label><p class="studio-note">The backend validator enforces supported ranges and dependencies. Actor IDs, initial private evidence, executable rules and arbitrary code cannot be changed here.</p></fieldset><div class="hero-actions"><button class="button secondary" type="button" id="validate-studio">Validate this specification</button><button class="button" type="submit">Compile into a new life →</button></div><div id="studio-result" role="status"></div></form></div>`;
   }
   function studioSpec() {const form=$('#studio-form');if(!form.reportValidity())return null;return {template_id:form.elements.template_id.value,title:form.elements.title.value.trim(),seed:Number(form.elements.seed.value),horizon_days:Number(form.elements.horizon_days.value)};}
   function telemetry(event) { if(!S.id||!S.data?.telemetry?.opt_in)return;const now=performance.now(),active_ms=document.hidden?0:Math.min(3600000,Math.max(0,Math.round(now-S.activeSince)));S.activeSince=now;api('telemetry',{id:S.id,event,active_ms,session_id:S.sessionId}).catch(()=>{}); }
@@ -330,7 +334,7 @@
     const b=event.target.closest('button');if(!b||b.disabled)return;
     const task=async()=>{
       if(b.hasAttribute('data-close-dialog')){b.closest('dialog').close();return;}
-      if(b.dataset.start){b.disabled=true;b.textContent='Creating a separate life…';try{const result=await api('start',{template_id:b.dataset.start});await loadCatalog();const id=lifeId(metadata(result));if(!id)throw Error('The server did not return a new life identity.');navigate(lifeURL(id));}finally{if(b.isConnected){b.disabled=false;b.textContent='Begin a new life →';}}return;}
+      if(b.dataset.start){b.disabled=true;b.textContent='Creating a separate life…';try{const result=await api('start',{template_id:b.dataset.start});await loadCatalog();const id=lifeId(metadata(result));if(!id)throw Error('The server did not return a new life identity.');rememberMetadataWarning(id,result);navigate(lifeURL(id));}finally{if(b.isConnected){b.disabled=false;b.textContent='Begin a new life →';}}return;}
       if(b.dataset.person){saveCommonDraft();S.selected.set(S.id,b.dataset.person);S.conversationEpoch++;renderObservatory();return;}
       if(b.dataset.action==='report'){await propose({action:'share',recipient:'team_b'});return;}
       if(b.dataset.action==='inspect'){await propose({action:'inspect'});return;}
@@ -344,7 +348,7 @@
       if(b.dataset.enterLab){b.disabled=true;try{await enterLab(b.dataset.enterLab);}finally{b.disabled=false;}return;}
       if(b.hasAttribute('data-dismiss-return')){await dismissReturn();return;}
       if(b.hasAttribute('data-reconcile')){await refreshLife();$('#world-notice').hidden=true;status('This life has been reconciled with its saved journal.');return;}
-      if(b.dataset.saveDiagnostic){const life=(S.catalog.lives||[]).find(l=>lifeId(l)===b.dataset.saveDiagnostic);status(life?.error||life?.diagnostic||saveStatus(life?.save_status),12000);return;}
+      if(b.dataset.saveDiagnostic){const life=savedLives().find(l=>lifeId(l)===b.dataset.saveDiagnostic);status(life?.error||life?.diagnostic||saveStatus(life?.save_status),12000);return;}
       if(b.id==='confirm-choice'){await confirmChoice();return;}
       if(b.id==='story-button'){navigate(lifeURL(S.id,'/history'));return;}
       if(b.id==='close-story'){closeStory();return;}
@@ -366,7 +370,7 @@
       if(event.target.id==='allocation-form'){saveCommonDraft();await propose({action:'allocate',allocation:Object.fromEntries(['team_a','team_b','team_c'].map(id=>[id,Number(event.target.elements[id].value)]))});}
       else if(event.target.id==='common-speech'){saveCommonDraft();const input=$('#common-speech-input'),utterance=input.value.trim();if(!utterance)return;const id=S.id,person=S.selected.get(id)||'team_b',conversationEpoch=S.conversationEpoch;status('Interpreting within the supported offline actions…');let result;try{result=await S.gate.run(signal=>api('intent',{id,text:utterance,recipient:person},signal));}catch(error){if(error.status===404){status('Try “ask for the report”, “inspect”, or use a suggested choice. This installation uses a finite offline grammar.');return;}throw error;}if(id!==S.id||conversationEpoch!==S.conversationEpoch)return;if(result.action){await propose(result.action);}else status(result.clarification||result.reply||result.message||'Choose a suggested action or ask about a report, inspection, promise or allocation.');}
       else if(event.target.id==='promise-form'){const quantity=Number($('#promise-quantity').value),recipient=$('#promise-recipient').value;$('#review-dialog').close();$('#confirm-choice').hidden=false;await propose({action:'commit',recipient,quantity});}
-      else if(event.target.id==='studio-form'){const spec=studioSpec();if(!spec)return;const r=await api('studio/compile',spec);await loadCatalog();navigate(lifeURL(lifeId(metadata(r))));}
+      else if(event.target.id==='studio-form'){const spec=studioSpec();if(!spec)return;const r=await api('studio/compile',spec);await loadCatalog();const id=lifeId(metadata(r));rememberMetadataWarning(id,r);navigate(lifeURL(id));}
       else if(event.target.id==='history-notes'){const id=S.id,note=$('#personal-note').value.trim();if(!note)return;await api('annotation',{id,note});if(id===S.id){draft(id).note='';await refreshLife();status('Personal note saved separately from world history.');}}
     };task().catch(error=>{if(event.target.id==='studio-form'&&$('#studio-result'))$('#studio-result').textContent=error.message;notifyError(error);});
   });

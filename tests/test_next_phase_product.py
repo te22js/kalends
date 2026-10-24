@@ -359,3 +359,56 @@ def test_product_http_retains_loopback_host_and_origin_guards(product_http):
     status, _ = request("/product/api/start", {"template_id": "shared_observatory"}, headers={"Origin": "https://untrusted.example"})
     assert status == 400 and set(service.worlds) == before
     assert request("/product/api/catalog", headers={"Host": "untrusted.example"})[0] == 400
+
+
+@pytest.mark.parametrize("template", ["shared_observatory", "pompeii_life"])
+@pytest.mark.parametrize("days", [1, 30, 90])
+def test_studio_offered_horizons_validate_create_and_replay_without_changing_templates(product_http, template, days):
+    service, paths, request = product_http
+    original = service.templates[template].to_dict()
+    payload = {"template_id": template, "title": "A finite authored life", "seed": 123, "horizon_days": days}
+    before = set(service.worlds)
+    status, result = request("/product/api/studio/validate", payload)
+    assert status == 200, result
+    assert result["valid"] is True and set(service.worlds) == before
+    status, created = request("/product/api/studio/compile", payload)
+    assert status == 200, created
+    runtime = service.get(created["life"]["id"])
+    assert runtime.spec.horizon_minutes == runtime.spec.termination["at"] == days * 1440
+    assert all(row["at"] < runtime.spec.termination["at"] for row in runtime.spec.opportunities)
+    rules = runtime.spec.setting["rules"]
+    if template == "pompeii_life":
+        assert rules["horizon_days"] == days
+    else:
+        assert rules["rounds"] == days
+    assert service.templates[template].to_dict() == original
+    restored = ProductService(service.directory, include_examples=False)
+    assert restored.get(runtime.spec.id).spec.to_dict() == runtime.spec.to_dict()
+    assert restored.get(runtime.spec.id).state_hash() == runtime.state_hash()
+
+
+@pytest.mark.parametrize("error_type", [OSError, ValueError])
+def test_http_confirm_metadata_failure_is_an_accepted_receipt_not_a_false_failed_charge(product_http, monkeypatch, error_type):
+    service, paths, request = product_http
+    ident = start(service)
+    runtime = service.get(ident)
+    proposal = service.review(ident, {"action": "inspect"})
+    with monkeypatch.context() as patch:
+        patch.setattr(service, "_persist_meta", lambda *args: (_ for _ in ()).throw(error_type("injected display save failure")))
+        status, result = request("/product/api/confirm", {"id": ident, "proposal_id": proposal["proposal_id"]})
+    assert status == 200 and result["receipt"] and result["metadata_warning"], result
+    assert result["life"]["save_status"] == "saved" and result["life"]["metadata_warning"]
+    assert result["snapshot"]["credits"] == 11 and len(runtime.commands) == 1
+    read_status, reloaded = request(f"/product/api/life?id={ident}")
+    assert read_status == 200 and reloaded["life"]["metadata_warning"]
+    # A retry of the same accepted review cannot create another debit.
+    assert request("/product/api/confirm", {"id": ident, "proposal_id": proposal["proposal_id"]})[0] == 400
+    assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 1
+    restored = ProductService(service.directory, include_examples=False)
+    assert restored.get(ident).state_hash() == runtime.state_hash()
+    # A later accepted save can repair the display metadata and clears the
+    # warning without changing the already accepted inspection charge.
+    advance_status, advanced = request("/product/api/advance", {"id": ident, "minutes": 1})
+    assert advance_status == 200 and advanced["life"]["metadata_warning"] is None
+    assert request(f"/product/api/life?id={ident}")[1]["life"]["metadata_warning"] is None
+    assert runtime.world.economy.cash["Player"] == 11 and len(runtime.commands) == 2
