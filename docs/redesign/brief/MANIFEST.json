@@ -1,0 +1,75 @@
+{
+  "description": "Kalends redesign brief and standalone interface reference; not a modified production app",
+  "files": [
+    {
+      "path": "00_START_HERE.md",
+      "bytes": 8613,
+      "sha256": "7cfa1d583e8cd9ac6b77ab454304fdede76544787235ba466d657330b75d634b"
+    },
+    {
+      "path": "01_MASTER_CODEX_PROMPT.md",
+      "bytes": 24678,
+      "sha256": "cc4e570955c03a84fd0ccf822316179be432025bf31ef1282b3192022bc5ba60"
+    },
+    {
+      "path": "02_COPY_AND_FIRST_SESSION.md",
+      "bytes": 14142,
+      "sha256": "5ad7875202d8117ff3184e21b31cfa16a242ea7c8494ddffc3a6133383cd0093"
+    },
+    {
+      "path": "03_VERIFICATION_AND_RESEARCH.md",
+      "bytes": 12964,
+      "sha256": "e0139b9dd1643ea3dcf10b78001359cba941ec0da5c3e5f8011a5d0e65080303"
+    },
+    {
+      "path": "04_INTERACTION_REFERENCE.html",
+      "bytes": 35267,
+      "sha256": "6bc56a8ed5058f475f2aabb31383c61cea98ba92311fa2b203e757fdb43f87f4"
+    },
+    {
+      "path": "evidence/REFERENCE_TEST_RESULTS.json",
+      "bytes": 5362,
+      "sha256": "b799ecf222ff3ac9a989cd5208b5aa498239f80bcb2734613576dad6bbebfefa"
+    },
+    {
+      "path": "evidence/copy_extracted.json",
+      "bytes": 86399,
+      "sha256": "4218f26255c26acaa8ee9b9fa2ecfabc0705759e2017fdea351f4316917c27b3"
+    },
+    {
+      "path": "evidence/reference_home_desktop.png",
+      "bytes": 173761,
+      "sha256": "67f903874d8dfdfea69705ce5fbf169ea7545eca0ed223b8ed724a2452133ccd"
+    },
+    {
+      "path": "evidence/reference_observatory_result.png",
+      "bytes": 122570,
+      "sha256": "9a06676b42b9b3dbf5b56391f99b40c863c6e2e570aa145fdfd166724f6f6b43"
+    },
+    {
+      "path": "evidence/reference_pompeii_desktop.png",
+      "bytes": 193568,
+      "sha256": "d891981525bb87e2a00ae50e7e8017a7026efef4b6d9caa878e10a1f8e0d72ec"
+    },
+    {
+      "path": "evidence/reference_pompeii_narrow.png",
+      "bytes": 105959,
+      "sha256": "0e4baaefd77820ad1e013e02d637de55643f9f093cdc1dce3adbad3c02076feb"
+    },
+    {
+      "path": "evidence/supplied_copy_case005.png",
+      "bytes": 120495,
+      "sha256": "cc897c8d576a69c3500b6f5aacf334b4913f5a08b237653d9fc3b5f157e46357"
+    },
+    {
+      "path": "evidence/supplied_copy_case006_narrow.png",
+      "bytes": 56877,
+      "sha256": "d9cb623243658740f1f1ff8a01a8c63aae22a0f05c1baa32c143dd1d99e3a1a1"
+    },
+    {
+      "path": "tests/test_reference.py",
+      "bytes": 8777,
+      "sha256": "b088a6ac5f213da617af50809fec8dbb015f6ad560e9f1aa275288942ef744e6"
+    }
+  ]
+}

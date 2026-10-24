@@ -1,0 +1,1924 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			128 text Pompeii
+			129 text Aelia
+			130 text Day 1 · 08:02
+			131 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+				132 container menu
+					133 container
+						134 heading KALENDS, Value: 2
+							135 text KALENDS
+						136 button Description: Close menu, ID: close-menu
+					137 text Every accepted action is saved on this computer.
+					138 button Return to the district, ID: resume
+					139 link Description: Kalends home ↗, Value: 127.0.0.1:8831/
+					140 link Description: About this reconstruction ↗, Value: 127.0.0.1:8831/history-rebirth
+					141 container diagnostics
+						142 button (expanded) Local developer measurements, Secondary Actions: Collapse
+							143 text Local developer measurements
+						144 button Reset trace, ID: reset-trace
+						145 button Freeze & show raw trace, ID: freeze-trace
+						146 button Export trace, ID: export-trace
+						147 button Record 20s of the 3D canvas, ID: record-scene
+						148 container Description: 3D performance measurements, ID: trace-output
+							149 text {
+  "schema": "kalends-immersion-trace-v1",
+  "gpu_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+  "engine": "PlayCanvas 2.23.3",
+  "device_type": "webgl2",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardware_concurrency": 8,
+  "viewport": {
+    "width": 1280,
+    "height": 650,
+    "dpr": 2,
+    "render_width": 1920,
+    "render_height": 975
+  },
+  "quality": "balanced",
+  "scene_resolution_scale": 1,
+  "msaa_samples": 2,
+  "actors": 7,
+  "draw_calls": 697,
+  "textures_bytes": 94627128,
+  "scope": "Browser-reported hardware and engine counters; not GPU elapsed time or physical-device qualification.",
+  "app_boot_ms": 438.40000000037253,
+  "navigation_to_ready_ms": 532.9000000003725,
+  "navigation_to_first_ready_draw_ms": 649.1999999992549,
+  "client_ready": true,
+  "samples_retained": 254,
+  "sample_limit": 12000,
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 4,
+    "ignored": 0,
+    "idle": 4,
+    "cancelled": 0,
+    "committed_draw": 4
+  },
+  "pending_input": null,
+  "frame_ms": {
+    "n": 224,
+    "mean": 32.297,
+    "p50": 33.2,
+    "p95": 36.985,
+    "p99": 41.434,
+    "max": 44.7
+  },
+  "render_submission_ms": {
+    "n": 224,
+    "mean": 3.307,
+    "p50": 2.6,
+    "p95": 6.5,
+    "p99": 11.078,
+    "max": 15.9
+  },
+  "idle_input_to_committed_draw_ms": {
+    "n": 4,
+    "mean": 52.4,
+    "p50": 52.6,
+    "p95": 60.555,
+    "p99": 61.071,
+    "max": 61.2
+  },
+  "next_changed_draw_ms": {
+    "n": 4,
+    "mean": 52.35,
+    "p50": 52.55,
+    "p95": 60.555,
+    "p99": 61.071,
+    "max": 61.2
+  },
+  "backend_ms": {
+    "n": 8,
+    "mean": 19.2,
+    "p50": 16.55,
+    "p95": 27.295,
+    "p99": 27.939,
+    "max": 28.09999999962747
+  },
+  "long_task_ms": null,
+  "memory": {
+    "used_js_heap_bytes": 93242077,
+    "total_js_heap_bytes": 126581213,
+    "scope": "Chromium estimate, excludes GPU and server"
+  },
+  "notes": [
+    "Small local browser sample. Canvas submission is not compositor completion or physical display.",
+    "Idle latency requires strict visual/controller idle and its matching accepted move; cancellations, supersessions and unmoved/nonidle inputs are excluded.",
+    "Frame callbacks/render submission do not measure GPU time. No external inference or telemetry."
+  ],
+  "samples": [
+    {
+      "sequence": 982,
+      "at_ms": 31097.8,
+      "kind": "trace_reset"
+    },
+    {
+      "sequence": 983,
+      "at_ms": 31146.9,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 984,
+      "at_ms": 31180.7,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 985,
+      "at_ms": 31213.2,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 986,
+      "at_ms": 31245.7,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 987,
+      "at_ms": 31279.7,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 988,
+      "at_ms": 31313.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 989,
+      "at_ms": 31346.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 990,
+      "at_ms": 31363.4,
+      "kind": "frame",
+      "interval_ms": 16.6,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 991,
+      "at_ms": 31380.4,
+      "kind": "frame",
+      "interval_ms": 17,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 992,
+      "at_ms": 31399.6,
+      "kind": "frame",
+      "interval_ms": 19.2,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 993,
+      "at_ms": 31417.9,
+      "kind": "frame",
+      "interval_ms": 18.3,
+      "render_submission_ms": 5
+    },
+    {
+      "sequence": 994,
+      "at_ms": 31436.6,
+      "kind": "frame",
+      "interval_ms": 18.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 995,
+      "at_ms": 31449,
+      "kind": "frame",
+      "interval_ms": 12.4,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 996,
+      "at_ms": 31464.5,
+      "kind": "frame",
+      "interval_ms": 15.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 997,
+      "at_ms": 31481.6,
+      "kind": "frame",
+      "interval_ms": 17.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 998,
+      "at_ms": 31514.4,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 999,
+      "at_ms": 31549.7,
+      "kind": "frame",
+      "interval_ms": 35.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1000,
+      "at_ms": 31588,
+      "kind": "frame",
+      "interval_ms": 38.2,
+      "render_submission_ms": 5.3
+    },
+    {
+      "sequence": 1001,
+      "at_ms": 31615.7,
+      "kind": "frame",
+      "interval_ms": 27.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1002,
+      "at_ms": 31650.3,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 4.6
+    },
+    {
+      "sequence": 1003,
+      "at_ms": 31682,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 1004,
+      "at_ms": 31716.8,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 1005,
+      "at_ms": 31746.9,
+      "kind": "frame",
+      "interval_ms": 30.1,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1006,
+      "at_ms": 31781.9,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1007,
+      "at_ms": 31813.5,
+      "kind": "frame",
+      "interval_ms": 31.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1008,
+      "at_ms": 31848,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1009,
+      "at_ms": 31880,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1010,
+      "at_ms": 31913.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1011,
+      "at_ms": 31946.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1012,
+      "at_ms": 31980.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1013,
+      "at_ms": 32013.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1014,
+      "at_ms": 32046.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1015,
+      "at_ms": 32080.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1016,
+      "at_ms": 32113.1,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 1017,
+      "at_ms": 32146.8,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1018,
+      "at_ms": 32180,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1019,
+      "at_ms": 32213.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1020,
+      "at_ms": 32247.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1021,
+      "at_ms": 32280,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1022,
+      "at_ms": 32313.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1023,
+      "at_ms": 32346.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1024,
+      "at_ms": 32379.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1025,
+      "at_ms": 32416.8,
+      "kind": "frame",
+      "interval_ms": 36.9,
+      "render_submission_ms": 5.3
+    },
+    {
+      "sequence": 1026,
+      "at_ms": 32447.2,
+      "kind": "frame",
+      "interval_ms": 30.4,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1027,
+      "at_ms": 32480.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1028,
+      "at_ms": 32513.2,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1029,
+      "at_ms": 32546.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1030,
+      "at_ms": 32579.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1031,
+      "at_ms": 32613.5,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1032,
+      "at_ms": 32648.4,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1033,
+      "at_ms": 32680.4,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1034,
+      "at_ms": 32715.9,
+      "kind": "frame",
+      "interval_ms": 35.5,
+      "render_submission_ms": 4.7
+    },
+    {
+      "sequence": 1035,
+      "at_ms": 32748.7,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1036,
+      "at_ms": 32781.3,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 1037,
+      "at_ms": 32813.6,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1038,
+      "at_ms": 32846.4,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1039,
+      "at_ms": 32880,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1040,
+      "at_ms": 32912.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 1041,
+      "at_ms": 32946.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1042,
+      "at_ms": 32979.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1043,
+      "at_ms": 33013.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1044,
+      "at_ms": 33046.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1045,
+      "at_ms": 33079.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1046,
+      "at_ms": 33113.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1047,
+      "at_ms": 33146.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1048,
+      "at_ms": 33179.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1049,
+      "at_ms": 33213.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 1050,
+      "at_ms": 33246.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1051,
+      "at_ms": 33280,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1052,
+      "at_ms": 33313.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1053,
+      "at_ms": 33350.2,
+      "kind": "frame",
+      "interval_ms": 37,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 1054,
+      "at_ms": 33382.8,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 4.2
+    },
+    {
+      "sequence": 1055,
+      "at_ms": 33418,
+      "kind": "frame",
+      "interval_ms": 35.2,
+      "render_submission_ms": 6.7
+    },
+    {
+      "sequence": 1056,
+      "at_ms": 33450.1,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 5.5
+    },
+    {
+      "sequence": 1057,
+      "at_ms": 33480.4,
+      "kind": "frame",
+      "interval_ms": 30.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1058,
+      "at_ms": 33513.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1059,
+      "at_ms": 33548.1,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1060,
+      "at_ms": 33579.8,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1061,
+      "at_ms": 33613.2,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1062,
+      "at_ms": 33646.8,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1063,
+      "at_ms": 33680,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1064,
+      "at_ms": 33714.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1065,
+      "at_ms": 33747.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1066,
+      "at_ms": 33781.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1067,
+      "at_ms": 33814.5,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1068,
+      "at_ms": 33819.5,
+      "kind": "navigation_cancel",
+      "reason": "direction change",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 1070,
+      "at_ms": 33819.7,
+      "kind": "input",
+      "input_id": 1069,
+      "label": "direction",
+      "accepted": true,
+      "reason": "",
+      "from_visual_idle": true
+    },
+    {
+      "sequence": 1071,
+      "at_ms": 33847.3,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1072,
+      "at_ms": 33848.5,
+      "kind": "backend",
+      "path": "/api/route",
+      "duration_ms": 28.09999999962747,
+      "ok": true
+    },
+    {
+      "sequence": 1073,
+      "at_ms": 33864.4,
+      "kind": "backend",
+      "path": "/api/move",
+      "duration_ms": 15.700000001117587,
+      "ok": true
+    },
+    {
+      "sequence": 1074,
+      "at_ms": 33864.8,
+      "kind": "authority_accepted",
+      "input_id": 1069
+    },
+    {
+      "sequence": 1075,
+      "at_ms": 33881,
+      "kind": "next_changed_player_draw",
+      "input_id": 1069,
+      "duration_ms": 61.2,
+      "from_visual_idle": true,
+      "authority_accepted": true
+    },
+    {
+      "sequence": 1076,
+      "at_ms": 33881,
+      "kind": "idle_committed_player_draw",
+      "input_id": 1069,
+      "duration_ms": 61.2
+    },
+    {
+      "sequence": 1077,
+      "at_ms": 33881,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1078,
+      "at_ms": 33913.6,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1079,
+      "at_ms": 33948.3,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1080,
+      "at_ms": 33981.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1081,
+      "at_ms": 34014.8,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1082,
+      "at_ms": 34051,
+      "kind": "frame",
+      "interval_ms": 36.2,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 1083,
+      "at_ms": 34095.7,
+      "kind": "frame",
+      "interval_ms": 44.7,
+      "render_submission_ms": 15.8
+    },
+    {
+      "sequence": 1084,
+      "at_ms": 34116.2,
+      "kind": "frame",
+      "interval_ms": 20.5,
+      "render_submission_ms": 5
+    },
+    {
+      "sequence": 1085,
+      "at_ms": 34152.7,
+      "kind": "frame",
+      "interval_ms": 36.5,
+      "render_submission_ms": 4.4
+    },
+    {
+      "sequence": 1086,
+      "at_ms": 34182.2,
+      "kind": "frame",
+      "interval_ms": 29.5,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1087,
+      "at_ms": 34215.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1088,
+      "at_ms": 34251.5,
+      "kind": "frame",
+      "interval_ms": 36.2,
+      "render_submission_ms": 5.4
+    },
+    {
+      "sequence": 1089,
+      "at_ms": 34283.2,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 1090,
+      "at_ms": 34313.6,
+      "kind": "frame",
+      "interval_ms": 30.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1091,
+      "at_ms": 34337.6,
+      "kind": "navigation_cancel",
+      "reason": "direction change",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 1093,
+      "at_ms": 34337.8,
+      "kind": "input",
+      "input_id": 1092,
+      "label": "direction",
+      "accepted": true,
+      "reason": "",
+      "from_visual_idle": true
+    },
+    {
+      "sequence": 1094,
+      "at_ms": 34349.6,
+      "kind": "frame",
+      "interval_ms": 36,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1095,
+      "at_ms": 34351.9,
+      "kind": "backend",
+      "path": "/api/route",
+      "duration_ms": 14,
+      "ok": true
+    },
+    {
+      "sequence": 1096,
+      "at_ms": 34367.6,
+      "kind": "backend",
+      "path": "/api/move",
+      "duration_ms": 15.400000000372529,
+      "ok": true
+    },
+    {
+      "sequence": 1097,
+      "at_ms": 34367.9,
+      "kind": "authority_accepted",
+      "input_id": 1092
+    },
+    {
+      "sequence": 1098,
+      "at_ms": 34381,
+      "kind": "next_changed_player_draw",
+      "input_id": 1092,
+      "duration_ms": 43.1,
+      "from_visual_idle": true,
+      "authority_accepted": true
+    },
+    {
+      "sequence": 1099,
+      "at_ms": 34381.1,
+      "kind": "idle_committed_player_draw",
+      "input_id": 1092,
+      "duration_ms": 43.2
+    },
+    {
+      "sequence": 1100,
+      "at_ms": 34381.1,
+      "kind": "frame",
+      "interval_ms": 31.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1101,
+      "at_ms": 34413.8,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1102,
+      "at_ms": 34446.9,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1103,
+      "at_ms": 34480.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1104,
+      "at_ms": 34513.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1105,
+      "at_ms": 34546.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1106,
+      "at_ms": 34579.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1107,
+      "at_ms": 34613.7,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1108,
+      "at_ms": 34646.5,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1109,
+      "at_ms": 34680.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1110,
+      "at_ms": 34712.5,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1111,
+      "at_ms": 34746.8,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1112,
+      "at_ms": 34780.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1113,
+      "at_ms": 34791,
+      "kind": "navigation_cancel",
+      "reason": "direction change",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 1115,
+      "at_ms": 34791.2,
+      "kind": "input",
+      "input_id": 1114,
+      "label": "direction",
+      "accepted": true,
+      "reason": "",
+      "from_visual_idle": true
+    },
+    {
+      "sequence": 1116,
+      "at_ms": 34815.9,
+      "kind": "frame",
+      "interval_ms": 35.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1117,
+      "at_ms": 34817,
+      "kind": "backend",
+      "path": "/api/route",
+      "duration_ms": 25.800000000745058,
+      "ok": true
+    },
+    {
+      "sequence": 1118,
+      "at_ms": 34839.2,
+      "kind": "backend",
+      "path": "/api/move",
+      "duration_ms": 22,
+      "ok": true
+    },
+    {
+      "sequence": 1119,
+      "at_ms": 34839.8,
+      "kind": "authority_accepted",
+      "input_id": 1114
+    },
+    {
+      "sequence": 1120,
+      "at_ms": 34848.1,
+      "kind": "next_changed_player_draw",
+      "input_id": 1114,
+      "duration_ms": 56.9,
+      "from_visual_idle": true,
+      "authority_accepted": true
+    },
+    {
+      "sequence": 1121,
+      "at_ms": 34848.1,
+      "kind": "idle_committed_player_draw",
+      "input_id": 1114,
+      "duration_ms": 56.9
+    },
+    {
+      "sequence": 1122,
+      "at_ms": 34848.1,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1123,
+      "at_ms": 34885.5,
+      "kind": "frame",
+      "interval_ms": 37.4,
+      "render_submission_ms": 4.9
+    },
+    {
+      "sequence": 1124,
+      "at_ms": 34914,
+      "kind": "frame",
+      "interval_ms": 28.5,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1125,
+      "at_ms": 34948,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1126,
+      "at_ms": 34981,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1127,
+      "at_ms": 35014.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1128,
+      "at_ms": 35046.6,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1129,
+      "at_ms": 35080.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1130,
+      "at_ms": 35113.3,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1131,
+      "at_ms": 35147.2,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1132,
+      "at_ms": 35180.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1133,
+      "at_ms": 35214,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1134,
+      "at_ms": 35232.8,
+      "kind": "navigation_cancel",
+      "reason": "direction change",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 1136,
+      "at_ms": 35232.9,
+      "kind": "input",
+      "input_id": 1135,
+      "label": "direction",
+      "accepted": true,
+      "reason": "",
+      "from_visual_idle": true
+    },
+    {
+      "sequence": 1137,
+      "at_ms": 35247.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1138,
+      "at_ms": 35248.1,
+      "kind": "backend",
+      "path": "/api/route",
+      "duration_ms": 15.199999999254942,
+      "ok": true
+    },
+    {
+      "sequence": 1139,
+      "at_ms": 35265.8,
+      "kind": "backend",
+      "path": "/api/move",
+      "duration_ms": 17.40000000037253,
+      "ok": true
+    },
+    {
+      "sequence": 1140,
+      "at_ms": 35266.2,
+      "kind": "authority_accepted",
+      "input_id": 1135
+    },
+    {
+      "sequence": 1141,
+      "at_ms": 35281.1,
+      "kind": "next_changed_player_draw",
+      "input_id": 1135,
+      "duration_ms": 48.2,
+      "from_visual_idle": true,
+      "authority_accepted": true
+    },
+    {
+      "sequence": 1142,
+      "at_ms": 35281.2,
+      "kind": "idle_committed_player_draw",
+      "input_id": 1135,
+      "duration_ms": 48.3
+    },
+    {
+      "sequence": 1143,
+      "at_ms": 35281.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1144,
+      "at_ms": 35313.5,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1145,
+      "at_ms": 35347.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1146,
+      "at_ms": 35380,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1147,
+      "at_ms": 35413.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1148,
+      "at_ms": 35446.9,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1149,
+      "at_ms": 35480.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1150,
+      "at_ms": 35513.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1151,
+      "at_ms": 35546,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1152,
+      "at_ms": 35580.6,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1153,
+      "at_ms": 35589.3,
+      "kind": "navigation_cancel",
+      "reason": "menu opened",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 1154,
+      "at_ms": 35613.5,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1155,
+      "at_ms": 35647.9,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 1156,
+      "at_ms": 35680.5,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1157,
+      "at_ms": 35716.2,
+      "kind": "frame",
+      "interval_ms": 35.7,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 1158,
+      "at_ms": 35746.6,
+      "kind": "frame",
+      "interval_ms": 30.4,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1159,
+      "at_ms": 35779.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1160,
+      "at_ms": 35817.6,
+      "kind": "frame",
+      "interval_ms": 37.9,
+      "render_submission_ms": 6.5
+    },
+    {
+      "sequence": 1161,
+      "at_ms": 35833.4,
+      "kind": "frame",
+      "interval_ms": 15.8,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 1162,
+      "at_ms": 35851.8,
+      "kind": "frame",
+      "interval_ms": 18.4,
+      "render_submission_ms": 6.5
+    },
+    {
+      "sequence": 1163,
+      "at_ms": 35865.6,
+      "kind": "frame",
+      "interval_ms": 13.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1164,
+      "at_ms": 35886,
+      "kind": "frame",
+      "interval_ms": 20.4,
+      "render_submission_ms": 7.2
+    },
+    {
+      "sequence": 1165,
+      "at_ms": 35899.5,
+      "kind": "frame",
+      "interval_ms": 13.5,
+      "render_submission_ms": 4.3
+    },
+    {
+      "sequence": 1166,
+      "at_ms": 35916.4,
+      "kind": "frame",
+      "interval_ms": 16.9,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1167,
+      "at_ms": 35947.6,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1168,
+      "at_ms": 35981.6,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 1169,
+      "at_ms": 36014,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1170,
+      "at_ms": 36048.5,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 1171,
+      "at_ms": 36080.3,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1172,
+      "at_ms": 36113.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1173,
+      "at_ms": 36147.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 1174,
+      "at_ms": 36180.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1175,
+      "at_ms": 36218.1,
+      "kind": "frame",
+      "interval_ms": 38,
+      "render_submission_ms": 5.7
+    },
+    {
+      "sequence": 1176,
+      "at_ms": 36250.4,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 5.3
+    },
+    {
+      "sequence": 1177,
+      "at_ms": 36281.5,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1178,
+      "at_ms": 36319.5,
+      "kind": "frame",
+      "interval_ms": 38,
+      "render_submission_ms": 6.1
+    },
+    {
+      "sequence": 1179,
+      "at_ms": 36348.1,
+      "kind": "frame",
+      "interval_ms": 28.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1180,
+      "at_ms": 36380.3,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1181,
+      "at_ms": 36413.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1182,
+      "at_ms": 36447.4,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1183,
+      "at_ms": 36480.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1184,
+      "at_ms": 36513.2,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1185,
+      "at_ms": 36546.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1186,
+      "at_ms": 36579.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1187,
+      "at_ms": 36614.7,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1188,
+      "at_ms": 36646.7,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1189,
+      "at_ms": 36680.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1190,
+      "at_ms": 36713,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1191,
+      "at_ms": 36748.1,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1192,
+      "at_ms": 36779.9,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1193,
+      "at_ms": 36815,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 1194,
+      "at_ms": 36847,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1195,
+      "at_ms": 36881.8,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1196,
+      "at_ms": 36913.2,
+      "kind": "frame",
+      "interval_ms": 31.4,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1197,
+      "at_ms": 36945.9,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1198,
+      "at_ms": 36980,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1199,
+      "at_ms": 37013.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1200,
+      "at_ms": 37046.9,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1201,
+      "at_ms": 37080,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1202,
+      "at_ms": 37113.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1203,
+      "at_ms": 37147,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1204,
+      "at_ms": 37179.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1205,
+      "at_ms": 37213.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1206,
+      "at_ms": 37249.9,
+      "kind": "frame",
+      "interval_ms": 36.2,
+      "render_submission_ms": 4.8
+    },
+    {
+      "sequence": 1207,
+      "at_ms": 37283,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 1208,
+      "at_ms": 37320,
+      "kind": "frame",
+      "interval_ms": 37,
+      "render_submission_ms": 5.3
+    },
+    {
+      "sequence": 1209,
+      "at_ms": 37352.8,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 5.6
+    },
+    {
+      "sequence": 1210,
+      "at_ms": 37382.8,
+      "kind": "frame",
+      "interval_ms": 30,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 1211,
+      "at_ms": 37417.9,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 5.5
+    },
+    {
+      "sequence": 1212,
+      "at_ms": 37450.1,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 1213,
+      "at_ms": 37486.9,
+      "kind": "frame",
+      "interval_ms": 36.8,
+      "render_submission_ms": 6.3
+    },
+    {
+      "sequence": 1214,
+      "at_ms": 37523.4,
+      "kind": "frame",
+      "interval_ms": 36.5,
+      "render_submission_ms": 10
+    },
+    {
+      "sequence": 1215,
+      "at_ms": 37554.1,
+      "kind": "frame",
+      "interval_ms": 30.7,
+      "render_submission_ms": 8
+    },
+    {
+      "sequence": 1216,
+      "at_ms": 37581.2,
+      "kind": "frame",
+      "interval_ms": 27.1,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1217,
+      "at_ms": 37618.6,
+      "kind": "frame",
+      "interval_ms": 37.4,
+      "render_submission_ms": 6.3
+    },
+    {
+      "sequence": 1218,
+      "at_ms": 37651.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 6.5
+    },
+    {
+      "sequence": 1219,
+      "at_ms": 37684.5,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 5.7
+    },
+    {
+      "sequence": 1220,
+      "at_ms": 37726.9,
+      "kind": "frame",
+      "interval_ms": 42.4,
+      "render_submission_ms": 11.4
+    },
+    {
+      "sequence": 1221,
+      "at_ms": 37752.8,
+      "kind": "frame",
+      "interval_ms": 25.9,
+      "render_submission_ms": 7.1
+    },
+    {
+      "sequence": 1222,
+      "at_ms": 37795.5,
+      "kind": "frame",
+      "interval_ms": 42.7,
+      "render_submission_ms": 15.9
+    },
+    {
+      "sequence": 1223,
+      "at_ms": 37816.4,
+      "kind": "frame",
+      "interval_ms": 20.9,
+      "render_submission_ms": 4.7
+    },
+    {
+      "sequence": 1224,
+      "at_ms": 37848.2,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1225,
+      "at_ms": 37880.1,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1226,
+      "at_ms": 37915.9,
+      "kind": "frame",
+      "interval_ms": 35.7,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 1227,
+      "at_ms": 37951.5,
+      "kind": "frame",
+      "interval_ms": 35.6,
+      "render_submission_ms": 6.9
+    },
+    {
+      "sequence": 1228,
+      "at_ms": 37983.9,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 4.4
+    },
+    {
+      "sequence": 1229,
+      "at_ms": 38018.9,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 6.8
+    },
+    {
+      "sequence": 1230,
+      "at_ms": 38050.8,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 4.9
+    },
+    {
+      "sequence": 1231,
+      "at_ms": 38082,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1232,
+      "at_ms": 38116.7,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 5
+    },
+    {
+      "sequence": 1233,
+      "at_ms": 38147.4,
+      "kind": "frame",
+      "interval_ms": 30.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1234,
+      "at_ms": 38181.3,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1235,
+      "at_ms": 38218.7,
+      "kind": "frame",
+      "interval_ms": 37.4,
+      "render_submission_ms": 6.2
+    },
+    {
+      "sequence": 1236,
+      "at_ms": 38250.6,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 5
+    },
+    {
+      "sequence": 1237,
+      "at_ms": 38281.8,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1238,
+      "at_ms": 38317.9,
+      "kind": "frame",
+      "interval_ms": 36.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1239,
+      "at_ms": 38349.6,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 4.6
+    }
+  ]
+}
+
+The focused UI element is 145 button Freeze & show raw trace, ID: freeze-trace

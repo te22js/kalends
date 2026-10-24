@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "spec_hash": "1106f7f4e1f623f289b688572e85b415214067ac8468d86e8ef774cf0a72f938",
+  "spec": {
+    "version": 1,
+    "id": "observatory_f9b238328cb8",
+    "title": "Your shared observatory",
+    "setting": {
+      "adapter": "commons",
+      "rules": {
+        "seed": 2718,
+        "round_minutes": 1440,
+        "capacity": 12,
+        "rounds": 90,
+        "quota": 4,
+        "inspection_cost": 1,
+        "maintenance_interval": 7,
+        "initial_condition": "fragile"
+      }
+    },
+    "participants": [
+      {
+        "id": "Player",
+        "role": "elected consortium coordinator",
+        "player": true,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_a",
+        "role": "time-sensitive sky-survey research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_b",
+        "role": "instrument maintenance and calibration research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      },
+      {
+        "id": "team_c",
+        "role": "long-baseline transient follow-up research team",
+        "player": false,
+        "resources": {
+          "credits": 12
+        }
+      }
+    ],
+    "institutions": [
+      {
+        "id": "consortium",
+        "members": [
+          "Player",
+          "team_a",
+          "team_b",
+          "team_c"
+        ],
+        "capacity": 12,
+        "rule": "coordinator_quota"
+      }
+    ],
+    "observations": [
+      {
+        "id": "maintenance_log",
+        "subject": "observatory",
+        "predicate": "condition",
+        "value": "fragile",
+        "at": 0,
+        "observers": [
+          "team_b"
+        ],
+        "kind": "direct"
+      }
+    ],
+    "goals": [
+      {
+        "id": "survey_deadline",
+        "actor": "team_a",
+        "label": "Complete a four-slot survey batch by the first dusk",
+        "priority": 95,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      },
+      {
+        "id": "calibration_deadline",
+        "actor": "team_b",
+        "label": "Complete a four-slot calibration batch without promising unusable capacity",
+        "priority": 90,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      },
+      {
+        "id": "followup_deadline",
+        "actor": "team_c",
+        "label": "Complete a four-slot follow-up batch by the first dusk",
+        "priority": 85,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "capacity",
+          "quantity": 4,
+          "metric": "completed_rounds"
+        }
+      }
+    ],
+    "actions": [
+      "reserve",
+      "release",
+      "share",
+      "inspect",
+      "commit",
+      "allocate",
+      "wait"
+    ],
+    "opportunities": [
+      {
+        "at": 0,
+        "label": "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+      },
+      {
+        "at": 10080,
+        "label": "Recheck instrument condition after the scheduled maintenance interval."
+      },
+      {
+        "at": 43200,
+        "label": "Compare the teams' completed work, broken promises and cumulative allocation equity."
+      },
+      {
+        "at": 86400,
+        "label": "Reconsider a prior promise using the event-grounded counterfactual retry."
+      }
+    ],
+    "horizon_minutes": 129600,
+    "termination": {
+      "at": 129600
+    },
+    "measures": [
+      "completed_rounds",
+      "failed_promises",
+      "equity",
+      "information_shared",
+      "credits_spent",
+      "unused_capacity",
+      "elapsed_days"
+    ],
+    "debrief": {
+      "objective": "Practice coordinating scarce shared capacity under private condition information and real deadlines. Distinguish nominal capacity, supported evidence, endorsed promises and completed research. This is a fictional decision practice task; skill transfer is unvalidated.",
+      "questions": [
+        "Who knew the hardware condition before the first allocation, and what caused it to become available to others?",
+        "Which promises fit actual usable capacity at settlement, and which failed? Cite the events.",
+        "Which team carried the opportunity cost of your allocation, and what happened over repeated rounds?",
+        "Would an inspection have changed the information available before your decision, after accounting for its finite credit cost?"
+      ],
+      "transfer": {
+        "prompt": "A new laboratory advertises twelve instrument slots. Three teams need four slots each, but only the engineer has a fresh reliability report. Which plan best manages the uncertainty?",
+        "options": [
+          "Promise four slots to all three teams immediately because twelve slots are advertised.",
+          "Ask for the dated report or buy a fresh check, disclose its limits, and make a feasible allocation with an explicit review point.",
+          "Allocate everything to the most confident team and record its confidence as direct evidence."
+        ],
+        "answer": 1,
+        "rationale": "A nominal resource limit is not verified usable capacity. Legitimate evidence, an explicit cost-aware allocation and a later review point make the promise testable. This answer is conceptual and does not establish learning transfer."
+      }
+    },
+    "sources": [
+      {
+        "id": "observatory_fiction",
+        "title": "Project-authored shared-instrument allocation experiment; not an operational observatory or validated training curriculum.",
+        "url": "project://kalends/specs/shared_observatory.json",
+        "kind": "fiction"
+      }
+    ]
+  },
+  "retention": "hybrid",
+  "commands": [
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "share",
+        "recipient": "team_b"
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 13
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "allocate",
+        "allocation": {
+          "team_a": 0,
+          "team_b": 4,
+          "team_c": 4
+        }
+      },
+      "at": 0,
+      "after": 0,
+      "receipt_id": 14
+    },
+    {
+      "revision": 1,
+      "operation": "advance",
+      "data": {
+        "minutes": 1439,
+        "mode": "compress"
+      },
+      "at": 0,
+      "after": 1439,
+      "receipt_id": null
+    }
+  ],
+  "state_hash": "ead3fad23f5bea84de29d2d3331459c404b52f2424f613d6f3487587a0b34021"
+}

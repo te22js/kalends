@@ -1,0 +1,37 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 container Evidence & history, ID: notebook-dialog
+		2 container
+			3 heading Evidence & history, Value: 2, ID: notebook-heading
+				4 text Evidence & history
+			5 button Close history notebook
+		6 container notebook-content
+			7 text A place to keep what you have learned. History cards explain the setting; they do not change what anyone in the world knows.
+			8 container
+				9 heading The accounts you received, Value: 3
+					10 text The accounts you received
+				11 heading Sabina's wax account, Value: 4
+					12 text Sabina's wax account
+				13 text Two flour units ordered for the food counter; 4 coins advanced to Marcus.
+				14 text Sabina · Day 1 · 08:00
+				15 text Copied fictional document. This account records a claim; it does not prove every detail.
+				16 text Another account could help you compare the claims. You can still choose what to do with the information you have.
+			17 heading Places & history, Value: 3
+				18 text Places & history
+			19 button (disabled) A food counter on the street Visit this place to learn about it
+				20 text A food counter on the street
+				21 text Visit this place to learn about it
+			22 button (disabled) A home turned into a workplace Visit this place to learn about it
+				23 text A home turned into a workplace
+				24 text Visit this place to learn about it
+			25 button A person who had been freed Open history card
+				26 text A person who had been freed
+				27 text Open history card
+			28 button Political messages on walls Open history card
+				29 text Political messages on walls
+				30 text Open history card
+			31 button Evidence, reconstruction and invented choices Open history card
+				32 text Evidence, reconstruction and invented choices
+				33 text Open history card
+
+The focused UI element is 5 button Close history notebook

@@ -1,0 +1,81 @@
+Browser tab: 22, Title: "Kalends · Explore a world by taking part in it.", URL: "http://127.0.0.1:8832/".
+0 AXWebArea Kalends · Explore a world by taking part in it., URL: 127.0.0.1:8832/
+	1 link Description: Skip to content, Value: 127.0.0.1:8832/#main
+	2 container public-shell
+		3 container
+			4 link Description: Kalends home, Value: 127.0.0.1:8832/
+			5 container Main navigation
+				6 link Description: Experiences, Value: 127.0.0.1:8832/worlds
+				7 link Description: Research, Value: 127.0.0.1:8832/research
+				8 link Description: About, Value: 127.0.0.1:8832/about
+				9 link Description: Your worlds , Value: 127.0.0.1:8832/your-worlds
+		10 container main
+			11 container
+				12 text KALENDS · EARLY EXPERIENCE PROTOTYPE
+			13 heading Explore a world by taking part in it., Value: 1
+				14 text Explore a world
+				15 text by taking part in it.
+			16 text Meet its people, find out what is happening, and decide what to do. Kalends keeps a record of your choices, so you can return to their consequences.
+			17 link Description: Choose an experience →, Value: 127.0.0.1:8832/worlds
+			18 text These are early prototypes. Your choices are saved on this installation. Time advances while you play or when you choose to move it forward; it does not pass while the server is stopped.
+			19 container
+				20 image Actual Pompeii prototype: Aelia in a small Roman-inspired neighborhood
+				21 text Actual prototype capture. One simplified neighborhood.
+			22 container
+				23 heading Choose where to begin., Value: 2
+					24 text Choose where to begin.
+				25 text Start with a guide, or explore at your own pace. Help remains available inside each experience.
+				26 container
+					27 image An actual Pompeii prototype capture of the small fictional neighborhood
+					28 text ACTUAL PROTOTYPE CAPTURE
+				29 heading Pompeii: a day in the neighborhood, Value: 3
+					30 text Pompeii: a day in the neighborhood
+				31 text Walk through a small Roman-inspired district as Aelia. Meet its residents, help resolve a disputed delivery, and learn what archaeological evidence tells us about work and daily life.
+				32 button Start with a guide
+				33 button Explore on my own
+				34 text The setting draws on historical evidence. Aelia, the other characters and the delivery dispute are fictional. The map, prices, wages and economic rules are simplified.
+				35 link Description: Read about this experience →, Value: 127.0.0.1:8832/worlds/pompeii_life
+				36 container Illustration of three teams sharing an instrument
+				37 heading Shared Observatory: decide who gets to use the instrument, Value: 3
+					38 text Shared Observatory: decide who gets to use the instrument
+				39 text Three teams need the same instrument. Check the reports, decide how to divide its capacity, and see whether your promises can be kept.
+				40 button Guide me through a round
+				41 button Start without guidance
+				42 text A fictional coordination exercise with simplified rules, not a simulation of a specific observatory or an astronomy course.
+				43 link Description: Read about this experience →, Value: 127.0.0.1:8832/worlds/shared_observatory
+			44 container remember
+				45 heading A choice leaves a record., Value: 2
+					46 text A choice leaves a record.
+				47 container
+					48 text 01
+					49 heading Understand the situation., Value: 3
+						50 text Understand the situation.
+					51 text Find out what people want and what they know. Their accounts may be incomplete or out of date.
+				52 container
+					53 text 02
+					54 heading Review your choice., Value: 3
+						55 text Review your choice.
+					56 text Check its cost and any later obligation before confirming it. Guidance never makes a promise or spends for you.
+				57 container
+					58 text 03
+					59 heading See what happened., Value: 3
+						60 text See what happened.
+					61 text Read the actual result, then continue the same saved life. Opening your story preserves your place.
+			62 container
+				63 text RESEARCH AND LIMITS
+				64 heading Inspect what has been tested., Value: 2
+					65 text Inspect what has been tested.
+				66 text These finite experiences are working prototypes. Enjoyment, comprehension and educational benefit need evidence from people using them.
+				67 link Description: Read the research and its limits →, Value: 127.0.0.1:8832/research
+		68 container
+			69 link Description: kalends, Value: 127.0.0.1:8832/
+			70 text Take part, make a choice, and see what follows.
+			71 container Footer
+				72 link Description: About, Value: 127.0.0.1:8832/about
+				73 link Description: Research, Value: 127.0.0.1:8832/research
+				74 link Description: Accessibility, Value: 127.0.0.1:8832/accessibility
+				75 link Description: Data & saves, Value: 127.0.0.1:8832/data-and-saves
+				76 link Description: Sources & assets, Value: 127.0.0.1:8832/acknowledgements
+			77 text Early local prototype · Two supported worlds
+
+The focused UI element is 0 AXWebArea Kalends · Explore a world by taking part in it., URL: 127.0.0.1:8832/

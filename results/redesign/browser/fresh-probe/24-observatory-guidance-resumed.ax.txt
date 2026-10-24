@@ -1,0 +1,29 @@
+Browser tab: 1, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_f9b238328cb8".
+0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8
+	1 container Help with this experience, ID: help-dialog
+		2 container
+			3 heading Help with this experience, Value: 2, ID: help-heading
+				4 text Help with this experience
+			5 button Close help
+		6 container help-content
+			7 text You can ask for help at any point. Reading these instructions does not make a choice or spend resources for you.
+			8 container
+				9 text GUIDANCE IS ON
+				10 heading See what each team received., Value: 3
+					11 text See what each team received.
+				12 text The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 0 units and received 0 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 4 units. Help is here whenever you need it. Reading pauses time. Moving and work keep their shown time costs.
+				13 button Review the actual result
+				14 button Turn guidance off
+			15 container
+				16 heading What you know, Value: 3
+					17 text What you know
+				18 text Amir currently requests 2 capacity units. Requests, promises, allocated amounts and delivered amounts are different records.
+			19 button (collapsed) Review the evidence you obtained, Secondary Actions: Expand
+				20 text Review the evidence you obtained
+			21 button (collapsed) Guide chapters, Secondary Actions: Expand
+				22 text Guide chapters
+			23 button Practice in a separate copy
+			24 button Review what happened
+			25 text A practice copy creates a separate fresh life with the same scenario. Your original history stays intact. Use your browser’s zoom to enlarge text. No full assistive-technology audit has been completed.
+
+The focused UI element is 0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8

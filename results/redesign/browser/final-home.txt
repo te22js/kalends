@@ -1,0 +1,46 @@
+Browser tab: 25, Title: "Kalends · A morning in Pompeii", URL: "http://127.0.0.1:8833/".
+1 AXWebArea Kalends · A morning in Pompeii, URL: 127.0.0.1:8833/
+	2 link Description: Skip to content, Value: 127.0.0.1:8833/#main
+	3 container public-shell
+		4 container
+			5 link Description: Kalends home, Value: 127.0.0.1:8833/
+			6 container Main navigation
+				7 link Description: Worlds, Value: 127.0.0.1:8833/worlds
+				8 link Description: Your story, Value: 127.0.0.1:8833/your-worlds
+				9 link Description: Research, Value: 127.0.0.1:8833/research
+		21 container main
+			22 container
+				23 text AN INHABITED HISTORY · POMPEII, 79 CE
+				24 heading A morning in Pompeii., Value: 1
+					25 text A morning
+					26 text in Pompeii.
+				27 text You are Aelia. A flour cart has arrived, but two buyers claim it. Hear their accounts. Decide whether to help.
+				28 button Enter Pompeii →
+				29 link Description: Before you arrive, Value: 127.0.0.1:8833/worlds/pompeii_life
+				30 text Aelia and the dispute are fictional. The places draw on archaeological evidence. Your choices stay saved on this installation.
+				31 image Actual Kalends scene: Aelia and Chreste inside the schematic fullery
+				32 text Inside the playable neighborhood · an actual game capture
+			33 container
+				34 text A DIFFERENT KIND OF DAY
+				35 heading One instrument. Three teams counting on you., Value: 2
+					36 text One instrument.
+					37 text Three teams counting on you.
+				38 text Shared Observatory is a compact coordination experience. Find out what the instrument can deliver, divide its capacity, and see whether your promises can be kept.
+				39 button Enter Shared Observatory →
+				40 text A fictional exercise. Capacity units are simplified shares of instrument use.
+			41 container
+				42 link Description: Your saved lives →, Value: 127.0.0.1:8833/your-worlds
+				43 link Description: What the research found →, Value: 127.0.0.1:8833/research
+				44 link Description: The longer idea →, Value: 127.0.0.1:8833/about
+		11 container
+			12 link Description: kalends, Value: 127.0.0.1:8833/
+			13 text Take part, make a choice, and see what follows.
+			14 container Footer
+				15 link Description: About, Value: 127.0.0.1:8833/about
+				16 link Description: Research, Value: 127.0.0.1:8833/research
+				17 link Description: Accessibility, Value: 127.0.0.1:8833/accessibility
+				18 link Description: Data & saves, Value: 127.0.0.1:8833/data-and-saves
+				19 link Description: Sources & assets, Value: 127.0.0.1:8833/acknowledgements
+			20 text Early local prototype · Two supported worlds
+
+The focused UI element is 1 AXWebArea Kalends · A morning in Pompeii, URL: 127.0.0.1:8833/

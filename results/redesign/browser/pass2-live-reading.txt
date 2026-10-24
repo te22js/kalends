@@ -1,0 +1,80 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			55 text Pompeii
+			56 text Aelia
+			57 text Day 1 · 14:08
+			58 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 text Aelia · you
+					17 button Chreste, In conversation. Talk
+						59 text Chreste
+						95 text In conversation · E to talk
+				18 container hud
+					19 button Description: Open game menu, ID: menu-button
+						20 text KALENDS
+					21 container
+						61 text 6 coins
+						23 button Description: Settings, ID: settings-button
+				24 container Description: Your next step, ID: lead
+					62 text YOUR MORNING
+					63 text Time paused · resumes when you return
+					27 heading The cart went on without you, Value: 2, ID: lead-title
+						64 text The cart went on without you
+					29 button Open your journal, ID: lead-action
+					30 button (collapsed) Help & directions, Secondary Actions: Expand
+						31 text Help & directions
+					32 container Description: What next, ID: continuing-options
+						65 button Visit the food counter Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+							66 text Visit the food counter
+							67 text Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+				36 container location-caption
+					96 text FULLONICA OF STEPHANUS
+					97 text Attested places · fictional lives
+				44 container controls
+					45 container movement-controls
+						46 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					47 button What is this place?, ID: place-history
+					48 button ← To the street X, ID: exit-room
+						49 text ← To the street 
+						50 text X
+					51 checkbox Pause, Value: 1, ID: live
+					52 button Wait 30m, ID: wait
+					53 button A day later, ID: day-later
+					54 button Description: Follow Aelia, ID: recenter
+				70 container Description: Conversation, ID: conversation
+					71 text IN CONVERSATION
+					72 heading Chreste, Value: 2, ID: speaker-name
+						73 text Chreste
+					74 text fullery worker
+					75 button Description: Leave conversation, ID: close-conversation
+					76 text I work in this fullery under constraint. The household pays for extra help, but I am not free to leave. Ask about the work before accepting a paid shift.
+					77 container choices
+						78 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 80 minutes.
+							79 text Is there paid work here?
+							80 text Take a real shift, paid from the counter or household account.
+							81 text Cost: 80 minutes.
+						82 button Arrange a current supply inspection Pay one coin; the result arrives after fifteen world minutes. Cost: 1 coin · 15 minutes.
+							83 text Arrange a current supply inspection
+							84 text Pay one coin; the result arrives after fifteen world minutes.
+							85 text Cost: 1 coin · 15 minutes.
+						86 button What do you remember of our dealings? Recall selected retained shared experiences.
+							87 text What do you remember of our dealings?
+							88 text Recall selected retained shared experiences.
+					89 button (collapsed) More to ask or do, Secondary Actions: Expand
+						90 text More to ask or do
+					91 container speech-form
+						92 text Say something
+						93 text field (settable) Say something, ID: speech
+						94 button Ask
+
+The focused UI element is 75 button Description: Leave conversation, ID: close-conversation

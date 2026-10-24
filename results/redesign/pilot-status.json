@@ -1,0 +1,20 @@
+{
+  "authorization_scope": "bounded paid-live limit gate; not production authorization",
+  "disabled_reason": "explicit_enable_required",
+  "enabled": false,
+  "estimated_spent_usd": 0.0,
+  "fixture_calls": 0,
+  "max_concurrency": 1,
+  "max_context_bytes": 8000,
+  "max_output_bytes": 2400,
+  "max_output_tokens": 256,
+  "network_calls": 0,
+  "proposal_only": true,
+  "raw_local_text_retained": false,
+  "receipts": [],
+  "reserved_usd": 0.0,
+  "session_cap_usd": null,
+  "timeout_seconds": 2.0,
+  "turns_remaining": 3,
+  "turns_used": 0
+}

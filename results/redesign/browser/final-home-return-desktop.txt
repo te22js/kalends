@@ -1,0 +1,51 @@
+Browser tab: 23, Title: "Kalends · A morning in Pompeii", URL: "http://127.0.0.1:8833/".
+1 AXWebArea Kalends · A morning in Pompeii, URL: 127.0.0.1:8833/
+	2 link Description: Skip to content, Value: 127.0.0.1:8833/#main
+	3 container public-shell
+		4 container
+			5 link Description: Kalends home, Value: 127.0.0.1:8833/
+			6 container Main navigation
+				7 link Description: Worlds, Value: 127.0.0.1:8833/worlds
+				8 link Description: Your story, Value: 127.0.0.1:8833/your-worlds
+				9 link Description: Research, Value: 127.0.0.1:8833/research
+		10 container main
+			11 container
+				35 text AN INHABITED HISTORY · POMPEII, 79 CE
+				12 heading A morning in Pompeii., Value: 1
+					36 text A morning
+					37 text in Pompeii.
+				38 text You are Aelia. A flour cart has arrived, but two buyers claim it. Hear their accounts. Decide whether to help.
+				39 text YOUR PLACE IS STILL HERE
+				13 heading Aelia — a place in the city, Value: 2
+					40 text Aelia — a place in the city
+				41 text Continue from the moment you left. Nothing advanced while you were away.
+				14 link Description: Continue this life →, Value: 127.0.0.1:8833/lives/pompeii_5a46283e4a12
+				15 button Begin another morning →
+				16 link Description: Before you arrive, Value: 127.0.0.1:8833/worlds/pompeii_life
+				42 text Aelia and the dispute are fictional. The places draw on archaeological evidence. Your choices stay saved on this installation.
+				17 image Actual Kalends scene: Aelia and Chreste inside the schematic fullery
+				43 text Inside the playable neighborhood · an actual game capture
+			18 container
+				44 text A DIFFERENT KIND OF DAY
+				19 heading One instrument. Three teams counting on you., Value: 2
+					45 text One instrument.
+					46 text Three teams counting on you.
+				47 text Shared Observatory is a compact coordination experience. Find out what the instrument can deliver, divide its capacity, and see whether your promises can be kept.
+				20 button Enter Shared Observatory →
+				48 text A fictional exercise. Capacity units are simplified shares of instrument use.
+			21 container
+				22 link Description: Your saved lives →, Value: 127.0.0.1:8833/your-worlds
+				23 link Description: What the research found →, Value: 127.0.0.1:8833/research
+				24 link Description: The longer idea →, Value: 127.0.0.1:8833/about
+		25 container
+			26 link Description: kalends, Value: 127.0.0.1:8833/
+			27 text Take part, make a choice, and see what follows.
+			28 container Footer
+				29 link Description: About, Value: 127.0.0.1:8833/about
+				30 link Description: Research, Value: 127.0.0.1:8833/research
+				31 link Description: Accessibility, Value: 127.0.0.1:8833/accessibility
+				32 link Description: Data & saves, Value: 127.0.0.1:8833/data-and-saves
+				33 link Description: Sources & assets, Value: 127.0.0.1:8833/acknowledgements
+			34 text Early local prototype · Two supported worlds
+
+The focused UI element is 1 AXWebArea Kalends · A morning in Pompeii, URL: 127.0.0.1:8833/

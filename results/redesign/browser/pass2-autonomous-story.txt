@@ -1,0 +1,97 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f/history".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f/history
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f/history#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container Your story, ID: story-drawer
+			4 container
+				5 text YOUR NOTEBOOK
+			6 heading Your story, Value: 2, ID: story-heading
+				7 text Your story
+			8 button Description: Close your story, ID: close-story
+			9 container Your story views
+				10 button Chapters
+				11 button People
+				12 button Reflect
+			13 container story-content
+				14 text The choices you made. The consequences you encountered.
+				15 button Open your evidence & history notebook →
+				16 container
+					17 heading Elsewhere in this world, Value: 3
+						18 text Elsewhere in this world
+					19 heading Lucius received 6 flour units., Value: 4
+						20 text Lucius received 6 flour units.
+					21 button Read supporting evidence 
+					22 button Bookmark
+				23 container
+					24 text Day 1 · 14:00 · consequence
+					25 heading Lucius received 6 flour units., Value: 3
+						26 text Lucius received 6 flour units.
+					27 button Read supporting evidence 
+					28 button Bookmark
+					29 heading The cart has left for the household; Sabina's counter is still waiting. Ask her what happened., Value: 4
+						30 text The cart has left for the household; Sabina's counter is still waiting. Ask her what happened.
+					31 button Read supporting evidence 
+					32 button Bookmark
+				33 container
+					34 text Day 1 · 08:00 · arrival
+					35 heading You arrive as Aelia, a freedwoman earning her place between households and shops., Value: 3
+						36 text You arrive as Aelia, a freedwoman earning her place between households and shops.
+					37 button Read supporting evidence 
+					38 button Bookmark
+					39 heading Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”, Value: 4
+						40 text Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”
+					41 button Read supporting evidence 
+					42 button Bookmark
+					43 heading Hear a private account of the disputed six-sack cart., Value: 4
+						44 text Hear a private account of the disputed six-sack cart.
+					45 button Read supporting evidence 
+					46 button Bookmark
+					47 heading Sabina asks you to find out who the six sacks were actually promised to., Value: 4
+						48 text Sabina asks you to find out who the six sacks were actually promised to.
+					49 button Read supporting evidence 
+					50 button Bookmark
+					51 heading You read the document “Sabina's wax account”., Value: 4
+						52 text You read the document “Sabina's wax account”.
+					53 button Read supporting evidence 
+					54 button Bookmark
+					55 heading You read the document “The household's delivery instructions”., Value: 4
+						56 text You read the document “The household's delivery instructions”.
+					57 button Read supporting evidence 
+					58 button Bookmark
+					59 heading You leave the cart dispute to its buyers; their own deadline still approaches., Value: 4
+						60 text You leave the cart dispute to its buyers; their own deadline still approaches.
+					61 button Read supporting evidence 
+					62 button Bookmark
+					63 heading Compare a deadline with current stock, price and any accepted promise., Value: 4
+						64 text Compare a deadline with current stock, price and any accepted promise.
+					65 button Read supporting evidence 
+					66 button Bookmark
+					67 heading Lucius pays the carrying charge and secures the cart before the counter can., Value: 4
+						68 text Lucius pays the carrying charge and secures the cart before the counter can.
+					69 button Read supporting evidence 
+					70 button Bookmark
+					71 button (collapsed) Everyday activity · 2 records, Secondary Actions: Expand
+						72 text Everyday activity · 2 records
+					73 button (collapsed) Everyday activity · 5 records, Secondary Actions: Expand
+						74 text Everyday activity · 5 records
+					75 button (collapsed) Everyday activity · 45 records, Secondary Actions: Expand
+						76 text Everyday activity · 45 records
+					77 button (collapsed) Everyday activity · 2 records, Secondary Actions: Expand
+						78 text Everyday activity · 2 records
+				79 container
+					80 text Day 1 · 08:00 · arrival
+					81 heading Morning opens on the Via dell'Abbondanza., Value: 3
+						82 text Morning opens on the Via dell'Abbondanza.
+					83 button Read supporting evidence 
+					84 button Bookmark
+				85 button Continue after reviewing →
+				86 container
+					87 heading Your personal notes, Value: 3
+						88 text Your personal notes
+					89 text Your own thoughts, kept separately from events and other people’s memories.
+					90 container history-notes
+						91 text Add a personal note
+						92 text entry area (settable) Add a personal note, ID: personal-note
+						93 button Save personal note
+
+The focused UI element is 8 button Description: Close your story, ID: close-story

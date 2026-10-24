@@ -1,0 +1,109 @@
+Browser tab: 19, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8830/lives/observatory_90ddbbff0654".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8830/lives/observatory_90ddbbff0654
+	2 link Description: Skip to content, Value: 127.0.0.1:8830/lives/observatory_90ddbbff0654#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8830/your-worlds
+			6 text Shared Observatory
+			7 text You, the coordinator · bbff0654
+			8 text Day 1 · 00:00 · World time
+			9 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story, ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container world-main
+			14 container Description: Your next step, ID: guide-panel
+				15 container
+					16 text GUIDED ROUND
+				17 heading You coordinate one shared instrument., Value: 2
+					18 text You coordinate one shared instrument.
+				19 text Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time.
+				20 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				21 button Begin the guided round
+				22 button What should I do next?
+				23 button Turn guidance off
+			24 container observatory-stage
+				25 container
+					26 text SHARED OBSERVATORY · YOU ARE THE COORDINATOR
+				27 heading Three teams. One instrument., Value: 1
+					28 text Three teams. One instrument.
+				29 text Each team has work to complete. Read a request, obtain a report, then decide how to divide capacity. Promises are optional. A unit is a simplified share of instrument use in this exercise.
+				30 text Current round · Day 1 · 00:00
+				31 container
+					32 text THE SHARED INSTRUMENT
+					33 heading Twelve rated units. Three teams need them., Value: 2
+						34 text Twelve rated units.
+						35 text Three teams need them.
+					36 text Current condition not yet known. The rated capacity is twelve units; ask Mira for her dated report before relying on it. Public exercise rule: a fragile condition supports eight usable units; a sound condition supports twelve. You must obtain evidence to know which condition was observed. Rated units · Requested: Amir No request / Mira 2 / Lin No request
+					37 text At settlement, the instrument supplies Amir first, then Mira, then Lin. This exercise rule can leave a later team with less than you allocated.
+				38 container People you can speak with
+					39 checkbox Amir Survey, Value: 0
+						40 text Amir
+						41 text Survey
+					42 checkbox Mira Instrument systems, Value: 1
+						43 text Mira
+						44 text Instrument systems
+					45 checkbox Lin Follow-up, Value: 0
+						46 text Lin
+						47 text Follow-up
+				48 container Conversation with Mira
+					49 text INSTRUMENT SYSTEMS
+					50 heading Mira, Value: 2
+						51 text Mira
+					52 text “I work on the instrument systems. You can ask about the dated report before deciding what to promise.”
+					53 button Ask Mira for the report
+					54 button Discuss a promise
+					55 button Buy a direct inspection · 1 credit
+					56 container common-speech
+						57 text field (settable) Description: What would you like to say to Mira?, ID: common-speech-input
+						58 button Say
+					59 text You can ask about a report, an inspection, a promise or an allocation. Other requests may need clarification. Speaking does not confirm a choice.
+				60 container
+					61 heading A few recent moments, Value: 2
+						62 text A few recent moments
+					63 text Day 1 · 00:00
+					64 text Round 1: teams may negotiate the shared instrument.
+					65 button Read supporting evidence 
+					66 text Day 1 · 00:00
+					67 text Negotiate the first allocation while the maintenance team alone has current hardware evidence.
+					68 button Read supporting evidence 
+					69 text Day 1 · 00:00
+					70 text The consortium records its declared research projects.
+					71 button Read supporting evidence 
+				72 container
+					73 container
+						74 text REQUESTED → PROMISED → ALLOCATED → DELIVERED
+					75 heading Choose an allocation., Value: 2
+						76 text Choose an allocation.
+					77 text The teams’ current requests are shown below. A promise creates an obligation; an allocation is a separate choice. Actual delivery is recorded at settlement.
+					78 container allocation-form
+						79 container
+							80 text Amir No request · No promise · Not allocated
+						81 stepper (settable, integer) Amir No request · No promise · Not allocated, Value: 0, ID: allocate-team_a
+						82 container
+							83 text Mira 2 requested · No promise · Not allocated
+						84 stepper (settable, integer) Mira 2 requested · No promise · Not allocated, Value: 0, ID: allocate-team_b
+						85 container
+							86 text Lin No request · No promise · Not allocated
+						87 stepper (settable, integer) Lin No request · No promise · Not allocated, Value: 0, ID: allocate-team_c
+						88 container allocation-total
+							89 text Total: 0 of 12 rated units.
+							90 text Usable capacity is unconfirmed in the reports you have received.
+						91 button Review allocation
+					92 heading Project requirements, Value: 3
+						93 text Project requirements
+					94 text Mira: 4 units in a settled batch; deadline minute 1440; status: open.
+					95 text Lin: 4 units in a settled batch; deadline minute 1440; status: open.
+					96 text Amir: 4 units in a settled batch; deadline minute 1440; status: open.
+					97 container
+						98 text You have  12 credits . A direct inspection costs 1.
+					99 heading What you have promised, Value: 2
+						100 text What you have promised
+					101 text No open promise is recorded for this round.
+					102 button Finish this round Review the time jump and your known commitments before confirming.
+						103 text Finish this round
+						104 text Review the time jump and your known commitments before confirming.
+					105 button Choose another time jump
+					106 link Description: Read your complete story , Value: 127.0.0.1:8830/lives/observatory_90ddbbff0654/history
+
+The focused UI element is 1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8830/lives/observatory_90ddbbff0654

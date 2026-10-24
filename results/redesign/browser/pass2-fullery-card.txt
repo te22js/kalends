@@ -1,0 +1,32 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 container Evidence & history, ID: notebook-dialog
+		2 container
+			3 heading Evidence & history, Value: 2, ID: notebook-heading
+				4 text Evidence & history
+			5 button Close history notebook
+		6 container notebook-content
+			7 button ← Notebook
+			8 container
+				9 text PLACE & HISTORY
+				10 heading A home turned into a workplace, Value: 3
+					11 text A home turned into a workplace
+				12 text The Fullonica of Stephanus was a cloth-cleaning workshop adapted from a house. Fullonica means a fullery, where cloth was processed. What would distinguish a workshop from a room used only for domestic life?
+				13 button (expanded) How do we know?, Secondary Actions: Collapse
+					14 text How do we know?
+				17 text Washing facilities and changes to the domestic building support its workshop interpretation.
+				18 text The conventional building name does not establish every occupant or worker. Precise ownership can be an interpretation.
+				19 content list
+					20 container
+						21 AXListMarker • 
+						22 link Description: Archaeological Park of Pompeii: Along the streets of Pompeii ↗, Value: pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/
+						23 text first-session-history-v1:S2
+				15 button (expanded) What we invented, Secondary Actions: Collapse
+					16 text What we invented
+				24 text Reconstruction
+				25 text The game represents washing basins inside a simplified workshop.
+				26 text The game basins are schematic geometry, not a measured plan.
+				27 text Chreste, her schedule and the paid shifts offered to Aelia are invented. Chreste is enslaved; Aelia taking a paid shift is a different situation.
+				28 text Source photographs are not reproduced by this card.
+
+The focused UI element is 15 button (expanded) What we invented, Secondary Actions: Collapse

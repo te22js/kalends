@@ -1,0 +1,53 @@
+Browser tab: 19, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8830/lives/pompeii_5fc571e86fbd".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd
+	1 link Description: Skip to content, Value: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8830/your-worlds
+			5 text Pompeii
+			6 text Aelia · 71e86fbd
+			7 text Day 1 · 08:00 · World time
+			8 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story, ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8830/immersion/?experience=pompeii_5fc571e86fbd
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 button Dama, Carrying household instructions. Approach to speak
+					17 text Aelia · you
+					18 button Sabina, Waiting by her disputed order. Talk
+					19 button Walk to Felix's bread counter
+				20 container hud
+					21 button Description: Open game menu, ID: menu-button
+						22 text KALENDS
+						23 text POMPEII · 79 CE
+					24 container
+						25 text DAY 1
+						26 text 08:00
+						27 text VIA DELL’ABBONDANZA
+					28 container
+						29 text 6 coins
+						30 button Journal, ID: journal-button
+						31 button Description: Settings, ID: settings-button
+				32 container controls
+					33 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					34 button Wait 30m, ID: wait
+					35 button A day later, ID: day-later
+					36 button Description: Follow Aelia, ID: recenter
+				37 container loading
+					38 text KALENDS · POMPEII
+					39 heading You are Aelia., Value: 1, ID: loading-title
+						40 text You are Aelia.
+					41 text You play a fictional freedwoman: a woman who was once enslaved and is now free. A delivery of flour is disputed. Hear the different accounts before deciding whether to help.
+					42 text Start by finding Sabina. Click the ground to walk, or use WASD or the arrow keys. Press E to speak when you are close.
+					43 text The district is ready. Automatic time is off. Moving and accepted actions can advance time.
+					44 progress indicator Value: 100, ID: load-progress
+					45 button Begin →, ID: enter
+						46 text Begin
+						47 text →
+					48 button I know the controls, ID: skip-controls
+					49 text Reading: world time is paused. Your accepted choices are saved on this installation.
+
+The focused UI element is 0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd

@@ -1,0 +1,32 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 container Evidence & history, ID: notebook-dialog
+		2 container
+			3 heading Evidence & history, Value: 2, ID: notebook-heading
+				4 text Evidence & history
+			5 button Close history notebook
+		6 container notebook-content
+			7 button ← Notebook
+			8 container
+				9 text PLACE & HISTORY
+				10 heading A food counter on the street, Value: 3
+					11 text A food counter on the street
+				12 text The thermopolium, or food-and-drink counter, of Vetutius Placidus had large storage jars built into its serving counter. Which visible feature suggests that customers were served here?
+				13 button (expanded) How do we know?, Secondary Actions: Collapse
+					14 text How do we know?
+				17 text The Park describes the surviving counter and its embedded vessels.
+				18 text A counter does not establish its exact daily menu or the identity of everyone who worked there.
+				19 content list
+					20 container
+						21 AXListMarker • 
+						22 link Description: Archaeological Park of Pompeii: Along the streets of Pompeii ↗, Value: pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/
+						23 text first-session-history-v1:S2
+				15 button (expanded) What we invented, Secondary Actions: Collapse
+					16 text What we invented
+				24 text Reconstruction
+				25 text The game represents a counter and inset jar forms. This is a schematic model of the food-counter setting.
+				26 text The in-game counter is an original schematic reconstruction, not an archaeological photograph.
+				27 text Sabina, her stock, prices and the flour dispute are fictional. The model is not a surveyed reconstruction.
+				28 text Source photographs are not reproduced by this card.
+
+The focused UI element is 15 button (expanded) What we invented, Secondary Actions: Collapse

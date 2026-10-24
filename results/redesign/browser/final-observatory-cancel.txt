@@ -1,0 +1,97 @@
+Browser tab: 23, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_6f82840644f2".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_6f82840644f2
+	2 link Description: Skip to content, Value: 127.0.0.1:8831/lives/observatory_6f82840644f2#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			6 text Shared Observatory
+			7 text You, the coordinator
+			8 text Day 1 · 00:00
+			9 text Saved locally
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container world-main
+			14 container Description: Your next step, ID: guide-panel
+				15 container
+					16 text NEXT STEP
+				17 heading Choose an allocation you can explain., Value: 2
+					18 text Choose an allocation you can explain.
+				19 text Mira’s report describes 8 usable units, observed at Day 1, 00:00. Set a quantity for each team and review the total. Delivery follows the public exercise order: Amir, then Mira, then Lin. Each project needs its stated minimum in one delivery. Smaller deliveries are recorded, but do not complete a project.
+				20 button Review your allocation
+				21 button Explore without guidance
+			22 container observatory-stage
+				23 container
+					24 text SHARED OBSERVATORY · DAY 1 · 00:00
+				25 heading One instrument. Three teams counting on you., Value: 1
+					26 text One instrument.
+					27 text Three teams counting on you.
+				28 text Find out what it can deliver. Divide its capacity. See what each team receives.
+				29 container
+					30 text TODAY'S CAPACITY 8
+					31 heading Units in your latest report, Value: 2
+						32 text Units in your latest report
+					33 text Rated capacity · 12 units
+					34 container 8 reported usable units out of twelve rated
+					35 text Mira’s report · observed Day 1 · 00:00.
+					36 button (collapsed) What does a unit mean?, Secondary Actions: Expand
+						37 text What does a unit mean?
+				38 container People you can speak with
+					39 checkbox Amir Survey, Value: 0
+						40 text Amir
+						41 text Survey
+					42 checkbox Mira Instrument systems, Value: 0
+						43 text Mira
+						44 text Instrument systems
+					45 checkbox Lin Follow-up, Value: 1
+						46 text Lin
+						47 text Follow-up
+				48 container Conversation with Lin
+					49 heading Lin, Value: 2
+						50 text Lin
+					51 text FOLLOW-UP
+					52 text Our follow-up work also depends on time at the instrument. I need to know what we can actually count on.
+					53 text No request submitted yet. That is different from requesting zero.
+					54 text PUBLIC PROJECT REQUIREMENT
+					55 container
+						56 text 4 units in one delivery  · open
+						57 text Due Day 2 · 00:00
+					58 text A smaller delivery is recorded, but does not complete this project.
+					59 button What does your project need?
+					60 button I’d like to make a promise
+					61 button (collapsed) Another question or an inspection, Secondary Actions: Expand
+						62 text Another question or an inspection
+				63 button (collapsed) What the teams need to finish their projects, Secondary Actions: Expand
+					64 text What the teams need to finish their projects
+				65 container
+					66 container
+						67 text YOUR DECISION
+					68 heading Divide the capacity., Value: 2
+						69 text Divide the capacity.
+					70 text Choose each team’s share. Saving this allocation does not make a promise or deliver it.
+					71 container allocation-form
+						72 container
+							73 text Amir No request received · No promise
+						74 stepper (settable, integer) Amir No request received · No promise, Value: 4, ID: allocate-team_a
+						75 container
+							76 text Mira 2 units requested · No promise
+						77 stepper (settable, integer) Mira 2 units requested · No promise, Value: 4, ID: allocate-team_b
+						78 container
+							79 text Lin No request received · 4 units promised
+						80 stepper (settable, integer) Lin No request received · 4 units promised, Value: 4, ID: allocate-team_c
+						81 container allocation-total
+							82 text Total: 12 of 12 rated units.
+							83 text Your allocation exceeds the 8 usable units in your last dated report. If that condition still holds, the public execution order may leave a team short. You may review this plan if you intend that risk.
+						84 button Review allocation →
+					85 text Draft numbers stay in this tab while you explore. Reloading discards unsaved edits.
+					86 heading Promises, Value: 3
+						87 text Promises
+					88 text You promised 4 units to Lin by Day 1, 23:59. Allocation and delivery are separate steps.
+					89 button Run this round Review saved amounts and promises first.
+						90 text Run this round
+						91 text Review saved amounts and promises first.
+					92 text You have 12 credits. A direct inspection costs 1.
+					93 button Other time choices
+					94 link Description: Your story →, Value: 127.0.0.1:8831/lives/observatory_6f82840644f2/history
+
+The focused UI element is 84 button Review allocation →

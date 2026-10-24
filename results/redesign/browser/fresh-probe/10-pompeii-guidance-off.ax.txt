@@ -1,0 +1,58 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			121 text Pompeii
+			122 text Aelia
+			123 text Day 1 · 08:16
+			124 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				53 container names
+					54 text Aelia · you
+					59 button Sabina, Waiting by her disputed order. Talk
+					60 button Marcus, Minding the flour cart. Talk
+					61 button Dama, Carrying household instructions. Talk
+					64 button Walk to Felix's bread counter
+				16 container hud
+					17 button Description: Open game menu, ID: menu-button
+						18 text KALENDS
+					19 container
+						125 text 6 coins
+						21 button Description: Settings, ID: settings-button
+				22 container Description: Your next step, ID: lead
+					126 text YOUR MORNING
+					127 text Reading pauses time
+					25 heading Six sacks. Two promises., Value: 2, ID: lead-title
+						128 text Six sacks. Two promises.
+					27 button Open your journal, ID: lead-action
+					112 container guide-details
+						113 button (expanded) Help & directions, Secondary Actions: Collapse
+							114 text Help & directions
+						129 text Sabina's counter and Lucius's household both claim the cart. Read their terms, pay for a different arrangement, or put your name behind one side.
+						117 container guide-tools
+							118 button What should I do next?, ID: guide-help
+							120 button Resume guidance, ID: guide-toggle
+				30 container location-caption
+					130 text VIA DELL’ABBONDANZA
+					131 text Attested places · fictional lives
+				108 container interaction
+					132 text Sabina · food seller · Waiting by her disputed order
+					110 button Talk E, ID: interact
+						133 text Talk 
+						134 text E
+				38 container controls
+					39 container movement-controls
+						40 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					45 checkbox Live, Value: 0, ID: live
+					46 button Wait 30m, ID: wait
+					47 button A day later, ID: day-later
+					48 button Description: Follow Aelia, ID: recenter
+
+The focused UI element is 120 button Resume guidance, ID: guide-toggle

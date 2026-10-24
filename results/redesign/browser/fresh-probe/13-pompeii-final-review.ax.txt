@@ -1,0 +1,78 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			55 text Pompeii
+			56 text Aelia
+			57 text Day 1 · 08:16
+			58 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 text Aelia · you
+					17 button Sabina, In conversation. Talk
+						59 text Sabina
+						105 text In conversation · E to talk
+					18 button Marcus, Minding the flour cart. Talk
+					19 button Dama, Carrying household instructions. Talk
+					20 button Walk to Felix's bread counter
+				21 container hud
+					22 button Description: Open game menu, ID: menu-button
+						23 text KALENDS
+					24 container
+						69 text 6 coins
+						26 button Description: Settings, ID: settings-button
+				27 container Description: Your next step, ID: lead
+					70 text NEXT
+					71 text Reading pauses time
+					30 heading Choose whether and how to help., Value: 2, ID: lead-title
+						72 text Choose whether and how to help.
+					32 button Talk to Sabina, ID: lead-action
+					33 container guide-details
+						34 button (expanded) Help & directions, Secondary Actions: Collapse
+							35 text Help & directions
+						73 text Return to Sabina to review a market delivery or leave the decision to the buyers. The household offers an advance with later service; Marcus can negotiate using three copied accounts.
+						106 text You are close enough to Sabina. Select them or press E.
+						37 container guide-tools
+							38 button What should I do next?, ID: guide-help
+							67 button Show destination marker, ID: guide-hint
+							39 button Turn guidance off, ID: guide-toggle
+				40 container location-caption
+					107 text VIA DELL’ABBONDANZA
+					108 text Attested places · fictional lives
+				48 container controls
+					49 container movement-controls
+						50 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					51 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					52 button Wait 30m, ID: wait
+					53 button A day later, ID: day-later
+					54 button Description: Follow Aelia, ID: recenter
+				77 container Description: Conversation, ID: conversation
+					78 text IN CONVERSATION
+					79 heading Sabina, Value: 2, ID: speaker-name
+						89 text Sabina
+					90 text food seller
+					82 button Description: Leave conversation, ID: close-conversation
+					91 text I paid Marcus for flour for my counter. Now the household is claiming the cart. Can you find out what happened?
+					84 container Description: Received accounts, ID: conversation-evidence
+						92 button (collapsed) Sabina's wax account, Secondary Actions: Expand
+							93 text Sabina's wax account
+					94 container review
+						95 text YOUR DECISION
+						96 heading Choose how to answer, Value: 3, ID: review-title
+							97 text Choose how to answer
+						98 text Check the cost and who this arrangement affects.
+						99 container
+							100 heading Pay for the market delivery, Value: 4
+								101 text Pay for the market delivery
+							102 text Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix. 3 coins · 20 world minutes The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority.
+							103 button Pay 3 coins →
+						104 button Keep looking, ID: cancel-review
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97

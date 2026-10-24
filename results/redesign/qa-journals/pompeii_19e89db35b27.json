@@ -1,0 +1,500 @@
+{
+  "version": 1,
+  "spec_hash": "453de1cdf291a1fd243dd78c9e614981b895e6b7115e73cfe06ad1258ee916ef",
+  "spec": {
+    "version": 1,
+    "id": "pompeii_19e89db35b27",
+    "title": "Aelia \u2014 a place in the city",
+    "setting": {
+      "adapter": "pompeii",
+      "rules": {
+        "seed": 79,
+        "horizon_days": 120,
+        "memory_capacity": 32,
+        "information_policy": "cautious",
+        "communication": true
+      }
+    },
+    "participants": [
+      {
+        "id": "Player",
+        "role": "Aelia, independent freedwoman",
+        "player": true,
+        "resources": {
+          "cash": 6,
+          "flour": 0
+        }
+      },
+      {
+        "id": "Felix",
+        "role": "baker",
+        "player": false,
+        "resources": {
+          "cash": 28,
+          "flour": 3
+        }
+      },
+      {
+        "id": "Sabina",
+        "role": "food seller",
+        "player": false,
+        "resources": {
+          "cash": 22,
+          "flour": 2
+        }
+      },
+      {
+        "id": "Marcus",
+        "role": "trader",
+        "player": false,
+        "resources": {
+          "cash": 58,
+          "flour": 6
+        }
+      },
+      {
+        "id": "Chreste",
+        "role": "fullery worker under constraint",
+        "player": false,
+        "resources": {
+          "cash": 0,
+          "flour": 0
+        }
+      },
+      {
+        "id": "Dama",
+        "role": "household messenger under constraint",
+        "player": false,
+        "resources": {
+          "cash": 0,
+          "flour": 0
+        }
+      },
+      {
+        "id": "Lucius",
+        "role": "household steward",
+        "player": false,
+        "resources": {
+          "cash": 52,
+          "flour": 5
+        }
+      }
+    ],
+    "institutions": [
+      {
+        "id": "household",
+        "members": [
+          "Player",
+          "Dama",
+          "Lucius"
+        ],
+        "capacity": 120,
+        "rule": "legacy_household_service"
+      }
+    ],
+    "observations": [],
+    "goals": [
+      {
+        "id": "keep_a_promise",
+        "actor": "Player",
+        "label": "Keep a real delivery promise before its deadline",
+        "priority": 90,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "flour",
+          "quantity": 4,
+          "metric": "deliveries"
+        }
+      },
+      {
+        "id": "remain_solvent",
+        "actor": "Player",
+        "label": "Retain working coins while living with the consequences over four months",
+        "priority": 70,
+        "deadline": 172800,
+        "requires": [
+          "keep_a_promise"
+        ],
+        "target": {
+          "resource": "cash",
+          "quantity": 6,
+          "metric": "cash"
+        }
+      },
+      {
+        "id": "bread_counter",
+        "actor": "Felix",
+        "label": "Obtain two flour units for the bread counter",
+        "priority": 80,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "flour",
+          "quantity": 2,
+          "metric": "inventory"
+        }
+      },
+      {
+        "id": "independent_counter",
+        "actor": "Sabina",
+        "label": "Keep two flour units for the food counter without losing all working coins",
+        "priority": 80,
+        "deadline": 1440,
+        "requires": [],
+        "target": {
+          "resource": "flour",
+          "quantity": 2,
+          "metric": "inventory"
+        }
+      }
+    ],
+    "actions": [
+      "move",
+      "talk",
+      "work",
+      "buy",
+      "accept_delivery",
+      "deliver",
+      "inspect",
+      "patronage",
+      "service",
+      "sell_information",
+      "claim",
+      "hear_dispute",
+      "examine_receipt",
+      "examine_tablet",
+      "verify_cart",
+      "mediate",
+      "support_market",
+      "guarantee_household",
+      "return_service",
+      "reconcile",
+      "accept_commission",
+      "fulfill_commission",
+      "decline_dispute",
+      "reflect",
+      "v2_bonded_order",
+      "v2_advance_order",
+      "v2_cash_order",
+      "v2_deliver_order",
+      "v2_share_report",
+      "v2_repay_order",
+      "v2_replace_order",
+      "wait"
+    ],
+    "opportunities": [
+      {
+        "at": 0,
+        "label": "Hear a private account of the disputed six-sack cart."
+      },
+      {
+        "at": 240,
+        "label": "Compare a deadline with current stock, price and any accepted promise."
+      },
+      {
+        "at": 1440,
+        "label": "Review the first day of actual work and obligations."
+      },
+      {
+        "at": 43200,
+        "label": "Return after a month and inspect the generated personal history."
+      },
+      {
+        "at": 129600,
+        "label": "Revisit one earlier accepted decision and compare a replayed alternative."
+      }
+    ],
+    "horizon_minutes": 172800,
+    "termination": {
+      "at": 172800
+    },
+    "measures": [
+      "cash",
+      "inventory",
+      "reputation",
+      "deliveries",
+      "service_minutes",
+      "completed_commissions",
+      "elapsed_days",
+      "fulfilled_obligations",
+      "missed_obligations"
+    ],
+    "debrief": {
+      "objective": "Reason about asymmetric information, resource-backed promises, social constraints and the later consequences of accepted actions. Historical participation is not evidence of real-world learning transfer.",
+      "questions": [
+        "Which account could you legitimately access before committing, and which was still private?",
+        "Which accepted choice moved actual coins, flour or service time? Cite its event.",
+        "What changed after your absence, and which actual events support that explanation?",
+        "Which alternative can the same command history replay, and which later actions become infeasible?"
+      ],
+      "transfer": {
+        "prompt": "In an unfamiliar cooperative, two buyers repeat a supplier story from the same original witness. Before accepting a deadline-backed order, which is the strongest next step?",
+        "options": [
+          "Treat the repeated reports as two independent confirmations.",
+          "Check a current primary record, then compare quantity, cost and the actual deadline.",
+          "Assume the supplier has stock because they sounded confident."
+        ],
+        "answer": 1,
+        "rationale": "Repeated testimony may share one source. A current check can reduce uncertainty, but its cost and the resources required by the promise must still be evaluated."
+      }
+    },
+    "sources": [
+      {
+        "id": "fictional_life",
+        "title": "Project-authored people, cart dispute, prices and compressed geography; not an attested biography.",
+        "url": "project://kalends/docs/rebirth/HISTORY_NOTES.md",
+        "kind": "fiction"
+      },
+      {
+        "id": "historical_ledger",
+        "title": "Claim-level historical source ledger distinguishing attested anchors and reconstruction.",
+        "url": "project://kalends/docs/pompeii/HISTORICAL_SOURCE_LEDGER.md",
+        "kind": "reconstruction"
+      }
+    ]
+  },
+  "retention": "hybrid",
+  "commands": [
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 673.7521818987076,
+        "y": 404.4248472800292,
+        "action": "move"
+      },
+      "at": 0,
+      "after": 1,
+      "receipt_id": 19
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "hear_dispute",
+        "recipient": "Sabina"
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 20
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "action": "examine_receipt",
+        "recipient": "Sabina"
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 21
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 721.3073402641456,
+        "y": 410.9445798541543,
+        "action": "move"
+      },
+      "at": 1,
+      "after": 1,
+      "receipt_id": 22
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 768.8624986295837,
+        "y": 417.4643124282794,
+        "action": "move"
+      },
+      "at": 1,
+      "after": 2,
+      "receipt_id": 24
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 816.4176569950217,
+        "y": 423.9840450024045,
+        "action": "move"
+      },
+      "at": 2,
+      "after": 2,
+      "receipt_id": 25
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 863.9728153604598,
+        "y": 430.5037775765296,
+        "action": "move"
+      },
+      "at": 2,
+      "after": 3,
+      "receipt_id": 27
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 911.5279737258978,
+        "y": 437.0235101506547,
+        "action": "move"
+      },
+      "at": 3,
+      "after": 3,
+      "receipt_id": 28
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 959.0831320913359,
+        "y": 443.5432427247798,
+        "action": "move"
+      },
+      "at": 3,
+      "after": 4,
+      "receipt_id": 30
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1006.6382904567739,
+        "y": 450.0629752989049,
+        "action": "move"
+      },
+      "at": 4,
+      "after": 5,
+      "receipt_id": 32
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1054.1934488222118,
+        "y": 456.58270787302996,
+        "action": "move"
+      },
+      "at": 5,
+      "after": 5,
+      "receipt_id": 33
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1101.74860718765,
+        "y": 463.102440447155,
+        "action": "move"
+      },
+      "at": 5,
+      "after": 6,
+      "receipt_id": 35
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1149.303765553088,
+        "y": 469.6221730212801,
+        "action": "move"
+      },
+      "at": 6,
+      "after": 6,
+      "receipt_id": 36
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1196.858923918526,
+        "y": 476.14190559540515,
+        "action": "move"
+      },
+      "at": 6,
+      "after": 7,
+      "receipt_id": 38
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 480,
+        "action": "move"
+      },
+      "at": 7,
+      "after": 7,
+      "receipt_id": 39
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 515,
+        "location": "thermopolium",
+        "action": "move"
+      },
+      "at": 7,
+      "after": 7,
+      "receipt_id": 40
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 563,
+        "action": "move"
+      },
+      "at": 7,
+      "after": 8,
+      "receipt_id": 43
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 611,
+        "action": "move"
+      },
+      "at": 8,
+      "after": 8,
+      "receipt_id": 44
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 659,
+        "action": "move"
+      },
+      "at": 8,
+      "after": 9,
+      "receipt_id": 46
+    },
+    {
+      "revision": 1,
+      "operation": "action",
+      "data": {
+        "x": 1225,
+        "y": 704,
+        "action": "move"
+      },
+      "at": 9,
+      "after": 9,
+      "receipt_id": 47
+    }
+  ],
+  "state_hash": "42afb708612ff4e199925395fc96c496a5e3c951113c66b10c9beb0378908bae"
+}

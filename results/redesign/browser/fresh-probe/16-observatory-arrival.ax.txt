@@ -1,0 +1,93 @@
+Browser tab: 1, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_f9b238328cb8".
+0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			5 text Shared Observatory
+			6 text You, the coordinator
+			7 text Day 1 · 00:00
+			8 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container world-main
+			13 container Description: Your next step, ID: guide-panel
+				14 container
+					15 text NEXT STEP
+				16 heading You coordinate one shared instrument., Value: 2
+					17 text You coordinate one shared instrument.
+				18 text Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time.
+				19 button Begin the guided round
+				20 button Explore without guidance
+			21 container observatory-stage
+				22 container
+					23 text SHARED OBSERVATORY · DAY 1 · 00:00
+				24 heading One instrument. Three teams counting on you., Value: 1
+					25 text One instrument.
+					26 text Three teams counting on you.
+				27 text Find out what it can deliver. Divide its capacity. See what each team receives.
+				28 container
+					29 text TODAY'S CAPACITY ?
+					30 heading Current condition unknown, Value: 2
+						31 text Current condition unknown
+					32 text Rated capacity · 12 units
+					33 container Twelve rated units; usable capacity unknown
+					34 text Ask Mira for the report before relying on the rated capacity.
+					35 button (collapsed) What does a unit mean?, Secondary Actions: Expand
+						36 text What does a unit mean?
+				37 container People you can speak with
+					38 checkbox Amir Survey, Value: 0
+						39 text Amir
+						40 text Survey
+					41 checkbox Mira Instrument systems, Value: 1
+						42 text Mira
+						43 text Instrument systems
+					44 checkbox Lin Follow-up, Value: 0
+						45 text Lin
+						46 text Follow-up
+				47 container Conversation with Mira
+					48 heading Mira, Value: 2
+						49 text Mira
+					50 text INSTRUMENT SYSTEMS
+					51 text I work on the instrument systems. You can ask about the dated report before deciding what to promise.
+					52 container
+						53 text Mira requests  2 units  in this round.
+					54 button What can the instrument deliver?
+					55 button I’d like to make a promise
+					56 button (collapsed) Another question or an inspection, Secondary Actions: Expand
+						57 text Another question or an inspection
+				58 button (collapsed) What the teams need to finish their projects, Secondary Actions: Expand
+					59 text What the teams need to finish their projects
+				60 container
+					61 container
+						62 text YOUR DECISION
+					63 heading Divide the capacity., Value: 2
+						64 text Divide the capacity.
+					65 text Choose each team’s share. Saving this allocation does not make a promise or deliver it.
+					66 container allocation-form
+						67 container
+							68 text Amir No request received · No promise
+						69 stepper (settable, integer) Amir No request received · No promise, Value: 0, ID: allocate-team_a
+						70 container
+							71 text Mira 2 units requested · No promise
+						72 stepper (settable, integer) Mira 2 units requested · No promise, Value: 0, ID: allocate-team_b
+						73 container
+							74 text Lin No request received · No promise
+						75 stepper (settable, integer) Lin No request received · No promise, Value: 0, ID: allocate-team_c
+						76 container allocation-total
+							77 text Total: 0 of 12 rated units.
+							78 text Usable capacity is unconfirmed in the reports you have received.
+						79 button Review allocation →
+					80 text Draft numbers stay in this tab while you explore. Reloading discards unsaved edits.
+					81 heading Promises, Value: 3
+						82 text Promises
+					83 text No open promise. You can run the round without making one.
+					84 button Run this round Review saved amounts and promises first.
+						85 text Run this round
+						86 text Review saved amounts and promises first.
+					87 text You have 12 credits. A direct inspection costs 1.
+					88 button Other time choices
+					89 link Description: Your story →, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8/history
+
+The focused UI element is 0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8

@@ -1,0 +1,76 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			88 text Pompeii
+			89 text Aelia
+			90 text Day 1 · 08:01
+			91 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 button Marcus, Minding the flour cart. Approach to speak
+					17 button Dama, Carrying household instructions. Approach to speak
+					18 text Aelia · you
+					19 button Sabina, In conversation. Talk
+						41 text Sabina
+						114 text In conversation · E to talk
+					20 button Walk to Felix's bread counter
+				21 container hud
+					22 button Description: Open game menu, ID: menu-button
+						23 text KALENDS
+					24 container
+						93 text 6 coins
+						26 button Description: Settings, ID: settings-button
+				44 container Description: Your next step, ID: lead
+					94 text NEXT
+					95 text Reading pauses time
+					47 heading Two buyers, two accounts., Value: 2, ID: lead-title
+						96 text Two buyers, two accounts.
+					49 button Look at the evidence, ID: lead-action
+					50 button (collapsed) Help & directions, Secondary Actions: Expand
+						51 text Help & directions
+				27 container location-caption
+					115 text VIA DELL’ABBONDANZA
+					116 text Attested places · fictional lives
+				30 container controls
+					31 container movement-controls
+						32 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					33 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					34 button Wait 30m, ID: wait
+					35 button A day later, ID: day-later
+					36 button Description: Follow Aelia, ID: recenter
+				68 container Description: Conversation, ID: conversation
+					69 text IN CONVERSATION
+					70 heading Sabina, Value: 2, ID: speaker-name
+						99 text Sabina
+					100 text food seller
+					73 button Description: Leave conversation, ID: close-conversation
+					101 text Can you find out whom those six sacks were promised to?
+					102 container Description: Action result, ID: conversation-receipt
+						103 text RESULT
+						104 text Sabina asks you to find out who the six sacks were actually promised to.
+					75 container choices
+						105 button May I see your order?
+						106 button Pay for the market delivery Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix. Cost: 3 coins · 20 minutes.
+							107 text Pay for the market delivery
+							108 text Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix.
+							109 text Cost: 3 coins · 20 minutes.
+						110 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 55 minutes.
+							111 text Is there paid work here?
+							112 text Take a real shift, paid from the counter or household account.
+							113 text Cost: 55 minutes.
+					82 button (collapsed) More to ask or do, Secondary Actions: Expand
+						83 text More to ask or do
+					84 container speech-form
+						85 text Say something
+						86 text field (settable) Say something, ID: speech
+						87 button Ask
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f

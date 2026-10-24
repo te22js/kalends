@@ -1,0 +1,28 @@
+Browser tab: 23, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_6f82840644f2".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_6f82840644f2
+	2 container Commit the proposed allocation, ID: review-dialog
+		3 container
+			4 text BEFORE YOU COMMIT
+			5 button Close review
+		6 heading Commit the proposed allocation, Value: 2, ID: review-heading
+			7 text Commit the proposed allocation
+		8 container review-content
+			9 text Amir · Survey
+			10 text 4 units
+			11 text Mira · Instrument systems
+			12 text 4 units
+			13 text Lin · Follow-up
+			14 text 4 units
+			15 text Total allocation: 12 of 12 rated units.
+			16 container
+				17 text Your latest report described  8 usable units , observed Day 1 · 00:00. Conditions can change before the round runs.
+			18 text This allocation exceeds the reported usable capacity by 4 units. If that condition still holds, the public execution order may leave a team short.
+			19 text Once you confirm, this allocation is fixed for this round. You can cancel now to change the draft. These are allocated amounts. The instrument executes the actual available capacity in the disclosed order Amir → Mira → Lin. Delivery has not happened yet.
+			20 text Settlement: Day 1 · 23:59
+			21 text Promises and allocations are saved separately.
+			22 text No change has been accepted yet. Confirmation rechecks this exact proposal against your saved world. If time or terms changed, review again.
+		23 container
+			24 button Keep considering
+			25 button Confirm this choice →, ID: confirm-choice
+
+The focused UI element is 5 button Close review

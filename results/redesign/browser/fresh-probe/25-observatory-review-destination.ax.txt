@@ -1,0 +1,97 @@
+Browser tab: 1, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_f9b238328cb8".
+0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			5 text Shared Observatory
+			6 text You, the coordinator
+			7 text Day 1 · 23:59
+			8 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container world-main
+			13 container Description: Your next step, ID: guide-panel
+				14 container
+					15 text NEXT STEP
+				16 heading See what each team received., Value: 2
+					17 text See what each team received.
+				18 text The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 0 units and received 0 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 4 units.
+				19 button Review the actual result
+				20 button Explore without guidance
+			21 container observatory-stage
+				22 container
+					23 text SHARED OBSERVATORY · DAY 1 · 23:59
+				24 heading One instrument. Three teams counting on you., Value: 1
+					25 text One instrument.
+					26 text Three teams counting on you.
+				27 text Find out what it can deliver. Divide its capacity. See what each team receives.
+				28 container ID: obs-result, ROUND RESULT · DAY 1 · 23:59 The round has run. 8 units were available. Delivered: Amir 0 · Mira 4 · Lin 4. Compare requests, promises and delivery Start the next day → What would you change? Skip reflection
+					29 container
+						30 text ROUND RESULT · DAY 1 · 23:59
+					31 heading The round has run., Value: 2
+						32 text The round has run.
+					33 text 8 units were available. Delivered: Amir 0 · Mira 4 · Lin 4.
+					34 button (collapsed) Compare requests, promises and delivery, Secondary Actions: Expand
+						35 text Compare requests, promises and delivery
+					36 button Start the next day →
+					37 link Description: What would you change?, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8/reflect
+					38 button Skip reflection
+				39 container
+					40 text TODAY'S CAPACITY 8
+					41 heading Units in your latest report, Value: 2
+						42 text Units in your latest report
+					43 text Rated capacity · 12 units
+					44 container 8 reported usable units out of twelve rated
+					45 text Mira’s report · observed Day 1 · 00:00. This is an earlier observation; conditions can change.
+					46 button (collapsed) What does a unit mean?, Secondary Actions: Expand
+						47 text What does a unit mean?
+				48 container People you can speak with
+					49 checkbox Amir Survey, Value: 0
+						50 text Amir
+						51 text Survey
+					52 checkbox Mira Instrument systems, Value: 0
+						53 text Mira
+						54 text Instrument systems
+					55 checkbox Lin Follow-up, Value: 1
+						56 text Lin
+						57 text Follow-up
+				58 container Conversation with Lin
+					59 heading Lin, Value: 2
+						60 text Lin
+					61 text FOLLOW-UP
+					62 text Our follow-up work also depends on time at the instrument. I need to know what we can actually count on.
+					63 container
+						64 text Lin requests  2 units  in this round.
+					65 button (disabled) I’d like to make a promise
+					66 button (collapsed) Another question or an inspection, Secondary Actions: Expand
+						67 text Another question or an inspection
+				68 button (collapsed) What the teams need to finish their projects, Secondary Actions: Expand
+					69 text What the teams need to finish their projects
+				70 container
+					71 container
+						72 text SETTLED ROUND
+					73 heading What you allocated, Value: 2
+						74 text What you allocated
+					75 text The table above shows what arrived.
+					76 container allocation-form
+						77 container
+							78 text Amir 2 units requested · No promise
+						79 stepper (disabled, settable, integer) Amir 2 units requested · No promise, Value: 0, ID: allocate-team_a
+						80 container
+							81 text Mira 2 units requested · No promise
+						82 stepper (disabled, settable, integer) Mira 2 units requested · No promise, Value: 4, ID: allocate-team_b
+						83 container
+							84 text Lin 2 units requested · No promise
+						85 stepper (disabled, settable, integer) Lin 2 units requested · No promise, Value: 4, ID: allocate-team_c
+						86 container allocation-total
+							87 text Total allocated: 8 units.
+							88 text Actual delivery: 8 units.
+							89 text This round has settled. Review each team’s recorded result below.
+					90 text Saved amounts cannot be changed during this round.
+					91 text You have 12 credits. A direct inspection costs 1.
+					92 button Other time choices
+					93 link Description: Your story →, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8/history
+
+The focused UI element is 28 container ID: obs-result, ROUND RESULT · DAY 1 · 23:59 The round has run. 8 units were available. Delivered: Amir 0 · Mira 4 · Lin 4. Compare requests, promises and delivery Start the next day → What would you change? Skip reflection

@@ -1,0 +1,77 @@
+Browser tab: 24, Title: "Kalends 390px viewport fixture", URL: "http://127.0.0.1:8831/product/qa-redesign-viewport.html".
+1 AXWebArea Kalends 390px viewport fixture, URL: 127.0.0.1:8831/product/qa-redesign-viewport.html
+	2 text QA fixture: 390 × 720 CSS pixels; not a physical phone
+	3 container Current Kalends at 390 pixels
+		4 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+			5 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+			6 container Description: Your world, ID: life-shell
+				7 container
+					8 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+					13 text Pompeii
+					14 text Aelia
+					15 text Day 1 · 14:20
+					9 button Help, ID: help-button
+					10 button Your story, ID: story-button
+					11 button Description: World menu, ID: world-menu-button
+				16 container Pompeii · your saved life
+					17 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+						18 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+						19 container names
+							20 text Aelia · you
+							21 button Chreste, In conversation. Talk
+								22 text Chreste
+								76 text In conversation · E to talk
+						24 container hud
+							25 button Description: Open game menu, ID: menu-button
+								26 text KALENDS
+							27 container
+								28 text 6 coins
+								29 button Description: Settings, ID: settings-button
+						30 container Description: Your next step, ID: lead
+							31 text YOUR MORNING
+							32 text Reading pauses time
+							33 heading The cart went on without you, Value: 2, ID: lead-title
+								34 text The cart went on without you
+							35 button Open your journal, ID: lead-action
+							36 button (collapsed) Help & directions, Secondary Actions: Expand
+								37 text Help & directions
+							38 container Description: What next, ID: continuing-options
+								39 button Visit the food counter Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+									40 text Visit the food counter
+									41 text Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+						42 container controls
+							43 button What is this place?, ID: place-history
+							44 button ← To the street X, ID: exit-room
+								45 text ← To the street 
+								46 text X
+							47 checkbox Live, Value: 0, ID: live
+							48 button Wait 30m, ID: wait
+							49 button A day later, ID: day-later
+							50 button Description: Follow Aelia, ID: recenter
+						51 container Description: Conversation, ID: conversation
+							52 text IN CONVERSATION
+							53 heading Chreste, Value: 2, ID: speaker-name
+								54 text Chreste
+							55 text fullery worker
+							56 button Description: Leave conversation, ID: close-conversation
+							57 text I am enslaved in this fullery. I cannot leave. The household pays free workers for extra help; you can ask about a shift.
+							58 container choices
+								59 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 80 minutes.
+									60 text Is there paid work here?
+									61 text Take a real shift, paid from the counter or household account.
+									62 text Cost: 80 minutes.
+								63 button Arrange a current supply inspection Pay one coin; the result arrives after fifteen world minutes. Cost: 1 coin · 15 minutes.
+									64 text Arrange a current supply inspection
+									65 text Pay one coin; the result arrives after fifteen world minutes.
+									66 text Cost: 1 coin · 15 minutes.
+								67 button What do you remember of our dealings? Ask about dealings this person remembers.
+									68 text What do you remember of our dealings?
+									69 text Ask about dealings this person remembers.
+							70 button (collapsed) More to ask or do, Secondary Actions: Expand
+								71 text More to ask or do
+							72 container speech-form
+								73 text Say something
+								74 text field (settable) Say something, ID: speech
+								75 button Ask
+
+The focused UI element is 4 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f

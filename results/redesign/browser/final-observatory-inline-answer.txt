@@ -1,0 +1,93 @@
+Browser tab: 23, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_6f82840644f2".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_6f82840644f2
+	2 link Description: Skip to content, Value: 127.0.0.1:8831/lives/observatory_6f82840644f2#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			13 text Shared Observatory
+			14 text You, the coordinator
+			15 text Day 2 · 00:00
+			16 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		17 container observatory-stage
+			18 container
+				19 text SHARED OBSERVATORY · DAY 2 · 00:00
+			20 heading One instrument. Three teams counting on you., Value: 1
+				21 text One instrument.
+				22 text Three teams counting on you.
+			23 text Find out what it can deliver. Divide its capacity. See what each team receives.
+			24 container
+				25 text TODAY'S CAPACITY 8
+				26 heading Units in your latest report, Value: 2
+					27 text Units in your latest report
+				28 text Rated capacity · 12 units
+				29 container 8 reported usable units out of twelve rated
+				30 text Mira’s report · observed Day 1 · 00:00. This is an earlier observation; conditions can change.
+				31 button (collapsed) What does a unit mean?, Secondary Actions: Expand
+					32 text What does a unit mean?
+			33 container People you can speak with
+				34 checkbox Amir Survey, Value: 0
+					35 text Amir
+					36 text Survey
+				37 checkbox Mira Instrument systems, Value: 1
+					38 text Mira
+					39 text Instrument systems
+				40 checkbox Lin Follow-up, Value: 0
+					41 text Lin
+					42 text Follow-up
+			43 container Conversation with Mira
+				44 heading Mira, Value: 2
+					45 text Mira
+				46 text INSTRUMENT SYSTEMS
+				47 text I observed 8 usable units at Day 1, 00:00.
+				48 container
+					49 text Mira requests  2 units  in this round.
+				50 text PUBLIC PROJECT REQUIREMENT
+				51 container
+					52 text 4 units in one delivery  · completed
+					53 text Due Day 2 · 00:00
+				54 text A smaller delivery is recorded, but does not complete this project.
+				94 text Mira: 4 units in one delivery; due Day 2, 00:00; completed.
+				55 button What can the instrument deliver?
+				56 button What does your project need?
+				57 button I’d like to make a promise
+				58 button (collapsed) Another question or an inspection, Secondary Actions: Expand
+					59 text Another question or an inspection
+			60 button (collapsed) What the teams need to finish their projects, Secondary Actions: Expand
+				61 text What the teams need to finish their projects
+			62 container
+				63 container
+					64 text YOUR DECISION
+				65 heading Divide the capacity., Value: 2
+					66 text Divide the capacity.
+				67 text Choose each team’s share. Saving this allocation does not make a promise or deliver it.
+				68 container allocation-form
+					69 container
+						70 text Amir 2 units requested · No promise
+					71 stepper (settable, integer) Amir 2 units requested · No promise, Value: 0, ID: allocate-team_a
+					72 container
+						73 text Mira 2 units requested · No promise
+					74 stepper (settable, integer) Mira 2 units requested · No promise, Value: 0, ID: allocate-team_b
+					75 container
+						76 text Lin 2 units requested · No promise
+					77 stepper (settable, integer) Lin 2 units requested · No promise, Value: 0, ID: allocate-team_c
+					78 container allocation-total
+						79 text Total: 0 of 12 rated units.
+						80 text This fits the 8 units in your report. The observation is from an earlier time.
+					81 button Review allocation →
+				82 text Draft numbers stay in this tab while you explore. Reloading discards unsaved edits.
+				83 heading Promises, Value: 3
+					84 text Promises
+				85 text No open promise. You can run the round without making one.
+				86 button Run this round Review saved amounts and promises first.
+					87 text Run this round
+					88 text Review saved amounts and promises first.
+				89 text You have 12 credits. A direct inspection costs 1.
+				90 button Other time choices
+				91 link Description: Your story →, Value: 127.0.0.1:8831/lives/observatory_6f82840644f2/history
+			92 button (collapsed) Last round’s result, Secondary Actions: Expand
+				93 text Last round’s result
+
+The focused UI element is 56 button What does your project need?

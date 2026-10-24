@@ -1,0 +1,92 @@
+Browser tab: 1, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_f9b238328cb8".
+0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			5 text Shared Observatory
+			6 text You, the coordinator
+			7 text Day 1 · 23:59
+			8 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container world-main
+			13 container observatory-stage
+				14 container
+					15 text SHARED OBSERVATORY · DAY 1 · 23:59
+				16 heading One instrument. Three teams counting on you., Value: 1
+					17 text One instrument.
+					18 text Three teams counting on you.
+				19 text Find out what it can deliver. Divide its capacity. See what each team receives.
+				20 container obs-result
+					21 container
+						22 text ROUND RESULT · DAY 1 · 23:59
+					23 heading The round has run., Value: 2
+						24 text The round has run.
+					25 text 8 units were available. Delivered: Amir 0 · Mira 4 · Lin 4.
+					26 button (collapsed) Compare requests, promises and delivery, Secondary Actions: Expand
+						27 text Compare requests, promises and delivery
+					28 button Start the next day →
+					29 link Description: What would you change?, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8/reflect
+				30 container
+					31 text TODAY'S CAPACITY 8
+					32 heading Units in your latest report, Value: 2
+						33 text Units in your latest report
+					34 text Rated capacity · 12 units
+					35 container 8 reported usable units out of twelve rated
+					36 text Mira’s report · observed Day 1 · 00:00. This is an earlier observation; conditions can change.
+					37 button (collapsed) What does a unit mean?, Secondary Actions: Expand
+						38 text What does a unit mean?
+				39 container People you can speak with
+					40 checkbox Amir Survey, Value: 0
+						41 text Amir
+						42 text Survey
+					43 checkbox Mira Instrument systems, Value: 0
+						44 text Mira
+						45 text Instrument systems
+					46 checkbox Lin Follow-up, Value: 1
+						47 text Lin
+						48 text Follow-up
+				49 container Conversation with Lin
+					50 heading Lin, Value: 2
+						51 text Lin
+					52 text FOLLOW-UP
+					53 text Our follow-up work also depends on time at the instrument. I need to know what we can actually count on.
+					54 container
+						55 text Lin requests  2 units  in this round.
+					56 button (disabled) I’d like to make a promise
+					57 button (collapsed) Another question or an inspection, Secondary Actions: Expand
+						58 text Another question or an inspection
+				59 button (collapsed) What the teams need to finish their projects, Secondary Actions: Expand
+					60 text What the teams need to finish their projects
+				61 container
+					62 container
+						63 text SETTLED ROUND
+					64 heading What you allocated, Value: 2
+						65 text What you allocated
+					66 text The table above shows what arrived.
+					67 container allocation-form
+						68 container
+							69 text Amir 2 units requested · No promise
+						70 stepper (disabled, settable, integer) Amir 2 units requested · No promise, Value: 0, ID: allocate-team_a
+						71 container
+							72 text Mira 2 units requested · No promise
+						73 stepper (disabled, settable, integer) Mira 2 units requested · No promise, Value: 4, ID: allocate-team_b
+						74 container
+							75 text Lin 2 units requested · No promise
+						76 stepper (disabled, settable, integer) Lin 2 units requested · No promise, Value: 4, ID: allocate-team_c
+						77 container allocation-total
+							78 text Total allocated: 8 units.
+							79 text Actual delivery: 8 units.
+							80 text This round has settled. Review each team’s recorded result below.
+					81 text Saved amounts cannot be changed during this round.
+					82 text You have 12 credits. A direct inspection costs 1.
+					83 button Other time choices
+					84 link Description: Your story →, Value: 127.0.0.1:8831/lives/observatory_f9b238328cb8/history
+			85 container world-notice
+				86 text Your place is still here.
+				87 text Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time.
+				88 button Continue from here →
+
+The focused UI element is 0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8

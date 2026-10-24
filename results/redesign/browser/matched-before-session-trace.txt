@@ -1,0 +1,129 @@
+Browser tab: 22, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8832/lives/pompeii_be75d2797b28".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8832/lives/pompeii_be75d2797b28
+	1 link Description: Skip to content, Value: 127.0.0.1:8832/lives/pompeii_be75d2797b28#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8832/your-worlds
+			95 text Pompeii
+			96 text Aelia · d2797b28
+			97 text Day 1 · 08:01 · World time
+			98 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8832/immersion/?experience=pompeii_be75d2797b28
+				99 container menu
+					100 container
+						101 heading KALENDS, Value: 2
+							102 text KALENDS
+						103 button Description: Close menu, ID: close-menu
+					104 text Every accepted action is saved on this computer.
+					105 button Return to the district, ID: resume
+					106 link Description: Kalends home ↗, Value: 127.0.0.1:8832/
+					107 link Description: About this reconstruction ↗, Value: 127.0.0.1:8832/history-rebirth
+					108 container diagnostics
+						109 button (expanded) Local developer measurements, Secondary Actions: Collapse
+							110 text Local developer measurements
+						111 button Reset trace, ID: reset-trace
+						112 button Freeze & show raw trace, ID: freeze-trace
+						113 button Export trace, ID: export-trace
+						114 button Record 20s of the 3D canvas, ID: record-scene
+						115 container Description: 3D performance measurements, ID: trace-output
+							116 text {
+  "schema": "kalends-immersion-trace-v1",
+  "gpu_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+  "engine": "PlayCanvas 2.23.3",
+  "device_type": "webgl2",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardware_concurrency": 8,
+  "viewport": {
+    "width": 1280,
+    "height": 642,
+    "dpr": 2,
+    "render_width": 1920,
+    "render_height": 963
+  },
+  "quality": "balanced",
+  "scene_resolution_scale": 1,
+  "msaa_samples": 2,
+  "actors": 7,
+  "draw_calls": 697,
+  "textures_bytes": 94505208,
+  "scope": "Browser-reported hardware and engine counters; not GPU elapsed time or physical-device qualification.",
+  "app_boot_ms": 975.5999999996275,
+  "navigation_to_ready_ms": 1123.300000000745,
+  "navigation_to_first_ready_draw_ms": 1223,
+  "client_ready": true,
+  "samples_retained": 2711,
+  "sample_limit": 12000,
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 1,
+    "ignored": 0,
+    "idle": 1,
+    "cancelled": 0,
+    "committed_draw": 1
+  },
+  "pending_input": null,
+  "frame_ms": {
+    "n": 2674,
+    "mean": 17.032,
+    "p50": 16.6,
+    "p95": 20.7,
+    "p99": 27.354,
+    "max": 436.1
+  },
+  "render_submission_ms": {
+    "n": 2674,
+    "mean": 2.235,
+    "p50": 1.8,
+    "p95": 3.6,
+    "p99": 5.727,
+    "max": 335.2
+  },
+  "idle_input_to_committed_draw_ms": {
+    "n": 1,
+    "mean": 129.7,
+    "p50": 129.7,
+    "p95": 129.7,
+    "p99": 129.7,
+    "max": 129.7
+  },
+  "next_changed_draw_ms": {
+    "n": 1,
+    "mean": 129.7,
+    "p50": 129.7,
+    "p95": 129.7,
+    "p99": 129.7,
+    "max": 129.7
+  },
+  "backend_ms": {
+    "n": 8,
+    "mean": 32.137,
+    "p50": 20.6,
+    "p95": 85.01,
+    "p99": 92.122,
+    "max": 93.90000000037253
+  },
+  "long_task_ms": {
+    "n": 6,
+    "mean": 130.833,
+    "p50": 89.5,
+    "p95": 291,
+    "p99": 327.8,
+    "max": 337
+  },
+  "memory": {
+    "used_js_heap_bytes": 84752741,
+    "total_js_heap_bytes": 127693725,
+    "scope": "Chromium estimate, excludes GPU and server"
+  },
+  "notes": [
+    "Small local browser sample. Canvas submission is not compositor completion or physical display.",
+    "Idle latency requires strict visual/controller idle and its matching accepted move; cancellations, supersessions and unmoved/nonidle inputs are excluded.",
+    "Frame callbacks/render submission do not measure GPU time. No external inference or telemetry."
+  ]
+}
+
+The focused UI element is 109 button (expanded) Local developer measurements, Secondary Actions: Collapse

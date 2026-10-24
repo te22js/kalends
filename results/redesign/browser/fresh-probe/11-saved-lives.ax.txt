@@ -1,0 +1,66 @@
+Browser tab: 1, Title: "Your worlds · Kalends", URL: "http://127.0.0.1:8831/your-worlds".
+0 AXWebArea Your worlds · Kalends, URL: 127.0.0.1:8831/your-worlds
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/your-worlds#main
+	2 container public-shell
+		3 container
+			4 link Description: Kalends home, Value: 127.0.0.1:8831/
+			5 container Main navigation
+				6 link Description: Worlds, Value: 127.0.0.1:8831/worlds
+				7 link Description: Your story, Value: 127.0.0.1:8831/your-worlds
+				8 link Description: Research, Value: 127.0.0.1:8831/research
+		9 container main
+			10 container
+				11 text YOUR WORLDS
+			12 heading Pick up where you left off., Value: 1
+				13 text Pick up where you left off.
+			14 text Each life has its own choices, people and history. Nothing progressed simply because you were away.
+			15 container
+				16 text MOST RECENTLY USED
+				17 heading Aelia — a place in the city, Value: 2
+					18 text Aelia — a place in the city
+				19 text Aelia · Day 1 · 08:16 · street Paused at street. Continue when you choose.
+				20 link Description: Continue, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+				21 link Description: Your story , Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97/history
+				22 text Saved on this installation
+			23 container
+				24 text SAVED LIFE
+				25 heading Aelia — a place in the city, Value: 2
+					26 text Aelia — a place in the city
+				27 text Aelia · Day 1 · 08:09 · thermopolium Paused at thermopolium. Continue when you choose.
+				28 link Description: Continue, Value: 127.0.0.1:8831/lives/pompeii_19e89db35b27
+				29 link Description: Your story , Value: 127.0.0.1:8831/lives/pompeii_19e89db35b27/history
+				30 text Saved on this installation
+			31 container
+				32 heading Recorded research lives, Value: 2
+					33 text Recorded research lives
+				34 text Read-only examples from actual runs. They are kept separate from your personal worlds.
+				35 container
+					36 text RECORDED EXAMPLE
+				37 heading Recorded 120-day demonstration: Pompeii continuity, Value: 2
+					38 text Recorded 120-day demonstration: Pompeii continuity
+				39 text Aelia · Day 121 · 08:00 · household
+				40 text Paused at household. Continue when you choose.
+				41 link Description: Inspect example, Value: 127.0.0.1:8831/lives/pompeii_long_life
+				42 link Description: Your story , Value: 127.0.0.1:8831/lives/pompeii_long_life/history
+				43 text Read-only example · Original preserved
+				44 container
+					45 text RECORDED EXAMPLE
+				46 heading Recorded 90-day demonstration: Shared Observatory, Value: 2
+					47 text Recorded 90-day demonstration: Shared Observatory
+				48 text You, the coordinator · Day 91 · 00:00 · council
+				49 text Paused at council. Continue when you choose.
+				50 link Description: Inspect example, Value: 127.0.0.1:8831/lives/observatory_long_life
+				51 link Description: Your story , Value: 127.0.0.1:8831/lives/observatory_long_life/history
+				52 text Read-only example · Original preserved
+		53 container
+			54 link Description: kalends, Value: 127.0.0.1:8831/
+			55 text Take part, make a choice, and see what follows.
+			56 container Footer
+				57 link Description: About, Value: 127.0.0.1:8831/about
+				58 link Description: Research, Value: 127.0.0.1:8831/research
+				59 link Description: Accessibility, Value: 127.0.0.1:8831/accessibility
+				60 link Description: Data & saves, Value: 127.0.0.1:8831/data-and-saves
+				61 link Description: Sources & assets, Value: 127.0.0.1:8831/acknowledgements
+			62 text Early local prototype · Two supported worlds
+
+The focused UI element is 0 AXWebArea Your worlds · Kalends, URL: 127.0.0.1:8831/your-worlds

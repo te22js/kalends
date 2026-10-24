@@ -1,0 +1,248 @@
+{
+  "scope": "Standalone design reference only; no Kalends repository/runtime access",
+  "browser": "144.0.7559.96",
+  "total_checks": 46,
+  "passed": 46,
+  "checks": [
+    {
+      "name": "Home and explicit fixture disclosure",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No horizontal overflow at desktop",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Pompeii entry",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "One explicit ask advances the conversation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No modal after costless listening",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Evidence remembered in fixture",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Cost review opens before fixture mutation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Escape cancellation preserves coins",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Focus restored after Escape",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Confirmed fixture payment once",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Result follows accepted fixture action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Unknown condition stays unknown before report",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Private fixture result not pre-rendered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Report changes available evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Conditional over-allocation warning",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reviewed promise included",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Nothing delivered by saving",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Settlement review uses saved allocation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Settlement review uses saved promise",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Capacity fixture executes 4/4/0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Missed saved promise explained",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Settled state removes pending-action copy",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No obsolete pending-action toast after settlement",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Both worlds have fixture chapters",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Null result not concealed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reset clears only fixture history",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dialog focus stays inside",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow home at 390px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow pompeii at 390px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow observatory at 390px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow story at 390px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow research at 390px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow home at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow pompeii at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow observatory at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow story at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow research at 768px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow home at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow pompeii at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow observatory at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow story at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No document overflow research at 1440px",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Over-rated allocation blocked",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Negative fixture allocation normalized to zero",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Reduced motion disables entry animation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "not_tested": [
+    "User localhost:8823",
+    "Actual PlayCanvas rendering or movement",
+    "Agent cognition",
+    "Save/replay compatibility",
+    "Network and provider races",
+    "Human usability",
+    "Screen-reader use",
+    "Physical device performance"
+  ]
+}

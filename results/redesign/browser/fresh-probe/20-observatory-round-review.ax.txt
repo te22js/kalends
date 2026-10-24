@@ -1,0 +1,24 @@
+Browser tab: 1, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8831/lives/observatory_f9b238328cb8".
+0 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8831/lives/observatory_f9b238328cb8
+	1 container Run this round?, ID: time-dialog
+		2 container
+			3 text YOUR PACE
+			4 button Close time controls
+		5 heading Run this round?, Value: 2, ID: time-heading
+			6 text Run this round?
+		7 container known-deadlines
+			8 heading Review the end of this round, Value: 3
+				9 text Review the end of this round
+			10 text Advance from Day 1 · 00:00 to Day 1 · 23:59: the rest of this day.
+			11 text The round will settle using the allocation you recorded and the capacity actually available. This can leave a promise unmet.
+			12 text Your recorded allocation: Amir 0, Mira 4, Lin 4.
+			13 text Your last report described 8 usable units, dated Day 1 · 00:00. Conditions can change during the round.
+			14 text Execution order: Amir, then Mira, then Lin.
+			15 heading Known deadlines reached, Value: 4
+				16 text Known deadlines reached
+			17 text Day 1 · 23:59 · The current allocation settles at this publicly declared deadline.
+			18 text No open promise is recorded. Finishing will settle this round.
+			19 button Run with these saved choices
+		20 text Known deadlines can stop an advance early. Highlights are excerpts, not the complete history.
+
+The focused UI element is 4 button Close time controls

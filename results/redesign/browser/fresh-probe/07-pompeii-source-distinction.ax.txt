@@ -1,0 +1,20 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+	1 container Evidence & history, ID: notebook-dialog
+		2 container
+			3 heading Evidence & history, Value: 2, ID: notebook-heading
+				4 text Evidence & history
+			5 button Close history notebook
+		6 container notebook-content
+			7 button ← Notebook
+			8 container
+				9 text PLACE & HISTORY
+				10 heading A food counter on the street, Value: 3
+					11 text A food counter on the street
+				12 text The thermopolium, or food-and-drink counter, of Vetutius Placidus had large storage jars built into its serving counter. Which visible feature suggests that customers were served here?
+				13 button (collapsed) How do we know?, Secondary Actions: Expand
+					14 text How do we know?
+				15 button (collapsed) What we invented, Secondary Actions: Expand
+					16 text What we invented
+
+The focused UI element is 5 button Close history notebook

@@ -1,0 +1,82 @@
+Browser tab: 19, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8830/lives/pompeii_5fc571e86fbd".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd
+	1 link Description: Skip to content, Value: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8830/your-worlds
+			82 text Pompeii
+			83 text Aelia · 71e86fbd
+			84 text Day 1 · 08:21 · World time
+			85 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story, ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8830/immersion/?experience=pompeii_5fc571e86fbd
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 button Dama, Carrying household instructions. Approach to speak
+					17 text Aelia · you
+					18 button Sabina, In conversation. Talk
+						65 text Sabina
+						120 text In conversation · E to talk
+					19 button Walk to Felix's bread counter
+				20 container hud
+					21 button Description: Open game menu, ID: menu-button
+						22 text KALENDS
+						23 text POMPEII · 79 CE
+					24 container
+						87 text DAY 1
+						88 text 08:21
+						121 text VIA DELL’ABBONDANZA
+					28 container
+						90 text 3 coins
+						30 button Journal, ID: journal-button
+						31 button Description: Settings, ID: settings-button
+				45 container Description: Your next step, ID: lead
+					91 text YOUR NEXT STEP
+					47 heading Your decision, and the history behind it., Value: 2, ID: lead-title
+						92 text Your decision, and the history behind it.
+					49 container lead-actions
+						50 button Review what happened, ID: lead-action
+						51 container guide-tools
+							52 button What should I do next?, ID: guide-help
+							54 button Turn guidance off, ID: guide-toggle
+					93 text You paid 3 coins for the arrangement. The recorded delivery sent 4 flour units to Sabina. The recorded delivery sent 2 flour units to Felix. Sabina’s recorded regard for you improved after this arrangement. Lucius’s recorded regard for you fell after this arrangement. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story.
+					94 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				32 container controls
+					33 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					34 button Wait 30m, ID: wait
+					35 button A day later, ID: day-later
+					36 button Description: Follow Aelia, ID: recenter
+				76 container Description: Conversation, ID: conversation
+					77 text IN CONVERSATION
+					78 heading Sabina, Value: 2, ID: speaker-name
+						95 text Sabina
+					96 text food seller
+					81 button Description: Leave conversation, ID: close-conversation
+					97 text You pay the carrying charge and stand behind the market counters.
+					98 container topics
+						99 button What is your work here?
+						100 button What do you need now?
+						101 button Do you remember our dealings?
+						102 button Do you have a dated report?
+						103 button The counter's order
+					104 container choices
+						105 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 55 minutes.
+							106 text Is there paid work here?
+							107 text Take a real shift, paid from the counter or household account.
+							108 text Cost: 55 minutes.
+						109 button Arrange a current supply inspection Pay one coin; the result arrives after fifteen world minutes. Cost: 1 coin · 15 minutes.
+							110 text Arrange a current supply inspection
+							111 text Pay one coin; the result arrives after fifteen world minutes.
+							112 text Cost: 1 coin · 15 minutes.
+						113 button What do you remember of our dealings? Recall selected retained shared experiences.
+							114 text What do you remember of our dealings?
+							115 text Recall selected retained shared experiences.
+					116 container speech-form
+						117 text SAY SOMETHING
+						118 text field (settable) SAY SOMETHING, ID: speech
+						119 button Ask
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8830/immersion/?experience=pompeii_5fc571e86fbd

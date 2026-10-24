@@ -1,5 +1,20 @@
 # Kalends
 
+## Current participant build
+
+```sh
+./scripts/run_redesign.sh                     # http://127.0.0.1:8833/
+```
+
+This builds and serves the redesigned Pompeii and Shared Observatory experiences
+with separate saves in `.kalends/redesign_review`. Keep the terminal running.
+Existing installations and saves remain separate. Start with **Enter Pompeii**
+and its optional guide, or choose **Shared Observatory** for the allocation round.
+
+[Current handoff, commands and remaining limits](KALENDS_REDESIGN_HANDOFF.md) ·
+[Actual browser walkthroughs and verification](docs/redesign/VERIFICATION.md).
+The launchers below are retained for earlier iterations.
+
 ## Experience OS — two domains, shared continuity
 
 Compile a Pompeii life or a shared-instrument coordination experience on the

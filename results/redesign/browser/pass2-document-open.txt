@@ -1,0 +1,81 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			199 text Pompeii
+			200 text Aelia
+			201 text Day 1 · 08:02
+			202 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+				132 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				133 container names
+					134 button Marcus, Minding the flour cart. Approach to speak
+					135 button Dama, Carrying household instructions. Approach to speak
+					136 text Aelia · you
+					137 button Sabina, In conversation. Talk
+						168 text Sabina
+						230 text In conversation · E to talk
+					138 button Walk to Felix's bread counter
+				139 container hud
+					140 button Description: Open game menu, ID: menu-button
+						141 text KALENDS
+					142 container
+						204 text 6 coins
+						144 button Description: Settings, ID: settings-button
+				145 container Description: Your next step, ID: lead
+					205 text NEXT
+					206 text Reading pauses time
+					148 heading Look at the counter., Value: 2, ID: lead-title
+						207 text Look at the counter.
+					150 button Walk to Thermopolium of Vetutius Placidus, ID: lead-action
+					151 button (collapsed) Help & directions, Secondary Actions: Expand
+						152 text Help & directions
+				153 container location-caption
+					231 text VIA DELL’ABBONDANZA
+					232 text Attested places · fictional lives
+				161 container controls
+					162 container movement-controls
+						163 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					164 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					165 button Wait 30m, ID: wait
+					166 button A day later, ID: day-later
+					167 button Description: Follow Aelia, ID: recenter
+				176 container Description: Conversation, ID: conversation
+					177 text IN CONVERSATION
+					178 heading Sabina, Value: 2, ID: speaker-name
+						210 text Sabina
+					211 text food seller
+					181 button Description: Leave conversation, ID: close-conversation
+					212 text Here is the account you asked for.
+					213 container Description: Received accounts, ID: conversation-evidence
+						214 container
+							215 button (expanded) Sabina's wax account, Secondary Actions: Collapse
+								216 text Sabina's wax account
+							217 text Two flour units ordered for the food counter; 4 coins advanced to Marcus. Received from Sabina · Account dated Day 1 · 08:00
+							218 text Fictional gameplay document · this is their account
+					183 container choices
+						219 button Pay for the market delivery Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix. Cost: 3 coins · 20 minutes.
+							220 text Pay for the market delivery
+							221 text Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix.
+							222 text Cost: 3 coins · 20 minutes.
+						223 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 55 minutes.
+							224 text Is there paid work here?
+							225 text Take a real shift, paid from the counter or household account.
+							226 text Cost: 55 minutes.
+						227 button Leave the decision to the buyers Decline to arrange this delivery. The buyers can act at their own deadline.
+							228 text Leave the decision to the buyers
+							229 text Decline to arrange this delivery. The buyers can act at their own deadline.
+					193 button (collapsed) More to ask or do, Secondary Actions: Expand
+						194 text More to ask or do
+					195 container speech-form
+						196 text Say something
+						197 text field (settable) Say something, Value: Was Dama asking for the cart?, ID: speech
+						198 button Ask
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f

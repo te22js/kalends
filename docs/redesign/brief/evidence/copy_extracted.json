@@ -1,0 +1,2962 @@
+[
+  {
+    "id": "case-001",
+    "title": "case-001 · Pompeii arrival and fictional role",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "You are Aelia."
+      ],
+      [
+        "Body",
+        "You play a fictional freedwoman in Pompeii: a woman who was enslaved and is now free. A flour delivery is disputed. Hear the accounts before deciding whether to help. Aelia’s biography and opportunities are invented; they do not represent every freedwoman."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Begin"
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-002",
+    "title": "case-002 · After role acknowledgement",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Find Sabina."
+      ],
+      [
+        "Body",
+        "Click the ground to walk, or use the movement controls shown in the scene. Moving advances world time by its actual travel cost. You may take another route or explicitly skip the controls lesson."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Show me the way"
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-003",
+    "title": "case-003 · Too far from the household messenger",
+    "badge": "executed_backend · error · pompeii",
+    "blocks": [
+      [
+        "Backend message",
+        "Walk to this character's location before interacting."
+      ]
+    ]
+  },
+  {
+    "id": "case-004",
+    "title": "case-004 · Movement completed; speaking is still a separate action",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Talk to Sabina, the food seller."
+      ],
+      [
+        "Body",
+        "When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Find Sabina and speak"
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-005",
+    "title": "case-005 · Sabina before the account is obtained",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Sabina · Opening",
+        "Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed."
+      ],
+      [
+        "Your life here",
+        "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+      ],
+      [
+        "What needs doing?",
+        "Have enough flour for customers without another household's permission. For now, I must continue work with the stock already held."
+      ],
+      [
+        "Our history",
+        "We have no consequential shared dealing in my retained memory yet."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "The counter's order",
+        "Ask for this account through a reviewed conversation or document choice. You have not received its private contents yet."
+      ],
+      [
+        "Offered choice · label",
+        "What happened to your order?"
+      ],
+      [
+        "Offered choice · description",
+        "Hear Sabina's account before choosing a side."
+      ],
+      [
+        "Offered choice · label",
+        "Show me what you paid for"
+      ],
+      [
+        "Offered choice · description",
+        "Copy the quantity and payment in Sabina's wax account."
+      ],
+      [
+        "Offered choice · consequence",
+        "Adds a dated piece of evidence."
+      ],
+      [
+        "Offered choice · label",
+        "Pay for the market delivery"
+      ],
+      [
+        "Offered choice · description",
+        "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
+      ],
+      [
+        "Offered choice · cost",
+        "3 coins · 20 world minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
+      ],
+      [
+        "Offered choice · reason",
+        "Needs three coins and six arrived sacks."
+      ],
+      [
+        "Offered choice · label",
+        "Leave the decision to the buyers"
+      ],
+      [
+        "Offered choice · description",
+        "Decline to arrange this delivery. The buyers can act at their own deadline."
+      ],
+      [
+        "Offered choice · consequence",
+        "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
+      ],
+      [
+        "Offered choice · label",
+        "Is there paid work here?"
+      ],
+      [
+        "Offered choice · description",
+        "Take a real shift, paid from the counter or household account."
+      ],
+      [
+        "Offered choice · cost",
+        "55 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "The shift pays 3 coins if funds remain available."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-006",
+    "title": "case-006 · Review the account disclosure before confirming",
+    "badge": "executed_backend · review · pompeii",
+    "blocks": [
+      [
+        "Summary",
+        "Review this supported action before accepting it."
+      ],
+      [
+        "Notice",
+        "New observations and private results are never disclosed in a trial preview."
+      ],
+      [
+        "Reviewed action",
+        "hear_dispute"
+      ],
+      [
+        "Reviewed recipient",
+        "Sabina"
+      ]
+    ]
+  },
+  {
+    "id": "case-007",
+    "title": "case-007 · Heard account and explanation of competing claims",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Understand the two claims."
+      ],
+      [
+        "Body",
+        "Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Look at the evidence"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-008",
+    "title": "case-008 · Historical learning invitation",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Learn one historical idea in place."
+      ],
+      [
+        "Body",
+        "Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "What is this place?"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-009",
+    "title": "case-009 · After a real visit and optional card reading",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Compare the accounts you actually obtained."
+      ],
+      [
+        "Body",
+        "Ask Dama for the household instructions. If she has left, ask Lucius about the dispute at the household. Marcus offers a check for one coin and fifteen minutes. These are accounts, not automatic proof. You may instead review an eligible arrangement."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Seek another account"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-010",
+    "title": "case-010 · Both copied accounts; available arrangements",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Choose whether and how to help."
+      ],
+      [
+        "Body",
+        "Return to a claimant and review an eligible arrangement. The market route costs three coins. A household advance creates a later service obligation. The evidence route requires the actual copied accounts. You may also tell Sabina you will leave the decision to the buyers. Confirm only terms you intend to accept."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review your available choices"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You obtained the household instructions, Sabina’s account."
+      ],
+      [
+        "Evidence: Sabina's wax account",
+        "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+      ],
+      [
+        "Evidence source",
+        "Sabina"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ],
+      [
+        "Evidence: The household's delivery instructions",
+        "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+      ],
+      [
+        "Evidence source",
+        "Dama"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-011",
+    "title": "case-011 · Dama · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Dama · Opening",
+        "I was told to repeat the quantity, not argue about it. If you want the instructions, ask plainly."
+      ],
+      [
+        "Your life here",
+        "I carry household instructions. I can repeat the delivery terms I was sent to carry; I cannot promise you the household's money."
+      ],
+      [
+        "What needs doing?",
+        "Carry the steward's delivery instructions accurately. For now, I must carry assigned delivery instructions."
+      ],
+      [
+        "Our history",
+        "You read the document “The household's delivery instructions”."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "The household instructions",
+        "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-012",
+    "title": "case-012 · Lucius · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Lucius · Opening",
+        "Four sacks were reserved for this house. I will hear terms, not an accusation delivered on someone else's word."
+      ],
+      [
+        "Your life here",
+        "I account for this household's stores and service. My own freedom does not make its obligations disappear."
+      ],
+      [
+        "What needs doing?",
+        "Protect the household's claim and recruit reliable help. For now, I must continue work with the stock already held."
+      ],
+      [
+        "Our history",
+        "We have no consequential shared dealing in my retained memory yet."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "Offered choice · label",
+        "Accept the household advance and service obligation"
+      ],
+      [
+        "Offered choice · description",
+        "Receive six coins and give the household priority over the flour cart. You commit to two hours of service within three days."
+      ],
+      [
+        "Offered choice · cost",
+        "20 world minutes now · 120 minutes of service due within three days"
+      ],
+      [
+        "Offered choice · consequence",
+        "Delivery is attempted during this action. Review the actual receipt afterwards. The service remains a separate obligation. Household work opens; Sabina loses priority and welcomes you less."
+      ],
+      [
+        "Offered choice · reason",
+        "Needs an available household advance, carrying funds and arrived sacks."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-013",
+    "title": "case-013 · Marcus · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Marcus · Opening",
+        "The order was ready at first light. That is what my message said. Ready is not the same as carried to your door."
+      ],
+      [
+        "Your life here",
+        "I buy, hold and sell flour. Every sack is somebody's coin before it becomes somebody's bread."
+      ],
+      [
+        "What needs doing?",
+        "Ask for this account through a reviewed conversation or document choice. You have not received its private contents yet."
+      ],
+      [
+        "Our history",
+        "We have no consequential shared dealing in my retained memory yet."
+      ],
+      [
+        "What have you heard?",
+        "Ask for this account through a reviewed conversation or document choice. You have not received its private contents yet."
+      ],
+      [
+        "The old dispatch and the carrying charge",
+        "Ask for this account through a reviewed conversation or document choice. You have not received its private contents yet."
+      ],
+      [
+        "Offered choice · label",
+        "Open the loading account"
+      ],
+      [
+        "Offered choice · description",
+        "Pay to check what the old ready notice did—and did not—promise."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Adds a checked loading record."
+      ],
+      [
+        "Offered choice · reason",
+        "Needs one coin."
+      ],
+      [
+        "Offered choice · label",
+        "Negotiate a delivery using the three accounts"
+      ],
+      [
+        "Offered choice · description",
+        "Use the copied market, household and loading accounts to arrange four sacks for the household and two for Sabina."
+      ],
+      [
+        "Offered choice · cost",
+        "Three copied accounts · 20 world minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Marcus covers the carrying charge. The action advances twenty minutes and attempts delivery. Review the actual receipt afterwards. Broker work opens; Marcus resents the scrutiny."
+      ],
+      [
+        "Offered choice · reason",
+        "Collect Sabina's receipt, Dama's instructions and Marcus's checked loading record."
+      ],
+      [
+        "Offered choice · label",
+        "Buy one flour unit"
+      ],
+      [
+        "Offered choice · description",
+        "Trade one flour unit at the offered price."
+      ],
+      [
+        "Offered choice · cost",
+        "2 coins"
+      ],
+      [
+        "Offered choice · consequence",
+        "One actual flour unit enters your bag."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-014",
+    "title": "case-014 · Felix · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Felix · Opening",
+        "A cart can stand still all morning while people make speeches. Someone must still bake."
+      ],
+      [
+        "Your life here",
+        "I bake and sell bread. You will learn more about a promise by keeping one than by praising it."
+      ],
+      [
+        "What needs doing?",
+        "Keep enough flour and dependable people for tomorrow. For now, I must verify supply before the next purchase."
+      ],
+      [
+        "Our history",
+        "We have no consequential shared dealing in my retained memory yet."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "Offered choice · label",
+        "Buy one flour unit"
+      ],
+      [
+        "Offered choice · description",
+        "Trade one flour unit at the offered price."
+      ],
+      [
+        "Offered choice · cost",
+        "2 coins"
+      ],
+      [
+        "Offered choice · consequence",
+        "One actual flour unit enters your bag."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-015",
+    "title": "case-015 · Chreste · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Chreste · Opening",
+        "If you want work, there is work here. The household pays for extra help. Do not mistake that for my freedom to leave."
+      ],
+      [
+        "Your life here",
+        "I work in the fullery under constraint. Help is useful; grand promises made over my head are less so."
+      ],
+      [
+        "What needs doing?",
+        "Finish today's cloth work without taking blame for another person's bargain. For now, I must finish the assigned cloth work."
+      ],
+      [
+        "Our history",
+        "We have no consequential shared dealing in my retained memory yet."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "Offered choice · label",
+        "Is there paid work here?"
+      ],
+      [
+        "Offered choice · description",
+        "Take a real shift, paid from the counter or household account."
+      ],
+      [
+        "Offered choice · cost",
+        "80 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "The shift pays 4 coins if funds remain available."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-016",
+    "title": "case-016 · Sabina · real public conversation and offered choices",
+    "badge": "executed_backend · conversation · pompeii",
+    "blocks": [
+      [
+        "Sabina · Opening",
+        "Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed."
+      ],
+      [
+        "Your life here",
+        "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+      ],
+      [
+        "What needs doing?",
+        "Have enough flour for customers without another household's permission. For now, I must continue work with the stock already held."
+      ],
+      [
+        "Our history",
+        "Sabina asks you to find out who the six sacks were actually promised to. You read the document “Sabina's wax account”."
+      ],
+      [
+        "What have you heard?",
+        "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+      ],
+      [
+        "The counter's order",
+        "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+      ],
+      [
+        "Offered choice · label",
+        "Pay for the market delivery"
+      ],
+      [
+        "Offered choice · description",
+        "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
+      ],
+      [
+        "Offered choice · cost",
+        "3 coins · 20 world minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
+      ],
+      [
+        "Offered choice · reason",
+        "Needs three coins and six arrived sacks."
+      ],
+      [
+        "Offered choice · label",
+        "Leave the decision to the buyers"
+      ],
+      [
+        "Offered choice · description",
+        "Decline to arrange this delivery. The buyers can act at their own deadline."
+      ],
+      [
+        "Offered choice · consequence",
+        "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
+      ],
+      [
+        "Offered choice · label",
+        "Is there paid work here?"
+      ],
+      [
+        "Offered choice · description",
+        "Take a real shift, paid from the counter or household account."
+      ],
+      [
+        "Offered choice · cost",
+        "55 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "The shift pays 3 coins if funds remain available."
+      ],
+      [
+        "Offered choice · label",
+        "Arrange a current supply inspection"
+      ],
+      [
+        "Offered choice · description",
+        "Pay one coin; the result arrives after fifteen world minutes."
+      ],
+      [
+        "Offered choice · cost",
+        "1 coin · 15 minutes"
+      ],
+      [
+        "Offered choice · consequence",
+        "Obtain a direct dated observation."
+      ],
+      [
+        "Offered choice · reason",
+        "You need one coin to arrange an inspection."
+      ],
+      [
+        "Offered choice · label",
+        "What do you remember of our dealings?"
+      ],
+      [
+        "Offered choice · description",
+        "Recall selected retained shared experiences."
+      ]
+    ]
+  },
+  {
+    "id": "case-017",
+    "title": "case-017 · Offer left unconfirmed / cancellation boundary",
+    "badge": "executed_backend · review · pompeii",
+    "blocks": [
+      [
+        "Summary",
+        "Review this supported action before accepting it."
+      ],
+      [
+        "Notice",
+        "New observations and private results are never disclosed in a trial preview."
+      ],
+      [
+        "Reviewed action",
+        "support_market"
+      ],
+      [
+        "Reviewed recipient",
+        "Sabina"
+      ]
+    ]
+  },
+  {
+    "id": "case-018",
+    "title": "case-018 · Actual market-route payment, delivery and relationship result",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Your decision, and the history behind it."
+      ],
+      [
+        "Body",
+        "You paid 3 coins for the arrangement. The recorded delivery sent 4 flour units to Sabina. The recorded delivery sent 2 flour units to Felix. Sabina’s recorded regard for you improved after this arrangement. Lucius’s recorded regard for you fell after this arrangement. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review what happened"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You obtained the household instructions, Sabina’s account."
+      ],
+      [
+        "Actual result",
+        "You paid 3 coins for the arrangement."
+      ],
+      [
+        "Actual result",
+        "The recorded delivery sent 4 flour units to Sabina."
+      ],
+      [
+        "Actual result",
+        "The recorded delivery sent 2 flour units to Felix."
+      ],
+      [
+        "Actual result",
+        "Sabina’s recorded regard for you improved after this arrangement."
+      ],
+      [
+        "Actual result",
+        "Lucius’s recorded regard for you fell after this arrangement."
+      ],
+      [
+        "Evidence: Sabina's wax account",
+        "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+      ],
+      [
+        "Evidence source",
+        "Sabina"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ],
+      [
+        "Evidence: The household's delivery instructions",
+        "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+      ],
+      [
+        "Evidence source",
+        "Dama"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-019",
+    "title": "case-019 · Story after actual delivery",
+    "badge": "executed_backend · story · pompeii",
+    "blocks": [
+      [
+        "Chapter",
+        "Morning opens on the Via dell'Abbondanza."
+      ],
+      [
+        "Minute 0",
+        "Morning opens on the Via dell'Abbondanza."
+      ],
+      [
+        "Chapter",
+        "You arrive as Aelia, a freedwoman earning her place between households and shops."
+      ],
+      [
+        "Minute 0",
+        "You arrive as Aelia, a freedwoman earning her place between households and shops."
+      ],
+      [
+        "Minute 0",
+        "Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”"
+      ],
+      [
+        "Minute 0",
+        "Hear a private account of the disputed six-sack cart."
+      ],
+      [
+        "Minute 2",
+        "Sabina asks you to find out who the six sacks were actually promised to."
+      ],
+      [
+        "Minute 17",
+        "You read the document “Sabina's wax account”."
+      ],
+      [
+        "Minute 17",
+        "You read the document “The household's delivery instructions”."
+      ],
+      [
+        "Minute 56",
+        "You pay the carrying charge and stand behind the market counters."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "2"
+      ],
+      [
+        "Minute 2",
+        "World time advances by 2 minutes."
+      ],
+      [
+        "Minute 2",
+        "You walk through the street."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "4"
+      ],
+      [
+        "Minute 9",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 9",
+        "You enter Thermopolium of Vetutius Placidus."
+      ],
+      [
+        "Minute 17",
+        "World time advances by 8 minutes."
+      ],
+      [
+        "Minute 17",
+        "You enter the street."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "12"
+      ],
+      [
+        "Minute 24",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 24",
+        "You enter House of the Menander."
+      ],
+      [
+        "Minute 31",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 31",
+        "You enter the street."
+      ],
+      [
+        "Minute 33",
+        "World time advances by 2 minutes."
+      ],
+      [
+        "Minute 33",
+        "You enter Felix's bread counter."
+      ],
+      [
+        "Minute 42",
+        "World time advances by 9 minutes."
+      ],
+      [
+        "Minute 42",
+        "You enter Fullonica of Stephanus."
+      ],
+      [
+        "Minute 48",
+        "World time advances by 6 minutes."
+      ],
+      [
+        "Minute 48",
+        "You enter the street."
+      ],
+      [
+        "Minute 56",
+        "World time advances by 8 minutes."
+      ],
+      [
+        "Minute 56",
+        "You enter Thermopolium of Vetutius Placidus."
+      ],
+      [
+        "Chapter",
+        "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+      ],
+      [
+        "Minute 76",
+        "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "1"
+      ],
+      [
+        "Minute 76",
+        "World time advances by 20 minutes."
+      ],
+      [
+        "Return summary",
+        "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+      ]
+    ]
+  },
+  {
+    "id": "case-020",
+    "title": "case-020 · Continue after optional reflection acknowledgement",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Choose what comes next."
+      ],
+      [
+        "Body",
+        "You can work, speak with residents, learn at the fullery or follow an unresolved obligation. Help and your notebook remain available."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Continue exploring"
+      ],
+      [
+        "What you know",
+        "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+      ],
+      [
+        "What you know",
+        "You obtained the household instructions, Sabina’s account."
+      ],
+      [
+        "Actual result",
+        "You paid 3 coins for the arrangement."
+      ],
+      [
+        "Actual result",
+        "The recorded delivery sent 4 flour units to Sabina."
+      ],
+      [
+        "Actual result",
+        "The recorded delivery sent 2 flour units to Felix."
+      ],
+      [
+        "Actual result",
+        "Sabina’s recorded regard for you improved after this arrangement."
+      ],
+      [
+        "Actual result",
+        "Lucius’s recorded regard for you fell after this arrangement."
+      ],
+      [
+        "Evidence: Sabina's wax account",
+        "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+      ],
+      [
+        "Evidence source",
+        "Sabina"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ],
+      [
+        "Evidence: The household's delivery instructions",
+        "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+      ],
+      [
+        "Evidence source",
+        "Dama"
+      ],
+      [
+        "Evidence kind",
+        "Copied fictional document; its contents are a claim"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-021",
+    "title": "case-021 · History notebook · A food counter on the street",
+    "badge": "executed_backend · card · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "A food counter on the street"
+      ],
+      [
+        "Encounter Label",
+        "Reconstruction"
+      ],
+      [
+        "Encounter",
+        "The game represents a counter and inset jar forms. This is a schematic model of the food-counter setting."
+      ],
+      [
+        "Illustration",
+        "The in-game counter is an original schematic reconstruction, not an archaeological photograph."
+      ],
+      [
+        "Claim",
+        "The thermopolium, or food-and-drink counter, of Vetutius Placidus had large storage jars built into its serving counter."
+      ],
+      [
+        "Evidence",
+        "The Park describes the surviving counter and its embedded vessels."
+      ],
+      [
+        "Limits",
+        "A counter does not establish its exact daily menu or the identity of everyone who worked there."
+      ],
+      [
+        "Game Changed",
+        "Sabina, her stock, prices and the flour dispute are fictional. The model is not a surveyed reconstruction."
+      ],
+      [
+        "Question",
+        "Which visible feature suggests that customers were served here?"
+      ],
+      [
+        "Rights",
+        "Original prose and schematic game geometry. No external image reproduced."
+      ],
+      [
+        "Evidence label",
+        "Historical evidence"
+      ],
+      [
+        "Evidence label",
+        "Reconstruction"
+      ],
+      [
+        "Evidence label",
+        "Fictional gameplay"
+      ],
+      [
+        "Source",
+        "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+      ]
+    ]
+  },
+  {
+    "id": "case-022",
+    "title": "case-022 · History notebook · A home turned into a workplace",
+    "badge": "executed_backend · card · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "A home turned into a workplace"
+      ],
+      [
+        "Encounter Label",
+        "Reconstruction"
+      ],
+      [
+        "Encounter",
+        "The game represents washing basins inside a simplified workshop."
+      ],
+      [
+        "Illustration",
+        "The game basins are schematic geometry, not a measured plan."
+      ],
+      [
+        "Claim",
+        "The Fullonica of Stephanus was a cloth-cleaning workshop adapted from a house. Fullonica means a fullery, where cloth was processed."
+      ],
+      [
+        "Evidence",
+        "Washing facilities and changes to the domestic building support its workshop interpretation."
+      ],
+      [
+        "Limits",
+        "The conventional building name does not establish every occupant or worker. Precise ownership can be an interpretation."
+      ],
+      [
+        "Game Changed",
+        "Chreste, her schedule and the paid shifts offered to Aelia are invented. Chreste is enslaved; Aelia taking a paid shift is a different situation."
+      ],
+      [
+        "Question",
+        "What would distinguish a workshop from a room used only for domestic life?"
+      ],
+      [
+        "Rights",
+        "Original prose and schematic game geometry. No external image reproduced."
+      ],
+      [
+        "Evidence label",
+        "Historical evidence"
+      ],
+      [
+        "Evidence label",
+        "Reconstruction"
+      ],
+      [
+        "Evidence label",
+        "Fictional gameplay"
+      ],
+      [
+        "Source",
+        "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+      ]
+    ]
+  },
+  {
+    "id": "case-023",
+    "title": "case-023 · History notebook · A person who had been freed",
+    "badge": "executed_backend · card · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "A person who had been freed"
+      ],
+      [
+        "Encounter Label",
+        "Fictional gameplay"
+      ],
+      [
+        "Encounter",
+        "Aelia is a fictional freedwoman: she was enslaved and was later freed."
+      ],
+      [
+        "Claim",
+        "Naevoleia Tyche’s commemorative monument and inscription identify her as a freedwoman."
+      ],
+      [
+        "Evidence",
+        "The Park discusses the inscription on the monument near the Herculaneum Gate. That monument is outside this game district."
+      ],
+      [
+        "Limits",
+        "One prominent monument cannot show how every freedwoman lived. Women had varied social statuses and opportunities. The Park’s imagined first-person narration is modern interpretation."
+      ],
+      [
+        "Game Changed",
+        "Aelia is not Naevoleia Tyche. Her money, work, access and choices are fictional simplifications, not general Roman legal rights."
+      ],
+      [
+        "Question",
+        "Can one prosperous individual stand for everyone who had been freed?"
+      ],
+      [
+        "Rights",
+        "Original prose and schematic game geometry. No external image reproduced."
+      ],
+      [
+        "Evidence label",
+        "Historical evidence"
+      ],
+      [
+        "Evidence label",
+        "Fictional gameplay"
+      ],
+      [
+        "Source",
+        "Archaeological Park of Pompeii: Nevoleia Tyche · https://pompeiisites.org/en/exhibitions-and-events/nevoleia-tyche-en/"
+      ],
+      [
+        "Source",
+        "Archaeological Park of Pompeii: Being a woman in ancient Pompeii · https://pompeiisites.org/en/exhibitions/being-a-woman-in-ancient-pompeii/"
+      ]
+    ]
+  },
+  {
+    "id": "case-024",
+    "title": "case-024 · History notebook · Political messages on walls",
+    "badge": "executed_backend · card · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Political messages on walls"
+      ],
+      [
+        "Encounter Label",
+        "Modern learning material"
+      ],
+      [
+        "Encounter",
+        "This learning card describes surviving painted notices. It does not identify a game wall as an excavated inscription."
+      ],
+      [
+        "Illustration",
+        "Modern English structure guide: candidate → office sought → supporter. This is not a transcription."
+      ],
+      [
+        "Claim",
+        "Pompeian electoral notices named candidates, the offices sought and supporters."
+      ],
+      [
+        "Evidence",
+        "The Naples museum presents painted inscription fragments and explains their recurring forms."
+      ],
+      [
+        "Limits",
+        "An endorsement does not establish an election result or equal political rights for every resident."
+      ],
+      [
+        "Game Changed",
+        "There is no voting mechanic here. Aelia reading this card implies no eligibility for office. Any decorative wall marks in the model are reconstruction, not quoted ancient text."
+      ],
+      [
+        "Question",
+        "What can an endorsement tell you, and what can it leave unknown?"
+      ],
+      [
+        "Rights",
+        "Original prose and schematic game geometry. No external image reproduced."
+      ],
+      [
+        "Evidence label",
+        "Historical evidence"
+      ],
+      [
+        "Evidence label",
+        "Reconstruction"
+      ],
+      [
+        "Source",
+        "National Archaeological Museum of Naples: Elections in Pompeii · https://artsandculture.google.com/story/tgUBNHEcEscIJg?hl=en"
+      ]
+    ]
+  },
+  {
+    "id": "case-025",
+    "title": "case-025 · History notebook · Evidence, reconstruction and invented choices",
+    "badge": "executed_backend · card · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Evidence, reconstruction and invented choices"
+      ],
+      [
+        "Encounter Label",
+        "Modern learning material"
+      ],
+      [
+        "Encounter",
+        "Compare the represented counter or workshop with the delivery dispute you are playing."
+      ],
+      [
+        "Claim",
+        "Buildings, objects and inscriptions can support limited historical claims. They do not preserve Sabina’s conversation with Aelia."
+      ],
+      [
+        "Evidence",
+        "The linked Park descriptions discuss surviving structures; the museum shows inscribed objects."
+      ],
+      [
+        "Limits",
+        "Evidence leaves gaps. A plausible reconstruction remains an interpretation."
+      ],
+      [
+        "Game Changed",
+        "Every named game character, exact price, reward, deadline, relationship score and cart agreement is invented for play. The miniature street network is simplified."
+      ],
+      [
+        "Question",
+        "Name one externally supported feature and one mechanic created for this experience."
+      ],
+      [
+        "Rights",
+        "Original prose and schematic game geometry. No external image reproduced."
+      ],
+      [
+        "Evidence label",
+        "Historical evidence"
+      ],
+      [
+        "Evidence label",
+        "Reconstruction"
+      ],
+      [
+        "Evidence label",
+        "Fictional gameplay"
+      ],
+      [
+        "Source",
+        "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+      ],
+      [
+        "Source",
+        "National Archaeological Museum of Naples: Elections in Pompeii · https://artsandculture.google.com/story/tgUBNHEcEscIJg?hl=en"
+      ]
+    ]
+  },
+  {
+    "id": "case-026",
+    "title": "case-026 · Saved life reopened from actual journals",
+    "badge": "executed_backend · story · pompeii",
+    "blocks": [
+      [
+        "Chapter",
+        "Morning opens on the Via dell'Abbondanza."
+      ],
+      [
+        "Minute 0",
+        "Morning opens on the Via dell'Abbondanza."
+      ],
+      [
+        "Chapter",
+        "You arrive as Aelia, a freedwoman earning her place between households and shops."
+      ],
+      [
+        "Minute 0",
+        "You arrive as Aelia, a freedwoman earning her place between households and shops."
+      ],
+      [
+        "Minute 0",
+        "Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”"
+      ],
+      [
+        "Minute 0",
+        "Hear a private account of the disputed six-sack cart."
+      ],
+      [
+        "Minute 2",
+        "Sabina asks you to find out who the six sacks were actually promised to."
+      ],
+      [
+        "Minute 17",
+        "You read the document “Sabina's wax account”."
+      ],
+      [
+        "Minute 17",
+        "You read the document “The household's delivery instructions”."
+      ],
+      [
+        "Minute 56",
+        "You pay the carrying charge and stand behind the market counters."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "2"
+      ],
+      [
+        "Minute 2",
+        "World time advances by 2 minutes."
+      ],
+      [
+        "Minute 2",
+        "You walk through the street."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "4"
+      ],
+      [
+        "Minute 9",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 9",
+        "You enter Thermopolium of Vetutius Placidus."
+      ],
+      [
+        "Minute 17",
+        "World time advances by 8 minutes."
+      ],
+      [
+        "Minute 17",
+        "You enter the street."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "12"
+      ],
+      [
+        "Minute 24",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 24",
+        "You enter House of the Menander."
+      ],
+      [
+        "Minute 31",
+        "World time advances by 7 minutes."
+      ],
+      [
+        "Minute 31",
+        "You enter the street."
+      ],
+      [
+        "Minute 33",
+        "World time advances by 2 minutes."
+      ],
+      [
+        "Minute 33",
+        "You enter Felix's bread counter."
+      ],
+      [
+        "Minute 42",
+        "World time advances by 9 minutes."
+      ],
+      [
+        "Minute 42",
+        "You enter Fullonica of Stephanus."
+      ],
+      [
+        "Minute 48",
+        "World time advances by 6 minutes."
+      ],
+      [
+        "Minute 48",
+        "You enter the street."
+      ],
+      [
+        "Minute 56",
+        "World time advances by 8 minutes."
+      ],
+      [
+        "Minute 56",
+        "You enter Thermopolium of Vetutius Placidus."
+      ],
+      [
+        "Chapter",
+        "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+      ],
+      [
+        "Minute 76",
+        "The counters receive the cart; Lucius receives a refund and remembers whose claim you put first."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "1"
+      ],
+      [
+        "Minute 76",
+        "World time advances by 20 minutes."
+      ],
+      [
+        "Return summary",
+        "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+      ]
+    ]
+  },
+  {
+    "id": "case-027",
+    "title": "case-027 · Old unconfirmed offer after the world changed",
+    "badge": "executed_backend · error · pompeii",
+    "blocks": [
+      [
+        "Backend message",
+        "The proposal is stale or already consumed. Review again."
+      ]
+    ]
+  },
+  {
+    "id": "case-028",
+    "title": "case-028 · Declining: the buyers' outcome is still pending",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "See the actual delivery."
+      ],
+      [
+        "Body",
+        "Your accepted choice is recorded. Some arrangements execute their delivery during their displayed twenty-minute action; declining leaves the buyers’ own deadline in place. Use the deliberate time controls if nothing has settled. The guide never silently pays, promises or advances time."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review time and known obligations"
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ]
+    ]
+  },
+  {
+    "id": "case-029",
+    "title": "case-029 · Missed/declined opportunity: the admitted continuation",
+    "badge": "executed_backend · guide · pompeii",
+    "blocks": [
+      [
+        "Title",
+        "Your decision, and the history behind it."
+      ],
+      [
+        "Body",
+        "The recorded delivery sent 6 flour units to Lucius. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review what happened"
+      ],
+      [
+        "What you know",
+        "You have not copied a written order yet. No hidden account is supplied by the guide."
+      ],
+      [
+        "Actual result",
+        "The recorded delivery sent 6 flour units to Lucius."
+      ]
+    ]
+  },
+  {
+    "id": "case-030",
+    "title": "case-030 · Observatory arrival; unknown report stays unknown",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "You coordinate one shared instrument."
+      ],
+      [
+        "Body",
+        "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Begin the guided round"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ]
+    ]
+  },
+  {
+    "id": "case-031",
+    "title": "case-031 · A real current request",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Read a real request."
+      ],
+      [
+        "Body",
+        "Mira currently requests 2 capacity units. A request says what a team wants. It creates neither a promise nor an allocation. Blank quantities mean no record; an explicit zero is a recorded zero."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "I understand this request"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ]
+    ]
+  },
+  {
+    "id": "case-032",
+    "title": "case-032 · How to obtain a report",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Ask Mira for her dated report."
+      ],
+      [
+        "Body",
+        "The rated capacity is twelve units. The current condition is not yet known from your received reports. Ask Mira to share what she observed; confirmation records the actual disclosure. A direct inspection is another supported route and costs one credit."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Ask Mira for the report"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ]
+    ]
+  },
+  {
+    "id": "case-033",
+    "title": "case-033 · Report disclosure review",
+    "badge": "executed_backend · review · commons",
+    "blocks": [
+      [
+        "Summary",
+        "Ask for a legitimately retained dated report; its content is disclosed after confirmation."
+      ],
+      [
+        "Notice",
+        "New observations and private results are never disclosed in a trial preview."
+      ],
+      [
+        "Reviewed action",
+        "share"
+      ],
+      [
+        "Reviewed recipient",
+        "team_b"
+      ]
+    ]
+  },
+  {
+    "id": "case-034",
+    "title": "case-034 · Dated admitted report and allocation explanation",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Choose an allocation you can explain."
+      ],
+      [
+        "Body",
+        "The latest admitted report describes 8 usable units, dated minute 0. It may be out of date. Set a quantity for each team and review the total. Delivery follows the public exercise order: Amir, then Mira, then Lin. A project needs its stated minimum in a settled batch; equal shares are not always useful."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review your allocation"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-035",
+    "title": "case-035 · Review a 4/4/4 allocation; delivery is separate",
+    "badge": "executed_backend · review · commons",
+    "blocks": [
+      [
+        "Summary",
+        "Commit this allocation. Actual delivery is determined at settlement."
+      ],
+      [
+        "Notice",
+        "New observations and private results are never disclosed in a trial preview."
+      ],
+      [
+        "Reviewed action",
+        "allocate"
+      ],
+      [
+        "Reviewed allocation · team_a",
+        "4"
+      ],
+      [
+        "Reviewed allocation · team_b",
+        "4"
+      ],
+      [
+        "Reviewed allocation · team_c",
+        "4"
+      ]
+    ]
+  },
+  {
+    "id": "case-036",
+    "title": "case-036 · An optional promise after allocating",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "A promise is optional and separate."
+      ],
+      [
+        "Body",
+        "A promise tells a team what you commit to provide. An allocation instructs the division of capacity; settlement determines delivery. You may review a promise to one team, or continue without making one. Changing an allocation field never creates a promise."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review an optional promise"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-037",
+    "title": "case-037 · Known promise and deliberate finish",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Finish this round deliberately."
+      ],
+      [
+        "Body",
+        "Your allocation is recorded, but delivery has not happened. Review the target time and every known commitment, then explicitly finish the round. Reading this panel does not move the clock."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review and finish this round"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ],
+      [
+        "Current obligation",
+        "You promised 4 units to Lin by minute 1439. Allocation and delivery are separate steps."
+      ]
+    ]
+  },
+  {
+    "id": "case-038",
+    "title": "case-038 · Actual 4/4/0 delivery and missed promise",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Read what actually happened."
+      ],
+      [
+        "Body",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 4 units and received 4 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 0 units. You promised 4 units to Lin, so that promise was not met."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review the actual result"
+      ],
+      [
+        "What you know",
+        "Amir currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Actual result",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+      ],
+      [
+        "Actual result",
+        "Amir was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Mira was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Lin was allocated 4 units and received 0 units."
+      ],
+      [
+        "Actual result",
+        "You promised 4 units to Lin, so that promise was not met."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-039",
+    "title": "case-039 · Actual Observatory consequence story",
+    "badge": "executed_backend · story · commons",
+    "blocks": [
+      [
+        "Chapter",
+        "The consortium records its declared research projects."
+      ],
+      [
+        "Minute 0",
+        "The consortium records its declared research projects."
+      ],
+      [
+        "Minute 0",
+        "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+      ],
+      [
+        "Minute 0",
+        "Round 1: teams may negotiate the shared instrument."
+      ],
+      [
+        "Minute 0",
+        "Mira shares a dated condition report with you. Reported condition: fragile, dated minute 0."
+      ],
+      [
+        "Minute 0",
+        "The coordinator commits round 1's allocation."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "1"
+      ],
+      [
+        "Minute 0",
+        "Mira requests 2 capacity units."
+      ],
+      [
+        "Chapter",
+        "You promise 4 units to Lin."
+      ],
+      [
+        "Minute 0",
+        "You promise 4 units to Lin."
+      ],
+      [
+        "Chapter",
+        "Round 1 executes 8/12 allocated units; 2 projects complete."
+      ],
+      [
+        "Minute 1439",
+        "Round 1 executes 8/12 allocated units; 2 projects complete."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "3"
+      ],
+      [
+        "Minute 720",
+        "Amir requests 2 capacity units."
+      ],
+      [
+        "Minute 720",
+        "Mira requests 2 capacity units."
+      ],
+      [
+        "Minute 720",
+        "Lin requests 2 capacity units."
+      ],
+      [
+        "Chapter",
+        "Recorded settlements and deadlines revise the declared project register."
+      ],
+      [
+        "Minute 1439",
+        "Recorded settlements and deadlines revise the declared project register."
+      ],
+      [
+        "Chapter",
+        "The promise to Lin is missed."
+      ],
+      [
+        "Minute 1439",
+        "The promise to Lin is missed."
+      ],
+      [
+        "Amir · Survey",
+        "Our survey work has a deadline. Please distinguish what you promise us from what the instrument actually delivers."
+      ],
+      [
+        "Recorded outcome",
+        "Amir received 4 of 4 allocated units."
+      ],
+      [
+        "Mira · Instrument systems",
+        "I work on the instrument systems. You can ask about the dated report before deciding what to promise."
+      ],
+      [
+        "Recorded outcome",
+        "Mira received 4 of 4 allocated units."
+      ],
+      [
+        "Lin · Follow-up",
+        "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."
+      ],
+      [
+        "Recorded outcome",
+        "Lin received 0 of 4 allocated units."
+      ],
+      [
+        "Return summary",
+        "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+      ]
+    ]
+  },
+  {
+    "id": "case-040",
+    "title": "case-040 · Optional reflection, without a comprehension claim",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Continue with less guidance."
+      ],
+      [
+        "Body",
+        "Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. This is an optional reflection, not a measured test result."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Continue exploring"
+      ],
+      [
+        "What you know",
+        "Amir currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Actual result",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+      ],
+      [
+        "Actual result",
+        "Amir was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Mira was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Lin was allocated 4 units and received 0 units."
+      ],
+      [
+        "Actual result",
+        "You promised 4 units to Lin, so that promise was not met."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-041",
+    "title": "case-041 · Double confirmation of an accepted allocation",
+    "badge": "executed_backend · error · commons",
+    "blocks": [
+      [
+        "Backend message",
+        "The proposal is stale or already consumed. Review again."
+      ]
+    ]
+  },
+  {
+    "id": "case-042",
+    "title": "case-042 · Closed-round allocation",
+    "badge": "executed_backend · error · commons",
+    "blocks": [
+      [
+        "Backend message",
+        "This round has settled. Advance to the next day before making a new promise or allocation."
+      ]
+    ]
+  },
+  {
+    "id": "case-043",
+    "title": "case-043 · A new round with only an older received report",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Continue with less guidance."
+      ],
+      [
+        "Body",
+        "Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. This is an optional reflection, not a measured test result."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Continue exploring"
+      ],
+      [
+        "What you know",
+        "Amir currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: missed."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: completed."
+      ],
+      [
+        "Actual result",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+      ],
+      [
+        "Actual result",
+        "Amir was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Mira was allocated 4 units and received 4 units."
+      ],
+      [
+        "Actual result",
+        "Lin was allocated 4 units and received 0 units."
+      ],
+      [
+        "Actual result",
+        "You promised 4 units to Lin, so that promise was not met."
+      ],
+      [
+        "Evidence: Dated instrument report",
+        "The reported condition was fragile."
+      ],
+      [
+        "Evidence source",
+        "Mira"
+      ],
+      [
+        "Evidence kind",
+        "Testimony"
+      ],
+      [
+        "Evidence at",
+        "0"
+      ]
+    ]
+  },
+  {
+    "id": "case-044",
+    "title": "case-044 · Actual singular promise and missing optional report",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "You coordinate one shared instrument."
+      ],
+      [
+        "Body",
+        "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Begin the guided round"
+      ],
+      [
+        "What you know",
+        "Mira currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Current obligation",
+        "You promised 1 unit to Amir by minute 1439. Allocation and delivery are separate steps."
+      ]
+    ]
+  },
+  {
+    "id": "case-045",
+    "title": "case-045 · Actual one-unit delivery and explicit zero deliveries",
+    "badge": "executed_backend · guide · commons",
+    "blocks": [
+      [
+        "Title",
+        "Read what actually happened."
+      ],
+      [
+        "Body",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 1 unit and received 1 unit. Mira was allocated 0 units and received 0 units. Lin was allocated 0 units and received 0 units."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Review the actual result"
+      ],
+      [
+        "What you know",
+        "Amir currently requests 2 capacity units."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ],
+      [
+        "Project requirement",
+        "Mira: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Lin: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Project requirement",
+        "Amir: 4 units in a settled batch; deadline minute 1440; status: open."
+      ],
+      [
+        "Actual result",
+        "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+      ],
+      [
+        "Actual result",
+        "Amir was allocated 1 unit and received 1 unit."
+      ],
+      [
+        "Actual result",
+        "Mira was allocated 0 units and received 0 units."
+      ],
+      [
+        "Actual result",
+        "Lin was allocated 0 units and received 0 units."
+      ]
+    ]
+  },
+  {
+    "id": "case-046",
+    "title": "case-046 · Singular/zero story text",
+    "badge": "executed_backend · story · commons",
+    "blocks": [
+      [
+        "Chapter",
+        "The consortium records its declared research projects."
+      ],
+      [
+        "Minute 0",
+        "The consortium records its declared research projects."
+      ],
+      [
+        "Minute 0",
+        "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+      ],
+      [
+        "Minute 0",
+        "Round 1: teams may negotiate the shared instrument."
+      ],
+      [
+        "Chapter",
+        "You promise 1 unit to Amir."
+      ],
+      [
+        "Minute 0",
+        "You promise 1 unit to Amir."
+      ],
+      [
+        "Minute 0",
+        "The coordinator commits round 1's allocation."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "1"
+      ],
+      [
+        "Minute 0",
+        "Mira requests 2 capacity units."
+      ],
+      [
+        "Chapter",
+        "Round 1 executes 1/1 allocated unit; 0 projects complete."
+      ],
+      [
+        "Minute 1439",
+        "Round 1 executes 1/1 allocated unit; 0 projects complete."
+      ],
+      [
+        "Routine",
+        "Everyday activity"
+      ],
+      [
+        "Routine record count",
+        "3"
+      ],
+      [
+        "Minute 720",
+        "Amir requests 2 capacity units."
+      ],
+      [
+        "Minute 720",
+        "Mira requests 2 capacity units."
+      ],
+      [
+        "Minute 720",
+        "Lin requests 2 capacity units."
+      ],
+      [
+        "Chapter",
+        "The promise to Amir is kept."
+      ],
+      [
+        "Minute 1439",
+        "The promise to Amir is kept."
+      ],
+      [
+        "Amir · Survey",
+        "Our survey work has a deadline. Please distinguish what you promise us from what the instrument actually delivers."
+      ],
+      [
+        "Recorded outcome",
+        "Amir received 1 of 1 allocated unit."
+      ],
+      [
+        "Mira · Instrument systems",
+        "I work on the instrument systems. You can ask about the dated report before deciding what to promise."
+      ],
+      [
+        "Recorded outcome",
+        "Mira received 0 of 0 allocated units."
+      ],
+      [
+        "Lin · Follow-up",
+        "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."
+      ],
+      [
+        "Recorded outcome",
+        "Lin received 0 of 0 allocated units."
+      ],
+      [
+        "Return summary",
+        "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+      ]
+    ]
+  },
+  {
+    "id": "case-047",
+    "title": "case-047 · Actual exhausted-credit inspection error",
+    "badge": "executed_backend · error · commons",
+    "blocks": [
+      [
+        "Backend message",
+        "Insufficient owned credits"
+      ]
+    ]
+  },
+  {
+    "id": "case-048",
+    "title": "case-048 · Invalid zero promise is different from no promise",
+    "badge": "executed_backend · error · commons",
+    "blocks": [
+      [
+        "Backend message",
+        "This round has settled. Advance to the next day before making a new promise or allocation."
+      ]
+    ]
+  },
+  {
+    "id": "case-049",
+    "title": "case-049 · Empty retained context / forgotten-evidence formatting",
+    "badge": "synthetic_formatting_fixture · formatting · fixture",
+    "blocks": [
+      [
+        "Speaker",
+        "Sabina"
+      ],
+      [
+        "Formatted reply",
+        "Start with what you can actually do. A little help at the right moment matters here."
+      ],
+      [
+        "Epistemic status",
+        "No retained shared episode"
+      ]
+    ]
+  },
+  {
+    "id": "case-050",
+    "title": "case-050 · Dated hearsay formatting",
+    "badge": "synthetic_formatting_fixture · formatting · fixture",
+    "blocks": [
+      [
+        "Speaker",
+        "Sabina"
+      ],
+      [
+        "Formatted reply",
+        "I heard that supply was available, dated world minute 0. Check how old that is before relying on it."
+      ],
+      [
+        "Epistemic status",
+        "Dated hearsay"
+      ]
+    ]
+  },
+  {
+    "id": "case-051",
+    "title": "case-051 · Long names and HTML escaping at narrow width",
+    "badge": "synthetic_formatting_fixture · formatting · fixture",
+    "blocks": [
+      [
+        "Speaker",
+        "Aelia <&> LongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongName"
+      ],
+      [
+        "Formatted reply",
+        "I can speak for my own work, not everyone else's."
+      ],
+      [
+        "Epistemic status",
+        "Authored fictional identity"
+      ]
+    ]
+  },
+  {
+    "id": "case-052",
+    "title": "case-052 · Missing optional request/report fields",
+    "badge": "synthetic_formatting_fixture · formatting · fixture",
+    "blocks": [
+      [
+        "Title",
+        "You coordinate one shared instrument."
+      ],
+      [
+        "Body",
+        "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+      ],
+      [
+        "Hint",
+        "You can ask for help, leave this guide or take another supported route."
+      ],
+      [
+        "Time Policy",
+        "Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance."
+      ],
+      [
+        "Action label",
+        "Begin the guided round"
+      ],
+      [
+        "What you know",
+        "No team has an active request in the current register yet."
+      ],
+      [
+        "What you know",
+        "Requests, promises, allocated amounts and delivered amounts are different records."
+      ]
+    ]
+  }
+]

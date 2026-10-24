@@ -1,0 +1,74 @@
+Browser tab: 19, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8830/lives/pompeii_5fc571e86fbd".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd
+	1 link Description: Skip to content, Value: 127.0.0.1:8830/lives/pompeii_5fc571e86fbd#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8830/your-worlds
+			82 text Pompeii
+			83 text Aelia · 71e86fbd
+			84 text Day 1 · 08:01 · World time
+			85 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story, ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8830/immersion/?experience=pompeii_5fc571e86fbd
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 button Dama, Carrying household instructions. Approach to speak
+					17 text Aelia · you
+					18 button Sabina, In conversation. Talk
+						65 text Sabina
+						115 text In conversation · E to talk
+					19 button Walk to Felix's bread counter
+				20 container hud
+					21 button Description: Open game menu, ID: menu-button
+						22 text KALENDS
+						23 text POMPEII · 79 CE
+					24 container
+						87 text DAY 1
+						88 text 08:01
+						116 text VIA DELL’ABBONDANZA
+					28 container
+						90 text 6 coins
+						30 button Journal, ID: journal-button
+						31 button Description: Settings, ID: settings-button
+				45 container Description: Your next step, ID: lead
+					91 text YOUR NEXT STEP
+					47 heading Learn one historical idea in place., Value: 2, ID: lead-title
+						92 text Learn one historical idea in place.
+					49 container lead-actions
+						50 button Walk to Thermopolium of Vetutius Placidus, ID: lead-action
+						51 container guide-tools
+							52 button What should I do next?, ID: guide-help
+							93 button Show destination marker, ID: guide-hint
+							94 button Skip this history lesson, ID: guide-skip-history
+							54 button Turn guidance off, ID: guide-toggle
+					95 text Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock.
+					117 text Known meeting place: Thermopolium of Vetutius Placidus. Choose “Show destination marker” to see the known destination without walking.
+					97 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				32 container controls
+					33 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					34 button Wait 30m, ID: wait
+					35 button A day later, ID: day-later
+					36 button Description: Follow Aelia, ID: recenter
+				76 container Description: Conversation, ID: conversation
+					77 text IN CONVERSATION
+					78 heading Sabina, Value: 2, ID: speaker-name
+						101 text Sabina
+					102 text food seller
+					81 button Description: Leave conversation, ID: close-conversation
+					103 text You read the document “Sabina's wax account”.
+					104 container review
+						105 text BEFORE YOU COMMIT
+						106 heading Choose how to answer, Value: 3, ID: review-title
+							107 text Choose how to answer
+						108 text This will change the saved world. Review the terms before confirming.
+						109 container
+							110 heading Pay for the market delivery, Value: 4
+								111 text Pay for the market delivery
+							112 text Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix. 3 coins · 20 world minutes The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority.
+							113 button Confirm arrangement →
+						114 button Back, ID: cancel-review
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8830/immersion/?experience=pompeii_5fc571e86fbd

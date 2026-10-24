@@ -1,0 +1,79 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			94 text Pompeii
+			95 text Aelia
+			96 text Day 1 · 08:16
+			97 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				53 container names
+					54 text Aelia · you
+					59 button Sabina, Waiting by her disputed order. Talk
+						98 text Sabina
+						99 text Waiting by her disputed order · E to talk
+					60 button Marcus, Minding the flour cart. Talk
+					61 button Dama, In conversation. Talk
+						62 text Dama
+						100 text In conversation · E to talk
+					64 button Walk to Felix's bread counter
+				16 container hud
+					17 button Description: Open game menu, ID: menu-button
+						18 text KALENDS
+					19 container
+						101 text 6 coins
+						21 button Description: Settings, ID: settings-button
+				22 container Description: Your next step, ID: lead
+					102 text NEXT
+					103 text Reading pauses time
+					25 heading Choose whether and how to help., Value: 2, ID: lead-title
+						104 text Choose whether and how to help.
+					27 button Talk to Sabina, ID: lead-action
+					28 button (collapsed) Help & directions, Secondary Actions: Expand
+						29 text Help & directions
+				30 container location-caption
+					105 text VIA DELL’ABBONDANZA
+					106 text Attested places · fictional lives
+				38 container controls
+					39 container movement-controls
+						40 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					45 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					46 button Wait 30m, ID: wait
+					47 button A day later, ID: day-later
+					48 button Description: Follow Aelia, ID: recenter
+				72 container Description: Conversation, ID: conversation
+					73 text IN CONVERSATION
+					74 heading Dama, Value: 2, ID: speaker-name
+						107 text Dama
+					108 text household messenger
+					77 button Description: Leave conversation, ID: close-conversation
+					109 text Here is the account you asked for.
+					110 container Description: Received accounts, ID: conversation-evidence
+						111 container
+							112 button (expanded) The household's delivery instructions, Secondary Actions: Collapse
+								113 text The household's delivery instructions
+							114 text Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart. Received from Dama · Account dated Day 1 · 08:00
+							115 text Fictional gameplay document · this is their account
+					79 container choices
+						116 button Arrange a current supply inspection Pay one coin; the result arrives after fifteen world minutes. Cost: 1 coin · 15 minutes.
+							117 text Arrange a current supply inspection
+							118 text Pay one coin; the result arrives after fifteen world minutes.
+							119 text Cost: 1 coin · 15 minutes.
+						120 button What do you remember of our dealings? Recall selected retained shared experiences.
+							121 text What do you remember of our dealings?
+							122 text Recall selected retained shared experiences.
+					88 button (collapsed) More to ask or do, Secondary Actions: Expand
+						89 text More to ask or do
+					90 container speech-form
+						91 text Say something
+						92 text field (settable) Say something, ID: speech
+						93 button Ask
+
+The focused UI element is 13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97

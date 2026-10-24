@@ -1,0 +1,146 @@
+{
+  "checked_date": "2026-10-24",
+  "scope": "Local source/asset audit; not native visual legibility or legal certification",
+  "manifest_file_count": 52,
+  "manifest_mismatches": [],
+  "source_groups": [
+    {
+      "group": "quaternius_humans",
+      "license": "CC0-1.0 for artist body/hair/rig/motion. Project-created tunic/belt and transformations retain projectowner rights.",
+      "notices": [
+        {
+          "path": "kalends_3d/assets/licenses/Quaternius-Base-CC0.txt",
+          "exists": true
+        },
+        {
+          "path": "kalends_3d/assets/licenses/Quaternius-Animation-CC0.txt",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "group": "kaykit_fallback",
+      "license": "CC0-1.0",
+      "notices": [
+        {
+          "path": "kalends_3d/assets/licenses/KayKit-CC0.txt",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "group": "poly_haven",
+      "license": "CC0-1.0",
+      "notices": [
+        {
+          "path": "kalends_3d/assets/licenses/PolyHaven-CC0.txt",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "group": "original_district_with_cc0_materials",
+      "license": "Original environment geometry/layout belongs to projectowner; embedded PolyHaven maps remainCC0.",
+      "notices": [
+        {
+          "path": "kalends_3d/assets/environment/LICENSE.txt",
+          "exists": true
+        },
+        {
+          "path": "kalends_3d/assets/licenses/PolyHaven-CC0.txt",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "group": "project_generated",
+      "license": "Projectowner rights; no new general dedication.",
+      "notices": []
+    },
+    {
+      "group": "quaternius_nature",
+      "license": "CC0-1.0",
+      "notices": [
+        {
+          "path": "kalends_3d/assets/licenses/Quaternius-Nature-CC0.txt",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "environment_models": [
+    {
+      "path": "kalends_3d/assets/environment/pompeii_district.glb",
+      "node_count": 66,
+      "node_names": [
+        "backdrop_buildings",
+        "bakery_cutaway_walls",
+        "bakery_details",
+        "bakery_floor",
+        "bakery_frontage_sign",
+        "bakery_roof",
+        "bakery_shutter_left",
+        "bakery_shutter_right",
+        "bakery_walls",
+        "district_foundations",
+        "district_ground",
+        "fountain",
+        "frontage_0",
+        "frontage_0_roof",
+        "frontage_1",
+        "frontage_1_roof",
+        "frontage_2",
+        "frontage_2_roof",
+        "frontage_3",
+        "frontage_3_roof",
+        "frontage_4",
+        "frontage_4_roof",
+        "frontage_5",
+        "frontage_5_roof",
+        "frontage_6",
+        "frontage_6_roof",
+        "frontage_details_0",
+        "frontage_details_1",
+        "frontage_details_2",
+        "frontage_details_3",
+        "frontage_details_4",
+        "frontage_details_5",
+        "frontage_details_6",
+        "frontage_foundations",
+        "fullery_cutaway_walls",
+        "fullery_details",
+        "fullery_floor",
+        "fullery_roof",
+        "fullery_walls",
+        "garden_edges",
+        "household_cutaway_walls",
+        "household_details",
+        "household_floor",
+        "household_roof",
+        "household_walls",
+        "lot_surface_details",
+        "market_cart",
+        "market_cart_cargo",
+        "street_paving",
+        "thermopolium_cutaway_walls",
+        "thermopolium_details",
+        "thermopolium_floor",
+        "thermopolium_roof",
+        "thermopolium_walls",
+        "sign_0",
+        "sign_1",
+        "sign_2",
+        "sign_3",
+        "sign_4",
+        "sign_5",
+        "sign_6",
+        "bakery_frontage_sign_lettering",
+        "sign_8",
+        "sign_9",
+        "sign_10",
+        "sign_11"
+      ]
+    }
+  ],
+  "no_external_images_imported_by_this_review": true
+}

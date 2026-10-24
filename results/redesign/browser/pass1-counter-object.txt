@@ -1,0 +1,52 @@
+Browser tab: 20, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_19e89db35b27".
+1 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_19e89db35b27
+	2 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_19e89db35b27#world-main
+	3 container Description: Your world, ID: life-shell
+		4 container
+			5 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			61 text Pompeii
+			62 text Aelia
+			63 text Day 1 · 08:09
+			64 text Saved on this installation
+			10 button Help, ID: help-button
+			11 button Your story , ID: story-button
+			12 button Description: World menu, ID: world-menu-button
+		13 container Pompeii · your saved life
+			14 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_19e89db35b27
+				15 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				65 text Aelia · you
+				24 container hud
+					25 button Description: Open game menu, ID: menu-button
+						26 text KALENDS
+					27 container
+						66 text 6 coins
+						29 button Description: Settings, ID: settings-button
+				30 container Description: Your next step, ID: lead
+					67 text NEXT
+					68 text Reading pauses time
+					33 heading Learn one historical idea in place., Value: 2, ID: lead-title
+						69 text Learn one historical idea in place.
+					35 button What is this place?, ID: lead-action
+					36 button (collapsed) Help & directions, Secondary Actions: Expand
+						37 text Help & directions
+				38 container location-caption
+					79 text THERMOPOLIUM OF VETUTIUS PLACIDUS
+					80 text Attested places · fictional lives
+				58 container interaction
+					81 text Return to the street
+					60 button Leave E, ID: interact
+						82 text Leave 
+						83 text E
+				41 container controls
+					42 container movement-controls
+						43 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					75 button What is this place?, ID: place-history
+					76 button ← To the street X, ID: exit-room
+						77 text ← To the street 
+						78 text X
+					44 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					45 button Wait 30m, ID: wait
+					46 button A day later, ID: day-later
+					47 button Description: Follow Aelia, ID: recenter
+
+The focused UI element is 15 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.

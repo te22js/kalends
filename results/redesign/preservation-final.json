@@ -1,0 +1,131 @@
+{
+  "recorded_utc": "2026-10-24T16:45:54.465062+00:00",
+  "status": "failed",
+  "read_only": true,
+  "errors": [
+    "Strict redesign baseline preservation failed"
+  ],
+  "interpreter": {
+    "executable": "/Users/tanmaygoswami/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "version": "3.12.14",
+    "implementation": "CPython"
+  },
+  "branch": "codex/complete-experience-redesign",
+  "head": "377a7277436549b63ccb559f449e5d1d087cff03",
+  "protected_release": {
+    "ref": "refs/heads/codex/experience-journey",
+    "expected": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+    "actual": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152"
+  },
+  "baseline": {
+    "path": "results/redesign/baseline.json",
+    "sha256": "a45438f348ffb9aa82e3dee2a955d92ac12e2984dd2c0f3e64f3cd2bb6a3a05c",
+    "checked": 1270,
+    "matched": 1268,
+    "differences": [
+      {
+        "path": ".kalends/first_session_review/.product/state.json",
+        "expected_sha256": "02aaab807264c4629af854edd65c0b862f0a63d7da97e27e2920b79717c1308d",
+        "actual_sha256": "a4a672cd506b1a321fb821286a49ccb03d00455ee70237589c0cb5d8b404dcb3",
+        "mtime_utc": "2026-10-24T16:43:23.139444+00:00"
+      },
+      {
+        "path": ".kalends/first_session_review/pompeii_071176fb5e28.json",
+        "expected_sha256": "9d61bbac2710370c9f3da4145de55e536f2795c18dae8031e2053c39dfefc854",
+        "actual_sha256": "c01a3507dfc7577bf1b9e3aaeaa9d11140a8ca6f9275180f0bc955751f50ce40",
+        "mtime_utc": "2026-10-24T16:43:17.548634+00:00"
+      }
+    ],
+    "passed": false
+  },
+  "frozen_candidate": {
+    "verify_candidate": "passed"
+  },
+  "qa_replays": {
+    "requested": true,
+    "root": "/private/tmp/kalends-redesign-qa",
+    "selection": [
+      "pompeii_ed1ec6ef7a97",
+      "observatory_f9b238328cb8",
+      "pompeii_3c440b0a972f",
+      "pompeii_19e89db35b27",
+      "pompeii_life",
+      "shared_observatory"
+    ],
+    "journals": [
+      {
+        "path": "/private/tmp/kalends-redesign-qa/observatory_f9b238328cb8.json",
+        "life_id": "observatory_f9b238328cb8",
+        "adapter": "commons",
+        "commands": 3,
+        "minute": 1439,
+        "state_hash": "ead3fad23f5bea84de29d2d3331459c404b52f2424f613d6f3487587a0b34021",
+        "journal_sha256": "7efd920336c2f8432dc90df867ce935183f35fcfc5e6d4bd084f363ae1486058",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      },
+      {
+        "path": "/private/tmp/kalends-redesign-qa/pompeii_19e89db35b27.json",
+        "life_id": "pompeii_19e89db35b27",
+        "adapter": "pompeii",
+        "commands": 20,
+        "minute": 9,
+        "state_hash": "42afb708612ff4e199925395fc96c496a5e3c951113c66b10c9beb0378908bae",
+        "journal_sha256": "6a4e275bf772a9f53c3d7092e5c1c6fe717530105ed7528a31a96a47d8f94564",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      },
+      {
+        "path": "/private/tmp/kalends-redesign-qa/pompeii_3c440b0a972f.json",
+        "life_id": "pompeii_3c440b0a972f",
+        "adapter": "pompeii",
+        "commands": 67,
+        "minute": 380,
+        "state_hash": "5238c4f87a37c929af9362b430b3bfa4d48deb77bf801c001d8dd2083d5516d8",
+        "journal_sha256": "7d9a3148c08cd6ace44a7e182cd89a9e23ba9175c3c7501e38aeb00fe79269c3",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      },
+      {
+        "path": "/private/tmp/kalends-redesign-qa/pompeii_ed1ec6ef7a97.json",
+        "life_id": "pompeii_ed1ec6ef7a97",
+        "adapter": "pompeii",
+        "commands": 35,
+        "minute": 36,
+        "state_hash": "bc4e228f9feb07fcb426fddd7e0a829f500ee939561950d681ab5888575e84af",
+        "journal_sha256": "5f24327f3a2cfc711be09dcd686687fbbae6c5cb42a46d47ff1c369f2b5bcf9c",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      },
+      {
+        "path": "/private/tmp/kalends-redesign-qa/pompeii_life.json",
+        "life_id": "pompeii_life",
+        "adapter": "pompeii",
+        "commands": 0,
+        "minute": 0,
+        "state_hash": "9b290e89c58c5f837fd9f271aa5ebdaaf50cd3b08ef530f0b10a634250f61e6e",
+        "journal_sha256": "da6571dc6267aba0088ad81631b50b4d7697a55fd684e2eb17228cb90b7d5754",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      },
+      {
+        "path": "/private/tmp/kalends-redesign-qa/shared_observatory.json",
+        "life_id": "shared_observatory",
+        "adapter": "commons",
+        "commands": 0,
+        "minute": 0,
+        "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+        "journal_sha256": "208885a6043a20264b4519cedf1548b37d49145d377c6186db254e6c2ec5d3f0",
+        "exact_replay": true,
+        "source_bytes_unchanged": true,
+        "persistence_path": null
+      }
+    ]
+  },
+  "scope": "Strict redesign baseline, protected release, frozen candidate, and only the explicitly requested disposable QA journals. Existing branch-specific guards and older baselines are neither modified nor reported as passed."
+}

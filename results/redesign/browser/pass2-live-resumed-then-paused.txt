@@ -1,0 +1,58 @@
+Browser tab: 23, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_3c440b0a972f".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			71 text Pompeii
+			72 text Aelia
+			73 text Day 1 · 14:20
+			74 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 text Aelia · you
+					17 button Chreste, Working the fullery's cloth. Talk
+				18 container hud
+					19 button Description: Open game menu, ID: menu-button
+						20 text KALENDS
+					21 container
+						75 text 6 coins
+						23 button Description: Settings, ID: settings-button
+				24 container Description: Your next step, ID: lead
+					76 text YOUR MORNING
+					77 text Reading pauses time
+					27 heading The cart went on without you, Value: 2, ID: lead-title
+						78 text The cart went on without you
+					29 button Open your journal, ID: lead-action
+					30 button (collapsed) Help & directions, Secondary Actions: Expand
+						31 text Help & directions
+					32 container Description: What next, ID: continuing-options
+						79 button Visit the food counter Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+							80 text Visit the food counter
+							81 text Walk to Thermopolium of Vetutius Placidus. Walking takes time.
+				36 container location-caption
+					82 text FULLONICA OF STEPHANUS
+					83 text Attested places · fictional lives
+				68 container interaction
+					84 text Chreste · fullery worker · Working the fullery's cloth
+					70 button Talk E, ID: interact
+						85 text Talk 
+						86 text E
+				44 container controls
+					45 container movement-controls
+						46 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					47 button What is this place?, ID: place-history
+					48 button ← To the street X, ID: exit-room
+						49 text ← To the street 
+						50 text X
+					51 checkbox Live, Value: 0, ID: live
+					52 button Wait 30m, ID: wait
+					53 button A day later, ID: day-later
+					54 button Description: Follow Aelia, ID: recenter
+
+The focused UI element is 51 checkbox Live, Value: 0, ID: live

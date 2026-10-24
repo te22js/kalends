@@ -1,0 +1,49 @@
+Browser tab: 24, Title: "Kalends 390px viewport fixture", URL: "http://127.0.0.1:8831/product/qa-redesign-viewport.html".
+1 AXWebArea Kalends 390px viewport fixture, URL: 127.0.0.1:8831/product/qa-redesign-viewport.html
+	2 text QA fixture: 390 × 720 CSS pixels; not a physical phone
+	3 container Current Kalends at 390 pixels
+		4 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_3c440b0a972f
+			5 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_3c440b0a972f#world-main
+			6 container Description: Your world, ID: life-shell
+				7 container
+					8 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+					9 text Pompeii
+					10 text Aelia
+					11 text Day 1 · 14:20
+					12 button Help, ID: help-button
+					13 button Your story, ID: story-button
+					14 button Description: World menu, ID: world-menu-button
+				15 container Pompeii · your saved life
+					16 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_3c440b0a972f
+						17 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+						18 container names
+							19 text Aelia · you
+							20 button Chreste, Working the fullery's cloth. Talk
+						21 container hud
+							22 button Description: Open game menu, ID: menu-button
+								23 text KALENDS
+							24 container
+								25 text 6 coins
+								26 button Description: Settings, ID: settings-button
+						27 container controls
+							28 checkbox Live, Value: 0, ID: live
+							29 button Wait 30m, ID: wait
+							30 button A day later, ID: day-later
+							31 button Description: Follow Aelia, ID: recenter
+						32 container loading
+							33 text KALENDS · POMPEII
+							34 heading Continue as Aelia., Value: 1, ID: loading-title
+								35 text Continue as Aelia.
+							36 heading The cart went on without you, Value: 2, ID: arrival-goal
+								37 text The cart went on without you
+							38 text The buyers settled their own bargain. Sabina still needs two flour units she can serve; helping now can open a place at her counter.
+							39 button (collapsed) Who am I? How do I move?, Secondary Actions: Expand
+								40 text Who am I? How do I move?
+							41 text The district is ready.
+							42 progress indicator Value: 100, ID: load-progress
+							43 button Continue as Aelia →, ID: enter
+								44 text Continue as Aelia
+								45 text →
+							46 text Reading pauses time. Your choices are saved here.
+
+The focused UI element is 1 AXWebArea Kalends 390px viewport fixture, URL: 127.0.0.1:8831/product/qa-redesign-viewport.html

@@ -1,0 +1,104 @@
+Browser tab: 22, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8832/lives/pompeii_be75d2797b28".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8832/lives/pompeii_be75d2797b28
+	1 link Description: Skip to content, Value: 127.0.0.1:8832/lives/pompeii_be75d2797b28#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8832/your-worlds
+			73 text Pompeii
+			74 text Aelia · d2797b28
+			75 text Day 1 · 08:01 · World time
+			76 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8832/immersion/?experience=pompeii_be75d2797b28
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 button Marcus, Minding the flour cart. Approach to speak
+					17 button Dama, Carrying household instructions. Approach to speak
+					18 text Aelia · you
+					19 button Sabina, In conversation. Talk
+						49 text Sabina
+						130 text In conversation · E to talk
+					20 button Walk to Felix's bread counter
+				21 container hud
+					22 button Description: Open game menu, ID: menu-button
+						23 text KALENDS
+						24 text POMPEII · 79 CE
+					25 container
+						78 text DAY 1
+						79 text 08:01
+						131 text VIA DELL’ABBONDANZA
+					29 container
+						81 text 6 coins
+						31 button Journal J, ID: journal-button
+							32 text Journal 
+							33 text J
+						34 button Description: Settings, ID: settings-button
+				55 container Description: Your next step, ID: lead
+					82 text YOUR NEXT STEP
+					57 heading Talk to Sabina, the food seller., Value: 2, ID: lead-title
+						83 text Talk to Sabina, the food seller.
+					59 container lead-actions
+						60 button Talk to Sabina, ID: lead-action
+						61 container guide-tools
+							62 button What should I do next?, ID: guide-help
+							63 button Show destination marker, ID: guide-hint
+							64 button Turn guidance off, ID: guide-toggle
+					84 text When Aelia has reached her, select Sabina or use the displayed interaction key. Ask what happened to her order. Read and confirm the offered disclosure; simply opening a conversation does not complete it.
+					132 text You are close enough to Sabina. Select them or press E.
+					86 text Reading this guide does not advance world time. Moving and accepted work keep their displayed time costs. Automatic Live time is off during guidance.
+				35 container location-caption
+					133 text VIA DELL’ABBONDANZA
+					134 text Attested places · fictional lives
+				38 container controls
+					39 container movement-controls
+						40 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					41 checkbox (disabled) Live, Value: 0, ID: live, Help: Automatic time stays off during the guided introduction. Movement and accepted actions retain their time costs.
+					42 button Wait 30m, ID: wait
+					43 button A day later, ID: day-later
+					44 button Description: Follow Aelia, ID: recenter
+				89 container Description: Conversation, ID: conversation
+					90 text IN CONVERSATION
+					91 heading Sabina, Value: 2, ID: speaker-name
+						92 text Sabina
+					93 text food seller
+					94 button Description: Leave conversation, ID: close-conversation
+					95 text I paid Marcus for flour for my food counter. The household also has a claim on the cart. Hear our accounts before deciding whether to help.
+					96 container topics
+						97 button What is your work here?
+						98 button What do you need now?
+						99 button Do you remember our dealings?
+						100 button Do you have a dated report?
+					101 container choices
+						102 button What happened to your order? Hear Sabina's account before choosing a side.
+							103 text What happened to your order?
+							104 text Hear Sabina's account before choosing a side.
+						105 button Show me what you paid for Copy the quantity and payment in Sabina's wax account.
+							106 text Show me what you paid for
+							107 text Copy the quantity and payment in Sabina's wax account.
+						108 button Pay for the market delivery Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix. Cost: 3 coins · 20 world minutes.
+							109 text Pay for the market delivery
+							110 text Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix.
+							111 text Cost: 3 coins · 20 world minutes.
+						112 button Leave the decision to the buyers Decline to arrange this delivery. The buyers can act at their own deadline.
+							113 text Leave the decision to the buyers
+							114 text Decline to arrange this delivery. The buyers can act at their own deadline.
+						115 button Is there paid work here? Take a real shift, paid from the counter or household account. Cost: 55 minutes.
+							116 text Is there paid work here?
+							117 text Take a real shift, paid from the counter or household account.
+							118 text Cost: 55 minutes.
+						119 button Arrange a current supply inspection Pay one coin; the result arrives after fifteen world minutes. Cost: 1 coin · 15 minutes.
+							120 text Arrange a current supply inspection
+							121 text Pay one coin; the result arrives after fifteen world minutes.
+							122 text Cost: 1 coin · 15 minutes.
+						123 button What do you remember of our dealings? Recall selected retained shared experiences.
+							124 text What do you remember of our dealings?
+							125 text Recall selected retained shared experiences.
+					126 container speech-form
+						127 text SAY SOMETHING
+						128 text field (settable) SAY SOMETHING, ID: speech
+						129 button Ask
+
+The focused UI element is 94 button Description: Leave conversation, ID: close-conversation

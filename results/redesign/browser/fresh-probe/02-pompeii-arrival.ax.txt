@@ -1,0 +1,57 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container
+			4 link Description: Back to your worlds, Value: 127.0.0.1:8831/your-worlds
+			5 text Pompeii
+			6 text Aelia
+			7 text Day 1 · 08:00
+			8 text Saved on this installation
+			9 button Help, ID: help-button
+			10 button Your story , ID: story-button
+			11 button Description: World menu, ID: world-menu-button
+		12 container Pompeii · your saved life
+			13 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8831/immersion/?experience=pompeii_ed1ec6ef7a97
+				14 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+				15 container names
+					16 text Aelia · you
+					17 button Sabina, Waiting by her disputed order. Talk
+					18 button Marcus, Minding the flour cart. Approach to speak
+					19 button Dama, Carrying household instructions. Approach to speak
+					20 button Walk to Felix's bread counter
+				21 container hud
+					22 button Description: Open game menu, ID: menu-button
+						23 text KALENDS
+					24 container
+						25 text 6 coins
+						26 button Description: Settings, ID: settings-button
+				27 container location-caption
+					28 text VIA DELL’ABBONDANZA
+					29 text A reconstructed corner of Pompeii
+				30 container controls
+					31 container movement-controls
+						32 text WASD / ↑↓←→  walk  · E  interact  · Click  walk to a destination
+					33 checkbox (disabled) Live, Help: Reading pauses time in the introduction. Walking and some choices take time., Value: 0, ID: live
+					34 button Wait 30m, ID: wait
+					35 button A day later, ID: day-later
+					36 button Description: Follow Aelia, ID: recenter
+				37 container loading
+					38 text KALENDS · POMPEII
+					39 heading You are Aelia., Value: 1, ID: loading-title
+						40 text You are Aelia.
+					41 text A flour cart has arrived, but two buyers claim it. Start by hearing Sabina’s account.
+					42 container arrival-details
+						43 button (expanded) Who am I? How do I move?, Secondary Actions: Collapse
+							44 text Who am I? How do I move?
+						45 text Aelia is a fictional freedwoman: she was enslaved and later freed. Her work and choices here were invented for this experience.
+						46 text Start by finding Sabina. Click the ground to walk, or use WASD or the arrow keys. Press E to speak when you are close.
+					47 text The district is ready.
+					48 progress indicator Value: 100, ID: load-progress
+					49 button Begin →, ID: enter
+						50 text Begin
+						51 text →
+					52 button Explore without a guide, ID: explore-unguided
+					53 text Reading pauses time. Your choices are saved here.
+
+The focused UI element is 43 button (expanded) Who am I? How do I move?, Secondary Actions: Collapse

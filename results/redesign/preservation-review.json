@@ -1,0 +1,161 @@
+{
+  "schema": "kalends.redesign.independent-preservation-review.v1",
+  "recorded_utc": "2026-10-24T16:39:06.343249+00:00",
+  "reviewer": "fresh-probe subagent; independent read-only preservation followup",
+  "workspace": "/Users/tanmaygoswami/Claude_backup/Projects/kalends",
+  "method": "Read-only SHA-256 checks against original baselines, protected Git object comparison, existing frozen candidate verifier, frozen harness/task hashes and parameter comparison. Only this review JSON and its Markdown report were written during this audit. No save, baseline, guard, source, branch or release ref was modified.",
+  "current_branch": "codex/complete-experience-redesign",
+  "current_head": "377a7277436549b63ccb559f449e5d1d087cff03",
+  "redesign_start_commit": "377a7277436549b63ccb559f449e5d1d087cff03",
+  "checks": [
+    {
+      "baseline": "results/redesign/baseline.json",
+      "baseline_sha256": "a45438f348ffb9aa82e3dee2a955d92ac12e2984dd2c0f3e64f3cd2bb6a3a05c",
+      "group": "files",
+      "checked": 1270,
+      "matched": 1270,
+      "differences": [],
+      "strict_match": true
+    },
+    {
+      "baseline": "results/continuity_release/protection/baseline.json",
+      "baseline_sha256": "9e35974d1d4c39b0524f0a5388e0c0425e4664c7f75ea85775db96eeb87e650a",
+      "group": "saves",
+      "checked": 26,
+      "matched": 25,
+      "differences": [
+        {
+          "path": ".kalends/next_phase/.product/state.json",
+          "expected_sha256": "0cdb830008ec591def54ad4b0683c4035f2d73bdc97926af5aeffb26b1326f2b",
+          "actual_sha256": "95dcfcc40b28b175d090437f197583a527dbd47bb7d12b50a8ea6644ac45f3ac"
+        }
+      ],
+      "strict_match": false
+    },
+    {
+      "baseline": "results/continuity_release/protection/baseline.json",
+      "baseline_sha256": "9e35974d1d4c39b0524f0a5388e0c0425e4664c7f75ea85775db96eeb87e650a",
+      "group": "historical_artifacts",
+      "checked": 2212,
+      "matched": 2212,
+      "differences": [],
+      "strict_match": true
+    },
+    {
+      "baseline": "results/continuity_release/candidate_freeze.json",
+      "baseline_sha256": "587cef8593f43ca112cd688aaa03902b345168ff3237f669821dbe5280207ffa",
+      "group": "source_sha256",
+      "checked": 4,
+      "matched": 4,
+      "differences": [],
+      "strict_match": true
+    },
+    {
+      "baseline": "results/continuity_release/research_freeze.json",
+      "baseline_sha256": "0323074f57f1e89bbc649bbf72859843a5235febc973e2f3d6f80396006cf34d",
+      "group": "source_sha256",
+      "checked": 19,
+      "matched": 19,
+      "differences": [],
+      "strict_match": true
+    }
+  ],
+  "redesign_inventory": {
+    "save_files": 31,
+    "other_files": 1239
+  },
+  "protected_release": {
+    "ref": "refs/heads/codex/experience-journey",
+    "current": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+    "redesign_expected": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+    "older_expected": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+    "candidate_expected": "6ebe9ec463c0144ba4ce53cb182646f5bf87f152",
+    "all_match": true
+  },
+  "legacy_guard": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/verify_continuity_release.py",
+    "observed_exit_code": 1,
+    "observed_output": "Use the isolated release-preparation branch: codex/continuity-release-prep",
+    "status": "Expected branch guard refusal; not a passed guard run",
+    "required_branch": "codex/continuity-release-prep",
+    "guard_edited": false,
+    "branch_changed": false,
+    "bypassed": false,
+    "note": "Independent hash comparisons above are a separate review, not a claim that the old branch-specific guard passed."
+  },
+  "metadata_drift": {
+    "path": ".kalends/next_phase/.product/state.json",
+    "older_baseline_sha256": "0cdb830008ec591def54ad4b0683c4035f2d73bdc97926af5aeffb26b1326f2b",
+    "prior_acknowledgement_sha256": "6b03e2d3bd1c8b90f069724c54a8e26d870fd2d6c21fb2ef503e05472e5991c3",
+    "redesign_baseline_sha256": "95dcfcc40b28b175d090437f197583a527dbd47bb7d12b50a8ea6644ac45f3ac",
+    "current_sha256": "95dcfcc40b28b175d090437f197583a527dbd47bb7d12b50a8ea6644ac45f3ac",
+    "unchanged_since_redesign_baseline": true,
+    "matches_old_acknowledgement": false,
+    "valid_json": true,
+    "attribution": "Origin unconfirmed. The current bytes already occur in the redesign baseline; this audit does not attribute the older drift or claim strict preservation against the earlier baseline."
+  },
+  "frozen_candidate": {
+    "candidate": "kalends.next_phase.diagnostic.DependencyRetentionMind",
+    "source_files_verified": 4,
+    "source_hashes_match": true,
+    "verify_candidate": "passed",
+    "protected_release_objects": [
+      {
+        "path": "kalends/next_phase/diagnostic.py",
+        "sha256": "10451c73cfa5f5fb86189b50077e812ed352c20f421231026c01be2c95f7ef18",
+        "matches_frozen_source": true
+      },
+      {
+        "path": "kalends/experience_os/minds.py",
+        "sha256": "dea05bc9cfb0bbf1b494ff04e72d3243035cce8553673f060bbfa5a19cc03800",
+        "matches_frozen_source": true
+      },
+      {
+        "path": "kalends_rebirth/minds.py",
+        "sha256": "f4d0037598f91a1c4ee44ff10ca413f5a9a69942f1555fa9db1ee725511bdf3b",
+        "matches_frozen_source": true
+      },
+      {
+        "path": "kalends/experience_os/cognition_bench.py",
+        "sha256": "5943b0a97dc8385937f1598e556a55623fe8f984a915353065af9ca32b6d6576",
+        "matches_frozen_source": true
+      }
+    ],
+    "parameters_expected": {
+      "capacity": 16,
+      "context_records": 4,
+      "retention_policy": "hybrid",
+      "state_bytes": 16384,
+      "context_bytes": 4096
+    },
+    "parameters_observed": {
+      "state_bytes": 16384,
+      "context_bytes": 4096,
+      "capacity": 16,
+      "context_records": 4,
+      "retention_policy": "hybrid"
+    },
+    "parameters_match": true,
+    "declared_implementation_sha256": "08bed546094fe3e36bfc6462141f195d8d36cf6f7b167f7471d94a6a6f391342",
+    "implementation_digest_note": "The manifest implementation digest was retained but not independently reconstructed because its derivation was not documented in the inspected verifier. Exact dependency bytes match both the freeze and protected release objects."
+  },
+  "frozen_research": {
+    "source_files_verified": 19,
+    "all_source_hashes_match": true,
+    "heldout_path": "specs/continuity_release/heldout.json",
+    "heldout_expected_sha256": "9e0c8a1e05a85129e010f0237ddef98296e24161b323e70517272d08727bc644",
+    "heldout_actual_sha256": "9e0c8a1e05a85129e010f0237ddef98296e24161b323e70517272d08727bc644",
+    "heldout_hash_matches": true,
+    "manifest_seeds_match_freeze": true,
+    "heldout_cases_inspected": false,
+    "study_rerun": false
+  },
+  "conclusion": {
+    "redesign_baseline_fully_preserved": true,
+    "older_historical_artifacts_fully_preserved": true,
+    "older_saves_strictly_preserved": false,
+    "older_save_drift_limited_to_preexisting_display_metadata": true,
+    "protected_ref_and_candidate_preserved": true,
+    "scope_limit": "Snapshot-time preservation review. Not a gameplay-causality, research-validity, or human-comprehension result."
+  }
+}

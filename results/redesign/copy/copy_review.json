@@ -1,0 +1,4021 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-24T16:50:38.065877+00:00",
+  "scope": "Rendered backend copy review in disposable offline lives, not browser UI coverage or a human playtest.",
+  "source_sha256": {
+    "scripts/render_first_session_copy.py": "49267893825d226d9fa9ac53e2781f525dee8e07acde3f02b397ca90365c6cd8",
+    "kalends/experience_os/product.py": "679679ecb8dfbfea149b2add8943366c45047676f83a53297cc123666c8f2966",
+    "kalends/experience_os/guide.py": "4530379403f990c46db07487ddf7ed043d985522bbd1c3d27c93db081fa31189",
+    "kalends/experience_os/history_cards.py": "acb78b237425ef1f688c6f20630bac7025350bc202145aafcbfc382ab9dd0461",
+    "kalends/experience_os/history.py": "e8c6c76be528365c8895f2188575c7325b3b3ce75555ac53c7843da08b890e3a",
+    "kalends/experience_os/runtime.py": "9141a9ad601550fc1ce2436f7d457fd28deedd5133ba1c277ee75b2c8475d1b3",
+    "kalends/experience_os/participant_copy.py": "757a3abfb34457e548a5427f94b9d8862e301c0abba30f4d841ea6cbec45797c",
+    "kalends/experience_os/observation.py": "2037c75445fafe3cce75f39dc24843aea3bc17defe61b17df39f977cb7daaaca",
+    "kalends_rebirth/language.py": "219ed7da3e50d76d812d033a6040a6aba9f0c4397a14edb26e15fbaa8fec5a90",
+    "kalends_rebirth/server.py": "b7a1d284d82dbceab8d240a2575d2747ff074788391f82ceb007f2b1b89fe90c",
+    "kalends_rebirth/scenario.py": "00b7e85a891973c74c1d6ce769856e2f2324dd50cd8584f98083da526fe5dbb8",
+    "kalends_rebirth/world.py": "af3140394d1281978989fb4139b322dff5dd2f23d789359eca552ce2ec1962f1",
+    "kalends/pompeii/world.py": "ed1d664bcc582cd9e0cfd6b20e0ec80890293e06edf10d9d853940d8e257d903"
+  },
+  "live_model_calls": 0,
+  "spend_usd": 0,
+  "lives": "TemporaryDirectory lives deleted after collection; retained saves untouched.",
+  "guide_coverage": {
+    "pompeii": {
+      "reached": [
+        "p0",
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8",
+        "p9"
+      ],
+      "missing": []
+    },
+    "commons": {
+      "reached": [
+        "o0",
+        "o1",
+        "o2",
+        "o3",
+        "o4",
+        "o5",
+        "o6",
+        "o7"
+      ],
+      "missing": []
+    }
+  },
+  "cases": [
+    {
+      "id": "case-001",
+      "title": "Pompeii arrival and fictional role",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p0",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "9b290e89c58c5f837fd9f271aa5ebdaaf50cd3b08ef530f0b10a634250f61e6e",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "You are Aelia."
+        },
+        {
+          "label": "Body",
+          "text": "A flour cart has arrived, but two buyers claim it. Start by hearing Sabina’s account. Aelia is a fictional freedwoman: she was enslaved and later freed."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Begin"
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-002",
+      "title": "After role acknowledgement",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p1",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "9b290e89c58c5f837fd9f271aa5ebdaaf50cd3b08ef530f0b10a634250f61e6e",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Find Sabina."
+        },
+        {
+          "label": "Body",
+          "text": "Click the ground to approach Sabina, or use the movement keys. Moving takes world time."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Show me the way"
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-003",
+      "title": "Too far from the household messenger",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "pompeii",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "9b290e89c58c5f837fd9f271aa5ebdaaf50cd3b08ef530f0b10a634250f61e6e",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "Walk to this character's location before interacting."
+        }
+      ]
+    },
+    {
+      "id": "case-004",
+      "title": "Movement completed; speaking is still a separate action",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p2",
+      "world_minute": 2,
+      "accepted_revision": 1,
+      "state_hash": "18720aa96dbf7ede212880a317e291b29be6ec544d1982f436c7a5b460a3bf67",
+      "accepted_receipt_ids": [
+        19
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Talk to Sabina, the food seller."
+        },
+        {
+          "label": "Body",
+          "text": "Select Sabina when you are close enough. Ask what happened to her order."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Find Sabina and speak"
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-005",
+      "title": "Sabina before the account is obtained",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 2,
+      "accepted_revision": 1,
+      "state_hash": "18720aa96dbf7ede212880a317e291b29be6ec544d1982f436c7a5b460a3bf67",
+      "accepted_receipt_ids": [
+        19
+      ],
+      "blocks": [
+        {
+          "label": "Sabina · Opening",
+          "text": "Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed."
+        },
+        {
+          "label": "Your life here",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "The counter's order",
+          "text": "Ask me for this account if you would like to read it."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What happened to your order?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Hear Sabina's account before choosing a side."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Show me what you paid for"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Copy the quantity and payment in Sabina's wax account."
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Adds a dated piece of evidence."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Pay for the market delivery"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "3 coins · 20 world minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "Needs three coins and six arrived sacks."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Leave the decision to the buyers"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Decline to arrange this delivery. The buyers can act at their own deadline."
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Is there paid work here?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Take a real shift, paid from the counter or household account."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "55 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The shift pays 3 coins if funds remain available."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-006",
+      "title": "Review the account disclosure before confirming",
+      "provenance": "executed_backend",
+      "surface": "review",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 2,
+      "accepted_revision": 1,
+      "state_hash": "18720aa96dbf7ede212880a317e291b29be6ec544d1982f436c7a5b460a3bf67",
+      "accepted_receipt_ids": [
+        19
+      ],
+      "blocks": [
+        {
+          "label": "Summary",
+          "text": "Review the terms before deciding."
+        },
+        {
+          "label": "Notice",
+          "text": "The result appears after the choice goes through."
+        },
+        {
+          "label": "Reviewed action",
+          "text": "hear_dispute"
+        },
+        {
+          "label": "Reviewed recipient",
+          "text": "Sabina"
+        }
+      ]
+    },
+    {
+      "id": "case-007",
+      "title": "Heard account and explanation of competing claims",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p3",
+      "world_minute": 2,
+      "accepted_revision": 2,
+      "state_hash": "515fdff4eea88c51db56b09b074897ab704bea8143c52ac6db30788212f8e98f",
+      "accepted_receipt_ids": [
+        19,
+        20
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Two buyers, two accounts."
+        },
+        {
+          "label": "Body",
+          "text": "Sabina has given her side. The household also has a claim. You can copy the accounts, ask the household messenger or investigate the cart before deciding how much uncertainty to accept."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Look at the evidence"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-008",
+      "title": "Historical learning invitation",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p4",
+      "world_minute": 2,
+      "accepted_revision": 2,
+      "state_hash": "515fdff4eea88c51db56b09b074897ab704bea8143c52ac6db30788212f8e98f",
+      "accepted_receipt_ids": [
+        19,
+        20
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Look at the counter."
+        },
+        {
+          "label": "Body",
+          "text": "Visit the food counter and open “What is this place?” The counter and inset jars represent archaeological features; Sabina and her prices are invented. Reading is optional and does not move the clock."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "What is this place?"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-009",
+      "title": "After a real visit and optional card reading",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p5",
+      "world_minute": 9,
+      "accepted_revision": 3,
+      "state_hash": "51097d7948a41438f1717c66755a450a10439713ef39f3665b1643ccc2baebc9",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Compare the accounts you received."
+        },
+        {
+          "label": "Body",
+          "text": "Ask Dama for the household instructions, or speak with Lucius. Marcus’s loading check costs one coin and fifteen minutes. Compare the accounts, or choose with what you know."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Seek another account"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-010",
+      "title": "Both copied accounts; available arrangements",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p6",
+      "world_minute": 17,
+      "accepted_revision": 6,
+      "state_hash": "6d9a28b75aef1f81f4fe8dd9c069eebf78453543aa97721e016f98dd39799c1b",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Choose whether and how to help."
+        },
+        {
+          "label": "Body",
+          "text": "Return to Sabina to review a market delivery or leave the decision to the buyers. The household offers an advance with later service; Marcus can negotiate using three copied accounts."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review your available choices"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You obtained the household instructions, Sabina’s account."
+        },
+        {
+          "label": "Evidence: Sabina's wax account",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Sabina"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        },
+        {
+          "label": "Evidence: The household's delivery instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Dama"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-011",
+      "title": "Dama · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 17,
+      "accepted_revision": 6,
+      "state_hash": "6d9a28b75aef1f81f4fe8dd9c069eebf78453543aa97721e016f98dd39799c1b",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27
+      ],
+      "blocks": [
+        {
+          "label": "Dama · Opening",
+          "text": "I was told to repeat the quantity, not argue about it. If you want the instructions, ask plainly."
+        },
+        {
+          "label": "Your life here",
+          "text": "I carry household instructions. I can repeat the delivery terms I was sent to carry; I cannot promise you the household's money."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I carry household instructions. I can repeat the delivery terms I was sent to carry; I cannot promise you the household's money."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "The household instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-012",
+      "title": "Lucius · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 24,
+      "accepted_revision": 7,
+      "state_hash": "55324a730fca4e8a01645000df28f58bba34c4b61b135cafdab2753803621265",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29
+      ],
+      "blocks": [
+        {
+          "label": "Lucius · Opening",
+          "text": "Four sacks were reserved for this house. I will hear terms, not an accusation delivered on someone else's word."
+        },
+        {
+          "label": "Your life here",
+          "text": "I account for this household's stores and service. My own freedom does not make its obligations disappear."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I account for this household's stores and service. My own freedom does not make its obligations disappear."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Accept the household advance and service obligation"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Receive six coins and give the household priority over the flour cart. You commit to two hours of service within three days."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "20 world minutes now · 120 minutes of service due within three days"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Delivery is attempted during this action. Review the actual receipt afterwards. The service remains a separate obligation. Household work opens; Sabina loses delivery priority."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "Needs an available household advance, carrying funds and arrived sacks."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-013",
+      "title": "Marcus · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 31,
+      "accepted_revision": 8,
+      "state_hash": "10fbcdcb3a4100142e6cec54d4e4675e73940016cfb17324a2894c0e6f1fa2e8",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32
+      ],
+      "blocks": [
+        {
+          "label": "Marcus · Opening",
+          "text": "The order was ready at first light. That is what my message said. Ready is not the same as carried to your door."
+        },
+        {
+          "label": "Your life here",
+          "text": "I buy, hold and sell flour. Every sack is somebody's coin before it becomes somebody's bread."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "Ask me for this account if you would like to read it."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "Ask me for this account if you would like to read it."
+        },
+        {
+          "label": "The old dispatch and the carrying charge",
+          "text": "Checking my loading account costs one coin and takes fifteen minutes."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Open the loading account"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay to check what the old ready notice did—and did not—promise."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Adds a checked loading record."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "Needs one coin."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Negotiate a delivery using the three accounts"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Use the copied market, household and loading accounts to arrange four sacks for the household and two for Sabina."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "Three copied accounts · 20 world minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Marcus covers the carrying charge. The action advances twenty minutes and attempts delivery. Review the actual receipt afterwards. Broker work opens."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "Collect Sabina's receipt, Dama's instructions and Marcus's checked loading record."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Buy one flour unit"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Trade one flour unit at the offered price."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "2 coins"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "One actual flour unit enters your bag."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-014",
+      "title": "Felix · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 33,
+      "accepted_revision": 9,
+      "state_hash": "6b88f6503031027e12a04fa5898515bcdd74d77527d951b25016271c62a24093",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34
+      ],
+      "blocks": [
+        {
+          "label": "Felix · Opening",
+          "text": "A cart can stand still all morning while people make speeches. Someone must still bake."
+        },
+        {
+          "label": "Your life here",
+          "text": "I bake and sell bread. You will learn more about a promise by keeping one than by praising it."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I bake and sell bread. You will learn more about a promise by keeping one than by praising it."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Buy one flour unit"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Trade one flour unit at the offered price."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "2 coins"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "One actual flour unit enters your bag."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-015",
+      "title": "Chreste · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 42,
+      "accepted_revision": 10,
+      "state_hash": "d28908479909a428b41a4423b8fb19496613353947bcf1e93d6dd33c96c60a74",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36
+      ],
+      "blocks": [
+        {
+          "label": "Chreste · Opening",
+          "text": "If you want work, there is work here. The household pays for extra help. Do not mistake that for my freedom to leave."
+        },
+        {
+          "label": "Your life here",
+          "text": "I work in the fullery under constraint. Help is useful; grand promises made over my head are less so."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I work in the fullery under constraint. Help is useful; grand promises made over my head are less so."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Is there paid work here?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Take a real shift, paid from the counter or household account."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "80 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The shift pays 4 coins if funds remain available."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-016",
+      "title": "Sabina · real public conversation and offered choices",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 56,
+      "accepted_revision": 12,
+      "state_hash": "0622a2ba4a592e1c48f312f9d13006cdc760084e008680aab0a2a9a9a2be6dbf",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44
+      ],
+      "blocks": [
+        {
+          "label": "Sabina · Opening",
+          "text": "Six sacks, two buyers, and somehow my bowls are the ones left empty. I paid Marcus. Ask him what changed."
+        },
+        {
+          "label": "Your life here",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "Our history",
+          "text": "I don’t remember us doing business before."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "The counter's order",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Pay for the market delivery"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay the carrying charge to direct four sacks of flour to Sabina and two to Felix."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "3 coins · 20 world minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The action advances twenty minutes and attempts the delivery during that time. Review the actual receipt afterwards. The household advance is refunded; market work opens and Lucius loses priority."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "Needs three coins and six arrived sacks."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Leave the decision to the buyers"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Decline to arrange this delivery. The buyers can act at their own deadline."
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "No payment or service promise is made by this choice. The dispute remains active until the buyers act; inspect the eventual recorded outcome."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Is there paid work here?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Take a real shift, paid from the counter or household account."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "55 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The shift pays 3 coins if funds remain available."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-017",
+      "title": "Offer left unconfirmed / cancellation boundary",
+      "provenance": "executed_backend",
+      "surface": "review",
+      "setting": "pompeii",
+      "note": "This review was left unconfirmed. No server cancellation endpoint exists; browser cancellation copy is not represented here.",
+      "guide_step": null,
+      "world_minute": 56,
+      "accepted_revision": 12,
+      "state_hash": "0622a2ba4a592e1c48f312f9d13006cdc760084e008680aab0a2a9a9a2be6dbf",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44
+      ],
+      "blocks": [
+        {
+          "label": "Summary",
+          "text": "Review the terms before deciding."
+        },
+        {
+          "label": "Notice",
+          "text": "The result appears after the choice goes through."
+        },
+        {
+          "label": "Reviewed action",
+          "text": "support_market"
+        },
+        {
+          "label": "Reviewed recipient",
+          "text": "Sabina"
+        }
+      ]
+    },
+    {
+      "id": "case-018",
+      "title": "Actual market-route payment, delivery and relationship result",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p8",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "See what happened."
+        },
+        {
+          "label": "Body",
+          "text": "You paid 3 coins for the arrangement. The delivery sent 4 flour units to Sabina. The delivery sent 2 flour units to Felix. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review what happened"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You obtained the household instructions, Sabina’s account."
+        },
+        {
+          "label": "Actual result",
+          "text": "You paid 3 coins for the arrangement."
+        },
+        {
+          "label": "Actual result",
+          "text": "The delivery sent 4 flour units to Sabina."
+        },
+        {
+          "label": "Actual result",
+          "text": "The delivery sent 2 flour units to Felix."
+        },
+        {
+          "label": "Evidence: Sabina's wax account",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Sabina"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        },
+        {
+          "label": "Evidence: The household's delivery instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Dama"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": {
+        "at": 76,
+        "event_id": 48,
+        "delivered": {
+          "Sabina": 4,
+          "Felix": 2
+        },
+        "explanation": [
+          "You paid 3 coins for the arrangement.",
+          "The delivery sent 4 flour units to Sabina.",
+          "The delivery sent 2 flour units to Felix."
+        ],
+        "relationship_note": "Return to the people affected to hear their response."
+      },
+      "public_report": null
+    },
+    {
+      "id": "case-019",
+      "title": "Story after actual delivery",
+      "provenance": "executed_backend",
+      "surface": "story",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p8",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Chapter",
+          "text": "Morning opens on the Via dell'Abbondanza."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Morning opens on the Via dell'Abbondanza."
+        },
+        {
+          "label": "Chapter",
+          "text": "You arrive as Aelia, a freedwoman earning her place between households and shops."
+        },
+        {
+          "label": "Minute 0",
+          "text": "You arrive as Aelia, a freedwoman earning her place between households and shops."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Hear a private account of the disputed six-sack cart."
+        },
+        {
+          "label": "Minute 2",
+          "text": "Sabina asks you to find out who the six sacks were actually promised to."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You read the document “Sabina's wax account”."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You read the document “The household's delivery instructions”."
+        },
+        {
+          "label": "Minute 56",
+          "text": "You pay the carrying charge and stand behind the market counters."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "2"
+        },
+        {
+          "label": "Minute 2",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 2",
+          "text": "You walk through the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "4"
+        },
+        {
+          "label": "Minute 9",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 9",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Minute 17",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "12"
+        },
+        {
+          "label": "Minute 24",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 24",
+          "text": "You enter House of the Menander."
+        },
+        {
+          "label": "Minute 31",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 31",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Minute 33",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 33",
+          "text": "You enter Felix's bread counter."
+        },
+        {
+          "label": "Minute 42",
+          "text": "World time advances by 9 minutes."
+        },
+        {
+          "label": "Minute 42",
+          "text": "You enter Fullonica of Stephanus."
+        },
+        {
+          "label": "Minute 48",
+          "text": "World time advances by 6 minutes."
+        },
+        {
+          "label": "Minute 48",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Minute 56",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 56",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Chapter",
+          "text": "Sabina received 4 flour units; Felix received 2 flour units."
+        },
+        {
+          "label": "Minute 76",
+          "text": "Sabina received 4 flour units; Felix received 2 flour units."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 76",
+          "text": "World time advances by 20 minutes."
+        },
+        {
+          "label": "Return summary",
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+        }
+      ]
+    },
+    {
+      "id": "case-020",
+      "title": "Sabina · grounded response after the delivery",
+      "provenance": "executed_backend",
+      "surface": "conversation",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Sabina · Opening",
+          "text": "You helped arrange that cart. I received 4 flour units. Thank you."
+        },
+        {
+          "label": "Your life here",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "What needs doing?",
+          "text": "I run the counter. A good meal buys me a returning customer; a household's promise does not."
+        },
+        {
+          "label": "Our history",
+          "text": "You helped arrange that cart. I received 4 flour units. Thank you."
+        },
+        {
+          "label": "What have you heard?",
+          "text": "I have no current dispatch I can stand behind. Ask someone who inspected it, or pay for a check."
+        },
+        {
+          "label": "The counter's order",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Is there paid work here?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Take a real shift, paid from the counter or household account."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "55 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "The shift pays 3 coins if funds remain available."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "Arrange a current supply inspection"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Pay one coin; the result arrives after fifteen world minutes."
+        },
+        {
+          "label": "Offered choice · cost",
+          "text": "1 coin · 15 minutes"
+        },
+        {
+          "label": "Offered choice · consequence",
+          "text": "Obtain a direct dated observation."
+        },
+        {
+          "label": "Offered choice · reason",
+          "text": "You need one coin to arrange an inspection."
+        },
+        {
+          "label": "Offered choice · label",
+          "text": "What do you remember of our dealings?"
+        },
+        {
+          "label": "Offered choice · description",
+          "text": "Ask about dealings this person remembers."
+        }
+      ]
+    },
+    {
+      "id": "case-021",
+      "title": "Continue after optional reflection acknowledgement",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Choose what comes next."
+        },
+        {
+          "label": "Body",
+          "text": "You can work, speak with residents, learn at the fullery or follow an unresolved obligation. Help and your notebook remain available."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Continue exploring"
+        },
+        {
+          "label": "What you know",
+          "text": "Sabina has asked you to investigate the disputed flour cart. Hearing her account does not verify every claim."
+        },
+        {
+          "label": "What you know",
+          "text": "You obtained the household instructions, Sabina’s account."
+        },
+        {
+          "label": "Actual result",
+          "text": "You paid 3 coins for the arrangement."
+        },
+        {
+          "label": "Actual result",
+          "text": "The delivery sent 4 flour units to Sabina."
+        },
+        {
+          "label": "Actual result",
+          "text": "The delivery sent 2 flour units to Felix."
+        },
+        {
+          "label": "Evidence: Sabina's wax account",
+          "text": "Two flour units ordered for the food counter; 4 coins advanced to Marcus."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Sabina"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        },
+        {
+          "label": "Evidence: The household's delivery instructions",
+          "text": "Four flour units reserved for the household; 8 coins advanced. Dama is instructed to repeat the quantity, not claim the whole cart."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Dama"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Copied fictional document; its contents are a claim"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": {
+        "at": 76,
+        "event_id": 48,
+        "delivered": {
+          "Sabina": 4,
+          "Felix": 2
+        },
+        "explanation": [
+          "You paid 3 coins for the arrangement.",
+          "The delivery sent 4 flour units to Sabina.",
+          "The delivery sent 2 flour units to Felix."
+        ],
+        "relationship_note": "Return to the people affected to hear their response."
+      },
+      "public_report": null
+    },
+    {
+      "id": "case-022",
+      "title": "History notebook · A food counter on the street",
+      "provenance": "executed_backend",
+      "surface": "card",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "A food counter on the street"
+        },
+        {
+          "label": "Encounter Label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Encounter",
+          "text": "The game represents a counter and inset jar forms. This is a schematic model of the food-counter setting."
+        },
+        {
+          "label": "Illustration",
+          "text": "The in-game counter is an original schematic reconstruction, not an archaeological photograph."
+        },
+        {
+          "label": "Claim",
+          "text": "The thermopolium, or food-and-drink counter, of Vetutius Placidus had large storage jars built into its serving counter."
+        },
+        {
+          "label": "Evidence",
+          "text": "The Park describes the surviving counter and its embedded vessels."
+        },
+        {
+          "label": "Limits",
+          "text": "A counter does not establish its exact daily menu or the identity of everyone who worked there."
+        },
+        {
+          "label": "Game Changed",
+          "text": "Sabina, her stock, prices and the flour dispute are fictional. The model is not a surveyed reconstruction."
+        },
+        {
+          "label": "Question",
+          "text": "Which visible feature suggests that customers were served here?"
+        },
+        {
+          "label": "Rights",
+          "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
+        },
+        {
+          "label": "Source",
+          "text": "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+        }
+      ]
+    },
+    {
+      "id": "case-023",
+      "title": "History notebook · A home turned into a workplace",
+      "provenance": "executed_backend",
+      "surface": "card",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "A home turned into a workplace"
+        },
+        {
+          "label": "Encounter Label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Encounter",
+          "text": "The game represents washing basins inside a simplified workshop."
+        },
+        {
+          "label": "Illustration",
+          "text": "The game basins are schematic geometry, not a measured plan."
+        },
+        {
+          "label": "Claim",
+          "text": "The Fullonica of Stephanus was a cloth-cleaning workshop adapted from a house. Fullonica means a fullery, where cloth was processed."
+        },
+        {
+          "label": "Evidence",
+          "text": "Washing facilities and changes to the domestic building support its workshop interpretation."
+        },
+        {
+          "label": "Limits",
+          "text": "The conventional building name does not establish every occupant or worker. Precise ownership can be an interpretation."
+        },
+        {
+          "label": "Game Changed",
+          "text": "Chreste, her schedule and the paid shifts offered to Aelia are invented. Chreste is enslaved; Aelia taking a paid shift is a different situation."
+        },
+        {
+          "label": "Question",
+          "text": "What would distinguish a workshop from a room used only for domestic life?"
+        },
+        {
+          "label": "Rights",
+          "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
+        },
+        {
+          "label": "Source",
+          "text": "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+        }
+      ]
+    },
+    {
+      "id": "case-024",
+      "title": "History notebook · A person who had been freed",
+      "provenance": "executed_backend",
+      "surface": "card",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "A person who had been freed"
+        },
+        {
+          "label": "Encounter Label",
+          "text": "Fictional gameplay"
+        },
+        {
+          "label": "Encounter",
+          "text": "Aelia is a fictional freedwoman: she was enslaved and was later freed."
+        },
+        {
+          "label": "Claim",
+          "text": "Naevoleia Tyche’s commemorative monument and inscription identify her as a freedwoman."
+        },
+        {
+          "label": "Evidence",
+          "text": "The Park discusses the inscription on the monument near the Herculaneum Gate. That monument is outside this game district."
+        },
+        {
+          "label": "Limits",
+          "text": "One prominent monument cannot show how every freedwoman lived. Women had varied social statuses and opportunities. The Park’s imagined first-person narration is modern interpretation."
+        },
+        {
+          "label": "Game Changed",
+          "text": "Aelia is not Naevoleia Tyche. Her money, work, access and choices are fictional simplifications, not general Roman legal rights."
+        },
+        {
+          "label": "Question",
+          "text": "Can one prosperous individual stand for everyone who had been freed?"
+        },
+        {
+          "label": "Rights",
+          "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
+        },
+        {
+          "label": "Source",
+          "text": "Archaeological Park of Pompeii: Nevoleia Tyche · https://pompeiisites.org/en/exhibitions-and-events/nevoleia-tyche-en/"
+        },
+        {
+          "label": "Source",
+          "text": "Archaeological Park of Pompeii: Being a woman in ancient Pompeii · https://pompeiisites.org/en/exhibitions/being-a-woman-in-ancient-pompeii/"
+        }
+      ]
+    },
+    {
+      "id": "case-025",
+      "title": "History notebook · Political messages on walls",
+      "provenance": "executed_backend",
+      "surface": "card",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Political messages on walls"
+        },
+        {
+          "label": "Encounter Label",
+          "text": "Modern learning material"
+        },
+        {
+          "label": "Encounter",
+          "text": "This learning card describes surviving painted notices. It does not identify a game wall as an excavated inscription."
+        },
+        {
+          "label": "Illustration",
+          "text": "Modern English structure guide: candidate → office sought → supporter. This is not a transcription."
+        },
+        {
+          "label": "Claim",
+          "text": "Pompeian electoral notices could name candidates, the offices sought and supporters."
+        },
+        {
+          "label": "Evidence",
+          "text": "The Naples museum presents painted inscription fragments and explains their recurring forms."
+        },
+        {
+          "label": "Limits",
+          "text": "An endorsement does not establish an election result or equal political rights for every resident."
+        },
+        {
+          "label": "Game Changed",
+          "text": "There is no voting mechanic here. Aelia reading this card implies no eligibility for office. Any decorative wall marks in the model are reconstruction, not quoted ancient text."
+        },
+        {
+          "label": "Question",
+          "text": "What can an endorsement tell you, and what can it leave unknown?"
+        },
+        {
+          "label": "Rights",
+          "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Source",
+          "text": "National Archaeological Museum of Naples: Elections in Pompeii · https://artsandculture.google.com/story/tgUBNHEcEscIJg?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "case-026",
+      "title": "History notebook · Evidence, reconstruction and invented choices",
+      "provenance": "executed_backend",
+      "surface": "card",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Evidence, reconstruction and invented choices"
+        },
+        {
+          "label": "Encounter Label",
+          "text": "Modern learning material"
+        },
+        {
+          "label": "Encounter",
+          "text": "Compare the represented counter or workshop with the delivery dispute you are playing."
+        },
+        {
+          "label": "Claim",
+          "text": "Buildings, objects and inscriptions can support limited historical claims. They do not preserve Sabina’s conversation with Aelia."
+        },
+        {
+          "label": "Evidence",
+          "text": "The linked Park descriptions discuss surviving structures; the museum shows inscribed objects."
+        },
+        {
+          "label": "Limits",
+          "text": "Evidence leaves gaps. A plausible reconstruction remains an interpretation."
+        },
+        {
+          "label": "Game Changed",
+          "text": "Every named game character, exact price, reward, deadline, relationship score and cart agreement is invented for play. The miniature street network is simplified."
+        },
+        {
+          "label": "Question",
+          "text": "Name one externally supported feature and one mechanic created for this experience."
+        },
+        {
+          "label": "Rights",
+          "text": "Original prose and schematic game geometry. No external image reproduced."
+        },
+        {
+          "label": "Evidence label",
+          "text": "Historical evidence"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Reconstruction"
+        },
+        {
+          "label": "Evidence label",
+          "text": "Fictional gameplay"
+        },
+        {
+          "label": "Source",
+          "text": "Archaeological Park of Pompeii: Along the streets of Pompeii · https://pompeiisites.org/en/pompeii-map/analysis/along-the-streets-of-pompeii/"
+        },
+        {
+          "label": "Source",
+          "text": "National Archaeological Museum of Naples: Elections in Pompeii · https://artsandculture.google.com/story/tgUBNHEcEscIJg?hl=en"
+        }
+      ]
+    },
+    {
+      "id": "case-027",
+      "title": "Saved life reopened from actual journals",
+      "provenance": "executed_backend",
+      "surface": "story",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p9",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "accepted_receipt_ids": [
+        19,
+        20,
+        23,
+        25,
+        26,
+        27,
+        29,
+        32,
+        34,
+        36,
+        41,
+        44,
+        45
+      ],
+      "blocks": [
+        {
+          "label": "Chapter",
+          "text": "Morning opens on the Via dell'Abbondanza."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Morning opens on the Via dell'Abbondanza."
+        },
+        {
+          "label": "Chapter",
+          "text": "You arrive as Aelia, a freedwoman earning her place between households and shops."
+        },
+        {
+          "label": "Minute 0",
+          "text": "You arrive as Aelia, a freedwoman earning her place between households and shops."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Sabina stops beside the cart. “I paid for two sacks. Why is the household asking for all six?”"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Hear a private account of the disputed six-sack cart."
+        },
+        {
+          "label": "Minute 2",
+          "text": "Sabina asks you to find out who the six sacks were actually promised to."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You read the document “Sabina's wax account”."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You read the document “The household's delivery instructions”."
+        },
+        {
+          "label": "Minute 56",
+          "text": "You pay the carrying charge and stand behind the market counters."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "2"
+        },
+        {
+          "label": "Minute 2",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 2",
+          "text": "You walk through the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "4"
+        },
+        {
+          "label": "Minute 9",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 9",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Minute 17",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 17",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "12"
+        },
+        {
+          "label": "Minute 24",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 24",
+          "text": "You enter House of the Menander."
+        },
+        {
+          "label": "Minute 31",
+          "text": "World time advances by 7 minutes."
+        },
+        {
+          "label": "Minute 31",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Minute 33",
+          "text": "World time advances by 2 minutes."
+        },
+        {
+          "label": "Minute 33",
+          "text": "You enter Felix's bread counter."
+        },
+        {
+          "label": "Minute 42",
+          "text": "World time advances by 9 minutes."
+        },
+        {
+          "label": "Minute 42",
+          "text": "You enter Fullonica of Stephanus."
+        },
+        {
+          "label": "Minute 48",
+          "text": "World time advances by 6 minutes."
+        },
+        {
+          "label": "Minute 48",
+          "text": "You enter the street."
+        },
+        {
+          "label": "Minute 56",
+          "text": "World time advances by 8 minutes."
+        },
+        {
+          "label": "Minute 56",
+          "text": "You enter Thermopolium of Vetutius Placidus."
+        },
+        {
+          "label": "Chapter",
+          "text": "Sabina received 4 flour units; Felix received 2 flour units."
+        },
+        {
+          "label": "Minute 76",
+          "text": "Sabina received 4 flour units; Felix received 2 flour units."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 76",
+          "text": "World time advances by 20 minutes."
+        },
+        {
+          "label": "Return summary",
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+        }
+      ]
+    },
+    {
+      "id": "case-028",
+      "title": "Old unconfirmed offer after the world changed",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "pompeii",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 76,
+      "accepted_revision": 13,
+      "state_hash": "b55c37bf575190cfb57bcf5fdc8ccf36d0e52b3bbc602215a866d3ea8993e26e",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "The offer changed. Check the new terms before deciding."
+        }
+      ]
+    },
+    {
+      "id": "case-029",
+      "title": "Declining: the buyers' outcome is still pending",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p7",
+      "world_minute": 0,
+      "accepted_revision": 1,
+      "state_hash": "581eab90d70a5b91ae75367e6bcbaa9b1722618605ffbb7d6393d9ba2478323d",
+      "accepted_receipt_ids": [
+        18
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "See the actual delivery."
+        },
+        {
+          "label": "Body",
+          "text": "Check the delivery. If the buyers still need time, review the next deadline before moving the clock."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review time and known obligations"
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-030",
+      "title": "Missed/declined opportunity: the admitted continuation",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "pompeii",
+      "note": "",
+      "guide_step": "p8",
+      "world_minute": 400,
+      "accepted_revision": 2,
+      "state_hash": "bda897b1599ebda3846c97d692c3190c418e5cb37a78274d39068f0a7b5bfe74",
+      "accepted_receipt_ids": [
+        18
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "See what happened."
+        },
+        {
+          "label": "Body",
+          "text": "The delivery sent 6 flour units to Lucius. The dispute, prices and rewards were invented for this simulation. Compare them with a sourced card, then continue exploring, visit the fullery or review your saved story."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review what happened"
+        },
+        {
+          "label": "What you know",
+          "text": "You have not copied a written order yet. No hidden account is supplied by the guide."
+        },
+        {
+          "label": "Actual result",
+          "text": "The delivery sent 6 flour units to Lucius."
+        }
+      ],
+      "public_result": {
+        "at": 360,
+        "event_id": 41,
+        "delivered": {
+          "Lucius": 6
+        },
+        "explanation": [
+          "The delivery sent 6 flour units to Lucius."
+        ],
+        "relationship_note": "Return to the people affected to hear their response."
+      },
+      "public_report": null
+    },
+    {
+      "id": "case-031",
+      "title": "Observatory arrival; unknown report stays unknown",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o0",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "You coordinate one shared instrument."
+        },
+        {
+          "label": "Body",
+          "text": "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Begin the guided round"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-032",
+      "title": "A real current request",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o1",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Read a team’s request."
+        },
+        {
+          "label": "Body",
+          "text": "Mira currently requests 2 capacity units. A request is what the team asks for. Your promise and allocation are separate choices."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Continue"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-033",
+      "title": "How to obtain a report",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o2",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Ask Mira for her dated report."
+        },
+        {
+          "label": "Body",
+          "text": "The instrument is rated for twelve units; its current condition is unknown. Ask Mira for her report, or pay one credit for an inspection."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Ask Mira for the report"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-034",
+      "title": "Report disclosure review",
+      "provenance": "executed_backend",
+      "surface": "review",
+      "setting": "commons",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "accepted_receipt_ids": [],
+      "blocks": [
+        {
+          "label": "Summary",
+          "text": "Ask for a legitimately retained dated report; its content is disclosed after confirmation."
+        },
+        {
+          "label": "Notice",
+          "text": "The result appears after the choice goes through."
+        },
+        {
+          "label": "Reviewed action",
+          "text": "share"
+        },
+        {
+          "label": "Reviewed recipient",
+          "text": "team_b"
+        }
+      ]
+    },
+    {
+      "id": "case-035",
+      "title": "Dated admitted report and allocation explanation",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o3",
+      "world_minute": 0,
+      "accepted_revision": 1,
+      "state_hash": "808c11892f72a9df02fd82dabc0e3c6e61638906601db5d9ab87468ab054284c",
+      "accepted_receipt_ids": [
+        13
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Choose an allocation you can explain."
+        },
+        {
+          "label": "Body",
+          "text": "Mira’s report describes 8 usable units, observed at Day 1, 00:00. Set a quantity for each team and review the total. Delivery follows the public exercise order: Amir, then Mira, then Lin. Each project needs its stated minimum in one delivery. Smaller deliveries are recorded, but do not complete a project."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review your allocation"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": null,
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-036",
+      "title": "Review a 4/4/4 allocation; delivery is separate",
+      "provenance": "executed_backend",
+      "surface": "review",
+      "setting": "commons",
+      "note": "",
+      "guide_step": null,
+      "world_minute": 0,
+      "accepted_revision": 1,
+      "state_hash": "808c11892f72a9df02fd82dabc0e3c6e61638906601db5d9ab87468ab054284c",
+      "accepted_receipt_ids": [
+        13
+      ],
+      "blocks": [
+        {
+          "label": "Summary",
+          "text": "Fix this allocation for this round. It cannot be edited after confirmation. Actual delivery is determined at settlement."
+        },
+        {
+          "label": "Notice",
+          "text": "The result appears after the choice goes through."
+        },
+        {
+          "label": "Reviewed action",
+          "text": "allocate"
+        },
+        {
+          "label": "Reviewed allocation · team_a",
+          "text": "4"
+        },
+        {
+          "label": "Reviewed allocation · team_b",
+          "text": "4"
+        },
+        {
+          "label": "Reviewed allocation · team_c",
+          "text": "4"
+        }
+      ]
+    },
+    {
+      "id": "case-037",
+      "title": "An optional promise after allocating",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o4",
+      "world_minute": 0,
+      "accepted_revision": 2,
+      "state_hash": "94a0514ab3f10fa09295ebdcf9393ff535a234c4b3e096933c98a247bdcb7751",
+      "accepted_receipt_ids": [
+        13,
+        14
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "A promise is optional and separate."
+        },
+        {
+          "label": "Body",
+          "text": "A promise tells a team what you commit to provide. An allocation instructs the division of capacity; settlement determines delivery. You may review a promise to one team, or continue without making one. Changing an allocation field never creates a promise."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review an optional promise"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": null,
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-038",
+      "title": "Known promise and deliberate finish",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o5",
+      "world_minute": 0,
+      "accepted_revision": 3,
+      "state_hash": "533dee249c044161d5c606b592b105a643b409b52686f5f6ba72df12e24eb1a7",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Finish this round deliberately."
+        },
+        {
+          "label": "Body",
+          "text": "Your allocation is recorded, but delivery has not happened. Review the target time and every known commitment, then explicitly finish the round. Reading this panel does not move the clock."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review and finish this round"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        },
+        {
+          "label": "Current obligation",
+          "text": "You promised 4 units to Lin by Day 1, 23:59. Allocation and delivery are separate steps."
+        }
+      ],
+      "public_result": null,
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-039",
+      "title": "Actual 4/4/0 delivery and missed promise",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o6",
+      "world_minute": 1439,
+      "accepted_revision": 4,
+      "state_hash": "b27deec34deba0a89c123672e97ea552cb00de4d996438340c50c6fb6611b2b0",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "See what each team received."
+        },
+        {
+          "label": "Body",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 4 units and received 4 units. Mira was allocated 4 units and received 4 units. Lin was allocated 4 units and received 0 units. You promised 4 units to Lin, so that promise was not met."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review the result"
+        },
+        {
+          "label": "What you know",
+          "text": "Amir currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Actual result",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+        },
+        {
+          "label": "Actual result",
+          "text": "Amir was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Mira was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Lin was allocated 4 units and received 0 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "You promised 4 units to Lin, so that promise was not met."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": {
+        "at": 1439,
+        "event_id": 22,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {
+          "team_c": 4
+        },
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        },
+        "executed": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [
+          "team_c"
+        ],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 4 units and received 4 units.",
+          "Mira was allocated 4 units and received 4 units.",
+          "Lin was allocated 4 units and received 0 units.",
+          "You promised 4 units to Lin, so that promise was not met."
+        ]
+      },
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-040",
+      "title": "Actual Observatory consequence story",
+      "provenance": "executed_backend",
+      "surface": "story",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o6",
+      "world_minute": 1439,
+      "accepted_revision": 4,
+      "state_hash": "b27deec34deba0a89c123672e97ea552cb00de4d996438340c50c6fb6611b2b0",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Chapter",
+          "text": "The consortium records its declared research projects."
+        },
+        {
+          "label": "Minute 0",
+          "text": "The consortium records its declared research projects."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Round 1: teams may negotiate the shared instrument."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Mira shares a dated condition report with you. Reported condition: fragile, observed at Day 1, 00:00."
+        },
+        {
+          "label": "Minute 0",
+          "text": "The coordinator commits round 1's allocation."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Chapter",
+          "text": "You promise 4 units to Lin."
+        },
+        {
+          "label": "Minute 0",
+          "text": "You promise 4 units to Lin."
+        },
+        {
+          "label": "Chapter",
+          "text": "Round 1 executes 8/12 allocated units; 2 projects complete."
+        },
+        {
+          "label": "Minute 1439",
+          "text": "Round 1 executes 8/12 allocated units; 2 projects complete."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "3"
+        },
+        {
+          "label": "Minute 720",
+          "text": "Amir requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Lin requests 2 capacity units."
+        },
+        {
+          "label": "Chapter",
+          "text": "Recorded settlements and deadlines revise the declared project register."
+        },
+        {
+          "label": "Minute 1439",
+          "text": "Recorded settlements and deadlines revise the declared project register."
+        },
+        {
+          "label": "Chapter",
+          "text": "The promise to Lin is missed."
+        },
+        {
+          "label": "Minute 1439",
+          "text": "The promise to Lin is missed."
+        },
+        {
+          "label": "Amir · Survey",
+          "text": "Our survey work has a deadline. Please distinguish what you promise us from what the instrument actually delivers."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Amir received 4 of 4 allocated units."
+        },
+        {
+          "label": "Mira · Instrument systems",
+          "text": "I observed 8 usable units at Day 1, 00:00."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Mira received 4 of 4 allocated units."
+        },
+        {
+          "label": "Lin · Follow-up",
+          "text": "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Lin received 0 of 4 allocated units."
+        },
+        {
+          "label": "Return summary",
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+        }
+      ]
+    },
+    {
+      "id": "case-041",
+      "title": "Optional reflection, without a comprehension claim",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o7",
+      "world_minute": 1439,
+      "accepted_revision": 4,
+      "state_hash": "b27deec34deba0a89c123672e97ea552cb00de4d996438340c50c6fb6611b2b0",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Continue with less guidance."
+        },
+        {
+          "label": "Body",
+          "text": "Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. What would you change next time?"
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Continue exploring"
+        },
+        {
+          "label": "What you know",
+          "text": "Amir currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Actual result",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+        },
+        {
+          "label": "Actual result",
+          "text": "Amir was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Mira was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Lin was allocated 4 units and received 0 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "You promised 4 units to Lin, so that promise was not met."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": {
+        "at": 1439,
+        "event_id": 22,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {
+          "team_c": 4
+        },
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        },
+        "executed": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [
+          "team_c"
+        ],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 4 units and received 4 units.",
+          "Mira was allocated 4 units and received 4 units.",
+          "Lin was allocated 4 units and received 0 units.",
+          "You promised 4 units to Lin, so that promise was not met."
+        ]
+      },
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-042",
+      "title": "Double confirmation reconciles the accepted allocation",
+      "provenance": "executed_backend",
+      "surface": "reconciliation",
+      "setting": "commons",
+      "note": "Original receipt returned; no second allocation executed.",
+      "guide_step": "o7",
+      "world_minute": 1439,
+      "accepted_revision": 4,
+      "state_hash": "b27deec34deba0a89c123672e97ea552cb00de4d996438340c50c6fb6611b2b0",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Result",
+          "text": "That action already went through."
+        }
+      ]
+    },
+    {
+      "id": "case-043",
+      "title": "Closed-round allocation",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "commons",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 1439,
+      "accepted_revision": 4,
+      "state_hash": "b27deec34deba0a89c123672e97ea552cb00de4d996438340c50c6fb6611b2b0",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "This round has settled. Advance to the next day before making a new promise or allocation."
+        }
+      ]
+    },
+    {
+      "id": "case-044",
+      "title": "A new round with only an older received report",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o7",
+      "world_minute": 1440,
+      "accepted_revision": 5,
+      "state_hash": "d55e45e397f03f718297c4e723bd7492c17dc98a0900442ee700bfc75197466f",
+      "accepted_receipt_ids": [
+        13,
+        14,
+        15
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "Continue with less guidance."
+        },
+        {
+          "label": "Body",
+          "text": "Can you explain the difference between a request, a promise, an allocation and actual delivery? If that is still unclear, reopen this help or review your saved choice. What would you change next time?"
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Continue exploring"
+        },
+        {
+          "label": "What you know",
+          "text": "Amir currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; missed."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; completed."
+        },
+        {
+          "label": "Actual result",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+        },
+        {
+          "label": "Actual result",
+          "text": "Amir was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Mira was allocated 4 units and received 4 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Lin was allocated 4 units and received 0 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "You promised 4 units to Lin, so that promise was not met."
+        },
+        {
+          "label": "Evidence: Dated instrument report",
+          "text": "The reported condition was fragile."
+        },
+        {
+          "label": "Evidence source",
+          "text": "Mira"
+        },
+        {
+          "label": "Evidence kind",
+          "text": "Testimony"
+        },
+        {
+          "label": "Evidence at",
+          "text": "0"
+        }
+      ],
+      "public_result": {
+        "at": 1439,
+        "event_id": 22,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {
+          "team_c": 4
+        },
+        "allocation": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 4
+        },
+        "executed": {
+          "team_a": 4,
+          "team_b": 4,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [
+          "team_c"
+        ],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 4 units and received 4 units.",
+          "Mira was allocated 4 units and received 4 units.",
+          "Lin was allocated 4 units and received 0 units.",
+          "You promised 4 units to Lin, so that promise was not met."
+        ]
+      },
+      "public_report": {
+        "condition": "fragile",
+        "as_of": 0,
+        "observed_at": 0,
+        "source": "Mira",
+        "kind": "testimony",
+        "usable": 8,
+        "event_id": 13
+      }
+    },
+    {
+      "id": "case-045",
+      "title": "Open-round zero promise is rejected without a commitment",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "commons",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 0,
+      "accepted_revision": 0,
+      "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "Invalid promise"
+        }
+      ]
+    },
+    {
+      "id": "case-046",
+      "title": "Actual singular promise and missing optional report",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o0",
+      "world_minute": 0,
+      "accepted_revision": 1,
+      "state_hash": "a3894dd246f10a8a5386067727c3c4a20b3bbc1ecd83d0e0644ce3e38c63b7f6",
+      "accepted_receipt_ids": [
+        13
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "You coordinate one shared instrument."
+        },
+        {
+          "label": "Body",
+          "text": "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Begin the guided round"
+        },
+        {
+          "label": "What you know",
+          "text": "Mira currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Current obligation",
+          "text": "You promised 1 unit to Amir by Day 1, 23:59. Allocation and delivery are separate steps."
+        }
+      ],
+      "public_result": null,
+      "public_report": null
+    },
+    {
+      "id": "case-047",
+      "title": "Actual one-unit delivery and explicit zero deliveries",
+      "provenance": "executed_backend",
+      "surface": "guide",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o6",
+      "world_minute": 1439,
+      "accepted_revision": 3,
+      "state_hash": "6c6c72695dd33d70c367b80684a55b9d4e6a2a3c738db97ef06512a55a040036",
+      "accepted_receipt_ids": [
+        13,
+        14
+      ],
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "See what each team received."
+        },
+        {
+          "label": "Body",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin. Amir was allocated 1 unit and received 1 unit. Mira was allocated 0 units and received 0 units. Lin was allocated 0 units and received 0 units."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Review the result"
+        },
+        {
+          "label": "What you know",
+          "text": "Amir currently requests 2 capacity units."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Mira: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Lin: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Project requirement",
+          "text": "Amir: 4 units in one delivery; due Day 2, 00:00; open."
+        },
+        {
+          "label": "Actual result",
+          "text": "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin."
+        },
+        {
+          "label": "Actual result",
+          "text": "Amir was allocated 1 unit and received 1 unit."
+        },
+        {
+          "label": "Actual result",
+          "text": "Mira was allocated 0 units and received 0 units."
+        },
+        {
+          "label": "Actual result",
+          "text": "Lin was allocated 0 units and received 0 units."
+        }
+      ],
+      "public_result": {
+        "at": 1439,
+        "event_id": 21,
+        "requests": {
+          "team_a": 2,
+          "team_b": 2,
+          "team_c": 2
+        },
+        "promises": {
+          "team_a": 1
+        },
+        "allocation": {
+          "team_a": 1,
+          "team_b": 0,
+          "team_c": 0
+        },
+        "executed": {
+          "team_a": 1,
+          "team_b": 0,
+          "team_c": 0
+        },
+        "actual_capacity": 8,
+        "missed_promises": [],
+        "explanation": [
+          "The round ran with 8 usable capacity units. The exercise gives capacity to Amir first, then Mira, then Lin.",
+          "Amir was allocated 1 unit and received 1 unit.",
+          "Mira was allocated 0 units and received 0 units.",
+          "Lin was allocated 0 units and received 0 units."
+        ]
+      },
+      "public_report": null
+    },
+    {
+      "id": "case-048",
+      "title": "Singular/zero story text",
+      "provenance": "executed_backend",
+      "surface": "story",
+      "setting": "commons",
+      "note": "",
+      "guide_step": "o6",
+      "world_minute": 1439,
+      "accepted_revision": 3,
+      "state_hash": "6c6c72695dd33d70c367b80684a55b9d4e6a2a3c738db97ef06512a55a040036",
+      "accepted_receipt_ids": [
+        13,
+        14
+      ],
+      "blocks": [
+        {
+          "label": "Chapter",
+          "text": "The consortium records its declared research projects."
+        },
+        {
+          "label": "Minute 0",
+          "text": "The consortium records its declared research projects."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Negotiate the first allocation while the maintenance team alone has current hardware evidence."
+        },
+        {
+          "label": "Minute 0",
+          "text": "Round 1: teams may negotiate the shared instrument."
+        },
+        {
+          "label": "Chapter",
+          "text": "You promise 1 unit to Amir."
+        },
+        {
+          "label": "Minute 0",
+          "text": "You promise 1 unit to Amir."
+        },
+        {
+          "label": "Minute 0",
+          "text": "The coordinator commits round 1's allocation."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "1"
+        },
+        {
+          "label": "Minute 0",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Chapter",
+          "text": "Round 1 executes 1/1 allocated unit; 0 projects complete."
+        },
+        {
+          "label": "Minute 1439",
+          "text": "Round 1 executes 1/1 allocated unit; 0 projects complete."
+        },
+        {
+          "label": "Routine",
+          "text": "Everyday activity"
+        },
+        {
+          "label": "Routine record count",
+          "text": "3"
+        },
+        {
+          "label": "Minute 720",
+          "text": "Amir requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Mira requests 2 capacity units."
+        },
+        {
+          "label": "Minute 720",
+          "text": "Lin requests 2 capacity units."
+        },
+        {
+          "label": "Chapter",
+          "text": "The promise to Amir is kept."
+        },
+        {
+          "label": "Minute 1439",
+          "text": "The promise to Amir is kept."
+        },
+        {
+          "label": "Amir · Survey",
+          "text": "Our survey work has a deadline. Please distinguish what you promise us from what the instrument actually delivers."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Amir received 1 of 1 allocated unit."
+        },
+        {
+          "label": "Mira · Instrument systems",
+          "text": "I work on the instrument systems. You can ask about the dated report before deciding what to promise."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Mira received 0 of 0 allocated units."
+        },
+        {
+          "label": "Lin · Follow-up",
+          "text": "Our follow-up work also depends on time at the instrument. I need to know what we can actually count on."
+        },
+        {
+          "label": "Recorded outcome",
+          "text": "Lin received 0 of 0 allocated units."
+        },
+        {
+          "label": "Return summary",
+          "text": "Your saved world resumes from its recorded moment. Movement, accepted work and explicit time controls can advance world time."
+        }
+      ]
+    },
+    {
+      "id": "case-049",
+      "title": "Actual exhausted-credit inspection error",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "commons",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 1439,
+      "accepted_revision": 15,
+      "state_hash": "84784a054039a9489544c683200884e9535bc2c8b306eb40e6f01e834e2e67d2",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "An inspection costs 1 credit. You have 0."
+        }
+      ]
+    },
+    {
+      "id": "case-050",
+      "title": "Closed-round zero promise is rejected because the round settled",
+      "provenance": "executed_backend",
+      "surface": "error",
+      "setting": "commons",
+      "note": "Actual backend rejection; browser toast/prefix is outside this review.",
+      "world_minute": 1439,
+      "accepted_revision": 15,
+      "state_hash": "84784a054039a9489544c683200884e9535bc2c8b306eb40e6f01e834e2e67d2",
+      "unchanged_after_rejection": true,
+      "blocks": [
+        {
+          "label": "Backend message",
+          "text": "This round has settled. Advance to the next day before making a new promise or allocation."
+        }
+      ]
+    },
+    {
+      "id": "case-051",
+      "title": "Empty retained context / forgotten-evidence formatting",
+      "provenance": "synthetic_formatting_fixture",
+      "surface": "formatting",
+      "setting": "fixture",
+      "note": "Actual backend formatter on an explicitly constructed scoped input; no gameplay event, forgetting episode, or participant behavior is claimed.",
+      "blocks": [
+        {
+          "label": "Speaker",
+          "text": "Sabina"
+        },
+        {
+          "label": "Formatted reply",
+          "text": "Start with what you can actually do. A little help at the right moment matters here."
+        },
+        {
+          "label": "Epistemic status",
+          "text": "No retained shared episode"
+        }
+      ]
+    },
+    {
+      "id": "case-052",
+      "title": "Dated hearsay formatting",
+      "provenance": "synthetic_formatting_fixture",
+      "surface": "formatting",
+      "setting": "fixture",
+      "note": "Actual backend formatter on an explicitly constructed scoped input; no gameplay event, forgetting episode, or participant behavior is claimed.",
+      "blocks": [
+        {
+          "label": "Speaker",
+          "text": "Sabina"
+        },
+        {
+          "label": "Formatted reply",
+          "text": "I heard that supply was available, dated world minute 0. Check how old that is before relying on it."
+        },
+        {
+          "label": "Epistemic status",
+          "text": "Dated hearsay"
+        }
+      ]
+    },
+    {
+      "id": "case-053",
+      "title": "Long names and HTML escaping at narrow width",
+      "provenance": "synthetic_formatting_fixture",
+      "surface": "formatting",
+      "setting": "fixture",
+      "note": "Actual backend formatter on an explicitly constructed scoped input; no gameplay event, forgetting episode, or participant behavior is claimed.",
+      "blocks": [
+        {
+          "label": "Speaker",
+          "text": "Aelia <&> LongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongNameLongName"
+        },
+        {
+          "label": "Formatted reply",
+          "text": "I can speak for my own work, not everyone else's."
+        },
+        {
+          "label": "Epistemic status",
+          "text": "Authored fictional identity"
+        }
+      ]
+    },
+    {
+      "id": "case-054",
+      "title": "Missing optional request/report fields",
+      "provenance": "synthetic_formatting_fixture",
+      "surface": "formatting",
+      "setting": "fixture",
+      "note": "Minimal synthetic snapshot passed through the actual guide projection; not a stock-world state.",
+      "blocks": [
+        {
+          "label": "Title",
+          "text": "You coordinate one shared instrument."
+        },
+        {
+          "label": "Body",
+          "text": "Amir, Mira and Lin represent three teams. Read what they request, obtain a dated report, divide the available capacity, then check what each team actually receives. A capacity unit is a simplified share of use, not a measured hour of telescope time."
+        },
+        {
+          "label": "Hint",
+          "text": "Help is here whenever you need it."
+        },
+        {
+          "label": "Time Policy",
+          "text": "Reading pauses time. Moving and work keep their shown time costs."
+        },
+        {
+          "label": "Action label",
+          "text": "Begin the guided round"
+        },
+        {
+          "label": "What you know",
+          "text": "No team has an active request in the current register yet."
+        },
+        {
+          "label": "What you know",
+          "text": "Requests, promises, allocated amounts and delivered amounts are different records."
+        }
+      ]
+    }
+  ]
+}

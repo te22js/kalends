@@ -1,0 +1,94 @@
+Browser tab: 1, Title: "Aelia — a place in the city · Kalends", URL: "http://127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97/reflect".
+0 AXWebArea Aelia — a place in the city · Kalends, URL: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97/reflect
+	1 link Description: Skip to content, Value: 127.0.0.1:8831/lives/pompeii_ed1ec6ef7a97/reflect#world-main
+	2 container Description: Your world, ID: life-shell
+		3 container Your story, ID: story-drawer
+			4 container
+				5 text YOUR NOTEBOOK
+			6 heading Your story, Value: 2, ID: story-heading
+				7 text Your story
+			8 button Description: Close your story, ID: close-story
+			9 container Your story views
+				10 button Chapters
+				11 button People
+				12 button Reflect
+			13 container story-content
+				14 container
+					15 heading What you chose. What followed., Value: 3
+						16 text What you chose. What followed.
+					17 text Revisit an exact accepted action and the evidence available before it. Later corrections are not inserted into your earlier knowledge.
+				18 container
+					19 heading A choice to revisit, Value: 3
+						20 text A choice to revisit
+					21 pop up button (collapsed, settable) Description: Accepted action to revisit, Value: Day 1 · 08:16 · Pay for the market delivery, ID: reflect-choice, Secondary Actions: Expand
+						22 menu
+							23 Day 1 · 08:00 · Hear an account of the delivery dispute
+							24 Day 1 · 08:00 · Copy the food counter’s account
+							25 Day 1 · 08:00 · Walk to a place
+							26 Day 1 · 08:01 · Walk to a place
+							27 Day 1 · 08:02 · Walk to a place
+							28 Day 1 · 08:02 · Walk to a place
+							29 Day 1 · 08:03 · Walk to a place
+							30 Day 1 · 08:03 · Walk to a place
+							31 Day 1 · 08:04 · Walk to a place
+							32 Day 1 · 08:04 · Walk to a place
+							33 Day 1 · 08:05 · Walk to a place
+							34 Day 1 · 08:05 · Walk to a place
+							35 Day 1 · 08:06 · Walk to a place
+							36 Day 1 · 08:06 · Walk to a place
+							37 Day 1 · 08:07 · Walk to a place
+							38 Day 1 · 08:07 · Walk to a place
+							39 Day 1 · 08:07 · Walk to a place
+							40 Day 1 · 08:08 · Walk to a place
+							41 Day 1 · 08:08 · Walk to a place
+							42 Day 1 · 08:09 · Walk to a place
+							43 Day 1 · 08:09 · Walk to a place
+							44 Day 1 · 08:10 · Walk to a place
+							45 Day 1 · 08:10 · Walk to a place
+							46 Day 1 · 08:11 · Walk to a place
+							47 Day 1 · 08:12 · Walk to a place
+							48 Day 1 · 08:12 · Walk to a place
+							49 Day 1 · 08:12 · Walk to a place
+							50 Day 1 · 08:13 · Walk to a place
+							51 Day 1 · 08:14 · Walk to a place
+							52 Day 1 · 08:14 · Walk to a place
+							53 Day 1 · 08:15 · Walk to a place
+							54 Day 1 · 08:15 · Walk to a place
+							55 Day 1 · 08:16 · Walk to a place
+							56 Day 1 · 08:16 · Copy the household instructions
+							57 (selected) Day 1 · 08:16 · Pay for the market delivery
+					58 container then-evidence
+						59 heading What you knew then, Value: 4
+							60 text What you knew then
+						61 text Most recent 8 of 54 admitted records.
+						62 container
+							63 text Day 1 · 08:14  · You walk through the street.
+						64 container
+							65 text Day 1 · 08:15  · World time advances by 1 minute.
+						66 container
+							67 text Day 1 · 08:15  · You walk through the street.
+						68 container
+							69 text Day 1 · 08:15  · You walk through the street.
+						70 container
+							71 text Day 1 · 08:16  · World time advances by 1 minute.
+						72 container
+							73 text Day 1 · 08:16  · You walk through the street.
+						74 container
+							75 text Day 1 · 08:16  · You walk through the street.
+						76 container
+							77 text Day 1 · 08:16  · You read the document “The household's delivery instructions”.
+						78 button (collapsed) Earlier admitted records (46), Secondary Actions: Expand
+							79 text Earlier admitted records (46)
+						80 text This is the admitted prefix before the choice. It is separate from another person’s current retained memory.
+					81 heading Try this history without that choice., Value: 3
+						82 text Try this history without that choice.
+					83 text This executes one omission. Later declared choices stay the same where they remain feasible. It is not an optimal alternative, and it never replaces your original life.
+					84 button Execute this alternative, ID: execute-alternative
+				85 container
+					86 button Finish this guided reflection
+					87 text You can continue without answering a quiz. This acknowledgement does not establish learning.
+					88 heading What remains uncertain, Value: 3
+						89 text What remains uncertain
+					90 text Testimony may be dated. Events outside your participant’s knowledge remain outside this view. Executed differences are specific to the declared alternative and continuation.
+
+The focused UI element is 8 button Description: Close your story, ID: close-story

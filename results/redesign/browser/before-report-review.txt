@@ -1,0 +1,16 @@
+Browser tab: 19, Title: "Your shared observatory · Kalends", URL: "http://127.0.0.1:8830/lives/observatory_90ddbbff0654".
+1 AXWebArea Your shared observatory · Kalends, URL: 127.0.0.1:8830/lives/observatory_90ddbbff0654
+	2 container Ask Mira to share a dated report, ID: review-dialog
+		3 container
+			4 text BEFORE YOU COMMIT
+		5 button Close review
+		6 heading Ask Mira to share a dated report, Value: 2, ID: review-heading
+			7 text Ask Mira to share a dated report
+		8 container review-content
+			9 text Request a legitimate disclosure of Mira’s retained report.
+			10 text The contents become available to you after acceptance. A retained report is dated testimony; it does not guarantee the instrument’s present condition.
+			11 text No change has been accepted yet. Confirmation rechecks this exact proposal against your saved world. If time or terms changed, review again.
+		12 button Keep considering
+		13 button Confirm this choice →, ID: confirm-choice
+
+The focused UI element is 5 button Close review
