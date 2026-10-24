@@ -1,0 +1,7697 @@
+{
+  "schema": "kalends-immersion-trace-v1",
+  "gpu_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+  "engine": "PlayCanvas 2.23.3",
+  "device_type": "webgl2",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardware_concurrency": 8,
+  "viewport": {
+    "width": 1280,
+    "height": 642,
+    "dpr": 2,
+    "render_width": 1920,
+    "render_height": 963
+  },
+  "quality": "balanced",
+  "scene_resolution_scale": 1,
+  "msaa_samples": 2,
+  "actors": 7,
+  "draw_calls": 564,
+  "textures_bytes": 94505208,
+  "scope": "Browser-reported hardware and engine counters; not GPU elapsed time or physical-device qualification.",
+  "app_boot_ms": 290.69999999925494,
+  "navigation_to_ready_ms": 334.0999999977648,
+  "navigation_to_first_ready_draw_ms": 460.69999999925494,
+  "client_ready": true,
+  "samples_retained": 1090,
+  "sample_limit": 12000,
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 0,
+    "ignored": 0,
+    "idle": 0,
+    "cancelled": 0,
+    "committed_draw": 0
+  },
+  "pending_input": null,
+  "frame_ms": {
+    "n": 1088,
+    "mean": 33.257,
+    "p50": 33.3,
+    "p95": 34.7,
+    "p99": 35.313,
+    "max": 37.2
+  },
+  "render_submission_ms": {
+    "n": 1088,
+    "mean": 3.017,
+    "p50": 3,
+    "p95": 3.7,
+    "p99": 4.413,
+    "max": 7.5
+  },
+  "idle_input_to_committed_draw_ms": null,
+  "next_changed_draw_ms": null,
+  "backend_ms": null,
+  "long_task_ms": null,
+  "memory": {
+    "used_js_heap_bytes": 81109312,
+    "total_js_heap_bytes": 149368720,
+    "scope": "Chromium estimate, excludes GPU and server"
+  },
+  "notes": [
+    "Small local browser sample. Canvas submission is not compositor completion or physical display.",
+    "Idle latency requires strict visual/controller idle and its matching accepted move; cancellations, supersessions and unmoved/nonidle inputs are excluded.",
+    "Frame callbacks/render submission do not measure GPU time. No external inference or telemetry."
+  ],
+  "samples": [
+    {
+      "sequence": 1910,
+      "at_ms": 61353.6,
+      "kind": "trace_reset"
+    },
+    {
+      "sequence": 1911,
+      "at_ms": 61411.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1912,
+      "at_ms": 61444.8,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1913,
+      "at_ms": 61478.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1914,
+      "at_ms": 61511.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1915,
+      "at_ms": 61545.3,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1916,
+      "at_ms": 61578.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1917,
+      "at_ms": 61611.5,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1918,
+      "at_ms": 61645.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1919,
+      "at_ms": 61678.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1920,
+      "at_ms": 61711.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1921,
+      "at_ms": 61744.7,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1922,
+      "at_ms": 61778.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1923,
+      "at_ms": 61812.3,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1924,
+      "at_ms": 61845.7,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1925,
+      "at_ms": 61878.5,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1926,
+      "at_ms": 61911.3,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1927,
+      "at_ms": 61945.2,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1928,
+      "at_ms": 61978.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1929,
+      "at_ms": 62011,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1930,
+      "at_ms": 62045.3,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1931,
+      "at_ms": 62061.1,
+      "kind": "frame",
+      "interval_ms": 15.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1932,
+      "at_ms": 62077.8,
+      "kind": "frame",
+      "interval_ms": 16.6,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1933,
+      "at_ms": 62093.5,
+      "kind": "frame",
+      "interval_ms": 15.8,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 1934,
+      "at_ms": 62109.9,
+      "kind": "frame",
+      "interval_ms": 16.4,
+      "render_submission_ms": 1.5
+    },
+    {
+      "sequence": 1935,
+      "at_ms": 62126.4,
+      "kind": "frame",
+      "interval_ms": 16.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1936,
+      "at_ms": 62161.2,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1937,
+      "at_ms": 62194.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1938,
+      "at_ms": 62226.7,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 1.7
+    },
+    {
+      "sequence": 1939,
+      "at_ms": 62260.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 1940,
+      "at_ms": 62293.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 1941,
+      "at_ms": 62327.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1942,
+      "at_ms": 62360.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1943,
+      "at_ms": 62394.5,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1944,
+      "at_ms": 62428,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1945,
+      "at_ms": 62461.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1946,
+      "at_ms": 62494.9,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1947,
+      "at_ms": 62529.8,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 1948,
+      "at_ms": 62562.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1949,
+      "at_ms": 62595.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1950,
+      "at_ms": 62627.7,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1951,
+      "at_ms": 62661.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1952,
+      "at_ms": 62694.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 1953,
+      "at_ms": 62728.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1954,
+      "at_ms": 62760.9,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 1955,
+      "at_ms": 62794.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1956,
+      "at_ms": 62827.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1957,
+      "at_ms": 62861.5,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1958,
+      "at_ms": 62895.3,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1959,
+      "at_ms": 62928.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1960,
+      "at_ms": 62962.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1961,
+      "at_ms": 62994.5,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1962,
+      "at_ms": 63027.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 1963,
+      "at_ms": 63061.5,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1964,
+      "at_ms": 63095.7,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1965,
+      "at_ms": 63128.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 1966,
+      "at_ms": 63161.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1967,
+      "at_ms": 63195.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1968,
+      "at_ms": 63229.1,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1969,
+      "at_ms": 63263.5,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1970,
+      "at_ms": 63295.7,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1971,
+      "at_ms": 63331.3,
+      "kind": "frame",
+      "interval_ms": 35.6,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 1972,
+      "at_ms": 63362.9,
+      "kind": "frame",
+      "interval_ms": 31.6,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1973,
+      "at_ms": 63395.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 1974,
+      "at_ms": 63428.4,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 1975,
+      "at_ms": 63460.8,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 1976,
+      "at_ms": 63495.5,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 1977,
+      "at_ms": 63529.8,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 1978,
+      "at_ms": 63563.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 1979,
+      "at_ms": 63601,
+      "kind": "frame",
+      "interval_ms": 37.2,
+      "render_submission_ms": 7.5
+    },
+    {
+      "sequence": 1980,
+      "at_ms": 63630.2,
+      "kind": "frame",
+      "interval_ms": 29.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1981,
+      "at_ms": 63662.5,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 1982,
+      "at_ms": 63697.5,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 1983,
+      "at_ms": 63729.8,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1984,
+      "at_ms": 63764.4,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 4.2
+    },
+    {
+      "sequence": 1985,
+      "at_ms": 63797.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 1986,
+      "at_ms": 63831.5,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 4.8
+    },
+    {
+      "sequence": 1987,
+      "at_ms": 63863,
+      "kind": "frame",
+      "interval_ms": 31.4,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 1988,
+      "at_ms": 63897.5,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 1989,
+      "at_ms": 63931,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 1990,
+      "at_ms": 63964.4,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 4.4
+    },
+    {
+      "sequence": 1991,
+      "at_ms": 63998.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 1992,
+      "at_ms": 64028.7,
+      "kind": "frame",
+      "interval_ms": 30.5,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1993,
+      "at_ms": 64062.9,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1994,
+      "at_ms": 64096.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 1995,
+      "at_ms": 64131.2,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 4.4
+    },
+    {
+      "sequence": 1996,
+      "at_ms": 64161.9,
+      "kind": "frame",
+      "interval_ms": 30.7,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 1997,
+      "at_ms": 64196.6,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 1998,
+      "at_ms": 64229.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 1999,
+      "at_ms": 64262.2,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2000,
+      "at_ms": 64295.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2001,
+      "at_ms": 64330.1,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2002,
+      "at_ms": 64363.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2003,
+      "at_ms": 64398,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 5
+    },
+    {
+      "sequence": 2004,
+      "at_ms": 64430.4,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 2005,
+      "at_ms": 64463.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2006,
+      "at_ms": 64496.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2007,
+      "at_ms": 64529.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2008,
+      "at_ms": 64564,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2009,
+      "at_ms": 64595.8,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2010,
+      "at_ms": 64630.9,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 2011,
+      "at_ms": 64664.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 4.5
+    },
+    {
+      "sequence": 2012,
+      "at_ms": 64697.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2013,
+      "at_ms": 64730.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 2014,
+      "at_ms": 64763.2,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2015,
+      "at_ms": 64796.8,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2016,
+      "at_ms": 64830.9,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2017,
+      "at_ms": 64863,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2018,
+      "at_ms": 64898.1,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 4.6
+    },
+    {
+      "sequence": 2019,
+      "at_ms": 64931.8,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 4.9
+    },
+    {
+      "sequence": 2020,
+      "at_ms": 64963.5,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2021,
+      "at_ms": 64995.6,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2022,
+      "at_ms": 65029.9,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2023,
+      "at_ms": 65063.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2024,
+      "at_ms": 65096.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2025,
+      "at_ms": 65129.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2026,
+      "at_ms": 65162.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2027,
+      "at_ms": 65196.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2028,
+      "at_ms": 65229.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2029,
+      "at_ms": 65262.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2030,
+      "at_ms": 65295.7,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2031,
+      "at_ms": 65329.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2032,
+      "at_ms": 65363.6,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 4.4
+    },
+    {
+      "sequence": 2033,
+      "at_ms": 65394.4,
+      "kind": "frame",
+      "interval_ms": 30.8,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2034,
+      "at_ms": 65429,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2035,
+      "at_ms": 65463.6,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2036,
+      "at_ms": 65497.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2037,
+      "at_ms": 65529,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2038,
+      "at_ms": 65564,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2039,
+      "at_ms": 65598.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 4.7
+    },
+    {
+      "sequence": 2040,
+      "at_ms": 65630.9,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2041,
+      "at_ms": 65662.7,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2042,
+      "at_ms": 65696.5,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2043,
+      "at_ms": 65730.7,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 4.2
+    },
+    {
+      "sequence": 2044,
+      "at_ms": 65762.6,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2045,
+      "at_ms": 65795.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2046,
+      "at_ms": 65829.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2047,
+      "at_ms": 65863,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2048,
+      "at_ms": 65895.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2049,
+      "at_ms": 65929.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2050,
+      "at_ms": 65962.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2051,
+      "at_ms": 65996.6,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2052,
+      "at_ms": 66029.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2053,
+      "at_ms": 66063.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2054,
+      "at_ms": 66095.7,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2055,
+      "at_ms": 66129.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2056,
+      "at_ms": 66162.3,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2057,
+      "at_ms": 66195.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2058,
+      "at_ms": 66228.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2059,
+      "at_ms": 66262,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2060,
+      "at_ms": 66295.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2061,
+      "at_ms": 66328.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2062,
+      "at_ms": 66362.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2063,
+      "at_ms": 66395.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2064,
+      "at_ms": 66428.9,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2065,
+      "at_ms": 66462.8,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2066,
+      "at_ms": 66495.7,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2067,
+      "at_ms": 66529.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2068,
+      "at_ms": 66562.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2069,
+      "at_ms": 66595.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2070,
+      "at_ms": 66628.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2071,
+      "at_ms": 66662.9,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2072,
+      "at_ms": 66695.5,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2073,
+      "at_ms": 66729.4,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2074,
+      "at_ms": 66762.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2075,
+      "at_ms": 66795.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2076,
+      "at_ms": 66828.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2077,
+      "at_ms": 66862,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2078,
+      "at_ms": 66895.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2079,
+      "at_ms": 66929.6,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2080,
+      "at_ms": 66962.3,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2081,
+      "at_ms": 66995.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2082,
+      "at_ms": 67030.6,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2083,
+      "at_ms": 67063.7,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2084,
+      "at_ms": 67095.9,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2085,
+      "at_ms": 67128.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2086,
+      "at_ms": 67162.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2087,
+      "at_ms": 67195.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2088,
+      "at_ms": 67229,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2089,
+      "at_ms": 67262,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2090,
+      "at_ms": 67295.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2091,
+      "at_ms": 67329.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2092,
+      "at_ms": 67363.3,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2093,
+      "at_ms": 67395.4,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2094,
+      "at_ms": 67429.5,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2095,
+      "at_ms": 67463.7,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2096,
+      "at_ms": 67496.5,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2097,
+      "at_ms": 67528.6,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2098,
+      "at_ms": 67561.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2099,
+      "at_ms": 67595.9,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2100,
+      "at_ms": 67628.7,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2101,
+      "at_ms": 67661.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2102,
+      "at_ms": 67695.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2103,
+      "at_ms": 67730.4,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2104,
+      "at_ms": 67761.6,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2105,
+      "at_ms": 67793.1,
+      "kind": "frame",
+      "interval_ms": 31.5,
+      "render_submission_ms": 1.4
+    },
+    {
+      "sequence": 2106,
+      "at_ms": 67826.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 1.5
+    },
+    {
+      "sequence": 2107,
+      "at_ms": 67859.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.6
+    },
+    {
+      "sequence": 2108,
+      "at_ms": 67893.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 1.6
+    },
+    {
+      "sequence": 2109,
+      "at_ms": 67927.1,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2110,
+      "at_ms": 67960.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2111,
+      "at_ms": 67994.6,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2112,
+      "at_ms": 68028.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2113,
+      "at_ms": 68061.8,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2114,
+      "at_ms": 68095.5,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2115,
+      "at_ms": 68129.5,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2116,
+      "at_ms": 68162.3,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2117,
+      "at_ms": 68195.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2118,
+      "at_ms": 68228.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2119,
+      "at_ms": 68262.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2120,
+      "at_ms": 68295.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2121,
+      "at_ms": 68329,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2122,
+      "at_ms": 68362.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2123,
+      "at_ms": 68395.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2124,
+      "at_ms": 68427.1,
+      "kind": "frame",
+      "interval_ms": 31.6,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2125,
+      "at_ms": 68463.6,
+      "kind": "frame",
+      "interval_ms": 36.5,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2126,
+      "at_ms": 68498.1,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 4.7
+    },
+    {
+      "sequence": 2127,
+      "at_ms": 68531.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 4.7
+    },
+    {
+      "sequence": 2128,
+      "at_ms": 68562.8,
+      "kind": "frame",
+      "interval_ms": 31.4,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2129,
+      "at_ms": 68596.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2130,
+      "at_ms": 68628.9,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2131,
+      "at_ms": 68663.9,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2132,
+      "at_ms": 68697.7,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2133,
+      "at_ms": 68729.5,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2134,
+      "at_ms": 68762.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2135,
+      "at_ms": 68796.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2136,
+      "at_ms": 68829,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2137,
+      "at_ms": 68862.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2138,
+      "at_ms": 68895.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2139,
+      "at_ms": 68929.3,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2140,
+      "at_ms": 68962,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2141,
+      "at_ms": 68995.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2142,
+      "at_ms": 69028.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2143,
+      "at_ms": 69064.7,
+      "kind": "frame",
+      "interval_ms": 35.9,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 2144,
+      "at_ms": 69095.8,
+      "kind": "frame",
+      "interval_ms": 31.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2145,
+      "at_ms": 69128.6,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2146,
+      "at_ms": 69161.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2147,
+      "at_ms": 69196.8,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2148,
+      "at_ms": 69228.1,
+      "kind": "frame",
+      "interval_ms": 31.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2149,
+      "at_ms": 69262.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2150,
+      "at_ms": 69295.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2151,
+      "at_ms": 69328.8,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2152,
+      "at_ms": 69363.3,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2153,
+      "at_ms": 69395.7,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2154,
+      "at_ms": 69428.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2155,
+      "at_ms": 69462.5,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2156,
+      "at_ms": 69495.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2157,
+      "at_ms": 69528.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2158,
+      "at_ms": 69561.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2159,
+      "at_ms": 69595.9,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2160,
+      "at_ms": 69628.6,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2161,
+      "at_ms": 69662,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2162,
+      "at_ms": 69695.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2163,
+      "at_ms": 69730.7,
+      "kind": "frame",
+      "interval_ms": 35.5,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2164,
+      "at_ms": 69762.5,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2165,
+      "at_ms": 69795.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2166,
+      "at_ms": 69828.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2167,
+      "at_ms": 69862.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2168,
+      "at_ms": 69895.7,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2169,
+      "at_ms": 69929.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2170,
+      "at_ms": 69963.3,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2171,
+      "at_ms": 69996.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2172,
+      "at_ms": 70029.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2173,
+      "at_ms": 70062.2,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2174,
+      "at_ms": 70095.8,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2175,
+      "at_ms": 70131.3,
+      "kind": "frame",
+      "interval_ms": 35.5,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2176,
+      "at_ms": 70162.3,
+      "kind": "frame",
+      "interval_ms": 31,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2177,
+      "at_ms": 70195.2,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2178,
+      "at_ms": 70228.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2179,
+      "at_ms": 70261.7,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2180,
+      "at_ms": 70294.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2181,
+      "at_ms": 70328.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2182,
+      "at_ms": 70362,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2183,
+      "at_ms": 70395.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2184,
+      "at_ms": 70429.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2185,
+      "at_ms": 70462.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2186,
+      "at_ms": 70495.2,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2187,
+      "at_ms": 70529.7,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2188,
+      "at_ms": 70561.1,
+      "kind": "frame",
+      "interval_ms": 31.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2189,
+      "at_ms": 70595.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2190,
+      "at_ms": 70628.9,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2191,
+      "at_ms": 70662.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2192,
+      "at_ms": 70695.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2193,
+      "at_ms": 70728.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2194,
+      "at_ms": 70761.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2195,
+      "at_ms": 70797.2,
+      "kind": "frame",
+      "interval_ms": 35.4,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2196,
+      "at_ms": 70828.9,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2197,
+      "at_ms": 70862.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2198,
+      "at_ms": 70895.2,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2199,
+      "at_ms": 70930.4,
+      "kind": "frame",
+      "interval_ms": 35.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2200,
+      "at_ms": 70962.4,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2201,
+      "at_ms": 70996.1,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2202,
+      "at_ms": 71029.9,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2203,
+      "at_ms": 71063.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2204,
+      "at_ms": 71096.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2205,
+      "at_ms": 71128.8,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2206,
+      "at_ms": 71162.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2207,
+      "at_ms": 71195.8,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2208,
+      "at_ms": 71229.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2209,
+      "at_ms": 71261.9,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2210,
+      "at_ms": 71296.8,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2211,
+      "at_ms": 71329.4,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2212,
+      "at_ms": 71362.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2213,
+      "at_ms": 71395.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2214,
+      "at_ms": 71428.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2215,
+      "at_ms": 71462.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2216,
+      "at_ms": 71497.3,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2217,
+      "at_ms": 71529.1,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2218,
+      "at_ms": 71562.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2219,
+      "at_ms": 71597.4,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2220,
+      "at_ms": 71629.4,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2221,
+      "at_ms": 71662,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2222,
+      "at_ms": 71695.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2223,
+      "at_ms": 71729,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2224,
+      "at_ms": 71762,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2225,
+      "at_ms": 71796.7,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2226,
+      "at_ms": 71829.2,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2227,
+      "at_ms": 71863.1,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2228,
+      "at_ms": 71895.4,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2229,
+      "at_ms": 71928.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2230,
+      "at_ms": 71961.9,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2231,
+      "at_ms": 71996.2,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2232,
+      "at_ms": 72028.6,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2233,
+      "at_ms": 72062.2,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2234,
+      "at_ms": 72095.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2235,
+      "at_ms": 72129.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2236,
+      "at_ms": 72162.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2237,
+      "at_ms": 72195.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2238,
+      "at_ms": 72227.7,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2239,
+      "at_ms": 72261.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2240,
+      "at_ms": 72295,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2241,
+      "at_ms": 72329.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2242,
+      "at_ms": 72362.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2243,
+      "at_ms": 72395.9,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2244,
+      "at_ms": 72429.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2245,
+      "at_ms": 72461.7,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2246,
+      "at_ms": 72495.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2247,
+      "at_ms": 72529,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2248,
+      "at_ms": 72562.8,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2249,
+      "at_ms": 72595.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2250,
+      "at_ms": 72628.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2251,
+      "at_ms": 72662.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2252,
+      "at_ms": 72694.6,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2253,
+      "at_ms": 72727.2,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2254,
+      "at_ms": 72761.3,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2255,
+      "at_ms": 72795,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2256,
+      "at_ms": 72828.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2257,
+      "at_ms": 72861.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2258,
+      "at_ms": 72895,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2259,
+      "at_ms": 72928.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2260,
+      "at_ms": 72962.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2261,
+      "at_ms": 72995.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2262,
+      "at_ms": 73030.7,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2263,
+      "at_ms": 73063.1,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2264,
+      "at_ms": 73096.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2265,
+      "at_ms": 73128.6,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2266,
+      "at_ms": 73161.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2267,
+      "at_ms": 73195.9,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2268,
+      "at_ms": 73228.5,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2269,
+      "at_ms": 73262.7,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2270,
+      "at_ms": 73295.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2271,
+      "at_ms": 73329,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2272,
+      "at_ms": 73362.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2273,
+      "at_ms": 73395.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2274,
+      "at_ms": 73429.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2275,
+      "at_ms": 73462.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2276,
+      "at_ms": 73496.4,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2277,
+      "at_ms": 73528.7,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2278,
+      "at_ms": 73561.2,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2279,
+      "at_ms": 73593.6,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2280,
+      "at_ms": 73630.6,
+      "kind": "frame",
+      "interval_ms": 37,
+      "render_submission_ms": 4.1
+    },
+    {
+      "sequence": 2281,
+      "at_ms": 73662.8,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2282,
+      "at_ms": 73695.4,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2283,
+      "at_ms": 73729.5,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2284,
+      "at_ms": 73762.4,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2285,
+      "at_ms": 73796,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2286,
+      "at_ms": 73828.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2287,
+      "at_ms": 73862.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2288,
+      "at_ms": 73894.6,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2289,
+      "at_ms": 73927.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2290,
+      "at_ms": 73961.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2291,
+      "at_ms": 73995.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2292,
+      "at_ms": 74028.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2293,
+      "at_ms": 74062.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2294,
+      "at_ms": 74095.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2295,
+      "at_ms": 74130.9,
+      "kind": "frame",
+      "interval_ms": 35.7,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2296,
+      "at_ms": 74162.8,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2297,
+      "at_ms": 74195.2,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2298,
+      "at_ms": 74228.9,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2299,
+      "at_ms": 74262.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2300,
+      "at_ms": 74295.7,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2301,
+      "at_ms": 74329.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2302,
+      "at_ms": 74361.7,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2303,
+      "at_ms": 74395.8,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2304,
+      "at_ms": 74428.3,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2305,
+      "at_ms": 74462.6,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2306,
+      "at_ms": 74495.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2307,
+      "at_ms": 74529.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2308,
+      "at_ms": 74562.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2309,
+      "at_ms": 74595.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2310,
+      "at_ms": 74629.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2311,
+      "at_ms": 74662.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2312,
+      "at_ms": 74695.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2313,
+      "at_ms": 74728.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2314,
+      "at_ms": 74762.2,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2315,
+      "at_ms": 74796.3,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2316,
+      "at_ms": 74829.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2317,
+      "at_ms": 74862.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2318,
+      "at_ms": 74896,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2319,
+      "at_ms": 74929,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2320,
+      "at_ms": 74962.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2321,
+      "at_ms": 74995.1,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2322,
+      "at_ms": 75029.5,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2323,
+      "at_ms": 75064.6,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2324,
+      "at_ms": 75096.1,
+      "kind": "frame",
+      "interval_ms": 31.5,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2325,
+      "at_ms": 75128.8,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2326,
+      "at_ms": 75162,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2327,
+      "at_ms": 75195.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2328,
+      "at_ms": 75229,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2329,
+      "at_ms": 75262.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2330,
+      "at_ms": 75295.3,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2331,
+      "at_ms": 75329.1,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2332,
+      "at_ms": 75362.3,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2333,
+      "at_ms": 75395.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2334,
+      "at_ms": 75429.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2335,
+      "at_ms": 75462.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2336,
+      "at_ms": 75496.3,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2337,
+      "at_ms": 75528.8,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2338,
+      "at_ms": 75562.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2339,
+      "at_ms": 75595.8,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2340,
+      "at_ms": 75629.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2341,
+      "at_ms": 75662,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2342,
+      "at_ms": 75695.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2343,
+      "at_ms": 75729.6,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2344,
+      "at_ms": 75763.8,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2345,
+      "at_ms": 75795.7,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2346,
+      "at_ms": 75829.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2347,
+      "at_ms": 75862.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2348,
+      "at_ms": 75895.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2349,
+      "at_ms": 75928.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2350,
+      "at_ms": 75961.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2351,
+      "at_ms": 75996.5,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2352,
+      "at_ms": 76028.8,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2353,
+      "at_ms": 76062.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2354,
+      "at_ms": 76095.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2355,
+      "at_ms": 76129.4,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2356,
+      "at_ms": 76162.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2357,
+      "at_ms": 76194.8,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2358,
+      "at_ms": 76228.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2359,
+      "at_ms": 76262.4,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2360,
+      "at_ms": 76295.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2361,
+      "at_ms": 76328.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2362,
+      "at_ms": 76361.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2363,
+      "at_ms": 76396.3,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2364,
+      "at_ms": 76428.9,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2365,
+      "at_ms": 76462.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2366,
+      "at_ms": 76495.3,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2367,
+      "at_ms": 76529.5,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2368,
+      "at_ms": 76562,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2369,
+      "at_ms": 76595.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2370,
+      "at_ms": 76628.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2371,
+      "at_ms": 76662.2,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2372,
+      "at_ms": 76695.9,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2373,
+      "at_ms": 76731.1,
+      "kind": "frame",
+      "interval_ms": 35.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2374,
+      "at_ms": 76762.3,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2375,
+      "at_ms": 76795.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2376,
+      "at_ms": 76829.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2377,
+      "at_ms": 76861.9,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2378,
+      "at_ms": 76896,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2379,
+      "at_ms": 76929.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2380,
+      "at_ms": 76962.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2381,
+      "at_ms": 76995.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2382,
+      "at_ms": 77028.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2383,
+      "at_ms": 77062.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2384,
+      "at_ms": 77095.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2385,
+      "at_ms": 77128.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2386,
+      "at_ms": 77161.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2387,
+      "at_ms": 77196,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2388,
+      "at_ms": 77229.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2389,
+      "at_ms": 77262.1,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2390,
+      "at_ms": 77295.9,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2391,
+      "at_ms": 77330.3,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2392,
+      "at_ms": 77362.5,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2393,
+      "at_ms": 77395.9,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2394,
+      "at_ms": 77430.4,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2395,
+      "at_ms": 77462.7,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2396,
+      "at_ms": 77495.5,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2397,
+      "at_ms": 77528.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2398,
+      "at_ms": 77562,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2399,
+      "at_ms": 77595.6,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2400,
+      "at_ms": 77628.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2401,
+      "at_ms": 77661.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2402,
+      "at_ms": 77694.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2403,
+      "at_ms": 77729.1,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2404,
+      "at_ms": 77760.9,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2405,
+      "at_ms": 77792.9,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 1.3
+    },
+    {
+      "sequence": 2406,
+      "at_ms": 77826.5,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 1.7
+    },
+    {
+      "sequence": 2407,
+      "at_ms": 77860,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2408,
+      "at_ms": 77893.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2409,
+      "at_ms": 77927.5,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2410,
+      "at_ms": 77959.8,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2411,
+      "at_ms": 77994.7,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2412,
+      "at_ms": 78027.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2413,
+      "at_ms": 78061.5,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2414,
+      "at_ms": 78095,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2415,
+      "at_ms": 78129.1,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2416,
+      "at_ms": 78162.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2417,
+      "at_ms": 78195.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2418,
+      "at_ms": 78228,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2419,
+      "at_ms": 78262,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2420,
+      "at_ms": 78295.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2421,
+      "at_ms": 78328.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2422,
+      "at_ms": 78362.1,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2423,
+      "at_ms": 78395.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2424,
+      "at_ms": 78428.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2425,
+      "at_ms": 78463.7,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2426,
+      "at_ms": 78495.4,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2427,
+      "at_ms": 78529.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2428,
+      "at_ms": 78562.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2429,
+      "at_ms": 78595.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2430,
+      "at_ms": 78628.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2431,
+      "at_ms": 78662.7,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2432,
+      "at_ms": 78695,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2433,
+      "at_ms": 78728.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2434,
+      "at_ms": 78761.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2435,
+      "at_ms": 78796,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2436,
+      "at_ms": 78829.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2437,
+      "at_ms": 78862.1,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2438,
+      "at_ms": 78895.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2439,
+      "at_ms": 78929.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2440,
+      "at_ms": 78962.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2441,
+      "at_ms": 78995.4,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2442,
+      "at_ms": 79028.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2443,
+      "at_ms": 79062.8,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2444,
+      "at_ms": 79097,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2445,
+      "at_ms": 79129,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2446,
+      "at_ms": 79162.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2447,
+      "at_ms": 79197,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2448,
+      "at_ms": 79229.3,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2449,
+      "at_ms": 79262.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2450,
+      "at_ms": 79295.3,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2451,
+      "at_ms": 79329.6,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2452,
+      "at_ms": 79362.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2453,
+      "at_ms": 79395.4,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2454,
+      "at_ms": 79428.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2455,
+      "at_ms": 79462.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2456,
+      "at_ms": 79495.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2457,
+      "at_ms": 79528.7,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2458,
+      "at_ms": 79562.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2459,
+      "at_ms": 79596.1,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2460,
+      "at_ms": 79629,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2461,
+      "at_ms": 79663,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2462,
+      "at_ms": 79695.4,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2463,
+      "at_ms": 79728.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2464,
+      "at_ms": 79761.6,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2465,
+      "at_ms": 79795.1,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2466,
+      "at_ms": 79828.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2467,
+      "at_ms": 79862,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2468,
+      "at_ms": 79896.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2469,
+      "at_ms": 79929.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2470,
+      "at_ms": 79963.6,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2471,
+      "at_ms": 79996.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 2472,
+      "at_ms": 80029,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2473,
+      "at_ms": 80062.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2474,
+      "at_ms": 80096,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2475,
+      "at_ms": 80130.8,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2476,
+      "at_ms": 80162.5,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2477,
+      "at_ms": 80194.9,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2478,
+      "at_ms": 80228.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2479,
+      "at_ms": 80262.3,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2480,
+      "at_ms": 80295.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2481,
+      "at_ms": 80328.6,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2482,
+      "at_ms": 80362,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2483,
+      "at_ms": 80395.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2484,
+      "at_ms": 80428.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2485,
+      "at_ms": 80462.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2486,
+      "at_ms": 80495.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2487,
+      "at_ms": 80529,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2488,
+      "at_ms": 80562.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2489,
+      "at_ms": 80595.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2490,
+      "at_ms": 80629,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2491,
+      "at_ms": 80662.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2492,
+      "at_ms": 80695.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2493,
+      "at_ms": 80728.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2494,
+      "at_ms": 80762.9,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2495,
+      "at_ms": 80795.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2496,
+      "at_ms": 80829.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2497,
+      "at_ms": 80861.9,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2498,
+      "at_ms": 80895.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2499,
+      "at_ms": 80929.2,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2500,
+      "at_ms": 80962.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2501,
+      "at_ms": 80995.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2502,
+      "at_ms": 81028.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2503,
+      "at_ms": 81062.7,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2504,
+      "at_ms": 81095.4,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2505,
+      "at_ms": 81128.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2506,
+      "at_ms": 81162.2,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2507,
+      "at_ms": 81196.3,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2508,
+      "at_ms": 81230.5,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2509,
+      "at_ms": 81262.7,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2510,
+      "at_ms": 81295.7,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2511,
+      "at_ms": 81329.5,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2512,
+      "at_ms": 81362.5,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2513,
+      "at_ms": 81396,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2514,
+      "at_ms": 81429,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2515,
+      "at_ms": 81462.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2516,
+      "at_ms": 81496,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2517,
+      "at_ms": 81528.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2518,
+      "at_ms": 81561.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2519,
+      "at_ms": 81595.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2520,
+      "at_ms": 81628.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2521,
+      "at_ms": 81662.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2522,
+      "at_ms": 81696.3,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2523,
+      "at_ms": 81729.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2524,
+      "at_ms": 81762.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2525,
+      "at_ms": 81795.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2526,
+      "at_ms": 81828.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2527,
+      "at_ms": 81863,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2528,
+      "at_ms": 81895.7,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2529,
+      "at_ms": 81928.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2530,
+      "at_ms": 81962.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2531,
+      "at_ms": 81996.3,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 2532,
+      "at_ms": 82029,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2533,
+      "at_ms": 82062.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2534,
+      "at_ms": 82094.6,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2535,
+      "at_ms": 82129.9,
+      "kind": "frame",
+      "interval_ms": 35.2,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2536,
+      "at_ms": 82161.7,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2537,
+      "at_ms": 82193.9,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2538,
+      "at_ms": 82227.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2539,
+      "at_ms": 82261.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2540,
+      "at_ms": 82294.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2541,
+      "at_ms": 82328.3,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2542,
+      "at_ms": 82361.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2543,
+      "at_ms": 82395.8,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2544,
+      "at_ms": 82428.4,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2545,
+      "at_ms": 82462.2,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2546,
+      "at_ms": 82495.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2547,
+      "at_ms": 82529.1,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2548,
+      "at_ms": 82561.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2549,
+      "at_ms": 82595.5,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2550,
+      "at_ms": 82628.2,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2551,
+      "at_ms": 82661.9,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2552,
+      "at_ms": 82695.5,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2553,
+      "at_ms": 82728.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2554,
+      "at_ms": 82761.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2555,
+      "at_ms": 82797.4,
+      "kind": "frame",
+      "interval_ms": 35.6,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2556,
+      "at_ms": 82829.4,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2557,
+      "at_ms": 82862.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2558,
+      "at_ms": 82895.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2559,
+      "at_ms": 82929.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2560,
+      "at_ms": 82962.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2561,
+      "at_ms": 82994.3,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2562,
+      "at_ms": 83027.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2563,
+      "at_ms": 83061.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2564,
+      "at_ms": 83095.1,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2565,
+      "at_ms": 83128.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2566,
+      "at_ms": 83161.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2567,
+      "at_ms": 83196.6,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2568,
+      "at_ms": 83229.4,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2569,
+      "at_ms": 83262.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2570,
+      "at_ms": 83295.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2571,
+      "at_ms": 83329.3,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2572,
+      "at_ms": 83361.2,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2573,
+      "at_ms": 83394.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.6
+    },
+    {
+      "sequence": 2574,
+      "at_ms": 83429.8,
+      "kind": "frame",
+      "interval_ms": 35.2,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2575,
+      "at_ms": 83464.5,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 4.2
+    },
+    {
+      "sequence": 2576,
+      "at_ms": 83494.7,
+      "kind": "frame",
+      "interval_ms": 30.2,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2577,
+      "at_ms": 83528.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2578,
+      "at_ms": 83560.9,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2579,
+      "at_ms": 83594.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2580,
+      "at_ms": 83627.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2581,
+      "at_ms": 83661.5,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2582,
+      "at_ms": 83696.5,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2583,
+      "at_ms": 83730.3,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2584,
+      "at_ms": 83762.3,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2585,
+      "at_ms": 83795,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2586,
+      "at_ms": 83828.6,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2587,
+      "at_ms": 83862.2,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2588,
+      "at_ms": 83894.4,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2589,
+      "at_ms": 83927.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2590,
+      "at_ms": 83961.5,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2591,
+      "at_ms": 83995.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2592,
+      "at_ms": 84028.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2593,
+      "at_ms": 84061.7,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2594,
+      "at_ms": 84094.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2595,
+      "at_ms": 84129.6,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2596,
+      "at_ms": 84162,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2597,
+      "at_ms": 84195,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2598,
+      "at_ms": 84228.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2599,
+      "at_ms": 84262.3,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2600,
+      "at_ms": 84295.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2601,
+      "at_ms": 84329.1,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2602,
+      "at_ms": 84361.8,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2603,
+      "at_ms": 84395.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2604,
+      "at_ms": 84429.3,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2605,
+      "at_ms": 84461.8,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2606,
+      "at_ms": 84496,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2607,
+      "at_ms": 84529.4,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2608,
+      "at_ms": 84563,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2609,
+      "at_ms": 84595.3,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2610,
+      "at_ms": 84628.8,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2611,
+      "at_ms": 84662.2,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2612,
+      "at_ms": 84695.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2613,
+      "at_ms": 84729.2,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2614,
+      "at_ms": 84763.6,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2615,
+      "at_ms": 84796.2,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2616,
+      "at_ms": 84828.8,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2617,
+      "at_ms": 84862.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2618,
+      "at_ms": 84895.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2619,
+      "at_ms": 84928.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2620,
+      "at_ms": 84961.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2621,
+      "at_ms": 84994.3,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2622,
+      "at_ms": 85027.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2623,
+      "at_ms": 85061.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2624,
+      "at_ms": 85095,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2625,
+      "at_ms": 85128.2,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2626,
+      "at_ms": 85162.3,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2627,
+      "at_ms": 85195.3,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2628,
+      "at_ms": 85228.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2629,
+      "at_ms": 85261.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2630,
+      "at_ms": 85295.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2631,
+      "at_ms": 85329.1,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2632,
+      "at_ms": 85362.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2633,
+      "at_ms": 85395.7,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2634,
+      "at_ms": 85429,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2635,
+      "at_ms": 85462.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2636,
+      "at_ms": 85495.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2637,
+      "at_ms": 85528.7,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2638,
+      "at_ms": 85562.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2639,
+      "at_ms": 85597.5,
+      "kind": "frame",
+      "interval_ms": 35.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2640,
+      "at_ms": 85629.6,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2641,
+      "at_ms": 85662.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2642,
+      "at_ms": 85695.5,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2643,
+      "at_ms": 85729.4,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2644,
+      "at_ms": 85762.1,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2645,
+      "at_ms": 85795.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2646,
+      "at_ms": 85828.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2647,
+      "at_ms": 85862.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2648,
+      "at_ms": 85896.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2649,
+      "at_ms": 85928.9,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2650,
+      "at_ms": 85962.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2651,
+      "at_ms": 85996.2,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2652,
+      "at_ms": 86029.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2653,
+      "at_ms": 86062.2,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2654,
+      "at_ms": 86095.6,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2655,
+      "at_ms": 86129.7,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2656,
+      "at_ms": 86162.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2657,
+      "at_ms": 86195.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2658,
+      "at_ms": 86228.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2659,
+      "at_ms": 86262.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2660,
+      "at_ms": 86296.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2661,
+      "at_ms": 86328.8,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2662,
+      "at_ms": 86362.2,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2663,
+      "at_ms": 86396.7,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2664,
+      "at_ms": 86429,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2665,
+      "at_ms": 86463,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2666,
+      "at_ms": 86495.7,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2667,
+      "at_ms": 86529.7,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2668,
+      "at_ms": 86562.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2669,
+      "at_ms": 86595.4,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2670,
+      "at_ms": 86629.1,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2671,
+      "at_ms": 86662.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2672,
+      "at_ms": 86695.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2673,
+      "at_ms": 86728.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2674,
+      "at_ms": 86761.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2675,
+      "at_ms": 86796.2,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2676,
+      "at_ms": 86829.5,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2677,
+      "at_ms": 86861.6,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2678,
+      "at_ms": 86895.7,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2679,
+      "at_ms": 86930.3,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2680,
+      "at_ms": 86963,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2681,
+      "at_ms": 86995.4,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2682,
+      "at_ms": 87028.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2683,
+      "at_ms": 87062.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2684,
+      "at_ms": 87095.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2685,
+      "at_ms": 87129.2,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2686,
+      "at_ms": 87161.8,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2687,
+      "at_ms": 87195.7,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2688,
+      "at_ms": 87228.5,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2689,
+      "at_ms": 87261.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2690,
+      "at_ms": 87295.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2691,
+      "at_ms": 87329.5,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2692,
+      "at_ms": 87363.6,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2693,
+      "at_ms": 87396,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2694,
+      "at_ms": 87429,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2695,
+      "at_ms": 87463.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2696,
+      "at_ms": 87496.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2697,
+      "at_ms": 87528.9,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2698,
+      "at_ms": 87562.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2699,
+      "at_ms": 87596.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2700,
+      "at_ms": 87628.7,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2701,
+      "at_ms": 87662.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2702,
+      "at_ms": 87696,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2703,
+      "at_ms": 87729.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2704,
+      "at_ms": 87762.1,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2705,
+      "at_ms": 87795.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2706,
+      "at_ms": 87828.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2707,
+      "at_ms": 87863.4,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2708,
+      "at_ms": 87895.8,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2709,
+      "at_ms": 87929,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2710,
+      "at_ms": 87962,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2711,
+      "at_ms": 87996.3,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2712,
+      "at_ms": 88028.8,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2713,
+      "at_ms": 88061.9,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2714,
+      "at_ms": 88095.2,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2715,
+      "at_ms": 88129.8,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2716,
+      "at_ms": 88162.6,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2717,
+      "at_ms": 88195.1,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2718,
+      "at_ms": 88228.4,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2719,
+      "at_ms": 88261.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2720,
+      "at_ms": 88295.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2721,
+      "at_ms": 88328.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2722,
+      "at_ms": 88361.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2723,
+      "at_ms": 88395.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2724,
+      "at_ms": 88428.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2725,
+      "at_ms": 88461.7,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2726,
+      "at_ms": 88495.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2727,
+      "at_ms": 88529.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2728,
+      "at_ms": 88564.2,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2729,
+      "at_ms": 88595.7,
+      "kind": "frame",
+      "interval_ms": 31.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2730,
+      "at_ms": 88628.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2731,
+      "at_ms": 88662.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2732,
+      "at_ms": 88695.4,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2733,
+      "at_ms": 88728.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2734,
+      "at_ms": 88762,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2735,
+      "at_ms": 88795.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2736,
+      "at_ms": 88827.9,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2737,
+      "at_ms": 88860.5,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2738,
+      "at_ms": 88894,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2739,
+      "at_ms": 88927.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2740,
+      "at_ms": 88961.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2741,
+      "at_ms": 88995.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2742,
+      "at_ms": 89028.5,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2743,
+      "at_ms": 89062.2,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2744,
+      "at_ms": 89095.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2745,
+      "at_ms": 89128.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2746,
+      "at_ms": 89162,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2747,
+      "at_ms": 89195.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2748,
+      "at_ms": 89228.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2749,
+      "at_ms": 89262.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2750,
+      "at_ms": 89295.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2751,
+      "at_ms": 89329,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2752,
+      "at_ms": 89362.1,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2753,
+      "at_ms": 89395.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2754,
+      "at_ms": 89428.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2755,
+      "at_ms": 89462,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2756,
+      "at_ms": 89495.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2757,
+      "at_ms": 89528.4,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2758,
+      "at_ms": 89561.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2759,
+      "at_ms": 89596.7,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.9
+    },
+    {
+      "sequence": 2760,
+      "at_ms": 89629,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2761,
+      "at_ms": 89662,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2762,
+      "at_ms": 89693.9,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2763,
+      "at_ms": 89726.6,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2764,
+      "at_ms": 89760.2,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 1.7
+    },
+    {
+      "sequence": 2765,
+      "at_ms": 89793.2,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 1.5
+    },
+    {
+      "sequence": 2766,
+      "at_ms": 89826.7,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.7
+    },
+    {
+      "sequence": 2767,
+      "at_ms": 89860.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2768,
+      "at_ms": 89893.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2769,
+      "at_ms": 89926.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2770,
+      "at_ms": 89960.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2771,
+      "at_ms": 89993.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2772,
+      "at_ms": 90026.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 1.5
+    },
+    {
+      "sequence": 2773,
+      "at_ms": 90060.1,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2774,
+      "at_ms": 90093.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2775,
+      "at_ms": 90127.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2776,
+      "at_ms": 90160.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2777,
+      "at_ms": 90194.3,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2778,
+      "at_ms": 90227.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2779,
+      "at_ms": 90262,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2780,
+      "at_ms": 90295.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2781,
+      "at_ms": 90328.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2782,
+      "at_ms": 90362.1,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2783,
+      "at_ms": 90396.2,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2784,
+      "at_ms": 90429.5,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2785,
+      "at_ms": 90461.2,
+      "kind": "frame",
+      "interval_ms": 31.7,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2786,
+      "at_ms": 90494,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2787,
+      "at_ms": 90527.8,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2788,
+      "at_ms": 90561.1,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2789,
+      "at_ms": 90594.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2790,
+      "at_ms": 90628.3,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2791,
+      "at_ms": 90661.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2792,
+      "at_ms": 90695.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2793,
+      "at_ms": 90728.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2794,
+      "at_ms": 90763,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2795,
+      "at_ms": 90796.5,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2796,
+      "at_ms": 90829.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2797,
+      "at_ms": 90863.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2798,
+      "at_ms": 90895.8,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2799,
+      "at_ms": 90929.5,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2800,
+      "at_ms": 90962,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2801,
+      "at_ms": 90995.4,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2802,
+      "at_ms": 91029.1,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2803,
+      "at_ms": 91063.6,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2804,
+      "at_ms": 91095.9,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2805,
+      "at_ms": 91128.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2806,
+      "at_ms": 91162.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2807,
+      "at_ms": 91195.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2808,
+      "at_ms": 91228.7,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2809,
+      "at_ms": 91262.4,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2810,
+      "at_ms": 91296,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2811,
+      "at_ms": 91329.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2812,
+      "at_ms": 91362.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2813,
+      "at_ms": 91395.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2814,
+      "at_ms": 91429,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2815,
+      "at_ms": 91462.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2816,
+      "at_ms": 91495.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2817,
+      "at_ms": 91528.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2818,
+      "at_ms": 91561.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2819,
+      "at_ms": 91595.9,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2820,
+      "at_ms": 91629.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2821,
+      "at_ms": 91662.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2822,
+      "at_ms": 91696.1,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2823,
+      "at_ms": 91729.5,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2824,
+      "at_ms": 91762.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2825,
+      "at_ms": 91795.7,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2826,
+      "at_ms": 91829.2,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2827,
+      "at_ms": 91862.5,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2828,
+      "at_ms": 91896.3,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2829,
+      "at_ms": 91929.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2830,
+      "at_ms": 91962.6,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2831,
+      "at_ms": 91996.4,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2832,
+      "at_ms": 92028.9,
+      "kind": "frame",
+      "interval_ms": 32.5,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2833,
+      "at_ms": 92062.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2834,
+      "at_ms": 92096.7,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2835,
+      "at_ms": 92130,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2836,
+      "at_ms": 92162.7,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2837,
+      "at_ms": 92195.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2838,
+      "at_ms": 92229,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2839,
+      "at_ms": 92262.3,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2840,
+      "at_ms": 92295.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2841,
+      "at_ms": 92328.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2842,
+      "at_ms": 92362,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2843,
+      "at_ms": 92396.1,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2844,
+      "at_ms": 92428.9,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2845,
+      "at_ms": 92461.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2846,
+      "at_ms": 92495.5,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2847,
+      "at_ms": 92530.6,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2848,
+      "at_ms": 92563.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2849,
+      "at_ms": 92595.5,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2850,
+      "at_ms": 92628.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2851,
+      "at_ms": 92663.2,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2852,
+      "at_ms": 92695.3,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2853,
+      "at_ms": 92728.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2854,
+      "at_ms": 92762.3,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2855,
+      "at_ms": 92795.6,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2856,
+      "at_ms": 92829.6,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2857,
+      "at_ms": 92861.9,
+      "kind": "frame",
+      "interval_ms": 32.4,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2858,
+      "at_ms": 92895.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2859,
+      "at_ms": 92928.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2860,
+      "at_ms": 92962.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2861,
+      "at_ms": 92995.1,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2862,
+      "at_ms": 93029,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2863,
+      "at_ms": 93063.9,
+      "kind": "frame",
+      "interval_ms": 34.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2864,
+      "at_ms": 93096.2,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2865,
+      "at_ms": 93128.4,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2866,
+      "at_ms": 93162.5,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2867,
+      "at_ms": 93195.7,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2868,
+      "at_ms": 93229.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2869,
+      "at_ms": 93261.9,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2870,
+      "at_ms": 93296,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2871,
+      "at_ms": 93329.7,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2872,
+      "at_ms": 93362.6,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2873,
+      "at_ms": 93394.7,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2874,
+      "at_ms": 93429.3,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2875,
+      "at_ms": 93464.5,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2876,
+      "at_ms": 93495.5,
+      "kind": "frame",
+      "interval_ms": 31.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2877,
+      "at_ms": 93528.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2878,
+      "at_ms": 93561.9,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2879,
+      "at_ms": 93596.5,
+      "kind": "frame",
+      "interval_ms": 34.6,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2880,
+      "at_ms": 93628.8,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2881,
+      "at_ms": 93662.7,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2882,
+      "at_ms": 93694.8,
+      "kind": "frame",
+      "interval_ms": 32.1,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2883,
+      "at_ms": 93730.1,
+      "kind": "frame",
+      "interval_ms": 35.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2884,
+      "at_ms": 93761.7,
+      "kind": "frame",
+      "interval_ms": 31.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2885,
+      "at_ms": 93796.8,
+      "kind": "frame",
+      "interval_ms": 35.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2886,
+      "at_ms": 93829.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2887,
+      "at_ms": 93862.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2888,
+      "at_ms": 93895.3,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2889,
+      "at_ms": 93928.5,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2890,
+      "at_ms": 93961.9,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2891,
+      "at_ms": 93996,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2892,
+      "at_ms": 94030.9,
+      "kind": "frame",
+      "interval_ms": 34.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2893,
+      "at_ms": 94062.8,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2894,
+      "at_ms": 94095.5,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2895,
+      "at_ms": 94129.8,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2896,
+      "at_ms": 94162,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2897,
+      "at_ms": 94194.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2898,
+      "at_ms": 94227.7,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.6
+    },
+    {
+      "sequence": 2899,
+      "at_ms": 94261.7,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2900,
+      "at_ms": 94294.9,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2901,
+      "at_ms": 94328.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2902,
+      "at_ms": 94361.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2903,
+      "at_ms": 94395.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2904,
+      "at_ms": 94428.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2905,
+      "at_ms": 94461.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2906,
+      "at_ms": 94495.6,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2907,
+      "at_ms": 94528.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2908,
+      "at_ms": 94563,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2909,
+      "at_ms": 94597.7,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 3.4
+    },
+    {
+      "sequence": 2910,
+      "at_ms": 94629,
+      "kind": "frame",
+      "interval_ms": 31.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2911,
+      "at_ms": 94662.6,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2912,
+      "at_ms": 94695.8,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2913,
+      "at_ms": 94728.5,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2914,
+      "at_ms": 94761.5,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2915,
+      "at_ms": 94795.7,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2916,
+      "at_ms": 94828.8,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2917,
+      "at_ms": 94861.9,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2918,
+      "at_ms": 94895.3,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2919,
+      "at_ms": 94929.7,
+      "kind": "frame",
+      "interval_ms": 34.4,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2920,
+      "at_ms": 94961.9,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2921,
+      "at_ms": 94993.9,
+      "kind": "frame",
+      "interval_ms": 32,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2922,
+      "at_ms": 95026.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2923,
+      "at_ms": 95060.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2924,
+      "at_ms": 95093.9,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2925,
+      "at_ms": 95127.6,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2926,
+      "at_ms": 95161.5,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2927,
+      "at_ms": 95195.5,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2928,
+      "at_ms": 95228.6,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2929,
+      "at_ms": 95261.9,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2930,
+      "at_ms": 95295.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2931,
+      "at_ms": 95330.8,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2932,
+      "at_ms": 95362.3,
+      "kind": "frame",
+      "interval_ms": 31.5,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2933,
+      "at_ms": 95395.4,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2934,
+      "at_ms": 95428.7,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2935,
+      "at_ms": 95463,
+      "kind": "frame",
+      "interval_ms": 34.3,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2936,
+      "at_ms": 95497.6,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2937,
+      "at_ms": 95528.9,
+      "kind": "frame",
+      "interval_ms": 31.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2938,
+      "at_ms": 95563.4,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 3.8
+    },
+    {
+      "sequence": 2939,
+      "at_ms": 95597.4,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.7
+    },
+    {
+      "sequence": 2940,
+      "at_ms": 95629.2,
+      "kind": "frame",
+      "interval_ms": 31.8,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2941,
+      "at_ms": 95662.4,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2942,
+      "at_ms": 95695.3,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2943,
+      "at_ms": 95729.5,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2944,
+      "at_ms": 95763.5,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2945,
+      "at_ms": 95795.7,
+      "kind": "frame",
+      "interval_ms": 32.2,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2946,
+      "at_ms": 95829.1,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2947,
+      "at_ms": 95862.3,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2948,
+      "at_ms": 95895.1,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2949,
+      "at_ms": 95929,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2950,
+      "at_ms": 95963.5,
+      "kind": "frame",
+      "interval_ms": 34.5,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2951,
+      "at_ms": 95996.2,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2952,
+      "at_ms": 96027.4,
+      "kind": "frame",
+      "interval_ms": 31.2,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2953,
+      "at_ms": 96060.1,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 1.8
+    },
+    {
+      "sequence": 2954,
+      "at_ms": 96093.7,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2955,
+      "at_ms": 96127.7,
+      "kind": "frame",
+      "interval_ms": 34,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2956,
+      "at_ms": 96161,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2957,
+      "at_ms": 96194.6,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2958,
+      "at_ms": 96228,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2959,
+      "at_ms": 96262.2,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2960,
+      "at_ms": 96295.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2961,
+      "at_ms": 96329,
+      "kind": "frame",
+      "interval_ms": 33.7,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2962,
+      "at_ms": 96361.9,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2963,
+      "at_ms": 96395.8,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2964,
+      "at_ms": 96428.5,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2965,
+      "at_ms": 96462.3,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2966,
+      "at_ms": 96495,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 2.7
+    },
+    {
+      "sequence": 2967,
+      "at_ms": 96529.1,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2968,
+      "at_ms": 96563.8,
+      "kind": "frame",
+      "interval_ms": 34.7,
+      "render_submission_ms": 2.5
+    },
+    {
+      "sequence": 2969,
+      "at_ms": 96595.7,
+      "kind": "frame",
+      "interval_ms": 31.9,
+      "render_submission_ms": 3.2
+    },
+    {
+      "sequence": 2970,
+      "at_ms": 96629.9,
+      "kind": "frame",
+      "interval_ms": 34.2,
+      "render_submission_ms": 2.8
+    },
+    {
+      "sequence": 2971,
+      "at_ms": 96663.1,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2972,
+      "at_ms": 96696,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2973,
+      "at_ms": 96728.7,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2974,
+      "at_ms": 96762.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2975,
+      "at_ms": 96796.5,
+      "kind": "frame",
+      "interval_ms": 34.1,
+      "render_submission_ms": 3.6
+    },
+    {
+      "sequence": 2976,
+      "at_ms": 96829.4,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 3.1
+    },
+    {
+      "sequence": 2977,
+      "at_ms": 96862.1,
+      "kind": "frame",
+      "interval_ms": 32.7,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2978,
+      "at_ms": 96895.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2979,
+      "at_ms": 96930.2,
+      "kind": "frame",
+      "interval_ms": 35,
+      "render_submission_ms": 4
+    },
+    {
+      "sequence": 2980,
+      "at_ms": 96963.3,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2981,
+      "at_ms": 96995.9,
+      "kind": "frame",
+      "interval_ms": 32.6,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2982,
+      "at_ms": 97029.4,
+      "kind": "frame",
+      "interval_ms": 33.5,
+      "render_submission_ms": 3.3
+    },
+    {
+      "sequence": 2983,
+      "at_ms": 97062.6,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 3.5
+    },
+    {
+      "sequence": 2984,
+      "at_ms": 97095.5,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 3
+    },
+    {
+      "sequence": 2985,
+      "at_ms": 97128.8,
+      "kind": "frame",
+      "interval_ms": 33.3,
+      "render_submission_ms": 2.9
+    },
+    {
+      "sequence": 2986,
+      "at_ms": 97161.1,
+      "kind": "frame",
+      "interval_ms": 32.3,
+      "render_submission_ms": 2.4
+    },
+    {
+      "sequence": 2987,
+      "at_ms": 97194.2,
+      "kind": "frame",
+      "interval_ms": 33.1,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2988,
+      "at_ms": 97227.1,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2989,
+      "at_ms": 97260.9,
+      "kind": "frame",
+      "interval_ms": 33.8,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2990,
+      "at_ms": 97269.8,
+      "kind": "navigation_cancel",
+      "reason": "menu opened",
+      "step_in_flight": false
+    },
+    {
+      "sequence": 2991,
+      "at_ms": 97293.7,
+      "kind": "frame",
+      "interval_ms": 32.8,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2992,
+      "at_ms": 97327.3,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.2
+    },
+    {
+      "sequence": 2993,
+      "at_ms": 97360.9,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.3
+    },
+    {
+      "sequence": 2994,
+      "at_ms": 97393.9,
+      "kind": "frame",
+      "interval_ms": 33,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2995,
+      "at_ms": 97426.8,
+      "kind": "frame",
+      "interval_ms": 32.9,
+      "render_submission_ms": 1.9
+    },
+    {
+      "sequence": 2996,
+      "at_ms": 97460.4,
+      "kind": "frame",
+      "interval_ms": 33.6,
+      "render_submission_ms": 2.1
+    },
+    {
+      "sequence": 2997,
+      "at_ms": 97493.8,
+      "kind": "frame",
+      "interval_ms": 33.4,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2998,
+      "at_ms": 97527,
+      "kind": "frame",
+      "interval_ms": 33.2,
+      "render_submission_ms": 2
+    },
+    {
+      "sequence": 2999,
+      "at_ms": 97560.9,
+      "kind": "frame",
+      "interval_ms": 33.9,
+      "render_submission_ms": 2.2
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "before": {
+    "pompeii_b2436bc08914": "e5a07b3e92c42f8d4818cf8c2cf667f5829af1d242916f41100f9d8ab2040762",
+    "observatory_2898dc1a5d60": "08223f59fea4d32e7571a792603c32b1a41e6f9d25a716fc421dbaa1d3a8ee54"
+  },
+  "after": {
+    "pompeii_b2436bc08914": "e5a07b3e92c42f8d4818cf8c2cf667f5829af1d242916f41100f9d8ab2040762",
+    "observatory_2898dc1a5d60": "20877b40a857afbad1fb1a0f70f7ff0320437a67e84ca871ed7f259ff7c5a470"
+  },
+  "pompeii_journal_unchanged": true,
+  "only_observatory_advanced": true
+}

@@ -83,3 +83,16 @@ Modern dense retrieval is included only if a pinned approved encoder is actually
 available. Current endpoint authorization and budget are absent; live quality is
 untested. Human-use protocols/instrumentation can be prepared, not populated with
 fabricated volunteers or commercial traction.
+
+## Execution outcome
+
+Stages 0–5 are implemented and verified: protected baseline, product shell and
+website, two actual first/return journeys, a causal diagnostic gate and a frozen
+760-world comparison. Stage 6 used the authorized offline path with zero external
+spend; live-model quality remains untested. Stage 7 delivered opt-in local
+instrumentation, human-use preparation, functional finite Studio forms, real
+failure/restart/privacy/narrow browser checks and separate performance measures.
+Final counts are 1015 Python / 144 frontend tests. Product source checkpoints are
+`fe47832`, `ac1b631`, `d15c121`; the frozen research checkpoint is `1288c81`.
+The handoff records the limits and next evidence needed; no human study or
+general cognition claim is substituted for these engineering results.

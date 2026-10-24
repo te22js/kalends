@@ -1,0 +1,46 @@
+{
+  "fixture_directory": "/tmp/kalends-next-failure-20261024",
+  "world_write_failure": {
+    "before_credits": 12,
+    "after_failure_credits": 12,
+    "accepted_commands_after_failure": 0,
+    "original_journal_restored_exactly": true,
+    "recovery_requires_new_review": true
+  },
+  "metadata_failure_after_accepted_choice": {
+    "world_saved": true,
+    "accepted_once": true,
+    "display_warning_observed": true,
+    "world_charge_not_reported_failed": true
+  },
+  "exact_restart_from_disk": [
+    {
+      "id": "observatory_e8935ec93f4d",
+      "accepted_commands": 1,
+      "credits": 11,
+      "state_hash": "97c72e4a22dc087d4a49a22b3e2b49343f77326066bd886461245fce7ff5eb6f",
+      "journal_sha256": "f491dd3c4ae6cd1750e4bf357cf0a3ab173e2c0c2b1addcc09f0e24f8a093ebb"
+    },
+    {
+      "id": "authored_e6070985e6e2",
+      "accepted_commands": 1,
+      "credits": 11,
+      "state_hash": "3965257fce83c86d1df75ad63dbf50ae9d4895c340ff4535ba266fc26e0fd489",
+      "journal_sha256": "fcb4b46889d26588e1d27aed448130483ecb6019a90d952786bb54354f0e601f"
+    }
+  ],
+  "lab_exposure_persisted": true,
+  "local_telemetry": {
+    "opt_in": true,
+    "rows": 1,
+    "only_allowlisted_fields": true,
+    "raw_text_collected": false
+  },
+  "studio": {
+    "authored_id": "authored_e6070985e6e2",
+    "horizon_days": 1,
+    "unique_identity": true,
+    "both_templates_validated_in_browser": true
+  },
+  "original_user_saves_touched": false
+}

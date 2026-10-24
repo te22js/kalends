@@ -1,0 +1,44 @@
+{
+  "classification": "Disposable browser failure-injection fixture; no server started",
+  "created_at_utc": "2026-10-24T02:12:31.963758+00:00",
+  "build": "kalends-journey-1",
+  "directory": "/tmp/kalends-next-failure-20261024",
+  "include_examples": false,
+  "personal_lives": 1,
+  "life_id": "observatory_e8935ec93f4d",
+  "journal_path": "/tmp/kalends-next-failure-20261024/observatory_e8935ec93f4d.json",
+  "journal_sha256": "6a83523948141d4701a253ae20ba3cb4b51700179cce5ca0a34ecaec9c2c0bff",
+  "state_hash": "f0cd0370954e10d89be273aa8f486979e4ee39fe6eac890142ce0b65ca52422c",
+  "initial_revision": 0,
+  "malformed_journal": {
+    "id": "malformed_unrelated",
+    "path": "/tmp/kalends-next-failure-20261024/malformed_unrelated.json",
+    "sha256": "5ae5b663ba28f8bc26fa21a65541c362cb142e0ce35c0a6c5ead2ea1b6c94cfc",
+    "intentional": true
+  },
+  "all_journal_hashes": {
+    "malformed_unrelated.json": "5ae5b663ba28f8bc26fa21a65541c362cb142e0ce35c0a6c5ead2ea1b6c94cfc",
+    "observatory_e8935ec93f4d.json": "6a83523948141d4701a253ae20ba3cb4b51700179cce5ca0a34ecaec9c2c0bff",
+    "shared_observatory.json": "208885a6043a20264b4519cedf1548b37d49145d377c6186db254e6c2ec5d3f0",
+    "pompeii_life.json": "da6571dc6267aba0088ad81631b50b4d7697a55fd684e2eb17228cb90b7d5754"
+  },
+  "reload_preserves_bytes": true,
+  "reload_failure": {
+    "id": "malformed_unrelated",
+    "title": "malformed_unrelated",
+    "save_status": "incompatible",
+    "error": "Expecting property name enclosed in double quotes: line 1 column 3 (char 2); original preserved"
+  },
+  "quiet_compatibility_template_ids": [
+    "pompeii_life",
+    "shared_observatory"
+  ],
+  "existing_server_or_original_saves_touched": false,
+  "external_provider_enabled": false,
+  "inference_calls": 0,
+  "repeat_after_process_restart": {
+    "recreated_initial_journal_exactly": true,
+    "directory": "/tmp/kalends-next-failure-20261024",
+    "malformed_journal_is_new_disposable_fixture": true
+  }
+}

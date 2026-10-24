@@ -1,0 +1,48 @@
+{
+  "branch": "codex/experience-journey",
+  "implementation_commit": "d15c12176ee68ef90bf2f3c122724ad1857a09c4",
+  "tests": {
+    "python": 1015,
+    "frontend": 144,
+    "python_log": "results/next_phase/python-tests.log",
+    "frontend_log": "results/next_phase/frontend-tests.log"
+  },
+  "original_saves_unchanged": true,
+  "original_save_count": 17,
+  "verified_lives": [
+    {
+      "id": "observatory_2898dc1a5d60",
+      "file": "demo/next_phase/verified_lives/observatory_2898dc1a5d60.json",
+      "sha256": "20877b40a857afbad1fb1a0f70f7ff0320437a67e84ca871ed7f259ff7c5a470",
+      "accepted_commands": 7,
+      "minute": 1499,
+      "state_hash": "51ad92aaaaebf6bcbe340c1fc22c8f20ca30cdcf66946381f8e4c5e47bcf809d",
+      "exact_replay": true
+    },
+    {
+      "id": "pompeii_b2436bc08914",
+      "file": "demo/next_phase/verified_lives/pompeii_b2436bc08914.json",
+      "sha256": "e5a07b3e92c42f8d4818cf8c2cf667f5829af1d242916f41100f9d8ab2040762",
+      "accepted_commands": 19,
+      "minute": 89,
+      "state_hash": "b1c33d61ebefc59db1232bd6603482dbefa6a40fce9132f592ecf9800c37e2f7",
+      "exact_replay": true
+    }
+  ],
+  "frozen_research_source_count": 39,
+  "frozen_research_sources_changed_since_run": [],
+  "source_fingerprints": {
+    "kalends/experience_os/product.py": "ae214abd71349f6be71226c1a65a622759f545cbb8424ad7fcd5883084fa6148",
+    "kalends/experience_os/product_server.py": "189e96b1ba00954e04b3ae5273dcf4080fcae46c9dccffcd293e37abaa69a591",
+    "kalends/experience_os/history.py": "cf7ff286d9f5fa336b578bd8a92c9b722774b109dd797db9c18fa6e3ec94bf1e",
+    "kalends/experience_os/static/product/app.js": "7128aecd2014b658ee7917b9f5695da8e2f56dc0b847d8718f86397cd6af1412",
+    "kalends/experience_os/static/game-host.js": "39ebed6406566a98891142f2c74dff111c29ede6e38450c7a0ce684e2c9a9740",
+    "kalends_3d/src/product_host.js": "967f8936cd70278e9e9da071df1da90112302f4e08e1acb74ff798e060dca0fb",
+    "kalends_3d/src/main.js": "8823099fd1bfdcc073d8ff6c9277f6250fb01767a7b7b251a75c9e7ae37e6924",
+    "kalends_3d/src/renderer.js": "e184f92314a4a35488b89b91fe948a8a2a915949c4bc634daa4b379df172847f",
+    "kalends_3d/dist/assets/index-wyw_dtKf.js": "ccca15c8d92c7871945a722f0d023f5b688bb01fbab7a4a80a5f0d7c629aa7cf"
+  },
+  "external_inference_calls": 0,
+  "external_spend_usd": 0,
+  "delivery_port": 8810
+}

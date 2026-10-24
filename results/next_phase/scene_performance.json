@@ -1,0 +1,73 @@
+{
+  "schema": "kalends-immersion-trace-v1",
+  "gpu_renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M2, Unspecified Version)",
+  "engine": "PlayCanvas 2.23.3",
+  "device_type": "webgl2",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hardware_concurrency": 8,
+  "viewport": {
+    "width": 1280,
+    "height": 642,
+    "dpr": 2,
+    "render_width": 1920,
+    "render_height": 963
+  },
+  "quality": "balanced",
+  "scene_resolution_scale": 1,
+  "msaa_samples": 2,
+  "actors": 7,
+  "draw_calls": 564,
+  "textures_bytes": 94505208,
+  "scope": "Browser-reported hardware and engine counters; not GPU elapsed time or physical-device qualification.",
+  "app_boot_ms": 290.69999999925494,
+  "navigation_to_ready_ms": 334.0999999977648,
+  "navigation_to_first_ready_draw_ms": 460.69999999925494,
+  "client_ready": true,
+  "samples_retained": 1090,
+  "sample_limit": 12000,
+  "quantile_method": "linear interpolation at (n-1)*p",
+  "inputs": {
+    "accepted": 0,
+    "ignored": 0,
+    "idle": 0,
+    "cancelled": 0,
+    "committed_draw": 0
+  },
+  "pending_input": null,
+  "frame_ms": {
+    "n": 1088,
+    "mean": 33.257,
+    "p50": 33.3,
+    "p95": 34.7,
+    "p99": 35.313,
+    "max": 37.2
+  },
+  "render_submission_ms": {
+    "n": 1088,
+    "mean": 3.017,
+    "p50": 3,
+    "p95": 3.7,
+    "p99": 4.413,
+    "max": 7.5
+  },
+  "idle_input_to_committed_draw_ms": null,
+  "next_changed_draw_ms": null,
+  "backend_ms": null,
+  "long_task_ms": null,
+  "memory": {
+    "used_js_heap_bytes": 81109312,
+    "total_js_heap_bytes": 149368720,
+    "scope": "Chromium estimate, excludes GPU and server"
+  },
+  "notes": [
+    "Small local browser sample. Canvas submission is not compositor completion or physical display.",
+    "Idle latency requires strict visual/controller idle and its matching accepted move; cancellations, supersessions and unmoved/nonidle inputs are excluded.",
+    "Frame callbacks/render submission do not measure GPU time. No external inference or telemetry."
+  ],
+  "scenario": "Sustained idle rendered Thermopolium scene after a walked return encounter; no world mutations or keyboard inputs in sample. Brief menu controls at sample boundaries.",
+  "sample_span_ms": 36183.5,
+  "frames_per_second_from_mean": 30.06885768409658,
+  "measured_when": "Research execution and test suite were finished. Shared machine/browser remains uncontrolled.",
+  "build_bundle": "index-wyw_dtKf.js",
+  "limitation": "In-app browser frameend/render-submission timings; no compositor/physical-display/GPUelapsed measurement. Warm-cache navigation only. A 60 FPS target is not established by this sample."
+}

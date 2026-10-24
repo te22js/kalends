@@ -44,10 +44,12 @@ captures preceded several continuity fixes, so they are not evidence of the
 later fixes. Handler and scene-protocol tests complement the browser evidence;
 they do not establish human enjoyment, accessibility certification or demand.
 
-The product test file passes 13 checks. Six execute the actual application boot
+The product test file passes 19 checks. The handler checks execute the actual application boot
 and registered handlers against a small DOM/fetch boundary, checking retained
 iframe identity, visibility restoration, sessionStorage restoration, read-only
 busy-scene retries, private Lab DOM removal and revision ordering. This harness
 does not emulate browser layout, WebGL, focus behavior or physical presentation.
-The remaining checks cover request invalidation, scene-message identity,
-consequential labels and text escaping. Real browser QA remains necessary.
+The suite also checks request invalidation, scene-message identity,
+consequential labels, text escaping, incompatible diagnostics, definite journal
+errors and accepted metadata warnings across actions, reload reconciliation and
+authoring. Final real-browser outcomes are recorded in `PRODUCT_QA.md`.

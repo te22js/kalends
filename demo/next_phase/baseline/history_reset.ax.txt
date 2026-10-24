@@ -1,0 +1,81 @@
+Browser tab: 11, Title: "Kalends · Experience OS", URL: "http://127.0.0.1:8811/".
+1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8811/
+	2 container
+		3 link Description: KALENDS EXPERIENCE OS · V1, Value: 127.0.0.1:8811/
+		4 container Experience mode
+			5 checkbox LIVE, Value: 1
+			6 checkbox LEARN, Value: 0
+			7 checkbox LAB, Value: 0
+		8 button Compile an experience ↗, ID: author
+	9 container
+		66 text LIVE · PARTICIPATE IN A PERSISTENT WORLD
+		11 heading A life among promises: Pompeii, Value: 1, ID: title
+			67 text A life among promises: Pompeii
+		68 text Reason about asymmetric information, resource-backed promises, social constraints and the later consequences of accepted actions. Historical participation is not evidence of real-world learning transfer.
+		14 container
+			15 text EXPERIENCE
+			16 pop up button (collapsed, settable) EXPERIENCE, Value: A life among promises: Pompeii, ID: experience, Secondary Actions: Expand
+				17 menu
+					18 (selected) A life among promises: Pompeii
+					19 Shared Observatory: three teams, one instrument
+		69 text DAY 1 · 0 WORLD MINUTES · 0 ACCEPTED COMMANDS
+		21 button Refresh world, ID: refresh
+		27 container Description: Actual world outcomes, ID: metrics
+			70 text 6
+			71 text CASH
+			72 text 0
+			73 text INVENTORY
+			74 text 0
+			75 text REPUTATION
+			76 text 0
+			77 text FULFILLED OBLIGATIONS
+			78 text 0
+			79 text MISSED OBLIGATIONS
+			80 text 0
+			81 text ELAPSED DAYS
+		82 container pompeii
+			83 text This existing PlayCanvas client operates the same compiled Pompeii life inspected by LEARN and LAB. Use its own time controls while playing. Returning from LEARN or LAB reloads the saved scene. Your original saved game is preserved.
+			84 container Description: Live compiled Pompeii 3D experience, ID: game
+				85 AXWebArea Kalends · Immersion, URL: 127.0.0.1:8811/immersion/?experience=pompeii_life
+					86 image ID: world, Description: 3D Pompeii. WASD or arrows move, E interacts, Escape stops, J opens your journal. Click the ground to walk or a character to approach.
+					87 container hud
+						88 button Description: Open game menu, ID: menu-button
+							89 text KALENDS
+							90 text POMPEII · 79 CE
+						91 container
+							92 text DAY 1
+							93 text 08:00
+							94 text VIA DELL’ABBONDANZA
+						95 container
+							96 text ◉ 6
+							97 button Journal, ID: journal-button
+							98 button Description: Settings, ID: settings-button
+					99 container lead
+						100 text THE ACCOUNT AT THE FOUNTAIN
+						101 heading Six sacks. Two promises., Value: 2, ID: lead-title
+							102 text Six sacks. Two promises.
+						103 text Sabina's counter and Lucius's household both claim the cart. Read their terms, pay for a different arrangement, or put your name behind one side.
+						104 button Find Sabina ↗, ID: lead-action
+					105 container location-caption
+						106 text VIA DELL’ABBONDANZA
+						107 text A reconstructed corner of Pompeii
+					108 container controls
+						109 checkbox Live, Value: 0, ID: live
+						110 button Wait 30m, ID: wait
+						111 button A day later, ID: day-later
+						112 button Description: Follow Aelia, ID: recenter
+					113 container loading
+						114 text KALENDS · PROJECT IMMERSION
+						115 heading A city. A life within it., Value: 1
+							116 text A city.
+							117 text A life within it.
+						118 text Opening the district…
+						119 progress indicator Value: 10, ID: load-progress
+						120 button (disabled) Enter Pompeii →, ID: enter
+							121 text Enter Pompeii →
+						122 text Real lives. Lasting consequences.
+		63 text One authoritative event history · Existing Kalends ledger, observation, economy and clock · 
+		64 text offline cognition · 0 external calls
+		65 text  · Local single-user prototype
+
+The focused UI element is 1 AXWebArea Kalends · Experience OS, URL: 127.0.0.1:8811/
